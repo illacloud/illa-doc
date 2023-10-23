@@ -79,11 +79,10 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        // title: 'My Site',
-        // logo: {
-        //   alt: 'My Site Logo',
-        //   src: 'img/logo.svg',
-        // },
+        logo: {
+          alt: 'illa cloud',
+          src: 'img/logo.png',
+        },
         items: [
           // {
           //   type: 'docSidebar',
@@ -92,13 +91,15 @@ const config = {
           //   label: 'Tutorial',
           // },
           {
+            type: 'localeDropdown',
+            position: 'right',
+          },
+          {
             href: 'https://github.com/illacloud/illa-builder',
             label: 'GitHub',
             position: 'right',
           },
-          {
-            type: 'localeDropdown',
-          }
+      
         ],
       },
       // footer: {
