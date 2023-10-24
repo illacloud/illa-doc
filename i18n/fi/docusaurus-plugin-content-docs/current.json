@@ -1,0 +1,98 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.build_apps": {
+    "message": "Build Apps",
+    "description": "The label for category build_apps in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.components": {
+    "message": "Components",
+    "description": "The label for category components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.text_inputs": {
+    "message": "Text inputs",
+    "description": "The label for category text_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Number_inputs": {
+    "message": "Number Inputs",
+    "description": "The label for category Number_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.select_inputs": {
+    "message": "Select inputs",
+    "description": "The label for category select_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.date_time_input": {
+    "message": "Date time input",
+    "description": "The label for category date_time_input in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.special_input": {
+    "message": "Special Input",
+    "description": "The label for category special_input in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.container_and_form": {
+    "message": "Container and form",
+    "description": "The label for category container_and_form in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.presentation": {
+    "message": "Presentation",
+    "description": "The label for category presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.data_presentation": {
+    "message": "Data presentation",
+    "description": "The label for category data_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.navigation": {
+    "message": "Navigation",
+    "description": "The label for category navigation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.media_presentation": {
+    "message": "Media presentation",
+    "description": "The label for category media_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.special_presentation": {
+    "message": "Special presentation",
+    "description": "The label for category special_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.resources": {
+    "message": "Resources",
+    "description": "The label for category resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.overview": {
+    "message": "Overview",
+    "description": "The label for category overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.allow_access_from_ILLA": {
+    "message": "Allow access from ILLA",
+    "description": "The label for category allow_access_from_ILLA in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.database": {
+    "message": "Database",
+    "description": "The label for category database in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.apis": {
+    "message": "APIs",
+    "description": "The label for category apis in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.server_side_pagination": {
+    "message": "Server-side pagination",
+    "description": "The label for category server_side_pagination in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.global": {
+    "message": "Global",
+    "description": "The label for category global in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JavaScript_and_Event_handler": {
+    "message": "JavaScript and Event handler",
+    "description": "The label for category JavaScript_and_Event_handler in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ILLA_with_ai": {
+    "message": "ILLA with AI",
+    "description": "The label for category ILLA_with_ai in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.teams_and_users": {
+    "message": "Teams and users",
+    "description": "The label for category teams_and_users in sidebar tutorialSidebar"
+  }
+}
