@@ -122,6 +122,11 @@ const sidebars = {
       label: 'teams_and_users',
       items: ["airtable"]
     },
+    {
+      type: 'category',
+      label: 'changelog',
+      items: ["airtable"]
+    },
     "api-authentication",
     "app-editor",
     "amazons3"
