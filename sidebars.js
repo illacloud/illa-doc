@@ -7,6 +7,10 @@ const sidebars = {
     {
       type: 'category',
       label: 'build_apps',
+      link: {
+        type: 'doc',
+        id: "about-illa"
+      },
       items: [
         {
           type: 'category',
@@ -15,57 +19,57 @@ const sidebars = {
             {
               type: 'category',
               label: 'text_inputs',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'Number_inputs',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'select_inputs',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'date_time_input',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'special_input',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'container_and_form',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'presentation',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'data_presentation',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'navigation',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'media_presentation',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'special_presentation',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
           ]
         },
@@ -76,54 +80,50 @@ const sidebars = {
             {
               type: 'category',
               label: 'overview',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'allow_access_from_ILLA',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'database',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
             {
               type: 'category',
               label: 'apis',
-              items: ["appwrite"]
+              items: ["airtable"]
             },
           ]
         },
-        {
-          type: 'category',
-          label: 'server_side_pagination',
-          items: ["appwrite"]
-        },
+        "api-authentication",
         {
           type: 'category',
           label: 'global',
-          items: ["appwrite"]
+          items: ["airtable"]
         },
         {
           type: 'category',
           label: 'JavaScript_and_Event_handler',
-          items: ["appwrite"]
+          items: ["airtable"]
         },
       ]
     },
     {
       type: 'category',
       label: 'ILLA_with_ai',
-      items: ["appwrite"]
+      items: ["airtable"]
     },
     {
       type: 'category',
       label: 'teams_and_users',
-      items: ["appwrite"]
+      items: ["airtable"]
     },
-    "chart",
-    "input",
+    "api-authentication",
+    "app-editor",
     "amazons3"
   ],
 };
