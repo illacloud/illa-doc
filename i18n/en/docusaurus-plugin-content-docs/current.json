@@ -75,6 +75,10 @@
     "message": "APIs",
     "description": "The label for category apis in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.server_side_pagination": {
+    "message": "Server-side pagination",
+    "description": "The label for category server_side_pagination in sidebar tutorialSidebar"
+  },
   "sidebar.tutorialSidebar.category.global": {
     "message": "Global",
     "description": "The label for category global in sidebar tutorialSidebar"
