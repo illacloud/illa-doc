@@ -127,6 +127,12 @@ const sidebars = {
       label: 'changelog',
       items: ["airtable"]
     },
+    {
+      type: 'category',
+      label: 'test',
+      items: ["test"]
+    },
+    "test",
     "api-authentication",
     "app-editor",
     "amazons3"
