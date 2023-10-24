@@ -6,11 +6,11 @@ const sidebars = {
   tutorialSidebar: [
     {
       type: 'category',
-      label: 'Build Apps',
+      label: 'build_apps',
       items: [
         {
           type: 'category',
-          label: 'Components',
+          label: 'components',
           items: [
             {
               type: 'category',
