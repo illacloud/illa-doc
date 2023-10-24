@@ -78,18 +78,19 @@ const config = {
     ({
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
+      algolia: {
+        indexName: 'illa',
+        appId: 'POULYAT54V',
+        apiKey: '014113e7aad7db02a15e0aa4f9422338',
+        contextualSearch: true,
+      },
       navbar: {
         logo: {
           alt: 'illa cloud',
-          src: 'img/logo.png',
+          src: 'img/logo.svg',
+          srcDark: 'img/logo_white.svg',
         },
         items: [
-          // {
-          //   type: 'docSidebar',
-          //   sidebarId: 'tutorialSidebar',
-          //   position: 'left',
-          //   label: 'Tutorial',
-          // },
           {
             type: 'localeDropdown',
             position: 'right',
@@ -99,7 +100,6 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
-      
         ],
       },
       // footer: {
