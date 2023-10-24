@@ -1,0 +1,98 @@
+{
+  "version.label": {
+    "message": "下一个",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.build_apps": {
+    "message": "构建应用程序",
+    "description": "The label for category build_apps in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.components": {
+    "message": "组件",
+    "description": "The label for category components in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.text_inputs": {
+    "message": "Text inputs",
+    "description": "The label for category text_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.Number_inputs": {
+    "message": "数字输入",
+    "description": "The label for category Number_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.select_inputs": {
+    "message": "选择输入",
+    "description": "The label for category select_inputs in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.date_time_input": {
+    "message": "日期时间输入",
+    "description": "The label for category date_time_input in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.special_input": {
+    "message": "特殊输入",
+    "description": "The label for category special_input in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.container_and_form": {
+    "message": "容器和形式",
+    "description": "The label for category container_and_form in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.presentation": {
+    "message": "列报内容",
+    "description": "The label for category presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.data_presentation": {
+    "message": "数据列报方式",
+    "description": "The label for category data_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.navigation": {
+    "message": "Navigation",
+    "description": "The label for category navigation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.media_presentation": {
+    "message": "媒体演示内容",
+    "description": "The label for category media_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.special_presentation": {
+    "message": "特别发言",
+    "description": "The label for category special_presentation in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.resources": {
+    "message": "资源",
+    "description": "The label for category resources in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.overview": {
+    "message": "概览",
+    "description": "The label for category overview in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.allow_access_from_ILLA": {
+    "message": "允许从 ILLA 访问",
+    "description": "The label for category allow_access_from_ILLA in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.database": {
+    "message": "数据库",
+    "description": "The label for category database in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.apis": {
+    "message": "APIs",
+    "description": "The label for category apis in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.server_side_pagination": {
+    "message": "服务器端分页",
+    "description": "The label for category server_side_pagination in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.global": {
+    "message": "全局范围",
+    "description": "The label for category global in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.JavaScript_and_Event_handler": {
+    "message": "JavaScript 和事件处理程序",
+    "description": "The label for category JavaScript_and_Event_handler in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.ILLA_with_ai": {
+    "message": "ILLA with AI",
+    "description": "The label for category ILLA_with_ai in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.teams_and_users": {
+    "message": "团队和用户",
+    "description": "The label for category teams_and_users in sidebar tutorialSidebar"
+  }
+}
