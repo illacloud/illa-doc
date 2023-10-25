@@ -1,4 +1,4 @@
-pull_request_title: '[ci skip] New Crowdin translations'
+pull_request_title: 'chore: New Crowdin translations'
 commit_message: '[ci skip] New translations %fileName% (%languageName%)'
 append_commit_message: false
 files:
