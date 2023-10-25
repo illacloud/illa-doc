@@ -96,7 +96,7 @@
     "description": "The label for category teams_and_users in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.changelog": {
-    "message": "Changelog",
+    "message": "更新日志",
     "description": "The label for category changelog in sidebar tutorialSidebar"
   }
 }
