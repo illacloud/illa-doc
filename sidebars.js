@@ -99,7 +99,7 @@ const sidebars = {
             },
           ]
         },
-        "api-authentication",
+        "text-area-input",
         {
           type: 'category',
           label: 'global',
