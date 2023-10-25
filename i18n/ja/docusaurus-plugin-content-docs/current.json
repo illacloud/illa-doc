@@ -1,14 +1,14 @@
 {
   "version.label": {
-    "message": "Next",
+    "message": "次へ",
     "description": "The label for version current"
   },
   "sidebar.tutorialSidebar.category.build_apps": {
-    "message": "Build Apps",
+    "message": "アプリを作成",
     "description": "The label for category build_apps in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.components": {
-    "message": "Components",
+    "message": "コンポーネント",
     "description": "The label for category components in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.text_inputs": {
@@ -16,31 +16,31 @@
     "description": "The label for category text_inputs in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.Number_inputs": {
-    "message": "Number Inputs",
+    "message": "数の入力",
     "description": "The label for category Number_inputs in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.select_inputs": {
-    "message": "Select inputs",
+    "message": "入力を選択",
     "description": "The label for category select_inputs in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.date_time_input": {
-    "message": "Date time input",
+    "message": "日付時刻の入力",
     "description": "The label for category date_time_input in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.special_input": {
-    "message": "Special Input",
+    "message": "特殊入力",
     "description": "The label for category special_input in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.container_and_form": {
-    "message": "Container and form",
+    "message": "コンテナとフォーム",
     "description": "The label for category container_and_form in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.presentation": {
-    "message": "Presentation",
+    "message": "プレゼンテーション",
     "description": "The label for category presentation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.data_presentation": {
-    "message": "Data presentation",
+    "message": "データプレゼンテーション",
     "description": "The label for category data_presentation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.navigation": {
@@ -48,43 +48,43 @@
     "description": "The label for category navigation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.media_presentation": {
-    "message": "Media presentation",
+    "message": "メディアプレゼンテーション",
     "description": "The label for category media_presentation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.special_presentation": {
-    "message": "Special presentation",
+    "message": "特別なプレゼンテーション",
     "description": "The label for category special_presentation in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.resources": {
-    "message": "Resources",
+    "message": "リソース",
     "description": "The label for category resources in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.overview": {
-    "message": "Overview",
+    "message": "概要",
     "description": "The label for category overview in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.allow_access_from_ILLA": {
-    "message": "Allow access from ILLA",
+    "message": "ILLA からのアクセスを許可する",
     "description": "The label for category allow_access_from_ILLA in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.database": {
-    "message": "Database",
+    "message": "データベース",
     "description": "The label for category database in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.apis": {
-    "message": "APIs",
+    "message": "API",
     "description": "The label for category apis in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.server_side_pagination": {
-    "message": "Server-side pagination",
+    "message": "サーバーサイドのページネーション（ページネーション）",
     "description": "The label for category server_side_pagination in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.global": {
-    "message": "Global",
+    "message": "グローバル",
     "description": "The label for category global in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.JavaScript_and_Event_handler": {
-    "message": "JavaScript and Event handler",
+    "message": "JavaScriptおよびイベントハンドラ：",
     "description": "The label for category JavaScript_and_Event_handler in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.ILLA_with_ai": {
@@ -92,11 +92,11 @@
     "description": "The label for category ILLA_with_ai in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.teams_and_users": {
-    "message": "Teams and users",
+    "message": "チームとユーザー",
     "description": "The label for category teams_and_users in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.changelog": {
-    "message": "Changelog",
+    "message": "更新履歴",
     "description": "The label for category changelog in sidebar tutorialSidebar"
   }
 }
