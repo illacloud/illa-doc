@@ -9,7 +9,7 @@ const sidebars = {
       label: 'build_apps',
       link: {
         type: 'doc',
-        id: "about-illa"
+        id: "form"
       },
       items: [
         {
@@ -19,57 +19,57 @@ const sidebars = {
             {
               type: 'category',
               label: 'text_inputs',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'Number_inputs',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'select_inputs',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'date_time_input',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'special_input',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'container_and_form',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'presentation',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'data_presentation',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'navigation',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'media_presentation',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'special_presentation',
-              items: ["airtable"]
+              items: ["text"]
             },
           ]
         },
@@ -80,22 +80,22 @@ const sidebars = {
             {
               type: 'category',
               label: 'overview',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'allow_access_from_ILLA',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'database',
-              items: ["airtable"]
+              items: ["text"]
             },
             {
               type: 'category',
               label: 'apis',
-              items: ["airtable"]
+              items: ["text"]
             },
           ]
         },
@@ -103,39 +103,38 @@ const sidebars = {
         {
           type: 'category',
           label: 'global',
-          items: ["airtable"]
+          items: ["text"]
         },
         {
           type: 'category',
           label: 'JavaScript_and_Event_handler',
-          items: ["airtable"]
+          items: ["text"]
         },
       ]
     },
     {
       type: 'category',
       label: 'ILLA_with_ai',
-      items: ["airtable"]
+      items: ["text"]
     },
     {
       type: 'category',
       label: 'teams_and_users',
-      items: ["airtable"]
+      items: ["text"]
     },
     {
       type: 'category',
       label: 'changelog',
-      items: ["airtable"]
+      items: ["text"]
     },
     {
       type: 'category',
       label: 'test',
-      items: ["test"]
+      items: ["text-area-input"]
     },
-    "test",
-    "api-authentication",
-    "app-editor",
-    "amazons3"
+    "tidb",
+    "time-picker",
+    "time-range",
   ],
 };
 
