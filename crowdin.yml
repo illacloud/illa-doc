@@ -1,4 +1,4 @@
-commit_message: '[ci skip] New translations %fileName% (%languageName%)'
+commit_message: 'chore: New translations %original_file_name% (%two_letters_code%)'
 append_commit_message: false
 files:
   - source: /docs/**/*
