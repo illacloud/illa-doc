@@ -80,9 +80,9 @@ Kun meidän on käytettävä JavaScriptiä sähköpostin hakemiseen komponentin 
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
 
-Ja kun meidän täytyy käyttää sähköpostia "Suorita komentosarja" jälkeen lause `const exampleData = odottaa postgresql1. rigger();`, voimme käyttää suoraan `exampleData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Näytä onnistumisilmoitus kun kysely on onnistunut ja tulos on ainutlaatuinen. Näytä virheilmoitus kun kyselyn tulos ei ole yksilöllinen tai kun se epäonnistuu.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNq://tvNzVBVmowRjRYbVZfVG9rZW46VwNmJLTkdkb3BmNDR4dNSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
 
@@ -159,7 +159,7 @@ componentDisplayName on näytetty merkkijono näytetään kuvakaappauksessa seur
 
 #### setValue(parametri)
 
-Käytetään arvon määrittämiseen. Parametri voi olla `string` tai `number` tai `object` tai `boolean` tai `array`, joka riippuu komponentin tyypistä.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
 ##### Tuetut komponentit
 
@@ -203,7 +203,7 @@ input1.focus()
 
 #### validate()
 
-Kun olet asettanut komponentin validointiehdot, kuten sähköpostin muodossa, URL-muodossa tai vaadittu kenttä, voit käyttää `validate()` -funktiota määrittääksesi, täyttääkö se vaatimukset. Jos se ei täytä vaatimuksia, näytetään vahvistusviesti. @ action: button
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
 Aseta vahvistuksen ehdot:
 
@@ -239,7 +239,7 @@ input1.clearValidation()
 
 #### setSelectedValue(taulukko)
 
-Käytetään valitun Multiselectin arvon määrittämiseen. Muuttujan tulee olla taulukko.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
 ##### Tuetut komponentit
 
@@ -253,7 +253,7 @@ multiselect1.setSelectedValue(["Vaihtoehto 1", "Vaihtoehto 3"])
 
 #### toimittaja()
 
-Lähetä lomaketiedot. Kun lähetys menetelmä on käynnistetty, me ensin vahvistaa lomakkeen tiedot. Jos validointivirheitä esiintyy, lomakkeen lähetys estetään ja vastaavat virheilmoitukset näytetään. Vasta onnistuneen validoinnin jälkeen jäte jatkuu.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
 ##### Tuetut komponentit
 
@@ -351,7 +351,7 @@ kytkentäryhmä1.setValueInArray(["Vaihtoehto 1", "Vaihtoehto 3"])
 
 #### selectPage(numero)
 
-Käytetään näytettävän sivun indeksin määrittämiseen. @ info: whatsthis Indeksi on numero, joka alkaa numerosta 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
 ##### Tuetut komponentit
 
@@ -365,7 +365,7 @@ taulukko1.selectPage(1)
 
 #### selectRow(numero)
 
-Käytetään valitun rivin indeksin määrittämiseen. Indeksi on numero, joka alkaa numerosta 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
 ##### Tuetut komponentit
 
@@ -395,15 +395,15 @@ taulukko1.clearSelection()
 
 Käytetään suodattimien asettamiseen.
 
-**Ensimmäinen parametri** on joukko esineitä. Jokainen objekti edustaa suodatuksen ehtoa. Se sisältää kolme ominaisuutta:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**\<1>** **`id`** : Tämä viittaa tämän sarakkeen tunnisteeseen. Jos tämä sarake on tulos tietokantakyselystä, niin tunnus olisi sarake nimi, jonka olet hakenut kyselystä. Esimerkiksi, jos kysely on `SELECT email AS user_email FROM users` ja uudelleennimeä `email` `Email` taulukon oikeanpuoleisella paneelilla, sarakkeen tunnus olisi edelleen `user_email` Jos tämä sarake lisätään manuaalisesti käyttämällä oikealla puolella olevassa paneelissa olevaa `Lisää sarake -painiketta`, voit tarkistaa sen tunnuksen vasemmanpuoleisen paneelin `displayedData`-osiosta. Tyypillisesti, se on satunnaisesti luotu merkkijono alkaen `column`, kuten `column-320169e8-225a-482d-9853-ad34b3040220`.
+**\<1>**  **`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**\<2> ** **`filterFn`** : suodattimen tyyppi täsmää. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**\<2> ** **`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **\<3>** **`value`** : käytetään vertailevan arvon määrittämiseen.
 
-**Toinen parametri:** kun suodattimen tila objekteja on useita, se määrittää, onko niillä "AND" suhde tai "OR"-suhde. Aseta se merkkijonoksi `and` "AND"-suhdetta varten ja `or` "OR"-suhdetta varten.
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
 ##### Tuetut komponentit
 
@@ -431,7 +431,7 @@ taulukko1.clearFilters()
 
 #### setSort(string, string)
 
-Käytetään lajittelun asettamiseen. **Ensimmäinen parametri** on sarakkeen id joka lajittelee merkkijonon arvon. Id on sama kuin id mainittu setFilters(joukko esineitä, string). **Toinen parametri** on lajittelujärjestys, joko nouseva tai laskeva. Se on asetettu käyttäen merkkijonoarvoa `ascend` tai `descend`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
 ##### Tuetut komponentit
 
@@ -473,7 +473,7 @@ kontti1.setCurrentViewIndex(1)
 
 #### showNextView(boolean)
 
-Käytetään näyttämään seuraava näkymä. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Tuetut komponentit
 
@@ -487,7 +487,7 @@ kontti1.showNextView(true)
 
 #### showNextVisibleView(boolean)
 
-Käytetään näyttämään seuraava näkymä. Toisin kuin `showNextView(boolean)`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamistoiminnallisuuden ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Tuetut komponentit
 
@@ -501,7 +501,7 @@ kontti1.showNextVisibleView(false)
 
 #### showPreviousView()
 
-Käytetään edellisen näkymän näyttämiseen. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Tuetut komponentit
 
@@ -515,7 +515,7 @@ kontti1.showPreviousView(true)
 
 #### showPreviousVisibleView()
 
-Käytetään edellisen näkymän näyttämiseen. Toisin kuin `showPreviousView(boolean)`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamistoiminnallisuuden ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Tuetut komponentit
 
@@ -585,7 +585,7 @@ modal1.closeModal()
 
 #### setImageUrl(merkkijono)
 
-Käytetään kuvan lähteen URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa kuvan verkossa.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
 ##### Tuetut komponentit
 
@@ -645,7 +645,7 @@ statistic1.resetPrimaryValue()
 
 #### setFileUrl(merkkijono)
 
-Käytetään tiedoston URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa PDF verkossa.
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
 
 ##### Tuetut komponentit
 
@@ -701,7 +701,7 @@ video1.showControls(true)
 
 #### setVideoUrl(merkkijono)
 
-Käytetään videon URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Tuetut komponentit
 
@@ -715,7 +715,7 @@ video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
 
 #### setVolume(numero)
 
-Käytetään äänenvoimakkuuden asettamiseen. Parametri on lukuarvo välillä 0 - 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
 ##### Tuetut komponentit
 
@@ -727,7 +727,7 @@ Video, Ääni
 
 #### setSpeed(numero)
 
-Käytetään nopeuden määrittämiseen. Parametri on lukuarvo välillä 0,25 - 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
 ##### Tuetut komponentit
 
@@ -755,7 +755,7 @@ video1.setLoop(false)
 
 #### seekTo(numero)
 
-Käytetään tietyn ajankohdan etsimiseen. Parametri on lukuarvo, joka mitataan sekunteina (s). Esimerkiksi etsimään aikaa asema 5:35, sinun pitäisi käyttää arvoa 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
 ##### Tuetut komponentit
 
@@ -783,7 +783,7 @@ video1.mute(true)
 
 #### setAudioUrl(merkkijono)
 
-Käytetään äänen URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Tuetut komponentit
 
@@ -839,7 +839,7 @@ iframe1.setSrc ("https://www.nasa.gov/")
 
 #### setMerkkit(taulukko)
 
-Käytetään asettamaan merkkimäärät kartalle. Muuttujan tulee olla joukko esineitä. Kunkin objektin leveys- ja pituusastekenttien olisi oltava samat kuin oikeanpuoleisessa paneelissa olevien kenttien
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
 ##### Tuetut komponentit
 
@@ -889,7 +889,7 @@ newTab:boolean
 
 ### Kuvaus
 
-Käytä objektia sen asettamiseen. Objektissa on 2 attribuuttia. Ensimmäinen attribuutti on `url`. Sen arvo on täydellinen URL, mukaan lukien 'https://' tai 'http://', ja se on tyyppimerkkijono. Toinen attribuutti on `newTab`. Se on totuus, jota käytetään määrittämään, avataanko URL-osoite uudessa välilehdessä.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
 ### Esimerkki
 
@@ -931,13 +931,13 @@ viewPath:string
 
 ### Kuvaus
 
-Käytetään muuttamaan sivua ILLA Appsissa. Objektissa on 2 attribuuttia.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-Ensimmäinen attribuutti on `pagePath`. Sivupolun arvo näkyy seuraavassa kuvakaappauksessa ilman `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzěNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
 
-Toinen attribuutti on `viewPath`. Näyttöpolun arvo näkyy seuraavassa kuvakaappauksessa ilman `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExěE1NmRmNTQwNDZjNmU2NmM4ŽQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMWNA)
 
@@ -973,11 +973,11 @@ Käytetään tiedoston tallentamiseen ILLA Driveen.
 
 `fileData`: Base64 tai raaka tiedostotiedot, kuten JSON, CSV, tavallinen teksti jne.
 
-`fileType`: Yksi seuraavista arvoista: Auto, tavallinen teksti, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`folder`: Kohdekansio tiedostojen lataamista varten. Jätä tyhjäksi ladataksesi pääkansioon. @ info: whatsthis
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonymous`: Käytetään sen määrittämiseen, onko anonyymi käyttöoikeus sallittu. Jos aiot asettaa hakemuksesi julkiseksi, anonyymi pääsy on otettava käyttöön. Jotta tietosi, tiedostot tai kansiot olisivat saatavilla anonyymisti, ne on sijoitettava anonyymiin kansioon.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6ODMwODExMl9WNA)
 
@@ -1027,7 +1027,7 @@ utils.dll adFromILLADrive({
 
 Käytetään ladattaessa tiedostoja ILLA Drivesta.
 
-`downloadInfo`: joukko esineitä, mukaan lukien tinyURL ja fileID. Voit käyttää komponentin Drive-tiedostonvalitsinta valitaksesi tiedostoja ILLA Drivesta ja saada `downloadInfo` asemaPicker1.value avulla
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
 `asZip`: käytetään sen määrittämiseen, ladatatko tiedostot Zip:nä.
 
@@ -1056,7 +1056,7 @@ utils.dll adFile({
 
 Käytetään viemään tietoja laitteeseesi.
 
-`fileType`: Yksi seuraavista arvoista: Auto, tavallinen teksti, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
 `fileName`: nimi ja laajennus.
 
@@ -1133,7 +1133,7 @@ Kun globaali data on array tai objekti, käytä setGlobalDataIn -toimintoa muutt
 
 `key`: globalDatan näyttö.
 
-`path`: sen arvon indeksi, jota aiot päivittää taulukkoon tai objektin avaimeen. Esimerkiksi, asettaa toinen arvo taulukossa, polku on 1 (indeksi). Määrittääksesi attribuutin nimisen avaimen arvon, polku on avain1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `value`: asetettu arvo
 
@@ -1160,7 +1160,7 @@ value:input7.value
 
 # Toimien arvo, komponentit...
 
-Käytä `displayName.xxx` toimintojen, komponenttien tai muiden globalDatan arvoa. Huomioithan, että Run Script, näitä muuttujia voi käyttää suoraan ilman {{ viitteitä.
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using {{ references.
 
 ```JavaScript
 utils.downloadFromILLADrive({
