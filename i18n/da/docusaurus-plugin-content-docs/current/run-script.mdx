@@ -1,9 +1,13 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: Kør Script
+description: Ved at udløse Kør Script gennem en Event handler, kan du opnå sekventiel udførelse af operationer og udføre forskellige handlinger baseret på forskellige tilstand.
 ---
 
-# How-to
+# Kør Script
+
+Ved at udløse Kør Script gennem en Event handler, kan du opnå sekventiel udførelse af operationer og udføre forskellige handlinger baseret på forskellige tilstand.
+
+## Hvordan
 
 <div style={{
     position: "relative",
@@ -11,59 +15,59 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Demo
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Kør og gaffel
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Use case: Login and redirect to different pages
+### Brug sag: Log ind og omdirigere til forskellige sider
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Kør og gaffel
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Trigger action
+### Udløser handling
 
-### Structure
+#### Struktur
 
 ```JavaScript
-const exampleData = await actionName.trigger();
+const exampleData = afvent actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+Handlingsnavnet er den streng, der vises på skærmbilledet, som følger.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Description
+#### Varebeskrivelse
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+I Kør Script, variablen `eksempelData` er det samme som `actionName.data`.
 
-### Example
+#### Eksempel
 
-For example, we use the action `postgresql1` to query James' email.
+For eksempel bruger vi handlingen `postgresql1` til at forespørge James' e-mail.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Trigger the action via Run Script
+Udløs handlingen via Kør Script
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` is
+`postgresql1.data` er
 
 ```JSON
 [
@@ -76,776 +80,776 @@ Trigger the action via Run Script
 ]
 ```
 
-When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+Når vi skal bruge JavaScript til at hente en e-mail i komponentens Inspect eller andre steder, kan vi bruge følgende: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+Og når vi har brug for at bruge e-mailen i "Kør Script" efter udførelse af erklæringen `const eksempelData = venter postgresql1. rigger();`, vi kan direkte bruge `eksempelData[0].email`.
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+Vis en succesnotifikation når forespørgslen er vellykket, og resultatet er unikt. Vis en fejlmeddelelse, når forespørgselsresultatet ikke er unikt eller når det mislykkes.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
-//show email via notification when the length of the resulting array is 1.
+//show email via notifikation når længden af det resulterende array er 1.
 if(exampleData.length==1){
-utils.showNotification(
+utils. howNotification(
   {
     type:"info",
-    title:"Retrieved successfully",
-    description:exampleData[0].email,
-    duration: 4500}
+    titel:"Hentet succesfuld",
+    beskrivelse:eksempelData[0]. mail,
+    varighed: 4500}
 );
   }else{
-  //else, show a failed notification
-utils.showNotification(
+  //else, vis en mislykket meddelelse
+utils. howNotification(
   {
     type:"info",
-    title:"Failed to retrieve",
-    duration: 4500
+    title:"Mislykkedes at hente",
+    varighed: 4500
   }
 );
-  };
+};
 ```
 
-## Show notification
+### Vis notifikation
 
-### Structure
+#### Struktur
 
 ```JavaScript
 utils.showNotification(
 {
 type: "info",
-title: "Congratulations",
-description: "Retrieved successfully",
-duration: 4500
+titel: "Tillykke",
+beskrivelse: "Hentet med succes",
+varighed: 4500
 }
 )
 ```
 
-### Description
+#### Varebeskrivelse
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| Parameter   | Varebeskrivelse                                               | Datatype                                                                         | Eksempel                               |
+| ----------- | ------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
+| type        | Bruges til at indstille ikontypen i notifikationen.           | Streng, en af følgende værdier:"info"`default`"success""error""warning"          | type: "info"                           |
+| titel       | Bruges til at angive titlen på notifikationen                 | Streng                                                                           | titel: "Tillykke"                      |
+| beskrivelse | Bruges til at angive beskrivelsen                             | Streng                                                                           | beskrivelse: "Hentet succesfuldt"      |
+| varighed    | Bruges til at indstille visningsvarigheden af notifikationen. | Antal, I millisekunder (ms)                                                      | varighed: 4500                         |
 
-### Example
+#### Eksempel
 
-Show notification when clicking the button:
+Vis notifikation når du klikker på knappen:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-It is the same as the Show notification action, as the following screenshot shows:
+Det er det samme som Vis notifikations-handlingen, som følgende skærmbillede viser:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Control component
+### Kontroller komponent
 
-### Structure
+#### Struktur
 
 ```JavaScript
 componentDisplayName.function()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+componentDisplayName er den streng, der vises på skærmbilledet, som følger.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Description
+#### Varebeskrivelse
 
-#### setValue(parameter)
+##### setValue(parameter)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+Bruges til at indstille værdien. Parameteren kan være en 'streng' eller 'tal' eller 'objekt' eller 'boolean' eller 'array', som afhænger af komponenttypen.
 
-##### Supported components
+###### Understøttede komponenter
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| Komponent                                                                                                                                                        | Parameter type                                                     | Eksempel                                                                                                                                                                                     |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Redigerbar Tekst, Tekstområde, Divider, Vælg, Radio Group, Radio Button, Radio Knap, Dato, Dato, Tid, Skridt, Tekst, Bar Progress, Cirkel Fremskridt      | `streng`                                                           | `input1.setValue("Hej verden")`                                                                                                                                                              |
+| JSON Editor                                                                                                                                                      | `streng`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telefon": "1-800-KICKASS" }`)            |
+| Tidslinje                                                                                                                                                        | `streng`, Adskil værdierne af forskellige knuder via komma (,)     | `timeline1.setValue("Den første milepæl, Den anden milepæl")`                                                                                                                                |
+| Antal Input, Skyderen, Bedøm                                                                                                                                     | `nummer`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                                |
+| Skift                                                                                                                                                            | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                    |
+| JSON Skema Form, Form                                                                                                                                            | `objekt`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telefon": "1-800-KICKASS" })`        |
+| Afkrydsningsfelt Gruppe, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                      |
 
-#### clearValue()
+##### clearValue ()
 
-Used to clear the value
+Bruges til at rydde værdien
 
-##### Supported components
+###### Understøttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, JSON Editor, JSON Schema Form, Switch, Vælg, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Dato, Datointerval, Data Time, Datotid, Tekst, Sats, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### focus ()
 
-Used to focus on the component
+Bruges til at fokusere på komponenten
 
-##### Supported components
+###### Understøttede komponenter
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Input, Number Input, Redigerbar Tekst, Tekstområde, JSON Editor, Rich text editor, Radio Group,
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Når du har angivet valideringsbetingelser for en komponent, såsom e-mail format, URL format, eller obligatorisk felt, kan du bruge funktionen `validate()` til at afgøre, om den opfylder kravene. Hvis den ikke opfylder kravene, vil der blive vist en valideringsmeddelelse.
 
-Set the validation conditions:
+Indstil valideringsbetingelserne:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Display the validation message:
+Vis valideringsmeddelelsen:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Supported components
+###### Understøttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, Vælg, Multiselect, Checkbox Group, Radio Group, Radio Button, Dato, Tidspunkt, Tidspunkt, Form, Bedøm
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearValidering ()
 
-Used to clear the validation message.
+Bruges til at rydde valideringsbeskeden.
 
-##### Supported components
+###### Understøttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, Vælg, Multiselect, Afkrydsningsfelt Gruppe, Radioknap, Dato, Tidspunkt, Bedøm
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(array)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Bruges til at indstille den valgte værdi for Multiselect. Parameteren skal være et array.
 
-##### Supported components
+###### Understøttede komponenter
 
-Multiselect
+Multivalg
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 multiselect1.setSelectedValue(["Option 1", "Option 3"])
 ```
 
-#### submit()
+##### submit()
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Indsend formulardata. Når metoden for indsendelse udløses, vil vi først validere formulardata. Hvis der er valideringsfejl, vil formularindsendelsen blive forhindret, og de tilsvarende fejlmeddelelser vil blive vist. Indsendelsen fortsættes først efter en vellykket validering.
 
-##### Supported components
+###### Understøttede komponenter
 
-JSON Schema Form, Form
+JSON Skema Form, Form
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### skift ()
 
-Used to switch the value from true to false or from false to true.
+Bruges til at skifte værdi fra sand til falsk eller fra falsk til sandt.
 
-##### Supported components
+###### Understøttede komponenter
 
-Switch
+Skift
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-switch1.toggle()
+switch1. skift ()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+Bruges til at indstille standardstartværdien for intervalskyderen
 
-##### Supported components
+###### Understøttede komponenter
 
 Range Slider
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+##### setEndOfRange(tal)
 
-Used to set the default end value of the range slider
+Bruges til at indstille standard slutværdi for skyderen interval
 
-##### Supported components
+###### Understøttede komponenter
 
 Range Slider
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### setStartValue(streng)
 
-Used to set the default start value
+Bruges til at indstille standardstartværdien
 
-##### Supported components
+###### Understøttede komponenter
 
-Date Range, Time Range
+Datoområde, Tidsinterval
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndValue(streng)
 
-Used to set the default end value
+Bruges til at indstille standard slutværdi
 
-##### Supported components
+###### Understøttede komponenter
 
-Date Range, Time Range
+Datoområde, Tidsinterval
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(array)
 
-Used to set the switches whose value is true
+Bruges til at indstille kontakterne hvis værdi er sand
 
-##### Supported components
+###### Understøttede komponenter
 
-Switch Group
+Skift Gruppe
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 switchGroup1.setValueInArray(["Option 1", "Option 3"])
 ```
 
-#### selectPage(number)
+##### selectPage(nummer)
 
-Used to set the index of the page to display. The index is a number starting from ０.
+Bruges til at indstille indekset for siden der skal vises. Indekset er et tal, der starter fra 0.
 
-##### Supported components
+###### Understøttede komponenter
 
-Table
+Tabel
 
-##### Example
-
-```JavaScript
-table1.selectPage(1)
-```
-
-#### selectRow(number)
-
-Used to set the index of selected row. The index is a number starting from ０.
-
-##### Supported components
-
-Table
-
-##### Example
+###### Eksempel
 
 ```JavaScript
-table1.selectRow(1)
+tab1.selectPage(1)
 ```
 
-#### clearSelection()
+##### selectRow(tal)
 
-Used to clear the selected row.
+Bruges til at indstille indekset for den valgte række. Indekset er et tal, der starter fra 0.
 
-##### Supported components
+###### Understøttede komponenter
 
-Table
+Tabel
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-table1.clearSelection()
+tab1.selectRow(1)
 ```
 
-#### setFilters(array of objects, string)
+##### clearSelection()
 
-Used to set filters.
+Bruges til at rydde den markerede række.
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+###### Understøttede komponenter
 
-**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+Tabel
 
-**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
-
-**`value`** : used to set the value to  compare.
-
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
-
-##### Supported components
-
-Table
-
-##### Example
+###### Eksempel
 
 ```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
+tab1.clearSelection()
 ```
 
-#### clearFilters()
+##### setFiltere(matrix af objekter, streng)
 
-Used to clear all filters
+Bruges til at indstille filtre.
 
-##### Supported components
+**Den første parameter** er en række objekter. Hvert objekt repræsenterer en filtreringsbetingelse. Den omfatter tre attributter:
 
-Table
+**`id`** : Dette refererer til denne kolonnes id. Hvis denne kolonne er et resultat af en database forespørgsel, så vil id være kolonnenavnet du hentede fra forespørgslen. For eksempel, hvis forespørgslen er `SELECT e-mail AS user_email FROM brugere` og omdøbe `email` som `Email` ved hjælp af højre panel i tabellen, kolonnens id ville stadig være `user_email` Hvis denne kolonne tilføjes manuelt ved hjælp af knappen `Tilføj kolonne` i panelet til højre. du kan tjekke dens id i afsnittet `displayedData` i venstre panel. Typisk vil det være en tilfældigt genereret streng startende med `column` såsom `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-##### Example
+**`filterFn`** : matchtypen af filteret. Vi understøtter følgende typer: `equalTo` som er det samme som `=` i SQL, `notEqualTo` som er det samme som `<>` i SQL, `indeholder` som er det samme som `LIKE '%value%'` i SQL, `do NotContain` der er det samme som `IKKE LIKE '%value%'` i SQL, `lessThan` som er det samme som `<` i SQL, `notLessThan` som er det samme som `>=` i SQL, `notMoreThan` som er det samme som `<=` i SQL, `tom` som er det samme som `IS NULL` i SQL, `notEmpty` som er det samme som `ER IKKE NULL` i SQL, `før` bruges til at sammenligne tid eller dato, hvilket er det samme som `>` i SQL, `after` bruges til at sammenligne tid eller dato, hvilket er det samme som `<` i SQL.
+
+**`værdi`** : bruges til at sætte værdien til sammenligning.
+
+**Den anden parameter:** når der er flere filterbetingelsesobjekter, afgør det, om de har et "AND" forhold eller et "OR" forhold. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship. (Automatic Copy)
+
+###### Understøttede komponenter
+
+Tabel
+
+###### Eksempel
 
 ```JavaScript
-table1.clearFilters()
+table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"Maj"}, {"id":"month", "filterFn":"equalTo", "value":"Juni"}], "eller")
 ```
 
-#### setSort(string, string)
+##### clearFilters()
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+Bruges til at rydde alle filtre
 
-##### Supported components
+###### Understøttede komponenter
 
-Table
+Tabel
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-table1.setSort("incomes", "descend")
+Tabel 1.clearFiltre ()
 ```
 
-#### setCurrentViewKey(string)
+##### setSort(string, string)
 
-Use the key which is a string value of the view to set the shown view.
+Bruges til at indstille sorten. **Den første parameter** er id for kolonnen til sortering, som er en strengværdi. Id er det samme som den id, der er nævnt i setFilters(vifte af objekter, streng). **Den anden parameter** er sorteringsrækkefølgen, enten stigende eller aftagende. Det er indstillet ved hjælp af en strengværdi `ascend` eller `descend`.
 
-##### Supported components
+###### Understøttede komponenter
+
+Tabel
+
+###### Eksempel
+
+```JavaScript
+table1.setSort("indtægter", "descend")
+```
+
+##### setCurrentViewKey( streng)
+
+Brug tasten som er en strengværdi i visningen til at indstille den viste visning.
+
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-container1.setCurrentViewKey("View 2")
+container1. setCurrentViewKey("View 2")
 ```
 
-#### setCurrentViewIndex(number)
+##### setCurrentViewIndex(tal)
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Brug indekset som er en talværdi startende fra 0 i visningen for at indstille den viste visning.
 
-##### Supported components
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView( boolean)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Bruges til at vise den næste visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
 
-##### Supported components
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 container1.showNextView(true)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextVisibleView( boolean)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Bruges til at vise den næste synlige visning. I modsætning til opførslen af funktionen `showNextView(boolean)` tilbyder denne funktion forbedret visning skifter funktionalitet ved at springe over skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
 
-##### Supported components
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView()
+##### showPreviousView()
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Bruges til at vise den forrige visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
 
-##### Supported components
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 container1.showPreviousView(true)
 ```
 
-#### showPreviousVisibleView()
+##### showPreviousVisibleView()
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Bruges til at vise den forrige synlige visning. I modsætning til opførslen af funktionen `showPreviousView(boolean)` tilbyder denne funktion forbedret visning skifte funktionalitet ved at springe over skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
 
-##### Supported components
+###### Understøttede komponenter
 
 Container
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-container1.showPreviousVisibleView(true)
+container1.showForrigeSynligtVis( sand)
 ```
 
-#### reset()
+##### reset()
 
-Used to reset the value to default value.
+Bruges til at nulstille værdien til standardværdien.
 
-##### Supported components
+###### Understøttede komponenter
 
-Form
+Formular
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue ()
 
-Used to reset the value to default value.
+Bruges til at nulstille værdien til standardværdien.
 
-##### Supported components
+###### Understøttede komponenter
 
-Steps
+Trin
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-steps1.resetValue()
+steps1.resetValue ()
 ```
 
-#### openModal()
+##### openModal()
 
-Used to open a modal
+Bruges til at åbne en modal
 
-##### Supported components
+###### Understøttede komponenter
 
 Modal
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal ()
 
-Used to close a modal
+Bruges til at lukke en modal
 
-##### Supported components
+###### Understøttede komponenter
 
 Modal
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-modal1.closeModal()
+modal1.closeModal ()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl( streng)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Bruges til at angive billedkildens URL. Det kan være en Base64 eller en URL peger på et billede på nettet.
 
-##### Supported components
+###### Understøttede komponenter
 
-Image
+Billede
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
 ```
 
 ```JavaScript
-image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
+image1.setImageUrl ("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage ()
 
-Used to clear the quoted reply message above the input box.
+Bruges til at rydde den citerede svarbesked over indtastningsfeltet.
 
-##### Supported components
+###### Understøttede komponenter
 
 Chat
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-chat1.clearReplyMessage()
+chat1. clearReplyMessage ()
 ```
 
-#### setPrimaryValue(number)
+##### setPrimaryValue(tal)
 
-Used to set the primary value of statistics.
+Bruges til at indstille den primære værdi af statistik.
 
-##### Supported components
+###### Understøttede komponenter
 
-Statistics
+Statistik
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-statistic1.setPrimaryValue(100)
+statistik1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue ()
 
-Used to reset the primary value to the default primary value of statistics.
+Bruges til at nulstille den primære værdi til den primære standardværdi af statistik.
 
-##### Supported components
+###### Understøttede komponenter
 
-Statistics
+Statistik
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-statistic1.resetPrimaryValue()
+statistik1.resetPrimaryValue ()
 ```
 
-#### setFileUrl(string)
+##### setFileUrl( streng)
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Bruges til at angive filens URL. Det kan være en Base64 eller en URL, der peger på en PDF på nettet.
 
-##### Supported components
+###### Understøttede komponenter
 
 PDF
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+pdf1.setFileUrl ("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### afspil ()
 
-Used to play video or audio.
+Bruges til at afspille video eller lyd.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-video1.play()
+video1.afspil ()
 ```
 
-#### pause()
+##### pause()
 
-Used to pause video or audio.
+Bruges til at pause video eller lyd.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 video1.pause()
 ```
 
-#### showControls(boolean)
+##### showControls(boolean)
 
-Used to set whether to show the controls.
+Bruges til at indstille om kontrolelementerne skal vises.
 
-##### Supported components
-
-Video
-
-##### Example
-
-```JavaScript
-video1.showControls(true)
-```
-
-#### setVideoUrl(string)
-
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
-
-##### Supported components
+###### Understøttede komponenter
 
 Video
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+video1.showControls(sand)
 ```
 
-#### setVolume(number)
+##### setVideoUrl (streng)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Bruges til at angive videoens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video
 
-##### Example
+###### Eksempel
 
-`video1.setVolume(0.5)`
+```JavaScript
+video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
+```
 
-#### setSpeed(number)
+##### setVolume(tal)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+Bruges til at indstille volumen. Parameteren er en talværdi mellem 0 og 1.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
+###### Eksempel
+
+`video1.setVolumen(0.5)`
+
+##### setSpeed(tal)
+
+Bruges til at indstille hastigheden. Parameteren er en talværdi mellem 0,25 og 2.
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+###### Eksempel
 
 ```JavaScript
 video1.setSpeed(0.5)
 ```
 
-#### setLoop(boolean)
+##### setLoop( boolean)
 
-Used to set whether to loop the playback.
+Bruges til at indstille om afspilningen skal sløjfes.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(number)
+##### seekTo(nummer)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+Bruges til at søge til en bestemt tid position. Parameteren er en talværdi, målt i sekunder (s). For eksempel, at søge til den tid position 5:35, ville du bruge værdien 335.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 video1.seekTo(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
-Used to set mute or not.
+Bruges til at indstille mute eller ej.
 
-##### Supported components
+###### Understøttede komponenter
 
-Video, Audio
+Video, Lyd
 
-##### Example
-
-```JavaScript
-video1.mute(true)
-```
-
-#### setAudioUrl(string)
-
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
-
-##### Supported components
-
-Audio
-
-##### Example
+###### Eksempel
 
 ```JavaScript
-video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+video1.mute(sand)
 ```
 
-#### slickNext()
+##### setAudioUrl( streng)
 
-Used to switch to the next image.
+Bruges til at angive lydens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
 
-##### Supported components
+###### Understøttede komponenter
+
+Lyd
+
+###### Eksempel
+
+```JavaScript
+video1.setAudioUrl ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+```
+
+##### slickNext()
+
+Bruges til at skifte til næste billede.
+
+###### Understøttede komponenter
 
 Carousel
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
-Used to switch to the previous image.
+Bruges til at skifte til forrige billede.
 
-##### Supported components
+###### Understøttede komponenter
 
 Carousel
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 carousel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
-Used to set the source URL of IFrame.
+Bruges til at angive kilde-URLen til IFrame.
 
-##### Supported components
+###### Understøttede komponenter
 
 IFrame
 
-##### Example
+###### Eksempel
 
 ```JavaScript
-iframe1.setSrc("https://www.nasa.gov/")
+iframe1.setSrc ("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkers(array)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+Bruges til at sætte markørerne på kortet. Parameteren skal være en række objekter. Felterne bredde- og længdegrad i hvert objekt skal være de samme som de felter, der er angivet i højre panel
 
-##### Supported components
+###### Understøttede komponenter
 
-Map
+Kort
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 map1.setMarkers([
@@ -859,26 +863,26 @@ map1.setMarkers([
      "lat":57.841288754888545,
      "lng":-103.3518657894011
  }
- ])
+])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
-Used to reset the markers to the default markers.
+Bruges til at nulstille markørerne til standardmarkørerne.
 
-##### Supported components
+###### Understøttede komponenter
 
-Map
+Kort
 
-##### Example
+###### Eksempel
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+### Gå til URL
 
-### Structure
+#### Struktur
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Description
+#### Varebeskrivelse
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+Brug et objekt til at sætte det. Der er 2 attributter i objektet. Den første attribut er 'url'. Dens værdi er en komplet URL, herunder 'https://' eller 'http://', og den er af typen streng. Den anden attribut er 'newTab'. Det er en boolsk bruges til at angive, om at åbne URL'en i en ny fane.
 
-### Example
+#### Eksempel
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Copy to clipboard
+### Kopiér til udklipsholder
 
-### Structure
-
-```JavaScript
-utils.copyToClipboard(string)
-```
-
-### Description
-
-Used to copy a string
-
-### Example
+#### Struktur
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+utils.copyToClipboard (streng)
 ```
 
-## Set router
+#### Varebeskrivelse
 
-### Structure
+Bruges til at kopiere en streng
+
+#### Eksempel
+
+```JavaScript
+utils.copyToClipboard ("Teksten til kopiering")
+```
+
+### Indstil router
+
+#### Struktur
 
 ```JavaScript
 utils.setRouter({
@@ -929,30 +933,30 @@ viewPath:string
 })
 ```
 
-### Description
+#### Varebeskrivelse
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+Bruges til at ændre siden i ILLA Apps. Der er 2 attributter i objektet.
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+Den første attribut er `pagePath`. Værdien af pagePath vises på følgende skærmbillede uden `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+Den anden attribut er 'viewPath'. Værdien af viewPath vises på følgende skærmbillede uden `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Example
+#### Eksempel
 
 ```JavaScript
 utils.setRouter({
 pagePath:"page2", 
-viewPath:"sub-page1"
+viewPath:"underside1"
 })
 ```
 
-## Save to ILLA Drive
+### Gem til ILLA drev
 
-### Structure
+#### Struktur
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,53 +969,53 @@ replace:boolean
 })
 ```
 
-### Description
+#### Varebeskrivelse
 
-Used to save a file to ILLA Drive.
+Bruges til at gemme en fil til ILLA drev.
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: Navn med filendelse efter upload til ILLA Drive.
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`: Base64 eller rå fildata, såsom JSON, CSV, almindelig tekst osv.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: En af følgende værdier: Auto, Almindelig tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+`mappe`: Destinationsmappe til fil upload. Lad det være tomt at uploade til rodmappen.
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnonym`: Bruges til at angive, om anonym brugeradgang er tilladt. Hvis du planlægger at indstille din ansøgning som offentlig, skal anonym adgang være aktiveret. For at sikre dine data, filer eller mapper, der er tilgængelige anonymt, skal de placeres i den anonyme mappe.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+`erstat`: Bruges til at angive, når der er filer med samme navn i samme mappe, erstatte den eksisterende fil med ny fil eller automatisk omdøbe den nye fil.
 
-### Example
+#### Eksempel
 
 ```JavaScript
-//use upload1 to pick files from device and upload to apps folder. 
+//brug upload1 til at vælge filer fra enheden og uploade til app-mappen. 
 utils.saveToILLADrive({
 fileName:upload1.files[0].name,
-fileData:upload1.files[0].dataURI,
+fileData:upload1. iles[0].dataURI,
 fileType:"PNG",
 folder:"apps",
-allowAnonymous:false,
+allowAnonym:false,
 replace:true
 })
 ```
 
 ```JavaScript
-//upload a text file.  
+//upload en tekstfil.  
 utils.saveToILLADrive({
 fileName:"test.txt",
 fileData:"abc",
 fileType:"Plain text",
 folder:"apps",
-allowAnonymous:false,
+allowAnonym:false,
 replace:true
 })
 ```
 
-## Download from ILLA Drive
+### Download fra ILLA drev
 
-### Structure
+#### Struktur
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,15 +1027,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Description
+#### Varebeskrivelse
 
-Used to download files from ILLA Drive.
+Bruges til at downloade filer fra ILLA drev.
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: en række objekter, herunder tinyURL og fileID. Du kan bruge komponenten Drive fil vælger til at vælge filer fra ILLA Drive og få `downloadInfo` via drivePicker1.value
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`: bruges til at angive, om filerne skal downloades som en zip.
 
-### Example
+#### Eksempel
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+### Hent
 
-### Structure
+#### Struktur
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,20 +1056,20 @@ utils.downloadFile({
 })
 ```
 
-### Description
+#### Varebeskrivelse
 
-Used to export data to your device.
+Bruges til at eksportere data til din enhed.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: En af følgende værdier: Auto, Almindelig tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
 
-`fileName`: a name with extension.
+`fileName`: et navn med udvidelse.
 
-`data`: data of the file.
+`data`: data for filen.
 
-### Example
+#### Eksempel
 
 ```JavaScript
-//download the data of table as a CSV
+//download data i tabellen som en CSV
 utils.downloadFile({
     fileType:"CSV",
     fileName:"text.csv",
@@ -1074,7 +1078,7 @@ utils.downloadFile({
 ```
 
 ```JavaScript
-//download image
+//download billede
 utils.downloadFile({
     fileType:"PNG",
     fileName:"text.png",
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Set global data
+### Sæt globale data
 
-### Set global data value
+#### Sæt global dataværdi
 
-#### Structure
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,29 +1099,29 @@ value:any
 })
 ```
 
-#### Description
+##### Varebeskrivelse
 
-Used to set the value of gobalData
+Bruges til at indstille værdien af gobalData
 
-`key`: the displayName of globalData as the following screenshot shows.
+`key`: displayName of globalData som det følgende skærmbillede viser.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: the value to set
+`værdi`: den værdi, der skal angives
 
-#### Example
+##### Eksempel
 
 ```JavaScript
-//use input5 to get the user input value and set as the value of stringState. 
+//brug input5 for at få brugerinputværdien og sat som værdien af strengstate. 
 utils.setGlobalDataValue({
-key:"stringState", 
-value:input5.value
+nøgle:"stringState", 
+værdi:input5.value
 })
 ```
 
-### Set global data in
+#### Sæt globale data i
 
-#### Structure
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,40 +1131,40 @@ value:any
 })
 ```
 
-#### Description
+##### Varebeskrivelse
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Når de globale data er et array eller objekt, brug setGlobalDataIn for at ændre værdien svarende til et bestemt indeks i et array eller for at ændre værdien svarende til en bestemt nøgle i et objekt.
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`sti`: indekset for den værdi, du har til hensigt at opdatere i arrayet eller nøglen i objektet. For eksempel, for at indstille den anden værdi i array, stien er 1 (indekset). For at indstille værdien af attributten ved navn key1, stien er key1.
 
-`value`: the value to set
+`værdi`: den værdi, der skal angives
 
-#### Example
+##### Eksempel
 
 ```JavaScript
-//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+//objectState er et objekt: {"key1":"value1", "key2":"value2"}, for at indstille 
 utils.setGlobalDataIn({
-key:"objectState", 
-path:"key2", 
-value:input7.value
+nøgle:"objectState", 
+sti:"key2", 
+værdi:input7.value
 })
 ```
 
-# Built-in libraries
+## Indbyggede biblioteker
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
+| **Bibliotek**     | **Dok**                                                               | **Sådan bruges det i ILLA Builder** | **Eksempel**                                                  |
+| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------- |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                             |
+| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(ny dato())`                                            |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                                |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`              |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // resten af config ... })` |
 
-# Value of actions, components...
+## Værdi af handlinger, komponenter...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
+Brug `displayName.xxx` til at bruge værdien af handlinger, komponenter eller andre globalData. Bemærk venligst, at i Kør scriptet kan disse variabler tilgås direkte uden at bruge `{{` referencer.
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1169,7 +1173,7 @@ utils.downloadFromILLADrive({
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//✅
+    downloadInfo:drivePicker1.value,//:check_mark_button:
     asZip:true
 })
 ```

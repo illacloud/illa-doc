@@ -3,7 +3,11 @@ title: Kör skript
 description: Genom att utlösa Run Script genom en händelsehanterare, kan du uppnå sekventiell körning av operationer och utföra olika åtgärder baserat på olika villkor.
 ---
 
-# Instruktioner
+# Kör skript
+
+Genom att utlösa Run Script genom en händelsehanterare, kan du uppnå sekventiell körning av operationer och utföra olika åtgärder baserat på olika villkor.
+
+## Instruktioner
 
 <div style={{
     position: "relative",
@@ -11,35 +15,35 @@ description: Genom att utlösa Run Script genom en händelsehanterare, kan du up
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Demo
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Kör och gaffel
+#### Kör och gaffel
 
 https://illa.ai/app/ILAfx4p1C7Ac/detalj
 
-## Använd fall: Logga in och omdirigera till olika sidor
+### Använd fall: Logga in och omdirigera till olika sidor
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Kör och gaffel
+#### Kör och gaffel
 
 https://illa.ai/app/ILAex4p1C7Eh/detalj
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Åtgärd för utlösare
+### Åtgärd för utlösare
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 const exempelData = inväntar åtgärdName.trigger();
@@ -47,21 +51,21 @@ const exempelData = inväntar åtgärdName.trigger();
 
 Åtgärdsnamnet är strängen som visas i skärmbilden, enligt följande.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Beskrivning
+#### Beskrivning
 
 I Run Script, är variabeln `exempelData` samma som `actionName.data`.
 
-### Exempel
+#### Exempel
 
 Till exempel använder vi åtgärden `postgresql1` för att fråga James' e-post.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVfVG9rZW46VU0yWI4RHhWbzQ2SWV4RkhBcXVcGNZc1NXzE2OTgzMDQ1MTI6MTY5ODMYODExl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
 Utlösa åtgärden via Run Script
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGdyb2FZOGh4R3BUQ3VjNk3c21jXzE2OTgzMDQ1MTI6YMTY5ODMWODMWOMNAM9WNAL9GGGGGGGG2FZOGG2FZOG3BUQ
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
 `postgresql1.data` är
 
@@ -78,13 +82,13 @@ Utlösa åtgärden via Run Script
 
 När vi måste använda JavaScript för att hämta ett e-postmeddelande i komponentens Inspektion eller någon annanstans kan vi använda följande: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExM9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
 Och när vi behöver använda e-postmeddelandet i "Kör skript" efter att ha utfört uttalandet `const exempelData = vänta postgresql1. rigger();`, vi kan direkt använda `exempelData[0].email`.
 
 Visa en lyckad anmälan när frågan är framgångsrik och resultatet är unikt. Visa ett felmeddelande när frågeresultatet inte är unikt eller när det misslyckas.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?kod=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMYDExMWNAM9NA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
@@ -109,9 +113,9 @@ utils. howNotification(
 };
 ```
 
-## Visa avisering
+### Visa avisering
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.showNotification(
@@ -124,7 +128,7 @@ varaktighet: 4500
 )
 ```
 
-### Beskrivning
+#### Beskrivning
 
 | Parameter      | Beskrivning                                                       | Datatyp                                                                          | Exempel                                  |
 | -------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------- |
@@ -133,19 +137,19 @@ varaktighet: 4500
 | beskrivning    | Används för att ställa in beskrivningen                           | Sträng                                                                           | beskrivning: "Hämtas framgångsrikt"      |
 | varaktighet    | Används för att ställa in varaktigheten för aviseringen.          | Nummer, I millisekunder (ms)                                                     | varaktighet: 4500                        |
 
-### Exempel
+#### Exempel
 
 Visa avisering när du klickar på knappen:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMYODExMWNAM9NAM9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
 Det är samma som Visa avisering, som följande skärmdump visar:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Kontrollera komponent
+### Kontrollera komponent
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 componentDisplayName.function()
@@ -153,15 +157,15 @@ componentDisplayName.function()
 
 componentDisplayName är strängen som visas i skärmdumpen, enligt följande.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjhhMThjZGZjNzExYmOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExM9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Beskrivning
+#### Beskrivning
 
-#### setValue(parameter)
+##### setValue(parameter)
 
 Används för att ange värde. Parametern kan vara en `string` eller `number` eller `object` eller `boolean` eller `array` som beror på komponenttypen.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 | Komponent                                                                                                                                                       | Typ av parameter                                                     | Exempel                                                                                                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,225 +177,225 @@ Används för att ange värde. Parametern kan vara en `string` eller `number` el
 | JSON Schema formulär, formulär                                                                                                                                  | `objekt`                                                             | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse sparkar sedan 1940", "lösenord": "noneed", "telefon": "1-800-KICKASS" })`             |
 | Kryssruta, Cascader                                                                                                                                             | `array`                                                              | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
-#### clearValue()
+##### clearValue()
 
 Används för att rensa värdet
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Input, Nummer Input, Redigerbar Text, Text Area, Ladda upp, JSON Editor, JSON Schema Form, Switch, Välja, Multiselect, Kryssningsgrupp Cascader, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Datumtid, Text, Grad, Bar Progress, Cirkel Progress, Tidslinjen, Divider
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### focus()
 
 Används för att fokusera på komponenten
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Inmatning, Nummerinmatning, Redigerbar text, textområde, JSON Editor, Rich text editor, Radio Group,
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
 När du har ställt in valideringsvillkor för en komponent, till exempel e-postformat, URL-format, eller obligatoriskt fält kan du använda funktionen `validate()` för att avgöra om den uppfyller kraven. Om det inte uppfyller kraven kommer ett valideringsmeddelande att visas.
 
 Ställ in valideringsvillkor:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
 Visa valideringsmeddelande:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Form, Betygsätt
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 input1.validate()
 ```
 
-#### rensning ()
+##### rensning ()
 
 Används för att rensa valideringsmeddelandet.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Knappon, Datum, Datumintervall, Datumtid, Betygsätt
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(array)
 
 Används för att ställa in valt värde för Multiselect. Parametern bör vara en samling.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Multival
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 multiselect1.setSelectedValue(["Alternativ 1", "Alternativ 3"])
 ```
 
-#### skicka ()
+##### skicka ()
 
 Skicka formulärdata. När inlämningsmetoden utlöses kommer vi först att validera formulärdata. Om det finns valideringsfel kommer formulärinlämningen att förhindras och motsvarande felmeddelanden kommer att visas. Först efter lyckad validering fortsätter inlämningen.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 JSON Schema formulär, formulär
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
 Används för att byta värde från sant till falskt eller från falskt till sant.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Växla
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 switch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
 Används för att ställa in standardstartvärdet för intervallreglage
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Range Slider
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(nummer)
+##### setEndOfRange(nummer)
 
 Används för att ställa in standardvärdet för intervallreglage
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Range Slider
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(sträng)
+##### setStartValue(sträng)
 
 Används för att ställa in standardstartvärdet
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Datumintervall, tidsintervall
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(sträng)
+##### setEndValue(sträng)
 
 Används för att ställa in standard slutvärde
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Datumintervall, tidsintervall
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(array)
 
 Används för att ställa in växlar vars värde är sant
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Byt grupp
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 switchGroup1.setValueInArray(["Alternativ 1", "Alternativ 3"])
 ```
 
-#### selectPage(nummer)
+##### selectPage(nummer)
 
 Används för att ställa in indexet för sidan som ska visas. Indexet är ett tal från och med 0.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 tabell1.selectPage(1)
 ```
 
-#### selectRow(nummer)
+##### selectRow(nummer)
 
 Används för att ange index för vald rad. Indexet är ett tal från och med 0.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 tabell1.selectRow(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
 Används för att rensa den markerade raden.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 tabell1.clearSelection()
 ```
 
-#### setFilters(array av objekt, sträng)
+##### setFilters(array av objekt, sträng)
 
 Används för att ställa in filter.
 
@@ -405,193 +409,193 @@ Används för att ställa in filter.
 
 **Den andra parametern:** när det finns flera filtervillkorsobjekt, avgör det om de har ett "AND" förhållande eller ett "OR" förhållande. Ange det som en sträng `and` för en "AND" relation, och `or` för en "OR" relation.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "eller")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
 Används för att rensa alla filter
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 tabell1.clearFilters()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
 Används för att ställa in sorteringen. **Den första parametern** är symbolen för kolumnen för att sortera vilket är ett strängvärde. Id är samma som id som nämns i setFilters(samling av objekt, sträng). **Den andra parametern** är sorteringsordningen, antingen stigande eller sjunkande. Den är inställd med ett strängvärde `ascend` eller `descend`.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Tabell
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 tabell1.setSort("inkomster", "nedåt")
 ```
 
-#### setCurrentViewKey(sträng)
+##### setCurrentViewKey(sträng)
 
 Använd nyckeln som är ett strängvärde för vyn för att ställa in den visade vyn.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.setCurrentViewKey("Visa 2")
 ```
 
-#### setCurrentViewIndex(nummer)
+##### setCurrentViewIndex(nummer)
 
 Använd indexet som är ett talvärde med start från 0 av vyn för att ställa in den visade vyn.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView(boolean)
 
 Används för att visa nästa vy. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.showNextView(true)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextVisibleView(boolean)
 
 Används för att visa nästa synliga vy. Till skillnad från beteendet hos funktionen `showNextView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView()
+##### showPreviousView()
 
 Används för att visa föregående vy. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.showFöregåendeView(sant)
 ```
 
-#### showPreviousVisibleView()
+##### showPreviousVisibleView()
 
 Används för att visa föregående synlig vy. Till skillnad från beteendet hos funktionen `showPreviousView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Behållare
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 container1.showFöregåendeVisibleView(true)
 ```
 
-#### reset()
+##### reset()
 
 Används för att återställa värdet till standardvärde.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Formulär
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 form1.reset()
 ```
 
-#### återställeValue()
+##### återställeValue()
 
 Används för att återställa värdet till standardvärde.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Steg
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 steg1.återställeValue()
 ```
 
-#### openModal()
+##### openModal()
 
 Används för att öppna en modal
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Modal
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
 Används för att stänga en modal
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Modal
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(sträng)
+##### setImageUrl(sträng)
 
 Används för att ange bildkäll-URL. Det kan vara en Base64 eller en URL som pekar på en bild på webben.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Bild
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,251 +605,251 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
 Används för att rensa det citerade svarsmeddelandet ovanför inmatningsrutan.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Chatt
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(nummer)
+##### setPrimaryValue(nummer)
 
 Används för att ange det primära värdet på statistiken.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Statistik
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 statistik1.setPrimärvärde(100)
 ```
 
-#### återställePrimaryValue()
+##### återställePrimaryValue()
 
 Används för att återställa det primära värdet till standardvärdet för statistiken.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Statistik
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 statistik1.återställePrimaryValue()
 ```
 
-#### setFileUrl(sträng)
+##### setFileUrl(sträng)
 
 Används för att ange filens URL. Det kan vara en Base64 eller en URL som pekar på en PDF på webben.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 PDF
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### play()
 
 Används för att spela upp video eller ljud.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.play()
 ```
 
-#### pause()
+##### pause()
 
 Används för att pausa video eller ljud.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.pause()
 ```
 
-#### showControls(booleskt)
+##### showControls(booleskt)
 
 Används för att ställa in om du vill visa kontrollerna.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.showControls(sant)
 ```
 
-#### setVideoUrl(sträng)
+##### setVideoUrl(sträng)
 
 Används för att ställa in videons URL. Det kan vara en Base64 eller en video URL på media webbplatser.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolume(nummer)
+##### setVolume(nummer)
 
 Används för att ställa in volymen. Parametern är ett talvärde mellan 0 och 1.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(nummer)
+##### setSpeed(nummer)
 
 Används för att ställa in hastigheten. Parametern är ett talvärde mellan 0,25 och 2.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.setHastighet(0.5)
 ```
 
-#### setLoop(booleskt)
+##### setLoop(booleskt)
 
 Används för att ställa in om uppspelningen ska loopas.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### sökning(nummer)
+##### sökning(nummer)
 
 Används för att söka till en specifik tidsposition. Parametern är ett talvärde, mätt i sekunder (s). Till exempel, att söka till tidsposition 5:35, skulle du använda värdet 335.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.seekTo(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
 Används för att ställa in tystning eller inte.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Video, Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.tyst(sant)
 ```
 
-#### setAudioUrl(sträng)
+##### setAudioUrl(sträng)
 
 Används för att ställa in audios URL. Det kan vara en Base64 eller en video URL på media webbplatser.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Ljud
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 video1.setAudioUrl ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
 Används för att byta till nästa bild.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Carousel
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
 Används för att byta till föregående bild.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Carousel
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 karusell1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
 Används för att ange käll-URL för IFrame.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 IFrame
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 iframe1.setSrc("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkers(array)
 
 Används för att ställa in markörerna på kartan. Parametern bör vara en rad objekt. Fälten latitud och longitud i varje objekt ska vara samma som fälten i högerpanelen
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Karta
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 map1.setMarkers([
@@ -862,23 +866,23 @@ map1.setMarkers([
 ])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
 Används för att återställa markörerna till standardmarkörerna.
 
-##### Komponenter som stöds
+###### Komponenter som stöds
 
 Karta
 
-##### Exempel
+###### Exempel
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Gå till URL
+### Gå till URL
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Använd ett objekt för att ställa in det. Det finns 2 attribut i objektet. Det första attributet är `url`. Dess värde är en komplett URL, inklusive 'https://' eller 'http://', och det är av typen sträng. Det andra attributet är `newTab`. Det är ett booleskt som används för att ställa in om webbadressen ska öppnas i en ny flik.
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Kopiera till urklipp
+### Kopiera till urklipp
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.copytoUrklipp (sträng)
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Används för att kopiera en sträng
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 utils.copyToUrklipp ("texten att kopiera")
 ```
 
-## Ange router
+### Ange router
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Används för att ändra sidan i ILLA Apps. Det finns 2 attribut i objektet.
 
 Det första attributet är `pagePath`. Värdet på sidsökvägen visas på följande skärmdump utan `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExM9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
 Det andra attributet är `viewPath`. Värdet på vysökvägen visas på följande skärmdump utan `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?kod=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2Nm4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMYOWOWNAM9NA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPath:"sub-page1"
 })
 ```
 
-## Spara till ILLA Drive
+### Spara till ILLA Drive
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,7 +969,7 @@ ersätte:boolean
 })
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Används för att spara en fil till ILLA Drive.
 
@@ -979,11 +983,11 @@ Används för att spara en fil till ILLA Drive.
 
 `allowAnonymous`: Används för att ange om anonym användaråtkomst är tillåten. Om du planerar att ställa in din ansökan som offentlig måste anonym åtkomst vara aktiverad. För att dina data ska vara säkra måste filer eller mappar som är tillgängliga anonymt placeras i den anonyma mappen.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMYODExMWNAM9NA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
 `ersätta`: Används för att ange när det finns filer med samma namn i samma katalog, ersätt den befintliga filen med ny fil eller byt automatiskt namn på den nya filen.
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 //use upload1 to pick files from device and upload to apps folder. 
@@ -1009,9 +1013,9 @@ ersätt:true
 })
 ```
 
-## Ladda ner från ILLA Drive
+### Ladda ner från ILLA Drive
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,7 +1027,7 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Används för att ladda ner filer från ILLA Drive.
 
@@ -1031,7 +1035,7 @@ Används för att ladda ner filer från ILLA Drive.
 
 `asZip`: används för att ställa in om du vill ladda ner filerna som en Zip.
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Hämta
+### Hämta
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,7 +1056,7 @@ utils.downloadFile({
 })
 ```
 
-### Beskrivning
+#### Beskrivning
 
 Används för att exportera data till din enhet.
 
@@ -1062,7 +1066,7 @@ Används för att exportera data till din enhet.
 
 `data`: data för filen.
 
-### Exempel
+#### Exempel
 
 ```JavaScript
 //download the data of table as a CSV
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Ange global data
+### Ange global data
 
-### Ange globalt datavärde
+#### Ange globalt datavärde
 
-#### Struktur
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,17 +1099,17 @@ value:any
 })
 ```
 
-#### Beskrivning
+##### Beskrivning
 
 Används för att ställa in värdet på gobalData
 
 `key`: Visningsnamnet för globalData som följande skärmdump visar.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?kod=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMODExl9NA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
 `value`: värdet som ska anges
 
-#### Exempel
+##### Exempel
 
 ```JavaScript
 //use input5 to get the user input value and set as the value of stringState. 
@@ -1115,9 +1119,9 @@ value:input5.value
 })
 ```
 
-### Ange global data i
+#### Ange global data i
 
-#### Struktur
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,7 +1131,7 @@ value:any
 })
 ```
 
-#### Beskrivning
+##### Beskrivning
 
 När den globala datan är en array eller objekt, använd setGlobalDataIn för att ändra värdet som motsvarar ett specifikt index i en array eller för att ändra värdet som motsvarar en specifik nyckel i ett objekt.
 
@@ -1137,7 +1141,7 @@ När den globala datan är en array eller objekt, använd setGlobalDataIn för a
 
 `value`: värdet som ska anges
 
-#### Exempel
+##### Exempel
 
 ```JavaScript
 //objectState är ett objekt: {"key1":"value1", "key2":"value2"}, att sätta 
@@ -1148,7 +1152,7 @@ värde:input7.value
 })
 ```
 
-# Inbyggda bibliotek
+## Inbyggda bibliotek
 
 | **Bibliotek**     | **Doc**                                                               | **Hur man använder det i ILLA Builder** | **Exempel**                                                            |
 | ----------------- | --------------------------------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
@@ -1158,7 +1162,7 @@ värde:input7.value
 | numbro            | https://numbrojs.com/                                                 | `numbro`                                | `numbro(1000).format({thousandSeparated: true})`                       |
 | Papa              | https://www.papaparse.com/docs                                        | `Papa`                                  | `Papa.parse(url, {download: sant, // resten av konfigurationen ... })` |
 
-# Värdet av handlingar, komponenter...
+## Värdet av handlingar, komponenter...
 
 Använd `displayName.xxx` för att använda värdet på åtgärder, komponenter eller andra globalData. Observera att i Kör skriptet kan dessa variabler nås direkt utan att använda `{{` referenser.
 

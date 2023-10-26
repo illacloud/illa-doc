@@ -1,9 +1,13 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: Запуск сценарію
+description: Натискаючи сценарій запуску через обробник подій, ви можете досягти послідовного виконання операцій і виконувати різні дії на основі різних станів.
 ---
 
-# How-to
+# Запуск сценарію
+
+Натискаючи сценарій запуску через обробник подій, ви можете досягти послідовного виконання операцій і виконувати різні дії на основі різних станів.
+
+## Інструкції
 
 <div style={{
     position: "relative",
@@ -11,59 +15,59 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Демо
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Біг і форк
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Use case: Login and redirect to different pages
+### Використовувати кейс: логін і перенаправлення на різні сторінки
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Біг і форк
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Trigger action
+### Дія при переході
 
-### Structure
+#### Структура
 
 ```JavaScript
 const exampleData = await actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+Дія - це рядок, що відображається на скріншоті, як наслідок.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Description
+#### Опис
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+У файлі Run Script, змінна `exampleData` така сама як `actionName.data`.
 
-### Example
+#### Приклад
 
-For example, we use the action `postgresql1` to query James' email.
+Наприклад, ми використовуємо дію `postgresql1` для листа Джеймсів.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Trigger the action via Run Script
+Запустити дію за допомогою Запустити скрипт
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` is
+`postgresql1.data` є
 
 ```JSON
 [
@@ -76,42 +80,42 @@ Trigger the action via Run Script
 ]
 ```
 
-When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+Коли нам потрібно використовувати JavaScript для отримання електронної пошти в відділенні компонента або деінде, ми можемо використовувати наступне: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+І коли нам потрібно використовувати повідомлення у "Run Script" після виконання команди `const exampleData = await postgresql1. rigger();`, ми можемо напряму використовувати `exampleData[0].email`.
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+Показувати повідомлення про успіх, коли запит успішний, а результат є унікальним. Показувати повідомлення про помилку, якщо результат запиту не є унікальним або якщо він не працює.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
-//show email via notification when the length of the resulting array is 1.
+//показати повідомлення по повідомленню, коли довжина цього масиву дорівнює 1.
 if(exampleData.length==1){
-utils.showNotification(
+utils. howNotification(
   {
     type:"info",
-    title:"Retrieved successfully",
-    description:exampleData[0].email,
-    duration: 4500}
+    title:"Успішно отримано",
+    опис:exampleData[0]. mail,
+    тривалість: 4500}
 );
   }else{
-  //else, show a failed notification
-utils.showNotification(
+  /else, показати невдалі повідомлення
+завантаження. howNotification(
   {
-    type:"info",
-    title:"Failed to retrieve",
-    duration: 4500
+    тип:"info",
+    title:"Не вдалося отримати",
+    тривалість: 4500
   }
 );
-  };
+};
 ```
 
-## Show notification
+### Показувати сповіщення
 
-### Structure
+#### Структура
 
 ```JavaScript
 utils.showNotification(
@@ -124,474 +128,474 @@ duration: 4500
 )
 ```
 
-### Description
+#### Опис
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| Параметр      | Опис                                                                  | Тип даних                                                                        | Приклад                                   |
+| ------------- | --------------------------------------------------------------------- | -------------------------------------------------------------------------------- | ----------------------------------------- |
+| тип           | Використовується для встановлення типу іконки в сповіщенні.           | String, одне з наступних значень:"info"default\`"success""error""waring"         | тип: "інформація"                         |
+| назва         | Використовується для встановлення назви сповіщення                    | Рядок                                                                            | title: "Вітання"                          |
+| опис          | Використовується для встановлення опису                               | Рядок                                                                            | опис: "Вдало отримано"                    |
+| тривалість    | Використовується для встановлення тривалості відображення сповіщення. | Номер, у мілісекундах (мс)                                                       | тривалість: 4500                          |
 
-### Example
+#### Приклад
 
-Show notification when clicking the button:
+Показувати сповіщення при натисканні кнопки:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-It is the same as the Show notification action, as the following screenshot shows:
+Це те ж саме, що і дія Показати сповіщення, як показано на знімку:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Control component
+### Керування компонентами
 
-### Structure
+#### Структура
 
 ```JavaScript
 componentDisplayName.function()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+componentDisplayName - це рядок, що відображається на скріншоті, наступним чином.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Description
+#### Опис
 
-#### setValue(parameter)
+##### setValue(параметр)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+Використовується для встановлення значення. Параметр може бути `string`або `number` або `object` або `boolean` або `array`, який залежить від типу компонента.
 
-##### Supported components
+###### Підтримувані компоненти
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| Компонент                                                                                                                                                         | Тип параметра                                                     | Приклад                                                                                                                                                                                     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Введення тексту, тексту, текстову зону, розділювач, селект, Радіогрупа, Радіо Buttonm, Радіо Buttonm, Дата, час, час, події, Text, Bar, Progress, Circle Progress | `рядок`                                                           | `input1.setValue("Привіт світ")`                                                                                                                                                            |
+| JSON Editor                                                                                                                                                       | `рядок`                                                           | jsonEditor1.setValue(`{ "firstName": "Чак", "lastName": "Norris", "age": 80, "біо": "тупи" різання активів з 1940", "пароль": "немає", "телефон": "1-800-KICASS" }`)                        |
+| Хронологія                                                                                                                                                        | `string`, розділені значення різних вузлів через кому (,)         | `timeline1.setValue("Перша миля", друга етап ")`                                                                                                                                            |
+| Номер вводу, Слайдер, рейтинг                                                                                                                                     | `число`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
+| Перемкнути                                                                                                                                                        | `boolean`                                                         | `switch1.setValue(false)`                                                                                                                                                                   |
+| Форма схеми JSON                                                                                                                                                  | `об'єкт`                                                          | `jsonSchemaForm1.setValue({ "firstName": "Чак", "lastName": "Норвезька", "age": 80, "біо": "Звуковий будинок вражає з 1940", "пароль": "Ніколи", "телефон": "1-800-KICKASS" })`             |
+| Група відмітки, каскадер                                                                                                                                          | `array`                                                           | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
-#### clearValue()
+##### clearValue()
 
-Used to clear the value
+Використовується для очищення значення
 
-##### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Введення номера, введення номера, запис тексту, текстове поле, завантаження, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, контрольна група, Каскадер, Радіо група, Радіо кнопка, Дати, Дата діапазону, час Часу, Час даних, Текст, Текст, Оцінка, Прогрес, Колонний Прогрес, Таймелін, Вододавець
 
-##### Example
+###### Приклад
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### фокус()
 
-Used to focus on the component
+Використовується для фокусування на компоненті
 
-##### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Введення, номер коду, опис тексту, текстове поле, JSON Editor, Rich text editor, Radio Group,
 
-##### Example
+###### Приклад
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Коли ви встановили умови перевірки для компонента, таких як формат електронної пошти, URL формат, або обов'язкове поле, ви можете використовувати функцію "validate()", щоб визначити, чи вона відповідає вимогам. Якщо вона не відповідає вимогам, буде показано повідомлення перевірки.
 
-Set the validation conditions:
+Встановити умови перевірки:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Display the validation message:
+Показати повідомлення перевірки:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Введення номера, введення номера, рядок редагування, текстового опису, завантаження, вибірка, Multiselect, Група прапорців, Радіо Кнопки, Дата, Дата і час, Форм, Оцінка
 
-##### Example
+###### Приклад
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearValidation()
 
-Used to clear the validation message.
+Використовується для очищення повідомлення підтвердження.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Введення номера, введення номера, запис про редагування, текстове поле, Upload, Select, Multiselect, Група прапорців, Радіо Кнопки, Дата, Дата і час, Час, Оцінка
 
-##### Example
+###### Приклад
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(масив)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Використовується для встановлення обраного значення Multiselect. Параметр має бути масивом.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Multiselect
+Множинний вибір
 
-##### Example
+###### Приклад
 
 ```JavaScript
-multiselect1.setSelectedValue(["Option 1", "Option 3"])
+multiselect1.setSelectedValue(["Опція 1", "Опція 3"])
 ```
 
-#### submit()
+##### сабміт()
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Надіслати дані форми. Коли запущено метод надсилання, ми спочатку підтвердимо дані форми. Якщо є помилки перевірки, буде запобіжено подання форми, і будуть відображатися відповідні повідомлення про помилку. Тільки після успішної перевірки продовжиться сабміт.
 
-##### Supported components
+###### Підтримувані компоненти
 
-JSON Schema Form, Form
+Форма схеми JSON
 
-##### Example
+###### Приклад
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
-Used to switch the value from true to false or from false to true.
+Використовується для перемикання значення з true в false або з false на true.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Switch
+Перемкнути
 
-##### Example
+###### Приклад
 
 ```JavaScript
-switch1.toggle()
+перемикач ch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+Використовується для встановлення початкового значення повзунка діапазону
 
-##### Supported components
+###### Підтримувані компоненти
 
 Range Slider
 
-##### Example
+###### Приклад
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+##### setEndOfRange(число)
 
-Used to set the default end value of the range slider
+Використовується для встановлення кінцевого значення повзунка за замовчуванням
 
-##### Supported components
+###### Підтримувані компоненти
 
 Range Slider
 
-##### Example
+###### Приклад
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### setStartValue(рядок)
 
-Used to set the default start value
+Використовується для встановлення початкового значення за замовчуванням
 
-##### Supported components
+###### Підтримувані компоненти
 
-Date Range, Time Range
+Діапазон дат
 
-##### Example
+###### Приклад
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndValue(рядок)
 
-Used to set the default end value
+Використовується для встановлення стандартного кінцевого значення
 
-##### Supported components
+###### Підтримувані компоненти
 
-Date Range, Time Range
+Діапазон дат
 
-##### Example
+###### Приклад
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(масив)
 
-Used to set the switches whose value is true
+Використовується для встановлення вимикачів, значення якого є істинним
 
-##### Supported components
+###### Підтримувані компоненти
 
-Switch Group
+Змінити групу
 
-##### Example
+###### Приклад
 
 ```JavaScript
-switchGroup1.setValueInArray(["Option 1", "Option 3"])
+switchGroup1.setValueInArray(["Опція 1", "Опція 3"])
 ```
 
-#### selectPage(number)
+##### selectPage(число)
 
-Used to set the index of the page to display. The index is a number starting from ０.
+Використовується для встановлення індексу сторінки для відображення. Індекс - це номер, що починається з 0.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
 table1.selectPage(1)
 ```
 
-#### selectRow(number)
+##### selectRow(число)
 
-Used to set the index of selected row. The index is a number starting from ０.
+Використовується для встановлення індексу вибраного рядка. Індекс - це номер, що починається з 0.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
 table1.selectRow(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
-Used to clear the selected row.
+Використовується для очищення вибраного рядка.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFilters(array of objects, string)
+##### setFilters(масив об'єктів, рядок)
 
-Used to set filters.
+Використовується для встановлення фільтрів.
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+**Перший параметр** - це масив об'єктів. Кожен об'єкт представляє умову фільтрування. Він включає три атрибути:
 
-**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** : Це належить ідентифікатору цього стовпця. Якщо цей стовпець є результатом запиту бази даних, то ID буде ім'я стовпця, який ви отримали з запиту. Наприклад, якщо запит `SELECT по електронній пошті 'S user_email користувача FROM` і перейменуйте `email` як `Email` за допомогою правої панелі таблиці, ідентифікатор стовпця все ще буде `user_email` Якщо ця колонка вручну додається використовуючи кнопку "Додати стовпець" у правій панелі, ви можете перевірити його id у розділі «displayedData» лівої панелі. Зазвичай це буде випадково згенерований рядок, починаючи з `колона` наприклад `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**`filterFn`** : тип відповідності фільтру. Ми підтримуємо наступні типи: `equalTo', що є таким самим як `=`у SQL,`notEqualTo`, який є таким самим, як `<>`у SQL,`contains`, що дорівнює `LIKE '%value%'`у SQL,`does NotContain', який є таким же, як `NOT LIKE '%value%'` у SQL, `lessThan`, який такий самий як `<` в SQL, `notLessThan`, який є таким самим як `>=` у SQL, `notMoreThan`, який є таким самим, як `<=` у SQL, `empty', що такий самий як `IS NULL`у SQL,`notEmpty`який є такою ж, як`IS НЕ NULL`у SQL,`before`використовується для порівняння часу чи дати, що те ж саме, що`>`у SQL,`after`використовується для порівняння часу чи дати, що те ж саме, що`\<\` у SQL.
 
-**`value`** : used to set the value to  compare.
+**`значення`** : використовується для порівняння значень.
 
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
+**Другий параметр:**, коли є кілька об'єктів із умовою фільтрації, він визначає, чи мають вони відношення "AND" або "OR". Встановіть його як рядок `and` для "AND" відносин, і "або" для "OR" відносин.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
+table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "або")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
-Used to clear all filters
+Використовується для очищення всіх фільтрів
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
 table1.clearFilters()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+Використовується для встановлення сортування. **Перший параметр** - це ідентифікатор стовпця, який потрібно сортувати, який є рядком. Ідентифікатор так само, як вказаний в setFilters(масив об'єктів, string). **Другий параметр** - це порядок сортування або за зростанням або спаданням. Це встановлено з використанням рядкового значення `ascend` або `descend`.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Table
+Стіл
 
-##### Example
+###### Приклад
 
 ```JavaScript
 table1.setSort("incomes", "descend")
 ```
 
-#### setCurrentViewKey(string)
+##### setCurrentViewKey(рядок)
 
-Use the key which is a string value of the view to set the shown view.
+Використовуйте ключ, який є рядковим значенням вікна, щоб встановити показане відображення.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### Example
+###### Приклад
 
 ```JavaScript
 container1.setCurrentViewKey("View 2")
 ```
 
-#### setCurrentViewIndex(number)
+##### setCurrentViewIndex(число)
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Використовуйте індекс, який є числовим значенням, що починається від 0 представлення, щоб встановити представлення.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### Example
+###### Приклад
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView(boolean)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Використовується для показу наступного вигляду. Параметр є логічним значенням, яке визначає, чи потрібно цикл з кінця назад до початку.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### Example
+###### Приклад
 
 ```JavaScript
 container1.showNextView(true)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextVisibleView(boolean)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Використовується для показу наступного видимого відображення. На відміну від поведінки функції `showNextView(boolean)`, ця функція пропонує покращити вигляд комутатора шляхом пропущення будь-яких прихованих переглядів під час переходу. Параметр є логічним значенням, яке визначає, чи потрібно цикл з кінця назад до початку.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### Example
+###### Приклад
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView()
+##### showPreviousView()
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Використовується для відображення попереднього вигляду. Параметр є логічним значенням, яке визначає, чи потрібно цикл з початку до кінця.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### Example
-
-```JavaScript
-container1.showPreviousView(true)
-```
-
-#### showPreviousVisibleView()
-
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
-
-##### Supported components
-
-Container
-
-##### Example
+###### Приклад
 
 ```JavaScript
-container1.showPreviousVisibleView(true)
+контейнер1.showPreviousView(true)
 ```
 
-#### reset()
+##### showPreviousVisibleView()
 
-Used to reset the value to default value.
+Використовується для відображення попереднього видимого відображення. На відміну від поведінки функції `showPreviousView(boolean)`, ця функція пропонує поліпшити функціональність перемикача, пропустивши будь-які приховані подання під час переходу. Параметр є логічним значенням, яке визначає, чи потрібно цикл з початку до кінця.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Form
+Контейнер
 
-##### Example
+###### Приклад
+
+```JavaScript
+контейнер1.showPreviousVisibleView(true)
+```
+
+##### reset()
+
+Використовується для скидання значення за замовчуванням.
+
+###### Підтримувані компоненти
+
+Форма
+
+###### Приклад
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue()
 
-Used to reset the value to default value.
+Використовується для скидання значення за замовчуванням.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Steps
+Кроки
 
-##### Example
+###### Приклад
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
-Used to open a modal
+Використана, щоб відкрити модальне
 
-##### Supported components
+###### Підтримувані компоненти
 
-Modal
+Модал
 
-##### Example
+###### Приклад
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
-Used to close a modal
+Використовується для закриття модального засобу
 
-##### Supported components
+###### Підтримувані компоненти
 
-Modal
+Модал
 
-##### Example
+###### Приклад
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl(рядок)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Використовується для встановлення посилання на джерело зображення. Це може бути Base64 або URL-адреса, що вказує на зображення в Інтернеті.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Image
+Зображення
 
-##### Example
+###### Приклад
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,284 +605,284 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
-Used to clear the quoted reply message above the input box.
+Використовується для очищення повідомлення цитованої відповіді над вхідною коробкою.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Chat
+Чат
 
-##### Example
+###### Приклад
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(number)
+##### setPrimaryValue(число)
 
-Used to set the primary value of statistics.
+Використовується для встановлення первинного значення статистики.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Statistics
+Статистика
 
-##### Example
+###### Приклад
 
 ```JavaScript
 statistic1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### змінити Первинне Значення()
 
-Used to reset the primary value to the default primary value of statistics.
+Використовується для скидання первинного значення до стандартного значення статистики.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Statistics
+Статистика
 
-##### Example
-
-```JavaScript
-statistic1.resetPrimaryValue()
-```
-
-#### setFileUrl(string)
-
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
-
-##### Supported components
-
-PDF
-
-##### Example
+###### Приклад
 
 ```JavaScript
-pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+статистика1.resetPrimaryValue()
 ```
 
-#### play()
+##### setFileUrl(рядок)
 
-Used to play video or audio.
+Використовується для встановлення URL файлу. Це може бути Base64 або URL-адреса, що вказує на PDF у мережі.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Файл pdf
 
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.play()
+pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No.GD-Ed-22_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### pause()
+##### грати()
 
-Used to pause video or audio.
+Використовується для відтворення відео чи звуку.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.pause()
+відео1.play()
 ```
 
-#### showControls(boolean)
+##### пауза()
 
-Used to set whether to show the controls.
+Використовується для паузи відео або аудіо.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video
+Відео
 
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.showControls(true)
+відео1.pause()
 ```
 
-#### setVideoUrl(string)
+##### showControls(boolean)
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Використовується для визначення, чи показувати елементи керування.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video
+Відео
 
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+відео1.showControls(true)
 ```
 
-#### setVolume(number)
+##### setVideoUrl(рядок)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Використовується для встановлення URL відео. Це може бути посилання на Base64 або відео на медіа-веб-сайтах.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### Example
+###### Приклад
+
+```JavaScript
+відео1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+```
+
+##### setVolume(число)
+
+Використано для встановлення об'єму. Значення параметру - число від 0 до 1.
+
+###### Підтримувані компоненти
+
+Відео
+
+###### Приклад
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(number)
+##### setSpeed(число)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+Використовується для встановлення швидкості. Число між 0,25 і 2.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.setSpeed(0.5)
+відео1.setSpeed(0.5)
 ```
 
-#### setLoop(boolean)
+##### setLoop(boolean)
 
-Used to set whether to loop the playback.
+Використовується для встановлення, чи цикл відтворення.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### Example
+###### Приклад
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(number)
+##### перемотування(число)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+Використовується для пошуку до визначеного часового закаду. Параметр - це число, яке вимірюється в секундах (ів). Наприклад, щоб шукати позицію часу 5:35, ви б використали значення 335.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### Example
-
-```JavaScript
-video1.seekTo(335)
-```
-
-#### mute(boolean)
-
-Used to set mute or not.
-
-##### Supported components
-
-Video, Audio
-
-##### Example
+###### Приклад
 
 ```JavaScript
-video1.mute(true)
+відео1.seekTo(335)
 ```
 
-#### setAudioUrl(string)
+##### mute(boolean)
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Використовуються для встановлення звуку чи ні.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Audio
+Відео
 
-##### Example
+###### Приклад
+
+```JavaScript
+відео1.mute(true)
+```
+
+##### setAudioUrl(рядок)
+
+Використовується для встановлення URL аудіозапису. Це може бути посилання на Base64 або відео на медіа-веб-сайтах.
+
+###### Підтримувані компоненти
+
+Аудіо
+
+###### Приклад
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
-Used to switch to the next image.
+Використовується для перемикання на наступне зображення.
 
-##### Supported components
+###### Підтримувані компоненти
 
 Carousel
 
-##### Example
+###### Приклад
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
-Used to switch to the previous image.
+Використовується для переходу на попереднє зображення.
 
-##### Supported components
+###### Підтримувані компоненти
 
 Carousel
 
-##### Example
+###### Приклад
 
 ```JavaScript
-carousel1.slickPrevious()
+каруселя1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
-Used to set the source URL of IFrame.
+Використовується для встановлення вихідного URL IFrame.
 
-##### Supported components
+###### Підтримувані компоненти
 
 IFrame
 
-##### Example
+###### Приклад
 
 ```JavaScript
 iframe1.setSrc("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkers(масив)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+Використовується для встановлення маркерів на карті. Параметр повинен бути масивом об'єктів. Поля широти та довготи для кожного об'єкта повинні бути такими ж, як і поля, встановлені в правій панелі
 
-##### Supported components
+###### Підтримувані компоненти
 
-Map
+Карта
 
-##### Example
+###### Приклад
 
 ```JavaScript
 map1.setMarkers([
 {
     "lat":57.14009563040699,
-    "lng":-114.6018657894011
+    "lng":-114.60657894011
  },{
-     "lat":55.40432513713809,
-     "lng":-112.98252263795787
+     "lat":55.404325137137139,
+     "lng":-112.9825379578
  },{
-     "lat":57.841288754888545,
-     "lng":-103.3518657894011
- }
- ])
+     "lat":57.841288488855855,
+     "lng":103.356594078940
+
+])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
-Used to reset the markers to the default markers.
+Використовується для скидання маркерів до маркерів за замовчуванням.
 
-##### Supported components
+###### Підтримувані компоненти
 
-Map
+Карта
 
-##### Example
+###### Приклад
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+### Перейти за URL-адресою
 
-### Structure
+#### Структура
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Description
+#### Опис
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+Використайте об’єкт, щоб встановити його. В об’єкті 2 атрибути. Перший атрибут - "url". Це значення є повним URL, включаючи 'https://' або 'http://', і це рядок типу. Другий атрибут - `newTab`. Це логічний вираз, який використовується, щоб відкрити URL-адресу в новій вкладці.
 
-### Example
+#### Приклад
 
 ```JavaScript
 utils.goToURL({
@@ -900,59 +904,59 @@ newTab:true
 })
 ```
 
-## Copy to clipboard
+### Скопіювати до буферу обміну
 
-### Structure
-
-```JavaScript
-utils.copyToClipboard(string)
-```
-
-### Description
-
-Used to copy a string
-
-### Example
+#### Структура
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+utils.copyToClipboard(стрічка)
 ```
 
-## Set router
+#### Опис
 
-### Structure
+Використовується для копіювання рядка
+
+#### Приклад
+
+```JavaScript
+utils.copyToClipboard("Текст для копіювання")
+```
+
+### Встановити маршрутизатор
+
+#### Структура
 
 ```JavaScript
 utils.setRouter({
-pagePath:string;
+pagePath:str;
 viewPath:string
 })
 ```
 
-### Description
+#### Опис
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+Використовується для зміни сторінки в програмах ILLA. В об’єкті 2 атрибути.
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+Перший атрибут - `pagePath`. Значення pagePath відображається на наступному скріншоті без `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+Другий атрибут - "viewPath". Значення змінної viewPath відображається на наступному скріншоті без `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Example
+#### Приклад
 
 ```JavaScript
 utils.setRouter({
 pagePath:"page2", 
-viewPath:"sub-page1"
+viewPath:"підpage1"
 })
 ```
 
-## Save to ILLA Drive
+### Зберегти на диск
 
-### Structure
+#### Структура
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,25 +969,25 @@ replace:boolean
 })
 ```
 
-### Description
+#### Опис
 
-Used to save a file to ILLA Drive.
+Використовується для збереження файлу в ILLA Диску.
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: Назва з розширенням файлу після завантаження на ILLA Диск.
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`: Base64 або необроблені дані файлів, такі як JSON, CSV, звичайний текст тощо.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: одне з наступних значень: Auto, текстовий текст, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При використанні функції "Авто" ми спробуємо визначити тип файлів на основі розширення файлу або даних про файл.
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+`тека`: Тека призначення для завантаження файлу. Залиште порожнім, щоб завантажити до кореневої теки.
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnonymous`: Використано, щоб встановити, чи дозволено анонімний доступ користувача. Якщо ви плануєте встановити свій застосунок як публічний, має бути увімкнений анонімний доступ. Для безпеки ваших даних, файлів або папок, доступних анонімно, повинні розміщуватися в анонімній теці.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+`заміни`: Використовується для установки, коли є файли з таким самим ім'ям в тому ж каталозі, замініть існуючий файл новим файлом або автоматично перейменуйте новий файл.
 
-### Example
+#### Приклад
 
 ```JavaScript
 //use upload1 to pick files from device and upload to apps folder. 
@@ -998,7 +1002,7 @@ replace:true
 ```
 
 ```JavaScript
-//upload a text file.  
+//upload текстовий файл.  
 utils.saveToILLADrive({
 fileName:"test.txt",
 fileData:"abc",
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Download from ILLA Drive
+### Завантажити з ILLA-диска
 
-### Structure
+#### Структура
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,15 +1027,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Description
+#### Опис
 
-Used to download files from ILLA Drive.
+Використовується для завантаження файлів з ILLA Диска.
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: масив об'єктів, включаючи tinyURL та fileID. Ви можете використовувати палітру файлів компонентів диску для вибору файлів з ILLA Drive і отримати `downloadInfo` через drivePicker1.value
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`: використовується, чи завантажувати файли як Zip.
 
-### Example
+#### Приклад
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+### Звантажити
 
-### Structure
+#### Структура
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,25 +1056,25 @@ utils.downloadFile({
 })
 ```
 
-### Description
+#### Опис
 
-Used to export data to your device.
+Використовується для експорту даних на ваш пристрій.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: одне з наступних значень: Auto, текстовий текст, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При використанні функції "Авто" ми спробуємо визначити тип файлів на основі розширення файлу або даних про файл.
 
-`fileName`: a name with extension.
+`fileName`: ім'я з розширенням.
 
-`data`: data of the file.
+`data`: дані файлу.
 
-### Example
+#### Приклад
 
 ```JavaScript
-//download the data of table as a CSV
+//download the data of a CSV
 utils.downloadFile({
     fileType:"CSV",
     fileName:"text.csv",
     data: table2.dataSourceJS
-})
+
 ```
 
 ```JavaScript
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Set global data
+### Встановити глобальні дані
 
-### Set global data value
+#### Встановити глобальне значення даних
 
-#### Structure
+##### Структура
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,17 +1099,17 @@ value:any
 })
 ```
 
-#### Description
+##### Опис
 
-Used to set the value of gobalData
+Використовується для встановлення значення gobalData
 
-`key`: the displayName of globalData as the following screenshot shows.
+`key`: displayName of globalData as the following screenshot shows.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: the value to set
+`значення`: значення встановлено
 
-#### Example
+##### Приклад
 
 ```JavaScript
 //use input5 to get the user input value and set as the value of stringState. 
@@ -1115,9 +1119,9 @@ value:input5.value
 })
 ```
 
-### Set global data in
+#### Встановити глобальні дані
 
-#### Structure
+##### Структура
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,20 +1131,20 @@ value:any
 })
 ```
 
-#### Description
+##### Опис
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Коли глобальні дані є масивом або об'єктом, використовувати setGlobalDataIn для зміни значення, що відповідає певному індексу в масиві, або для зміни значення, відповідного до конкретного ключа об'єкта.
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`шлях`: індекс значення, яке ви маєте намір оновити в масиві або ключ в об’єкті. Наприклад, щоб задати друге значення у масиві, шлях 1 (індекс). Щоб встановити значення атрибуту з назвою key1, шлях є key1.
 
-`value`: the value to set
+`значення`: значення встановлено
 
-#### Example
+##### Приклад
 
 ```JavaScript
-//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+//objectState - це об’єкт: {"key1":"value1", "key2":"value2"}, щоб встановити 
 utils.setGlobalDataIn({
 key:"objectState", 
 path:"key2", 
@@ -1148,28 +1152,28 @@ value:input7.value
 })
 ```
 
-# Built-in libraries
+## Вбудовані бібліотеки
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
+| **Бібліотека**    | **Дока**                                                                | **Як використовувати його в конструкторі ILLA** | **Приклад**                                                     |
+| ----------------- | ----------------------------------------------------------------------- | ----------------------------------------------- | --------------------------------------------------------------- |
+| Лодаш             | https://lodash.com/docs/4.17.15                                         | `_`                                             | `_.concat(array, 2, [3], [[4]]);`                               |
+| Дай.js            | https://day.js.org/                                                     | `dayjs`                                         | `dayjs(нова дата ())`                                           |
+| uid               | [https://www.npmjs.com/package/uuid](https://www.npmjs.com/package/uid) | `uid`                                           | `uuid.parse()`                                                  |
+| Нумбро            | https://numbrojs.com/                                                   | `Відрах`                                        | `numbro(1000).format({thousandSeparated: true})`                |
+| Papa              | https://www.papaparse.com/docs                                          | `Papa`                                          | `Papa.parse(url, {download: true, // решта конфігурації ... })` |
 
-# Value of actions, components...
+## Значення дій, компонентів...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
+Використовуйте `displayName.xxx` для використання значення дій, компонентів або інших globalData. Зверніть увагу, що в файлі Run Script, ці змінні можна отримати безпосередній доступ, не використовуючи `{{` посилань.
 
 ```JavaScript
 utils.downloadFromILLADrive({
-    downloadInfo:{{drivePicker1.value}},//❌ 
+    downloadInfo:{{drivePicker1.value}},/❌ 
     asZip:true
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//✅
-    asZip:true
+    downloadInfo:drivePicker1.value,//:✅
+    asip:true
 })
 ```

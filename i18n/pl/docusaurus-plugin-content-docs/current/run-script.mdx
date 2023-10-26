@@ -1,9 +1,13 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: Uruchom skrypt
+description: Wyzwalając uruchamianie skryptu za pomocą obsługi zdarzeń, możesz uzyskać sekwencyjne wykonanie operacji i wykonać różne działania w oparciu o różne warunki.
 ---
 
-# How-to
+# Uruchom skrypt
+
+Wyzwalając uruchamianie skryptu za pomocą obsługi zdarzeń, możesz uzyskać sekwencyjne wykonanie operacji i wykonać różne działania w oparciu o różne warunki.
+
+## Jak to zrobić
 
 <div style={{
     position: "relative",
@@ -11,59 +15,59 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Demo
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Uruchom i rozwidlenie
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Use case: Login and redirect to different pages
+### Użyj przypadku: Zaloguj się i przekieruj do różnych stron
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### Uruchom i rozwidlenie
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Trigger action
+### Wyzwalacz
 
-### Structure
+#### Struktura
 
 ```JavaScript
-const exampleData = await actionName.trigger();
+const exampleData = oczekiwanie actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+Nazwa akcji jest ciągiem wyświetlanym na zrzucie ekranu, w następujący sposób.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Description
+#### Opis
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+W Uruchom skrypt zmienna `exampleData` jest taka sama jak `actionName.data`.
 
-### Example
+#### Przykład
 
-For example, we use the action `postgresql1` to query James' email.
+Na przykład używamy akcji `postgresql1` do zapytania wiadomości e-mail James.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Trigger the action via Run Script
+Wywołaj akcję poprzez uruchomienie skryptu
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` is
+`postgresql1.data` jest
 
 ```JSON
 [
@@ -71,47 +75,47 @@ Trigger the action via Run Script
     "email": "James@outlook.com",
     "id": "1",
     "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "name": "James"
+    "nazwa": "James"
   }
 ]
 ```
 
-When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+Kiedy musimy użyć JavaScript do pobrania wiadomości e-mail w kontroli komponentu lub gdzie indziej, możemy użyć następujących informacji: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+A kiedy musimy użyć adresu e-mail w "Uruchom skrypt" po wykonaniu "const exampleData = oczekiwaj postgresql1. rigger();`, możemy bezpośrednio użyć `przykładData[0].email\`.
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+Pokaż powiadomienie o powodzeniu zapytania i wynik jest unikalny. Pokaż powiadomienie o awarii, gdy wynik zapytania nie jest unikalny lub gdy się nie powiedzie.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
-const exampleData = await postgresql1.trigger();
-//show email via notification when the length of the resulting array is 1.
+const exampleData = oczekiwanie postgresql1.trigger();
+//pokaż e-mail poprzez powiadomienie, gdy długość powstałej tablicy wynosi 1.
 if(exampleData.length==1){
-utils.showNotification(
+utils. howNotification(
   {
     type:"info",
-    title:"Retrieved successfully",
-    description:exampleData[0].email,
-    duration: 4500}
+    tytuł:"Pobieranie udane", opis
+    :przykładData[0]. poczta, czas trwania
+    : 4500}
 );
   }else{
-  //else, show a failed notification
-utils.showNotification(
+  //else, pokaż nieudane powiadomienie
+utils. howNotification(
   {
     type:"info",
-    title:"Failed to retrieve",
-    duration: 4500
+    title:"Nie udało się odzyskać", czas trwania
+    : 4500
   }
 );
-  };
+};
 ```
 
-## Show notification
+### Pokaż powiadomienie
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.showNotification(
@@ -124,474 +128,474 @@ duration: 4500
 )
 ```
 
-### Description
+#### Opis
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| Parametr        | Opis                                                     | Typ danych                                                                            | Przykład                                  |
+| --------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------- | ----------------------------------------- |
+| typ             | Używane do ustawiania typu ikony w powiadomieniu.        | String, jedna z następujących wartości:"info"`default`"success""error""warning"       | typ: "info"                               |
+| tytuł           | Używane do ustawiania tytułu powiadomienia               | Ciąg znaków                                                                           | title: "Gratulacje"                       |
+| opis            | Używane do ustawiania opisu                              | Ciąg znaków                                                                           | opis: "Pobieranie udane"                  |
+| czas trwania    | Używane do ustawiania czasu wyświetlania powiadomienia.  | Liczba, w milisekundach (ms)                                                          | czas trwania: 4500                        |
 
-### Example
+#### Przykład
 
-Show notification when clicking the button:
+Pokaż powiadomienie po kliknięciu przycisku:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-It is the same as the Show notification action, as the following screenshot shows:
+Jest to takie samo jak czynność powiadomień, jak pokazują następujące zrzuty ekranu:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Control component
+### Komponent kontrolny
 
-### Structure
+#### Struktura
 
 ```JavaScript
 componentDisplayName.function()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+componentDisplayName to ciąg wyświetlany na zrzucie ekranu w następujący sposób.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Description
+#### Opis
 
-#### setValue(parameter)
+##### setValue(parametr)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+Używane do ustawiania wartości. Parametrem może być `string` lub `number` lub `object` lub `boolean` lub `array` w zależności od typu komponentu.
 
-##### Supported components
+###### Obsługiwane elementy
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| Komponent                                                                                                                                                                      | Typ parametru                                                     | Przykład                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Wpis, Edytowalny Tekst, Obszar Tekstu, Dzień, Wybierz, Zespół Radiokomunikacyjny, Przycisk Radiowy, Przycisk Radiowy, Data, Czas daty, kroki, tekst, Postęp Paska, Postęp Koła | `string`                                                          | `input1.setValue("Witaj świat")`                                                                                                                                                             |
+| JSON Editor                                                                                                                                                                    | `string`                                                          | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)          |
+| Oś czasu                                                                                                                                                                       | `string`, Oddziel wartości różnych węzłów przecinkiem (,)         | `timeline1.setValue("Pierwszy kamień milowy, Drugi kamień milowy")`                                                                                                                          |
+| Numer wejściowy, suwak, Oceń                                                                                                                                                   | `numer`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                                |
+| Przełącz                                                                                                                                                                       | `boolean`                                                         | `switch1.setValue(false)`                                                                                                                                                                    |
+| Formularz schematu JSON, Formularz                                                                                                                                             | `obiekt`                                                          | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`       |
+| Grupa skrzynek wyborczych, Cascader                                                                                                                                            | `tablica`                                                         | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                      |
 
-#### clearValue()
+##### clearValue()
 
-Used to clear the value
+Używane do wyczyszczenia wartości
 
-##### Supported components
+###### Obsługiwane elementy
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesłany, Edytor JSON, Formularz Schematu JSON, Przełącz, Wybierz, Grupa Multiselect, Cascader, Radio Group, Radio Button, Data, Zakres daty, Czas Dania, Data Czas, Tekst, Progress, Postęp Paska, Okrąg, Okrąg, Oś Czasu, Dywizja
 
-##### Example
+###### Przykład
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### ostrość()
 
-Used to focus on the component
+Używane do skupienia się na komponencie
 
-##### Supported components
+###### Obsługiwane elementy
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Wejście numerów, Edytowalny Tekst, Obszar Tekstu, Edytor JSON, Edytor Rich text editor, Radio Group,
 
-##### Example
+###### Przykład
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Po ustawieniu warunków walidacji komponentu, takich jak format e-mail, format URL, lub wymagane pole, możesz użyć funkcji `validate()` do określenia, czy spełnia wymagania. Jeśli nie spełnia wymogów, zostanie wyświetlony komunikat potwierdzający.
 
-Set the validation conditions:
+Ustaw warunki walidacji:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Display the validation message:
+Wyświetl komunikat potwierdzający:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Supported components
+###### Obsługiwane elementy
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesyłanie, Wybierz, Grupa Multiselect, Grupa Skrzynki Znaków, Rok, Rok, Przycisk Radiowy, Data, Przedział daty, Form, Stawka
 
-##### Example
+###### Przykład
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearValidation()
 
-Used to clear the validation message.
+Używane do wyczyszczenia komunikatu walidacyjnego.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesyłanie, Wybierz, Grupa Multiselect, Grupa, Przycisk Radiowy, Data, Zakres daty, Czas
 
-##### Example
+###### Przykład
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(tablica)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Używane do ustawiania wybranej wartości Multiselect. Parametr powinien być tablicą.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Multiselect
+Wielokrotny wybór
 
-##### Example
-
-```JavaScript
-multiselect1.setSelectedValue(["Option 1", "Option 3"])
-```
-
-#### submit()
-
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
-
-##### Supported components
-
-JSON Schema Form, Form
-
-##### Example
+###### Przykład
 
 ```JavaScript
-form1.submit()
+multiselect1.setSelectedValue(["Wariant 1", "Wariant 3"])
 ```
 
-#### toggle()
+##### wyślij()
 
-Used to switch the value from true to false or from false to true.
+Prześlij dane formularza. Gdy metoda przesyłania zostanie uruchomiona, najpierw zweryfikujemy dane formularza. Jeśli występują błędy walidacji, formularz zostanie zablokowany, a odpowiednie komunikaty o błędach będą wyświetlane. Dopiero po pomyślnej walidacji przesłanie kontynuowane.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Switch
+Formularz schematu JSON, Formularz
 
-##### Example
+###### Przykład
+
+```JavaScript
+formularz1.Przedłożenie()
+```
+
+##### tło ()
+
+Używane do przełączania wartości z true na false lub z false na true.
+
+###### Obsługiwane elementy
+
+Przełącz
+
+###### Przykład
 
 ```JavaScript
 switch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+Używane do ustawiania domyślnej wartości początkowej suwaka zakresu
 
-##### Supported components
+###### Obsługiwane elementy
 
 Range Slider
 
-##### Example
+###### Przykład
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+##### setEndOfRange(liczba)
 
-Used to set the default end value of the range slider
+Używane do ustawiania domyślnej wartości końcowej suwaka zakresu
 
-##### Supported components
+###### Obsługiwane elementy
 
 Range Slider
 
-##### Example
+###### Przykład
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### setStartValue(string)
 
-Used to set the default start value
+Używane do ustawiania domyślnej wartości początkowej
 
-##### Supported components
+###### Obsługiwane elementy
 
-Date Range, Time Range
+Zakres daty, zakres czasowy
 
-##### Example
+###### Przykład
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndValue(string)
 
-Used to set the default end value
+Używane do ustawiania domyślnej wartości końcowej
 
-##### Supported components
+###### Obsługiwane elementy
 
-Date Range, Time Range
+Zakres daty, zakres czasowy
 
-##### Example
+###### Przykład
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(tablica)
 
-Used to set the switches whose value is true
+Używane do ustawiania przełączników, których wartość jest prawdziwa
 
-##### Supported components
+###### Obsługiwane elementy
 
-Switch Group
+Przełącz grupę
 
-##### Example
+###### Przykład
 
 ```JavaScript
-switchGroup1.setValueInArray(["Option 1", "Option 3"])
+switchGroup1.setValueInArray(["Wariant 1", "Wariant 3"])
 ```
 
-#### selectPage(number)
+##### wybierz Stronę(liczba)
 
-Used to set the index of the page to display. The index is a number starting from ０.
+Używane do ustawiania indeksu strony do wyświetlenia. Indeks jest liczbą zaczynającą się od 0.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Table
+Tabela
 
-##### Example
+###### Przykład
 
 ```JavaScript
 table1.selectPage(1)
 ```
 
-#### selectRow(number)
+##### selectWiersz(liczba)
 
-Used to set the index of selected row. The index is a number starting from ０.
+Używane do ustawiania indeksu wybranego wiersza. Indeks jest liczbą zaczynającą się od 0.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Table
+Tabela
 
-##### Example
-
-```JavaScript
-table1.selectRow(1)
-```
-
-#### clearSelection()
-
-Used to clear the selected row.
-
-##### Supported components
-
-Table
-
-##### Example
+###### Przykład
 
 ```JavaScript
-table1.clearSelection()
+tabela1selectWiersz(1)
 ```
 
-#### setFilters(array of objects, string)
+##### wyłącz zaznaczenie()
 
-Used to set filters.
+Używane do wyczyszczenia wybranego wiersza.
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+###### Obsługiwane elementy
 
-**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+Tabela
 
-**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
-
-**`value`** : used to set the value to  compare.
-
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
-
-##### Supported components
-
-Table
-
-##### Example
+###### Przykład
 
 ```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
+tabela1.clearSelection()
 ```
 
-#### clearFilters()
+##### setFilters(tablica obiektów, ciąg)
 
-Used to clear all filters
+Używane do ustawiania filtrów.
 
-##### Supported components
+**Pierwszy parametr** jest szeregiem obiektów. Każdy obiekt reprezentuje warunek filtrowania. Obejmuje on trzy cechy:
 
-Table
+**`id`** : Odnosi się to do id tej kolumny. Jeśli ta kolumna jest wynikiem zapytania do bazy danych, to id będzie nazwą kolumny, którą pobrałeś z zapytania. Na przykład, jeśli zapytanie jest `SELECT email AS user_email od użytkowników` i zmień nazwę `email` na `Email` przy użyciu panelu prawej ręki tabeli, id kolumny będzie nadal `user_email` Jeśli ta kolumna zostanie ręcznie dodana za pomocą przycisku `Add Column` w panelu prawostronnym, możesz sprawdzić jego identyfikator w sekcji `displayedData` w lewym panelu. Zazwyczaj będzie to losowo wygenerowany ciąg znaków zaczynający się od `column` takiego jak `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-##### Example
+**`filterFn`** : typ dopasowania filtra. Obsługujemy następujące typy: `equalTo`, który jest taki sam jak `=` w SQL, `notEqualTo` który jest taki sam jak `<>` w SQL, `contains` który jest taki sam jak `LIKE '%value%'` w SQL, `does NotContain` który jest taki sam jak `NOT LIKE '%value%'` w SQL, `lessThan`, który jest taki sam jak `<` w SQL, `notLessThan`, który jest taki sam jak `>=` w SQL, `notMoreThan` która jest taka sama jak `<=` w SQL, `empty` która jest taka sama jak `IS NULL` w SQL, `notEmpty` która jest taka sama jak `IS NOT NULL` w SQL, `before` jest używany do porównywania czasu lub daty, co jest takie samo jak `>` w SQL, `after` jest używany do porównywania czasu lub daty, co jest takie samo jak `<` w SQL.
+
+**`wartość`** : używana do porównania wartości.
+
+**Parametr drugi:**, gdy istnieje wiele obiektów warunkowych z filtrem, określa, czy mają one związek "AND" czy "OR". Ustaw jako ciąg `and` dla zależności "AND" i `or` dla zależności "OR".
+
+###### Obsługiwane elementy
+
+Tabela
+
+###### Przykład
+
+```JavaScript
+table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "lub")
+```
+
+##### clearFilters()
+
+Używane do wyczyszczenia wszystkich filtrów
+
+###### Obsługiwane elementy
+
+Tabela
+
+###### Przykład
 
 ```JavaScript
 table1.clearFilters()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+Używane do ustawiania sortowania. **Pierwszy parametr** jest identyfikatorem kolumny do sortowania, która jest wartością ciągu znaków. Identyfikator jest taki sam jak identyfikator podany w setFilters(tablica obiektów, ciąg). **Drugim parametrem** jest kolejność sortowania, rosnąca lub malejąca. Jest ustawiony za pomocą ciągów `ascend` lub `descend`.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Table
+Tabela
 
-##### Example
+###### Przykład
 
 ```JavaScript
 table1.setSort("incomes", "descend")
 ```
 
-#### setCurrentViewKey(string)
+##### setCurrentViewKey(string)
 
-Use the key which is a string value of the view to set the shown view.
+Użyj klucza, który jest wartością ciągu widoku, aby ustawić widok pokazany.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Container
+Pojemnik
 
-##### Example
-
-```JavaScript
-container1.setCurrentViewKey("View 2")
-```
-
-#### setCurrentViewIndex(number)
-
-Use the index which is a number value starting from 0 of the view to set the shown view.
-
-##### Supported components
-
-Container
-
-##### Example
+###### Przykład
 
 ```JavaScript
-container1.setCurrentViewIndex(1)
+kontener1.setCurrentViewKey("View 2")
 ```
 
-#### showNextView(boolean)
+##### setCurrentViewIndex(number)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Użyj indeksu, który jest wartością liczbową zaczynającą się od 0 widoku, aby ustawić widok pokazany.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Container
+Pojemnik
 
-##### Example
+###### Przykład
 
 ```JavaScript
-container1.showNextView(true)
+kontener1.setCurrentViewIndex(1)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextView(boolean)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Używane do wyświetlania następnego widoku. Parametr jest wartością logiczną, która określa, czy pętli od końca wstecz do początku.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Container
+Pojemnik
 
-##### Example
+###### Przykład
 
 ```JavaScript
-container1.showNextVisibleView(false)
+kontener1.showNextView(true)
 ```
 
-#### showPreviousView()
+##### showNextVisibleView(boolean)
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Używane do wyświetlania następnego widoku widocznego. W przeciwieństwie do zachowania funkcji `showNextView(boolean)` ta funkcja oferuje lepszą funkcjonalność przełączania widoku pomijając jakiekolwiek ukryte widoki podczas przejścia. Parametr jest wartością logiczną, która określa, czy pętli od końca wstecz do początku.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Container
+Pojemnik
 
-##### Example
+###### Przykład
 
 ```JavaScript
-container1.showPreviousView(true)
+kontener1.showNextVisibleView(false)
 ```
 
-#### showPreviousVisibleView()
+##### showPreviousView()
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Używane do wyświetlania poprzedniego widoku. Parametr jest wartością logiczną, która określa, czy pętlować od początku do końca.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Container
+Pojemnik
 
-##### Example
+###### Przykład
 
 ```JavaScript
-container1.showPreviousVisibleView(true)
+kontener1.showPreviousView(true)
 ```
 
-#### reset()
+##### showPreviousVisibleView()
 
-Used to reset the value to default value.
+Używane do wyświetlania poprzedniego widoku widocznego. W przeciwieństwie do zachowania funkcji `showPreviousView(boolean)` ta funkcja oferuje lepszą funkcjonalność przełączania widoku pomijając jakiekolwiek ukryte widoki podczas przejścia. Parametr jest wartością logiczną, która określa, czy pętlować od początku do końca.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Form
+Pojemnik
 
-##### Example
+###### Przykład
+
+```JavaScript
+pojemnik1.showPreviousVisibleView(true)
+```
+
+##### reset()
+
+Używane do resetowania wartości do wartości domyślnej.
+
+###### Obsługiwane elementy
+
+Formularz
+
+###### Przykład
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetuj wartość()
 
-Used to reset the value to default value.
+Używane do resetowania wartości do wartości domyślnej.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Steps
+Etapy
 
-##### Example
+###### Przykład
 
 ```JavaScript
-steps1.resetValue()
+kroki1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
-Used to open a modal
+Używane do otwarcia modalu
 
-##### Supported components
+###### Obsługiwane elementy
 
-Modal
+Modalne
 
-##### Example
+###### Przykład
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
-Used to close a modal
+Używane do zamknięcia modalu
 
-##### Supported components
+###### Obsługiwane elementy
 
-Modal
+Modalne
 
-##### Example
+###### Przykład
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl(string)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Używane do ustawiania adresu URL źródła obrazu. Może to być Base64 lub URL wskazujący na obraz w sieci.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Image
+Obraz
 
-##### Example
+###### Przykład
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,251 +605,251 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
-Used to clear the quoted reply message above the input box.
+Używane do wyczyszczenia cytowanej wiadomości odpowiedzi powyżej pola wprowadzania.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Chat
+Czat
 
-##### Example
+###### Przykład
 
 ```JavaScript
-chat1.clearReplyMessage()
+czat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(number)
+##### setPrimaryValue(liczba)
 
-Used to set the primary value of statistics.
+Używane do ustawiania wartości podstawowej statystyki.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Statistics
+Statystyki
 
-##### Example
+###### Przykład
 
 ```JavaScript
 statistic1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue()
 
-Used to reset the primary value to the default primary value of statistics.
+Używane do resetowania wartości pierwotnej do domyślnej wartości podstawowej statystyki.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Statistics
+Statystyki
 
-##### Example
+###### Przykład
 
 ```JavaScript
 statistic1.resetPrimaryValue()
 ```
 
-#### setFileUrl(string)
+##### setFileUrl(string)
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Używane do ustawiania adresu URL pliku. Może to być Base64 lub URL wskazujący na PDF w sieci.
 
-##### Supported components
+###### Obsługiwane elementy
 
 PDF
 
-##### Example
+###### Przykład
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### odtwórz ()
 
-Used to play video or audio.
+Używane do odtwarzania wideo lub dźwięku.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video, Audio
+Film, Audio
 
-##### Example
-
-```JavaScript
-video1.play()
-```
-
-#### pause()
-
-Used to pause video or audio.
-
-##### Supported components
-
-Video, Audio
-
-##### Example
+###### Przykład
 
 ```JavaScript
-video1.pause()
+wideo1.odtwórz ()
 ```
 
-#### showControls(boolean)
+##### pauza()
 
-Used to set whether to show the controls.
+Używane do wstrzymania wideo lub audio.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video
+Film, Audio
 
-##### Example
+###### Przykład
 
 ```JavaScript
-video1.showControls(true)
+wideo1.pause()
 ```
 
-#### setVideoUrl(string)
+##### showControls(boolean)
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Używane do ustawiania, czy pokazywać kontrole.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video
+Wideo
 
-##### Example
+###### Przykład
+
+```JavaScript
+wideo1.showControls(true)
+```
+
+##### setVideoUrl(string)
+
+Używane do ustawiania adresu URL filmu. Może to być Base64 lub URL wideo na stronach mediów.
+
+###### Obsługiwane elementy
+
+Wideo
+
+###### Przykład
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolume(number)
+##### setObjętość(liczba)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Używane do ustawiania głośności. Parametr jest wartością liczbową między 0 a 1.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video, Audio
+Film, Audio
 
-##### Example
+###### Przykład
 
-`video1.setVolume(0.5)`
+`video1.setVolume (0.5)`
 
-#### setSpeed(number)
+##### setSpeed(liczba)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+Używane do ustawiania prędkości. Parametr jest wartością liczbową między 0,25 a 2.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video, Audio
+Film, Audio
 
-##### Example
-
-```JavaScript
-video1.setSpeed(0.5)
-```
-
-#### setLoop(boolean)
-
-Used to set whether to loop the playback.
-
-##### Supported components
-
-Video, Audio
-
-##### Example
+###### Przykład
 
 ```JavaScript
-video1.setLoop(false)
+wideo1.setSpeed(0,5)
 ```
 
-#### seekTo(number)
+##### setLoop(boolean)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+Używane do ustawiania pętli odtwarzania.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video, Audio
+Film, Audio
 
-##### Example
+###### Przykład
 
 ```JavaScript
-video1.seekTo(335)
+wideo1.setLoop(false)
 ```
 
-#### mute(boolean)
+##### szukaj (numer)
 
-Used to set mute or not.
+Używane do poszukiwania określonej pozycji czasowej. Parametr jest wartością liczbową, mierzoną w sekundach. Na przykład, aby uzyskać pozycję czasową 5:35, użyjesz wartości 335.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Video, Audio
+Film, Audio
 
-##### Example
+###### Przykład
 
 ```JavaScript
-video1.mute(true)
+wideo1.seekTo(335)
 ```
 
-#### setAudioUrl(string)
+##### mute(boolean)
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Używane do ustawiania wyciszenia lub nie.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Audio
+Film, Audio
 
-##### Example
+###### Przykład
+
+```JavaScript
+wideo1.mute(true)
+```
+
+##### setAudioUrl(string)
+
+Używane do ustawiania adresu URL audio. Może to być Base64 lub URL wideo na stronach mediów.
+
+###### Obsługiwane elementy
+
+Dźwięk
+
+###### Przykład
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### przesuń w następny()
 
-Used to switch to the next image.
+Używane do przełączenia na następny obraz.
 
-##### Supported components
+###### Obsługiwane elementy
 
 Carousel
 
-##### Example
+###### Przykład
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
-Used to switch to the previous image.
+Używane do przełączenia na poprzedni obraz.
 
-##### Supported components
+###### Obsługiwane elementy
 
 Carousel
 
-##### Example
+###### Przykład
 
 ```JavaScript
-carousel1.slickPrevious()
+karuzel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
-Used to set the source URL of IFrame.
+Używane do ustawiania źródłowego adresu URL IFrame.
 
-##### Supported components
+###### Obsługiwane elementy
 
 IFrame
 
-##### Example
+###### Przykład
 
 ```JavaScript
-iframe1.setSrc("https://www.nasa.gov/")
+iframe1.setSrc ("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkery (tablica)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+Używane do ustawiania znaczników na mapie. Parametr powinien być tablicą obiektów. Pola szerokości i długości geograficznej w każdym obiekcie powinny być takie same jak pola ustawione w panelu prawej
 
-##### Supported components
+###### Obsługiwane elementy
 
-Map
+Mapa
 
-##### Example
+###### Przykład
 
 ```JavaScript
 map1.setMarkers([
@@ -859,26 +863,26 @@ map1.setMarkers([
      "lat":57.841288754888545,
      "lng":-103.3518657894011
  }
- ])
+])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
-Used to reset the markers to the default markers.
+Używane do resetowania znaczników do domyślnych znaczników.
 
-##### Supported components
+###### Obsługiwane elementy
 
-Map
+Mapa
 
-##### Example
+###### Przykład
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+### Przejdź do adresu URL
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Description
+#### Opis
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+Użyj obiektu, aby go ustawić. Istnieją 2 atrybuty w obiekcie. Pierwszy atrybut to `url`. Jego wartość jest pełnym adresem URL, w tym 'https://' lub 'http://', i jest to ciąg typu. Drugim atrybutem jest `newTab`. To boolean używany do ustawiania, czy otworzyć adres URL w nowej karcie.
 
-### Example
+#### Przykład
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Copy to clipboard
+### Kopiuj do schowka
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.copyToClipboard(string)
 ```
 
-### Description
+#### Opis
 
-Used to copy a string
+Używane do kopiowania ciągu znaków
 
-### Example
+#### Przykład
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+utils.copyToClipboard("Tekst do skopiowania")
 ```
 
-## Set router
+### Ustaw router
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### Description
+#### Opis
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+Używane do zmiany strony w aplikacjach ILLA. Istnieją 2 atrybuty w obiekcie.
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+Pierwszy atrybut to `pagePath`. Wartość ścieżki strony jest wyświetlana na następnym zrzucie ekranu bez `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+Drugim atrybutem jest `viewPath`. Wartość widzŚcieżki jest wyświetlana na następnym zrzucie ekranu bez `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Example
+#### Przykład
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPath:"sub-page1"
 })
 ```
 
-## Save to ILLA Drive
+### Zapisz na dysku ILLA
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,31 +969,31 @@ replace:boolean
 })
 ```
 
-### Description
+#### Opis
 
-Used to save a file to ILLA Drive.
+Używane do zapisywania pliku na dysku ILLA.
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: Nazwa z rozszerzeniem pliku po przesłaniu na Dysk ILLA.
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`: Base64 lub surowe dane z plików, takie jak JSON, CSV, zwykły tekst, itp.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Jedna z następujących wartości: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Gdy używasz "Auto", spróbujemy określić typ pliku na podstawie rozszerzenia pliku lub danych pliku.
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+`folder`: Folder docelowy do przesyłania plików. Pozostaw puste, aby przesłać do katalogu głównego.
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnonymous`: Używane do ustalania, czy dostęp anonimowy użytkownika jest dozwolony. Jeśli planujesz ustawić swoją aplikację jako publiczną, należy włączyć dostęp anonimowy. Dla bezpieczeństwa Twoich danych, pliki lub foldery dostępne anonimowo muszą być umieszczone w folderze anonimowym.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+`replace`: Używany do ustawiania plików o tej samej nazwie w tym samym katalogu, zastąp istniejący plik nowym plikiem lub automatycznie zmień nazwę nowego pliku.
 
-### Example
+#### Przykład
 
 ```JavaScript
-//use upload1 to pick files from device and upload to apps folder. 
+//użyj upload1 aby wybrać pliki z urządzenia i przesłać je do folderu aplikacji. 
 utils.saveToILLADrive({
 fileName:upload1.files[0].name,
-fileData:upload1.files[0].dataURI,
+fileData:upload1. iles[0].dataURI,
 fileType:"PNG",
 folder:"apps",
 allowAnonymous:false,
@@ -998,7 +1002,7 @@ replace:true
 ```
 
 ```JavaScript
-//upload a text file.  
+//wgraj plik tekstowy.  
 utils.saveToILLADrive({
 fileName:"test.txt",
 fileData:"abc",
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Download from ILLA Drive
+### Pobierz z Dysku ILLA
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,15 +1027,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Description
+#### Opis
 
-Used to download files from ILLA Drive.
+Używane do pobierania plików z dysku ILLA.
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: tablica obiektów, w tym tinyURL i ID pliku. Możesz użyć selektora plików dysku komponentu do pobierania plików z dysku ILLA i pobierania `downloadInfo` za pomocą drivePicker1.value
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`: używany do ustawiania, czy pobierać pliki jako Zip.
 
-### Example
+#### Przykład
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+### Pobierz
 
-### Structure
+#### Struktura
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,20 +1056,20 @@ utils.downloadFile({
 })
 ```
 
-### Description
+#### Opis
 
-Used to export data to your device.
+Używane do eksportowania danych na Twoje urządzenie.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Jedna z następujących wartości: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Gdy używasz "Auto", spróbujemy określić typ pliku na podstawie rozszerzenia pliku lub danych pliku.
 
-`fileName`: a name with extension.
+`fileName`: nazwa z rozszerzeniem.
 
-`data`: data of the file.
+`dane`: dane pliku.
 
-### Example
+#### Przykład
 
 ```JavaScript
-//download the data of table as a CSV
+//pobierz dane tabeli jako CSV
 utils.downloadFile({
     fileType:"CSV",
     fileName:"text.csv",
@@ -1074,7 +1078,7 @@ utils.downloadFile({
 ```
 
 ```JavaScript
-//download image
+//pobierz obraz
 utils.downloadFile({
     fileType:"PNG",
     fileName:"text.png",
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Set global data
+### Ustaw dane globalne
 
-### Set global data value
+#### Ustaw globalną wartość danych
 
-#### Structure
+##### Struktura
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,29 +1099,29 @@ value:any
 })
 ```
 
-#### Description
+##### Opis
 
-Used to set the value of gobalData
+Używane do ustawiania wartości gobalData
 
-`key`: the displayName of globalData as the following screenshot shows.
+`klucz`: wyświetlana nazwa globalData jak pokazują następujące zrzuty ekranu.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: the value to set
+`wartość`: wartość do ustawienia
 
-#### Example
+##### Przykład
 
 ```JavaScript
-//use input5 to get the user input value and set as the value of stringState. 
+//użyj input5, aby uzyskać wartość wejściową użytkownika i ustawić jako wartość ciągu. 
 utils.setGlobalDataValue({
 key:"stringState", 
 value:input5.value
 })
 ```
 
-### Set global data in
+#### Ustaw globalne dane w
 
-#### Structure
+##### Struktura
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,20 +1131,20 @@ value:any
 })
 ```
 
-#### Description
+##### Opis
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Gdy globalne dane są tablicą lub obiektem, użyj setGlobalDataIn aby zmodyfikować wartość odpowiadającą określonemu indeksowi w tablicy lub zmodyfikować wartość odpowiadającą określonemu kluczowi w obiekcie.
 
-`key`: the displayName of globalData.
+`klucz`: wyświetlana nazwa globalData.
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`ścieżka`: indeks wartości, którą chcesz zaktualizować w tablicy lub kluczu w obiekcie. Na przykład, aby ustawić drugą wartość w tablicy, ścieżka to 1 (indeksu). Aby ustawić wartość atrybutu o nazwie klucz1, ścieżka jest kluczem 1.
 
-`value`: the value to set
+`wartość`: wartość do ustawienia
 
-#### Example
+##### Przykład
 
 ```JavaScript
-//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+//objectState jest obiektem: {"key1":"value1", "key2":"value2"}, aby ustawić 
 utils.setGlobalDataIn({
 key:"objectState", 
 path:"key2", 
@@ -1148,19 +1152,19 @@ value:input7.value
 })
 ```
 
-# Built-in libraries
+## Wbudowane biblioteki
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
+| **Biblioteka**      | **Dok**                                                                | **Jak używać tego w konstruktorze ILLIA** | **Przykład**                                                    |
+| ------------------- | ---------------------------------------------------------------------- | ----------------------------------------- | --------------------------------------------------------------- |
+| Popiół              | https://lodash.com/docs/4.17.15                                        | `_`                                       | `_.concat(tablica, 2, [3], [[4]]);`                             |
+| Dzień js            | https://day.js.org/                                                    | `dayjs`                                   | `dayjs(nowa data())`                                            |
+| uuuid               | <https://www.npmjs.com/package/uuuid>                                  | `uuid`                                    | `uuid.parse()`                                                  |
+| numer               | https://drętwienie.pl/                                                 | `drętwienie`                              | `drętwienie (1000).format({thousandSeparated: true})`           |
+| Papa                | https://www.papaparse.com/docs                                         | `Papa`                                    | `Papa.parse(url, {download: true, // reszta konfiguracji... })` |
 
-# Value of actions, components...
+## Wartość czynności, komponenty...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
+Użyj `displayName.xxx` aby użyć wartości akcji, komponentów lub innych globalnych danych. Pamiętaj, że w skrypcie Run te zmienne mogą być bezpośrednio dostępne bez użycia odwołań `{{`.
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1169,7 +1173,7 @@ utils.downloadFromILLADrive({
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//✅
+    downloadInfo:drivePicker1.value,//:check_mark_button:
     asZip:true
 })
 ```
