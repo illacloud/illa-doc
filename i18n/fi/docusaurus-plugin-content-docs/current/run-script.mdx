@@ -1,0 +1,1175 @@
+---
+title: Suorita Skripti
+description: Laukaisemalla Run Script kautta Tapahtuma käsittelijä, voit saavuttaa vaiheittaisen suorittamisen operaatioiden ja suorittaa erilaisia toimintoja perustuu eri kunnossa.
+---
+
+# Miten
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: 100%, height: 100%, colorScheme: "light"}}></iframe></div>
+
+## Demo
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: 100%, height: 100%, colorScheme: "light"}}></iframe></div>
+
+### Suorita ja haarukka
+
+https://illa.ai/app/ILAfx4p1C7Ac/detail
+
+## Käytä tapausta: Kirjaudu sisään ja ohjaa eri sivuille
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: 100%, height: 100%, colorScheme: "light"}}></iframe></div>
+
+### Suorita ja haarukka
+
+https://illa.ai/app/ILAex4p1C7Eh/detail
+
+# ILLA custom functions
+
+## Käynnistimen toiminta
+
+### Rakenne
+
+```JavaScript
+const exampleData = odottaa actionName.trigger();
+```
+
+Toimintanimi on näytetty merkkijono näytetään kuvakaappauksessa seuraavasti.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+### Kuvaus
+
+Suorassa komentosarjassa muuttuja `exampleData` on sama kuin `actionName.data`.
+
+### Esimerkki
+
+Käytämme esimerkiksi tekoa `postgresql1` tiedustellaksemme Jamesin sähköpostia.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Käynnistä toiminto Suorita Skripti
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46VdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+`postgresql1.data` on
+
+```JSON
+[
+  {
+    "email": "James@outlook.com",
+    "id": "1",
+    "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "name": "James"
+  }
+]
+```
+
+Kun meidän on käytettävä JavaScriptiä sähköpostin hakemiseen komponentin tarkastuksesta tai muualta, voimme käyttää seuraavaa: `{{postgresql1.data[0].email}}`
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Ja kun meidän täytyy käyttää sähköpostia "Suorita komentosarja" jälkeen lause `const exampleData = odottaa postgresql1. rigger();`, voimme käyttää suoraan `exampleData[0].email`.
+
+Näytä onnistumisilmoitus kun kysely on onnistunut ja tulos on ainutlaatuinen. Näytä virheilmoitus kun kyselyn tulos ei ole yksilöllinen tai kun se epäonnistuu.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNq://tvNzVBVmowRjRYbVZfVG9rZW46VwNmJLTkdkb3BmNDR4dNSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+```JSON
+const exampleData = odottaa postgresql1.trigger();
+//näytä sähköposti ilmoituksen kautta, kun tuloksena oleva taulukko on 1.
+if(exampleData.length==1){
+utils. howNotification(
+  {
+    type:"info",
+    otsikko:"Haettu onnistuneesti",
+    kuvaus:exampleData[0]. mail,
+    duraatio: 4500}
+);
+  }else{
+  //else, näytä epäonnistunut ilmoitus
+utils. howNotification(
+  {
+    type:"info",
+    title:"Failed to retrieve",
+    duraatio: 4500
+  }
+);
+};
+```
+
+## Näytä ilmoitus
+
+### Rakenne
+
+```JavaScript
+utils.showNotification(
+{
+tyyppi: "info",
+title: "Congratulations",
+description: "Retrieved successfully",
+duration: 4500
+}
+)
+```
+
+### Kuvaus
+
+| Parametri     | Kuvaus                                                          | Tiedon tyyppi                                                                        | Esimerkki                               |
+| ------------- | --------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------- |
+| tyyppi        | Käytetään kuvakkeen tyypin määrittämiseen ilmoituksessa.        | Merkkijono, yksi seuraavista arvoista:"info"`default`"success""error""warning"       | tyyppi: "info"                          |
+| otsikko       | Käytetään kun haluat määrittää ilmoituksen otsikon              | Merkkijono                                                                           | title: "Onnittelut"                     |
+| kuvaus        | Käytetään kuvauksen asettamiseen                                | Merkkijono                                                                           | kuvaus: "Noudetaan onnistuneesti"       |
+| kesto         | Käytetään sen määrittämiseen, mikä on ilmoituksen kesto.        | Lukumäärä millisekunteina (ms)                                                       | kesto: 4500                             |
+
+### Esimerkki
+
+Näytä ilmoitus kun napsautetaan painiketta:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Se on sama kuin Näytä ilmoitustoiminto, kuten seuraava kuvakaappaus osoittaa:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdXzE2OTgzMDQ1MTI6MTYODExMl9WNA)
+
+## Ohjaimen komponentti
+
+### Rakenne
+
+```JavaScript
+componentDisplayName.function()
+```
+
+componentDisplayName on näytetty merkkijono näytetään kuvakaappauksessa seuraavasti.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhMThjZGZjNzExěIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+### Kuvaus
+
+#### setValue(parametri)
+
+Käytetään arvon määrittämiseen. Parametri voi olla `string` tai `number` tai `object` tai `boolean` tai `array`, joka riippuu komponentin tyypistä.
+
+##### Tuetut komponentit
+
+| Komponentti                                                                                                                                                        | Parametrin tyyppi                                                     | Esimerkki                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, jakaja, Select, Radio Group, Radio Button, Radio Buttonm, Päivämäärä, Päivämäärä, Askeleet, Teksti, Bar Progress, Circle Progress | `string`                                                              | `input1.setValue("Hei maailma")`                                                                                                                                                              |
+| JSON Editor                                                                                                                                                        | `string`                                                              | `jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "puhelin": "1-800-KICKASS" }`)`           |
+| Aikajana                                                                                                                                                           | `string`, erota eri solmujen arvot pilkulla (,)                       | `timeline1.setValue("The first milestone, The second milestone")`                                                                                                                             |
+| Numero Syöte, Liukusäädintä, Hinta                                                                                                                                 | `number`                                                              | `numberInput1.setValue(1000)`                                                                                                                                                                 |
+| Vaihda                                                                                                                                                             | `boolean`                                                             | `switch1.setValue(false)`                                                                                                                                                                     |
+| Json Schema Lomake, Lomake                                                                                                                                         | `object`                                                              | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "puhelin": "1-800-KICKASS" })`         |
+| Valintaryhmä, Cascader                                                                                                                                             | `array`                                                               | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                       |
+
+#### clearValue()
+
+Käytetään arvon tyhjentämiseen
+
+##### Tuetut komponentit
+
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Json Editor, Json Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Päivämäärä, Päivämäärä Range, Tietojen Aika, Päivämäärä Aika, Teksti, Rate, Bar Progress, Circle Progress, Aikajana, Jakaja
+
+##### Esimerkki
+
+```JavaScript
+input1.clearValue()
+```
+
+#### fokus()
+
+Käytetään keskittymään komponenttiin
+
+##### Tuetut komponentit
+
+Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+
+##### Esimerkki
+
+```JavaScript
+input1.focus()
+```
+
+#### validate()
+
+Kun olet asettanut komponentin validointiehdot, kuten sähköpostin muodossa, URL-muodossa tai vaadittu kenttä, voit käyttää `validate()` -funktiota määrittääksesi, täyttääkö se vaatimukset. Jos se ei täytä vaatimuksia, näytetään vahvistusviesti. @ action: button
+
+Aseta vahvistuksen ehdot:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiěI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6ODMTY5ODExMl9WNA)
+
+Näytä validointiviesti:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYxNGMzZTE0N2Qy2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+##### Tuetut komponentit
+
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Valinta, Multiselect, Checkbox Group, Radio Group, Radio Button, Päivämäärä, Päivämäärä Range, Päivämäärä, Lomake, Hinta
+
+##### Esimerkki
+
+```JavaScript
+input1.validate()
+```
+
+#### clearvalidation()
+
+Käytetään validointiviestin tyhjennykseen.
+
+##### Tuetut komponentit
+
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Valinta, Multiselect, Checkbox Group, Radio Button, Päivämäärä, Päivämäärä Range, Päivämäärä Aika, Hinta
+
+##### Esimerkki
+
+```JavaScript
+input1.clearValidation()
+```
+
+#### setSelectedValue(taulukko)
+
+Käytetään valitun Multiselectin arvon määrittämiseen. Muuttujan tulee olla taulukko.
+
+##### Tuetut komponentit
+
+Monivalinta
+
+##### Esimerkki
+
+```JavaScript
+multiselect1.setSelectedValue(["Vaihtoehto 1", "Vaihtoehto 3"])
+```
+
+#### toimittaja()
+
+Lähetä lomaketiedot. Kun lähetys menetelmä on käynnistetty, me ensin vahvistaa lomakkeen tiedot. Jos validointivirheitä esiintyy, lomakkeen lähetys estetään ja vastaavat virheilmoitukset näytetään. Vasta onnistuneen validoinnin jälkeen jäte jatkuu.
+
+##### Tuetut komponentit
+
+Json Schema Lomake, Lomake
+
+##### Esimerkki
+
+```JavaScript
+lomake1.toimittaminen()
+```
+
+#### toggle()
+
+Käytetään vaihtamaan arvo todesta toteen tai väärästä tosi.
+
+##### Tuetut komponentit
+
+Vaihda
+
+##### Esimerkki
+
+```JavaScript
+kytkin1.toggle()
+```
+
+#### setStartOfRange(number)
+
+Käytetään määrittämään alueen liukusäätimen oletusalkuarvo
+
+##### Tuetut komponentit
+
+Range Slider
+
+##### Esimerkki
+
+```JavaScript
+rangeSlider1.setStartOfRange(1)
+```
+
+#### setEndOfRange(numero)
+
+Käytetään määrittämään alueen liukusäätimen oletusloppuarvo
+
+##### Tuetut komponentit
+
+Range Slider
+
+##### Esimerkki
+
+```JavaScript
+rangeSlider1.setEndOfRange(9)
+```
+
+#### setStartValue(merkkijono)
+
+Käytetään oletusalkuarvon määrittämiseen
+
+##### Tuetut komponentit
+
+Päivämäärä Range, Aikaväli
+
+##### Esimerkki
+
+```JavaScript
+dateRange1.setStartValue("2023-09-09")
+```
+
+#### setEndValue(merkkijono)
+
+Käytetään oletusloppuarvon määrittämiseen
+
+##### Tuetut komponentit
+
+Päivämäärä Range, Aikaväli
+
+##### Esimerkki
+
+```JavaScript
+dateRange1.setEndValue("2023-10-09")
+```
+
+#### setValueInArray(taulukko)
+
+Käytetään asettamaan kytkimet, joiden arvo on tosi
+
+##### Tuetut komponentit
+
+Vaihda Ryhmää
+
+##### Esimerkki
+
+```JavaScript
+kytkentäryhmä1.setValueInArray(["Vaihtoehto 1", "Vaihtoehto 3"])
+```
+
+#### selectPage(numero)
+
+Käytetään näytettävän sivun indeksin määrittämiseen. @ info: whatsthis Indeksi on numero, joka alkaa numerosta 0.
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+taulukko1.selectPage(1)
+```
+
+#### selectRow(numero)
+
+Käytetään valitun rivin indeksin määrittämiseen. Indeksi on numero, joka alkaa numerosta 0.
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+Taulukko1.selectRow(1)
+```
+
+#### clearSelection()
+
+Käytetään valitun rivin tyhjennykseen.
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+taulukko1.clearSelection()
+```
+
+#### setFilters(esineiden valikoima, merkkijono)
+
+Käytetään suodattimien asettamiseen.
+
+**Ensimmäinen parametri** on joukko esineitä. Jokainen objekti edustaa suodatuksen ehtoa. Se sisältää kolme ominaisuutta:
+
+**\<1>** **`id`** : Tämä viittaa tämän sarakkeen tunnisteeseen. Jos tämä sarake on tulos tietokantakyselystä, niin tunnus olisi sarake nimi, jonka olet hakenut kyselystä. Esimerkiksi, jos kysely on `SELECT email AS user_email FROM users` ja uudelleennimeä `email` `Email` taulukon oikeanpuoleisella paneelilla, sarakkeen tunnus olisi edelleen `user_email` Jos tämä sarake lisätään manuaalisesti käyttämällä oikealla puolella olevassa paneelissa olevaa `Lisää sarake -painiketta`, voit tarkistaa sen tunnuksen vasemmanpuoleisen paneelin `displayedData`-osiosta. Tyypillisesti, se on satunnaisesti luotu merkkijono alkaen `column`, kuten `column-320169e8-225a-482d-9853-ad34b3040220`.
+
+**\<2> ** **`filterFn`** : suodattimen tyyppi täsmää. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+
+**\<3>** **`value`** : käytetään vertailevan arvon määrittämiseen.
+
+**Toinen parametri:** kun suodattimen tila objekteja on useita, se määrittää, onko niillä "AND" suhde tai "OR"-suhde. Aseta se merkkijonoksi `and` "AND"-suhdetta varten ja `or` "OR"-suhdetta varten.
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+taulukko1.setFilters([{"id":"kk", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"Kesäkuu"}], "or")
+```
+
+#### clearFilters()
+
+Käytetään kaikkien suodattimien tyhjentämiseen
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+taulukko1.clearFilters()
+```
+
+#### setSort(string, string)
+
+Käytetään lajittelun asettamiseen. **Ensimmäinen parametri** on sarakkeen id joka lajittelee merkkijonon arvon. Id on sama kuin id mainittu setFilters(joukko esineitä, string). **Toinen parametri** on lajittelujärjestys, joko nouseva tai laskeva. Se on asetettu käyttäen merkkijonoarvoa `ascend` tai `descend`.
+
+##### Tuetut komponentit
+
+Taulukko
+
+##### Esimerkki
+
+```JavaScript
+taulukko1.setSort("tulot", "laskevat")
+```
+
+#### setCurrentViewKey(merkkijono)
+
+Käytä näppäintä, joka on näkymän merkkijonon arvo näytetyn näkymän asettamiseksi.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.setCurrentViewKey("Näytä 2")
+```
+
+#### setCurrentViewIndex(numero)
+
+Käytä indeksiä joka on lukuarvo, joka alkaa nollasta näkymän asettamiseksi näytettyyn näkymään.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.setCurrentViewIndex(1)
+```
+
+#### showNextView(boolean)
+
+Käytetään näyttämään seuraava näkymä. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.showNextView(true)
+```
+
+#### showNextVisibleView(boolean)
+
+Käytetään näyttämään seuraava näkymä. Toisin kuin `showNextView(boolean)`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamistoiminnallisuuden ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.showNextVisibleView(false)
+```
+
+#### showPreviousView()
+
+Käytetään edellisen näkymän näyttämiseen. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.showPreviousView(true)
+```
+
+#### showPreviousVisibleView()
+
+Käytetään edellisen näkymän näyttämiseen. Toisin kuin `showPreviousView(boolean)`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamistoiminnallisuuden ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
+
+##### Tuetut komponentit
+
+Säiliö
+
+##### Esimerkki
+
+```JavaScript
+kontti1.showPreviousVisibleView(true)
+```
+
+#### reset()
+
+Käytetään palauttamaan arvo oletusarvoon.
+
+##### Tuetut komponentit
+
+Lomake
+
+##### Esimerkki
+
+```JavaScript
+form1.reset()
+```
+
+#### resetValue()
+
+Käytetään palauttamaan arvo oletusarvoon.
+
+##### Tuetut komponentit
+
+Vaiheet
+
+##### Esimerkki
+
+```JavaScript
+steps1.resetValue()
+```
+
+#### openModal()
+
+Käytetään modaalin avaamiseen
+
+##### Tuetut komponentit
+
+Modaali
+
+##### Esimerkki
+
+```JavaScript
+modal1.openModal()
+```
+
+#### closeModal()
+
+Käytetään modaalin sulkemiseen
+
+##### Tuetut komponentit
+
+Modaali
+
+##### Esimerkki
+
+```JavaScript
+modal1.closeModal()
+```
+
+#### setImageUrl(merkkijono)
+
+Käytetään kuvan lähteen URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa kuvan verkossa.
+
+##### Tuetut komponentit
+
+Kuva
+
+##### Esimerkki
+
+```JavaScript
+image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
+```
+
+```JavaScript
+image1.setImageUrl ("data:image/png;base64, iVBORw0KGgoA...II=")
+```
+
+#### clearReplyMessage()
+
+Käytetään syötelaatikon yläpuolella olevan lainattujen vastausviestin tyhjentämiseen.
+
+##### Tuetut komponentit
+
+Keskustelu
+
+##### Esimerkki
+
+```JavaScript
+chat1.clearReplyMessage()
+```
+
+#### setPrimaryValue(numero)
+
+Käytetään tilastojen ensisijaisen arvon määrittämiseen.
+
+##### Tuetut komponentit
+
+Tilastot
+
+##### Esimerkki
+
+```JavaScript
+tilasto1.setPrimaryValue(100)
+```
+
+#### resetPrimaryValue()
+
+Käytetään tilastojen ensisijaisen arvon palauttamiseen oletusarvoiseen ensisijaiseen arvoon.
+
+##### Tuetut komponentit
+
+Tilastot
+
+##### Esimerkki
+
+```JavaScript
+statistic1.resetPrimaryValue()
+```
+
+#### setFileUrl(merkkijono)
+
+Käytetään tiedoston URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa PDF verkossa.
+
+##### Tuetut komponentit
+
+PDF
+
+##### Esimerkki
+
+```JavaScript
+pdf1.setFileUrl ("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+```
+
+#### play()
+
+Käytetään videon tai äänen toistamiseen.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.play()
+```
+
+#### tauko()
+
+Käytetään videon tai äänen pysäyttämiseen.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.pause()
+```
+
+#### showControls(boolean)
+
+Käytetään sen määrittämiseen, näyttääkö hallintalaite.
+
+##### Tuetut komponentit
+
+Video
+
+##### Esimerkki
+
+```JavaScript
+video1.showControls(true)
+```
+
+#### setVideoUrl(merkkijono)
+
+Käytetään videon URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
+
+##### Tuetut komponentit
+
+Video
+
+##### Esimerkki
+
+```JavaScript
+video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
+```
+
+#### setVolume(numero)
+
+Käytetään äänenvoimakkuuden asettamiseen. Parametri on lukuarvo välillä 0 - 1.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+`video1.setVolume(0.5)`
+
+#### setSpeed(numero)
+
+Käytetään nopeuden määrittämiseen. Parametri on lukuarvo välillä 0,25 - 2.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.setSpeed(0.5)
+```
+
+#### setLoop(boolean)
+
+Käytetään sen määrittämiseen, kiertääkö toistoa uudelleen.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.setLoop(false)
+```
+
+#### seekTo(numero)
+
+Käytetään tietyn ajankohdan etsimiseen. Parametri on lukuarvo, joka mitataan sekunteina (s). Esimerkiksi etsimään aikaa asema 5:35, sinun pitäisi käyttää arvoa 335.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.seekTo(335)
+```
+
+#### mute(boolean)
+
+Käytetään mykistyksen asettamiseen vai ei.
+
+##### Tuetut komponentit
+
+Video, Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.mute(true)
+```
+
+#### setAudioUrl(merkkijono)
+
+Käytetään äänen URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
+
+##### Tuetut komponentit
+
+Ääni
+
+##### Esimerkki
+
+```JavaScript
+video1.setAudioUrl ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+```
+
+#### slickNext()
+
+Käytetään siirryttäessä seuraavaan kuvaan.
+
+##### Tuetut komponentit
+
+Carousel
+
+##### Esimerkki
+
+```JavaScript
+carousel1.slickNext()
+```
+
+#### slickPrevious()
+
+Käytetään vaihtamaan edelliseen kuvaan.
+
+##### Tuetut komponentit
+
+Carousel
+
+##### Esimerkki
+
+```JavaScript
+karousel1.slickPrevious()
+```
+
+#### setSrc()
+
+Käytetään IFramen lähteen URL-osoitteen asettamiseen.
+
+##### Tuetut komponentit
+
+IFrame
+
+##### Esimerkki
+
+```JavaScript
+iframe1.setSrc ("https://www.nasa.gov/")
+```
+
+#### setMerkkit(taulukko)
+
+Käytetään asettamaan merkkimäärät kartalle. Muuttujan tulee olla joukko esineitä. Kunkin objektin leveys- ja pituusastekenttien olisi oltava samat kuin oikeanpuoleisessa paneelissa olevien kenttien
+
+##### Tuetut komponentit
+
+Kartta
+
+##### Esimerkki
+
+```JavaScript
+map1.setMarkers([
+{
+    "lat":57.14009563040699,
+    "lng":-114.6018657894011
+ },{
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },{
+     "lat":57.841288754888545,
+     "lng":-103.3518657894011
+ }
+])
+```
+
+#### resetMarkers()
+
+Käytetään kun merkit palautetaan oletusarvoisiin merkkeihin.
+
+##### Tuetut komponentit
+
+Kartta
+
+##### Esimerkki
+
+```JavaScript
+kartta1.resetMarkers()
+```
+
+## Siirry URL-osoitteeseen
+
+### Rakenne
+
+```JavaScript
+utils.goToURL({
+url:string,
+newTab:boolean
+})
+```
+
+### Kuvaus
+
+Käytä objektia sen asettamiseen. Objektissa on 2 attribuuttia. Ensimmäinen attribuutti on `url`. Sen arvo on täydellinen URL, mukaan lukien 'https://' tai 'http://', ja se on tyyppimerkkijono. Toinen attribuutti on `newTab`. Se on totuus, jota käytetään määrittämään, avataanko URL-osoite uudessa välilehdessä.
+
+### Esimerkki
+
+```JavaScript
+utils.goToURL({
+url:"https://www.illacloud.com",
+newTab:true
+})
+```
+
+## Kopioi leikepöydälle
+
+### Rakenne
+
+```JavaScript
+utils.copyToClipboard(merkkijono)
+```
+
+### Kuvaus
+
+Käytetään merkkijonon kopiointiin
+
+### Esimerkki
+
+```JavaScript
+utils.copyToClipboard("teksti kopioida")
+```
+
+## Aseta reititin
+
+### Rakenne
+
+```JavaScript
+utils.setRouter({
+sivuPath:string;
+viewPath:string
+})
+```
+
+### Kuvaus
+
+Käytetään muuttamaan sivua ILLA Appsissa. Objektissa on 2 attribuuttia.
+
+Ensimmäinen attribuutti on `pagePath`. Sivupolun arvo näkyy seuraavassa kuvakaappauksessa ilman `/`.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzěNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Toinen attribuutti on `viewPath`. Näyttöpolun arvo näkyy seuraavassa kuvakaappauksessa ilman `/`.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExěE1NmRmNTQwNDZjNmU2NmM4ŽQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMWNA)
+
+### Esimerkki
+
+```JavaScript
+utils.setRouter({
+sivuPath:"page2", 
+viewPath:"sub-page1"
+})
+```
+
+## Tallenna ILLA Drivelle
+
+### Rakenne
+
+```JavaScript
+utils.saveToILLADrive({
+fileName:string,
+fileData:string,
+fileType:string,
+kansio:string,
+allowAnonymous:boolean,
+replace:boolean
+})
+```
+
+### Kuvaus
+
+Käytetään tiedoston tallentamiseen ILLA Driveen.
+
+`fileName`: Tiedoston tunnisteen nimi ILLA Drivelle latauksen jälkeen.
+
+`fileData`: Base64 tai raaka tiedostotiedot, kuten JSON, CSV, tavallinen teksti jne.
+
+`fileType`: Yksi seuraavista arvoista: Auto, tavallinen teksti, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
+
+`folder`: Kohdekansio tiedostojen lataamista varten. Jätä tyhjäksi ladataksesi pääkansioon. @ info: whatsthis
+
+`allowAnonymous`: Käytetään sen määrittämiseen, onko anonyymi käyttöoikeus sallittu. Jos aiot asettaa hakemuksesi julkiseksi, anonyymi pääsy on otettava käyttöön. Jotta tietosi, tiedostot tai kansiot olisivat saatavilla anonyymisti, ne on sijoitettava anonyymiin kansioon.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6ODMwODExMl9WNA)
+
+`replace`: Käytetään kun samassa hakemistossa on tiedostoja, joilla on sama nimi korvaa olemassa oleva tiedosto uudella tiedostolla tai nimeä uusi tiedosto automaattisesti uudelleen.
+
+### Esimerkki
+
+```JavaScript
+//use upload1 to pick files from device and upload to apps folder. 
+utils.saveToILLADrive({
+fileName:upload1.files[0].name,
+fileData:upload1. iles[0].dataURI,
+fileType:"PNG",
+-kansio:"sovellukset",
+allowAnonymous:false,
+replace:true
+})
+```
+
+```JavaScript
+//lataa tekstitiedosto.  
+utils.saveToILLADrive({
+fileName:"test.txt",
+fileData:"abc",
+fileType:"Plain text",
+-kansio:"apps",
+allowAnonymous:false,
+replace:true
+})
+```
+
+## Lataa ILLA Drivesta
+
+### Rakenne
+
+```JavaScript
+utils.dll adFromILLADrive({
+    downloadInfo:[{
+        tinyURL:string,
+        fileID:string
+        }],
+    asZip:boolean
+})
+```
+
+### Kuvaus
+
+Käytetään ladattaessa tiedostoja ILLA Drivesta.
+
+`downloadInfo`: joukko esineitä, mukaan lukien tinyURL ja fileID. Voit käyttää komponentin Drive-tiedostonvalitsinta valitaksesi tiedostoja ILLA Drivesta ja saada `downloadInfo` asemaPicker1.value avulla
+
+`asZip`: käytetään sen määrittämiseen, ladatatko tiedostot Zip:nä.
+
+### Esimerkki
+
+```JavaScript
+utils.dll adFromILLADrive({
+    downloadInfo:drivePicker1.value,
+    asZip:true
+})
+```
+
+## Lataa
+
+### Rakenne
+
+```JavaScript
+utils.dll adFile({
+    fileType:string,
+    fileName:string,
+    data:anyType
+})
+```
+
+### Kuvaus
+
+Käytetään viemään tietoja laitteeseesi.
+
+`fileType`: Yksi seuraavista arvoista: Auto, tavallinen teksti, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
+
+`fileName`: nimi ja laajennus.
+
+`data`: tiedoston tiedot.
+
+### Esimerkki
+
+```JavaScript
+//download the data of table as a CSV
+utils.dll adFile({
+    fileType:"CSV",
+    fileName:"text.csv",
+    data: taulukko2.dataSourceJS
+})
+```
+
+```JavaScript
+//lataa kuva
+utils.d·adFile({
+    fileType:"PNG",
+    fileName:"text.png",
+    tiedot: image1.imageSrc
+})
+```
+
+## Aseta yleiset tiedot
+
+### Aseta yleinen datan arvo
+
+#### Rakenne
+
+```JavaScript
+utils.setGlobalDataValue({
+key:string, 
+value:any
+})
+```
+
+#### Kuvaus
+
+Käytetään gobalDatan arvon määrittämiseen
+
+`key`: näytönnimi globalData kuten seuraava kuvakaappaus osoittaa.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRnRCYnVfVG9rZW46TUc0ΒJjc28wbzhXdDl4aEJ4YnVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMWNA)
+
+`value`: asetettu arvo
+
+#### Esimerkki
+
+```JavaScript
+//use input5 to get the user input value and set as the value of stringState. 
+utils.setGlobalDataValue({
+key:"stringState", 
+value:input5.value
+})
+```
+
+### Aseta yleiset tiedot
+
+#### Rakenne
+
+```JavaScript
+utils.setGlobalDataIn({
+key:string, 
+path:string, 
+value:any
+})
+```
+
+#### Kuvaus
+
+Kun globaali data on array tai objekti, käytä setGlobalDataIn -toimintoa muuttaaksesi tiettyä indeksiä vastaavaa arvoa taulukon muodossa tai muuttaaksesi tiettyä avainta vastaavaa arvoa.
+
+`key`: globalDatan näyttö.
+
+`path`: sen arvon indeksi, jota aiot päivittää taulukkoon tai objektin avaimeen. Esimerkiksi, asettaa toinen arvo taulukossa, polku on 1 (indeksi). Määrittääksesi attribuutin nimisen avaimen arvon, polku on avain1.
+
+`value`: asetettu arvo
+
+#### Esimerkki
+
+```JavaScript
+//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+utils.setGlobalDataIn({
+key:"objectState", 
+path:"key2", 
+value:input7.value
+})
+```
+
+# Sisäänrakennetut kirjastot
+
+| **Kirjasto**        | **Asiakirja**                                                         | **Kuinka sitä käytetään ILLA Builderissa** | **Esimerkki**                                                      |
+| ------------------- | --------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------ |
+| Lodash              | https://lodash.com/docs/4.17.15                                       | `_`                                        | `_.concat(taulukko, 2, [3], [[4]]);`                               |
+| Päivä.js            | https://day.js.org/                                                   | `dayjs`                                    | `dayjs(uusi Päivämäärä())`                                         |
+| uuidi               | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                     | `uuid.parse()`                                                     |
+| numbro              | https://numbrojs.com/                                                 | `numbro`                                   | `numbro(1000).Muoto({thousandSeparated: true})`                    |
+| Papa                | https://www.papaparse.com/docs                                        | `Papa`                                     | `Papa.parse(url, {download: true, // rest of config ... })`        |
+
+# Toimien arvo, komponentit...
+
+Käytä `displayName.xxx` toimintojen, komponenttien tai muiden globalDatan arvoa. Huomioithan, että Run Script, näitä muuttujia voi käyttää suoraan ilman {{ viitteitä.
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:{{drivePicker1.value}},//❌ 
+    asZip:true
+})
+
+utils.downloadFromILLADrive({
+    downloadInfo:drivePicker1.value,//✅
+    asZip:true
+})
+```
