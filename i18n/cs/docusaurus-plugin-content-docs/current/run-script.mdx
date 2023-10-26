@@ -3,7 +3,11 @@ title: Spustit skript
 description: Spouštěním Run Scriptu pomocí obsluhy události můžete dosáhnout postupného provádění operací a provádět různé akce založené na různých podmínkách.
 ---
 
-# Jak na to
+# Spustit skript
+
+Spouštěním Run Scriptu pomocí obsluhy události můžete dosáhnout postupného provádění operací a provádět různé akce založené na různých podmínkách.
+
+## Jak na to
 
 <div style={{
     position: "relative",
@@ -11,35 +15,35 @@ description: Spouštěním Run Scriptu pomocí obsluhy události můžete dosáh
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Demo
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Spustit a rozštěpit
+#### Spustit a rozštěpit
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Použít případ: Přihlaste se a přesměrujte na různé stránky
+### Použít případ: Přihlaste se a přesměrujte na různé stránky
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Spustit a rozštěpit
+#### Spustit a rozštěpit
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Spouštěcí akce
+### Spouštěcí akce
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 příkladPříklad Data = čeká na actionName.trigger();
@@ -47,21 +51,21 @@ příkladPříklad Data = čeká na actionName.trigger();
 
 Název akce je řetězec zobrazený na snímku obrazovky, jak je uvedeno níže.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzlNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Při spuštění skriptu je proměnná `exampleData` stejná jako `actionName.data`.
 
-### Příklad
+#### Příklad
 
 Například používáme akci `postgresql1` pro dotaz na e-mail Jamese.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVG9rZW46VU0yYWI4RHWbzQ2SWV4RkhBcXVcGNZc1NXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
 Aktivovat akci pomocí Spustit skriptu
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZnaUpEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNk3c21jXzE2OTgzMDQ1MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
 `postgresql1.data` je
 
@@ -78,13 +82,13 @@ Aktivovat akci pomocí Spustit skriptu
 
 Když potřebujeme použít JavaScript k načtení e-mailu v kontrole komponenty nebo jinde, můžeme použít následující: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
 A když potřebujeme použít e-mail v "Spustit Script" po provedení příkazu `const exampleData = čekat na postgresql1. rigger();`, můžeme přímo použít `příkladData[0].email`.
 
 Zobrazit oznámení o úspěšnosti, pokud je dotaz úspěšný a výsledek je jedinečný. Zobrazit oznámení o selhání, pokud výsledek dotazu není unikátní nebo pokud selže.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
@@ -109,9 +113,9 @@ utils.showNotification(
   };
 ```
 
-## Zobrazit upozornění
+### Zobrazit upozornění
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.showNotification(
@@ -124,7 +128,7 @@ délka: 4500
 )
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 | Parametr       | L 343, 22.12.2009, s. 1).                                           | Druh údajů                                                                        | Příklad                               |
 | -------------- | ------------------------------------------------------------------- | --------------------------------------------------------------------------------- | ------------------------------------- |
@@ -133,19 +137,19 @@ délka: 4500
 | Popis          | Používá se pro nastavení popisu                                     | Řetězec                                                                           | popis: "Úspěšně načteno"              |
 | doba trvání    | Používá se pro nastavení délky zobrazení oznámení.                  | Číslo, v milisekundách (ms)                                                       | trvání: 4500                          |
 
-### Příklad
+#### Příklad
 
 Zobrazit oznámení při kliknutí na tlačítko:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHaZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
 Je to stejné jako akce Zobrazit oznámení, jak zobrazuje následující snímek obrazovky:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcLklSmtMSXFfVG9rZW46Q21SdWJpb0tib0VSDl4OG1oQnVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Ovládací součást
+### Ovládací součást
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 componentDisplayName.function()
@@ -153,15 +157,15 @@ componentDisplayName.function()
 
 componentDisplayName je řetězec zobrazený na snímku obrazovky.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
-#### setValue(parametr)
+##### setValue(parametr)
 
 Použito k nastavení hodnoty. Parametrem může být `string` nebo `number` nebo `object` nebo `boolean` nebo `array` , které závisí na typu komponenty.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 | Komponenty                                                                                                                                                          | Typ parametru                                                     | Příklad                                                                                                                                                                                     |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,225 +177,225 @@ Použito k nastavení hodnoty. Parametrem může být `string` nebo `number` neb
 | Formulář schématu JSON                                                                                                                                              | `objekt`                                                          | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "věk": 80, "bio": "Roundhouse kicking asses from 1940", "heslo": "noneed", "telefon": "1-800-KICKASS" })`           |
 | Skupina zaškrtávacích polí, Cascader                                                                                                                                | `pole`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
-#### clearValue()
+##### clearValue()
 
 Použito k vymazání hodnoty
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Input, Number Input, Editovatelný text, Textová oblast, Nahrávání, JSON Editor, JSON Schema formulář, Přepínač, Výběr, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Datum, Datový rozsah, Datový čas, Datový čas, Text, sazba, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### ostření ()
+##### ostření ()
 
 Slouží k zaměření na komponentu
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Input, Number Input, editovatelný text, textová oblast, JSON editor, Rich textový editor, Rozhlasová skupina,
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
 Pokud máte nastaveny podmínky ověřování pro komponentu, jako je formát e-mailu, formát URL, nebo povinné pole, můžete použít funkci `validate()` k určení, zda splňuje požadavky. Pokud nesplňuje požadavky, zobrazí se ověřovací zpráva.
 
 Nastavte podmínky ověření:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
 Zobrazit ověřovací zprávu:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Vstup, číslo vstupu, editovatelný text, textová oblast, Nahrávání, výběr, Multiselect, zaškrtávací skupina, Rozhlasová skupina, Rozhlasová skupina, rozhlasové tlačítko, Datum, rozsah, datum, čas, formulář, sazba
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearValidation()
 
 Používá se k vymazání ověřovací zprávy.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Vstup, číslo vstupu, editovatelný text, textová oblast, Nahrávání, výběr, Vícenásobný výběr, zaškrtávací skupina, Radio Button, Datum, Datum, časový rozsah, sazba
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(pole)
+##### setSelectedValue(pole)
 
 Používá se k nastavení vybrané hodnoty Multiselect. Parametr by měl být pole.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Vícenásobný výběr
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 multiselect1.setSelectedValue(["Možnost 1", "Možnost 3"])
 ```
 
-#### Odeslání ()
+##### Odeslání ()
 
 Odeslat data formuláře. Po spuštění odeslané metody nejprve ověříme data formuláře. Pokud se vyskytnou chyby ověření, bude zabráněno odeslání formuláře a zobrazí se odpovídající chybové zprávy. Odeslání pokračuje až po úspěšném potvrzení.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Formulář schématu JSON
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 form1.submit()
 ```
 
-#### Přepínač ()
+##### Přepínač ()
 
 Slouží k přepnutí hodnoty z true na false nebo z false na true.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Přepínač
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 switch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
 Používá se k nastavení výchozí počáteční hodnoty rozsahu posuvníku
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Range Slider
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(číslo)
+##### setEndOfRange(číslo)
 
 Používá se k nastavení výchozí konečné hodnoty posuvníku rozsahu
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Range Slider
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### setStartValue(string)
 
 Používá se k nastavení výchozí počáteční hodnoty
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Časový rozsah, časový rozsah
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndValue(string)
 
 Používá se k nastavení výchozí konečné hodnoty
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Časový rozsah, časový rozsah
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(pole)
+##### setValueInArray(pole)
 
 Nastavte přepínače, jejichž hodnota je pravdivá
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Přepnout skupinu
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 switchGroup1.setValueInArray(["Možnost 1", "Možnost 3"])
 ```
 
-#### selectPage(číslo)
+##### selectPage(číslo)
 
 Nastaví index stránky, která se má zobrazit. Index je číslo od 0.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.selectPage(1)
 ```
 
-#### selectRow (číslo)
+##### selectRow (číslo)
 
 Používá se k nastavení indexu vybraného řádku. Index je číslo od 0.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.selectŘ.(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
 Používá se k vymazání vybraného řádku.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFilters(pole objektů, řetězec)
+##### setFilters(pole objektů, řetězec)
 
 Používá se pro nastavení filtrů.
 
@@ -405,193 +409,193 @@ Používá se pro nastavení filtrů.
 
 **Druhý parametr:** pokud existují objekty s více podmínkami, určuje, zda mají vztah "AND" nebo "OR". Nastavte to jako řetězec `and` pro vztah "AND" a `or` pro vztah "OR".
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.setFiltery([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "hodnota":"Červen"}], "nebo")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
 Používá se k vymazání všech filtrů
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.clearFiltr()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
 Používá se k nastavení druhu. **Prvním parametrem** je id sloupce, který má být seřazen jako hodnota řetězce. id je stejný jako id zmíněný v setFilters(pole objektů, řetězce). **Druhým parametrem** je řazení vzestupně nebo sestupně. Je nastavena pomocí řetězce hodnota `ascend` nebo `descend`.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Stupeň úvěrové kvality 1
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 table1.setSort("příjmy"), "potom"
 ```
 
-#### setCurrentViewKey(string)
+##### setCurrentViewKey(string)
 
 Pro nastavení zobrazeného zobrazení použijte klávesu, která je řetězcem hodnoty zobrazení.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.setCurrentViewKey("Zobrazit 2")
 ```
 
-#### setCurrentViewIndex(number)
+##### setCurrentViewIndex(number)
 
 Pro nastavení zobrazeného zobrazení použijte index, který je hodnotou začínající od 0 zobrazení.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView(boolean)
 
 Slouží k zobrazení dalšího zobrazení. Parametr je logická hodnota, která určuje, zda se má smyčka od konce zpět do začátku.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.showNextView(true)
 ```
 
-#### showNextVisibleView (boolean)
+##### showNextVisibleView (boolean)
 
 Slouží k zobrazení příštího viditelného zobrazení. Na rozdíl od chování funkce `showNextView(boolean)` nabízí tato funkce lepší přepínání pohledu přeskočením skrytých zobrazení během přechodu. Parametr je logická hodnota, která určuje, zda se má smyčka od konce zpět do začátku.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView ()
+##### showPreviousView ()
 
 Slouží k zobrazení předchozího zobrazení. Parametr je logická hodnota, která určuje, zda se smyčka od začátku zpět do konce.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.showPreviousView (true)
 ```
 
-#### showPreviousVisibleView ()
+##### showPreviousVisibleView ()
 
 Slouží k zobrazení předchozího viditelného zobrazení. Na rozdíl od chování funkce `showPreviousView(boolean)` nabízí tato funkce lepší přepínání pohledu přeskočením skrytých zobrazení během přechodu. Parametr je logická hodnota, která určuje, zda se smyčka od začátku zpět do konce.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kontejner
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 container1.showPreviousVisibleView(true)
 ```
 
-#### reset()
+##### reset()
 
 Používá se k resetování hodnoty na výchozí hodnotu.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Formulář
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue()
 
 Používá se k resetování hodnoty na výchozí hodnotu.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Kroky
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
 Používá se k otevření modálu
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Modál
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### kloseModal()
+##### kloseModal()
 
 Používá se k zavření modálu
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Modál
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl(string)
 
 Slouží k nastavení URL zdroje obrázků. Může to být base64 nebo URL odkazující na obrázek na webu.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Obrázek
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,251 +605,251 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
 Používá se pro vymazání uvedené odpovědi nad vstupním polem.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Chat
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 chat1.clearplyMessage()
 ```
 
-#### setPrimaryValue(number)
+##### setPrimaryValue(number)
 
 Používá se k nastavení primární hodnoty statistiky.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Statistiky
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 statistik1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue()
 
 Používá se k resetování primární hodnoty na výchozí primární hodnotu statistik.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Statistiky
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 Statistic1.resetPrimaryValue()
 ```
 
-#### setFileUrl(string)
+##### setFileUrl(string)
 
 Slouží k nastavení adresy URL souboru. Může to být base64 nebo URL odkazující na PDF na webu.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 PDF
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### hrát()
+##### hrát()
 
 Používá se k přehrávání videa nebo zvuku.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.play()
 ```
 
-#### pozastavit()
+##### pozastavit()
 
 Používá se k pozastavení videa nebo zvuku.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 Pozastavit()
 ```
 
-#### showControls(boolean)
+##### showControls(boolean)
 
 Slouží k nastavení zobrazení ovládacích prvků.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.zobrazit ovladače (true)
 ```
 
-#### setVideoUrl(string)
+##### setVideoUrl(string)
 
 Používá se k nastavení URL videa. Může to být base64 nebo URL videa na mediálních stránkách.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### nastavená hlasitost(číslo)
+##### nastavená hlasitost(číslo)
 
 Používá se k nastavení hlasitosti. Parametr je číselná hodnota mezi 0 a 1.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(number)
+##### setSpeed(number)
 
 Používá se k nastavení rychlosti. Parametr je číselná hodnota mezi 0,25 a 2.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 Rychlost video1.nastavení(0.5)
 ```
 
-#### setLoop(boolean)
+##### setLoop(boolean)
 
 Slouží k nastavení, zda chcete přehrávání opakovat.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### hledání(číslo)
+##### hledání(číslo)
 
 Používá se k hledání na určitou časovou pozici. Parametr je číselná hodnota měřená v sekundách (s). Například, chcete-li vyhledat časovou pozici 5:35, použijte hodnotu 335.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.hledání(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
 Nastavení umlčení nebo ne.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Video, zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 video1.ztlumit (true)
 ```
 
-#### setAudioUrl(string)
+##### setAudioUrl(string)
 
 Používá se k nastavení URL audia. Může to být base64 nebo URL videa na mediálních stránkách.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Zvuk
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 Video 1.setAudioUrl ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
 Slouží k přepnutí na další obrázek.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Carousel
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
 Slouží k přepnutí na předchozí obrázek.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Carousel
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 kolarousel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
 Používá se pro nastavení zdrojové URL IFrame.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 IFrame
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 (https://www.nasa.gov/")
 ```
 
-#### setMarkers(pole)
+##### setMarkers(pole)
 
 Používá se k nastavení značek na mapě. Parametr by měl být pole objektů. Pole zeměpisné šířky a délky každého objektu by měla být stejná jako pole v pravém panelu
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Mapa
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 map1.setMarkers([
@@ -862,23 +866,23 @@ map1.setMarkers([
 ])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
 Používá se k resetování značek na výchozí značky.
 
-##### Podporované komponenty
+###### Podporované komponenty
 
 Mapa
 
-##### Příklad
+###### Příklad
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Přejít na URL
+### Přejít na URL
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Použijte objekt k jeho nastavení. V objektu jsou 2 atributy. První atribut je `url`. Jeho hodnota je kompletní URL včetně 'https://' nebo 'http://' a je typu řetězce. Druhý atribut je `newTab`. Je to boolean používaný k nastavení, zda otevřít adresu URL v novém panelu.
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Kopírovat do schránky
+### Kopírovat do schránky
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.copyToClipboard(řetězec)
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Používá se ke kopírování řetězce
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 utils.copyToClipboard ("Text ke kopírování")
 ```
 
-## Nastavit router
+### Nastavit router
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Slouží ke změně stránky v ILLA aplikacích. V objektu jsou 2 atributy.
 
 První atribut je `pagePath`. Hodnota stránky je zobrazena na následujícím snímku obrazovky bez `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTY5ODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
 Druhý atribut je `viewPath`. Hodnota viewPath je zobrazena na následujícím snímku obrazovky bez `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NMRmNTQwNDZjNmU2Nm4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6TY5ODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPcesta:"substránka1"
 })
 ```
 
-## Uložit do ILLA disku
+### Uložit do ILLA disku
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,7 +969,7 @@ replace:boolean
 })
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Slouží k uložení souboru na ILLA Drive.
 
@@ -979,11 +983,11 @@ Slouží k uložení souboru na ILLA Drive.
 
 `allowAnonymous`: Používá se k nastavení, zda je povolen anonymní uživatelský přístup. Pokud plánujete nastavit svou aplikaci jako veřejnou, musí být povolen anonymní přístup. Pro zabezpečení vašich dat musí být soubory nebo složky přístupné anonymně umístěny do anonymní složky.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QPUktmlQa3VZcDUxYXBsVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjLc0lmXzE2OTgzMDQ1MTY5ODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
 `replace`: Používá se k nastavení, pokud jsou ve stejném adresáři soubory se stejným názvem, nahradit existující soubor novým souborem nebo automaticky přejmenovat nový soubor.
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 //use upload1 to select files from device and upload to apps folder. 
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Stáhnout z ILLA Drive
+### Stáhnout z ILLA Drive
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,7 +1027,7 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Slouží ke stažení souborů z ILLA Drive.
 
@@ -1031,7 +1035,7 @@ Slouží ke stažení souborů z ILLA Drive.
 
 `asZip`: slouží k nastavení stahování souborů jako Zip.
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Stáhnout
+### Stáhnout
 
-### Struktura
+#### Struktura
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,7 +1056,7 @@ utils.downloadFile({
 })
 ```
 
-### L 343, 22.12.2009, s. 1).
+#### L 343, 22.12.2009, s. 1).
 
 Používá se k exportu dat do vašeho zařízení.
 
@@ -1062,7 +1066,7 @@ Používá se k exportu dat do vašeho zařízení.
 
 `data`: data souboru.
 
-### Příklad
+#### Příklad
 
 ```JavaScript
 //download data tabulky jako CSV
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Nastavit globální data
+### Nastavit globální data
 
-### Nastavit globální hodnotu dat. (Automatic Translation)
+#### Nastavit globální hodnotu dat. (Automatic Translation)
 
-#### Struktura
+##### Struktura
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,17 +1099,17 @@ value:any
 })
 ```
 
-#### L 343, 22.12.2009, s. 1).
+##### L 343, 22.12.2009, s. 1).
 
 Používá se k nastavení hodnoty gobalData
 
 `klíč`: displayName of globalData as the following screenshot show.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUWxYN3JxNdSZXdFdzI2blFZeDNFozRnRCYnVG9rZW46TUc0YmJc28wbzhXdDl4aEJ4YnVRVFBc21jXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
 `hodnota`: hodnota k nastavení
 
-#### Příklad
+##### Příklad
 
 ```JavaScript
 //use input5 to get the user input value and set as the value of stringState. 
@@ -1115,9 +1119,9 @@ value:input5.value
 })
 ```
 
-### Nastavit globální data v
+#### Nastavit globální data v
 
-#### Struktura
+##### Struktura
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,7 +1131,7 @@ value:any
 })
 ```
 
-#### L 343, 22.12.2009, s. 1).
+##### L 343, 22.12.2009, s. 1).
 
 Pokud jsou globální data pole nebo objekt, použít setGlobalDataIn pro změnu hodnoty odpovídající určitému indexu v poli nebo pro změnu hodnoty odpovídající určitému klíči v objektu.
 
@@ -1137,7 +1141,7 @@ Pokud jsou globální data pole nebo objekt, použít setGlobalDataIn pro změnu
 
 `hodnota`: hodnota k nastavení
 
-#### Příklad
+##### Příklad
 
 ```JavaScript
 //objectState is a object: {"key1":"value1", "key2":"value2"}, to set the 
@@ -1148,7 +1152,7 @@ value:input7.value
 })
 ```
 
-# Vestavěné knihovny
+## Vestavěné knihovny
 
 | **Knihovna**       | **Dokument**                                                          | **Jak to používat v ILLA Builder**  | **Příklad**                                                     |
 | ------------------ | --------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------- |
@@ -1158,7 +1162,7 @@ value:input7.value
 | číslo              | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`                |
 | Papa               | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // zbytek konfigurace ... })` |
 
-# Hodnota akcí, komponenty...
+## Hodnota akcí, komponenty...
 
 Použijte `displayName.xxx` pro použití hodnoty akcí, součástí nebo jiných globalData. Vezměte prosím na vědomí, že v Run Script lze k těmto proměnným přistupovat bez použití `{{` referencí.
 
