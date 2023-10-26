@@ -1,9 +1,13 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: スクリプトの実行
+description: イベントハンドラを介して実行スクリプトをトリガーすることで、オペレーションの連続実行を実現し、異なる条件に基づいてさまざまなアクションを実行できます。
 ---
 
-# How-to
+# スクリプトの実行
+
+イベントハンドラを介して実行スクリプトをトリガーすることで、オペレーションの連続実行を実現し、異なる条件に基づいてさまざまなアクションを実行できます。
+
+## 使い方
 
 <div style={{
     position: "relative",
@@ -11,59 +15,59 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### デモ
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### 実行とフォーク
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Use case: Login and redirect to different pages
+### ユースケース：ログインして別のページにリダイレクト
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### 実行とフォーク
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Trigger action
+### トリガーアクション
 
-### Structure
+#### 構成
 
 ```JavaScript
 const exampleData = await actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+actionName は、スクリーンショットに表示される文字列です。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Description
+#### 説明
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+Run Scriptでは、変数`exampleData`は`actionName.data`と同じです。
 
-### Example
+#### 例
 
-For example, we use the action `postgresql1` to query James' email.
+例えば、アクション`postgresql1`を使用してJamesのメールを問い合わせます。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Trigger the action via Run Script
+実行スクリプトを介してアクションをトリガーします
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` is
+`postgresql1.data` は
 
 ```JSON
 [
@@ -76,15 +80,15 @@ Trigger the action via Run Script
 ]
 ```
 
-When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+コンポーネントの検査または他の場所で電子メールを取得するためにJavaScriptを使用する必要がある場合は、以下を使用できます。`{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+そして、`const exampleData = await postgresql1 という文を実行した後に "Run Script" で電子メールを使用する必要がある場合。 rigger();`、`exampleData[0].email` を直接使用できます。
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+クエリが成功し、結果が一意のときに成功の通知を表示します。 クエリの結果が一意でない場合や失敗したときに失敗通知を表示します。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
@@ -109,489 +113,489 @@ utils.showNotification(
   };
 ```
 
-## Show notification
+### 通知を表示
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.showNotification(
 {
 type: "info",
-title: "Congratulations",
+title: "おめでとう",
 description: "Retrieved successfully",
 duration: 4500
 }
 )
 ```
 
-### Description
+#### 説明
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| パラメータ      | 説明                                           | データの種類                                                                        | 例                                   |
+| ---------- | -------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------- |
+| タイプ        | 通知のアイコンの種類を設定するために使用します。                     | 文字列, 次のいずれかの値:"info"`default`"success""errorchar@@1warning"                   | タイプ: "info"                         |
+| タイトル       | 通知のタイトルを設定するために使用                            | 文字列                                                                           | title: "おめでとうございます"                 |
+| 説明         | 説明を設定するために使用                                 | 文字列                                                                           | description: "取得に成功しました"            |
+| 期間         | 通知の表示時間を設定するために使用します。                        | 数値, ミリ秒単位(ミリ秒単位)                                                              | 期間:4500                             |
 
-### Example
+#### 例
 
-Show notification when clicking the button:
+ボタンをクリックしたときに通知を表示:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-It is the same as the Show notification action, as the following screenshot shows:
+以下のスクリーンショットが示すように、通知を表示するアクションと同じです:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Control component
+### コンポーネントの制御
 
-### Structure
+#### 構成
 
 ```JavaScript
 componentDisplayName.function()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+componentDisplayName は以下のようにスクリーンショットに表示される文字列です。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Description
+#### 説明
 
-#### setValue(parameter)
+##### setValue (parameter)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+値の設定に使用します。 パラメータは、コンポーネントの種類に依存する `string` または `number` または `object` または `boolean` または `array` です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| コンポーネント                                                                                                                                                 | パラメータの種類                                                       | 例                                                                                                                                                                                       |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 入力、編集可能なテキスト、テキストエリア、ディバイダー、選択、ラジオグループ、ラジオボタン、日付、日付、時間、ステップ、テキスト、バーの進行状況、円の進行状況                                                                         | `string`                                                       | `input1.setValue("Hello world")`                                                                                                                                                        |
+| JSON Editor                                                                                                                                             | `string`                                                       | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)     |
+| タイムライン                                                                                                                                                  | `string`, カンマ(,)で異なるノードの値を区切ってください                             | `timeline1.setValue("最初のマイルストーン,2番目のマイルストーン")`                                                                                                                                          |
+| 数値入力、スライダー、レート                                                                                                                                          | `number`                                                       | `numberInput1.setValue(1000)`                                                                                                                                                           |
+| 切り替え                                                                                                                                                    | `boolean`                                                      | `switch1.setValue(false)`                                                                                                                                                               |
+| JSON スキーマフォーム、フォーム                                                                                                                                      | `object`                                                       | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })` |
+| チェックボックスグループ、Cascader                                                                                                                                   | `array`                                                        | `casader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                  |
 
-#### clearValue()
+##### clearValue()
 
-Used to clear the value
+値をクリアするために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+入力, 数値入力, 編集可能なテキスト, テキスト領域, アップロード, JSON エディタ, JSON スキーマフォーム, スイッチ, 選択, マルチ選択, チェックボックスグループ Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Text Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Example
+###### 例
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### focus()
 
-Used to focus on the component
+コンポーネントにフォーカスするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+入力、番号入力、編集可能なテキスト、テキストエリア、JSONエディタ、リッチテキストエディタ、ラジオグループ。
 
-##### Example
+###### 例
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+電子メール形式、URL形式などのコンポーネントの検証条件を設定した場合 または必須フィールドでは、`validate()`関数を使用して、要件を満たしているかどうかを判断できます。 要件を満たしていない場合、検証メッセージが表示されます。
 
-Set the validation conditions:
+検証条件を設定:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Display the validation message:
+検証メッセージを表示:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+入力, 番号入力, 編集可能なテキスト, テキスト領域, アップロード, 選択, マルチ選択, チェックボックスグループ, ラジオボタン, 日付, 日付範囲, 日付時刻, フォーム, レート
 
-##### Example
+###### 例
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearValidation()
 
-Used to clear the validation message.
+検証メッセージをクリアするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+入力、番号入力、編集可能なテキスト、テキストエリア、アップロード、選択、マルチ選択、チェックボックスグループ、ラジオボタン、日付、日付範囲、日付時刻、レート
 
-##### Example
+###### 例
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(array)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Multiselectの選択した値を設定するために使用します。 パラメータは配列でなければなりません。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Multiselect
+複数選択
 
-##### Example
+###### 例
 
 ```JavaScript
 multiselect1.setSelectedValue(["Option 1", "Option 3"])
 ```
 
-#### submit()
+##### submit()
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+フォームデータを送信します。 submit メソッドがトリガーされると、まずフォームデータを検証します。 検証エラーがある場合、フォームの送信は防止され、対応するエラーメッセージが表示されます。 検証が成功した後にのみ提出が続行されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-JSON Schema Form, Form
+JSON スキーマフォーム、フォーム
 
-##### Example
+###### 例
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
-Used to switch the value from true to false or from false to true.
+値をtrueからfalseに、またはfalseからtrueに切り替えるために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Switch
+切り替え
 
-##### Example
+###### 例
 
 ```JavaScript
 switch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+範囲スライダーのデフォルトの開始値を設定するために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
 Range Slider
 
-##### Example
+###### 例
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+##### setEndOfRange(number)
 
-Used to set the default end value of the range slider
+範囲スライダーのデフォルトの終了値を設定するために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
 Range Slider
 
-##### Example
+###### 例
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### setStartValue(文字列)
 
-Used to set the default start value
+デフォルトの開始値を設定するために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Date Range, Time Range
+日付範囲、時間範囲
 
-##### Example
+###### 例
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndValue(文字列)
 
-Used to set the default end value
+デフォルトの終了値を設定するために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Date Range, Time Range
+日付範囲、時間範囲
 
-##### Example
+###### 例
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(array)
 
-Used to set the switches whose value is true
+値が true のスイッチを設定するために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Switch Group
+グループを切り替える
 
-##### Example
+###### 例
 
 ```JavaScript
 switchGroup1.setValueInArray(["Option 1", "Option 3"])
 ```
 
-#### selectPage(number)
+##### selectPage(number)
 
-Used to set the index of the page to display. The index is a number starting from ０.
+表示するページのインデックスを設定するために使用します。 インデックスは0から始まる数値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.selectPage(1)
 ```
 
-#### selectRow(number)
+##### selectRow(number)
 
-Used to set the index of selected row. The index is a number starting from ０.
+選択した行の索引を設定するために使用されます。 インデックスは0から始まる数値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.selectRow(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
-Used to clear the selected row.
+選択した行をクリアするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFilters(array of objects, string)
+##### setFilters(オブジェクト、文字列の配列)
 
-Used to set filters.
+フィルタの設定に使用します。
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+**最初のパラメータ**はオブジェクトの配列です。 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます:
 
-**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** : このカラムのIDを指します。 この列がデータベースクエリの結果である場合、idはクエリから取得したカラム名になります。 例えば、クエリが `SELECT email AS user_email FROM users` で、テーブルの右側パネルを使用して `email` を `Email` として名前変更するとします。 カラムの id は `user_email` に変わります。このカラムが右側のパネルの `Add Column` ボタンを使用して手動で追加された場合。 左側のパネルの `displayedData` セクションで id を確認できます。 通常、`column-320169e8-225a-482d-9853-ad34b3040220`のように、ランダムに生成された文字列になります。
 
-**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**`filterFn`** : フィルタの一致タイプ。 We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
-**`value`** : used to set the value to  compare.
+**`value`** : 比較する値を設定するのに使用されます。
 
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
+**2つ目のパラメータ:** 複数のフィルタ条件オブジェクトが存在する場合、"AND"リレーションシップか"OR"リレーションシップかを決定します。 "AND"リレーションシップに対する文字列`and`、"OR"リレーションシップに対する`or`として設定します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
-Used to clear all filters
+すべてのフィルターをクリアするために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.clearFilters()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+並べ替えの設定に使用します。 **最初のパラメータ**は、文字列の値である列のIDです。 idはsetFilters(オブジェクト、文字列の配列)に記載されているidと同じです。 **2番目のパラメータ**は、昇順または降順の順序です。 `ascend` または `descend` を使用して設定されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Table
+表
 
-##### Example
+###### 例
 
 ```JavaScript
 table1.setSort("incomes", "descend")
 ```
 
-#### setCurrentViewKey(string)
+##### setCurrentViewKey(string)
 
-Use the key which is a string value of the view to set the shown view.
+表示するビューを設定するには、ビューの文字列値であるキーを使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.setCurrentViewKey("View 2")
 ```
 
-#### setCurrentViewIndex(number)
+##### setCurrentViewIndex(number)
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+ビューの0から始まる数値のインデックスを使用して、表示ビューを設定します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView(boolean)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+次のビューを表示するために使用します。 このパラメータは、終わりから始まりまでループするかどうかを決定する真偽値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.showNextView(true)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextVisibleView(boolean)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+次の表示ビューを表示するために使用されます。 `showNextView(boolean)`関数の動作とは異なり、この関数はトランジション中に非表示のビューをスキップすることでビューの切り替え機能を向上させます。 このパラメータは、終わりから始まりまでループするかどうかを決定する真偽値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView()
+##### showPreviousView()
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+前のビューを表示するために使用されます。 パラメータはブール値で、最初から最後までループするかどうかを決定します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.showPreviousView(true)
 ```
 
-#### showPreviousVisibleView()
+##### showPreviousVisibleView()
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+前の表示ビューを表示するために使用されます。 `showPreviousView(boolean)`関数の動作とは異なり、この関数はトランジション中に隠しビューをスキップすることでビューの切り替え機能を向上させます。 パラメータはブール値で、最初から最後までループするかどうかを決定します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### Example
+###### 例
 
 ```JavaScript
 container1.showPreviousVisibleView(true)
 ```
 
-#### reset()
+##### reset()
 
-Used to reset the value to default value.
+値をデフォルト値にリセットするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Form
+フォーム
 
-##### Example
+###### 例
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue()
 
-Used to reset the value to default value.
+値をデフォルト値にリセットするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Steps
+歩数
 
-##### Example
+###### 例
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
-Used to open a modal
+モーダルを開くために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Modal
+モーダル語
 
-##### Example
+###### 例
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
-Used to close a modal
+モーダルを閉じるために使用
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Modal
+モーダル語
 
-##### Example
+###### 例
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl(string)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+画像のソースURLの設定に使用します。 これは、Base64 または Web 上の画像を参照する URL である可能性があります。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Image
+画像
 
-##### Example
+###### 例
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,284 +605,284 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
-Used to clear the quoted reply message above the input box.
+入力ボックスの上にある引用符で囲まれた返信メッセージをクリアするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Chat
+チャット
 
-##### Example
+###### 例
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(number)
+##### setPrimaryValue(number)
 
-Used to set the primary value of statistics.
+統計の主な値を設定するために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Statistics
+統計情報
 
-##### Example
+###### 例
 
 ```JavaScript
 statistic1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue()
 
-Used to reset the primary value to the default primary value of statistics.
+統計のデフォルトのプライマリ値にリセットするために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Statistics
+統計情報
 
-##### Example
+###### 例
 
 ```JavaScript
 statistic1.resetPrimaryValue()
 ```
 
-#### setFileUrl(string)
+##### setFileUrl(string)
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+ファイルのURLを設定するために使用します。 これは、Base64 または Web 上の PDF を指すURL である可能性があります。
 
-##### Supported components
+###### サポートされるコンポーネント
 
 PDF
 
-##### Example
+###### 例
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### play()
 
-Used to play video or audio.
+ビデオやオーディオの再生に使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.play()
 ```
 
-#### pause()
+##### pause()
 
-Used to pause video or audio.
+ビデオやオーディオを一時停止するために使用されます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.pause()
 ```
 
-#### showControls(boolean)
+##### showControls(boolean)
 
-Used to set whether to show the controls.
+コントロールを表示するかどうかを設定するために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video
+ビデオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.showControls(true)
 ```
 
-#### setVideoUrl(string)
+##### setVideoUrl(string)
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+動画の URL を設定するために使用します。 メディアのウェブサイトでは、Base64 または動画の URL にすることができます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video
+ビデオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolume(number)
+##### setVolume(number)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+ボリュームの設定に使用します。 パラメータは 0 から 1 の間の数値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(number)
+##### setSpeed(number)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+スピードを設定するのに使用します。 パラメータは0.25~2の数値です。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.setSpeed(0.5)
 ```
 
-#### setLoop(boolean)
+##### setLoop(boolean)
 
-Used to set whether to loop the playback.
+再生をループするかどうかを設定するために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(number)
+##### seekTo(number)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+特定の時間位置を求めるために使用されます。 パラメータは数値であり、秒単位で測定されます。 たとえば、時間の位置 5:35 を求める場合は、値 335 を使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.seekTo(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
-Used to set mute or not.
+ミュートを設定するかどうかの設定に使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.mute(true)
 ```
 
-#### setAudioUrl(string)
+##### setAudioUrl(string)
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+オーディオの URL を設定するために使用します。 メディアのウェブサイトでは、Base64 または動画の URL にすることができます。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Audio
+オーディオ
 
-##### Example
+###### 例
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
-Used to switch to the next image.
+次の画像に切り替えるために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
 Carousel
 
-##### Example
+###### 例
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
-Used to switch to the previous image.
+前の画像に切り替えるために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
 Carousel
 
-##### Example
+###### 例
 
 ```JavaScript
-carousel1.slickPrevious()
+caroussel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
-Used to set the source URL of IFrame.
+IFrame のソース URL を設定するために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
 IFrame
 
-##### Example
+###### 例
 
 ```JavaScript
 iframe1.setSrc("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkers(array)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+マーカーを地図上に設定するために使用します。 パラメータはオブジェクトの配列でなければなりません。 各オブジェクトの緯度と経度フィールドは、右側パネルで設定されたフィールドと同じにする必要があります
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Map
+地図
 
-##### Example
+###### 例
 
 ```JavaScript
 map1.setMarkers([
 {
     "lat":57.14009563040699,
-    "lng":-114.6018657894011
+    "lng":-11.6018657894011
  },{
      "lat":55.40432513713809,
      "lng":-112.98252263795787
  },{
      "lat":57.841288754888545,
-     "lng":-103.3518657894011
+     "lng":103.3518657894011
  }
- ])
+])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
-Used to reset the markers to the default markers.
+マーカーを既定のマーカーにリセットするために使用します。
 
-##### Supported components
+###### サポートされるコンポーネント
 
-Map
+地図
 
-##### Example
+###### 例
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+### URL に移動
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Description
+#### 説明
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+オブジェクトを使用して設定します。 オブジェクトには2つの属性があります。 最初の属性は `url` です。 値は 'https://' または 'http://' を含む完全な URL で、型文字列の値です。 2番目の属性は `newTab` です。 これは、URLを新しいタブで開くかどうかを設定するために使用されるブール値です。
 
-### Example
+#### 例
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Copy to clipboard
+### クリップボードにコピー
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.copyToClipboard(string)
 ```
 
-### Description
+#### 説明
 
-Used to copy a string
+文字列のコピーに使用
 
-### Example
+#### 例
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+utils.copyToClipboard("コピーするテキスト")
 ```
 
-## Set router
+### ルーターを設定
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### Description
+#### 説明
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+ILLA アプリのページを変更するために使用します。 オブジェクトには2つの属性があります。
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+最初の属性は `pagePath` です。 pagePath の値は以下のスクリーンショットに `/` なしで表示されます。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Example
+#### 例
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPath:"sub-page1"
 })
 ```
 
-## Save to ILLA Drive
+### ILLA ドライブに保存
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,31 +969,31 @@ replace:boolean
 })
 ```
 
-### Description
+#### 説明
 
-Used to save a file to ILLA Drive.
+ILLA ドライブにファイルを保存するために使用されます。
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: ILLA ドライブにアップロードした後、ファイルの拡張子を付けた名前。
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`: Base64 または JSON、CSV、プレーンテキストなどの生のファイルデータ。
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Auto, Plain text, JPEG, SVG, JSON, CSV, TSV, Excel(.xlsx). 「自動」を使用する場合、ファイル拡張子またはファイルデータのいずれかに基づいてファイルの種類を決定しようとします。
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+`folder`: ファイルのアップロード先のフォルダ。 ルートフォルダにアップロードするには空白のままにしてください。
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnonymous`: 匿名ユーザアクセスが許可されているかどうかを設定するために使用されます。 アプリケーションをパブリックに設定する場合は、匿名アクセスを有効にする必要があります。 データのセキュリティのために、匿名でアクセス可能なファイルまたはフォルダを匿名フォルダに配置する必要があります。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+`replace`: 同じディレクトリに同じ名前のファイルがある場合に設定するために使用されます。 既存のファイルを新しいファイルに置き換えるか、自動的に新しいファイルの名前を変更します。
 
-### Example
+#### 例
 
 ```JavaScript
-//use upload1 to pick files from device and upload to apps folder. 
+//upload1 を使用してデバイスからファイルを選択し、アプリフォルダにアップロードします。 
 utils.saveToILLADrive({
 fileName:upload1.files[0].name,
-fileData:upload1.files[0].dataURI,
+fileData:upload1. iles[0].dataURI,
 fileType:"PNG",
 folder:"apps",
 allowAnonymous:false,
@@ -998,7 +1002,7 @@ replace:true
 ```
 
 ```JavaScript
-//upload a text file.  
+//テキストファイルをアップロードします。  
 utils.saveToILLADrive({
 fileName:"test.txt",
 fileData:"abc",
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Download from ILLA Drive
+### ILLA Driveからダウンロード
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,15 +1027,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Description
+#### 説明
 
-Used to download files from ILLA Drive.
+ILLAドライブからファイルをダウンロードするために使用されます。
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: tinyURLとfileIDを含むオブジェクトの配列。 ドライブファイルピッカーコンポーネントを使用して、ILLA Driveからファイルを選択し、drivePicker1.valueを介して`downloadInfo`を取得できます。
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`: ファイルをZipとしてダウンロードするかどうかを設定します。
 
-### Example
+#### 例
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+### ダウンロード
 
-### Structure
+#### 構成
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,20 +1056,20 @@ utils.downloadFile({
 })
 ```
 
-### Description
+#### 説明
 
-Used to export data to your device.
+デバイスにデータをエクスポートするために使用されます。
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Auto, Plain text, JPEG, SVG, JSON, CSV, TSV, Excel(.xlsx). 「自動」を使用する場合、ファイル拡張子またはファイルデータのいずれかに基づいてファイルの種類を決定しようとします。
 
-`fileName`: a name with extension.
+`fileName`: 拡張子を持つ名前。
 
-`data`: data of the file.
+`data`: ファイルのデータ。
 
-### Example
+#### 例
 
 ```JavaScript
-//download the data of table as a CSV
+//CSV
 utils.downloadFile({
     fileType:"CSV",
     fileName:"text.csv",
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Set global data
+### グローバルデータを設定
 
-### Set global data value
+#### グローバルデータの値を設定
 
-#### Structure
+##### 構成
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,29 +1099,29 @@ value:any
 })
 ```
 
-#### Description
+##### 説明
 
-Used to set the value of gobalData
+gobalData の値を設定するために使用
 
-`key`: the displayName of globalData as the following screenshot shows.
+`key`: 以下のスクリーンショットが示すように globalData の displayName を指定します。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: the value to set
+`value`: 設定する値
 
-#### Example
+##### 例
 
 ```JavaScript
-//use input5 to get the user input value and set as the value of stringState. 
+//input5 を使用してユーザーの入力値を取得し、stringStateの値として設定します。 
 utils.setGlobalDataValue({
 key:"stringState", 
 value:input5.value
 })
 ```
 
-### Set global data in
+#### グローバルデータの設定
 
-#### Structure
+##### 構成
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,20 +1131,20 @@ value:any
 })
 ```
 
-#### Description
+##### 説明
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+グローバルデータが配列またはオブジェクトの場合 setGlobalDataIn を使用して、配列内の特定のインデックスに対応する値を変更したり、オブジェクト内の特定のキーに対応する値を変更したりします。
 
-`key`: the displayName of globalData.
+`key`: globalData の displayName 。
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: 配列またはオブジェクト内のキーで更新する値のインデックス。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。
 
-`value`: the value to set
+`value`: 設定する値
 
-#### Example
+##### 例
 
 ```JavaScript
-//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+//objectState はオブジェクトです: {"key1":"value1", "key2":"value2"}, 
 utils.setGlobalDataIn({
 key:"objectState", 
 path:"key2", 
@@ -1148,9 +1152,9 @@ value:input7.value
 })
 ```
 
-# Built-in libraries
+## ビルトインライブラリ
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
+| **ライブラリ**         | **ドキュメント**                                                            | **ILLA ビルダーでの使用方法**                 | **例**                                                       |
 | ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
 | Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
 | Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
@@ -1158,9 +1162,9 @@ value:input7.value
 | numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
 | Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
 
-# Value of actions, components...
+## アクションの価値, コンポーネント...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
+アクション、コンポーネント、またはその他のglobalDataの値を使用するには、`displayName.xxx` を使用します。 実行スクリプトでは、これらの変数は {{\`参照を使用せずに直接アクセスすることができます。
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1169,7 +1173,7 @@ utils.downloadFromILLADrive({
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//✅
+    downloadInfo:drivePicker1.value,//:check_mark_button:
     asZip:true
 })
 ```
