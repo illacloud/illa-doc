@@ -1,9 +1,9 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: Rulează Script
+description: Prin activarea script-ului de rulare printr-un gestionar de evenimente, poți obține executarea secvențială a operațiunilor și să efectuezi acțiuni diferite bazate pe condiții diferite.
 ---
 
-# How-to
+# Cum
 
 <div style={{
     position: "relative",
@@ -19,11 +19,11 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: 100%, height: 100%, colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+### Rulează și furcă
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Use case: Login and redirect to different pages
+## Utilizează cazul: Autentificare și redirecționare către pagini diferite
 
 <div style={{
     position: "relative",
@@ -31,171 +31,171 @@ https://illa.ai/app/ILAfx4p1C7Ac/detail
     height: 0
     }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: 100%, height: 100%, colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+### Rulează și furcă
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
 # ILLA custom functions
 
-## Trigger action
+## Acțiune de declanșare
 
-### Structure
+### Structura
 
 ```JavaScript
-const exampleData = await actionName.trigger();
+exempluDate = await actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+ActionName este șirul afișat în captura de ecran, după cum urmează.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NTQzlNmQ2NTdmNTM1ZGZZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZZ6N1NnBfVG9rZWWWWGhSZZZJEYWS00b05xUDJODJVXXVYO2O2OcOXOXOXOXOXOXOZOZOZOZOZOZOZOZZZZZZMZZZZZZZZZZZZZZZZZZZZ
 
-### Description
+### Descriere
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+În Run Script, variabila `exampleData` este identică cu `actionName.data`.
 
-### Example
+### Exemplu
 
-For example, we use the action `postgresql1` to query James' email.
+De exemplu, folosim acțiunea `postgresql1` pentru a interoga e-mailul James.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NzdlOTEyZjBm2M3MJlZTMwZTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFO85YzFYaU1JaVVVfVG9rZW46VU0yYWI4RHhbQ2SWVccVhcVcVVVVVVVVGNZOZOOZZOOZZZZZZOOZZZZZZZYWWWDHcNQ2NQ2NQ2NQ4NXVVVVVVVVV
 
-Trigger the action via Run Script
+Declanșează acțiunea prin Run Script
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpEnaJfVVG9rZWWVVdJUWWVdJUGUG2FOGb2FOGh4R3B3B3U3NQV2NQV21WN2WNQV2DMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZX
 
-`postgresql1.data` is
+`postgresql1.data` este
 
 ```JSON
 [
   {
     "email": "James@outlook.com",
     "id": "1",
-    "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
-    "name": "James"
+    "img": "https://images.Thereels.com/photos/1222271/Stockels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "nume": "James"
   }
 ]
 ```
 
-When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+Când avem nevoie să folosim JavaScript pentru a prelua un e-mail în Inspectorul componentei sau în altă parte, putem folosi următoarele: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzGJfdVdxNVF2hSMDY4YUtHWENE1LVFWmp0cHVtRzlfV9rZW46RUpjTGJyZTIZ4b1dY4DY4YUtHWN3N3DM3N3D2D2WND2WN4ND2XXTXTXMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+Şi când trebuie să folosim e-mailul în "Execută Scriptul" după executarea declaraţiei `const exempleData = aşteaptă postgresql1. rigger();`, putem folosi direct `exampleData[0].email`.
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+Arată o notificare de succes atunci când interogarea are succes şi rezultatul este unic. Arată o notificare eșuată atunci când rezultatul interogării nu este unic sau când eșuează.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjE5ZTdlZGQ0NzQ4NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVVZfVG9rZ9rZWVmWNmLTkdkbN3DRB3N3N3H3N2WNZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
 ```JSON
-const exampleData = await postgresql1.trigger();
+const exempleData = await postgresql1.trigger();
 //show email via notification when the length of the resulting array is 1.
-if(exampleData.length==1){
-utils.showNotification(
+if (exampleData.length=1){
+utils. howNotification(
   {
-    type:"info",
-    title:"Retrieved successfully",
-    description:exampleData[0].email,
-    duration: 4500}
+    tip:"info", Titlu
+    :"Recuperează cu succes",
+    descriere:exampleData[0]. mail,
+    durat: 4500}
 );
   }else{
-  //else, show a failed notification
-utils.showNotification(
+  //else, arată o notificare eșuată
+utils. howNotification(
   {
-    type:"info",
-    title:"Failed to retrieve",
-    duration: 4500
+    tip:"info",
+    title:"Eșuare extragere",
+    durată: 4500
   }
 );
-  };
+};
 ```
 
-## Show notification
+## Arată notificare
 
-### Structure
+### Structura
 
 ```JavaScript
 utils.showNotification(
 {
-type: "info",
-title: "Congratulations",
-description: "Retrieved successfully",
+tip: "info",
+titlu: "Felicitări",
+descriere: "Retrieved successful",
 duration: 4500
 }
 )
 ```
 
-### Description
+### Descriere
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| Parametru   | Descriere                                                       | Tip de date                                                                        | Exemplu                                   |
+| ----------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
+| tip         | Folosit pentru a seta tipul de pictogramă în notificare.        | String, una din următoarele valori:"info"`default`"success""error""warning"        | tip: "informatii"                         |
+| titlu       | Folosit pentru a seta titlul notificării                        | Şir                                                                                | title: "Felicitări"                       |
+| descriere   | Folosit pentru a seta descrierea                                | Şir                                                                                | descriere: "Recuperează cu succes"        |
+| durată      | Folosit pentru a seta durata de afişare a notificării.          | Număr, în milisecunde (ms)                                                         | durata: 4500                              |
 
-### Example
+### Exemplu
 
-Show notification when clicking the button:
+Arată notificare la apăsarea butonului:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhTk2a2RIVFh2dFh2dnI0ZW5UcHVtZUEwZZ3RHa0ZFVG9rZWWWWWTHZkYJnYJnFxFxb01HHHN4YHNccccCVyByBzTXTXTXTMMDA)
 
-It is the same as the Show notification action, as the following screenshot shows:
+Este la fel ca Arata actiunea de notificare, ca urmatorul screenshot arata:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjzmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfV9rZ9rZW46Q21SdJpb0tib0tibVpSD4OG1OQoVunVZZZZZZZZZZOOOOOOZZZZZOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
-## Control component
+## Componenta de control
 
-### Structure
+### Structura
 
 ```JavaScript
-componentDisplayName.function()
+componentDisplayName.funcție()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+componentDisplayName este șirul afișat în captura de ecran, după cum urmează.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjhhMThjZGZZZZJNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWJoZGtwVTl2VlRBa3VYYW5fVG9rZG9rZWVWWVWVWVJUV4bIzUlp4VWWWWWWWWWWVWVFDJDJDJTVDJXF3F2OZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
-### Description
+### Descriere
 
-#### setValue(parameter)
+#### setValoare (parametru)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+Folosit pentru a seta valoarea. Parametrul ar putea fi `string` sau `number` sau `object` sau `boolean` sau `array` care depinde de tipul componentei.
 
-##### Supported components
+##### Componente suportate
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | `jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)`       |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| Componentă                                                                                                                                                      | Tip de parametru                                                     | Exemplu                                                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Data Time, Trepte, Text, Progres Bar, Progres Cerc            | `string`                                                             | `input1.setValue("Hello world")`                                                                                                                                                            |
+| JSON Editor                                                                                                                                                     | `string`                                                             | `jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking ases din 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)`          |
+| Cronologie                                                                                                                                                      | `string`, separă valorile de noduri diferite prin virgulă (,)        | `timeline1.setValue("Prima etapă,Al doilea jalon")`                                                                                                                                         |
+| Număr intrare, glisor, rată                                                                                                                                     | `număr`                                                              | `numberInput1.setValue(1000)`                                                                                                                                                               |
+| Comutare                                                                                                                                                        | `boolean`                                                            | `switch1.setValue(false)`                                                                                                                                                                   |
+| Formular JSON schemă, formular                                                                                                                                  | `obiect`                                                             | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking ases din 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`        |
+| Cascader grup, Cascader                                                                                                                                         | `array`                                                              | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
-#### clearValue()
+#### clearValoare ()
 
-Used to clear the value
+Folosit pentru a şterge valoarea
 
-##### Supported components
+##### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Grupul Checkbox, Cascader, Grupul Radio Button, Data, Data Range, Data Time, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+#### concentrat()
 
-Used to focus on the component
+Folosit pentru a se concentra asupra componentei
 
-##### Supported components
+##### Componente suportate
 
 Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 input1.focus()
@@ -203,35 +203,35 @@ input1.focus()
 
 #### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Când ai stabilit condițiile de validare pentru o componentă, cum ar fi formatul de e-mail, formatul URL-ului, sau câmp obligatoriu, puteți utiliza funcția `validate()` pentru a determina dacă îndeplinește cerințele. Dacă nu îndeplinește cerințele, va fi afișat un mesaj de validare.
 
-Set the validation conditions:
+Setați condițiile de validare:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZVVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QhzhzemJoeXhk1E1a04R0SQNQSnDDDDDDDDDDDDXDZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
-Display the validation message:
+Afișează mesajul de validare:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWDWJqdWU0b2bHUFVIVn4UFVM5hl0XOTDmR0N2ExzMZZDMZZZZZZZZZZZZZWDMMDA)
 
-##### Supported components
+##### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Data Range, Data Time, Form, Rata
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+#### clearValidare()
 
-Used to clear the validation message.
+Folosit pentru a șterge mesajul de validare.
 
-##### Supported components
+##### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Input, Numarul Input, Editable Text, Text Area, Upload, Select, Multiselect, Grupul Checkbox, Radio Button, Data, Data Range, Data ora, Rata
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 input1.clearValidation()
@@ -239,27 +239,27 @@ input1.clearValidation()
 
 #### setSelectedValue(array)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Folosit pentru a seta valoarea selectată pentru Multiselect. Parametrul trebuie să fie un array.
 
-##### Supported components
+##### Componente suportate
 
-Multiselect
+Multi-selectare
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-multiselect1.setSelectedValue(["Option 1", "Option 3"])
+multiselect1.setSelectedValue([„Opțiunea 1”, „Opțiunea 3”])
 ```
 
-#### submit()
+#### prezentat()
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Trimite datele formularului. Când metoda de depunere este declanșată, mai întâi vom valida datele formularului. Dacă există erori de validare, trimiterea formularului va fi prevenită și vor fi afișate mesajele de eroare corespunzătoare. Numai după validarea reușită procedează la depunerea propunerii.
 
-##### Supported components
+##### Componente suportate
 
-JSON Schema Form, Form
+Formular JSON schemă, formular
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 form1.submit()
@@ -267,69 +267,69 @@ form1.submit()
 
 #### toggle()
 
-Used to switch the value from true to false or from false to true.
+Folosit pentru a schimba valoarea de la true la false sau fals la adevărat.
 
-##### Supported components
+##### Componente suportate
 
-Switch
+Comutare
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-switch1.toggle()
+comutator1.toggle()
 ```
 
 #### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+Folosit pentru a seta valoarea de pornire implicită pentru glisorul de rază
 
-##### Supported components
+##### Componente suportate
 
 Range Slider
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+#### setEndOfRange(număr)
 
-Used to set the default end value of the range slider
+Folosit pentru a seta valoarea finală implicită pentru glisorul de rază
 
-##### Supported components
+##### Componente suportate
 
 Range Slider
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+#### setStartValue(șir)
 
-Used to set the default start value
+Folosit pentru a seta valoarea de pornire implicită
 
-##### Supported components
+##### Componente suportate
 
-Date Range, Time Range
+Intervalul de date, intervalul de timp
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+#### setValoare EndValue(șir)
 
-Used to set the default end value
+Folosit pentru a seta valoarea de sfârșit implicită
 
-##### Supported components
+##### Componente suportate
 
-Date Range, Time Range
+Intervalul de date, intervalul de timp
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
@@ -337,219 +337,219 @@ dateRange1.setEndValue("2023-10-09")
 
 #### setValueInArray(array)
 
-Used to set the switches whose value is true
+Folosit pentru a seta comutatoarele a căror valoare este adevărată
 
-##### Supported components
+##### Componente suportate
 
-Switch Group
+Comută grupul
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-switchGroup1.setValueInArray(["Option 1", "Option 3"])
+switchGroup1.setValueInArray([„Opțiunea 1”, „Opțiunea 3”])
 ```
 
-#### selectPage(number)
+#### selectPage(număr)
 
-Used to set the index of the page to display. The index is a number starting from ０.
+Folosit pentru a seta indexul paginii pentru afişare. Indicele este un număr care începe de la 0.
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-table1.selectPage(1)
+tabel1.selectPage(1)
 ```
 
-#### selectRow(number)
+#### selectare (număr)
 
-Used to set the index of selected row. The index is a number starting from ０.
+Folosit pentru a seta indexul rândului selectat. Indicele este un număr care începe de la 0.
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-table1.selectRow(1)
+tabel1.selectRow(1)
 ```
 
 #### clearSelection()
 
-Used to clear the selected row.
+Folosit pentru a șterge rândul selectat.
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFilters(array of objects, string)
+#### setFiltre (array of objects, string)
 
-Used to set filters.
+Folosit pentru a seta filtre.
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+**Primul parametru** este o serie de obiecte. Fiecare obiect reprezintă o condiție de filtrare. Acesta include trei atribute:
 
-**\<1>**  **`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+**\<1>** **`id`** : Acesta se referă la id-ul coloanei. Dacă această coloană este rezultatul unei interogări a bazei de date, atunci id-ul ar fi numele coloanei pe care l-ați regăsit din interogare. De exemplu, în cazul în care interogarea este `SELECT e-mail AS user_email DE la utilizatori` şi redenumiţi `e-mail` ca `Email` folosind panoul din partea dreaptă a tabelului, ID-ul coloanei ar fi în continuare `user_email` dacă această coloană este adăugată manual folosind butonul `Add Column` din panoul din dreapta, poți să îi verifici id-ul în secțiunea `displayedData` din panoul din stânga. În mod obișnuit, va fi un șir generat aleatoriu începând cu `column` cum ar fi `column-320169e8-225a-482d-9853-ad34b3040`.
 
-**\<2> ** **`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**\<2> ** **`filterFn`** : tipul filtrului se potrivește. Acceptăm următoarele tipuri: `equalTo` care este la fel ca `=` în SQL, `notEqualTo` care este la fel ca `<>` în SQL, `conţine` care este la fel ca `LIKE '%value%'' în SQL, `does NotContain" care este la fel ca `NOT LIKE '%value%'' în SQL, `lessThan`care este la fel ca`\<`în SQL,`notLessThan`care este la fel ca`>=`în SQL,`notMoreThan`care este la fel ca`\<=`în SQL,`goly`care este la fel ca`IS NULL`în SQL,`notEmpty`care este la fel ca`IS NULL`în SQL,`before`este folosit pentru a compara ora sau data, care este acelaşi cu`>`în SQL,`after`este folosit pentru a compara ora sau data, care este la fel ca`\<\` în SQL.
 
-**\<3>**  **`value`** : used to set the value to  compare.
+**\<3>** **`value`** : folosit pentru a seta valoarea de comparat.
 
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
+**Al doilea parametru:** când sunt obiecte cu filtru multiplu, acesta determină dacă au o relaţie "AND" sau o relaţie "OR". Setaţi-l ca şir de caractere pentru o relaţie "AND", şi `sau` pentru o relaţie "OR".
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
+table1.setFilters([{"id":"lună", "filterFn":"equalTo", "value":"May"}, {"id":"lună", "filterFn":"equalTo", "value":"June"}], "sau")
 ```
 
 #### clearFilters()
 
-Used to clear all filters
+Folosit pentru a șterge toate filtrele
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-table1.clearFilters()
+tabel1.clearFiltre()
 ```
 
 #### setSort(string, string)
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+Folosit pentru a seta sortarea. **Primul parametru** este ID-ul coloanei pentru sortare, care este o valoare a șirului. Id-ul este identic cu id-ul menționat în setFilters(matrice de obiecte, șir). **Al doilea parametru** este ordinea de sortare, fie ascendent, fie descendent. Este setat folosind un şir de caractere `ascend` sau `descendent`.
 
-##### Supported components
+##### Componente suportate
 
-Table
+Tabel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-table1.setSort("incomes", "descend")
+table1.setSort(„incomes”, „descendent”)
 ```
 
-#### setCurrentViewKey(string)
+#### setCurrent ViewKey(șir)
 
-Use the key which is a string value of the view to set the shown view.
+Utilizați cheia care este o valoare șir a vederii pentru a seta vizualizarea afișată.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-container1.setCurrentViewKey("View 2")
+container1.setCurrent ViewKey("Vezi 2")
 ```
 
-#### setCurrentViewIndex(number)
+#### setCurrent ViewIndex(număr)
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Utilizați indicele care este o valoare numerică pornind de la 0 a vederii pentru a seta vizualizarea afișată.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-container1.setCurrentViewIndex(1)
+container1.setCurrent ViewIndex(1)
 ```
 
 #### showNextView(boolean)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Folosit pentru a afișa următoarea vizualizare. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-container1.showNextView(true)
+container1.showNextView(tru)
 ```
 
 #### showNextVisibleView(boolean)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Folosit pentru a afișa următoarea vizualizare vizibilă. Spre deosebire de comportamentul funcției `showNextView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### showPreviousView()
+#### Arată Anterior Vizualizare ()
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Folosit pentru a afișa vizualizarea anterioară. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-container1.showPreviousView(true)
+container1.showAnterior View(tru)
 ```
 
-#### showPreviousVisibleView()
+#### showAnterior VisibleView()
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Folosit pentru a afișa vizualizarea vizibilă anterioară. Spre deosebire de comportamentul funcției `showPreviousView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-##### Supported components
+##### Componente suportate
 
-Container
+Recipient
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-container1.showPreviousVisibleView(true)
+Container1.showAnterior VisibleView(adevărat)
 ```
 
 #### reset()
 
-Used to reset the value to default value.
+Folosit pentru a reseta valoarea la valoarea implicită.
 
-##### Supported components
+##### Componente suportate
 
-Form
+Formular
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+#### ResetValoare()
 
-Used to reset the value to default value.
+Folosit pentru a reseta valoarea la valoarea implicită.
 
-##### Supported components
+##### Componente suportate
 
-Steps
+Pași
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 steps1.resetValue()
@@ -557,13 +557,13 @@ steps1.resetValue()
 
 #### openModal()
 
-Used to open a modal
+Folosit pentru a deschide un modal
 
-##### Supported components
+##### Componente suportate
 
-Modal
+Modale
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 modal1.openModal()
@@ -571,27 +571,27 @@ modal1.openModal()
 
 #### closeModal()
 
-Used to close a modal
+Folosit pentru a închide un modul
 
-##### Supported components
+##### Componente suportate
 
-Modal
+Modale
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+#### setImageUrl(șir)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Folosit pentru a seta URL-ul sursă al imaginii. Poate fi un Base64 sau un URL care arată către o imagine pe web.
 
-##### Supported components
+##### Componente suportate
 
-Image
+Imagine
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,85 +601,85 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+#### clearRăspunplyMessage()
 
-Used to clear the quoted reply message above the input box.
+Folosit pentru a şterge mesajul de răspuns citat deasupra casetei.
 
-##### Supported components
+##### Componente suportate
 
 Chat
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-chat1.clearReplyMessage()
+chat1.clearRăspunplyMessage()
 ```
 
-#### setPrimaryValue(number)
+#### setPrimaryValoare (număr)
 
-Used to set the primary value of statistics.
+Folosit pentru a seta valoarea primară a statisticilor.
 
-##### Supported components
+##### Componente suportate
 
-Statistics
+Statistici
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-statistic1.setPrimaryValue(100)
+statistic1.setValoare Primary(100)
 ```
 
-#### resetPrimaryValue()
+#### ResetPrimaryValoare()
 
-Used to reset the primary value to the default primary value of statistics.
+Folosit pentru a reseta valoarea primară la valoarea primară implicită a statisticilor.
 
-##### Supported components
+##### Componente suportate
 
-Statistics
+Statistici
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-statistic1.resetPrimaryValue()
+statistic1.resetPrimaryValoare()
 ```
 
-#### setFileUrl(string)
+#### setFileUrl(șir)
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Folosit pentru a seta URL-ul fișierului. Poate fi un Base64 sau un URL care arată către un PDF pe web.
 
-##### Supported components
+##### Componente suportate
 
 PDF
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+#### redă()
 
-Used to play video or audio.
+Folosit pentru a reda video sau audio.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.play()
 ```
 
-#### pause()
+#### pauză()
 
-Used to pause video or audio.
+Folosit pentru a opri video sau audio.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.pause()
@@ -687,81 +687,81 @@ video1.pause()
 
 #### showControls(boolean)
 
-Used to set whether to show the controls.
+Folosit pentru a seta dacă să afișeze controalele.
 
-##### Supported components
+##### Componente suportate
 
 Video
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-video1.showControls(true)
+video1.showControls(adevărat)
 ```
 
-#### setVideoUrl(string)
+#### setVideoUrl(șir)
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Folosit pentru a seta URL-ul video. (Automatic Translation) Poate fi un Base64 sau un URL video pe site-urile media.
 
-##### Supported components
+##### Componente suportate
 
 Video
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolume(number)
+#### setVolum(număr)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Folosit pentru a stabili volumul. Parametrul este o valoare numerică între 0 și 1.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(number)
+#### Setare viteză(număr)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+Folosit pentru a seta viteza. Parametrul este o valoare numerică între 0.25 şi 2.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-video1.setSpeed(0.5)
+video1.setViteză (0,5)
 ```
 
 #### setLoop(boolean)
 
-Used to set whether to loop the playback.
+Folosit pentru a seta dacă să repete redarea.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(number)
+#### seekTo(număr)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+Folosit pentru a căuta o anumită poziție de timp. Parametrul este o valoare numerică, măsurată în secunde (secunde). De exemplu, pentru a căuta în poziția de timp 5:35, ați folosi valoarea 335.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.seekTo(335)
@@ -769,27 +769,27 @@ video1.seekTo(335)
 
 #### mute(boolean)
 
-Used to set mute or not.
+Folosit pentru a seta sunetul sau nu.
 
-##### Supported components
+##### Componente suportate
 
 Video, Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-video1.mute(true)
+video1.mute(adevărat)
 ```
 
-#### setAudioUrl(string)
+#### setAudioUrl(șir)
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Folosit pentru a seta URL-ul audio. Poate fi un Base64 sau un URL video pe site-urile media.
 
-##### Supported components
+##### Componente suportate
 
 Audio
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
@@ -797,13 +797,13 @@ video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp
 
 #### slickNext()
 
-Used to switch to the next image.
+Folosit pentru a comuta la imaginea următoare.
 
-##### Supported components
+##### Componente suportate
 
 Carousel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 carousel1.slickNext()
@@ -811,13 +811,13 @@ carousel1.slickNext()
 
 #### slickPrevious()
 
-Used to switch to the previous image.
+Folosit pentru a comuta la imaginea anterioară.
 
-##### Supported components
+##### Componente suportate
 
 Carousel
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 carousel1.slickPrevious()
@@ -825,60 +825,60 @@ carousel1.slickPrevious()
 
 #### setSrc()
 
-Used to set the source URL of IFrame.
+Folosit pentru a seta URL-ul sursă al IFrame.
 
-##### Supported components
+##### Componente suportate
 
 IFrame
 
-##### Example
+##### Exemplu
 
 ```JavaScript
-iframe1.setSrc("https://www.nasa.gov/")
+iFrame1.setSrc("https://www.nasa.gov/")
 ```
 
 #### setMarkers(array)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+Folosit pentru a seta marcajele pe hartă. Parametrul ar trebui să fie o serie de obiecte. Câmpurile de latitudine și longitudine din fiecare obiect ar trebui să fie aceleași cu câmpurile din panoul din dreapta
 
-##### Supported components
+##### Componente suportate
 
-Map
+Hartă
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 map1.setMarkers([
 {
-    "lat":57.14009563040699,
+    "lat":57.140095630699,
     "lng":-114.6018657894011
  },{
      "lat":55.40432513713809,
-     "lng":-112.98252263795787
+     "lng":-112.982522637787
  },{
      "lat":57.841288754888545,
      "lng":-103.3518657894011
  }
- ])
+])
 ```
 
 #### resetMarkers()
 
-Used to reset the markers to the default markers.
+Folosit pentru a reseta marcajele la markerii impliciți.
 
-##### Supported components
+##### Componente suportate
 
-Map
+Hartă
 
-##### Example
+##### Exemplu
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+## Du-te la URL
 
-### Structure
+### Structura
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +887,11 @@ newTab:boolean
 })
 ```
 
-### Description
+### Descriere
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+Folosește un obiect pentru a-l seta. Există 2 atribute în obiect. Primul atribut este `url`. Valoarea ei este un URL complet, inclusiv 'https://' sau 'http://', și este de tip șir. Al doilea atribut este `newTab`. Este un boolean folosit pentru a seta dacă să deschidă URL-ul într-o filă nouă.
 
-### Example
+### Exemplu
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +900,27 @@ newTab:true
 })
 ```
 
-## Copy to clipboard
+## Copiază în clipboard
 
-### Structure
-
-```JavaScript
-utils.copyToClipboard(string)
-```
-
-### Description
-
-Used to copy a string
-
-### Example
+### Structura
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+utils.copyToClipboard(șir)
 ```
 
-## Set router
+### Descriere
 
-### Structure
+Folosit pentru a copia un şir
+
+### Exemplu
+
+```JavaScript
+utils.copyToClipboard("Textul pentru copiere")
+```
+
+## Setare router
+
+### Structura
 
 ```JavaScript
 utils.setRouter({
@@ -929,30 +929,30 @@ viewPath:string
 })
 ```
 
-### Description
+### Descriere
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+Folosit pentru a schimba pagina în aplicațiile ILLA. Există 2 atribute în obiect.
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+Primul atribut este `pagePath`. Valoarea pageCalea este afișată în următoarea captură de ecran fără `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVVVUW5IcnN6cVRtbkNWcjdfV9rZWWWWIjZUjZamI1a084b08bd0jjjNVWNFaV5NFaVWN2UncN2N2NDZZZDT212DTXTWTWDMYWDMYWDMZDMZDMZDMZD
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+Al doilea atribut este `viewPath`. Valoarea viewPath este afișată în următoarea captură de ecran fără `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4dJxdJxDB6bIhl4lD1Elr1DM2DM2DM2YDMZZZZZZZZZDMYDMYWDMZDMZZOXT1YWNDMZOST)
 
-### Example
+### Exemplu
 
 ```JavaScript
 utils.setRouter({
 pagePath:"page2", 
-viewPath:"sub-page1"
+viewPath:"subpage1"
 })
 ```
 
-## Save to ILLA Drive
+## Salvează în unitatea ILLA
 
-### Structure
+### Structura
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,53 +965,53 @@ replace:boolean
 })
 ```
 
-### Description
+### Descriere
 
-Used to save a file to ILLA Drive.
+Folosit pentru a salva un fișier pe ILLA Drive.
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: Numele cu extensia fișierului după încărcarea pe unitatea ILLA.
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`: Base64 sau date de fișier brut, cum ar fi JSON, CSV, text simplu etc.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Una dintre următoarele valori: Auto, text simplu, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+`folder`: Dosar destinație pentru încărcarea fișierului. Lăsați necompletat pentru a fi încărcat în dosarul rădăcină.
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnonymous`: Folosit pentru a seta dacă este permis accesul anonim al utilizatorului. Dacă intenționați să setați aplicația dvs. publică, accesul anonim trebuie să fie activat. Pentru securitatea datelor dvs., fișierele sau dosarele accesibile anonim trebuie plasate în folderul anonim.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjxMjZhOW3ODFjNDNkMjlfDJkSzg0QktPUmlQa3VZcDUxYXBsZmVHVmVHVhazlXS1ZfVVVG9rZWW46SnIyQ2JuaGpsb0sG0sGJ4ZZ1ScSccScScScLTLTL0Z1ZZZZZLTLTLTL0ZZZZZZZZZZZZZZZZZZZZZXS
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+`replace`: Folosit pentru a seta când există fișiere cu același nume în același director, înlocuiţi fişierul existent cu un fişier nou sau redenumiţi automat fişierul nou.
 
-### Example
+### Exemplu
 
 ```JavaScript
-//use upload1 to pick files from device and upload to apps folder. 
+/use upload1 to select files from device and upload in apps folder. 
 utils.saveToILLADrive({
 fileName:upload1.files[0].name,
-fileData:upload1.files[0].dataURI,
+fileData:upload1. iles[0].dataURI,
 fileType:"PNG",
 folder:"apps",
-allowAnonymous:false,
-replace:true
+allowAnonymous:false, replace
+: true
 })
 ```
 
 ```JavaScript
-//upload a text file.  
+/încărcare un fișier text.  
 utils.saveToILLADrive({
 fileName:"test.txt",
 fileData:"abc",
 fileType:"Plain text",
 folder:"apps",
-allowAnonymous:false,
+allowonymous:false,
 replace:true
 })
 ```
 
-## Download from ILLA Drive
+## Descarcă de pe ILLA Drive
 
-### Structure
+### Structura
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,15 +1023,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Description
+### Descriere
 
-Used to download files from ILLA Drive.
+Folosit pentru a descărca fișiere de pe ILLA Drive.
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: o serie de obiecte, inclusiv tinyURL şi ID de fişiere. Puteți utiliza selectorul de fișiere unitate component pentru a selecta fișiere de pe ILLA Drive și pentru a obține `downloadInfo` prin drivePicker1.value
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`: folosit pentru a seta dacă să descarce fișierele ca Zip.
 
-### Example
+### Exemplu
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1040,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+## Descărcare
 
-### Structure
+### Structura
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,17 +1052,17 @@ utils.downloadFile({
 })
 ```
 
-### Description
+### Descriere
 
-Used to export data to your device.
+Folosit pentru a exporta date pe dispozitivul dvs.
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: Una dintre următoarele valori: Auto, text simplu, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
 
-`fileName`: a name with extension.
+`fileName`: un nume cu extensie.
 
-`data`: data of the file.
+`data`: datele din fișier.
 
-### Example
+### Exemplu
 
 ```JavaScript
 //download the data of table as a CSV
@@ -1074,7 +1074,7 @@ utils.downloadFile({
 ```
 
 ```JavaScript
-//download image
+/download image
 utils.downloadFile({
     fileType:"PNG",
     fileName:"text.png",
@@ -1082,11 +1082,11 @@ utils.downloadFile({
 })
 ```
 
-## Set global data
+## Setare date globale
 
-### Set global data value
+### Setați valoarea globală a datelor
 
-#### Structure
+#### Structura
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,29 +1095,29 @@ value:any
 })
 ```
 
-#### Description
+#### Descriere
 
-Used to set the value of gobalData
+Folosit pentru a seta valoarea gobalData
 
-`key`: the displayName of globalData as the following screenshot shows.
+`key`: displayName of globalData aşa cum arată următorul screenshot.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUWxYN3JxNndSZXdFdFdzI2blFZeDNUVFozRnRnRnRCYnVfVfVfV9rZ46TUc0Ymjjjjjjc28bzjdXhd4lD4IJ4JNFdFdFdFdFDYNVV21WWZZZZZZZZZZZZZZZZZZZZZZZZZZZZD4
 
-`value`: the value to set
+`value`: valoarea de setat
 
-#### Example
+#### Exemplu
 
 ```JavaScript
-//use input5 to get the user input value and set as the value of stringState. 
+/use input5 to get the user input value and set as the value of stringState 
 utils.setGlobalDataValue({
 key:"stringState", 
 value:input5.value
 })
 ```
 
-### Set global data in
+### Setare date globale în
 
-#### Structure
+#### Structura
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,20 +1127,20 @@ value:any
 })
 ```
 
-#### Description
+#### Descriere
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Când datele globale sunt o matrice sau un obiect, utilizaţi setGlobalDataIn pentru a modifica valoarea corespunzătoare unui index specific într-o array sau pentru a modifica valoarea corespunzătoare unei anumite chei dintr-un obiect.
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`cale`: indexul valorii pe care intenţionezi să o actualizezi în array sau cheia din obiect. De exemplu, pentru a seta a doua valoare in array, calea este 1 (indexul). Pentru a seta valoarea atributului numit key1, calea este cheia1.
 
-`value`: the value to set
+`value`: valoarea de setat
 
-#### Example
+#### Exemplu
 
 ```JavaScript
-//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+/objectState este un obiect: {"key1":"value1", "key2":"value2"}, to set the 
 utils.setGlobalDataIn({
 key:"objectState", 
 path:"key2", 
@@ -1148,28 +1148,28 @@ value:input7.value
 })
 ```
 
-# Built-in libraries
+# Biblioteci încorporate
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
+| **Bibliotecă**    | **Doc**                                                               | **Cum să îl folosiți în Constructorul ILLA** | **Exemplu**                                                      |
+| ----------------- | --------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------- |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                          | `_.concat(array, 2, [3], [[4]]);`                                |
+| Zi                | https://day.js.org/                                                   | `dayjs`                                      | `dayjs(dată nouă())`                                             |
+| Uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                       | `uuid.parse()`                                                   |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                                     | `numbro(1000).format({thousandSeparated: true})`                 |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                       | `Papa.parse(url, {download: true, // Restul configuraţiei... })` |
 
-# Value of actions, components...
+# Valoarea acțiunilor, componente...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using {{ references.
+Folosiți `displayName.xxx` pentru a utiliza valoarea acțiunilor, componentelor sau a altor globalData. Vă rugăm să reţineţi că în Run Script, aceste variabile pot fi accesate direct fără a utiliza referinţe {{ .
 
 ```JavaScript
 utils.downloadFromILLADrive({
-    downloadInfo:{{drivePicker1.value}},//❌ 
+    downloadInfo:{{drivePicker1.value}},/❌ 
     asZip:true
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//✅
+    downloadInfo:drivePicker1.value,//:check_mark_button:
     asZip:true
 })
 ```
