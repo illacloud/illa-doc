@@ -80,9 +80,9 @@ Când avem nevoie să folosim JavaScript pentru a prelua un e-mail în Inspector
 
 !\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzGJfdVdxNVF2hSMDY4YUtHWENE1LVFWmp0cHVtRzlfV9rZW46RUpjTGJyZTIZ4b1dY4DY4YUtHWN3N3DM3N3D2D2WND2WN4ND2XXTXTXMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
-Şi când trebuie să folosim e-mailul în "Execută Scriptul" după executarea declaraţiei `const exempleData = aşteaptă postgresql1. rigger();`, putem folosi direct `exampleData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Arată o notificare de succes atunci când interogarea are succes şi rezultatul este unic. Arată o notificare eșuată atunci când rezultatul interogării nu este unic sau când eșuează.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 !\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjE5ZTdlZGQ0NzQ4NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVVZfVG9rZ9rZWVmWNmLTkdkbN3DRB3N3N3H3N2WNZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
 
@@ -159,7 +159,7 @@ componentDisplayName este șirul afișat în captura de ecran, după cum urmeaz�
 
 #### setValoare (parametru)
 
-Folosit pentru a seta valoarea. Parametrul ar putea fi `string` sau `number` sau `object` sau `boolean` sau `array` care depinde de tipul componentei.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
 ##### Componente suportate
 
@@ -203,7 +203,7 @@ input1.focus()
 
 #### validate()
 
-Când ai stabilit condițiile de validare pentru o componentă, cum ar fi formatul de e-mail, formatul URL-ului, sau câmp obligatoriu, puteți utiliza funcția `validate()` pentru a determina dacă îndeplinește cerințele. Dacă nu îndeplinește cerințele, va fi afișat un mesaj de validare.
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
 Setați condițiile de validare:
 
@@ -239,7 +239,7 @@ input1.clearValidation()
 
 #### setSelectedValue(array)
 
-Folosit pentru a seta valoarea selectată pentru Multiselect. Parametrul trebuie să fie un array.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
 ##### Componente suportate
 
@@ -253,7 +253,7 @@ multiselect1.setSelectedValue([„Opțiunea 1”, „Opțiunea 3”])
 
 #### prezentat()
 
-Trimite datele formularului. Când metoda de depunere este declanșată, mai întâi vom valida datele formularului. Dacă există erori de validare, trimiterea formularului va fi prevenită și vor fi afișate mesajele de eroare corespunzătoare. Numai după validarea reușită procedează la depunerea propunerii.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
 ##### Componente suportate
 
@@ -351,7 +351,7 @@ switchGroup1.setValueInArray([„Opțiunea 1”, „Opțiunea 3”])
 
 #### selectPage(număr)
 
-Folosit pentru a seta indexul paginii pentru afişare. Indicele este un număr care începe de la 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
 ##### Componente suportate
 
@@ -365,7 +365,7 @@ tabel1.selectPage(1)
 
 #### selectare (număr)
 
-Folosit pentru a seta indexul rândului selectat. Indicele este un număr care începe de la 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
 ##### Componente suportate
 
@@ -395,15 +395,15 @@ table1.clearSelection()
 
 Folosit pentru a seta filtre.
 
-**Primul parametru** este o serie de obiecte. Fiecare obiect reprezintă o condiție de filtrare. Acesta include trei atribute:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**\<1>** **`id`** : Acesta se referă la id-ul coloanei. Dacă această coloană este rezultatul unei interogări a bazei de date, atunci id-ul ar fi numele coloanei pe care l-ați regăsit din interogare. De exemplu, în cazul în care interogarea este `SELECT e-mail AS user_email DE la utilizatori` şi redenumiţi `e-mail` ca `Email` folosind panoul din partea dreaptă a tabelului, ID-ul coloanei ar fi în continuare `user_email` dacă această coloană este adăugată manual folosind butonul `Add Column` din panoul din dreapta, poți să îi verifici id-ul în secțiunea `displayedData` din panoul din stânga. În mod obișnuit, va fi un șir generat aleatoriu începând cu `column` cum ar fi `column-320169e8-225a-482d-9853-ad34b3040`.
+**\<1>**  **`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**\<2> ** **`filterFn`** : tipul filtrului se potrivește. Acceptăm următoarele tipuri: `equalTo` care este la fel ca `=` în SQL, `notEqualTo` care este la fel ca `<>` în SQL, `conţine` care este la fel ca `LIKE '%value%'' în SQL, `does NotContain" care este la fel ca `NOT LIKE '%value%'' în SQL, `lessThan`care este la fel ca`\<`în SQL,`notLessThan`care este la fel ca`>=`în SQL,`notMoreThan`care este la fel ca`\<=`în SQL,`goly`care este la fel ca`IS NULL`în SQL,`notEmpty`care este la fel ca`IS NULL`în SQL,`before`este folosit pentru a compara ora sau data, care este acelaşi cu`>`în SQL,`after`este folosit pentru a compara ora sau data, care este la fel ca`\<\` în SQL.
+**\<2> ** **`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **\<3>** **`value`** : folosit pentru a seta valoarea de comparat.
 
-**Al doilea parametru:** când sunt obiecte cu filtru multiplu, acesta determină dacă au o relaţie "AND" sau o relaţie "OR". Setaţi-l ca şir de caractere pentru o relaţie "AND", şi `sau` pentru o relaţie "OR".
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
 ##### Componente suportate
 
@@ -431,7 +431,7 @@ tabel1.clearFiltre()
 
 #### setSort(string, string)
 
-Folosit pentru a seta sortarea. **Primul parametru** este ID-ul coloanei pentru sortare, care este o valoare a șirului. Id-ul este identic cu id-ul menționat în setFilters(matrice de obiecte, șir). **Al doilea parametru** este ordinea de sortare, fie ascendent, fie descendent. Este setat folosind un şir de caractere `ascend` sau `descendent`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
 ##### Componente suportate
 
@@ -473,7 +473,7 @@ container1.setCurrent ViewIndex(1)
 
 #### showNextView(boolean)
 
-Folosit pentru a afișa următoarea vizualizare. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Componente suportate
 
@@ -487,7 +487,7 @@ container1.showNextView(tru)
 
 #### showNextVisibleView(boolean)
 
-Folosit pentru a afișa următoarea vizualizare vizibilă. Spre deosebire de comportamentul funcției `showNextView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Componente suportate
 
@@ -501,7 +501,7 @@ container1.showNextVisibleView(false)
 
 #### Arată Anterior Vizualizare ()
 
-Folosit pentru a afișa vizualizarea anterioară. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Componente suportate
 
@@ -515,7 +515,7 @@ container1.showAnterior View(tru)
 
 #### showAnterior VisibleView()
 
-Folosit pentru a afișa vizualizarea vizibilă anterioară. Spre deosebire de comportamentul funcției `showPreviousView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Componente suportate
 
@@ -585,7 +585,7 @@ modal1.closeModal()
 
 #### setImageUrl(șir)
 
-Folosit pentru a seta URL-ul sursă al imaginii. Poate fi un Base64 sau un URL care arată către o imagine pe web.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
 ##### Componente suportate
 
@@ -645,7 +645,7 @@ statistic1.resetPrimaryValoare()
 
 #### setFileUrl(șir)
 
-Folosit pentru a seta URL-ul fișierului. Poate fi un Base64 sau un URL care arată către un PDF pe web.
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
 
 ##### Componente suportate
 
@@ -701,7 +701,7 @@ video1.showControls(adevărat)
 
 #### setVideoUrl(șir)
 
-Folosit pentru a seta URL-ul video. (Automatic Translation) Poate fi un Base64 sau un URL video pe site-urile media.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Componente suportate
 
@@ -715,7 +715,7 @@ video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 
 #### setVolum(număr)
 
-Folosit pentru a stabili volumul. Parametrul este o valoare numerică între 0 și 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
 ##### Componente suportate
 
@@ -727,7 +727,7 @@ Video, Audio
 
 #### Setare viteză(număr)
 
-Folosit pentru a seta viteza. Parametrul este o valoare numerică între 0.25 şi 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
 ##### Componente suportate
 
@@ -755,7 +755,7 @@ video1.setLoop(false)
 
 #### seekTo(număr)
 
-Folosit pentru a căuta o anumită poziție de timp. Parametrul este o valoare numerică, măsurată în secunde (secunde). De exemplu, pentru a căuta în poziția de timp 5:35, ați folosi valoarea 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
 ##### Componente suportate
 
@@ -783,7 +783,7 @@ video1.mute(adevărat)
 
 #### setAudioUrl(șir)
 
-Folosit pentru a seta URL-ul audio. Poate fi un Base64 sau un URL video pe site-urile media.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Componente suportate
 
@@ -839,7 +839,7 @@ iFrame1.setSrc("https://www.nasa.gov/")
 
 #### setMarkers(array)
 
-Folosit pentru a seta marcajele pe hartă. Parametrul ar trebui să fie o serie de obiecte. Câmpurile de latitudine și longitudine din fiecare obiect ar trebui să fie aceleași cu câmpurile din panoul din dreapta
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
 ##### Componente suportate
 
@@ -889,7 +889,7 @@ newTab:boolean
 
 ### Descriere
 
-Folosește un obiect pentru a-l seta. Există 2 atribute în obiect. Primul atribut este `url`. Valoarea ei este un URL complet, inclusiv 'https://' sau 'http://', și este de tip șir. Al doilea atribut este `newTab`. Este un boolean folosit pentru a seta dacă să deschidă URL-ul într-o filă nouă.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
 ### Exemplu
 
@@ -931,13 +931,13 @@ viewPath:string
 
 ### Descriere
 
-Folosit pentru a schimba pagina în aplicațiile ILLA. Există 2 atribute în obiect.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-Primul atribut este `pagePath`. Valoarea pageCalea este afișată în următoarea captură de ecran fără `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 !\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVVVUW5IcnN6cVRtbkNWcjdfV9rZWWWWIjZUjZamI1a084b08bd0jjjNVWNFaV5NFaVWN2UncN2N2NDZZZDT212DTXTWTWDMYWDMYWDMZDMZDMZDMZD
 
-Al doilea atribut este `viewPath`. Valoarea viewPath este afișată în următoarea captură de ecran fără `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4dJxdJxDB6bIhl4lD1Elr1DM2DM2DM2YDMZZZZZZZZZDMYDMYWDMZDMZZOXT1YWNDMZOST)
 
@@ -973,11 +973,11 @@ Folosit pentru a salva un fișier pe ILLA Drive.
 
 `fileData`: Base64 sau date de fișier brut, cum ar fi JSON, CSV, text simplu etc.
 
-`fileType`: Una dintre următoarele valori: Auto, text simplu, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`folder`: Dosar destinație pentru încărcarea fișierului. Lăsați necompletat pentru a fi încărcat în dosarul rădăcină.
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonymous`: Folosit pentru a seta dacă este permis accesul anonim al utilizatorului. Dacă intenționați să setați aplicația dvs. publică, accesul anonim trebuie să fie activat. Pentru securitatea datelor dvs., fișierele sau dosarele accesibile anonim trebuie plasate în folderul anonim.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 !\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjxMjZhOW3ODFjNDNkMjlfDJkSzg0QktPUmlQa3VZcDUxYXBsZmVHVmVHVhazlXS1ZfVVVG9rZWW46SnIyQ2JuaGpsb0sG0sGJ4ZZ1ScSccScScScLTLTL0Z1ZZZZZLTLTLTL0ZZZZZZZZZZZZZZZZZZZZZXS
 
@@ -1027,7 +1027,7 @@ utils.downloadFromILLADrive({
 
 Folosit pentru a descărca fișiere de pe ILLA Drive.
 
-`downloadInfo`: o serie de obiecte, inclusiv tinyURL şi ID de fişiere. Puteți utiliza selectorul de fișiere unitate component pentru a selecta fișiere de pe ILLA Drive și pentru a obține `downloadInfo` prin drivePicker1.value
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
 `asZip`: folosit pentru a seta dacă să descarce fișierele ca Zip.
 
@@ -1056,7 +1056,7 @@ utils.downloadFile({
 
 Folosit pentru a exporta date pe dispozitivul dvs.
 
-`fileType`: Una dintre următoarele valori: Auto, text simplu, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
 `fileName`: un nume cu extensie.
 
@@ -1133,7 +1133,7 @@ Când datele globale sunt o matrice sau un obiect, utilizaţi setGlobalDataIn pe
 
 `key`: displayName of globalData.
 
-`cale`: indexul valorii pe care intenţionezi să o actualizezi în array sau cheia din obiect. De exemplu, pentru a seta a doua valoare in array, calea este 1 (indexul). Pentru a seta valoarea atributului numit key1, calea este cheia1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `value`: valoarea de setat
 
@@ -1150,17 +1150,17 @@ value:input7.value
 
 # Biblioteci încorporate
 
-| **Bibliotecă**    | **Doc**                                                               | **Cum să îl folosiți în Constructorul ILLA** | **Exemplu**                                                      |
-| ----------------- | --------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                          | `_.concat(array, 2, [3], [[4]]);`                                |
-| Zi                | https://day.js.org/                                                   | `dayjs`                                      | `dayjs(dată nouă())`                                             |
-| Uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                       | `uuid.parse()`                                                   |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                                     | `numbro(1000).format({thousandSeparated: true})`                 |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                       | `Papa.parse(url, {download: true, // Restul configuraţiei... })` |
+| **Bibliotecă**    | **Doc**                                                               | **Cum să îl folosiți în Constructorul ILLA** | **Exemplu**                                                  |
+| ----------------- | --------------------------------------------------------------------- | -------------------------------------------- | ------------------------------------------------------------ |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                          | `_.concat(array, 2, [3], [[4]]);`                            |
+| Zi                | https://day.js.org/                                                   | `dayjs`                                      | `dayjs(dată nouă())`                                         |
+| Uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                       | `uuid.parse()`                                               |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                                     | `numbro(1000).format({thousandSeparated: true})`             |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                       | `Papa.parse(url, {download: true, // rest of config ... })`  |
 
 # Valoarea acțiunilor, componente...
 
-Folosiți `displayName.xxx` pentru a utiliza valoarea acțiunilor, componentelor sau a altor globalData. Vă rugăm să reţineţi că în Run Script, aceste variabile pot fi accesate direct fără a utiliza referinţe {{ .
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using {{ references.
 
 ```JavaScript
 utils.downloadFromILLADrive({

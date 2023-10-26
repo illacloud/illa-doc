@@ -80,9 +80,9 @@ När vi måste använda JavaScript för att hämta ett e-postmeddelande i kompon
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExM9WNA)
 
-Och när vi behöver använda e-postmeddelandet i "Kör skript" efter att ha utfört uttalandet `const exempelData = vänta postgresql1. rigger();`, vi kan direkt använda `exempelData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Visa en lyckad anmälan när frågan är framgångsrik och resultatet är unikt. Visa ett felmeddelande när frågeresultatet inte är unikt eller när det misslyckas.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?kod=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMYDExMWNAM9NA)
 
@@ -159,7 +159,7 @@ componentDisplayName är strängen som visas i skärmdumpen, enligt följande.
 
 #### setValue(parameter)
 
-Används för att ange värde. Parametern kan vara en `string` eller `number` eller `object` eller `boolean` eller `array` som beror på komponenttypen.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
 ##### Komponenter som stöds
 
@@ -203,7 +203,7 @@ input1.focus()
 
 #### validate()
 
-När du har ställt in valideringsvillkor för en komponent, till exempel e-postformat, URL-format, eller obligatoriskt fält kan du använda funktionen `validate()` för att avgöra om den uppfyller kraven. Om det inte uppfyller kraven kommer ett valideringsmeddelande att visas.
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
 Ställ in valideringsvillkor:
 
@@ -239,7 +239,7 @@ input1.clearValidation()
 
 #### setSelectedValue(array)
 
-Används för att ställa in valt värde för Multiselect. Parametern bör vara en samling.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
 ##### Komponenter som stöds
 
@@ -253,7 +253,7 @@ multiselect1.setSelectedValue(["Alternativ 1", "Alternativ 3"])
 
 #### skicka ()
 
-Skicka formulärdata. När inlämningsmetoden utlöses kommer vi först att validera formulärdata. Om det finns valideringsfel kommer formulärinlämningen att förhindras och motsvarande felmeddelanden kommer att visas. Först efter lyckad validering fortsätter inlämningen.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
 ##### Komponenter som stöds
 
@@ -351,7 +351,7 @@ switchGroup1.setValueInArray(["Alternativ 1", "Alternativ 3"])
 
 #### selectPage(nummer)
 
-Används för att ställa in indexet för sidan som ska visas. Indexet är ett tal från och med 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
 ##### Komponenter som stöds
 
@@ -365,7 +365,7 @@ tabell1.selectPage(1)
 
 #### selectRow(nummer)
 
-Används för att ange index för vald rad. Indexet är ett tal från och med 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
 ##### Komponenter som stöds
 
@@ -395,15 +395,15 @@ tabell1.clearSelection()
 
 Används för att ställa in filter.
 
-**Den första parametern** är en samling objekt. Varje objekt representerar ett filtrerande tillstånd. Den innehåller tre attribut:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**\<1>** **`id`** : Detta hänvisar till id för denna kolumn. Om denna kolumn är ett resultat av en databasfråga så skulle id vara det kolumnnamn du hämtat från frågan. Till exempel, om frågan är `SELECT email AS user_email FRÅN användare` och byta namn på `email` som `Email` med hjälp av högra panelen på tabellen, ID för kolumnen skulle fortfarande vara `user_email` Om denna kolumn läggs till manuellt med hjälp av `Add Column`-knappen i högerpanelen, du kan kontrollera dess id i avsnittet "displayedData" på vänsterpanelen. Vanligtvis kommer det att vara en slumpmässigt genererad sträng som börjar med `column` som `column-320169e8-225a-482d-9853-ad34b3040220`.
+**\<1>**  **`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**\<2> ** **`filterFn`** : matchningstypen för filtret. Vi stöder följande typer: `equalTo` som är samma som `=` i SQL, `notEqualTo` som är samma som `<>` i SQL, `innehåller` vilket är samma som `LIKE '%value%'` i SQL, `does NotContain` som är samma som `NOT LIKE '%value%'` i SQL, `lessThan` som är samma som `<` i SQL, `notLessThan` vilket är samma som `>=` i SQL, `notMoreThan` som är samma som `<=` i SQL, `empty` vilket är samma som `IS NULL` i SQL, `notEmpty` som är samma som `INTE NULL` i SQL, `innan` används för att jämföra tid eller datum, vilket är detsamma som `>` i SQL, `after` används för att jämföra tid eller datum, vilket är samma som `<` i SQL.
+**\<2> ** **`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **\<3>** **`value`** : används för att ställa in värdet att jämföra.
 
-**Den andra parametern:** när det finns flera filtervillkorsobjekt, avgör det om de har ett "AND" förhållande eller ett "OR" förhållande. Ange det som en sträng `and` för en "AND" relation, och `or` för en "OR" relation.
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
 ##### Komponenter som stöds
 
@@ -431,7 +431,7 @@ tabell1.clearFilters()
 
 #### setSort(string, string)
 
-Används för att ställa in sorteringen. **Den första parametern** är symbolen för kolumnen för att sortera vilket är ett strängvärde. Id är samma som id som nämns i setFilters(samling av objekt, sträng). **Den andra parametern** är sorteringsordningen, antingen stigande eller sjunkande. Den är inställd med ett strängvärde `ascend` eller `descend`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
 ##### Komponenter som stöds
 
@@ -473,7 +473,7 @@ container1.setCurrentViewIndex(1)
 
 #### showNextView(boolean)
 
-Används för att visa nästa vy. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Komponenter som stöds
 
@@ -487,7 +487,7 @@ container1.showNextView(true)
 
 #### showNextVisibleView(boolean)
 
-Används för att visa nästa synliga vy. Till skillnad från beteendet hos funktionen `showNextView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ##### Komponenter som stöds
 
@@ -501,7 +501,7 @@ container1.showNextVisibleView(false)
 
 #### showPreviousView()
 
-Används för att visa föregående vy. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Komponenter som stöds
 
@@ -515,7 +515,7 @@ container1.showFöregåendeView(sant)
 
 #### showPreviousVisibleView()
 
-Används för att visa föregående synlig vy. Till skillnad från beteendet hos funktionen `showPreviousView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ##### Komponenter som stöds
 
@@ -585,7 +585,7 @@ modal1.closeModal()
 
 #### setImageUrl(sträng)
 
-Används för att ange bildkäll-URL. Det kan vara en Base64 eller en URL som pekar på en bild på webben.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
 ##### Komponenter som stöds
 
@@ -645,7 +645,7 @@ statistik1.återställePrimaryValue()
 
 #### setFileUrl(sträng)
 
-Används för att ange filens URL. Det kan vara en Base64 eller en URL som pekar på en PDF på webben.
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
 
 ##### Komponenter som stöds
 
@@ -701,7 +701,7 @@ video1.showControls(sant)
 
 #### setVideoUrl(sträng)
 
-Används för att ställa in videons URL. Det kan vara en Base64 eller en video URL på media webbplatser.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Komponenter som stöds
 
@@ -715,7 +715,7 @@ video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 
 #### setVolume(nummer)
 
-Används för att ställa in volymen. Parametern är ett talvärde mellan 0 och 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
 ##### Komponenter som stöds
 
@@ -727,7 +727,7 @@ Video, Ljud
 
 #### setSpeed(nummer)
 
-Används för att ställa in hastigheten. Parametern är ett talvärde mellan 0,25 och 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
 ##### Komponenter som stöds
 
@@ -755,7 +755,7 @@ video1.setLoop(false)
 
 #### sökning(nummer)
 
-Används för att söka till en specifik tidsposition. Parametern är ett talvärde, mätt i sekunder (s). Till exempel, att söka till tidsposition 5:35, skulle du använda värdet 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
 ##### Komponenter som stöds
 
@@ -783,7 +783,7 @@ video1.tyst(sant)
 
 #### setAudioUrl(sträng)
 
-Används för att ställa in audios URL. Det kan vara en Base64 eller en video URL på media webbplatser.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
 ##### Komponenter som stöds
 
@@ -839,7 +839,7 @@ iframe1.setSrc("https://www.nasa.gov/")
 
 #### setMarkers(array)
 
-Används för att ställa in markörerna på kartan. Parametern bör vara en rad objekt. Fälten latitud och longitud i varje objekt ska vara samma som fälten i högerpanelen
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
 ##### Komponenter som stöds
 
@@ -889,7 +889,7 @@ newTab:boolean
 
 ### Beskrivning
 
-Använd ett objekt för att ställa in det. Det finns 2 attribut i objektet. Det första attributet är `url`. Dess värde är en komplett URL, inklusive 'https://' eller 'http://', och det är av typen sträng. Det andra attributet är `newTab`. Det är ett booleskt som används för att ställa in om webbadressen ska öppnas i en ny flik.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
 ### Exempel
 
@@ -931,13 +931,13 @@ viewPath:string
 
 ### Beskrivning
 
-Används för att ändra sidan i ILLA Apps. Det finns 2 attribut i objektet.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-Det första attributet är `pagePath`. Värdet på sidsökvägen visas på följande skärmdump utan `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExM9WNA)
 
-Det andra attributet är `viewPath`. Värdet på vysökvägen visas på följande skärmdump utan `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?kod=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2Nm4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMYOWOWNAM9NA)
 
@@ -973,11 +973,11 @@ Används för att spara en fil till ILLA Drive.
 
 `fileData`: Base64 eller rå fildata, som JSON, CSV, oformaterad text, etc.
 
-`fileType`: Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`folder`: Målmapp för filuppladdning. Lämna det tomt för att ladda upp till rotmappen.
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonymous`: Används för att ange om anonym användaråtkomst är tillåten. Om du planerar att ställa in din ansökan som offentlig måste anonym åtkomst vara aktiverad. För att dina data ska vara säkra måste filer eller mappar som är tillgängliga anonymt placeras i den anonyma mappen.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 ![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMYODExMWNAM9NA)
 
@@ -1027,7 +1027,7 @@ utils.downloadFromILLADrive({
 
 Används för att ladda ner filer från ILLA Drive.
 
-`downloadInfo`: en samling av objekt inklusive tinyURL och fileID. Du kan använda komponenten Drive-filväljaren för att plocka filer från ILLA Drive och få `downloadInfo` via drivePicker1.value
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
 `asZip`: används för att ställa in om du vill ladda ner filerna som en Zip.
 
@@ -1056,7 +1056,7 @@ utils.downloadFile({
 
 Används för att exportera data till din enhet.
 
-`fileType`: Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
 `fileName`: ett namn med tillägg.
 
@@ -1133,7 +1133,7 @@ När den globala datan är en array eller objekt, använd setGlobalDataIn för a
 
 `key`: Visningsnamnet för globalData.
 
-`path`: indexet för det värde du avser att uppdatera i arrayen eller nyckeln i objektet. Till exempel, för att ställa in det andra värdet i array, sökvägen är 1 (index). För att ställa in värdet på attributet som heter key1, är sökvägen key1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `value`: värdet som ska anges
 
@@ -1150,17 +1150,17 @@ värde:input7.value
 
 # Inbyggda bibliotek
 
-| **Bibliotek**     | **Doc**                                                               | **Hur man använder det i ILLA Builder** | **Exempel**                                                            |
-| ----------------- | --------------------------------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                     | `_.concat(array, 2, [3], [[4]]);`                                      |
-| Dag.js            | https://day.js.org/                                                   | `dayjs`                                 | `dayjs(nytt datum()`                                                   |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                  | `uuid.parse()`                                                         |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                                | `numbro(1000).format({thousandSeparated: true})`                       |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                  | `Papa.parse(url, {download: sant, // resten av konfigurationen ... })` |
+| **Bibliotek**     | **Doc**                                                               | **Hur man använder det i ILLA Builder** | **Exempel**                                                  |
+| ----------------- | --------------------------------------------------------------------- | --------------------------------------- | ------------------------------------------------------------ |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                     | `_.concat(array, 2, [3], [[4]]);`                            |
+| Dag.js            | https://day.js.org/                                                   | `dayjs`                                 | `dayjs(nytt datum()`                                         |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                  | `uuid.parse()`                                               |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                                | `numbro(1000).format({thousandSeparated: true})`             |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                  | `Papa.parse(url, {download: true, // rest of config ... })`  |
 
 # Värdet av handlingar, komponenter...
 
-Använd `displayName.xxx` för att använda värdet på åtgärder, komponenter eller andra globalData. Observera att i Kör skriptet kan dessa variabler nås direkt utan att använda {{ referenser.
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using {{ references.
 
 ```JavaScript
 utils.downloadFromILLADrive({
