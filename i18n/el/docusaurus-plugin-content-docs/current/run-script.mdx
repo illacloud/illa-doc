@@ -1,0 +1,1175 @@
+---
+title: Εκτέλεση Σεναρίου
+description: Με την ενεργοποίηση του Run Script μέσω ενός χειριστή γεγονότων, μπορείτε να επιτύχετε την διαδοχική εκτέλεση των λειτουργιών και να εκτελέσετε διαφορετικές ενέργειες με βάση διαφορετική κατάσταση.
+---
+
+# Πώς-να
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+## Επίδειξη
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### Εκτέλεση και πιρούνι
+
+https://illa.ai/app/ILAfx4p1C7Ac/λεπτομέρεια
+
+## Περίπτωση χρήσης: Σύνδεση και ανακατεύθυνση σε διαφορετικές σελίδες
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### Εκτέλεση και πιρούνι
+
+https://illa.ai/app/ILAex4p1C7Eh/detail
+
+# ILLA custom functions
+
+## Ενέργεια ενεργοποίησης
+
+### Δομή
+
+```JavaScript
+const exampleData = αναμένει actionName.trigger();
+```
+
+Το όνομα ενέργειας είναι η συμβολοσειρά που εμφανίζεται στο στιγμιότυπο οθόνης, ως εξής.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZJZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4OXDVYnVYOTNOc2RoXE2OTgzMDQ1MTI6MTY5ODMwExMl9WNA)
+
+### Περιγραφή
+
+Στην Εκτέλεση σεναρίου, η μεταβλητή `exampleData` είναι η ίδια με την `actionName.data`.
+
+### Παράδειγμα
+
+Για παράδειγμα, χρησιμοποιούμε τη δράση `postgresql1` για να ρωτήσουμε το email του James.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBm2M3MWJlZwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVfVG9rZW46VU0yYWI4RHWbzQ2SWV4RkhBcXVcGNZc1NXZE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Ενεργοποίηση της ενέργειας μέσω Εκτέλεσης Σεναρίου
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGUWGdyb2FZOGh4R3BUQ3VjNk321cjXzE2OTgzMDQ1MTI6MTY5ODMwODMl9WNA)
+
+`postgresql1.data` είναι
+
+```JSON
+[
+  {
+    "email": "James@outlook.com",
+    "id": "1",
+    "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "name": "James"
+  }
+]
+```
+
+When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3Q0JMN3VTDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODExMwODExMl9WNA)
+
+Και όταν πρέπει να χρησιμοποιήσετε το email στο "Run Script" μετά την εκτέλεση της δήλωσης `const exampleData = αναμένει postgresql1. rigger();`, μπορούμε να χρησιμοποιήσουμε άμεσα `exampleData[0].email`.
+
+Εμφάνιση μιας ειδοποίησης επιτυχίας όταν το ερώτημα είναι επιτυχές και το αποτέλεσμα είναι μοναδικό. Εμφάνιση ειδοποίησης αποτυχίας όταν το αποτέλεσμα ερωτήματος δεν είναι μοναδικό ή όταν αποτυγχάνει.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVVmowRjRYbVZfVG9rZW46VmVwNmJLTkb3BmNDR4d3NSUHV3SmJOc2xmXE2OTgzMDQ1MTI6MTY5ODMwODMl9WNA)
+
+```JSON
+const exampleData = await postgresql1.trigger();
+//show email via notification when the length of the resulting array is 1.
+if(exampleData.length==1){
+utils.showNotification(
+  {
+    type:"info",
+    title:"Retrieved successfully",
+    description:exampleData[0].email,
+    duration: 4500}
+);
+  }else{
+  //else, show a failed notification
+utils.showNotification(
+  {
+    type:"info",
+    title:"Failed to retrieve",
+    duration: 4500
+  }
+);
+  };
+```
+
+## Εμφάνιση ειδοποίησης
+
+### Δομή
+
+```JavaScript
+utils.showNotification(
+Ş
+type: "info",
+title: "Συγχαρητήρια",
+description: "Retrieved successfully",
+duration: 4500
+}
+)
+```
+
+### Περιγραφή
+
+| Παράμετρος   | Περιγραφή                                                                   | Τύπος δεδομένων                                                                                 | Παράδειγμα                                   |
+| ------------ | --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | -------------------------------------------- |
+| τύπος        | Χρησιμοποιείται για τον ορισμό του τύπου εικονιδίου στην ειδοποίηση.        | Συμβολοσειρά, μία από τις ακόλουθες τιμές:"info"`default`"success""error""warning"              | τύπος: "πληροφορίες"                         |
+| τίτλος       | Χρησιμοποιείται για τον ορισμό του τίτλου της ειδοποίησης                   | Συμβολοσειρά                                                                                    | title: "Συγχαρητήρια"                        |
+| περιγραφή    | Χρησιμοποιείται για τον ορισμό της περιγραφής                               | Συμβολοσειρά                                                                                    | περιγραφή: "Ανάκτηση με επιτυχία"            |
+| διάρκεια     | Χρησιμοποιείται για τον ορισμό της διάρκειας εμφάνισης της ειδοποίησης.     | Αριθμός, σε χιλιοστά του δευτερολέπτου (ms)                                                     | διάρκεια: 4500                               |
+
+### Παράδειγμα
+
+Εμφάνιση ειδοποίησης όταν κάνετε κλικ στο κουμπί:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJZDI0MjgzMzAwNGE2ODQzNjdfRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXE2OTgzMDQ1MTI6MTY5ODMwODMl9WNA)
+
+Είναι το ίδιο με την ενέργεια ειδοποίησης εμφάνισης, όπως δείχνει το ακόλουθο στιγμιότυπο οθόνης:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+
+## Στοιχείο ελέγχου
+
+### Δομή
+
+```JavaScript
+componentDisplayName.function()
+```
+
+componentDisplayName είναι η συμβολοσειρά που εμφανίζεται στο στιγμιότυπο οθόνης, ως εξής.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhMThjZGZjNzExYmIOWI4NjVfdGtlbTRXS3ZNall1aTRzWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VFMbHVpdEJmc3FnXE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+### Περιγραφή
+
+#### ορισμόςΤιμή (παράμετρος)
+
+Χρησιμοποιείται για τον ορισμό της τιμής. Η παράμετρος θα μπορούσε να είναι ένα `string` ή `number` ή `object` ή `boolean` ή `array` που εξαρτάται από τον τύπο συστατικού.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+| Συστατικό                                                                                                                                                                                         | Τύπος παραμέτρου                                                      | Παράδειγμα                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Είσοδος, Επεξεργάσιμο Κείμενο, Περιοχή Κειμένου, Διαχωριστικό, Επιλέξτε, Ομάδα Ραδιοφώνου, Κουμπί Radio Buttonm, Ημερομηνία, Χρόνος Ημερομηνίας, Βήματα, Κείμενο, Διάταξη Φραγμών, Πρόοδος Κύκλων | `string`                                                              | `input1.setValue("Hello world")`                                                                                                                                                               |
+| JSON Editor                                                                                                                                                                                       | `string`                                                              | jsonEditor1.setValue(`Ş"firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)              |
+| Χρονοδιάγραμμα                                                                                                                                                                                    | `string`, Διαχωρίστε τις τιμές των διαφορετικών κόμβων μέσω κόμμα (,) | `timeline1.setValue("Το πρώτο ορόσημο,Το δεύτερο ορόσημο")`                                                                                                                                    |
+| Είσοδος Αριθμού, Ρυθμιστικό, Ρυθμός                                                                                                                                                               | `number`                                                              | `numberInput1.setValue(1000)`                                                                                                                                                                  |
+| Εναλλαγή                                                                                                                                                                                          | `boolean`                                                             | `switch1.setValue(false)`                                                                                                                                                                      |
+| Μορφή Σχήματος Jun, Μορφή                                                                                                                                                                         | `object`                                                              | `jsonSchemaForm1.setValue(Ş"firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse κώλοι kicking κώλοι από το 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`  |
+| Ομάδα Checkbox, Cascader                                                                                                                                                                          | `array`                                                               | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                        |
+
+#### clearValue()
+
+Χρησιμοποιείται για τον καθαρισμό της τιμής
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Είσοδος, Αριθμός Εισόδου, Επεξεργάσιμο Κείμενο, Περιοχή Κειμένου, Μεταφόρτωση, Jsn Editor, Jsn Schema Form, Διακόπτης, Επιλογή, Πολλαπλών Επιλογών, Ομάδα Checkbox, Cascader, Ομάδα Ραδιοφώνου, Κουμπί Ραδιοφωνίας, Ημερομηνία, Χρονοδιάγραμμα, Χρόνος Δεδομένων, Ημερομηνία Ώρας, Κείμενο, Βαθμός, Bar Progress, Πρόοδος Κύκλων, Χρονοδιάγραμμα, Διαχωριστής
+
+##### Παράδειγμα
+
+```JavaScript
+input1.clearValue()
+```
+
+#### εστίαση()
+
+Χρησιμοποιείται για να επικεντρωθεί στο στοιχείο
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Είσοδος, Αριθμός Είσοδος, Επεξεργάσιμο κείμενο, Περιοχή κειμένου, JSON Editor, Πλούσιο πρόγραμμα επεξεργασίας, Ομάδα Ραδιοφώνου,
+
+##### Παράδειγμα
+
+```JavaScript
+input1.focus()
+```
+
+#### validate()
+
+Όταν έχετε ορίσει προϋποθέσεις επικύρωσης για ένα στοιχείο, όπως μορφή ηλεκτρονικού ταχυδρομείου, μορφή URL, ή το απαιτούμενο πεδίο, μπορείτε να χρησιμοποιήσετε τη συνάρτηση `validate()` για να προσδιορίσετε αν πληροί τις απαιτήσεις. Εάν δεν πληροί τις απαιτήσεις, θα εμφανιστεί μήνυμα επικύρωσης.
+
+Ορίστε τους όρους επικύρωσης:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlM0ZmVhZjYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1E1a0N4R0dQSnVDeUpZhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+
+Εμφάνιση του μηνύματος επικύρωσης:
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODExMwODExMl9WNA)
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Είσοδος, Αριθμός Είσοδος, Επεξεργάσιμο Κείμενο, Περιοχή Κειμένου, Μεταφόρτωση, Επιλογή, Πολλαπλών Επιλογών, Ομάδα Checkbox, Ομάδα Ραδιοφώνου, Κουμπί Ραδιοφωνίας, Ημερομηνία, Εύρος Ημερομηνίας, Ώρα Ημερομηνίας, Φόρμα, Ποσοστό
+
+##### Παράδειγμα
+
+```JavaScript
+input1.validate()
+```
+
+#### clearValidation()
+
+Χρησιμοποιείται για την εκκαθάριση του μηνύματος επικύρωσης.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Είσοδος, Αριθμός Είσοδος, Επεξεργάσιμο Κείμενο, Περιοχή Κειμένου, Μεταφόρτωση, Επιλέξτε, Πολλαπλών Επιλογών, Ομάδα Checkbot, Κουμπί Ραδιοφωνίας, Ημερομηνία, Χρονικό Εύρος Ημερομηνίας, Ώρα Ημερομηνίας, Τιμή
+
+##### Παράδειγμα
+
+```JavaScript
+input1.clearValidation()
+```
+
+#### setSelectedValue(πίνακας)
+
+Χρησιμοποιείται για τον ορισμό της επιλεγμένης τιμής του Multiselect. Η παράμετρος πρέπει να είναι ένας πίνακας.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πολλαπλής επιλογής
+
+##### Παράδειγμα
+
+```JavaScript
+multiselect1.setSelectedValue(["Επιλογή 1", "Επιλογή 3"])
+```
+
+#### υποβολή()
+
+Υποβολή δεδομένων φόρμας. Όταν ενεργοποιηθεί η μέθοδος υποβολής θα επικυρώσουμε πρώτα τα δεδομένα της φόρμας. Εάν υπάρχουν σφάλματα επικύρωσης, η υποβολή της φόρμας θα αποτραπεί και θα εμφανιστούν τα αντίστοιχα μηνύματα σφάλματος. Μόνο μετά την επιτυχή επικύρωση προχωρά η υποβολή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Μορφή Σχήματος Jun, Μορφή
+
+##### Παράδειγμα
+
+```JavaScript
+form1.submit()
+```
+
+#### εναλλαγή()
+
+Χρησιμοποιείται για να αλλάξετε την τιμή από true σε false ή από false σε true.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Εναλλαγή
+
+##### Παράδειγμα
+
+```JavaScript
+switch1.toggle()
+```
+
+#### setStartOfRange(number)
+
+Χρησιμοποιείται για τον ορισμό της προεπιλεγμένης τιμής έναρξης του ρυθμιστικού εύρους
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Range Slider
+
+##### Παράδειγμα
+
+```JavaScript
+rangeSlider1.setStartOfRange(1)
+```
+
+#### setEndOfRange(number)
+
+Χρησιμοποιείται για τον ορισμό της προκαθορισμένης τελικής τιμής του ρυθμιστικού εύρους
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Range Slider
+
+##### Παράδειγμα
+
+```JavaScript
+rangeSlider1.setEndOfRange(9)
+```
+
+#### setStartValue(string)
+
+Χρησιμοποιείται για τον ορισμό της προεπιλεγμένης τιμής έναρξης
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Εύρος Ημερομηνίας, Χρονικό Εύρος
+
+##### Παράδειγμα
+
+```JavaScript
+dateRange1. setStartValue ("2023- 09- 09")
+```
+
+#### setEndValue(string)
+
+Χρησιμοποιείται για τον ορισμό της προκαθορισμένης τελικής τιμής
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Εύρος Ημερομηνίας, Χρονικό Εύρος
+
+##### Παράδειγμα
+
+```JavaScript
+dateRange1. setEndValue("2023-10- 09")
+```
+
+#### setValueInArray(πίνακας)
+
+Χρησιμοποιείται για τον ορισμό των διακοπτών των οποίων η τιμή είναι αληθής
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Εναλλαγή Ομάδας
+
+##### Παράδειγμα
+
+```JavaScript
+switchGroup1.setValueInArray(["Επιλογή 1", "Επιλογή 3"])
+```
+
+#### selectPage(number)
+
+Χρησιμοποιείται για τον ορισμό του ευρετηρίου της σελίδας που θα εμφανιστεί. Ο δείκτης είναι ένας αριθμός που ξεκινά από 0.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.selectPage(1)
+```
+
+#### selectRow(number)
+
+Χρησιμοποιείται για τον ορισμό του ευρετηρίου της επιλεγμένης γραμμής. Ο δείκτης είναι ένας αριθμός που ξεκινά από 0.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.selectRow(1)
+```
+
+#### clearSelection()
+
+Χρησιμοποιείται για τον καθαρισμό της επιλεγμένης γραμμής.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.clearSelection()
+```
+
+#### setFilters(πίνακας αντικειμένων, συμβολοσειρά)
+
+Χρησιμοποιείται για τον ορισμό φίλτρων.
+
+**Η πρώτη παράμετρος** είναι μια σειρά αντικειμένων. Κάθε αντικείμενο αντιπροσωπεύει μια κατάσταση φιλτραρίσματος. Περιλαμβάνει τρία χαρακτηριστικά:
+
+**`id`** : Αυτό αναφέρεται στο αναγνωριστικό αυτής της στήλης. Αν αυτή η στήλη είναι αποτέλεσμα ενός ερωτήματος βάσης δεδομένων, τότε το id θα είναι το όνομα στήλης που ανακτήσατε από το ερώτημα. Για παράδειγμα, αν το ερώτημα είναι `SELECT email AS user_email FROM users` και μετονομάστε το `email` ως `Email` χρησιμοποιώντας το δεξί πάνελ του πίνακα, το id της στήλης θα εξακολουθεί να είναι `user_email` Αν αυτή η στήλη προστεθεί με μη αυτόματο τρόπο χρησιμοποιώντας το κουμπί `Add Column` στον δεξιό πίνακα, μπορείτε να ελέγξετε το αναγνωριστικό του στην ενότητα `displayedData` του αριστερού πίνακα. Συνήθως, θα είναι μια τυχαία δημιουργημένη συμβολοσειρά που ξεκινά με `column` όπως `column-320169e8-225a-482d-9853-ad34b3040220`.
+
+**`filterFn`** : ο τύπος αντιστοίχισης του φίλτρου. Υποστηρίζουμε τους ακόλουθους τύπους: `equalTo` που είναι ίδιοι με το `=` στην SQL, `notEqualTo` το οποίο είναι το ίδιο με το `<>` στην SQL, το `contains` που είναι το ίδιο με το `LIKE '%value%'` στην SQL, `does NotContain` το οποίο είναι το ίδιο με το `NOT LIKE '%value%'` στο SQL, `lessThan` το οποίο είναι το ίδιο με το `<` στην SQL, το `notLessThan` που είναι το ίδιο με το `>=` στην SQL, `notMoreThan` το οποίο είναι το ίδιο με `<=` στην SQL, `empty` που είναι το ίδιο με το `IS NULL` στην SQL, `notEmpty` το οποίο είναι το ίδιο με το `IS NOT NULL` στην SQL, `πριν` χρησιμοποιείται για τη σύγκριση ώρας ή ημερομηνίας, η οποία είναι η ίδια με `>` στην SQL, `after` χρησιμοποιείται για τη σύγκριση ώρας ή ημερομηνίας, η οποία είναι η ίδια με `<` στην SQL.
+
+**`value`** : χρησιμοποιείται για τον ορισμό της τιμής προς σύγκριση.
+
+**Η δεύτερη παράμετρος:** όταν υπάρχουν πολλαπλά αντικείμενα κατάστασης φίλτρου, καθορίζει αν έχουν σχέση "ΚΑΙ" ή σχέση "Ή". Θέστε το ως μια συμβολοσειρά `and` για μια σχέση "AND" και `or` για μια σχέση "OR".
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"μήνας", "filterFn":"equalTo", "value":"Ιούνιο"}], "ή")
+```
+
+#### clearFilters()
+
+Χρησιμοποιείται για καθαρισμό όλων των φίλτρων
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.clearFilters()
+```
+
+#### setSort(string, string)
+
+Χρησιμοποιείται για να ορίσετε το είδος. **Η πρώτη παράμετρος** είναι το αναγνωριστικό της στήλης που ταξινομείται ως συμβολοσειρά. Το αναγνωριστικό είναι το ίδιο με το αναγνωριστικό που αναφέρεται στο setFilters(σειρά αντικειμένων, συμβολοσειρά). **Η δεύτερη παράμετρος** είναι η σειρά ταξινόμησης, είτε αύξουσα είτε φθίνουσα. Ορίζεται χρησιμοποιώντας μια τιμή string `ascend` ή `descend`.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Πίνακας
+
+##### Παράδειγμα
+
+```JavaScript
+table1.setSort("εισοδήματα", "φθίνουσα")
+```
+
+#### setCurrentViewKey(string)
+
+Χρησιμοποιήστε το πλήκτρο που είναι μια συμβολοσειρά της προβολής για να ορίσετε την προβολή που εμφανίζεται.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1. setCurrentViewKey("Προβολή 2")
+```
+
+#### setCurrentViewIndex(αριθμός)
+
+Χρησιμοποιήστε το ευρετήριο που είναι μια τιμή αριθμού ξεκινώντας από 0 της προβολής για να ορίσετε την προβολή που εμφανίζεται.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1.setCurrentViewIndex(1)
+```
+
+#### showNextView(boolean)
+
+Χρησιμοποιείται για την εμφάνιση της επόμενης προβολής. Η παράμετρος είναι μια τιμή boolean που καθορίζει αν θα βρόχο από το τέλος πίσω στην αρχή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1.showNextView(true)
+```
+
+#### showNextVisibleView(boolean)
+
+Χρησιμοποιείται για την εμφάνιση της επόμενης ορατής προβολής. Σε αντίθεση με τη συμπεριφορά της λειτουργίας `showNextView(boolean)`, αυτή η λειτουργία προσφέρει βελτιωμένη λειτουργία εναλλαγής προβολής παρακάμπτοντας τυχόν κρυφές προβολές κατά τη μετάβαση. Η παράμετρος είναι μια τιμή boolean που καθορίζει αν θα βρόχο από το τέλος πίσω στην αρχή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1.showNextVisibleView(false)
+```
+
+#### Προβολή()
+
+Χρησιμοποιείται για την εμφάνιση της προηγούμενης προβολής. Η παράμετρος είναι μια τιμή boolean που καθορίζει αν θα επαναληφθεί από την αρχή μέχρι το τέλος.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1.showPreviousView(true)
+```
+
+#### ΕμφάνισηΠροβολή()
+
+Χρησιμοποιείται για την εμφάνιση της προηγούμενης ορατής προβολής. Σε αντίθεση με τη συμπεριφορά της λειτουργίας `showPreviousView(boolean)`, αυτή η λειτουργία προσφέρει βελτιωμένη λειτουργία εναλλαγής προβολής παρακάμπτοντας τυχόν κρυφές προβολές κατά τη μετάβαση. Η παράμετρος είναι μια τιμή boolean που καθορίζει αν θα επαναληφθεί από την αρχή μέχρι το τέλος.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Περιέκτης
+
+##### Παράδειγμα
+
+```JavaScript
+container1.showPreviousVisibleView(true)
+```
+
+#### reset()
+
+Χρησιμοποιείται για να επαναφέρετε την τιμή στην προεπιλεγμένη τιμή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Φόρμα
+
+##### Παράδειγμα
+
+```JavaScript
+form1.reset()
+```
+
+#### resetValue()
+
+Χρησιμοποιείται για να επαναφέρετε την τιμή στην προεπιλεγμένη τιμή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βήματα
+
+##### Παράδειγμα
+
+```JavaScript
+steps1.resetValue()
+```
+
+#### openModal()
+
+Χρησιμοποιείται για να ανοίξει ένα modal
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Μοντάλ
+
+##### Παράδειγμα
+
+```JavaScript
+modal1.openModal()
+```
+
+#### closeModal()
+
+Χρησιμοποιείται για να κλείσει ένα modal
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Μοντάλ
+
+##### Παράδειγμα
+
+```JavaScript
+modal1.closeModal()
+```
+
+#### ορισμόςImageUrl(συμβολοσειρά)
+
+Χρησιμοποιείται για να ορίσετε το URL προέλευσης εικόνας. Μπορεί να είναι μια Base64 ή μια διεύθυνση URL που δείχνει μια εικόνα στο διαδίκτυο.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Εικόνα
+
+##### Παράδειγμα
+
+```JavaScript
+image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
+```
+
+```JavaScript
+image1. setImageUrl("δεδομένα: εικόνα/png, base64, iVBORw0KGgoAA...II=")
+```
+
+#### clearReplyMessage()
+
+Χρησιμοποιείται για να καθαρίσετε το μήνυμα απάντησης που αναφέρεται πάνω από το πλαίσιο εισαγωγής.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Συνομιλία
+
+##### Παράδειγμα
+
+```JavaScript
+chat1.clearReplyMessage()
+```
+
+#### setPrimaryValue(number)
+
+Χρησιμοποιείται για τον ορισμό της κύριας αξίας των στατιστικών.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Στατιστικά
+
+##### Παράδειγμα
+
+```JavaScript
+statistic1.setPrimaryValue(100)
+```
+
+#### resetPrimaryValue()
+
+Χρησιμοποιείται για την επαναφορά της κύριας τιμής στην προεπιλεγμένη κύρια τιμή των στατιστικών.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Στατιστικά
+
+##### Παράδειγμα
+
+```JavaScript
+statistic1.resetPrimaryValue()
+```
+
+#### setFileUrl(string)
+
+Χρησιμοποιείται για τον ορισμό του αρχείου URL. Μπορεί να είναι ένα Base64 ή μια διεύθυνση URL που δείχνει σε ένα PDF στο διαδίκτυο.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+PDF
+
+##### Παράδειγμα
+
+```JavaScript
+pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+```
+
+#### αναπαραγωγή()
+
+Χρησιμοποιείται για την αναπαραγωγή βίντεο ή ήχου.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.play()
+```
+
+#### παύση()
+
+Χρησιμοποιείται για παύση βίντεο ή ήχου.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.pause()
+```
+
+#### showControls(boolean)
+
+Χρησιμοποιείται για να ορίσετε αν θα εμφανίζονται τα χειριστήρια.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο
+
+##### Παράδειγμα
+
+```JavaScript
+video1.showControls(true)
+```
+
+#### ορισμόςVideoUrl(συμβολοσειρά)
+
+Χρησιμοποιείται για τον ορισμό του URL του βίντεο. Μπορεί να είναι ένα Base64 ή ένα URL βίντεο σε ιστοσελίδες μέσων.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο
+
+##### Παράδειγμα
+
+```JavaScript
+video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
+```
+
+#### ορισμόςΈνταση(αριθμός)
+
+Χρησιμοποιείται για τον ορισμό της έντασης. Η παράμετρος είναι μια τιμή αριθμού μεταξύ 0 και 1.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+`video1.setVolume(0.5)`
+
+#### ορισμόςΤαχύτητα(αριθμός)
+
+Χρησιμοποιείται για τον ορισμό της ταχύτητας. Η παράμετρος είναι μια τιμή αριθμού μεταξύ 0, 25 έως 2.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.setSpeed(0.5)
+```
+
+#### setLoop(boolean)
+
+Χρησιμοποιείται για να οριστεί αν θα επαναληφθεί η αναπαραγωγή.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.setLoop(false)
+```
+
+#### seekTo( αριθμός)
+
+Χρησιμοποιείται για την αναζήτηση σε συγκεκριμένη χρονική θέση. Η παράμετρος είναι μια αριθμητική τιμή, μετρούμενη σε δευτερόλεπτα. Για παράδειγμα, για να αναζητήσετε στη θέση του χρόνου 5:35, θα χρησιμοποιήσετε την τιμή 335.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.seekTo(335)
+```
+
+#### mute(boolean)
+
+Χρησιμοποιείται για τον ορισμό σίγασης ή όχι.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Βίντεο, Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.mute(true)
+```
+
+#### setAudioUrl(string)
+
+Χρησιμοποιείται για τον ορισμό του URL του ήχου. Μπορεί να είναι ένα Base64 ή ένα URL βίντεο σε ιστοσελίδες μέσων.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Ήχος
+
+##### Παράδειγμα
+
+```JavaScript
+video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+```
+
+#### slickNext()
+
+Χρησιμοποιείται για εναλλαγή στην επόμενη εικόνα.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Carousel
+
+##### Παράδειγμα
+
+```JavaScript
+carousel1.slickNext()
+```
+
+#### Προηγούμενος()
+
+Χρησιμοποιείται για εναλλαγή στην προηγούμενη εικόνα.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Carousel
+
+##### Παράδειγμα
+
+```JavaScript
+carousel1.slickΠροηγούμενος()
+```
+
+#### setSrc()
+
+Χρησιμοποιείται για τον ορισμό της πηγής URL του IFrame.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+IFrame
+
+##### Παράδειγμα
+
+```JavaScript
+iframe1.setSrc ("https://www.nasa.gov/")
+```
+
+#### setMarkers(πίνακας)
+
+Χρησιμοποιείται για τον ορισμό των δεικτών στο χάρτη. Η παράμετρος πρέπει να είναι ένας πίνακας αντικειμένων. Τα πεδία γεωγραφικού πλάτους και γεωγραφικού μήκους σε κάθε αντικείμενο θα πρέπει να είναι ίδια με τα πεδία που ορίζονται στον πίνακα δεξιά
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Χάρτης
+
+##### Παράδειγμα
+
+```JavaScript
+map1.setMarkers([
+{
+    "lat":57.14009563040699,
+    "lng":-114.6018657894011
+ },{
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },{
+     "lat":57.841288754888545,
+     "lng":-103.351865787894011
+ }
+])
+```
+
+#### resetMarkers()
+
+Χρησιμοποιείται για να επαναφέρετε τους δείκτες στους προεπιλεγμένους δείκτες.
+
+##### Υποστηριζόμενα εξαρτήματα
+
+Χάρτης
+
+##### Παράδειγμα
+
+```JavaScript
+map1.resetMarkers()
+```
+
+## Μετάβαση στο URL
+
+### Δομή
+
+```JavaScript
+utils.goToURL({
+url:string,
+newTab:boolean
+})
+```
+
+### Περιγραφή
+
+Χρησιμοποιήστε ένα αντικείμενο για να το ορίσετε. Υπάρχουν 2 χαρακτηριστικά στο αντικείμενο. Το πρώτο χαρακτηριστικό είναι το `url`. Η τιμή του είναι ένα πλήρες URL, συμπεριλαμβανομένου του 'https://' ή του 'http://', και είναι του τύπου συμβολοσειράς. Το δεύτερο χαρακτηριστικό είναι `newTab`. Είναι μια boolean που χρησιμοποιείται για να ορίσετε αν θα ανοίξει το URL σε μια νέα καρτέλα.
+
+### Παράδειγμα
+
+```JavaScript
+utils.goToURL(ņ
+url:"https://www.illacloud.com",
+newTab:true
+})
+```
+
+## Αντιγραφή στο πρόχειρο
+
+### Δομή
+
+```JavaScript
+utils.copyToClipboard(string)
+```
+
+### Περιγραφή
+
+Χρησιμοποιείται για αντιγραφή συμβολοσειράς
+
+### Παράδειγμα
+
+```JavaScript
+utils.copyToClipboard("Το κείμενο προς αντιγραφή")
+```
+
+## Ορισμός δρομολογητή
+
+### Δομή
+
+```JavaScript
+utils.setRouter({
+pagePath:string;
+viewPath:string
+})
+```
+
+### Περιγραφή
+
+Χρησιμοποιείται για να αλλάξετε τη σελίδα στις εφαρμογές ILLA. Υπάρχουν 2 χαρακτηριστικά στο αντικείμενο.
+
+Το πρώτο χαρακτηριστικό είναι το `pagePath`. Η τιμή του pagePath εμφανίζεται στο ακόλουθο στιγμιότυπο οθόνης χωρίς `/`.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZndTc21mXzE2OTgzMDQ1MTI6MTY5ODExMl9WNA)
+
+Το δεύτερο χαρακτηριστικό είναι το `viewPath`. Η τιμή του viewPath εμφανίζεται στο ακόλουθο στιγμιότυπο οθόνης χωρίς `/`.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2Nm4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTI6MTY5ODMwODMl9WNA)
+
+### Παράδειγμα
+
+```JavaScript
+utils.setRouter(mptom
+pagePath:"page2", 
+viewPath:"sub-page1"
+})
+```
+
+## Αποθήκευση στο δίσκο ILLA
+
+### Δομή
+
+```JavaScript
+utils.saveToILLADrive(ņ
+fileName:string,
+fileData:string,
+fileType:string,
+folder:string,
+allowAnonymous:boolean,
+replace:boolean
+})
+```
+
+### Περιγραφή
+
+Χρησιμοποιείται για την αποθήκευση ενός αρχείου στο δίσκο ILLA.
+
+`fileName`: Όνομα με επέκταση του αρχείου μετά το ανέβασμα στον οδηγό ILLA.
+
+`fileData`: Base64 ή ακατέργαστα δεδομένα αρχείων, όπως JSON, CSV, απλό κείμενο, κλπ.
+
+`fileType`: Μία από τις ακόλουθες τιμές: Αυτόματο, απλό κείμενο, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Όταν χρησιμοποιείτε το "Auto", θα επιχειρήσουμε να προσδιορίσουμε τον τύπο αρχείου με βάση είτε την επέκταση αρχείου είτε τα δεδομένα αρχείου.
+
+`folder`: Φάκελος προορισμού για μεταφόρτωση αρχείου. Αφήστε το κενό για μεταφόρτωση στο ριζικό φάκελο.
+
+`allowAnonymous`: Χρησιμοποιείται για να οριστεί αν επιτρέπεται η πρόσβαση ανώνυμου χρήστη. Αν σκοπεύετε να ορίσετε την εφαρμογή σας ως δημόσια, η ανώνυμη πρόσβαση πρέπει να είναι ενεργοποιημένη. Για την ασφάλεια των δεδομένων, αρχείων ή φακέλων που είναι προσβάσιμα ανώνυμα πρέπει να τοποθετούνται στον ανώνυμο φάκελο.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZVHVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODML9WNA)
+
+`replace`: Χρησιμοποιείται για να ορίσετε όταν υπάρχουν αρχεία με το ίδιο όνομα στον ίδιο κατάλογο, αντικατάσταση του υπάρχοντος αρχείου με νέο αρχείο ή αυτόματη μετονομασία του νέου αρχείου.
+
+### Παράδειγμα
+
+```JavaScript
+//use upload1 to pick files from device and upload to apps folder. 
+utils.saveToILLADrive(⇒
+fileName:upload1.files[0].name,
+fileData:upload1. iles[0].dataURI,
+fileType:"PNG",
+φάκελος:"apps",
+allowAnonymous:false,
+replace:true
+})
+```
+
+```JavaScript
+//upload ένα αρχείο κειμένου.  
+utils.saveToILLADrive(Ş
+fileName:"test.txt",
+fileData:"abc",
+fileType:"Plain text",
+φάκελο:"apps",
+allowΑνώνυμα:false,
+αντικατάσταση:true
+})
+```
+
+## Λήψη από το δίσκο ILLA
+
+### Δομή
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:[{
+        tinyURL:string,
+        fileID:string
+        }],
+    asZip:boolean
+})
+```
+
+### Περιγραφή
+
+Χρησιμοποιείται για τη λήψη αρχείων από το ILLA Drive.
+
+`downloadInfo`: μια σειρά αντικειμένων συμπεριλαμβανομένων tinyURL και fileID. Μπορείτε να χρησιμοποιήσετε το στοιχείο επιλογέας αρχείων Drive για να επιλέξετε αρχεία από το ILLA Drive και να πάρετε το `downloadInfo` μέσω drivePicker1.value
+
+`asZip`: χρησιμοποιείται για να ορίσετε αν θα γίνει λήψη των αρχείων ως Zip.
+
+### Παράδειγμα
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:drivePicker1.value,
+    asZip:true
+})
+```
+
+## Λήψη
+
+### Δομή
+
+```JavaScript
+utils.downloadFile({
+    fileType:string,
+    fileName:string,
+    data:anyType
+})
+```
+
+### Περιγραφή
+
+Χρησιμοποιείται για εξαγωγή δεδομένων στη συσκευή σας.
+
+`fileType`: Μία από τις ακόλουθες τιμές: Αυτόματο, απλό κείμενο, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Όταν χρησιμοποιείτε το "Auto", θα επιχειρήσουμε να προσδιορίσουμε τον τύπο αρχείου με βάση είτε την επέκταση αρχείου είτε τα δεδομένα αρχείου.
+
+`fileName`: ένα όνομα με επέκταση.
+
+`data`: δεδομένα του αρχείου.
+
+### Παράδειγμα
+
+```JavaScript
+//κατεβάστε τα δεδομένα του πίνακα ως CSV
+utils.downloadFile(Ş
+    fileType:"CSV",
+    fileName:"text.csv",
+    data: table2.dataSourceJS
+})
+```
+
+```JavaScript
+//download image
+utils.downloadFile(ņ
+    fileType:"PNG",
+    fileName:"text.png",
+    data: image1.imageSrc
+})
+```
+
+## Ορισμός καθολικών δεδομένων
+
+### Ορισμός καθολικής τιμής δεδομένων
+
+#### Δομή
+
+```JavaScript
+utils.setGlobalDataValue({
+key:string, 
+value:any
+})
+```
+
+#### Περιγραφή
+
+Χρησιμοποιείται για τον ορισμό της τιμής gobalData
+
+`key`: η οθόνηΌνομα του globalData όπως δείχνει το ακόλουθο στιγμιότυπο οθόνης.
+
+![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFMDRUUWxYN3JxNdSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0Ym28wbzhXdDl4aEJ4YnVRBC21jXzE2OTgzMDQ1MTI6MTY5ODMwODMl9WNA)
+
+`value`: η τιμή που θα οριστεί
+
+#### Παράδειγμα
+
+```JavaScript
+//use input5 to get the user input value and set as the value of stringState. 
+utils.setGlobalDataValue({
+key:"stringState", 
+value:input5.value
+})
+```
+
+### Ορισμός καθολικών δεδομένων σε
+
+#### Δομή
+
+```JavaScript
+utils.setGlobalDataIn({
+key:string, 
+path:string, 
+value:any
+})
+```
+
+#### Περιγραφή
+
+Όταν τα καθολικά δεδομένα είναι ένας πίνακας ή ένα αντικείμενο, Χρησιμοποιήστε το setGlobalDataΓια να τροποποιήσετε την τιμή που αντιστοιχεί σε ένα συγκεκριμένο ευρετήριο σε έναν πίνακα ή για να τροποποιήσετε την τιμή που αντιστοιχεί σε ένα συγκεκριμένο κλειδί σε ένα αντικείμενο.
+
+`key`: η οθόνηΌνομα του globalData.
+
+`path`: το ευρετήριο της τιμής που σκοπεύετε να ενημερώσετε στον πίνακα ή το κλειδί στο αντικείμενο. Για παράδειγμα, για να ορίσετε τη δεύτερη τιμή στον πίνακα, η διαδρομή είναι 1 (ο δείκτης). Για να ορίσετε την τιμή του χαρακτηριστικού με το όνομα κλειδί1, η διαδρομή είναι το κλειδί1.
+
+`value`: η τιμή που θα οριστεί
+
+#### Παράδειγμα
+
+```JavaScript
+//objectState είναι ένα αντικείμενο: {"key1":"value1", "key2":"value2"}, to set the 
+utils.setGlobalDataIn({
+key:"objectState", 
+path:"key2", 
+value:input7.value
+})
+```
+
+# Ενσωματωμένες βιβλιοθήκες
+
+| **Βιβλιοθήκη**    | **Έγγραφο**                                                           | **Πώς να το χρησιμοποιήσετε σε ILLA Builder** | **Παράδειγμα**                                               |
+| ----------------- | --------------------------------------------------------------------- | --------------------------------------------- | ------------------------------------------------------------ |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                           | `_.concat(array, 2, [3], [[4]]);`                            |
+| Day.js            | https://day.js.org/                                                   | `dayjs`                                       | `dayjs(new Date())`                                          |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                        | `uuid.parse()`                                               |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                                      | `numbro(1000).format({thousandSeparated: true})`             |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                        | `Papa.parse(url, {download: true, // υπόλοιπο config ... })` |
+
+# Τιμή των ενεργειών, συστατικά...
+
+Χρησιμοποιήστε το αρχείο `displayName.xxx` για να χρησιμοποιήσετε την τιμή των ενεργειών, συστατικών ή άλλων globalData. Παρακαλείστε να σημειώσετε ότι στο σενάριο Εκτέλεσης, αυτές οι μεταβλητές μπορούν να προσπελαστούν απευθείας χωρίς τη χρήση `{{`αναφορές.
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:{{drivePicker1.value}},//❌ 
+    asZip:true
+})
+
+utils.downloadFromILLADrive({
+    downloadInfo:drivePicker1.value,//:check_mark_button:
+    asZip:true
+})
+```
