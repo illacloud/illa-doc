@@ -3,7 +3,11 @@ title: Kjør skript
 description: Ved å utløse "Kjør Script" gjennom en hendelsesbehandler, kan du oppnå sekvensiell utførelse av operasjoner og utføre forskjellige handlinger basert på forskjellige betingelser.
 ---
 
-# ow-to
+# Kjør skript
+
+Ved å utløse "Kjør Script" gjennom en hendelsesbehandler, kan du oppnå sekvensiell utførelse av operasjoner og utføre forskjellige handlinger basert på forskjellige betingelser.
+
+## ow-to
 
 <div style={{
     position: "relative",
@@ -11,35 +15,35 @@ description: Ved å utløse "Kjør Script" gjennom en hendelsesbehandler, kan du
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demonstrasjon
+### Demonstrasjon
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Kjør og gaffel
+#### Kjør og gaffel
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Bruk saken: Logg inn og omdirigere til forskjellige sider
+### Bruk saken: Logg inn og omdirigere til forskjellige sider
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Kjør og gaffel
+#### Kjør og gaffel
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Utløser handling
+### Utløser handling
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 konst eksempeldata = venter på actionName.trigger();
@@ -47,21 +51,21 @@ konst eksempeldata = venter på actionName.trigger();
 
 Handlingsnavnet er strengen som vises i skjermdumpen, som følger.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYlllNmQ2NTdNTM1ZGZjZDU3MTNjMjk3ZTI1ZfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1NnBfV9rZrZW46TGhZWhZWJEJEYWb00JOVYOVOV2YOW_TZOWM_MXTNNN_MG2MXOW_MXTISTISTISTISTISTISTISTISTISTISTISTISTIS)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1,png)
 
-### Beskrivelse
+#### Beskrivelse
 
 I Kjør skript er variabelen `exampleData` det samme som `actionName.data`.
 
-### Eksempel
+#### Eksempel
 
 For eksempel bruker vi handlingen `postgresql1` til å spørre James' e-post.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVEVNeNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVfVG9rZW46VU0yWI4RHHbWbzQ2QV2QV4VRVcVcVNGNNZGN_GN_GN_GN_GN_MXOwMGN_MXSMSN_G2MXSMSSIKCHCHOWMXS_DCHCHCHCHCHFFFF
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
 Utløs handlingen via Kjør Script
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVMXRlYnpU2xTTHo3WHJEZUpnaEJfVG9rZW46V1V1VhGJVVcGdyb2ZFZGZF4OGRHHHH3KKKNNNNNNNNNN_BXN_21G2TXTXTXV3KMOTKMO_G21OWMXS_DCH_DCH_DCH_MXTISTISTT
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
 `postgresql1.data` er
 
@@ -78,13 +82,13 @@ Utløs handlingen via Kjør Script
 
 Når vi må bruke JavaScript for å hente en e-post i komponentens Inspeksjon eller andre steder, kan vi bruke følgende: `{{postgresql1.data[0].email}}`
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YHWENpeE1LVFlFmp0cHVtRzlfV9rZW46RUpjTGJyZyNA4b13dQ0MMMN4V3TTTNTTTTTTTTTTTTTTB2TTTTTTB2TTTB2TISTISTISTISTISTISTISTISTIST1
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
 Og når vi skal bruke e-posten i "Run Script" etter å ha utført utsagnet `const exampleData = await postgresql1. rigger();`, vi kan direkte bruke `exampleData[0].email`.
 
 Vis et vellykket varsel når spørringen er vellykket, og resultatet er unikt. Vis en feilmelding når spørringen ikke er unik, eller når den feiler.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VII3VI1VI1VI1VlNqYmtvNzvzmoVRjRYbVZfVZfV9rZW46VmwmNkTTNLd3BDRNNNH3SNH3TUM_G_G_G_G_G_M_G_G_G_G_M_M_GN_G_G_G_M_G_GGG_G_G_G_TN_G_M
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
@@ -109,9 +113,9 @@ verktøy. howtification(
 };
 ```
 
-## Vis varsel
+### Vis varsel
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.showNotification(
@@ -124,7 +128,7 @@ varighet: 4500
 )
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 | Parametre    | Beskrivelse                                             | Type data                                                                        | Eksempel                               |
 | ------------ | ------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------- |
@@ -133,19 +137,19 @@ varighet: 4500
 | beskrivelse  | Brukes til å angi beskrivelse                           | Streng                                                                           | beskrivelse: "Hentet vellykket"        |
 | varighet     | Brukes til å angi visningens varighet av meldingen.     | Antall, i millisekunder (ms)                                                     | varighet: 4500                         |
 
-### Eksempel
+#### Eksempel
 
 Vis varsling når du klikker på knappen:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjjjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2a2RIVFh2dnI0ZW5UcHVtZUEwZRHa0ZfV9rZW46THZYkWJnKFSMHONH4QTNNNNNNrrrrrrrrrTKMXTCWODTZOWCOTCW2MXTISTISTISLTISTISLTISTISTISTISLTISTISTISTISTISTISTISL
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
 Det er samme som Vis varselhandlinger, som følgende skjermbilde viser:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTTTTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfV9rZW46Q21SdJpb0bpV41Vl1OGVnVnGZdZZrdZOw2MXVZMvzzzzzzzzfor MXWMXXXWMXWMXWMXXXXXXWMXXXXWMXS_DMXXWMXWMXX
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Styre komponent
+### Styre komponent
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 componentDisplayName.function()
@@ -153,15 +157,15 @@ componentDisplayName.function()
 
 komponent DisplayName er strengen som vises i skjermdumpen, som følger.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMFjYjhMThjZGZjNExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fV9rZW46V3o5VWJUaV4b3IzUlp4VWFHMHHHHHHNTTTISE3TISTISTIS-3TISTIS, MPDTISTIS-4TISTISTISTISTISTISTISTIS-1 MPDMPDMPDMPDMXTIS-ITI4TISTIS-
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Beskrivelse
+#### Beskrivelse
 
-#### setValue(parameter)
+##### setValue(parameter)
 
 Brukes til å angi verdien. Parameteret kan være et "streng" eller "number" eller "objekt" eller "boolean" eller "array" som avhenger av komponenttypen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 | Komponent                                                                                                                                                                  | Type parameter                                                     | Eksempel                                                                                                                                                                                     |
 | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,225 +177,225 @@ Brukes til å angi verdien. Parameteret kan være et "streng" eller "number" ell
 | JSON skjema, skjema                                                                                                                                                        | `objekt`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`      |
 | Avkrysningsboks gruppe, plassholder                                                                                                                                        | `array`                                                            | `cascader1.setValue(["media_source_2";"campaign_2-1"])`                                                                                                                                      |
 
-#### clearValue()
+##### clearValue()
 
 Brukes til å fjerne verdien
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Innvift, Antall innput, Redigerbar tekst, tekstområde, Opplasting, JSON Editor, JSON Schema Form, Switch, Velg, Multiselect, Checkbox Group, Skalad, Radiogruppe, Radioknapp, Dato, Datonivå, Datotid, Datotid, Tekst, Rotasjon, Bar Progresjon, Sirkel Fremdrift, Timeline, Divider
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### fokus()
+##### fokus()
 
 Brukes til å fokusere på komponenten
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Innskriving, tallinnput, redigerbart tekstområde, JSON-redigeringsprogram med tekst, Radio Group,
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
 Når du har angitt valideringsbetingelser for en komponent, som e-postformat, URL-format, eller påkrevd felt. Du kan bruke funksjonen `validert()` for å avgjøre om den oppfyller kravene. Hvis den ikke oppfyller kravene, vil en valideringsmelding vises.
 
 Angi valideringsbetingelsene:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVVEcHVxdm03cTdsVHBOcvaktTZfV9rZW46QzhzhzhzhMzemeXht1ESnKzdMXV2TISTISTIS/MXOMXOMXV2MXOMXXV2MXV2MXV2MXV2MXXXXXXWMXWMXXWMXS\_
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
 Vis valideringsmelding:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVHNmYmpUZWRDMTZzdmmR0N3lfV9rrfV9rZW46SDhFOWqdWUb2tbH4V3V3V3NnMUMGMNNMG_G_GMG_G2MXOw2MGG_MG_MG_GG_G_G_G_MG_D_D_D_D_G_D_MG_G_G
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Innhold, Nummerinngang, Redigerbar tekst, Tekstområde, Opplasting, Velg, Multiselect, Checkbox-gruppe, Radioknapp Dato, Dato Range, Dato og Dato, Dato & Tidspunkt, Rang
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearation()
+##### clearation()
 
 Brukes til å fjerne valideringsmeldingen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Innhold, Nummerinngang, Redigerbart tekst, tekstområde, Opplasting, Velg, Flervalg, Avmerkingsavmerkingsgruppe, Radioknapp, Dato, Dato Område, Dato og Tidsavgang, Rangering
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setectedValue(array)
+##### setectedValue(array)
 
 Brukes til å angi den valgte verdien for Multiselect. Parameteren må være en matrise.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Flervalg
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 multiselect1.setSelectedValue(["Alternativ 1", "Alternativ 3"])
 ```
 
-#### submit()
+##### submit()
 
 Send inn skjemadata. Når metoden er utløst vil vi først validere skjemadata. Hvis det finnes valideringsfeil, vil sendingen av skjema bli forhindret, og de tilsvarende feilmeldingene vil bli vist. Bare etter vellykket validering fortsetter innsendingen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 JSON skjema, skjema
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
 Brukt til å skru verdien fra sann til usann eller fra falsk til sann.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Bytt
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 switch1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
 Brukes til å angi standard startverdien for glidebryteren
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Range Slider
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### EndOfRange(nummer)
+##### EndOfRange(nummer)
 
 Brukes til å angi standard sluttverdi for glidebryteren
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Range Slider
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(streng)
+##### setStartValue(streng)
 
 Brukt for å angi standard startverdi
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Dato rekkevidde, Tidsintervall
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(streng)
+##### setEndValue(streng)
 
 Brukt til å angi standard sluttverdi
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Dato rekkevidde, Tidsintervall
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(array)
 
 Brukes til å angi bryterne med sann verdi
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Bytt gruppe
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 switchGroup1.setValueInArray(["Alternativ 1", "Alternativ 3"])
 ```
 
-#### selectPage(nummer)
+##### selectPage(nummer)
 
 Brukes til å angi indeksen til siden som skal vises. Indeksen er et tall som starter fra 0.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 tabell1.selektPage(1)
 ```
 
-#### selectRow(nummer)
+##### selectRow(nummer)
 
 Brukes til å sette indeksen i valgt rad. Indeksen er et tall som starter fra 0.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 tabell1.selectRow(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
 Brukes til å tømme den valgte raden.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 table1.clearection()
 ```
 
-#### setFilter(liste med objekter, streng)
+##### setFilter(liste med objekter, streng)
 
 Brukes til å angi filtre.
 
@@ -405,193 +409,193 @@ Brukes til å angi filtre.
 
 **Den andre parameteren:** når det er flere filterobjekter, avgjør om de har et "AND"-forhold eller et "OR"-forhold. Sett den som en streng "og" for et "AND" forhold og "eller" for et "OR"-forhold.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "eller")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
 Brukes til å fjerne alle filtre
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 tabell1.clearters()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
 Brukes til å angi sort. **Det første parameteren** er id for å sortere feltet som er en strengverdi. Iden er det samme som Iden som nevnt i setFilters(rekke med objekter, string). **Den andre parameteren** er sorteringsrekkefølgen, enten stigende eller skyttere. Dette er satt ved å bruke en strengverdi "ascend" eller "descend".
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Tabell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 tabell1.setSort("inntekter", "bedrift")
 ```
 
-#### setCurrentViewKey(string)
+##### setCurrentViewKey(string)
 
 Bruk nøkkelen som er en strengverdi av visningen for å angi visningen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 container1.setCurrentViewKey("View 2")
 ```
 
-#### setCurrentViewIndex(number)
+##### setCurrentViewIndex(number)
 
 Bruk indeksen som er en tallverdi fra 0 av visningen for å angi visningen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
 ```
 
-#### UtvisningVisning (boolsk)
+##### UtvisningVisning (boolsk)
 
 Brukes til å vise neste visning. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra slutten tilbake til starten.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 container1.showNextView(sann)
 ```
 
-#### Utsikt (boolsk)
+##### Utsikt (boolsk)
 
 Brukes til å vise neste synlige visning. I motsetning til virkemåten til `showNextView(boolean)`-funksjonen, tilbyr denne funksjonen forbedret visning ved å hoppe over skjulte visninger under overgangen. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra slutten tilbake til starten.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 beholder1.showNextVisibleViewing (false)
 ```
 
-#### PreviousView()
+##### PreviousView()
 
 Brukes til å vise forrige visning. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra start tilbake til slutt.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 container1.showPreviousView(sann)
 ```
 
-#### PreviousVisibleView()
+##### PreviousVisibleView()
 
 Brukes til å vise forrige synlige visning. I motsetning til virkemåten til `showPreviousView(boolean)`-funksjonen, tilbyr denne funksjonen forbedret visning ved å hoppe over skjulte visninger under overgangen. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra start tilbake til slutt.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Beholder
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 container1.showPreviousVisibleView(true)
 ```
 
-#### reset()
+##### reset()
 
 Brukes til å tilbakestille verdien til standardverdien.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Skjema
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue()
 
 Brukes til å tilbakestille verdien til standardverdien.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Skritt
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
 Brukes til å åpne en modal
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Modell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
 Brukes til å lukke en modal
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Modell
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### BildeUrl(streng)
+##### BildeUrl(streng)
 
 Brukes til å angi bildekildens URL. Det kan være en Base64 eller en URL som peker til et bilde på webområdet.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Bilde
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,251 +605,251 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
 Brukes til å fjerne den siterte svarmeldingen over inntastingsboksen.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Samtale
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(nummer)
+##### setPrimaryValue(nummer)
 
 Brukes til å angi den primære verdien av statistikk.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Statistikk
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 Statistikk1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue()
 
 Brukes til å nullstille primærverdien til standard primærverdi av statistikk.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Statistikk
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 statistisk1.resetPrimaryValue()
 ```
 
-#### setFileUrl(streng)
+##### setFileUrl(streng)
 
 Brukes til å angi fil-URL-en. Det kan være en Base64 eller en URL som peker til en PDF på nettet.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Pdf
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### play()
 
 Brukes til å spille av video eller lyd.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.play()
 ```
 
-#### pause()
+##### pause()
 
 Brukes til å pause video eller lyd.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.pause()
 ```
 
-#### visning(boolsk)
+##### visning(boolsk)
 
 Brukes til å angi om kontrollene skal vises.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.showControls(sann)
 ```
 
-#### VideoUrl(streng)
+##### VideoUrl(streng)
 
 Brukes til å sette videoens URL. Det kan være en Base64 eller en video-URL på medias nettsteder.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolum(nummer)
+##### setVolum(nummer)
 
 Brukes til å angi volumet. Parameteren er en tallverdi mellom 0 og 1.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(nummer)
+##### setSpeed(nummer)
 
 Brukt til å sette hastighet. Parameteren er en tallverdi mellom 0,25 til 2.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.setSpeedad (0.5)
 ```
 
-#### Loop(boolsk)
+##### Loop(boolsk)
 
 Brukes til å angi om avspillingen skal gjentas.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.setLoop(falske)
 ```
 
-#### seekTo(nummer)
+##### seekTo(nummer)
 
 Brukes til å søke til en bestemt tidsposisjon. Parameteren er et tallverdi, målt i sekunder (er). For eksempel, for å søke i tidsstilling 5:35 vil du bruke verdien 335.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.seekTo(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
 Brukes til å sette demping eller ikke.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Video, lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.mute(sann)
 ```
 
-#### setAudioUrl(streng)
+##### setAudioUrl(streng)
 
 Brukes til å angi lydens URL. Det kan være en Base64 eller en video-URL på medias nettsteder.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Lyd
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundSong-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
 Brukes til å bytte til neste bilde.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Carousel
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
 Brukes til å bytte til forrige bilde.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Carousel
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 karusel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
 Brukes til å sette kildens URL til IFrame.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 IFrame
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 iframe1.setSrc("https://www.nasa.gov/")
 ```
 
-#### setMarkers(matrise)
+##### setMarkers(matrise)
 
 Brukes til å sette markører på kartet. Parameteren skal være en liste med objekter. Bredde- og lengdegrad feltene i hvert objekt skal være de samme som feltene angitt i høyre panel
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Kart
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 map1.setMarkers([
@@ -862,23 +866,23 @@ map1.setMarkers([
 
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
 Brukes til å nullstille markørene til standard markører.
 
-##### Støttede komponenter
+###### Støttede komponenter
 
 Kart
 
-##### Eksempel
+###### Eksempel
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Gå til adressen
+### Gå til adressen
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Bruk et objekt for å legge det til. Det er 2 attributter i objektet. Den første attributten er `url`. Denne verdien er en fullstendig URL, inkludert 'https://' eller 'http://', og den er av typen streng. Attributtet til det andre er `newTab`. Det er en boolsk verdi som brukes til å angi om å åpne URL i en ny fane.
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Kopier til utklippstavlen
+### Kopier til utklippstavlen
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.copyToClipboard(streng)
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Brukes til å kopiere en streng
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 bruker copyToClipboard("The text to copy")
 ```
 
-## Angi router
+### Angi router
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Brukes til å endre siden i ILLA-apper. Det er 2 attributter i objektet.
 
 Det første attributtet er `pagePath`. Verdien til siden vises på følgende skjermbilde uten `/`.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYIyMGJfWHE5WUtskplZnF1d05FaVuUW5IcnN6cVtbbNWcjdfV9rZrZW46RjZUam1I1a0b8bj0dVW54F2UnV2ZTZZZZZZZOmTTZOwm21OwmT&TKMG2MGGGGG_T&MXTMXTMXTKMXTMXTMXTMXT&CWMXTXTM
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
 Det andre attributtet er `viewPath`. Verdien til visningstien er vist på følgende skjermbilde uten `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXVpHNkxsUHZwdzFib29yMMMJtVXfV9rZW46Vld2J2JxD6B61B1IlxsUlXNHHHKUrTISEXNNNNN_G_G_G_G_G_G_TISEXOWMvS_D_D_TUMXOWMXOQ2TIS)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPath:"sub-page1"
 })
 ```
 
-## Lagre til ILLA-stasjon
+### Lagre til ILLA-stasjon
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,7 +969,7 @@ erstatte:boolsk
 })
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Brukes til å lagre en fil til ILLA-driveren.
 
@@ -979,11 +983,11 @@ Brukes til å lagre en fil til ILLA-driveren.
 
 `allowAnonymous`: Brukes for å angi om anonym brukertilgang er tillatt. Dersom du planlegger å sette din app som offentlig, må anonym tilgang være aktivert. For å sikre dine data, må filer eller mapper tilgjengelig anonymt plasseres i den anonyme mappen.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3FjODNDNkMjlfTDJkSzzg0QktPUmlQa3VZcxYBsZmVHVVVVHVhazlXS1ZfVG9rZW46SnyQ2aGbps0s0dZZZZZZZZZOwzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzvatr&vwwwwwwwwwwwwwwwwwwwwwwww
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
 `erstatt`: Brukes til å sette når det finnes filer med samme navn i samme mappe, erstatte den eksisterende filen med ny fil, eller automatisk gi nytt navn til den nye filen.
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 //use upload1 for å velge filer fra enhet og laste opp til app-mappen. 
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Last ned fra ILLA-stasjon
+### Last ned fra ILLA-stasjon
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,7 +1027,7 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Brukes til å laste ned filer fra ILLA-driveren.
 
@@ -1031,7 +1035,7 @@ Brukes til å laste ned filer fra ILLA-driveren.
 
 `asZip`: brukes til å angi om filene skal lastes ned som en Zip.
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Nedlasting
+### Nedlasting
 
-### Struktur
+#### Struktur
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,7 +1056,7 @@ utils.downloadFile({
 })
 ```
 
-### Beskrivelse
+#### Beskrivelse
 
 Brukes til å eksportere data til enheten din.
 
@@ -1062,7 +1066,7 @@ Brukes til å eksportere data til enheten din.
 
 "data": data i filen.
 
-### Eksempel
+#### Eksempel
 
 ```JavaScript
 //Last ned tabelldataene som en CSV
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Angi globale data
+### Angi globale data
 
-### Sett global data-verdi
+#### Sett global data-verdi
 
-#### Struktur
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,17 +1099,17 @@ value:any
 })
 ```
 
-#### Beskrivelse
+##### Beskrivelse
 
 Brukes til å angi verdien av gobalData
 
 `nøkkel`: displayName of globalData as the following screenshot shows.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfV9rZrZW46TUc0YmJcjbzdXDJYlBREV4Y4YRBCRBCRTUMGG_TTTTTUMXOMXOMPDTKL)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
 "verdi" : verdien som skal settes
 
-#### Eksempel
+##### Eksempel
 
 ```JavaScript
 //use input5 for å få brukerens input verdi og satt som verdi av stringState. 
@@ -1115,9 +1119,9 @@ verdi: input5.value
 })
 ```
 
-### Angi globale data i
+#### Angi globale data i
 
-#### Struktur
+##### Struktur
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,7 +1131,7 @@ value:any
 })
 ```
 
-#### Beskrivelse
+##### Beskrivelse
 
 Når de globale dataene er en liste eller et objekt, bruk setGlobalDataIn for å endre verdien som tilsvarer en bestemt indeks i en liste eller for å endre verdien som tilsvarer en bestemt nøkkel i et objekt.
 
@@ -1137,7 +1141,7 @@ Når de globale dataene er en liste eller et objekt, bruk setGlobalDataIn for å
 
 "verdi" : verdien som skal settes
 
-#### Eksempel
+##### Eksempel
 
 ```JavaScript
 //objectState er et objekt: {"key1":"value1", "key2":"value2"}, for å sette 
@@ -1148,7 +1152,7 @@ verdi:7.verdien
 })
 ```
 
-# Innebygde biblioteker
+## Innebygde biblioteker
 
 | **Bibliotek**      | \*\*Dokumenter                                                         | **Hvordan bruke den i ILLA-bygger**   | **Eksempel**                                                |
 | ------------------ | ---------------------------------------------------------------------- | ------------------------------------- | ----------------------------------------------------------- |
@@ -1158,7 +1162,7 @@ verdi:7.verdien
 | numbro             | https://numbrojs.com/                                                  | `numerikk`                            | `numbro(1000).format ({thousandSeparated: true})`           |
 | Papa               | https://www.papaparse.com/docs                                         | `Papa`                                | `Papa.parse(URL, {download: true, // rest av config ... })` |
 
-# Verdi av handlinger, komponenter...
+## Verdi av handlinger, komponenter...
 
 Bruk `displayName.xxx` for å bruke verdien av handlinger, komponenter, eller andre globalData. Vær oppmerksom på at på Kjør Script, kan disse variablene nås direkte uten å bruke `{{` referanser.
 
