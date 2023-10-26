@@ -108,7 +108,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'JavaScript_and_Event_handler',
-          items: ["text"]
+          items: ["run-script"]
         },
       ]
     },
