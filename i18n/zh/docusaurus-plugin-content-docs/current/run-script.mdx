@@ -1,9 +1,13 @@
 ---
-title: Run Script
-description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
+title: 运行脚本
+description: 通过事件处理器触发运行脚本，您可以根据不同的条件连续执行操作并执行不同的操作。
 ---
 
-# How-to
+# 运行脚本
+
+通过事件处理器触发运行脚本，您可以根据不同的条件连续执行操作并执行不同的操作。
+
+## 如何使用
 
 <div style={{
     position: "relative",
@@ -11,63 +15,63 @@ description: By triggering the Run Script through an Event handler, you can achi
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### 演示模式
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### 运行和派生
 
-https://illa.ai/app/ILAfx4p1C7Ac/detail
+https://illa.ai/app/ILAfx4p1C7Ac/details
 
-## Use case: Login and redirect to different pages
+### 使用大小写：登录并重定向到不同页面
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Run and fork
+#### 运行和派生
 
-https://illa.ai/app/ILAex4p1C7Eh/detail
+https://illa.ai/app/ILAex4p1C7Eh/details
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Trigger action
+### 触发动作
 
-### Structure
+#### 结构
 
 ```JavaScript
-const exampleData = await actionName.trigger();
+const exampleData = 等待actionName.trigger();
 ```
 
-The actionName is the string shown in the screenshot, as follows.
+动作名称是屏幕截图中显示的字符串，其内容如下。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTQzYzllNmQ2NTdmNTM1ZGZjZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZ6N1N1NnBfVG9rZW46TGhSZWJEYW00b05xUDJ4ODVXYnVYOTNOc2RoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Description
+#### 描述
 
-In Run Script, the variable `exampleData` is the same as `actionName.data`.
+在运行脚本中，变量`exampleData`和`actionName.data`相同。
 
-### Example
+#### 示例
 
-For example, we use the action `postgresql1` to query James' email.
+例如，我们使用操作 `postgresql1` 来查询James。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NzdlOTEyZjBmM2M3MWJlZTMwYTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFOE85YzFYaU1JaVVfVG9rZW46VU0yYWI4RHhWbzQ2SWV4RkhBcXVVcGNZc1NNXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Trigger the action via Run Script
+通过运行脚本触发动作
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpnaEJfVG9rZW46V1hVdGJUWGdyb2FZOGh4R3BUQ3VjNkk3c21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` is
+`postgresql1.data` 是
 
 ```JSON
 [
-  {
+  ！
     "email": "James@outlook.com",
     "id": "1",
     "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
@@ -78,13 +82,13 @@ Trigger the action via Run Script
 
 When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzZGJfdVdxNVFCS2hSMDY4YUtHWENpeE1LVFlFWmp0cHVtRzlfVG9rZW46RUpjTGJyZTI4b1dab3d4Q0JMN3VTNDN4c3JoXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
+当我们需要在执行语句`const exampleData = 等待 postgresql1 后使用"Run Script"中的电子邮件。 rigger();`, 我们可以直接使用 `exampleData[0].email` 。
 
-Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
+当查询成功且结果独一无二时显示成功通知。 当查询结果不唯一或失败时显示失败通知。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjZjE5ZTdlZGQ0NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVZfVG9rZW46VmVwNmJLTkdkb3BmNDR4d3NSUHV3SmJOc2xmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
@@ -109,9 +113,9 @@ utils.showNotification(
   };
 ```
 
-## Show notification
+### 显示通知
 
-### Structure
+#### 结构
 
 ```JavaScript
 utils.showNotification(
@@ -124,761 +128,761 @@ duration: 4500
 )
 ```
 
-### Description
+#### 描述
 
-| Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
-| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
-| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
+| 参数        | 描述                                           | 数据类型                                                                          | 示例                               |
+| --------- | -------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------- |
+| 类型        | 用于在通知中设置图标类型。                                | 字符串，下列值之一:"info"default""succart""successar@@0错误""warning"                    | 类型：“信息”                          |
+| 标题        | 用于设置通知的标题                                    | 字符串                                                                           | title: "恭喜"                      |
+| 描述        | 用于设置描述                                       | 字符串                                                                           | 描述：“检索成功”                        |
+| 持续时间      | 用于设置通知的显示时间。                                 | 数字，以毫秒为单位(毫秒)                                                                 | 期限： 4500                         |
 
-### Example
+#### 示例
 
-Show notification when clicking the button:
+点击按钮时显示通知：
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjZjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhKaTk2a2RIVFh2dnI0ZW5UcHVtZUEwZ3RHa0ZfVG9rZW46THZkYWJnYkFxb01HOHN4QTcycnVyRzBWc0tlXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-It is the same as the Show notification action, as the following screenshot shows:
+它与显示通知操作相同，如下面的截图显示：
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjZmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfVG9rZW46Q21SdWJpb0tib0VpSDl4OG1oQnVuVGZrczdkXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Control component
+### 控制组件
 
-### Structure
+#### 结构
 
 ```JavaScript
-componentDisplayName.function()
+component,DisplayName.function()
 ```
 
-componentDisplayName is the string shown in the screenshot, as follows.
+组件显示名称是屏幕截图中显示的字符串，其内容如下。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjYjhhMThjZGZjNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWWJoZGtwVTl2VlRBa3VYYW5fVG9rZW46V3o5VWJUajV4b3IzUlp4VWFMbHVpdEJmc3FnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Description
+#### 描述
 
-#### setValue(parameter)
+##### 设置值(参数)
 
-Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+用于设置值。 参数可以是依赖组件类型的 `string` 或 `number` 或 `obolean` 或 `array` 。
 
-##### Supported components
+###### 支持的组件
 
-| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| 组件                                                                                                                                                      | 参数类型                                                           | 示例                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 输入，可编辑文本，文本区域，除去，选项，无线电小组，无线电按钮，无线电按钮，日期日期，日期时间，步骤，文本，条形进展，圆圈进度                                                                                         | `string`                                                       | `input1.setValue("Hello world")`                                                                                                                                                        |
+| JSON Editor                                                                                                                                             | `string`                                                       | jsonEditor1.setValue(`Pop "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "电话": "1-800-KICKASS" }`)           |
+| 时间表                                                                                                                                                     | “string\`, 用逗号分隔不同节点的值 (,)                                     | \`time1.setValue("第一个里程碑，第二个里程碑")"                                                                                                                                                      |
+| 数字输入，滑块速率                                                                                                                                               | `数字`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                           |
+| 交换机                                                                                                                                                     | `boolean`                                                      | `switch1.setValue(false)`                                                                                                                                                               |
+| JSON 方案表，表单                                                                                                                                             | `object`                                                       | `jsonSchemaForm1.setValue(主席)"firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking assess from 1940", "password": "noneed", "电话": "1-800-KICKASS" })`       |
+| 复选框组，连铸器                                                                                                                                                | `array`                                                        | `cascader1.setValue["media_source_2","campaign_2-1"])`                                                                                                                                  |
 
-#### clearValue()
+##### clearValue()
 
-Used to clear the value
+用于清除值
 
-##### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+输入，号码输入，可编辑文本，文本区域，上传，JSON编辑器，JSON方案格式，开关，选择多选项，复选框组， Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Example
+###### 示例
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### focus()
+##### focus()
 
-Used to focus on the component
+用于关注组件
 
-##### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Input, number Input, Editable Text, Textarea, JSON Editor, Rich text editor, Radio Group,
 
-##### Example
+###### 示例
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+当您设置了一个组件的验证条件，例如电子邮件格式，URL格式， 或必填字段，您可以使用 `validate()` 函数来确定它是否符合要求。 如果它不符合要求，将显示验证消息。
 
-Set the validation conditions:
+设置验证条件：
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZmVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QzhzemJoeXhkb1E1a0N4R0dQSnVDeUpZczhiXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Display the validation message:
+显示验证消息：
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWJqdWU0b2tpbHd4UFVIVnU5M0hlczliXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期范围，日期时间，Form，速率
 
-##### Example
+###### 示例
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidation()
+##### clearidation()
 
-Used to clear the validation message.
+用于清除验证消息。
 
-##### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期时间，日期时间，时间速率
 
-##### Example
+###### 示例
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### 设置选定值(数组)
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+用于设置多选中的值。 参数应该是数组。
 
-##### Supported components
+###### 支持的组件
 
-Multiselect
+多选
 
-##### Example
+###### 示例
 
 ```JavaScript
-multiselect1.setSelectedValue(["Option 1", "Option 3"])
+多选择1.setedValue["选项1", "选项3"])
 ```
 
-#### submit()
+##### 提交()
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+提交表单数据。 当提交方法被触发时，我们将首先验证表单数据。 如果存在验证错误，表格提交将被阻止，相应的错误信息将被显示。 只有在验证成功后，提交才会继续。
 
-##### Supported components
+###### 支持的组件
 
-JSON Schema Form, Form
+JSON 方案表，表单
 
-##### Example
+###### 示例
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
-Used to switch the value from true to false or from false to true.
+用于切换值从true到false或false 到true。
 
-##### Supported components
+###### 支持的组件
 
-Switch
+交换机
 
-##### Example
+###### 示例
 
 ```JavaScript
-switch1.toggle()
+切换1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
-Used to set the default start value of the range slider
+用于设置范围滑块的默认起始值
 
-##### Supported components
+###### 支持的组件
 
 Range Slider
 
-##### Example
+###### 示例
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(number)
+##### setEndOfrange(数值)
 
-Used to set the default end value of the range slider
+用于设置范围滑块的默认结束值
 
-##### Supported components
+###### 支持的组件
 
 Range Slider
 
-##### Example
+###### 示例
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(string)
+##### 设置开始值(字符串)
 
-Used to set the default start value
+用于设置默认起始值
 
-##### Supported components
+###### 支持的组件
 
-Date Range, Time Range
+日期范围、 时间范围
 
-##### Example
+###### 示例
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setEndValue(string)
+##### setEndvalue(字符串)
 
-Used to set the default end value
+用于设置默认结束值
 
-##### Supported components
+###### 支持的组件
 
-Date Range, Time Range
+日期范围、 时间范围
 
-##### Example
+###### 示例
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInray(数组)
 
-Used to set the switches whose value is true
+用于设置值为 true 的开关
 
-##### Supported components
+###### 支持的组件
 
-Switch Group
+切换组
 
-##### Example
-
-```JavaScript
-switchGroup1.setValueInArray(["Option 1", "Option 3"])
-```
-
-#### selectPage(number)
-
-Used to set the index of the page to display. The index is a number starting from ０.
-
-##### Supported components
-
-Table
-
-##### Example
+###### 示例
 
 ```JavaScript
-table1.selectPage(1)
+switchGroup1.setValueInAray["选项1", "选项3"])
 ```
 
-#### selectRow(number)
+##### 选择页面(数字)
 
-Used to set the index of selected row. The index is a number starting from ０.
+用于设置要显示的页面索引。 索引是一个从0开始的数字。
 
-##### Supported components
+###### 支持的组件
 
-Table
+表
 
-##### Example
+###### 示例
 
 ```JavaScript
-table1.selectRow(1)
+平板电脑1.选择页面(1)
 ```
 
-#### clearSelection()
+##### selectRow(数值)
 
-Used to clear the selected row.
+用于设置选中行的索引。 索引是一个从0开始的数字。
 
-##### Supported components
+###### 支持的组件
 
-Table
+表
 
-##### Example
+###### 示例
+
+```JavaScript
+平板电脑1.selectRow(1)
+```
+
+##### clearSelection()
+
+用于清除选中的行。
+
+###### 支持的组件
+
+表
+
+###### 示例
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFilters(array of objects, string)
+##### 设置过滤器(对象数组，字符串)
 
-Used to set filters.
+用于设置过滤器。
 
-**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
+**第一个参数** 是一个对象数组。 每个对象代表一个过滤条件。 它包括三个属性：
 
-**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 例如，如果查询是 `SELECT email AS user_email FROM users` 并使用表格的右手面板将 `email` 重命名为 `Email` 。 如果使用右侧面板中的“添加列”按钮手动添加此列，列的 id 仍然是 `user_email` ， 您可以在左侧面板的 "displayedData" 部分检查其id。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。
 
-**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**`filterFn`** ：过滤器的匹配类型。 We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
-**`value`** : used to set the value to  compare.
+**`value`** ：用于设置要比较的值。
 
-**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
+**第二个参数：** 当存在多个过滤条件对象时，它决定它们是否有一个“AND”关系或一个“OR”关系。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。
 
-##### Supported components
+###### 支持的组件
 
-Table
+表
 
-##### Example
-
-```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
-```
-
-#### clearFilters()
-
-Used to clear all filters
-
-##### Supported components
-
-Table
-
-##### Example
+###### 示例
 
 ```JavaScript
-table1.clearFilters()
+平板1.setFilters[{"id":"月", "filterFn":"equalTo", "value":"May"}, {"id":"月", "filterFn":"equalTo", "value":"June"}, "或")
 ```
 
-#### setSort(string, string)
+##### clearFilters()
 
-Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
+用于清除所有过滤器
 
-##### Supported components
+###### 支持的组件
 
-Table
+表
 
-##### Example
+###### 示例
 
 ```JavaScript
-table1.setSort("incomes", "descend")
+表格1.clearchive Filters()
 ```
 
-#### setCurrentViewKey(string)
+##### setSort(string, string)
 
-Use the key which is a string value of the view to set the shown view.
+用于设置排序。 **第一个参数** 是列中要排序的字符串值。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。
 
-##### Supported components
+###### 支持的组件
 
-Container
+表
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.setCurrentViewKey("View 2")
+平板电脑.setSort("收入", "降级")
 ```
 
-#### setCurrentViewIndex(number)
+##### 设置CurrentViewKey(字符串)
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+使用键值作为视图的字符串来设置显示的视图。
 
-##### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.setCurrentViewIndex(1)
+容器1.setCurrentViewKey("查看2")
 ```
 
-#### showNextView(boolean)
+##### 设置CurrentViewIndex(数值)
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+使用从视图的 0 开始的数字值来设置显示的视图。
 
-##### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.showNextView(true)
+容器1.setCurrentViewIndex(1)
 ```
 
-#### showNextVisibleView(boolean)
+##### 显示下一次视图(布尔)
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+用于显示下一个视图。 参数是一个布尔值，用于决定是否从结束返回起始。
 
-##### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.showNextVisibleView(false)
+容器1.showNextView(true)
 ```
 
-#### showPreviousView()
+##### 显示下一个可见视图(布尔值)
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+用于显示下一个可见视图。 不同于“showNextView(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从结束返回起始。
 
-##### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.showPreviousView(true)
+容器1.showNextVisibleView(false)
 ```
 
-#### showPreviousVisibleView()
+##### show以前视图()
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+用于显示上一个视图。 参数是一个布尔值，用于决定是否从开始回到结束。
 
-##### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### Example
+###### 示例
 
 ```JavaScript
-container1.showPreviousVisibleView(true)
+容器1.显示上一个视图(true)
 ```
 
-#### reset()
+##### 显示上一个VisibleView()
 
-Used to reset the value to default value.
+用于显示上一个可见视图。 不同于“show以前视图(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从开始回到结束。
 
-##### Supported components
+###### 支持的组件
 
-Form
+容器
 
-##### Example
+###### 示例
+
+```JavaScript
+容器1.显示以前可见视图(true)
+```
+
+##### reset()
+
+用于重置值为默认值。
+
+###### 支持的组件
+
+形式
+
+###### 示例
 
 ```JavaScript
 form1.reset()
 ```
 
-#### resetValue()
+##### resetValue()
 
-Used to reset the value to default value.
+用于重置值为默认值。
 
-##### Supported components
+###### 支持的组件
 
-Steps
+步骤
 
-##### Example
+###### 示例
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
-Used to open a modal
+用于打开模式
 
-##### Supported components
+###### 支持的组件
 
-Modal
+模式
 
-##### Example
+###### 示例
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
-Used to close a modal
+用于关闭模式
 
-##### Supported components
+###### 支持的组件
 
-Modal
+模式
 
-##### Example
+###### 示例
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(string)
+##### setImageUrl(字符串)
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。
 
-##### Supported components
+###### 支持的组件
 
-Image
+图片
 
-##### Example
+###### 示例
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
 ```
 
 ```JavaScript
-image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
+image1.setImageUrl("data:image/png;base64,iVBORw0KGOAA...II=")
 ```
 
-#### clearReplyMessage()
+##### clearReplyMessage()
 
-Used to clear the quoted reply message above the input box.
+用于清除输入框上方引用的回复消息。
 
-##### Supported components
+###### 支持的组件
 
-Chat
+聊天
 
-##### Example
+###### 示例
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-#### setPrimaryValue(number)
+##### 设置初级值(数值)
 
-Used to set the primary value of statistics.
+用于设置统计的主要价值。
 
-##### Supported components
+###### 支持的组件
 
-Statistics
+统计
 
-##### Example
+###### 示例
 
 ```JavaScript
-statistic1.setPrimaryValue(100)
+统计1.setPrimaryValue(100)
 ```
 
-#### resetPrimaryValue()
+##### resetPrimaryValue()
 
-Used to reset the primary value to the default primary value of statistics.
+用于重置主值为默认主要统计值。
 
-##### Supported components
+###### 支持的组件
 
-Statistics
+统计
 
-##### Example
+###### 示例
 
 ```JavaScript
 statistic1.resetPrimaryValue()
 ```
 
-#### setFileUrl(string)
+##### setFileUrl(字符串)
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+用于设置文件 URL。 它可以是 Base64 或 URL 指向网络上的 PDF。
 
-##### Supported components
+###### 支持的组件
 
 PDF
 
-##### Example
+###### 示例
 
 ```JavaScript
-pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### play()
+##### play()
 
-Used to play video or audio.
+用于播放视频或音频。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
+###### 示例
 
 ```JavaScript
-video1.play()
+video.play()
 ```
 
-#### pause()
+##### 暂停()
 
-Used to pause video or audio.
+用于暂停视频或音频。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
+###### 示例
 
 ```JavaScript
-video1.pause()
+video1.暂停 ()
 ```
 
-#### showControls(boolean)
+##### showControls(布尔)
 
-Used to set whether to show the controls.
+用于设置是否显示控件。
 
-##### Supported components
+###### 支持的组件
 
-Video
+视频
 
-##### Example
+###### 示例
 
 ```JavaScript
-video1.showControls(true)
+视频1.showControls(true)
 ```
 
-#### setVideoUrl(string)
+##### setVideoUrl(字符串)
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+用于设置视频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
 
-##### Supported components
+###### 支持的组件
 
-Video
+视频
 
-##### Example
+###### 示例
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolume(number)
+##### setVolume(数字)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+用于设置音量。 参数是一个值介于 0 到 1 之间。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
+###### 示例
 
 `video1.setVolume(0.5)`
 
-#### setSpeed(number)
+##### 设置速度(数)
 
-Used to set the speed. The parameter is a number value between 0.25 to 2.
+用于设置速度。 参数是一个值介于 0.25 到 2 之间。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
+###### 示例
 
 ```JavaScript
 video1.setSpeed(0.5)
 ```
 
-#### setLoop(boolean)
+##### setLoop(布尔值)
 
-Used to set whether to loop the playback.
+用于设置是否循环播放。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
+###### 示例
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(number)
+##### 寻找到(号码)
 
-Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 例如，要寻求时间位置 5:35，您将使用价值335。
 
-##### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### Example
-
-```JavaScript
-video1.seekTo(335)
-```
-
-#### mute(boolean)
-
-Used to set mute or not.
-
-##### Supported components
-
-Video, Audio
-
-##### Example
+###### 示例
 
 ```JavaScript
-video1.mute(true)
+video1.search To(335)
 ```
 
-#### setAudioUrl(string)
+##### mute(boolean)
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+用于设置静音与否。
 
-##### Supported components
+###### 支持的组件
 
-Audio
+视频，音频
 
-##### Example
+###### 示例
 
 ```JavaScript
-video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+视频1.mute(true)
 ```
 
-#### slickNext()
+##### setAudioUrl(字符串)
 
-Used to switch to the next image.
+用于设置音频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
 
-##### Supported components
+###### 支持的组件
+
+音频
+
+###### 示例
+
+```JavaScript
+video.setAudioUrl("https://www.soundhelix.com/exampes/mp3/SoundHelix-Song-1.mp3")
+```
+
+##### slickNext()
+
+用于切换到下一个图像。
+
+###### 支持的组件
 
 Carousel
 
-##### Example
+###### 示例
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickEtipous()
 
-Used to switch to the previous image.
+用于切换到上一张图像。
 
-##### Supported components
+###### 支持的组件
 
 Carousel
 
-##### Example
+###### 示例
 
 ```JavaScript
-carousel1.slickPrevious()
+carousel1.slick以前()
 ```
 
-#### setSrc()
+##### setSrc()
 
-Used to set the source URL of IFrame.
+用于设置 IFram 的源URL。
 
-##### Supported components
+###### 支持的组件
 
 IFrame
 
-##### Example
+###### 示例
 
 ```JavaScript
-iframe1.setSrc("https://www.nasa.gov/")
+iframe1.setSrc("https://www.nasa.gov")
 ```
 
-#### setMarkers(array)
+##### setMarkers(数组)
 
-Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
+用于设置地图上的标记。 参数应该是对象数组。 每个对象的纬度和经度字段应与右手面板设置的字段相同
 
-##### Supported components
+###### 支持的组件
 
-Map
+地图
 
-##### Example
+###### 示例
 
 ```JavaScript
 map1.setMarkers([
-{
-    "lat":57.14009563040699,
+len
+    "lat":57.140095630699,
     "lng":-114.6018657894011
- },{
+ },*
      "lat":55.40432513713809,
      "lng":-112.98252263795787
- },{
-     "lat":57.841288754888545,
-     "lng":-103.3518657894011
+ },*
+     "lat":57.841288785888545,
+     "lng":103.3518657894011
  }
- ])
+])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
-Used to reset the markers to the default markers.
+用于重置标记为默认标记。
 
-##### Supported components
+###### 支持的组件
 
-Map
+地图
 
-##### Example
+###### 示例
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Go to URL
+### 转到网址
 
-### Structure
+#### 结构
 
 ```JavaScript
 utils.goToURL({
@@ -887,103 +891,103 @@ newTab:boolean
 })
 ```
 
-### Description
+#### 描述
 
-Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
+使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 这是一个用于设置是否在新标签中打开 URL 的布尔值。
 
-### Example
+#### 示例
 
 ```JavaScript
-utils.goToURL({
+utils.goTOURL(*
 url:"https://www.illacloud.com",
 newTab:true
 })
 ```
 
-## Copy to clipboard
+### 复制到剪贴板
 
-### Structure
+#### 结构
 
 ```JavaScript
-utils.copyToClipboard(string)
+复制到剪贴板(字符串)
 ```
 
-### Description
+#### 描述
 
-Used to copy a string
+用于复制字符串
 
-### Example
+#### 示例
 
 ```JavaScript
-utils.copyToClipboard("The text to copy")
+copyToClipboard("复制文本")
 ```
 
-## Set router
+### 设置路由器
 
-### Structure
+#### 结构
 
 ```JavaScript
-utils.setRouter({
+utils.setRouter(v.
 pagePath:string;
 viewPath:string
 })
 ```
 
-### Description
+#### 描述
 
-Used to change the page in ILLA Apps. There are 2 attributes in the object.
+用于更改ILLA 应用程序中的页面。 对象中有2个属性。
 
-The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
+第一个属性是 `pagePath` 。 下面的截图中显示页面路径的值，不含`/`。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjYzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVuUW5IcnN6cVRtbkNWcjdfVG9rZW46RjZUamI1a084b0djVW54NWE2UnVZZndTc21mXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
+第二个属性是 `viewPath` 。 视图路径的值在下面的截图中显示，不含`/`。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4d2JxdDB6b1lIazh4eElVOXUzMTRrc1JnXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Example
+#### 示例
 
 ```JavaScript
-utils.setRouter({
+utils.setRouter(voir
 pagePath:"page2", 
 viewPath:"sub-page1"
 })
 ```
 
-## Save to ILLA Drive
+### 保存到 ILLA 驱动器
 
-### Structure
+#### 结构
 
 ```JavaScript
-utils.saveToILLADrive({
+utils.saveToILLADrive(ower
 fileName:string,
 fileData:string,
 fileType:string,
 folder:string,
 allowAnonymous:boolean,
-replace:boolean
+replace:boolian
 })
 ```
 
-### Description
+#### 描述
 
-Used to save a file to ILLA Drive.
+用于保存文件到 ILLA 驱动程序。
 
-`fileName`: Name with extension of the file after uploading to ILLA Drive.
+`fileName`: 上传到ILLA Drive后具有文件扩展名的名称。
 
-`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`fileData`：Base64或原始文件数据，例如JSON、CSV、纯文本等。
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
-`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
+文件夹：文件上传的目标文件夹。 将上传到根文件夹留空。
 
-`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`allowAnymous`: 用于设置是否允许匿名用户访问。 如果您计划将您的应用程序设置为公开，必须启用匿名访问。 为了您的数据的安全性，文件或文件夹必须放在匿名文件夹中。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjZhOWQ3ODFjNDNkMjlfTDJkSzg0QktPUmlQa3VZcDUxYXBsZVZmVHVhazlXS1ZfVG9rZW46SnIyQ2JuaGpsb0s0dGJ4Z1libnVkSjZLc0lmXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
+\`替换：当同一目录中有具有相同名称的文件时使用 用新文件替换现有文件或自动重命名新文件。
 
-### Example
+#### 示例
 
 ```JavaScript
 //use upload1 to pick files from device and upload to apps folder. 
@@ -1009,29 +1013,29 @@ replace:true
 })
 ```
 
-## Download from ILLA Drive
+### 从 ILLA 驱动程序下载
 
-### Structure
+#### 结构
 
 ```JavaScript
-utils.downloadFromILLADrive({
+utils.downloadFromILLADrive(请注意，
     downloadInfo:[{
         tinyURL:string,
         fileID:string
         }],
-    asZip:boolean
+    asZip:boolie
 })
 ```
 
-### Description
+#### 描述
 
-Used to download files from ILLA Drive.
+用于从 ILLA 驱动器下载文件。
 
-`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
+`downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 您可以使用组件驱动器从ILLA 驱动器中选择文件并通过 drivePicker1.value 获取 `downloadInfo`
 
-`asZip`: used to set whether to download the files as a Zip.
+`asZip`：用于设置是否下载文件为Zip。
 
-### Example
+#### 示例
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Download
+### 下载
 
-### Structure
+#### 结构
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,41 +1056,41 @@ utils.downloadFile({
 })
 ```
 
-### Description
+#### 描述
 
-Used to export data to your device.
+用于导出数据到您的设备。
 
-`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
-`fileName`: a name with extension.
+`fileName`：具有扩展名的名称。
 
-`data`: data of the file.
+`data `: 文件的数据。
 
-### Example
+#### 示例
 
 ```JavaScript
-//download the data of table as a CSV
-utils.downloadFile({
+//downloading 数据表 as a CSV
+utils.downloadFile(请注意，
     fileType:"CSV",
     fileName:"text.csv",
-    data: table2.dataSourceJS
+    数据: table2.dataSourceJS
 })
 ```
 
 ```JavaScript
-//download image
-utils.downloadFile({
+//download镜像
+utils.downloadFile(请注意，
     fileType:"PNG",
     fileName:"text.png",
     data: image1.imageSrc
 })
 ```
 
-## Set global data
+### 设置全局数据
 
-### Set global data value
+#### 设置全局数据值
 
-#### Structure
+##### 结构
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,29 +1099,29 @@ value:any
 })
 ```
 
-#### Description
+##### 描述
 
-Used to set the value of gobalData
+用于设置 gobalData 的值
 
-`key`: the displayName of globalData as the following screenshot shows.
+`key`: 全局数据显示的显示名称。
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUUWxYN3JxNndSZXdFdzI2blFZeDNUVFozRnRCYnVfVG9rZW46TUc0YmJjc28wbzhXdDl4aEJ4YnVRVFBCc21jXzE2OTgzMDQ1MTI6MTY5ODMwODExMl9WNA)
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: the value to set
+`value`: 要设置的值
 
-#### Example
+##### 示例
 
 ```JavaScript
-//use input5 to get the user input value and set as the value of stringState. 
-utils.setGlobalDataValue({
+//使用input5 获取用户输入值并设置为字符串状态的值。 
+utils.setGlobalDataValue(Windows
 key:"stringState", 
 value:input5.value
 })
 ```
 
-### Set global data in
+#### 设置全局数据在
 
-#### Structure
+##### 结构
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,17 +1131,17 @@ value:any
 })
 ```
 
-#### Description
+##### 描述
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+当全局数据是数组或对象时， 使用 setGlobalDataIn来修改一个数组中特定索引的对应值或修改对象中特定键的对应值。
 
-`key`: the displayName of globalData.
+`key`: 全局数据的显示名称。
 
-`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+“路径”：你打算在数组或对象中更新的值的索引。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。
 
-`value`: the value to set
+`value`: 要设置的值
 
-#### Example
+##### 示例
 
 ```JavaScript
 //objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
@@ -1148,19 +1152,19 @@ value:input7.value
 })
 ```
 
-# Built-in libraries
+## 内置库
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
+| **库**             | **Doc**                                                               | **如何在 ILLA Builder 中使用它**           | **示例**                                                      |
 | ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
+| 罗达什文              | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_concatar(数组, 2, [3], [[4]]);`                             |
+| 日 .js             | https://day.js.org/                                                   | `dayjs`                             | `dayjs(新日期)`                                                |
 | uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).格式({thousandSeparated: true})`                |
 | Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
 
-# Value of actions, components...
+## 操作值, 组件...
 
-Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
+使用 `displayName.xxx` 来使用动作、 组件或其他全球数据的值。 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用.
 
 ```JavaScript
 utils.downloadFromILLADrive({
