@@ -3,7 +3,11 @@ title: Rulează Script
 description: Prin activarea script-ului de rulare printr-un gestionar de evenimente, poți obține executarea secvențială a operațiunilor și să efectuezi acțiuni diferite bazate pe condiții diferite.
 ---
 
-# Cum
+# Rulează Script
+
+Prin activarea script-ului de rulare printr-un gestionar de evenimente, poți obține executarea secvențială a operațiunilor și să efectuezi acțiuni diferite bazate pe condiții diferite.
+
+## Cum
 
 <div style={{
     position: "relative",
@@ -11,35 +15,35 @@ description: Prin activarea script-ului de rulare printr-un gestionar de evenime
     height: 0
     }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Demo
+### Demo
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Rulează și furcă
+#### Rulează și furcă
 
 https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-## Utilizează cazul: Autentificare și redirecționare către pagini diferite
+### Utilizează cazul: Autentificare și redirecționare către pagini diferite
 
 <div style={{
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Rulează și furcă
+#### Rulează și furcă
 
 https://illa.ai/app/ILAex4p1C7Eh/detail
 
-# ILLA custom functions
+## ILLA custom functions
 
-## Acțiune de declanșare
+### Acțiune de declanșare
 
-### Structura
+#### Structura
 
 ```JavaScript
 exempluDate = await actionName.trigger();
@@ -47,21 +51,21 @@ exempluDate = await actionName.trigger();
 
 ActionName este șirul afișat în captura de ecran, după cum urmează.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NTQzlNmQ2NTdmNTM1ZGZZDU3MTNjMjk3ZTI1ZDVfT2RwQTNkaEZSNHdpSmFOeVlmcVJPN2NaOXZZ6N1NnBfVG9rZWWWWGhSZZZJEYWS00b05xUDJODJVXXVYO2O2OcOXOXOXOXOXOXOZOZOZOZOZOZOZOZZZZZZMZZZZZZZZZZZZZZZZZZZZ
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-### Descriere
+#### Descriere
 
 În Run Script, variabila `exampleData` este identică cu `actionName.data`.
 
-### Exemplu
+#### Exemplu
 
 De exemplu, folosim acțiunea `postgresql1` pentru a interoga e-mailul James.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NzdlOTEyZjBm2M3MJlZTMwZTIwZjkzMTQ1OTBhM2VfZEVNeTJRZGE2TFRObkNXTlV0OHdFO85YzFYaU1JaVVVfVG9rZW46VU0yYWI4RHhbQ2SWVccVhcVcVVVVVVVVGNZOZOOZZOOZZZZZZOOZZZZZZZYWWWDHcNQ2NQ2NQ2NQ4NXVVVVVVVVV
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
 Declanșează acțiunea prin Run Script
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YTQzOTE3NDI3YzU1MzVhOTY2ZTg4ODBjOWUyZmMxYzlfdW9uYzR5VXhLYVNFMXRlYnpYU2xTTHo3WHJEZUpEnaJfVVG9rZWWVVdJUWWVdJUGUG2FOGb2FOGh4R3B3B3U3NQV2NQV21WN2WNQV2DMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZX
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
 `postgresql1.data` este
 
@@ -78,13 +82,13 @@ Declanșează acțiunea prin Run Script
 
 Când avem nevoie să folosim JavaScript pentru a prelua un e-mail în Inspectorul componentei sau în altă parte, putem folosi următoarele: `{{postgresql1.data[0].email}}`
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=ZDQyMWExZThhMzU5MGQwZTVlMDI0ZmUwNzk3NGYzGJfdVdxNVF2hSMDY4YUtHWENE1LVFWmp0cHVtRzlfV9rZW46RUpjTGJyZTIZ4b1dY4DY4YUtHWN3N3DM3N3D2D2WND2WN4ND2XXTXTXMZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
 Şi când trebuie să folosim e-mailul în "Execută Scriptul" după executarea declaraţiei `const exempleData = aşteaptă postgresql1. rigger();`, putem folosi direct `exampleData[0].email`.
 
 Arată o notificare de succes atunci când interogarea are succes şi rezultatul este unic. Arată o notificare eșuată atunci când rezultatul interogării nu este unic sau când eșuează.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=YjEyZDk4MjdjE5ZTdlZGQ0NzQ4NzQ4NmI5ZDQ5MDE0ODBfTWhTdkI1VGI3Vk1FdG84WlNqYmtvNzVBVmowRjRYbVVZfVG9rZ9rZWVmWNmLTkdkbN3DRB3N3N3H3N2WNZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exempleData = await postgresql1.trigger();
@@ -109,9 +113,9 @@ utils. howNotification(
 };
 ```
 
-## Arată notificare
+### Arată notificare
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.showNotification(
@@ -124,7 +128,7 @@ duration: 4500
 )
 ```
 
-### Descriere
+#### Descriere
 
 | Parametru   | Descriere                                                       | Tip de date                                                                        | Exemplu                                   |
 | ----------- | --------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ----------------------------------------- |
@@ -133,19 +137,19 @@ duration: 4500
 | descriere   | Folosit pentru a seta descrierea                                | Şir                                                                                | descriere: "Recuperează cu succes"        |
 | durată      | Folosit pentru a seta durata de afişare a notificării.          | Număr, în milisecunde (ms)                                                         | durata: 4500                              |
 
-### Exemplu
+#### Exemplu
 
 Arată notificare la apăsarea butonului:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NmNlZWMxNzFiMWVjJjZDI0MjgzMzAwNGE2ODQzNjdfRFRFbXhTk2a2RIVFh2dFh2dnI0ZW5UcHVtZUEwZZ3RHa0ZFVG9rZWWWWWTHZkYJnYJnFxFxb01HHHN4YHNccccCVyByBzTXTXTXTMMDA)
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
 Este la fel ca Arata actiunea de notificare, ca urmatorul screenshot arata:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=NTY2ZmNmMDQ2MjE5ZjM2NTkyNTZlMjzmYjk5YjA4ZTBfdExSYUZqTVVzMUtiZnBjaEVqZFRYSGdIcklLSmtMSXFfV9rZ9rZW46Q21SdJpb0tib0tibVpSD4OG1OQoVunVZZZZZZZZZZOOOOOOZZZZZOOOOOOZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-## Componenta de control
+### Componenta de control
 
-### Structura
+#### Structura
 
 ```JavaScript
 componentDisplayName.funcție()
@@ -153,15 +157,15 @@ componentDisplayName.funcție()
 
 componentDisplayName este șirul afișat în captura de ecran, după cum urmează.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ODUwYzM1ZDVlMzFjhhMThjZGZZZZJNzExYmIyOWI4NjVfdGtlbTRXS3ZNall1aTRzWJoZGtwVTl2VlRBa3VYYW5fVG9rZG9rZWVWWVWVWVJUV4bIzUlp4VWWWWWWWWWWVWVFDJDJDJTVDJXF3F2OZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-### Descriere
+#### Descriere
 
-#### setValoare (parametru)
+##### setValoare (parametru)
 
 Folosit pentru a seta valoarea. Parametrul ar putea fi `string` sau `number` sau `object` sau `boolean` sau `array` care depinde de tipul componentei.
 
-##### Componente suportate
+###### Componente suportate
 
 | Componentă                                                                                                                                                      | Tip de parametru                                                     | Exemplu                                                                                                                                                                                     |
 | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -173,225 +177,225 @@ Folosit pentru a seta valoarea. Parametrul ar putea fi `string` sau `number` sau
 | Formular JSON schemă, formular                                                                                                                                  | `obiect`                                                             | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking ases din 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`        |
 | Cascader grup, Cascader                                                                                                                                         | `array`                                                              | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
-#### clearValoare ()
+##### clearValoare ()
 
 Folosit pentru a şterge valoarea
 
-##### Componente suportate
+###### Componente suportate
 
 Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Grupul Checkbox, Cascader, Grupul Radio Button, Data, Data Range, Data Time, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 input1.clearValue()
 ```
 
-#### concentrat()
+##### concentrat()
 
 Folosit pentru a se concentra asupra componentei
 
-##### Componente suportate
+###### Componente suportate
 
 Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 input1.focus()
 ```
 
-#### validate()
+##### validate()
 
 Când ai stabilit condițiile de validare pentru o componentă, cum ar fi formatul de e-mail, formatul URL-ului, sau câmp obligatoriu, puteți utiliza funcția `validate()` pentru a determina dacă îndeplinește cerințele. Dacă nu îndeplinește cerințele, va fi afișat un mesaj de validare.
 
 Setați condițiile de validare:
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=YjIwNTcyN2VjZDZkOTYzNGFlMzM0ZVVhZjJiYmI2MThfMUQ0ME5hZ0dOMEVsWGVEcHVxdm03cTdsVHBvaktOcTZfVG9rZW46QhzhzemJoeXhk1E1a04R0SQNQSnDDDDDDDDDDDDXDZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
 Afișează mesajul de validare:
 
-![](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=OWQ1NzRmMTkxOGE3NjFjMTYzYTYxNGMzZTE0N2QyY2ZfNEt4Q3ozbU1HRDJOYTVvaHNmYmpUZWRDMTZzdmR0N3lfVG9rZW46SDhFOWDWJqdWU0b2bHUFVIVn4UFVM5hl0XOTDmR0N2ExzMZZDMZZZZZZZZZZZZZWDMMDA)
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-##### Componente suportate
+###### Componente suportate
 
 Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Data Range, Data Time, Form, Rata
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 input1.validate()
 ```
 
-#### clearValidare()
+##### clearValidare()
 
 Folosit pentru a șterge mesajul de validare.
 
-##### Componente suportate
+###### Componente suportate
 
 Input, Numarul Input, Editable Text, Text Area, Upload, Select, Multiselect, Grupul Checkbox, Radio Button, Data, Data Range, Data ora, Rata
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 input1.clearValidation()
 ```
 
-#### setSelectedValue(array)
+##### setSelectedValue(array)
 
 Folosit pentru a seta valoarea selectată pentru Multiselect. Parametrul trebuie să fie un array.
 
-##### Componente suportate
+###### Componente suportate
 
 Multi-selectare
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 multiselect1.setSelectedValue([„Opțiunea 1”, „Opțiunea 3”])
 ```
 
-#### prezentat()
+##### prezentat()
 
 Trimite datele formularului. Când metoda de depunere este declanșată, mai întâi vom valida datele formularului. Dacă există erori de validare, trimiterea formularului va fi prevenită și vor fi afișate mesajele de eroare corespunzătoare. Numai după validarea reușită procedează la depunerea propunerii.
 
-##### Componente suportate
+###### Componente suportate
 
 Formular JSON schemă, formular
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 form1.submit()
 ```
 
-#### toggle()
+##### toggle()
 
 Folosit pentru a schimba valoarea de la true la false sau fals la adevărat.
 
-##### Componente suportate
+###### Componente suportate
 
 Comutare
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 comutator1.toggle()
 ```
 
-#### setStartOfRange(number)
+##### setStartOfRange(number)
 
 Folosit pentru a seta valoarea de pornire implicită pentru glisorul de rază
 
-##### Componente suportate
+###### Componente suportate
 
 Range Slider
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-#### setEndOfRange(număr)
+##### setEndOfRange(număr)
 
 Folosit pentru a seta valoarea finală implicită pentru glisorul de rază
 
-##### Componente suportate
+###### Componente suportate
 
 Range Slider
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-#### setStartValue(șir)
+##### setStartValue(șir)
 
 Folosit pentru a seta valoarea de pornire implicită
 
-##### Componente suportate
+###### Componente suportate
 
 Intervalul de date, intervalul de timp
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-#### setValoare EndValue(șir)
+##### setValoare EndValue(șir)
 
 Folosit pentru a seta valoarea de sfârșit implicită
 
-##### Componente suportate
+###### Componente suportate
 
 Intervalul de date, intervalul de timp
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
 ```
 
-#### setValueInArray(array)
+##### setValueInArray(array)
 
 Folosit pentru a seta comutatoarele a căror valoare este adevărată
 
-##### Componente suportate
+###### Componente suportate
 
 Comută grupul
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 switchGroup1.setValueInArray([„Opțiunea 1”, „Opțiunea 3”])
 ```
 
-#### selectPage(număr)
+##### selectPage(număr)
 
 Folosit pentru a seta indexul paginii pentru afişare. Indicele este un număr care începe de la 0.
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 tabel1.selectPage(1)
 ```
 
-#### selectare (număr)
+##### selectare (număr)
 
 Folosit pentru a seta indexul rândului selectat. Indicele este un număr care începe de la 0.
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 tabel1.selectRow(1)
 ```
 
-#### clearSelection()
+##### clearSelection()
 
 Folosit pentru a șterge rândul selectat.
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 table1.clearSelection()
 ```
 
-#### setFiltre (array of objects, string)
+##### setFiltre (array of objects, string)
 
 Folosit pentru a seta filtre.
 
@@ -405,193 +409,193 @@ Folosit pentru a seta filtre.
 
 **Al doilea parametru:** când sunt obiecte cu filtru multiplu, acesta determină dacă au o relaţie "AND" sau o relaţie "OR". Setaţi-l ca şir de caractere pentru o relaţie "AND", şi `sau` pentru o relaţie "OR".
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 table1.setFilters([{"id":"lună", "filterFn":"equalTo", "value":"May"}, {"id":"lună", "filterFn":"equalTo", "value":"June"}], "sau")
 ```
 
-#### clearFilters()
+##### clearFilters()
 
 Folosit pentru a șterge toate filtrele
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 tabel1.clearFiltre()
 ```
 
-#### setSort(string, string)
+##### setSort(string, string)
 
 Folosit pentru a seta sortarea. **Primul parametru** este ID-ul coloanei pentru sortare, care este o valoare a șirului. Id-ul este identic cu id-ul menționat în setFilters(matrice de obiecte, șir). **Al doilea parametru** este ordinea de sortare, fie ascendent, fie descendent. Este setat folosind un şir de caractere `ascend` sau `descendent`.
 
-##### Componente suportate
+###### Componente suportate
 
 Tabel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 table1.setSort(„incomes”, „descendent”)
 ```
 
-#### setCurrent ViewKey(șir)
+##### setCurrent ViewKey(șir)
 
 Utilizați cheia care este o valoare șir a vederii pentru a seta vizualizarea afișată.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 container1.setCurrent ViewKey("Vezi 2")
 ```
 
-#### setCurrent ViewIndex(număr)
+##### setCurrent ViewIndex(număr)
 
 Utilizați indicele care este o valoare numerică pornind de la 0 a vederii pentru a seta vizualizarea afișată.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 container1.setCurrent ViewIndex(1)
 ```
 
-#### showNextView(boolean)
+##### showNextView(boolean)
 
 Folosit pentru a afișa următoarea vizualizare. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 container1.showNextView(tru)
 ```
 
-#### showNextVisibleView(boolean)
+##### showNextVisibleView(boolean)
 
 Folosit pentru a afișa următoarea vizualizare vizibilă. Spre deosebire de comportamentul funcției `showNextView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 container1.showNextVisibleView(false)
 ```
 
-#### Arată Anterior Vizualizare ()
+##### Arată Anterior Vizualizare ()
 
 Folosit pentru a afișa vizualizarea anterioară. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 container1.showAnterior View(tru)
 ```
 
-#### showAnterior VisibleView()
+##### showAnterior VisibleView()
 
 Folosit pentru a afișa vizualizarea vizibilă anterioară. Spre deosebire de comportamentul funcției `showPreviousView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-##### Componente suportate
+###### Componente suportate
 
 Recipient
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 Container1.showAnterior VisibleView(adevărat)
 ```
 
-#### reset()
+##### reset()
 
 Folosit pentru a reseta valoarea la valoarea implicită.
 
-##### Componente suportate
+###### Componente suportate
 
 Formular
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 form1.reset()
 ```
 
-#### ResetValoare()
+##### ResetValoare()
 
 Folosit pentru a reseta valoarea la valoarea implicită.
 
-##### Componente suportate
+###### Componente suportate
 
 Pași
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 steps1.resetValue()
 ```
 
-#### openModal()
+##### openModal()
 
 Folosit pentru a deschide un modal
 
-##### Componente suportate
+###### Componente suportate
 
 Modale
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 modal1.openModal()
 ```
 
-#### closeModal()
+##### closeModal()
 
 Folosit pentru a închide un modul
 
-##### Componente suportate
+###### Componente suportate
 
 Modale
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-#### setImageUrl(șir)
+##### setImageUrl(șir)
 
 Folosit pentru a seta URL-ul sursă al imaginii. Poate fi un Base64 sau un URL care arată către o imagine pe web.
 
-##### Componente suportate
+###### Componente suportate
 
 Imagine
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -601,251 +605,251 @@ image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-8
 image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 ```
 
-#### clearRăspunplyMessage()
+##### clearRăspunplyMessage()
 
 Folosit pentru a şterge mesajul de răspuns citat deasupra casetei.
 
-##### Componente suportate
+###### Componente suportate
 
 Chat
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 chat1.clearRăspunplyMessage()
 ```
 
-#### setPrimaryValoare (număr)
+##### setPrimaryValoare (număr)
 
 Folosit pentru a seta valoarea primară a statisticilor.
 
-##### Componente suportate
+###### Componente suportate
 
 Statistici
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 statistic1.setValoare Primary(100)
 ```
 
-#### ResetPrimaryValoare()
+##### ResetPrimaryValoare()
 
 Folosit pentru a reseta valoarea primară la valoarea primară implicită a statisticilor.
 
-##### Componente suportate
+###### Componente suportate
 
 Statistici
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 statistic1.resetPrimaryValoare()
 ```
 
-#### setFileUrl(șir)
+##### setFileUrl(șir)
 
 Folosit pentru a seta URL-ul fișierului. Poate fi un Base64 sau un URL care arată către un PDF pe web.
 
-##### Componente suportate
+###### Componente suportate
 
 PDF
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
 ```
 
-#### redă()
+##### redă()
 
 Folosit pentru a reda video sau audio.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.play()
 ```
 
-#### pauză()
+##### pauză()
 
 Folosit pentru a opri video sau audio.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.pause()
 ```
 
-#### showControls(boolean)
+##### showControls(boolean)
 
 Folosit pentru a seta dacă să afișeze controalele.
 
-##### Componente suportate
+###### Componente suportate
 
 Video
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.showControls(adevărat)
 ```
 
-#### setVideoUrl(șir)
+##### setVideoUrl(șir)
 
 Folosit pentru a seta URL-ul video. (Automatic Translation) Poate fi un Base64 sau un URL video pe site-urile media.
 
-##### Componente suportate
+###### Componente suportate
 
 Video
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-#### setVolum(număr)
+##### setVolum(număr)
 
 Folosit pentru a stabili volumul. Parametrul este o valoare numerică între 0 și 1.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 `video1.setVolume(0.5)`
 
-#### Setare viteză(număr)
+##### Setare viteză(număr)
 
 Folosit pentru a seta viteza. Parametrul este o valoare numerică între 0.25 şi 2.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.setViteză (0,5)
 ```
 
-#### setLoop(boolean)
+##### setLoop(boolean)
 
 Folosit pentru a seta dacă să repete redarea.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-#### seekTo(număr)
+##### seekTo(număr)
 
 Folosit pentru a căuta o anumită poziție de timp. Parametrul este o valoare numerică, măsurată în secunde (secunde). De exemplu, pentru a căuta în poziția de timp 5:35, ați folosi valoarea 335.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.seekTo(335)
 ```
 
-#### mute(boolean)
+##### mute(boolean)
 
 Folosit pentru a seta sunetul sau nu.
 
-##### Componente suportate
+###### Componente suportate
 
 Video, Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.mute(adevărat)
 ```
 
-#### setAudioUrl(șir)
+##### setAudioUrl(șir)
 
 Folosit pentru a seta URL-ul audio. Poate fi un Base64 sau un URL video pe site-urile media.
 
-##### Componente suportate
+###### Componente suportate
 
 Audio
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
-#### slickNext()
+##### slickNext()
 
 Folosit pentru a comuta la imaginea următoare.
 
-##### Componente suportate
+###### Componente suportate
 
 Carousel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 carousel1.slickNext()
 ```
 
-#### slickPrevious()
+##### slickPrevious()
 
 Folosit pentru a comuta la imaginea anterioară.
 
-##### Componente suportate
+###### Componente suportate
 
 Carousel
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 carousel1.slickPrevious()
 ```
 
-#### setSrc()
+##### setSrc()
 
 Folosit pentru a seta URL-ul sursă al IFrame.
 
-##### Componente suportate
+###### Componente suportate
 
 IFrame
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 iFrame1.setSrc("https://www.nasa.gov/")
 ```
 
-#### setMarkers(array)
+##### setMarkers(array)
 
 Folosit pentru a seta marcajele pe hartă. Parametrul ar trebui să fie o serie de obiecte. Câmpurile de latitudine și longitudine din fiecare obiect ar trebui să fie aceleași cu câmpurile din panoul din dreapta
 
-##### Componente suportate
+###### Componente suportate
 
 Hartă
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 map1.setMarkers([
@@ -862,23 +866,23 @@ map1.setMarkers([
 ])
 ```
 
-#### resetMarkers()
+##### resetMarkers()
 
 Folosit pentru a reseta marcajele la markerii impliciți.
 
-##### Componente suportate
+###### Componente suportate
 
 Hartă
 
-##### Exemplu
+###### Exemplu
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-## Du-te la URL
+### Du-te la URL
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.goToURL({
@@ -887,11 +891,11 @@ newTab:boolean
 })
 ```
 
-### Descriere
+#### Descriere
 
 Folosește un obiect pentru a-l seta. Există 2 atribute în obiect. Primul atribut este `url`. Valoarea ei este un URL complet, inclusiv 'https://' sau 'http://', și este de tip șir. Al doilea atribut este `newTab`. Este un boolean folosit pentru a seta dacă să deschidă URL-ul într-o filă nouă.
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 utils.goToURL({
@@ -900,27 +904,27 @@ newTab:true
 })
 ```
 
-## Copiază în clipboard
+### Copiază în clipboard
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.copyToClipboard(șir)
 ```
 
-### Descriere
+#### Descriere
 
 Folosit pentru a copia un şir
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 utils.copyToClipboard("Textul pentru copiere")
 ```
 
-## Setare router
+### Setare router
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.setRouter({
@@ -929,19 +933,19 @@ viewPath:string
 })
 ```
 
-### Descriere
+#### Descriere
 
 Folosit pentru a schimba pagina în aplicațiile ILLA. Există 2 atribute în obiect.
 
 Primul atribut este `pagePath`. Valoarea pageCalea este afișată în următoarea captură de ecran fără `/`.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=ZTkwODAzZmEzYmNlMDhlZDlmYjzMDA4NjFlYWIyMGJfWHE5WUtsWkplZnF1d05FaVVVVUW5IcnN6cVRtbkNWcjdfV9rZWWWWIjZUjZamI1a084b08bd0jjjNVWNFaV5NFaVWN2UncN2N2NDZZZDT212DTXTWTWDMYWDMYWDMZDMZDMZDMZD
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
 Al doilea atribut este `viewPath`. Valoarea viewPath este afișată în următoarea captură de ecran fără `/`.
 
-![](https://illasoft.larksuite.com/space/api/box/stream/stream/download/asynccode/?code=MzljM2ZkMDExYmE1NmRmNTQwNDZjNmU2NmM4YmQ1NzBfRTdCUFd2T3MwOXFOVGpHNkHNkxsUHZwdzFib29yMmJtVXpfVG9rZW46Vjl4dJxdJxDB6bIhl4lD1Elr1DM2DM2DM2YDMZZZZZZZZZDMYDMYWDMZDMZZOXT1YWNDMZOST)
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 utils.setRouter({
@@ -950,9 +954,9 @@ viewPath:"subpage1"
 })
 ```
 
-## Salvează în unitatea ILLA
+### Salvează în unitatea ILLA
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.saveToILLADrive({
@@ -965,7 +969,7 @@ replace:boolean
 })
 ```
 
-### Descriere
+#### Descriere
 
 Folosit pentru a salva un fișier pe ILLA Drive.
 
@@ -979,11 +983,11 @@ Folosit pentru a salva un fișier pe ILLA Drive.
 
 `allowAnonymous`: Folosit pentru a seta dacă este permis accesul anonim al utilizatorului. Dacă intenționați să setați aplicația dvs. publică, accesul anonim trebuie să fie activat. Pentru securitatea datelor dvs., fișierele sau dosarele accesibile anonim trebuie plasate în folderul anonim.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=Y2U5MzRmOGMxYWE4YzI2MjQxMjxMjZhOW3ODFjNDNkMjlfDJkSzg0QktPUmlQa3VZcDUxYXBsZmVHVmVHVhazlXS1ZfVVVG9rZWW46SnIyQ2JuaGpsb0sG0sGJ4ZZ1ScSccScScScLTLTL0Z1ZZZZZLTLTLTL0ZZZZZZZZZZZZZZZZZZZZZXS
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
 `replace`: Folosit pentru a seta când există fișiere cu același nume în același director, înlocuiţi fişierul existent cu un fişier nou sau redenumiţi automat fişierul nou.
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 /use upload1 to select files from device and upload in apps folder. 
@@ -1009,9 +1013,9 @@ replace:true
 })
 ```
 
-## Descarcă de pe ILLA Drive
+### Descarcă de pe ILLA Drive
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1023,7 +1027,7 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Descriere
+#### Descriere
 
 Folosit pentru a descărca fișiere de pe ILLA Drive.
 
@@ -1031,7 +1035,7 @@ Folosit pentru a descărca fișiere de pe ILLA Drive.
 
 `asZip`: folosit pentru a seta dacă să descarce fișierele ca Zip.
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1040,9 +1044,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-## Descărcare
+### Descărcare
 
-### Structura
+#### Structura
 
 ```JavaScript
 utils.downloadFile({
@@ -1052,7 +1056,7 @@ utils.downloadFile({
 })
 ```
 
-### Descriere
+#### Descriere
 
 Folosit pentru a exporta date pe dispozitivul dvs.
 
@@ -1062,7 +1066,7 @@ Folosit pentru a exporta date pe dispozitivul dvs.
 
 `data`: datele din fișier.
 
-### Exemplu
+#### Exemplu
 
 ```JavaScript
 //download the data of table as a CSV
@@ -1082,11 +1086,11 @@ utils.downloadFile({
 })
 ```
 
-## Setare date globale
+### Setare date globale
 
-### Setați valoarea globală a datelor
+#### Setați valoarea globală a datelor
 
-#### Structura
+##### Structura
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1095,17 +1099,17 @@ value:any
 })
 ```
 
-#### Descriere
+##### Descriere
 
 Folosit pentru a seta valoarea gobalData
 
 `key`: displayName of globalData aşa cum arată următorul screenshot.
 
-!\[](https://illasoft.larksuite.com/space/api/box/stream/download/asynccode/?code=NGE2OTMxZGFlYjE1ZmYwMGZlOWQ3MWE2ZDFiNTQ3ZmFfMDRUWxYN3JxNndSZXdFdFdzI2blFZeDNUVFozRnRnRnRCYnVfVfVfV9rZ46TUc0Ymjjjjjjc28bzjdXhd4lD4IJ4JNFdFdFdFdFDYNVV21WWZZZZZZZZZZZZZZZZZZZZZZZZZZZZD4
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
 `value`: valoarea de setat
 
-#### Exemplu
+##### Exemplu
 
 ```JavaScript
 /use input5 to get the user input value and set as the value of stringState 
@@ -1115,9 +1119,9 @@ value:input5.value
 })
 ```
 
-### Setare date globale în
+#### Setare date globale în
 
-#### Structura
+##### Structura
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1127,7 +1131,7 @@ value:any
 })
 ```
 
-#### Descriere
+##### Descriere
 
 Când datele globale sunt o matrice sau un obiect, utilizaţi setGlobalDataIn pentru a modifica valoarea corespunzătoare unui index specific într-o array sau pentru a modifica valoarea corespunzătoare unei anumite chei dintr-un obiect.
 
@@ -1137,7 +1141,7 @@ Când datele globale sunt o matrice sau un obiect, utilizaţi setGlobalDataIn pe
 
 `value`: valoarea de setat
 
-#### Exemplu
+##### Exemplu
 
 ```JavaScript
 /objectState este un obiect: {"key1":"value1", "key2":"value2"}, to set the 
@@ -1148,7 +1152,7 @@ value:input7.value
 })
 ```
 
-# Biblioteci încorporate
+## Biblioteci încorporate
 
 | **Bibliotecă**    | **Doc**                                                               | **Cum să îl folosiți în Constructorul ILLA** | **Exemplu**                                                      |
 | ----------------- | --------------------------------------------------------------------- | -------------------------------------------- | ---------------------------------------------------------------- |
@@ -1158,7 +1162,7 @@ value:input7.value
 | numbro            | https://numbrojs.com/                                                 | `numbro`                                     | `numbro(1000).format({thousandSeparated: true})`                 |
 | Papa              | https://www.papaparse.com/docs                                        | `Papa`                                       | `Papa.parse(url, {download: true, // Restul configuraţiei... })` |
 
-# Valoarea acțiunilor, componente...
+## Valoarea acțiunilor, componente...
 
 Folosiți `displayName.xxx` pentru a utiliza valoarea acțiunilor, componentelor sau a altor globalData. Vă rugăm să reţineţi că în Run Script, aceste variabile pot fi accesate direct fără a utiliza referinţe `{{`.
 
