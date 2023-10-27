@@ -1,0 +1,1179 @@
+---
+title: 运行脚本
+description: 通过事件处理器触发运行脚本，您可以根据不同的条件连续执行操作并执行不同的操作。
+---
+
+# 运行脚本
+
+通过事件处理器触发运行脚本，您可以根据不同的条件连续执行操作并执行不同的操作。
+
+## 如何使用
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### 演示模式
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+#### 运行和派生
+
+https://illa.ai/app/ILAfx4p1C7Ac/details
+
+### 使用大小写：登录并重定向到不同页面
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+#### 运行和派生
+
+https://illa.ai/app/ILAex4p1C7Eh/details
+
+## ILLA custom functions
+
+### 触发动作
+
+#### 结构
+
+```JavaScript
+const exampleData = 等待actionName.trigger();
+```
+
+动作名称是屏幕截图中显示的字符串，其内容如下。
+
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
+
+#### 描述
+
+在运行脚本中，变量`exampleData`和`actionName.data`相同。
+
+#### 示例
+
+例如，我们使用操作 `postgresql1` 来查询James。
+
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
+
+通过运行脚本触发动作
+
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
+
+`postgresql1.data` 是
+
+```JSON
+[
+  ！
+    "email": "James@outlook.com",
+    "id": "1",
+    "img": "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=1600",
+    "name": "James"
+  }
+]
+```
+
+When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
+
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
+
+当我们需要在执行语句`const exampleData = 等待 postgresql1 后使用"Run Script"中的电子邮件。 rigger();`, 我们可以直接使用 `exampleData[0].email` 。
+
+当查询成功且结果独一无二时显示成功通知。 当查询成功且结果独一无二时显示成功通知。 当查询成功且结果独一无二时显示成功通知。 当查询结果不唯一或失败时显示失败通知。
+
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
+
+```JSON
+const exampleData = await postgresql1.trigger();
+//show email via notification when the length of the resulting array is 1.
+if(exampleData.length==1){
+utils.showNotification(
+  {
+    type:"info",
+    title:"Retrieved successfully",
+    description:exampleData[0].email,
+    duration: 4500}
+);
+  }else{
+  //else, show a failed notification
+utils.showNotification(
+  {
+    type:"info",
+    title:"Failed to retrieve",
+    duration: 4500
+  }
+);
+  };
+```
+
+### 显示通知
+
+#### 结构
+
+```JavaScript
+utils.showNotification(
+{
+type: "info",
+title: "Congratulations",
+description: "Retrieved successfully",
+duration: 4500
+}
+)
+```
+
+#### 描述
+
+| 参数        | 描述                                           | 数据类型                                                                          | 示例                               |
+| --------- | -------------------------------------------- | ----------------------------------------------------------------------------- | -------------------------------- |
+| 类型        | 用于在通知中设置图标类型。                                | 字符串，下列值之一:"info"default""succart""successar@@0错误""warning"                    | 类型：“信息”                          |
+| 标题        | 用于设置通知的标题                                    | 字符串                                                                           | title: "恭喜"                      |
+| 描述        | 用于设置描述                                       | 字符串                                                                           | 描述：“检索成功”                        |
+| 持续时间      | 用于设置通知的显示时间。                                 | 数字，以毫秒为单位(毫秒)                                                                 | 期限： 4500                         |
+
+#### 示例
+
+点击按钮时显示通知：
+
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
+
+它与显示通知操作相同，如下面的截图显示：
+
+![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
+
+### 控制组件
+
+#### 结构
+
+```JavaScript
+component,DisplayName.function()
+```
+
+组件显示名称是屏幕截图中显示的字符串，其内容如下。
+
+![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
+
+#### 描述
+
+##### 设置值(参数)
+
+用于设置值。 用于设置值。 用于设置值。 参数可以是依赖组件类型的 `string` 或 `number` 或 `obolean` 或 `array` 。
+
+###### 支持的组件
+
+| 组件                                                                                                                                                      | 参数类型                                                           | 示例                                                                                                                                                                                      |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 输入，可编辑文本，文本区域，除去，选项，无线电小组，无线电按钮，无线电按钮，日期日期，日期时间，步骤，文本，条形进展，圆圈进度                                                                                         | `string`                                                       | `input1.setValue("Hello world")`                                                                                                                                                        |
+| JSON Editor                                                                                                                                             | `string`                                                       | jsonEditor1.setValue(`Pop "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "电话": "1-800-KICKASS" }`)           |
+| 时间表                                                                                                                                                     | “string\`, 用逗号分隔不同节点的值 (,)                                     | \`time1.setValue("第一个里程碑，第二个里程碑")"                                                                                                                                                      |
+| 数字输入，滑块速率                                                                                                                                               | `数字`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                           |
+| 交换机                                                                                                                                                     | `boolean`                                                      | `switch1.setValue(false)`                                                                                                                                                               |
+| JSON 方案表，表单                                                                                                                                             | `object`                                                       | `jsonSchemaForm1.setValue(主席)"firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking assess from 1940", "password": "noneed", "电话": "1-800-KICKASS" })`       |
+| 复选框组，连铸器                                                                                                                                                | `array`                                                        | `cascader1.setValue["media_source_2","campaign_2-1"])`                                                                                                                                  |
+
+##### clearValue()
+
+用于清除值
+
+###### 支持的组件
+
+输入，号码输入，可编辑文本，文本区域，上传，JSON编辑器，JSON方案格式，开关，选择多选项，复选框组， Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+
+###### 示例
+
+```JavaScript
+input1.clearValue()
+```
+
+##### focus()
+
+用于关注组件
+
+###### 支持的组件
+
+Input, number Input, Editable Text, Textarea, JSON Editor, Rich text editor, Radio Group,
+
+###### 示例
+
+```JavaScript
+input1.focus()
+```
+
+##### validate()
+
+当您设置了一个组件的验证条件，例如电子邮件格式，URL格式， 或必填字段，您可以使用 `validate()` 函数来确定它是否符合要求。 如果它不符合要求，将显示验证消息。 如果它不符合要求，将显示验证消息。 如果它不符合要求，将显示验证消息。
+
+设置验证条件：
+
+![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
+
+显示验证消息：
+
+![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
+
+###### 支持的组件
+
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期范围，日期时间，Form，速率
+
+###### 示例
+
+```JavaScript
+input1.validate()
+```
+
+##### clearidation()
+
+用于清除验证消息。
+
+###### 支持的组件
+
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期时间，日期时间，时间速率
+
+###### 示例
+
+```JavaScript
+input1.clearValidation()
+```
+
+##### 设置选定值(数组)
+
+用于设置多选中的值。 参数应该是数组。 用于设置多选中的值。 参数应该是数组。 参数应该是数组。
+
+###### 支持的组件
+
+多选
+
+###### 示例
+
+```JavaScript
+多选择1.setedValue["选项1", "选项3"])
+```
+
+##### 提交()
+
+提交表单数据。 当提交方法被触发时，我们将首先验证表单数据。 如果存在验证错误，表格提交将被阻止，相应的错误信息将被显示。 只有在验证成功后，提交才会继续。
+
+###### 支持的组件
+
+JSON 方案表，表单
+
+###### 示例
+
+```JavaScript
+form1.submit()
+```
+
+##### toggle()
+
+用于切换值从true到false或false 到true。
+
+###### 支持的组件
+
+交换机
+
+###### 示例
+
+```JavaScript
+切换1.toggle()
+```
+
+##### setStartOfRange(number)
+
+用于设置范围滑块的默认起始值
+
+###### 支持的组件
+
+Range Slider
+
+###### 示例
+
+```JavaScript
+rangeSlider1.setStartOfRange(1)
+```
+
+##### setEndOfrange(数值)
+
+用于设置范围滑块的默认结束值
+
+###### 支持的组件
+
+Range Slider
+
+###### 示例
+
+```JavaScript
+rangeSlider1.setEndOfRange(9)
+```
+
+##### 设置开始值(字符串)
+
+用于设置默认起始值
+
+###### 支持的组件
+
+日期范围、 时间范围
+
+###### 示例
+
+```JavaScript
+dateRange1.setStartValue("2023-09-09")
+```
+
+##### setEndvalue(字符串)
+
+用于设置默认结束值
+
+###### 支持的组件
+
+日期范围、 时间范围
+
+###### 示例
+
+```JavaScript
+dateRange1.setEndValue("2023-10-09")
+```
+
+##### setValueInray(数组)
+
+用于设置值为 true 的开关
+
+###### 支持的组件
+
+切换组
+
+###### 示例
+
+```JavaScript
+switchGroup1.setValueInAray["选项1", "选项3"])
+```
+
+##### 选择页面(数字)
+
+用于设置要显示的页面索引。 索引是一个从0开始的数字。 索引是一个从0开始的数字。
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+平板电脑1.选择页面(1)
+```
+
+##### selectRow(数值)
+
+用于设置选中行的索引。 用于设置选中行的索引。 索引是一个从0开始的数字。 用于设置要显示的页面索引。 索引是一个从0开始的数字。 索引是一个从0开始的数字。
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+平板电脑1.selectRow(1)
+```
+
+##### clearSelection()
+
+用于清除选中的行。
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+table1.clearSelection()
+```
+
+##### 设置过滤器(对象数组，字符串)
+
+用于设置过滤器。
+
+**第一个参数** 是一个对象数组。 每个对象代表一个过滤条件。 它包括三个属性： 每个对象代表一个过滤条件。 它包括三个属性： 每个对象代表一个过滤条件。 它包括三个属性：
+
+**`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 **`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 例如，如果查询是 `SELECT email AS user_email FROM users` 并使用表格的右手面板将 `email` 重命名为 `Email` 。 如果使用右侧面板中的“添加列”按钮手动添加此列，列的 id 仍然是 `user_email` ， 您可以在左侧面板的 "displayedData" 部分检查其id。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。
+
+**`filterFn`** ：过滤器的匹配类型。 **`filterFn`** ：过滤器的匹配类型。 **`filterFn`** ：过滤器的匹配类型。 We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+
+**`value`** ：用于设置要比较的值。
+
+**第二个参数：** 当存在多个过滤条件对象时，它决定它们是否有一个“AND”关系或一个“OR”关系。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+平板1.setFilters[{"id":"月", "filterFn":"equalTo", "value":"May"}, {"id":"月", "filterFn":"equalTo", "value":"June"}, "或")
+```
+
+##### clearFilters()
+
+用于清除所有过滤器
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+表格1.clearchive Filters()
+```
+
+##### setSort(string, string)
+
+用于设置排序。 用于设置排序。 **第一个参数** 是列中要排序的字符串值。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。
+
+###### 支持的组件
+
+表
+
+###### 示例
+
+```JavaScript
+平板电脑.setSort("收入", "降级")
+```
+
+##### 设置CurrentViewKey(字符串)
+
+使用键值作为视图的字符串来设置显示的视图。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.setCurrentViewKey("查看2")
+```
+
+##### 设置CurrentViewIndex(数值)
+
+使用从视图的 0 开始的数字值来设置显示的视图。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.setCurrentViewIndex(1)
+```
+
+##### 显示下一次视图(布尔)
+
+用于显示下一个视图。 参数是一个布尔值，用于决定是否从结束返回起始。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.showNextView(true)
+```
+
+##### 显示下一个可见视图(布尔值)
+
+用于显示下一个可见视图。 用于显示下一个可见视图。 不同于“showNextView(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从结束返回起始。 用于显示下一个视图。 参数是一个布尔值，用于决定是否从结束返回起始。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.showNextVisibleView(false)
+```
+
+##### show以前视图()
+
+用于显示上一个视图。 参数是一个布尔值，用于决定是否从开始回到结束。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.显示上一个视图(true)
+```
+
+##### 显示上一个VisibleView()
+
+用于显示上一个可见视图。 用于显示上一个可见视图。 不同于“show以前视图(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从开始回到结束。 参数是一个布尔值，用于决定是否从开始回到结束。
+
+###### 支持的组件
+
+容器
+
+###### 示例
+
+```JavaScript
+容器1.显示以前可见视图(true)
+```
+
+##### reset()
+
+用于重置值为默认值。
+
+###### 支持的组件
+
+形式
+
+###### 示例
+
+```JavaScript
+form1.reset()
+```
+
+##### resetValue()
+
+用于重置值为默认值。
+
+###### 支持的组件
+
+步骤
+
+###### 示例
+
+```JavaScript
+steps1.resetValue()
+```
+
+##### openModal()
+
+用于打开模式
+
+###### 支持的组件
+
+模式
+
+###### 示例
+
+```JavaScript
+modal1.openModal()
+```
+
+##### closeModal()
+
+用于关闭模式
+
+###### 支持的组件
+
+模式
+
+###### 示例
+
+```JavaScript
+modal1.closeModal()
+```
+
+##### setImageUrl(字符串)
+
+用于设置图像源 URL。 用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。 用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。
+
+###### 支持的组件
+
+图片
+
+###### 示例
+
+```JavaScript
+image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
+```
+
+```JavaScript
+image1.setImageUrl("data:image/png;base64,iVBORw0KGOAA...II=")
+```
+
+##### clearReplyMessage()
+
+用于清除输入框上方引用的回复消息。
+
+###### 支持的组件
+
+聊天
+
+###### 示例
+
+```JavaScript
+chat1.clearReplyMessage()
+```
+
+##### 设置初级值(数值)
+
+用于设置统计的主要价值。
+
+###### 支持的组件
+
+统计
+
+###### 示例
+
+```JavaScript
+统计1.setPrimaryValue(100)
+```
+
+##### resetPrimaryValue()
+
+用于重置主值为默认主要统计值。
+
+###### 支持的组件
+
+统计
+
+###### 示例
+
+```JavaScript
+statistic1.resetPrimaryValue()
+```
+
+##### setFileUrl(字符串)
+
+用于设置文件 URL。 用于设置文件 URL。 用于设置文件 URL。 它可以是 Base64 或 URL 指向网络上的 PDF。
+
+###### 支持的组件
+
+PDF
+
+###### 示例
+
+```JavaScript
+pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
+```
+
+##### play()
+
+用于播放视频或音频。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+video.play()
+```
+
+##### 暂停()
+
+用于暂停视频或音频。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+video1.暂停 ()
+```
+
+##### showControls(布尔)
+
+用于设置是否显示控件。
+
+###### 支持的组件
+
+视频
+
+###### 示例
+
+```JavaScript
+视频1.showControls(true)
+```
+
+##### setVideoUrl(字符串)
+
+用于设置视频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
+
+###### 支持的组件
+
+视频
+
+###### 示例
+
+```JavaScript
+video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+```
+
+##### setVolume(数字)
+
+用于设置音量。 参数是一个值介于 0 到 1 之间。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+`video1.setVolume(0.5)`
+
+##### 设置速度(数)
+
+用于设置速度。 参数是一个值介于 0.25 到 2 之间。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+video1.setSpeed(0.5)
+```
+
+##### setLoop(布尔值)
+
+用于设置是否循环播放。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+video1.setLoop(false)
+```
+
+##### 寻找到(号码)
+
+用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 例如，要寻求时间位置 5:35，您将使用价值335。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+video1.search To(335)
+```
+
+##### mute(boolean)
+
+用于设置静音与否。
+
+###### 支持的组件
+
+视频，音频
+
+###### 示例
+
+```JavaScript
+视频1.mute(true)
+```
+
+##### setAudioUrl(字符串)
+
+用于设置音频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。 用于设置视频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
+
+###### 支持的组件
+
+音频
+
+###### 示例
+
+```JavaScript
+video.setAudioUrl("https://www.soundhelix.com/exampes/mp3/SoundHelix-Song-1.mp3")
+```
+
+##### slickNext()
+
+用于切换到下一个图像。
+
+###### 支持的组件
+
+Carousel
+
+###### 示例
+
+```JavaScript
+carousel1.slickNext()
+```
+
+##### slickEtipous()
+
+用于切换到上一张图像。
+
+###### 支持的组件
+
+Carousel
+
+###### 示例
+
+```JavaScript
+carousel1.slick以前()
+```
+
+##### setSrc()
+
+用于设置 IFram 的源URL。
+
+###### 支持的组件
+
+IFrame
+
+###### 示例
+
+```JavaScript
+iframe1.setSrc("https://www.nasa.gov")
+```
+
+##### setMarkers(数组)
+
+用于设置地图上的标记。 参数应该是对象数组。 用于设置地图上的标记。 参数应该是对象数组。 每个对象的纬度和经度字段应与右手面板设置的字段相同
+
+###### 支持的组件
+
+地图
+
+###### 示例
+
+```JavaScript
+map1.setMarkers([
+len
+    "lat":57.140095630699,
+    "lng":-114.6018657894011
+ },*
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },*
+     "lat":57.841288785888545,
+     "lng":103.3518657894011
+ }
+])
+```
+
+##### resetMarkers()
+
+用于重置标记为默认标记。
+
+###### 支持的组件
+
+地图
+
+###### 示例
+
+```JavaScript
+map1.resetMarkers()
+```
+
+### 转到网址
+
+#### 结构
+
+```JavaScript
+utils.goToURL({
+url:string,
+newTab:boolean
+})
+```
+
+#### 描述
+
+使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 这是一个用于设置是否在新标签中打开 URL 的布尔值。
+
+#### 示例
+
+```JavaScript
+utils.goTOURL(*
+url:"https://www.illacloud.com",
+newTab:true
+})
+```
+
+### 复制到剪贴板
+
+#### 结构
+
+```JavaScript
+复制到剪贴板(字符串)
+```
+
+#### 描述
+
+用于复制字符串
+
+#### 示例
+
+```JavaScript
+copyToClipboard("复制文本")
+```
+
+### 设置路由器
+
+#### 结构
+
+```JavaScript
+utils.setRouter(v.
+pagePath:string;
+viewPath:string
+})
+```
+
+#### 描述
+
+用于更改ILLA 应用程序中的页面。 对象中有2个属性。
+
+第一个属性是 `pagePath` 。 下面的截图中显示页面路径的值，不含`/`。 第一个属性是 `pagePath` 。 下面的截图中显示页面路径的值，不含`/`。 下面的截图中显示页面路径的值，不含`/`。
+
+![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
+
+第二个属性是 `viewPath` 。 视图路径的值在下面的截图中显示，不含`/`。 第二个属性是 `viewPath` 。 视图路径的值在下面的截图中显示，不含`/`。 视图路径的值在下面的截图中显示，不含`/`。
+
+![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
+
+#### 示例
+
+```JavaScript
+utils.setRouter(voir
+pagePath:"page2", 
+viewPath:"sub-page1"
+})
+```
+
+### 保存到 ILLA 驱动器
+
+#### 结构
+
+```JavaScript
+utils.saveToILLADrive(ower
+fileName:string,
+fileData:string,
+fileType:string,
+folder:string,
+allowAnonymous:boolean,
+replace:boolian
+})
+```
+
+#### 描述
+
+用于保存文件到 ILLA 驱动程序。
+
+`fileName`: 上传到ILLA Drive后具有文件扩展名的名称。
+
+`fileData`：Base64或原始文件数据，例如JSON、CSV、纯文本等。
+
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
+
+文件夹：文件上传的目标文件夹。 将上传到根文件夹留空。 将上传到根文件夹留空。
+
+`allowAnymous`: 用于设置是否允许匿名用户访问。 如果您计划将您的应用程序设置为公开，必须启用匿名访问。 为了您的数据的安全性，文件或文件夹必须放在匿名文件夹中。
+
+![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
+
+\`替换：当同一目录中有具有相同名称的文件时使用 用新文件替换现有文件或自动重命名新文件。
+
+#### 示例
+
+```JavaScript
+//use upload1 to pick files from device and upload to apps folder. 
+utils.saveToILLADrive({
+fileName:upload1.files[0].name,
+fileData:upload1.files[0].dataURI,
+fileType:"PNG",
+folder:"apps",
+allowAnonymous:false,
+replace:true
+})
+```
+
+```JavaScript
+//upload a text file.  
+utils.saveToILLADrive({
+fileName:"test.txt",
+fileData:"abc",
+fileType:"Plain text",
+folder:"apps",
+allowAnonymous:false,
+replace:true
+})
+```
+
+### 从 ILLA 驱动程序下载
+
+#### 结构
+
+```JavaScript
+utils.downloadFromILLADrive(请注意，
+    downloadInfo:[{
+        tinyURL:string,
+        fileID:string
+        }],
+    asZip:boolie
+})
+```
+
+#### 描述
+
+用于从 ILLA 驱动器下载文件。
+
+`downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 `downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 `downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 您可以使用组件驱动器从ILLA 驱动器中选择文件并通过 drivePicker1.value 获取 `downloadInfo`
+
+`asZip`：用于设置是否下载文件为Zip。
+
+#### 示例
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:drivePicker1.value,
+    asZip:true
+})
+```
+
+### 下载
+
+#### 结构
+
+```JavaScript
+utils.downloadFile({
+    fileType:string,
+    fileName:string,
+    data:anyType
+})
+```
+
+#### 描述
+
+用于导出数据到您的设备。
+
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
+
+`fileName`：具有扩展名的名称。
+
+`data `: 文件的数据。
+
+#### 示例
+
+```JavaScript
+//downloading 数据表 as a CSV
+utils.downloadFile(请注意，
+    fileType:"CSV",
+    fileName:"text.csv",
+    数据: table2.dataSourceJS
+})
+```
+
+```JavaScript
+//download镜像
+utils.downloadFile(请注意，
+    fileType:"PNG",
+    fileName:"text.png",
+    data: image1.imageSrc
+})
+```
+
+### 设置全局数据
+
+#### 设置全局数据值
+
+##### 结构
+
+```JavaScript
+utils.setGlobalDataValue({
+key:string, 
+value:any
+})
+```
+
+##### 描述
+
+用于设置 gobalData 的值
+
+`key`: 全局数据显示的显示名称。
+
+![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
+
+`value`: 要设置的值
+
+##### 示例
+
+```JavaScript
+//使用input5 获取用户输入值并设置为字符串状态的值。 
+utils.setGlobalDataValue(Windows
+key:"stringState", 
+value:input5.value
+})
+```
+
+#### 设置全局数据在
+
+##### 结构
+
+```JavaScript
+utils.setGlobalDataIn({
+key:string, 
+path:string, 
+value:any
+})
+```
+
+##### 描述
+
+当全局数据是数组或对象时， 使用 setGlobalDataIn来修改一个数组中特定索引的对应值或修改对象中特定键的对应值。
+
+`key`: 全局数据的显示名称。
+
+“路径”：你打算在数组或对象中更新的值的索引。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。
+
+`value`: 要设置的值
+
+##### 示例
+
+```JavaScript
+//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
+utils.setGlobalDataIn({
+key:"objectState", 
+path:"key2", 
+value:input7.value
+})
+```
+
+## 内置库
+
+| **库**             | **Doc**                                                               | **如何在 ILLA Builder 中使用它**           | **示例**                                                      |
+| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| 罗达什文              | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_concatar(数组, 2, [3], [[4]]);`                             |
+| 日 .js             | https://day.js.org/                                                   | `dayjs`                             | `dayjs(新日期)`                                                |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).格式({thousandSeparated: true})`                |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
+
+## 操作值, 组件...
+
+使用 `displayName.xxx` 来使用动作、 组件或其他全球数据的值。 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用. 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用.
+
+```JavaScript
+utils.downloadFromILLADrive({
+    downloadInfo:{{drivePicker1.value}},//❌ 
+    asZip:true
+})
+
+utils.downloadFromILLADrive({
+    downloadInfo:drivePicker1.value,//✅
+    asZip:true
+})
+```
