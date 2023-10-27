@@ -1,13 +1,14 @@
 ---
-title: Kör skript
-description: Genom att utlösa Run Script genom en händelsehanterare, kan du uppnå sekventiell körning av operationer och utföra olika åtgärder baserat på olika villkor.
+slug: /
+title: Run Script
+description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
 ---
 
-# Kör skript
+# Run Script
 
-Genom att utlösa Run Script genom en händelsehanterare, kan du uppnå sekventiell körning av operationer och utföra olika åtgärder baserat på olika villkor.
+By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
 
-## Instruktioner
+## How-to
 
 <div style={{
     position: "relative",
@@ -23,11 +24,11 @@ Genom att utlösa Run Script genom en händelsehanterare, kan du uppnå sekventi
     height: 0
     }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C7Ac" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-#### Kör och gaffel
+#### Run and fork
 
-https://illa.ai/app/ILAfx4p1C7Ac/detalj
+https://illa.ai/app/ILAfx4p1C7Ac/detail
 
-### Använd fall: Logga in och omdirigera till olika sidor
+### Use case: Login and redirect to different pages
 
 <div style={{
     position: "relative",
@@ -35,39 +36,39 @@ https://illa.ai/app/ILAfx4p1C7Ac/detalj
     height: 0
     }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAex4p1C7Eh" frameborder="1" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-#### Kör och gaffel
+#### Run and fork
 
-https://illa.ai/app/ILAex4p1C7Eh/detalj
+https://illa.ai/app/ILAex4p1C7Eh/detail
 
 ## ILLA custom functions
 
-### Åtgärd för utlösare
+### Trigger action
 
-#### Struktur
+#### Structure
 
 ```JavaScript
-const exempelData = inväntar åtgärdName.trigger();
+const exampleData = await actionName.trigger();
 ```
 
-Åtgärdsnamnet är strängen som visas i skärmbilden, enligt följande.
+The actionName is the string shown in the screenshot, as follows.
 
 ![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-#### Beskrivning
+#### Description
 
-I Run Script, är variabeln `exempelData` samma som `actionName.data`.
+In Run Script, the variable `exampleData` is the same as `actionName.data`.
 
-#### Exempel
+#### Example
 
-Till exempel använder vi åtgärden `postgresql1` för att fråga James' e-post.
+For example, we use the action `postgresql1` to query James' email.
 
 ![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/2.png)
 
-Utlösa åtgärden via Run Script
+Trigger the action via Run Script
 
 ![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/3.png)
 
-`postgresql1.data` är
+`postgresql1.data` is
 
 ```JSON
 [
@@ -80,112 +81,112 @@ Utlösa åtgärden via Run Script
 ]
 ```
 
-När vi måste använda JavaScript för att hämta ett e-postmeddelande i komponentens Inspektion eller någon annanstans kan vi använda följande: `{{postgresql1.data[0].email}}`
+When we need to use JavaScript to retrieve an email in the component's Inspect or elsewhere, we can use the following: `{{postgresql1.data[0].email}}`
 
 ![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-Och när vi behöver använda e-postmeddelandet i "Kör skript" efter att ha utfört uttalandet `const exempelData = vänta postgresql1. rigger();`, vi kan direkt använda `exempelData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Visa en lyckad anmälan när frågan är framgångsrik och resultatet är unikt. Visa ett felmeddelande när frågeresultatet inte är unikt eller när det misslyckas.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 ![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
 ```JSON
 const exampleData = await postgresql1.trigger();
-//show email via notifikation när längden på den resulterande arrayen är 1.
-if(exempelData.length==1){
-utils. howNotification(
-  {
-    typ:"info",
-    titel:"Hämtas framgångsrikt",
-    beskrivning:exempelData[0]. mail,
-    varaktighet: 4500}
-);
-  }else{
-  /else, visa en misslyckad anmälan
-utils. howNotification(
+//show email via notification when the length of the resulting array is 1.
+if(exampleData.length==1){
+utils.showNotification(
   {
     type:"info",
-    title:"Misslyckades att hämta",
-    varaktighet: 4500
+    title:"Retrieved successfully",
+    description:exampleData[0].email,
+    duration: 4500}
+);
+  }else{
+  //else, show a failed notification
+utils.showNotification(
+  {
+    type:"info",
+    title:"Failed to retrieve",
+    duration: 4500
   }
 );
-};
+  };
 ```
 
-### Visa avisering
+### Show notification
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 utils.showNotification(
 {
-typ: "info",
-titel: "Grattis",
-beskrivning: "Hämtad framgångsrikt",
-varaktighet: 4500
+type: "info",
+title: "Congratulations",
+description: "Retrieved successfully",
+duration: 4500
 }
 )
 ```
 
-#### Beskrivning
+#### Description
 
-| Parameter      | Beskrivning                                                       | Datatyp                                                                          | Exempel                                  |
-| -------------- | ----------------------------------------------------------------- | -------------------------------------------------------------------------------- | ---------------------------------------- |
-| typ            | Används för att ange ikontypen i aviseringen.                     | Sträng, ett av följande värden: "info"`default`"success""error""warning"         | skriv: "info"                            |
-| titel          | Används för att ange titeln på meddelandet                        | Sträng                                                                           | title: "Grattis"                         |
-| beskrivning    | Används för att ställa in beskrivningen                           | Sträng                                                                           | beskrivning: "Hämtas framgångsrikt"      |
-| varaktighet    | Används för att ställa in varaktigheten för aviseringen.          | Nummer, I millisekunder (ms)                                                     | varaktighet: 4500                        |
+| Parameter   | Description                                           | Data type                                                                        | Example                               |
+| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
+| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
+| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
+| description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
+| duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
 
-#### Exempel
+#### Example
 
-Visa avisering när du klickar på knappen:
+Show notification when clicking the button:
 
 ![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/6.png)
 
-Det är samma som Visa avisering, som följande skärmdump visar:
+It is the same as the Show notification action, as the following screenshot shows:
 
 ![7](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/7.png)
 
-### Kontrollera komponent
+### Control component
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 componentDisplayName.function()
 ```
 
-componentDisplayName är strängen som visas i skärmdumpen, enligt följande.
+componentDisplayName is the string shown in the screenshot, as follows.
 
 ![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-#### Beskrivning
+#### Description
 
 ##### setValue(parameter)
 
-Används för att ange värde. Parametern kan vara en `string` eller `number` eller `object` eller `boolean` eller `array` som beror på komponenttypen.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
-###### Komponenter som stöds
+###### Supported components
 
-| Komponent                                                                                                                                                       | Typ av parameter                                                     | Exempel                                                                                                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, redigerbar text, textområde, avdelare, vald, Radio Group, Radio Knapp, Radio Knapp, Datum, Datumtid, Steg, Text, Bar Progress, Circle Progress           | `sträng`                                                             | `input1.setValue("Hej världen")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                                     | `sträng`                                                             | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse sparkar sedan 1940", "lösenord": "noneed", "telefon": "1-800-KICKASS" }`)                 |
-| Tidslinje                                                                                                                                                       | `string`, Separera värdena för olika noder via kommatecken (,)       | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Antal inmatning, matare, pris                                                                                                                                   | `nummer`                                                             | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Växla                                                                                                                                                           | `boolean`                                                            | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema formulär, formulär                                                                                                                                  | `objekt`                                                             | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse sparkar sedan 1940", "lösenord": "noneed", "telefon": "1-800-KICKASS" })`             |
-| Kryssruta, Cascader                                                                                                                                             | `array`                                                              | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
+| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
+| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
+| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
+| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
+| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
+| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
 
 ##### clearValue()
 
-Används för att rensa värdet
+Used to clear the value
 
-###### Komponenter som stöds
+###### Supported components
 
-Input, Nummer Input, Redigerbar Text, Text Area, Ladda upp, JSON Editor, JSON Schema Form, Switch, Välja, Multiselect, Kryssningsgrupp Cascader, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Datumtid, Text, Grad, Bar Progress, Cirkel Progress, Tidslinjen, Divider
+Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-###### Exempel
+###### Example
 
 ```JavaScript
 input1.clearValue()
@@ -193,13 +194,13 @@ input1.clearValue()
 
 ##### focus()
 
-Används för att fokusera på komponenten
+Used to focus on the component
 
-###### Komponenter som stöds
+###### Supported components
 
-Inmatning, Nummerinmatning, Redigerbar text, textområde, JSON Editor, Rich text editor, Radio Group,
+Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
-###### Exempel
+###### Example
 
 ```JavaScript
 input1.focus()
@@ -207,35 +208,35 @@ input1.focus()
 
 ##### validate()
 
-När du har ställt in valideringsvillkor för en komponent, till exempel e-postformat, URL-format, eller obligatoriskt fält kan du använda funktionen `validate()` för att avgöra om den uppfyller kraven. Om det inte uppfyller kraven kommer ett valideringsmeddelande att visas.
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
-Ställ in valideringsvillkor:
+Set the validation conditions:
 
 ![9](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/9.png)
 
-Visa valideringsmeddelande:
+Display the validation message:
 
 ![10](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/10.png)
 
-###### Komponenter som stöds
+###### Supported components
 
-Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Form, Betygsätt
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
 
-###### Exempel
+###### Example
 
 ```JavaScript
 input1.validate()
 ```
 
-##### rensning ()
+##### clearValidation()
 
-Används för att rensa valideringsmeddelandet.
+Used to clear the validation message.
 
-###### Komponenter som stöds
+###### Supported components
 
-Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Knappon, Datum, Datumintervall, Datumtid, Betygsätt
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
 
-###### Exempel
+###### Example
 
 ```JavaScript
 input1.clearValidation()
@@ -243,27 +244,27 @@ input1.clearValidation()
 
 ##### setSelectedValue(array)
 
-Används för att ställa in valt värde för Multiselect. Parametern bör vara en samling.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
-###### Komponenter som stöds
+###### Supported components
 
-Multival
+Multiselect
 
-###### Exempel
+###### Example
 
 ```JavaScript
-multiselect1.setSelectedValue(["Alternativ 1", "Alternativ 3"])
+multiselect1.setSelectedValue(["Option 1", "Option 3"])
 ```
 
-##### skicka ()
+##### submit()
 
-Skicka formulärdata. När inlämningsmetoden utlöses kommer vi först att validera formulärdata. Om det finns valideringsfel kommer formulärinlämningen att förhindras och motsvarande felmeddelanden kommer att visas. Först efter lyckad validering fortsätter inlämningen.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
-###### Komponenter som stöds
+###### Supported components
 
-JSON Schema formulär, formulär
+JSON Schema Form, Form
 
-###### Exempel
+###### Example
 
 ```JavaScript
 form1.submit()
@@ -271,13 +272,13 @@ form1.submit()
 
 ##### toggle()
 
-Används för att byta värde från sant till falskt eller från falskt till sant.
+Used to switch the value from true to false or from false to true.
 
-###### Komponenter som stöds
+###### Supported components
 
-Växla
+Switch
 
-###### Exempel
+###### Example
 
 ```JavaScript
 switch1.toggle()
@@ -285,55 +286,55 @@ switch1.toggle()
 
 ##### setStartOfRange(number)
 
-Används för att ställa in standardstartvärdet för intervallreglage
+Used to set the default start value of the range slider
 
-###### Komponenter som stöds
+###### Supported components
 
 Range Slider
 
-###### Exempel
+###### Example
 
 ```JavaScript
 rangeSlider1.setStartOfRange(1)
 ```
 
-##### setEndOfRange(nummer)
+##### setEndOfRange(number)
 
-Används för att ställa in standardvärdet för intervallreglage
+Used to set the default end value of the range slider
 
-###### Komponenter som stöds
+###### Supported components
 
 Range Slider
 
-###### Exempel
+###### Example
 
 ```JavaScript
 rangeSlider1.setEndOfRange(9)
 ```
 
-##### setStartValue(sträng)
+##### setStartValue(string)
 
-Används för att ställa in standardstartvärdet
+Used to set the default start value
 
-###### Komponenter som stöds
+###### Supported components
 
-Datumintervall, tidsintervall
+Date Range, Time Range
 
-###### Exempel
+###### Example
 
 ```JavaScript
 dateRange1.setStartValue("2023-09-09")
 ```
 
-##### setEndValue(sträng)
+##### setEndValue(string)
 
-Används för att ställa in standard slutvärde
+Used to set the default end value
 
-###### Komponenter som stöds
+###### Supported components
 
-Datumintervall, tidsintervall
+Date Range, Time Range
 
-###### Exempel
+###### Example
 
 ```JavaScript
 dateRange1.setEndValue("2023-10-09")
@@ -341,135 +342,135 @@ dateRange1.setEndValue("2023-10-09")
 
 ##### setValueInArray(array)
 
-Används för att ställa in växlar vars värde är sant
+Used to set the switches whose value is true
 
-###### Komponenter som stöds
+###### Supported components
 
-Byt grupp
+Switch Group
 
-###### Exempel
+###### Example
 
 ```JavaScript
-switchGroup1.setValueInArray(["Alternativ 1", "Alternativ 3"])
+switchGroup1.setValueInArray(["Option 1", "Option 3"])
 ```
 
-##### selectPage(nummer)
+##### selectPage(number)
 
-Används för att ställa in indexet för sidan som ska visas. Indexet är ett tal från och med 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
+###### Example
 
 ```JavaScript
-tabell1.selectPage(1)
+table1.selectPage(1)
 ```
 
-##### selectRow(nummer)
+##### selectRow(number)
 
-Används för att ange index för vald rad. Indexet är ett tal från och med 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
+###### Example
 
 ```JavaScript
-tabell1.selectRow(1)
+table1.selectRow(1)
 ```
 
 ##### clearSelection()
 
-Används för att rensa den markerade raden.
+Used to clear the selected row.
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
+###### Example
 
 ```JavaScript
-tabell1.clearSelection()
+table1.clearSelection()
 ```
 
-##### setFilters(array av objekt, sträng)
+##### setFilters(array of objects, string)
 
-Används för att ställa in filter.
+Used to set filters.
 
-**Den första parametern** är en samling objekt. Varje objekt representerar ett filtrerande tillstånd. Den innehåller tre attribut:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**`id`** : Detta refererar till id för denna kolumn. Om denna kolumn är ett resultat av en databasfråga så skulle id vara det kolumnnamn du hämtat från frågan. Till exempel, om frågan är `SELECT email AS user_email FRÅN användare` och byta namn på `email` som `Email` med hjälp av högra panelen på tabellen, ID för kolumnen skulle fortfarande vara `user_email` Om denna kolumn läggs till manuellt med hjälp av `Add Column`-knappen i högerpanelen, du kan kontrollera dess id i avsnittet "displayedData" på vänsterpanelen. Vanligtvis kommer det att vara en slumpmässigt genererad sträng som börjar med `column` som `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**`filterFn`** : matchningstypen för filtret. Vi stöder följande typer: `equalTo` som är samma som `=` i SQL, `notEqualTo` som är samma som `<>` i SQL, `innehåller` vilket är samma som `LIKE '%value%'` i SQL, `does NotContain` som är samma som `NOT LIKE '%value%'` i SQL, `lessThan` som är samma som `<` i SQL, `notLessThan` vilket är samma som `>=` i SQL, `notMoreThan` som är samma som `<=` i SQL, `empty` vilket är samma som `IS NULL` i SQL, `notEmpty` som är samma som `INTE NULL` i SQL, `innan` används för att jämföra tid eller datum, vilket är detsamma som `>` i SQL, `after` används för att jämföra tid eller datum, vilket är samma som `<` i SQL.
+**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
-**`value`** : används för att ställa in värdet att jämföra.
+**`value`** : used to set the value to  compare.
 
-**Den andra parametern:** när det finns flera filtervillkorsobjekt, avgör det om de har ett "AND" förhållande eller ett "OR" förhållande. Ange det som en sträng `and` för en "AND" relation, och `or` för en "OR" relation.
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
+###### Example
 
 ```JavaScript
-table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "eller")
+table1.setFilters([{"id":"month", "filterFn":"equalTo", "value":"May"}, {"id":"month", "filterFn":"equalTo", "value":"June"}], "or")
 ```
 
 ##### clearFilters()
 
-Används för att rensa alla filter
+Used to clear all filters
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
+###### Example
 
 ```JavaScript
-tabell1.clearFilters()
+table1.clearFilters()
 ```
 
 ##### setSort(string, string)
 
-Används för att ställa in sorteringen. **Den första parametern** är symbolen för kolumnen för att sortera vilket är ett strängvärde. Id är samma som id som nämns i setFilters(samling av objekt, sträng). **Den andra parametern** är sorteringsordningen, antingen stigande eller sjunkande. Den är inställd med ett strängvärde `ascend` eller `descend`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
-###### Komponenter som stöds
+###### Supported components
 
-Tabell
+Table
 
-###### Exempel
-
-```JavaScript
-tabell1.setSort("inkomster", "nedåt")
-```
-
-##### setCurrentViewKey(sträng)
-
-Använd nyckeln som är ett strängvärde för vyn för att ställa in den visade vyn.
-
-###### Komponenter som stöds
-
-Behållare
-
-###### Exempel
+###### Example
 
 ```JavaScript
-container1.setCurrentViewKey("Visa 2")
+table1.setSort("incomes", "descend")
 ```
 
-##### setCurrentViewIndex(nummer)
+##### setCurrentViewKey(string)
 
-Använd indexet som är ett talvärde med start från 0 av vyn för att ställa in den visade vyn.
+Use the key which is a string value of the view to set the shown view.
 
-###### Komponenter som stöds
+###### Supported components
 
-Behållare
+Container
 
-###### Exempel
+###### Example
+
+```JavaScript
+container1.setCurrentViewKey("View 2")
+```
+
+##### setCurrentViewIndex(number)
+
+Use the index which is a number value starting from 0 of the view to set the shown view.
+
+###### Supported components
+
+Container
+
+###### Example
 
 ```JavaScript
 container1.setCurrentViewIndex(1)
@@ -477,13 +478,13 @@ container1.setCurrentViewIndex(1)
 
 ##### showNextView(boolean)
 
-Används för att visa nästa vy. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
-###### Komponenter som stöds
+###### Supported components
 
-Behållare
+Container
 
-###### Exempel
+###### Example
 
 ```JavaScript
 container1.showNextView(true)
@@ -491,13 +492,13 @@ container1.showNextView(true)
 
 ##### showNextVisibleView(boolean)
 
-Används för att visa nästa synliga vy. Till skillnad från beteendet hos funktionen `showNextView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
-###### Komponenter som stöds
+###### Supported components
 
-Behållare
+Container
 
-###### Exempel
+###### Example
 
 ```JavaScript
 container1.showNextVisibleView(false)
@@ -505,69 +506,69 @@ container1.showNextVisibleView(false)
 
 ##### showPreviousView()
 
-Används för att visa föregående vy. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
-###### Komponenter som stöds
+###### Supported components
 
-Behållare
+Container
 
-###### Exempel
+###### Example
 
 ```JavaScript
-container1.showFöregåendeView(sant)
+container1.showPreviousView(true)
 ```
 
 ##### showPreviousVisibleView()
 
-Används för att visa föregående synlig vy. Till skillnad från beteendet hos funktionen `showPreviousView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
-###### Komponenter som stöds
+###### Supported components
 
-Behållare
+Container
 
-###### Exempel
+###### Example
 
 ```JavaScript
-container1.showFöregåendeVisibleView(true)
+container1.showPreviousVisibleView(true)
 ```
 
 ##### reset()
 
-Används för att återställa värdet till standardvärde.
+Used to reset the value to default value.
 
-###### Komponenter som stöds
+###### Supported components
 
-Formulär
+Form
 
-###### Exempel
+###### Example
 
 ```JavaScript
 form1.reset()
 ```
 
-##### återställeValue()
+##### resetValue()
 
-Används för att återställa värdet till standardvärde.
+Used to reset the value to default value.
 
-###### Komponenter som stöds
+###### Supported components
 
-Steg
+Steps
 
-###### Exempel
+###### Example
 
 ```JavaScript
-steg1.återställeValue()
+steps1.resetValue()
 ```
 
 ##### openModal()
 
-Används för att öppna en modal
+Used to open a modal
 
-###### Komponenter som stöds
+###### Supported components
 
 Modal
 
-###### Exempel
+###### Example
 
 ```JavaScript
 modal1.openModal()
@@ -575,27 +576,27 @@ modal1.openModal()
 
 ##### closeModal()
 
-Används för att stänga en modal
+Used to close a modal
 
-###### Komponenter som stöds
+###### Supported components
 
 Modal
 
-###### Exempel
+###### Example
 
 ```JavaScript
 modal1.closeModal()
 ```
 
-##### setImageUrl(sträng)
+##### setImageUrl(string)
 
-Används för att ange bildkäll-URL. Det kan vara en Base64 eller en URL som pekar på en bild på webben.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
-###### Komponenter som stöds
+###### Supported components
 
-Bild
+Image
 
-###### Exempel
+###### Example
 
 ```JavaScript
 image1.setImageUrl("https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5")
@@ -607,55 +608,55 @@ image1.setImageUrl("data:image/png;base64,iVBORw0KGgoAA...II=")
 
 ##### clearReplyMessage()
 
-Används för att rensa det citerade svarsmeddelandet ovanför inmatningsrutan.
+Used to clear the quoted reply message above the input box.
 
-###### Komponenter som stöds
+###### Supported components
 
-Chatt
+Chat
 
-###### Exempel
+###### Example
 
 ```JavaScript
 chat1.clearReplyMessage()
 ```
 
-##### setPrimaryValue(nummer)
+##### setPrimaryValue(number)
 
-Används för att ange det primära värdet på statistiken.
+Used to set the primary value of statistics.
 
-###### Komponenter som stöds
+###### Supported components
 
-Statistik
+Statistics
 
-###### Exempel
-
-```JavaScript
-statistik1.setPrimärvärde(100)
-```
-
-##### återställePrimaryValue()
-
-Används för att återställa det primära värdet till standardvärdet för statistiken.
-
-###### Komponenter som stöds
-
-Statistik
-
-###### Exempel
+###### Example
 
 ```JavaScript
-statistik1.återställePrimaryValue()
+statistic1.setPrimaryValue(100)
 ```
 
-##### setFileUrl(sträng)
+##### resetPrimaryValue()
 
-Används för att ange filens URL. Det kan vara en Base64 eller en URL som pekar på en PDF på webben.
+Used to reset the primary value to the default primary value of statistics.
 
-###### Komponenter som stöds
+###### Supported components
+
+Statistics
+
+###### Example
+
+```JavaScript
+statistic1.resetPrimaryValue()
+```
+
+##### setFileUrl(string)
+
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+
+###### Supported components
 
 PDF
 
-###### Exempel
+###### Example
 
 ```JavaScript
 pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf")
@@ -663,13 +664,13 @@ pdf1.setFileUrl("https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_N
 
 ##### play()
 
-Används för att spela upp video eller ljud.
+Used to play video or audio.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
 video1.play()
@@ -677,95 +678,95 @@ video1.play()
 
 ##### pause()
 
-Används för att pausa video eller ljud.
+Used to pause video or audio.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
 video1.pause()
 ```
 
-##### showControls(booleskt)
+##### showControls(boolean)
 
-Används för att ställa in om du vill visa kontrollerna.
+Used to set whether to show the controls.
 
-###### Komponenter som stöds
+###### Supported components
 
 Video
 
-###### Exempel
+###### Example
 
 ```JavaScript
-video1.showControls(sant)
+video1.showControls(true)
 ```
 
-##### setVideoUrl(sträng)
+##### setVideoUrl(string)
 
-Används för att ställa in videons URL. Det kan vara en Base64 eller en video URL på media webbplatser.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
-###### Komponenter som stöds
+###### Supported components
 
 Video
 
-###### Exempel
+###### Example
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(nummer)
+##### setVolume(number)
 
-Används för att ställa in volymen. Parametern är ett talvärde mellan 0 och 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 `video1.setVolume(0.5)`
 
-##### setSpeed(nummer)
+##### setSpeed(number)
 
-Används för att ställa in hastigheten. Parametern är ett talvärde mellan 0,25 och 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
-video1.setHastighet(0.5)
+video1.setSpeed(0.5)
 ```
 
-##### setLoop(booleskt)
+##### setLoop(boolean)
 
-Används för att ställa in om uppspelningen ska loopas.
+Used to set whether to loop the playback.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
 video1.setLoop(false)
 ```
 
-##### sökning(nummer)
+##### seekTo(number)
 
-Används för att söka till en specifik tidsposition. Parametern är ett talvärde, mätt i sekunder (s). Till exempel, att söka till tidsposition 5:35, skulle du använda värdet 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
 video1.seekTo(335)
@@ -773,41 +774,41 @@ video1.seekTo(335)
 
 ##### mute(boolean)
 
-Används för att ställa in tystning eller inte.
+Used to set mute or not.
 
-###### Komponenter som stöds
+###### Supported components
 
-Video, Ljud
+Video, Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
-video1.tyst(sant)
+video1.mute(true)
 ```
 
-##### setAudioUrl(sträng)
+##### setAudioUrl(string)
 
-Används för att ställa in audios URL. Det kan vara en Base64 eller en video URL på media webbplatser.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
-###### Komponenter som stöds
+###### Supported components
 
-Ljud
+Audio
 
-###### Exempel
+###### Example
 
 ```JavaScript
-video1.setAudioUrl ("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
+video1.setAudioUrl("https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3")
 ```
 
 ##### slickNext()
 
-Används för att byta till nästa bild.
+Used to switch to the next image.
 
-###### Komponenter som stöds
+###### Supported components
 
 Carousel
 
-###### Exempel
+###### Example
 
 ```JavaScript
 carousel1.slickNext()
@@ -815,27 +816,27 @@ carousel1.slickNext()
 
 ##### slickPrevious()
 
-Används för att byta till föregående bild.
+Used to switch to the previous image.
 
-###### Komponenter som stöds
+###### Supported components
 
 Carousel
 
-###### Exempel
+###### Example
 
 ```JavaScript
-karusell1.slickPrevious()
+carousel1.slickPrevious()
 ```
 
 ##### setSrc()
 
-Används för att ange käll-URL för IFrame.
+Used to set the source URL of IFrame.
 
-###### Komponenter som stöds
+###### Supported components
 
 IFrame
 
-###### Exempel
+###### Example
 
 ```JavaScript
 iframe1.setSrc("https://www.nasa.gov/")
@@ -843,13 +844,13 @@ iframe1.setSrc("https://www.nasa.gov/")
 
 ##### setMarkers(array)
 
-Används för att ställa in markörerna på kartan. Parametern bör vara en rad objekt. Fälten latitud och longitud i varje objekt ska vara samma som fälten i högerpanelen
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
-###### Komponenter som stöds
+###### Supported components
 
-Karta
+Map
 
-###### Exempel
+###### Example
 
 ```JavaScript
 map1.setMarkers([
@@ -863,26 +864,26 @@ map1.setMarkers([
      "lat":57.841288754888545,
      "lng":-103.3518657894011
  }
-])
+ ])
 ```
 
 ##### resetMarkers()
 
-Används för att återställa markörerna till standardmarkörerna.
+Used to reset the markers to the default markers.
 
-###### Komponenter som stöds
+###### Supported components
 
-Karta
+Map
 
-###### Exempel
+###### Example
 
 ```JavaScript
 map1.resetMarkers()
 ```
 
-### Gå till URL
+### Go to URL
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 utils.goToURL({
@@ -891,11 +892,11 @@ newTab:boolean
 })
 ```
 
-#### Beskrivning
+#### Description
 
-Använd ett objekt för att ställa in det. Det finns 2 attribut i objektet. Det första attributet är `url`. Dess värde är en komplett URL, inklusive 'https://' eller 'http://', och det är av typen sträng. Det andra attributet är `newTab`. Det är ett booleskt som används för att ställa in om webbadressen ska öppnas i en ny flik.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
-#### Exempel
+#### Example
 
 ```JavaScript
 utils.goToURL({
@@ -904,27 +905,27 @@ newTab:true
 })
 ```
 
-### Kopiera till urklipp
+### Copy to clipboard
 
-#### Struktur
-
-```JavaScript
-utils.copytoUrklipp (sträng)
-```
-
-#### Beskrivning
-
-Används för att kopiera en sträng
-
-#### Exempel
+#### Structure
 
 ```JavaScript
-utils.copyToUrklipp ("texten att kopiera")
+utils.copyToClipboard(string)
 ```
 
-### Ange router
+#### Description
 
-#### Struktur
+Used to copy a string
+
+#### Example
+
+```JavaScript
+utils.copyToClipboard("The text to copy")
+```
+
+### Set router
+
+#### Structure
 
 ```JavaScript
 utils.setRouter({
@@ -933,19 +934,19 @@ viewPath:string
 })
 ```
 
-#### Beskrivning
+#### Description
 
-Används för att ändra sidan i ILLA Apps. Det finns 2 attribut i objektet.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-Det första attributet är `pagePath`. Värdet på sidsökvägen visas på följande skärmdump utan `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-Det andra attributet är `viewPath`. Värdet på vysökvägen visas på följande skärmdump utan `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
-#### Exempel
+#### Example
 
 ```JavaScript
 utils.setRouter({
@@ -954,68 +955,68 @@ viewPath:"sub-page1"
 })
 ```
 
-### Spara till ILLA Drive
+### Save to ILLA Drive
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 utils.saveToILLADrive({
-filnamn:string,
+fileName:string,
 fileData:string,
-filtyp:string,
-mapp:string,
-tillåteAnonym:boolean,
-ersätte:boolean
+fileType:string,
+folder:string,
+allowAnonymous:boolean,
+replace:boolean
 })
 ```
 
-#### Beskrivning
+#### Description
 
-Används för att spara en fil till ILLA Drive.
+Used to save a file to ILLA Drive.
 
-`fileName`: Namn med tillägg av filen efter uppladdning till ILLA Drive.
+`fileName`: Name with extension of the file after uploading to ILLA Drive.
 
-`fileData`: Base64 eller rå fildata, som JSON, CSV, oformaterad text, etc.
+`fileData`: Base64 or raw file data, such as JSON, CSV, plain text, etc.
 
-`fileType`: Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`folder`: Målmapp för filuppladdning. Lämna det tomt för att ladda upp till rotmappen.
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonymous`: Används för att ange om anonym användaråtkomst är tillåten. Om du planerar att ställa in din ansökan som offentlig måste anonym åtkomst vara aktiverad. För att dina data ska vara säkra måste filer eller mappar som är tillgängliga anonymt placeras i den anonyma mappen.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 ![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
-`ersätta`: Används för att ange när det finns filer med samma namn i samma katalog, ersätt den befintliga filen med ny fil eller byt automatiskt namn på den nya filen.
+`replace`: Used to set when there are files with the same name in the same directory, replace the existing file with new file or automatically rename the new file.
 
-#### Exempel
+#### Example
 
 ```JavaScript
 //use upload1 to pick files from device and upload to apps folder. 
 utils.saveToILLADrive({
-filnamn:upload1.files[0].name,
-filData:upload1. iles[0].dataURI,
-filtyp:"PNG",
-mapp:"appar",
-tillåteAnonym:false,
-ersätte:true
+fileName:upload1.files[0].name,
+fileData:upload1.files[0].dataURI,
+fileType:"PNG",
+folder:"apps",
+allowAnonymous:false,
+replace:true
 })
 ```
 
 ```JavaScript
 //upload a text file.  
 utils.saveToILLADrive({
-filnamn:"test.txt",
+fileName:"test.txt",
 fileData:"abc",
-filtyp:"Plain text",
-mapp:"apps",
-tillåteAnonym:false,
-ersätt:true
+fileType:"Plain text",
+folder:"apps",
+allowAnonymous:false,
+replace:true
 })
 ```
 
-### Ladda ner från ILLA Drive
+### Download from ILLA Drive
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1027,15 +1028,15 @@ utils.downloadFromILLADrive({
 })
 ```
 
-#### Beskrivning
+#### Description
 
-Används för att ladda ner filer från ILLA Drive.
+Used to download files from ILLA Drive.
 
-`downloadInfo`: en samling av objekt inklusive tinyURL och fileID. Du kan använda komponenten Drive-filväljaren för att plocka filer från ILLA Drive och få `downloadInfo` via drivePicker1.value
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
-`asZip`: används för att ställa in om du vill ladda ner filerna som en Zip.
+`asZip`: used to set whether to download the files as a Zip.
 
-#### Exempel
+#### Example
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1044,9 +1045,9 @@ utils.downloadFromILLADrive({
 })
 ```
 
-### Hämta
+### Download
 
-#### Struktur
+#### Structure
 
 ```JavaScript
 utils.downloadFile({
@@ -1056,23 +1057,23 @@ utils.downloadFile({
 })
 ```
 
-#### Beskrivning
+#### Description
 
-Används för att exportera data till din enhet.
+Used to export data to your device.
 
-`fileType`: Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`fileName`: ett namn med tillägg.
+`fileName`: a name with extension.
 
-`data`: data för filen.
+`data`: data of the file.
 
-#### Exempel
+#### Example
 
 ```JavaScript
 //download the data of table as a CSV
 utils.downloadFile({
-    filtyp:"CSV",
-    filnamn:"text.csv",
+    fileType:"CSV",
+    fileName:"text.csv",
     data: table2.dataSourceJS
 })
 ```
@@ -1080,17 +1081,17 @@ utils.downloadFile({
 ```JavaScript
 //download image
 utils.downloadFile({
-    filtyp:"PNG",
-    filnamn:"text.png",
+    fileType:"PNG",
+    fileName:"text.png",
     data: image1.imageSrc
 })
 ```
 
-### Ange global data
+### Set global data
 
-#### Ange globalt datavärde
+#### Set global data value
 
-##### Struktur
+##### Structure
 
 ```JavaScript
 utils.setGlobalDataValue({
@@ -1099,17 +1100,17 @@ value:any
 })
 ```
 
-##### Beskrivning
+##### Description
 
-Används för att ställa in värdet på gobalData
+Used to set the value of gobalData
 
-`key`: Visningsnamnet för globalData som följande skärmdump visar.
+`key`: the displayName of globalData as the following screenshot shows.
 
 ![14](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/14.png)
 
-`value`: värdet som ska anges
+`value`: the value to set
 
-##### Exempel
+##### Example
 
 ```JavaScript
 //use input5 to get the user input value and set as the value of stringState. 
@@ -1119,9 +1120,9 @@ value:input5.value
 })
 ```
 
-#### Ange global data i
+#### Set global data in
 
-##### Struktur
+##### Structure
 
 ```JavaScript
 utils.setGlobalDataIn({
@@ -1131,40 +1132,40 @@ value:any
 })
 ```
 
-##### Beskrivning
+##### Description
 
-När den globala datan är en array eller objekt, använd setGlobalDataIn för att ändra värdet som motsvarar ett specifikt index i en array eller för att ändra värdet som motsvarar en specifik nyckel i ett objekt.
+When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
 
-`key`: Visningsnamnet för globalData.
+`key`: the displayName of globalData.
 
-`path`: indexet för det värde du avser att uppdatera i arrayen eller nyckeln i objektet. Till exempel, för att ställa in det andra värdet i array, sökvägen är 1 (index). För att ställa in värdet på attributet som heter key1, är sökvägen key1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
-`value`: värdet som ska anges
+`value`: the value to set
 
-##### Exempel
+##### Example
 
 ```JavaScript
-//objectState är ett objekt: {"key1":"value1", "key2":"value2"}, att sätta 
+//objectState is an object: {"key1":"value1", "key2":"value2"}, to set the 
 utils.setGlobalDataIn({
 key:"objectState", 
-sökväg:"key2", 
-värde:input7.value
+path:"key2", 
+value:input7.value
 })
 ```
 
-## Inbyggda bibliotek
+## Built-in libraries
 
-| **Bibliotek**     | **Doc**                                                               | **Hur man använder det i ILLA Builder** | **Exempel**                                                            |
-| ----------------- | --------------------------------------------------------------------- | --------------------------------------- | ---------------------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                     | `_.concat(array, 2, [3], [[4]]);`                                      |
-| Dag.js            | https://day.js.org/                                                   | `dayjs`                                 | `dayjs(nytt datum()`                                                   |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                                  | `uuid.parse()`                                                         |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                                | `numbro(1000).format({thousandSeparated: true})`                       |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                                  | `Papa.parse(url, {download: sant, // resten av konfigurationen ... })` |
+| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
+| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
+| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
 
-## Värdet av handlingar, komponenter...
+## Value of actions, components...
 
-Använd `displayName.xxx` för att använda värdet på åtgärder, komponenter eller andra globalData. Observera att i Kör skriptet kan dessa variabler nås direkt utan att använda `{{` referenser.
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
 
 ```JavaScript
 utils.downloadFromILLADrive({
@@ -1173,7 +1174,7 @@ utils.downloadFromILLADrive({
 })
 
 utils.downloadFromILLADrive({
-    downloadInfo:drivePicker1.value,//:check_mark<unk>
+    downloadInfo:drivePicker1.value,//✅
     asZip:true
 })
 ```
