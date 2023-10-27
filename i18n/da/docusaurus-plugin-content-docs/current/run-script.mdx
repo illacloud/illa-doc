@@ -1,4 +1,5 @@
 ---
+slug: /
 title: Kør Script
 description: Ved at udløse Kør Script gennem en Event handler, kan du opnå sekventiel udførelse af operationer og udføre forskellige handlinger baseret på forskellige tilstand.
 ---
@@ -84,9 +85,9 @@ Når vi skal bruge JavaScript til at hente en e-mail i komponentens Inspect elle
 
 ![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-Og når vi har brug for at bruge e-mailen i "Kør Script" efter udførelse af erklæringen `const eksempelData = venter postgresql1. rigger();`, vi kan direkte bruge `eksempelData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Vis en succesnotifikation når forespørgslen er vellykket, og resultatet er unikt. Vis en fejlmeddelelse, når forespørgselsresultatet ikke er unikt eller når det mislykkes.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 ![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
@@ -163,7 +164,7 @@ componentDisplayName er den streng, der vises på skærmbilledet, som følger.
 
 ##### setValue(parameter)
 
-Bruges til at indstille værdien. Parameteren kan være en 'streng' eller 'tal' eller 'objekt' eller 'boolean' eller 'array', som afhænger af komponenttypen.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
 ###### Understøttede komponenter
 
@@ -207,7 +208,7 @@ input1.focus()
 
 ##### validate()
 
-Når du har angivet valideringsbetingelser for en komponent, såsom e-mail format, URL format, eller obligatorisk felt, kan du bruge funktionen `validate()` til at afgøre, om den opfylder kravene. Hvis den ikke opfylder kravene, vil der blive vist en valideringsmeddelelse.
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
 Indstil valideringsbetingelserne:
 
@@ -243,7 +244,7 @@ input1.clearValidation()
 
 ##### setSelectedValue(array)
 
-Bruges til at indstille den valgte værdi for Multiselect. Parameteren skal være et array.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
 ###### Understøttede komponenter
 
@@ -257,7 +258,7 @@ multiselect1.setSelectedValue(["Option 1", "Option 3"])
 
 ##### submit()
 
-Indsend formulardata. Når metoden for indsendelse udløses, vil vi først validere formulardata. Hvis der er valideringsfejl, vil formularindsendelsen blive forhindret, og de tilsvarende fejlmeddelelser vil blive vist. Indsendelsen fortsættes først efter en vellykket validering.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
 ###### Understøttede komponenter
 
@@ -355,7 +356,7 @@ switchGroup1.setValueInArray(["Option 1", "Option 3"])
 
 ##### selectPage(nummer)
 
-Bruges til at indstille indekset for siden der skal vises. Indekset er et tal, der starter fra 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
 ###### Understøttede komponenter
 
@@ -369,7 +370,7 @@ tab1.selectPage(1)
 
 ##### selectRow(tal)
 
-Bruges til at indstille indekset for den valgte række. Indekset er et tal, der starter fra 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
 ###### Understøttede komponenter
 
@@ -399,15 +400,15 @@ tab1.clearSelection()
 
 Bruges til at indstille filtre.
 
-**Den første parameter** er en række objekter. Hvert objekt repræsenterer en filtreringsbetingelse. Den omfatter tre attributter:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**`id`** : Dette refererer til denne kolonnes id. Hvis denne kolonne er et resultat af en database forespørgsel, så vil id være kolonnenavnet du hentede fra forespørgslen. For eksempel, hvis forespørgslen er `SELECT e-mail AS user_email FROM brugere` og omdøbe `email` som `Email` ved hjælp af højre panel i tabellen, kolonnens id ville stadig være `user_email` Hvis denne kolonne tilføjes manuelt ved hjælp af knappen `Tilføj kolonne` i panelet til højre. du kan tjekke dens id i afsnittet `displayedData` i venstre panel. Typisk vil det være en tilfældigt genereret streng startende med `column` såsom `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**`filterFn`** : matchtypen af filteret. Vi understøtter følgende typer: `equalTo` som er det samme som `=` i SQL, `notEqualTo` som er det samme som `<>` i SQL, `indeholder` som er det samme som `LIKE '%value%'` i SQL, `do NotContain` der er det samme som `IKKE LIKE '%value%'` i SQL, `lessThan` som er det samme som `<` i SQL, `notLessThan` som er det samme som `>=` i SQL, `notMoreThan` som er det samme som `<=` i SQL, `tom` som er det samme som `IS NULL` i SQL, `notEmpty` som er det samme som `ER IKKE NULL` i SQL, `før` bruges til at sammenligne tid eller dato, hvilket er det samme som `>` i SQL, `after` bruges til at sammenligne tid eller dato, hvilket er det samme som `<` i SQL.
+**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **`værdi`** : bruges til at sætte værdien til sammenligning.
 
-**Den anden parameter:** når der er flere filterbetingelsesobjekter, afgør det, om de har et "AND" forhold eller et "OR" forhold. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship. (Automatic Copy)
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
 ###### Understøttede komponenter
 
@@ -435,7 +436,7 @@ Tabel 1.clearFiltre ()
 
 ##### setSort(string, string)
 
-Bruges til at indstille sorten. **Den første parameter** er id for kolonnen til sortering, som er en strengværdi. Id er det samme som den id, der er nævnt i setFilters(vifte af objekter, streng). **Den anden parameter** er sorteringsrækkefølgen, enten stigende eller aftagende. Det er indstillet ved hjælp af en strengværdi `ascend` eller `descend`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
 ###### Understøttede komponenter
 
@@ -477,7 +478,7 @@ container1.setCurrentViewIndex(1)
 
 ##### showNextView( boolean)
 
-Bruges til at vise den næste visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ###### Understøttede komponenter
 
@@ -491,7 +492,7 @@ container1.showNextView(true)
 
 ##### showNextVisibleView( boolean)
 
-Bruges til at vise den næste synlige visning. I modsætning til opførslen af funktionen `showNextView(boolean)` tilbyder denne funktion forbedret visning skifter funktionalitet ved at springe over skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ###### Understøttede komponenter
 
@@ -505,7 +506,7 @@ container1.showNextVisibleView(false)
 
 ##### showPreviousView()
 
-Bruges til at vise den forrige visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ###### Understøttede komponenter
 
@@ -519,7 +520,7 @@ container1.showPreviousView(true)
 
 ##### showPreviousVisibleView()
 
-Bruges til at vise den forrige synlige visning. I modsætning til opførslen af funktionen `showPreviousView(boolean)` tilbyder denne funktion forbedret visning skifte funktionalitet ved at springe over skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ###### Understøttede komponenter
 
@@ -589,7 +590,7 @@ modal1.closeModal ()
 
 ##### setImageUrl( streng)
 
-Bruges til at angive billedkildens URL. Det kan være en Base64 eller en URL peger på et billede på nettet.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
 ###### Understøttede komponenter
 
@@ -649,7 +650,7 @@ statistik1.resetPrimaryValue ()
 
 ##### setFileUrl( streng)
 
-Bruges til at angive filens URL. Det kan være en Base64 eller en URL, der peger på en PDF på nettet.
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
 
 ###### Understøttede komponenter
 
@@ -705,7 +706,7 @@ video1.showControls(sand)
 
 ##### setVideoUrl (streng)
 
-Bruges til at angive videoens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
 ###### Understøttede komponenter
 
@@ -719,7 +720,7 @@ video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
 
 ##### setVolume(tal)
 
-Bruges til at indstille volumen. Parameteren er en talværdi mellem 0 og 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
 ###### Understøttede komponenter
 
@@ -731,7 +732,7 @@ Video, Lyd
 
 ##### setSpeed(tal)
 
-Bruges til at indstille hastigheden. Parameteren er en talværdi mellem 0,25 og 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
 ###### Understøttede komponenter
 
@@ -759,7 +760,7 @@ video1.setLoop(false)
 
 ##### seekTo(nummer)
 
-Bruges til at søge til en bestemt tid position. Parameteren er en talværdi, målt i sekunder (s). For eksempel, at søge til den tid position 5:35, ville du bruge værdien 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
 ###### Understøttede komponenter
 
@@ -787,7 +788,7 @@ video1.mute(sand)
 
 ##### setAudioUrl( streng)
 
-Bruges til at angive lydens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
 ###### Understøttede komponenter
 
@@ -843,7 +844,7 @@ iframe1.setSrc ("https://www.nasa.gov/")
 
 ##### setMarkers(array)
 
-Bruges til at sætte markørerne på kortet. Parameteren skal være en række objekter. Felterne bredde- og længdegrad i hvert objekt skal være de samme som de felter, der er angivet i højre panel
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
 ###### Understøttede komponenter
 
@@ -893,7 +894,7 @@ newTab:boolean
 
 #### Varebeskrivelse
 
-Brug et objekt til at sætte det. Der er 2 attributter i objektet. Den første attribut er 'url'. Dens værdi er en komplet URL, herunder 'https://' eller 'http://', og den er af typen streng. Den anden attribut er 'newTab'. Det er en boolsk bruges til at angive, om at åbne URL'en i en ny fane.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
 #### Eksempel
 
@@ -935,13 +936,13 @@ viewPath:string
 
 #### Varebeskrivelse
 
-Bruges til at ændre siden i ILLA Apps. Der er 2 attributter i objektet.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-Den første attribut er `pagePath`. Værdien af pagePath vises på følgende skærmbillede uden `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-Den anden attribut er 'viewPath'. Værdien af viewPath vises på følgende skærmbillede uden `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
@@ -977,11 +978,11 @@ Bruges til at gemme en fil til ILLA drev.
 
 `fileData`: Base64 eller rå fildata, såsom JSON, CSV, almindelig tekst osv.
 
-`fileType`: En af følgende værdier: Auto, Almindelig tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`mappe`: Destinationsmappe til fil upload. Lad det være tomt at uploade til rodmappen.
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonym`: Bruges til at angive, om anonym brugeradgang er tilladt. Hvis du planlægger at indstille din ansøgning som offentlig, skal anonym adgang være aktiveret. For at sikre dine data, filer eller mapper, der er tilgængelige anonymt, skal de placeres i den anonyme mappe.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 ![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
@@ -1031,7 +1032,7 @@ utils.downloadFromILLADrive({
 
 Bruges til at downloade filer fra ILLA drev.
 
-`downloadInfo`: en række objekter, herunder tinyURL og fileID. Du kan bruge komponenten Drive fil vælger til at vælge filer fra ILLA Drive og få `downloadInfo` via drivePicker1.value
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
 `asZip`: bruges til at angive, om filerne skal downloades som en zip.
 
@@ -1060,7 +1061,7 @@ utils.downloadFile({
 
 Bruges til at eksportere data til din enhed.
 
-`fileType`: En af følgende værdier: Auto, Almindelig tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
 `fileName`: et navn med udvidelse.
 
@@ -1137,7 +1138,7 @@ Når de globale data er et array eller objekt, brug setGlobalDataIn for at ændr
 
 `key`: displayName of globalData.
 
-`sti`: indekset for den værdi, du har til hensigt at opdatere i arrayet eller nøglen i objektet. For eksempel, for at indstille den anden værdi i array, stien er 1 (indekset). For at indstille værdien af attributten ved navn key1, stien er key1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `værdi`: den værdi, der skal angives
 
@@ -1154,17 +1155,17 @@ værdi:input7.value
 
 ## Indbyggede biblioteker
 
-| **Bibliotek**     | **Dok**                                                               | **Sådan bruges det i ILLA Builder** | **Eksempel**                                                  |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------- |
-| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                             |
-| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(ny dato())`                                            |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                                |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`              |
-| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // resten af config ... })` |
+| **Bibliotek**     | **Dok**                                                               | **Sådan bruges det i ILLA Builder** | **Eksempel**                                                |
+| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
+| Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(ny dato())`                                          |
+| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
+| Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
 
 ## Værdi af handlinger, komponenter...
 
-Brug `displayName.xxx` til at bruge værdien af handlinger, komponenter eller andre globalData. Bemærk venligst, at i Kør scriptet kan disse variabler tilgås direkte uden at bruge `{{` referencer.
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
 
 ```JavaScript
 utils.downloadFromILLADrive({

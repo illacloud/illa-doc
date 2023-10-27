@@ -1,4 +1,5 @@
 ---
+slug: /
 title: Exécuter le script
 description: En déclenchant le script d'exécution via un gestionnaire d'événements, vous pouvez réaliser l'exécution séquentielle d'opérations et effectuer différentes actions en fonction de différentes conditions.
 ---
@@ -53,7 +54,7 @@ Le nom de l'action est la chaîne affichée dans la capture d'écran, comme suit
 
 ![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/1.png)
 
-#### Libellé
+#### Description
 
 Dans Run Script, la variable `exampleData` est la même que `actionName.data`.
 
@@ -128,13 +129,13 @@ durée: 4500
 )
 ```
 
-#### Libellé
+#### Description
 
-| Paramètre           | Libellé                                                           | Type de données                                                                                | Exemple                               |
+| Paramètre           | Description                                                       | Type de données                                                                                | Exemple                               |
 | ------------------- | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ------------------------------------- |
 | Type de type        | Utilisé pour définir le type d'icône dans la notification.        | String, une des valeurs suivantes:"info"`default`"success""error""warning"                     | type: "info"                          |
 | Titre:              | Utilisé pour définir le titre de la notification                  | Chaîne de caractères                                                                           | title: "Félicitations"                |
-| Libellé             | Utilisé pour définir la description                               | Chaîne de caractères                                                                           | description : "Récupération réussie"  |
+| description         | Utilisé pour définir la description                               | Chaîne de caractères                                                                           | description : "Récupération réussie"  |
 | durée               | Utilisé pour définir la durée d'affichage de la notification.     | Nombre, en millisecondes (ms)                                                                  | durée: 4500                           |
 
 #### Exemple
@@ -159,7 +160,7 @@ componentDisplayName est la chaîne affichée dans la capture d'écran, comme su
 
 ![8](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/8.png)
 
-#### Libellé
+#### Description
 
 ##### setValue(paramètre)
 
@@ -171,11 +172,11 @@ Utilisé pour définir la valeur. Le paramètre peut être un `string` ou `numbe
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Saisie, Texte modifiable, Zone de texte, Divider, Sélection, Groupe Radio, Bouton Radio, Bouton Radio, Date, Date et heure, Étapes de texte, Progression de la Barre, Progression du Cercle | `Chaîne`                                                                | `input1.setValue("Bonjour le monde")`                                                                                                                                                               |
 | JSON Editor                                                                                                                                                                                 | `Chaîne`                                                                | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Bio ": "Mots de kick de la Roundhouse depuis 1940", "password": "noneed", "téléphone": "1-800-KICKASS" }`)   |
-| Échéancier                                                                                                                                                                                  | `string`, Séparez les valeurs des différents nœuds par des virgules (,) | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                                    |
+| Timeline                                                                                                                                                                                    | `string`, Séparez les valeurs des différents nœuds par des virgules (,) | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                                    |
 | Entrée de nombre, Slider, Taux                                                                                                                                                              | `nombre`                                                                | `numberInput1.setValue(1000)`                                                                                                                                                                       |
 | Commuter                                                                                                                                                                                    | `boolean`                                                               | `switch1.setValue(false)`                                                                                                                                                                           |
 | Forme de Schéma JSON, forme                                                                                                                                                                 | `objet`                                                                 | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Mets de kicking Roundhouse depuis 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`          |
-| Groupe de cases à cocher, Cascader                                                                                                                                                          | `tableau`                                                               | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                             |
+| Groupe de cases à cocher, Cascader                                                                                                                                                          | `array`                                                                 | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                             |
 
 ##### clearValue()
 
@@ -461,7 +462,7 @@ Conteneur
 container1.setCurrentViewKey("Voir 2")
 ```
 
-##### Afficher/Masquer l'index de la vue actuelle
+##### setCurrentViewIndex(number)
 
 Utilisez l'index qui est une valeur de nombre à partir de 0 de la vue pour définir la vue affichée.
 
@@ -611,7 +612,7 @@ Utilisé pour effacer le message de réponse cité au-dessus de la zone de saisi
 
 ###### Composants pris en charge
 
-Discuter
+Chat
 
 ###### Exemple
 
@@ -891,7 +892,7 @@ newTab:boolean
 })
 ```
 
-#### Libellé
+#### Description
 
 Utilisez un objet pour le définir. Il y a 2 attributs dans l'objet. Le premier attribut est `url`. Sa valeur est une URL complète, y compris 'https://' ou 'http://', et elle est de type string. Le deuxième attribut est `newTab`. C'est un booléen utilisé pour définir s'il faut ouvrir l'URL dans un nouvel onglet.
 
@@ -912,7 +913,7 @@ newTab:true
 utils.copyToClipboard(string)
 ```
 
-#### Libellé
+#### Description
 
 Utilisé pour copier une chaîne de caractères
 
@@ -933,7 +934,7 @@ viewPath:string
 })
 ```
 
-#### Libellé
+#### Description
 
 Utilisé pour modifier la page dans les applications ILLA. Il y a 2 attributs dans l'objet.
 
@@ -969,7 +970,7 @@ replace:boolean
 })
 ```
 
-#### Libellé
+#### Description
 
 Utilisé pour enregistrer un fichier sur le lecteur ILLA.
 
@@ -1027,7 +1028,7 @@ utils.downloadFromILLADrive({
 })
 ```
 
-#### Libellé
+#### Description
 
 Utilisé pour télécharger des fichiers depuis ILLA Drive.
 
@@ -1056,7 +1057,7 @@ utils.downloadFile({
 })
 ```
 
-#### Libellé
+#### Description
 
 Utilisé pour exporter des données vers votre appareil.
 
@@ -1099,7 +1100,7 @@ value:any
 })
 ```
 
-##### Libellé
+##### Description
 
 Utilisé pour définir la valeur de gobalData
 
@@ -1131,7 +1132,7 @@ value:any
 })
 ```
 
-##### Libellé
+##### Description
 
 Lorsque les données globales sont un tableau ou un objet, utilisez setGlobalDataIn pour modifier la valeur correspondant à un index spécifique dans un tableau ou pour modifier la valeur correspondant à une clé spécifique dans un objet.
 
