@@ -1,0 +1,112 @@
+---
+title: AI Agent
+description: Customize the AI Agent according to your needs, limiting the behavior of the GPT model to generate content as per your requirements. Integrate the AI Agent into the ILLA App to make your app more intelligent.
+---
+
+# AI Agent
+
+Customize the AI Agent according to your needs, limiting the behavior of the GPT model to generate content as per your requirements. Integrate the AI Agent into the ILLA App to make your app more intelligent.
+
+## What is AI Agent
+
+AI Agent is a feature developed based on powerful language models such as OpenAI's GPT-3.5 and GPT-4. It empowers you to edit prompts, allowing you to tailor the capabilities of the large language models according to your specific needs. You can save these modifications as your own AI Agent, enabling quick and convenient access. Additionally, you can also directly utilize AI Agents contributed by other outstanding creators.
+
+### Use case
+
+Explore all AI Agents on [illa.ai](https://illa.ai/)
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://illa.ai/" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+#### Marketing
+
+##### Blog generator
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7es/detail
+![1](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/1.png)
+
+##### Email generator
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7eg/detail
+![2](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/2.png)
+
+##### SEO
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7ep/detail
+![3](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/3.png)
+
+#### Customer support
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7eh/detail
+![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/4.png)
+
+#### Language
+
+##### Language learning
+
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7eD/detail
+![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/5.png)
+
+##### Translator
+
+Fast try: https://illa.ai/ai-agent/ILAfx4p1C7ek/detail
+![6](https://cdn.illacloud.com/official-website/img/docs/new-doc/ai-agent/6.png)
+
+## Create AI Agent
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/fwmhuHAjP5Uw7ZtAwMT0?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+| Field       | Required or not | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| ------------- | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Icon        | `Required`  | You can upload images within 500KB, or use AI to generate an icon after filling in the Name. The icon will be displayed in your AI Agent dashboard and, if you contribute the AI Agent to the ILLA Community, it will also be shown in the Community.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Name        | `Required`  | Name of the AI Agent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Description | `Required`  | A brief description of 160 characters of the AI Agent. You can also generate it after filling in the prompt.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| Mode        | `Required`  |  **Chat mode** : The conversation will be requested along with the current message, previous conversation history, and prompt, resulting in increased token consumption. However, the output will be more accurate as it takes the context of the conversation into account for fine-tuning.**Text generation mode:**only the current message and prompt are included in the request, resulting in lower token consumption, but it doesn't take the conversation context into consideration for tuning.**It's important to note that the conversation history refers to the visible conversation on the screen, and we do not store this information. Once you refresh or close the webpage, the conversation history will not be retained.**                        |
+| Prompt      | `Required`  | A prompt is a command or instruction that you provide to the language model like GPT. It defines the role or desired output of the model. You can use prompts to instruct the model to perform specific tasks or generate specific types of content. For example, you can use prompts like "Act as an English teacher" or "Please output the results in Markdown format" to guide the model's behavior and generate the desired response.                                                                                                                                                                                                                                                                                                                                              |
+| Variable    | `Optional`  | Variables allow you to dynamically fill in content within the prompt. A variable consists of a key and a value.**The key**represents the variable name and cannot contain spaces. It can be freely changed in edit mode but cannot be changed in run mode.**The value**represents the variable value. Once you enter the variable name, the variable value becomes a required field. After creating a variable, you also need to reference it in the prompt using double curly braces`{{variable_name}}`. For example, if you create a variable with the key "translate" and the value "English", the prompt can be:`Translate the content to {{translate}}`. During runtime, the model will actually receive the prompt as`Translate the content to English.` |
+| Model       | `Required`  | We support GPT-3.5-turbo, GPT-3.5-turbo-16k, GPT-4, GPT-4-32k, LLAMA, and others.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Max Token   | `Required`  | This is used to set the maximum number of tokens allowed per API call. It helps prevent excessive token consumption in a single call, but setting a lower token limit may result in less accurate responses. Different models have different maximum token limits, and you can refer to the official documentation of each model to find out the specific limits.                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Temperature | `Required`  | The allowed range is 0.1 to 2, but it is typically set between 0.1 and 1. This is used to control the trade-off between response accuracy and randomness in the model's output. When the value is set to a lower level, the output becomes more deterministic and conservative, which may result in increased accuracy. On the other hand, when the value is set to a higher level, the output becomes more creative and random, introducing more variability but potentially reducing accuracy.                                                                                                                                                                                                                                                                                       |
+
+## Share AI Agent
+
+### Share with team members
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/IgfpeApp6wqThN71Pzlg?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### Contribute to community
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/DmI2hHqM4kShp8jP7utN?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+## Use AI Agent in ILLA App
+
+### How-to
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://demo.arcade.software/Y8sq05zA0uis9e0oC39z?embed" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### Demo
+
+<div style={{
+    position: "relative",
+    paddingBottom: "calc(56.81216931216932% + 41px)", 
+    height: 0
+    }}><iframe src="https://builder.illacloud.com/illacloud_demo/deploy/app/ILAfx4p1C71f" frameborder="0" loading="lazy" webkitallowfullscreen mozallowfullscreen allowfullscreen style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+#### Fork and use
+
+https://illa.ai/app/ILAfx4p1C71f/detail
