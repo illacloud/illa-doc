@@ -86,7 +86,7 @@ When we need to use JavaScript to retrieve an email in the component's Inspect o
 
 当我们需要在执行语句`const exampleData = 等待 postgresql1 后使用"Run Script"中的电子邮件。 rigger();`, 我们可以直接使用 `exampleData[0].email` 。
 
-当查询成功且结果独一无二时显示成功通知。 当查询结果不唯一或失败时显示失败通知。
+当查询成功且结果独一无二时显示成功通知。 当查询成功且结果独一无二时显示成功通知。 当查询结果不唯一或失败时显示失败通知。
 
 ![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
@@ -163,7 +163,7 @@ component,DisplayName.function()
 
 ##### 设置值(参数)
 
-用于设置值。 参数可以是依赖组件类型的 `string` 或 `number` 或 `obolean` 或 `array` 。
+用于设置值。 用于设置值。 参数可以是依赖组件类型的 `string` 或 `number` 或 `obolean` 或 `array` 。
 
 ###### 支持的组件
 
@@ -207,7 +207,7 @@ input1.focus()
 
 ##### validate()
 
-当您设置了一个组件的验证条件，例如电子邮件格式，URL格式， 或必填字段，您可以使用 `validate()` 函数来确定它是否符合要求。 如果它不符合要求，将显示验证消息。
+当您设置了一个组件的验证条件，例如电子邮件格式，URL格式， 或必填字段，您可以使用 `validate()` 函数来确定它是否符合要求。 如果它不符合要求，将显示验证消息。 如果它不符合要求，将显示验证消息。
 
 设置验证条件：
 
@@ -243,7 +243,7 @@ input1.clearValidation()
 
 ##### 设置选定值(数组)
 
-用于设置多选中的值。 参数应该是数组。
+用于设置多选中的值。 参数应该是数组。 参数应该是数组。
 
 ###### 支持的组件
 
@@ -355,7 +355,7 @@ switchGroup1.setValueInAray["选项1", "选项3"])
 
 ##### 选择页面(数字)
 
-用于设置要显示的页面索引。 索引是一个从0开始的数字。
+用于设置要显示的页面索引。 索引是一个从0开始的数字。 索引是一个从0开始的数字。
 
 ###### 支持的组件
 
@@ -369,7 +369,7 @@ switchGroup1.setValueInAray["选项1", "选项3"])
 
 ##### selectRow(数值)
 
-用于设置选中行的索引。 索引是一个从0开始的数字。
+用于设置选中行的索引。 用于设置选中行的索引。 索引是一个从0开始的数字。
 
 ###### 支持的组件
 
@@ -399,15 +399,15 @@ table1.clearSelection()
 
 用于设置过滤器。
 
-**第一个参数** 是一个对象数组。 每个对象代表一个过滤条件。 它包括三个属性：
+**第一个参数** 是一个对象数组。 每个对象代表一个过滤条件。 它包括三个属性： 每个对象代表一个过滤条件。 它包括三个属性：
 
-**`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 例如，如果查询是 `SELECT email AS user_email FROM users` 并使用表格的右手面板将 `email` 重命名为 `Email` 。 如果使用右侧面板中的“添加列”按钮手动添加此列，列的 id 仍然是 `user_email` ， 您可以在左侧面板的 "displayedData" 部分检查其id。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。
+**`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 **`id`** ：这是指此列的 id。 如果此列是数据库查询的结果，那么ID将是从查询中检索到的列名称。 例如，如果查询是 `SELECT email AS user_email FROM users` 并使用表格的右手面板将 `email` 重命名为 `Email` 。 如果使用右侧面板中的“添加列”按钮手动添加此列，列的 id 仍然是 `user_email` ， 您可以在左侧面板的 "displayedData" 部分检查其id。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。 通常，它将是一个随机生成的字符串，始于“column-32016e8-225a-482d-9853-ad34b3040220”。
 
-**`filterFn`** ：过滤器的匹配类型。 We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
+**`filterFn`** ：过滤器的匹配类型。 **`filterFn`** ：过滤器的匹配类型。 We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **`value`** ：用于设置要比较的值。
 
-**第二个参数：** 当存在多个过滤条件对象时，它决定它们是否有一个“AND”关系或一个“OR”关系。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。
+**第二个参数：** 当存在多个过滤条件对象时，它决定它们是否有一个“AND”关系或一个“OR”关系。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。 设置它为“AND”关系的字符串`and`，为“OR”关系的字符串`或`。
 
 ###### 支持的组件
 
@@ -435,7 +435,7 @@ table1.clearSelection()
 
 ##### setSort(string, string)
 
-用于设置排序。 **第一个参数** 是列中要排序的字符串值。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。
+用于设置排序。 用于设置排序。 **第一个参数** 是列中要排序的字符串值。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。 ID与 setFilters(对象数组，字符串)中提到的ID相同。 **第二个参数** 是排序顺序，可以升序或降序。 它是使用字符串值`ascend`或`desc`设置的。
 
 ###### 支持的组件
 
@@ -491,7 +491,7 @@ table1.clearSelection()
 
 ##### 显示下一个可见视图(布尔值)
 
-用于显示下一个可见视图。 不同于“showNextView(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从结束返回起始。
+用于显示下一个可见视图。 用于显示下一个可见视图。 不同于“showNextView(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从结束返回起始。 用于显示下一个视图。 参数是一个布尔值，用于决定是否从结束返回起始。
 
 ###### 支持的组件
 
@@ -589,7 +589,7 @@ modal1.closeModal()
 
 ##### setImageUrl(字符串)
 
-用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。
+用于设置图像源 URL。 用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。
 
 ###### 支持的组件
 
@@ -649,7 +649,7 @@ statistic1.resetPrimaryValue()
 
 ##### setFileUrl(字符串)
 
-用于设置文件 URL。 它可以是 Base64 或 URL 指向网络上的 PDF。
+用于设置文件 URL。 用于设置文件 URL。 它可以是 Base64 或 URL 指向网络上的 PDF。
 
 ###### 支持的组件
 
@@ -759,7 +759,7 @@ video1.setLoop(false)
 
 ##### 寻找到(号码)
 
-用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 例如，要寻求时间位置 5:35，您将使用价值335。
+用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 用于寻求特定时间位置。 参数是一个数值，用秒数（s）衡量。 例如，要寻求时间位置 5:35，您将使用价值335。
 
 ###### 支持的组件
 
@@ -787,7 +787,7 @@ video1.search To(335)
 
 ##### setAudioUrl(字符串)
 
-用于设置音频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
+用于设置音频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。 用于设置视频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
 
 ###### 支持的组件
 
@@ -843,7 +843,7 @@ iframe1.setSrc("https://www.nasa.gov")
 
 ##### setMarkers(数组)
 
-用于设置地图上的标记。 参数应该是对象数组。 每个对象的纬度和经度字段应与右手面板设置的字段相同
+用于设置地图上的标记。 参数应该是对象数组。 用于设置地图上的标记。 参数应该是对象数组。 每个对象的纬度和经度字段应与右手面板设置的字段相同
 
 ###### 支持的组件
 
@@ -893,7 +893,7 @@ newTab:boolean
 
 #### 描述
 
-使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 这是一个用于设置是否在新标签中打开 URL 的布尔值。
+使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 使用对象来设置它。 对象中有2个属性。 第一个属性是 url。 其值是一个完整的 URL，包括'https://' 或 'http://'，它是类型字符串。 第二个属性是 `newTab` 。 这是一个用于设置是否在新标签中打开 URL 的布尔值。
 
 #### 示例
 
@@ -937,11 +937,11 @@ viewPath:string
 
 用于更改ILLA 应用程序中的页面。 对象中有2个属性。
 
-第一个属性是 `pagePath` 。 下面的截图中显示页面路径的值，不含`/`。
+第一个属性是 `pagePath` 。 下面的截图中显示页面路径的值，不含`/`。 下面的截图中显示页面路径的值，不含`/`。
 
 ![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-第二个属性是 `viewPath` 。 视图路径的值在下面的截图中显示，不含`/`。
+第二个属性是 `viewPath` 。 视图路径的值在下面的截图中显示，不含`/`。 视图路径的值在下面的截图中显示，不含`/`。
 
 ![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
@@ -977,9 +977,9 @@ replace:boolian
 
 `fileData`：Base64或原始文件数据，例如JSON、CSV、纯文本等。
 
-`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
-文件夹：文件上传的目标文件夹。 将上传到根文件夹留空。
+文件夹：文件上传的目标文件夹。 将上传到根文件夹留空。 将上传到根文件夹留空。
 
 `allowAnymous`: 用于设置是否允许匿名用户访问。 如果您计划将您的应用程序设置为公开，必须启用匿名访问。 为了您的数据的安全性，文件或文件夹必须放在匿名文件夹中。
 
@@ -1031,7 +1031,7 @@ utils.downloadFromILLADrive(请注意，
 
 用于从 ILLA 驱动器下载文件。
 
-`downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 您可以使用组件驱动器从ILLA 驱动器中选择文件并通过 drivePicker1.value 获取 `downloadInfo`
+`downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 `downloadInfo`: 包括tinyURL 和文件ID在内的对象数组。 您可以使用组件驱动器从ILLA 驱动器中选择文件并通过 drivePicker1.value 获取 `downloadInfo`
 
 `asZip`：用于设置是否下载文件为Zip。
 
@@ -1060,7 +1060,7 @@ utils.downloadFile({
 
 用于导出数据到您的设备。
 
-`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
+`fileType`: 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
 `fileName`：具有扩展名的名称。
 
@@ -1137,7 +1137,7 @@ value:any
 
 `key`: 全局数据的显示名称。
 
-“路径”：你打算在数组或对象中更新的值的索引。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。
+“路径”：你打算在数组或对象中更新的值的索引。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。
 
 `value`: 要设置的值
 
@@ -1164,7 +1164,7 @@ value:input7.value
 
 ## 操作值, 组件...
 
-使用 `displayName.xxx` 来使用动作、 组件或其他全球数据的值。 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用.
+使用 `displayName.xxx` 来使用动作、 组件或其他全球数据的值。 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用. 请注意，在运行脚本中，这些变量可以直接访问，但不使用 "{" 引用.
 
 ```JavaScript
 utils.downloadFromILLADrive({
