@@ -1,4 +1,5 @@
 ---
+slug: /
 title: Spustit skript
 description: Spouštěním Run Scriptu pomocí obsluhy události můžete dosáhnout postupného provádění operací a provádět různé akce založené na různých podmínkách.
 ---
@@ -84,9 +85,9 @@ Když potřebujeme použít JavaScript k načtení e-mailu v kontrole komponenty
 
 ![4](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/4.png)
 
-A když potřebujeme použít e-mail v "Spustit Script" po provedení příkazu `const exampleData = čekat na postgresql1. rigger();`, můžeme přímo použít `příkladData[0].email`.
+And when we need to use the email in the "Run Script" after executing the statement `const exampleData = await postgresql1.trigger();`, we can directly use `exampleData[0].email`.
 
-Zobrazit oznámení o úspěšnosti, pokud je dotaz úspěšný a výsledek je jedinečný. Zobrazit oznámení o selhání, pokud výsledek dotazu není unikátní nebo pokud selže.
+Show a success notification when the query is successful and the result is unique. Show a failure notification when the query result is not unique or when it fails.
 
 ![5](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/5.png)
 
@@ -163,7 +164,7 @@ componentDisplayName je řetězec zobrazený na snímku obrazovky.
 
 ##### setValue(parametr)
 
-Použito k nastavení hodnoty. Parametrem může být `string` nebo `number` nebo `object` nebo `boolean` nebo `array` , které závisí na typu komponenty.
+Used to set the value. The parameter could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
 
 ###### Podporované komponenty
 
@@ -207,7 +208,7 @@ input1.focus()
 
 ##### validate()
 
-Pokud máte nastaveny podmínky ověřování pro komponentu, jako je formát e-mailu, formát URL, nebo povinné pole, můžete použít funkci `validate()` k určení, zda splňuje požadavky. Pokud nesplňuje požadavky, zobrazí se ověřovací zpráva.
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate()` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
 
 Nastavte podmínky ověření:
 
@@ -243,7 +244,7 @@ input1.clearValidation()
 
 ##### setSelectedValue(pole)
 
-Používá se k nastavení vybrané hodnoty Multiselect. Parametr by měl být pole.
+Used to set the selected value of Multiselect. The parameter should be an array.
 
 ###### Podporované komponenty
 
@@ -257,7 +258,7 @@ multiselect1.setSelectedValue(["Možnost 1", "Možnost 3"])
 
 ##### Odeslání ()
 
-Odeslat data formuláře. Po spuštění odeslané metody nejprve ověříme data formuláře. Pokud se vyskytnou chyby ověření, bude zabráněno odeslání formuláře a zobrazí se odpovídající chybové zprávy. Odeslání pokračuje až po úspěšném potvrzení.
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
 
 ###### Podporované komponenty
 
@@ -355,7 +356,7 @@ switchGroup1.setValueInArray(["Možnost 1", "Možnost 3"])
 
 ##### selectPage(číslo)
 
-Nastaví index stránky, která se má zobrazit. Index je číslo od 0.
+Used to set the index of the page to display. The index is a number starting from ０.
 
 ###### Podporované komponenty
 
@@ -369,7 +370,7 @@ table1.selectPage(1)
 
 ##### selectRow (číslo)
 
-Používá se k nastavení indexu vybraného řádku. Index je číslo od 0.
+Used to set the index of selected row. The index is a number starting from ０.
 
 ###### Podporované komponenty
 
@@ -399,15 +400,15 @@ table1.clearSelection()
 
 Používá se pro nastavení filtrů.
 
-**První parametr** je pole objektů. Každý objekt představuje podmínku filtrování. Zahrnuje tři atributy:
+**The first parameter** is an array of objects. Each object represents a filtering condition. It includes three attributes:
 
-**`id`** : Odkazuje na ID tohoto sloupce. Pokud je tento sloupec výsledkem dotazu v databázi, pak id bude název sloupce, který jste získali z dotazu. Například, pokud je dotaz `SELECT email AS user_email FROM uživatelé` a přejmenujte `email` na `Email` pomocí panelu vpravo v tabulce, id sloupce bude stále `user_email` Pokud je tento sloupec ručně přidán pomocí tlačítka `Přidat sloupec` v pravém panelu, můžete zkontrolovat jeho ID v sekci `displayedData` v levém panelu. Obvykle se jedná o náhodně generovaný řetězec začínající na `column` jako například `column-320169e8-225a-482d-9853-ad34b3040220`.
+**`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
-**`filterFn`** : typ filtru. Podporujeme následující typy: `equalTo` což je stejné jako `=` v SQL, `notEqualTo` což je stejné jako `<>` v SQL, `contains` což je stejné jako `LIKE '%value%'` v SQL, `dělá NotContain`, který je stejný jako `NELIKE '%value%'` v SQL, `lessThan`, který je stejný jako `<` v SQL, `notLessThan`, což je stejné jako `>=` v SQL, `notMoreThan` je stejný jako `<=` v SQL, `empty` což je stejné jako `IS NULL` v SQL, `notEmpty` což je totéž jako `IS NULL` v SQL, `before` se používá k porovnání času nebo data, což je shodné s `>` v SQL, `po` se používá k porovnání času nebo data, což je stejné jako `<` v SQL.
+**`filterFn`** : the match type of the filter. We support the following types: `equalTo` which is the same as `=` in SQL, `notEqualTo` which is the same as `<>` in SQL, `contains` which is the same as `LIKE '%value%'` in SQL, `does NotContain` which is the same as `NOT LIKE '%value%'` in SQL, `lessThan` which is the same as `<` in SQL, `notLessThan` which is the same as `>=` in SQL, `notMoreThan` which is the same as `<=` in SQL, `empty` which is the same as `IS NULL` in SQL, `notEmpty` which is the same as `IS NOT NULL` in SQL, `before` is used to compare time or date, which is the same as `>` in SQL, `after` is used to compare time or date, which is the same as `<` in SQL.
 
 **`hodnota`** : používá se k nastavení porovnání.
 
-**Druhý parametr:** pokud existují objekty s více podmínkami, určuje, zda mají vztah "AND" nebo "OR". Nastavte to jako řetězec `and` pro vztah "AND" a `or` pro vztah "OR".
+**The second parameter:** when there are multiple filter condition objects, it determines whether they have an "AND" relationship or an "OR" relationship. Set it as a string `and` for an "AND" relationship, and `or` for an "OR" relationship.
 
 ###### Podporované komponenty
 
@@ -435,7 +436,7 @@ table1.clearFiltr()
 
 ##### setSort(string, string)
 
-Používá se k nastavení druhu. **Prvním parametrem** je id sloupce, který má být seřazen jako hodnota řetězce. id je stejný jako id zmíněný v setFilters(pole objektů, řetězce). **Druhým parametrem** je řazení vzestupně nebo sestupně. Je nastavena pomocí řetězce hodnota `ascend` nebo `descend`.
+Used to set the sort. **The first parameter** is the id of the column to sort which is a string value. The id is the same as the id mentioned in setFilters(array of objects, string). **The second parameter** is the sorting order, either ascending or descending. It is set using a string value `ascend` or `descend`.
 
 ###### Podporované komponenty
 
@@ -477,7 +478,7 @@ container1.setCurrentViewIndex(1)
 
 ##### showNextView(boolean)
 
-Slouží k zobrazení dalšího zobrazení. Parametr je logická hodnota, která určuje, zda se má smyčka od konce zpět do začátku.
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ###### Podporované komponenty
 
@@ -491,7 +492,7 @@ container1.showNextView(true)
 
 ##### showNextVisibleView (boolean)
 
-Slouží k zobrazení příštího viditelného zobrazení. Na rozdíl od chování funkce `showNextView(boolean)` nabízí tato funkce lepší přepínání pohledu přeskočením skrytých zobrazení během přechodu. Parametr je logická hodnota, která určuje, zda se má smyčka od konce zpět do začátku.
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
 
 ###### Podporované komponenty
 
@@ -505,7 +506,7 @@ container1.showNextVisibleView(false)
 
 ##### showPreviousView ()
 
-Slouží k zobrazení předchozího zobrazení. Parametr je logická hodnota, která určuje, zda se smyčka od začátku zpět do konce.
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ###### Podporované komponenty
 
@@ -519,7 +520,7 @@ container1.showPreviousView (true)
 
 ##### showPreviousVisibleView ()
 
-Slouží k zobrazení předchozího viditelného zobrazení. Na rozdíl od chování funkce `showPreviousView(boolean)` nabízí tato funkce lepší přepínání pohledu přeskočením skrytých zobrazení během přechodu. Parametr je logická hodnota, která určuje, zda se smyčka od začátku zpět do konce.
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
 
 ###### Podporované komponenty
 
@@ -589,7 +590,7 @@ modal1.closeModal()
 
 ##### setImageUrl(string)
 
-Slouží k nastavení URL zdroje obrázků. Může to být base64 nebo URL odkazující na obrázek na webu.
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
 
 ###### Podporované komponenty
 
@@ -649,7 +650,7 @@ Statistic1.resetPrimaryValue()
 
 ##### setFileUrl(string)
 
-Slouží k nastavení adresy URL souboru. Může to být base64 nebo URL odkazující na PDF na webu.
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
 
 ###### Podporované komponenty
 
@@ -705,7 +706,7 @@ video1.zobrazit ovladače (true)
 
 ##### setVideoUrl(string)
 
-Používá se k nastavení URL videa. Může to být base64 nebo URL videa na mediálních stránkách.
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
 
 ###### Podporované komponenty
 
@@ -719,7 +720,7 @@ video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
 
 ##### nastavená hlasitost(číslo)
 
-Používá se k nastavení hlasitosti. Parametr je číselná hodnota mezi 0 a 1.
+Used to set the volume. The parameter is a number value between 0 to 1.
 
 ###### Podporované komponenty
 
@@ -731,7 +732,7 @@ Video, zvuk
 
 ##### setSpeed(number)
 
-Používá se k nastavení rychlosti. Parametr je číselná hodnota mezi 0,25 a 2.
+Used to set the speed. The parameter is a number value between 0.25 to 2.
 
 ###### Podporované komponenty
 
@@ -759,7 +760,7 @@ video1.setLoop(false)
 
 ##### hledání(číslo)
 
-Používá se k hledání na určitou časovou pozici. Parametr je číselná hodnota měřená v sekundách (s). Například, chcete-li vyhledat časovou pozici 5:35, použijte hodnotu 335.
+Used to seek to a specific time position. The parameter is a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
 
 ###### Podporované komponenty
 
@@ -787,7 +788,7 @@ video1.ztlumit (true)
 
 ##### setAudioUrl(string)
 
-Používá se k nastavení URL audia. Může to být base64 nebo URL videa na mediálních stránkách.
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
 
 ###### Podporované komponenty
 
@@ -843,7 +844,7 @@ IFrame
 
 ##### setMarkers(pole)
 
-Používá se k nastavení značek na mapě. Parametr by měl být pole objektů. Pole zeměpisné šířky a délky každého objektu by měla být stejná jako pole v pravém panelu
+Used to set the markers on the map. The parameter should be an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel
 
 ###### Podporované komponenty
 
@@ -893,7 +894,7 @@ newTab:boolean
 
 #### L 343, 22.12.2009, s. 1).
 
-Použijte objekt k jeho nastavení. V objektu jsou 2 atributy. První atribut je `url`. Jeho hodnota je kompletní URL včetně 'https://' nebo 'http://' a je typu řetězce. Druhý atribut je `newTab`. Je to boolean používaný k nastavení, zda otevřít adresu URL v novém panelu.
+Use an object to set it. There are 2 attributes in the object. The first attribute is `url`. Its value is a complete URL, including 'https://' or 'http://', and it is of type string. The second attribute is `newTab`. It is a boolean used to set whether to open the URL in a new tab.
 
 #### Příklad
 
@@ -935,13 +936,13 @@ viewPath:string
 
 #### L 343, 22.12.2009, s. 1).
 
-Slouží ke změně stránky v ILLA aplikacích. V objektu jsou 2 atributy.
+Used to change the page in ILLA Apps. There are 2 attributes in the object.
 
-První atribut je `pagePath`. Hodnota stránky je zobrazena na následujícím snímku obrazovky bez `/`.
+The first attribute is `pagePath`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-Druhý atribut je `viewPath`. Hodnota viewPath je zobrazena na následujícím snímku obrazovky bez `/`.
+The second attribute is `viewPath`. The value of viewPath is shown on the following screenshot without `/`.
 
 ![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
@@ -977,11 +978,11 @@ Slouží k uložení souboru na ILLA Drive.
 
 `fileData`: Base64 nebo nezpracovaná data souborů, jako je JSON, CSV, prostý text, atd.
 
-`fileType`: Jedna z následujících hodnot: Auto, prostý text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Při použití "Auto," se pokusíme určit typ souboru na základě přípony souboru nebo dat souboru.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
-`složka`: Cílová složka pro nahrávání souborů. Nechte prázdné pro nahrání do kořenové složky.
+`folder`: Destination folder for file upload. Leave it blank to upload to the root folder.
 
-`allowAnonymous`: Používá se k nastavení, zda je povolen anonymní uživatelský přístup. Pokud plánujete nastavit svou aplikaci jako veřejnou, musí být povolen anonymní přístup. Pro zabezpečení vašich dat musí být soubory nebo složky přístupné anonymně umístěny do anonymní složky.
+`allowAnonymous`: Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
 
 ![13](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/13.png)
 
@@ -1031,7 +1032,7 @@ utils.downloadFromILLADrive({
 
 Slouží ke stažení souborů z ILLA Drive.
 
-`downloadInfo`: soubor objektů včetně tinyURL a ID souboru. Můžete použít komponentní výběr souborů Drive pro výběr souborů z ILLA Drive a získat `downloadInfo` pomocí drivePicker1.value
+`downloadInfo`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `downloadInfo` via drivePicker1.value
 
 `asZip`: slouží k nastavení stahování souborů jako Zip.
 
@@ -1060,7 +1061,7 @@ utils.downloadFile({
 
 Používá se k exportu dat do vašeho zařízení.
 
-`fileType`: Jedna z následujících hodnot: Auto, prostý text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Při použití "Auto," se pokusíme určit typ souboru na základě přípony souboru nebo dat souboru.
+`fileType`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
 
 `název souboru`: název s příponou.
 
@@ -1088,7 +1089,7 @@ utils.downloadFile({
 
 ### Nastavit globální data
 
-#### Nastavit globální hodnotu dat. (Automatic Translation)
+#### Set global data value
 
 ##### Struktura
 
@@ -1137,7 +1138,7 @@ Pokud jsou globální data pole nebo objekt, použít setGlobalDataIn pro změnu
 
 `klíč`: displayName of globalData.
 
-`cesta`: index hodnoty, kterou hodláte aktualizovat v poli nebo klíč objektu. Například pro nastavení druhé hodnoty v poli je cesta 1 (index). Pro nastavení hodnoty atributu pojmenovaného klíče je cesta klíče 1.
+`path`:  the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `hodnota`: hodnota k nastavení
 
@@ -1154,17 +1155,17 @@ value:input7.value
 
 ## Vestavěné knihovny
 
-| **Knihovna**       | **Dokument**                                                          | **Jak to používat v ILLA Builder**  | **Příklad**                                                     |
-| ------------------ | --------------------------------------------------------------------- | ----------------------------------- | --------------------------------------------------------------- |
-| Lodašek            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                               |
-| Den .js            | https://day.js.org/                                                   | `dnyjs`                             | `dayjs(nové datum())`                                           |
-| uuid               | <https://www.npmjs.com/package/uuid>                                  | `uid`                               | `uuid.parse()`                                                  |
-| číslo              | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`                |
-| Papa               | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // zbytek konfigurace ... })` |
+| **Knihovna**       | **Dokument**                                                          | **Jak to používat v ILLA Builder**  | **Příklad**                                                   |
+| ------------------ | --------------------------------------------------------------------- | ----------------------------------- | ------------------------------------------------------------- |
+| Lodašek            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                             |
+| Den .js            | https://day.js.org/                                                   | `dnyjs`                             | `dayjs(nové datum())`                                         |
+| uuid               | <https://www.npmjs.com/package/uuid>                                  | `uid`                               | `uuid.parse()`                                                |
+| číslo              | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`              |
+| Papa               | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })`   |
 
 ## Hodnota akcí, komponenty...
 
-Použijte `displayName.xxx` pro použití hodnoty akcí, součástí nebo jiných globalData. Vezměte prosím na vědomí, že v Run Script lze k těmto proměnným přistupovat bez použití `{{` referencí.
+Use `displayName.xxx` to use the value of actions, components, or other globalData. Please note that in the Run Script, these variables can be directly accessed without using `{{` references.
 
 ```JavaScript
 utils.downloadFromILLADrive({
