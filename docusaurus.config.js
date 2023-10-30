@@ -33,23 +33,6 @@ const config = {
     locales: [
       "en",
       "zh",
-      "ja",
-      "cs",
-      "da",
-      "de",
-      "el",
-      "es",
-      "fi",
-      "fr",
-      "it",
-      "nl",
-      "no",
-      "pl",
-      "pt",
-      "ru",
-      "ro",
-      "sv",
-      "uk"
     ],
   },
   presets: [
@@ -69,6 +52,9 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag:  {
+            trackingID: 'G-QW745VE33W',
+        }
       }),
     ],
   ],
