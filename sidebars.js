@@ -9,7 +9,7 @@ const sidebars = {
       label: 'build_apps',
       link: {
         type: 'doc',
-        id: "run-script"
+        id: "about-illa"
       },
       items: [
         {
