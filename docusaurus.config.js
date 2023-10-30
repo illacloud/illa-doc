@@ -43,17 +43,19 @@ const config = {
         docs: {
           sidebarPath: path.resolve(__dirname, './sidebars.js'),
           routeBasePath: '/',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: ({ locale, docPath }) => {
+            if (locale === 'zh') {
+              return `https://github.com/illacloud/illa-doc/edit/main/i18n/zh/docusaurus-plugin-content-docs/current/${docPath}`;
+            }
+            return `https://github.com/illacloud/illa-doc/edit/main/docs/${docPath}`;
+          },
         },
         blog: false,
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-        gtag:  {
-            trackingID: 'G-QW745VE33W',
+        gtag: {
+          trackingID: 'G-QW745VE33W',
         }
       }),
     ],

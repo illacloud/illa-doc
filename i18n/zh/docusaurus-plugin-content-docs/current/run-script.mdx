@@ -1,11 +1,9 @@
 ---
-slug: /
 title: Run Script
 description: By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
 ---
 
 # Run Script
-
 By triggering the Run Script through an Event handler, you can achieve sequential execution of operations and perform different actions based on different condition.
 
 ## How-to
@@ -14,7 +12,7 @@ By triggering the Run Script through an Event handler, you can achieve sequentia
     position: "relative",
     paddingBottom: "calc(56.81216931216932% + 41px)", 
     height: 0
-    }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="0" loading="lazy" allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+    }}><iframe src="https://demo.arcade.software/r6dDc3eLjVfcrx2yGZnQ?embed" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
 ### Demo
 
@@ -132,9 +130,9 @@ duration: 4500
 #### Description
 
 | Parameter   | Description                                           | Data type                                                                        | Example                               |
-| ----------- | ----------------------------------------------------- | -------------------------------------------------------------------------------- | ------------------------------------- |
-| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning"     | type: "info"                          |
-| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"              |
+| ------------- | ------------------------------------------------------- | ---------------------------------------------------------------------------------- | --------------------------------------- |
+| type        | Used to set the icon type in the notification.        | String, one of the following values:"info"`default`"success""error""warning" | type: "info"                         |
+| title       | Used to set the title of the notification             | String                                                                           | title: "Congratulations"             |
 | description | Used to set the description                           | String                                                                           | description: "Retrieved successfully" |
 | duration    | Used to set the display duration of the notification. | Number, In milliseconds (ms)                                                     | duration: 4500                        |
 
@@ -169,14 +167,14 @@ Used to set the value. The parameter could be a `string` or `number` or `object`
 ###### Supported components
 
 | Component                                                                                                                                               | Parameter type                                                     | Example                                                                                                                                                                                     |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                           | `input1.setValue("Hello world")`                                                                                                                                                            |
-| JSON Editor                                                                                                                                             | `string`                                                           | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)         |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,)     | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                            |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                           | `numberInput1.setValue(1000)`                                                                                                                                                               |
-| Switch                                                                                                                                                  | `boolean`                                                          | `switch1.setValue(false)`                                                                                                                                                                   |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                           | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })`     |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                            | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress | `string`                                                       | `input1.setValue("Hello world")`                                                                                                                                                        |
+| JSON Editor                                                                                                                                             | `string`                                                       | jsonEditor1.setValue(`{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`)   |
+| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `timeline1.setValue("The first milestone,The second milestone")`                                                                                                                        |
+| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `numberInput1.setValue(1000)`                                                                                                                                                           |
+| Switch                                                                                                                                                  | `boolean`                                                      | `switch1.setValue(false)`                                                                                                                                                               |
+| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `jsonSchemaForm1.setValue({ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" })` |
+| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `cascader1.setValue(["media_source_2","campaign_2-1"])`                                                                                                                                 |
 
 ##### clearValue()
 
@@ -1155,12 +1153,12 @@ value:input7.value
 
 ## Built-in libraries
 
-| **Library**       | **Doc**                                                               | **How to use it in ILLA Builder**   | **Example**                                                 |
-| ----------------- | --------------------------------------------------------------------- | ----------------------------------- | ----------------------------------------------------------- |
+| **Library** | **Doc**                                                         | **How to use it in ILLA Builder** | **Example**                                               |
+| ------------------- | ----------------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------- |
 | Lodash            | https://lodash.com/docs/4.17.15                                       | `_`                                 | `_.concat(array, 2, [3], [[4]]);`                           |
 | Day.js            | https://day.js.org/                                                   | `dayjs`                             | `dayjs(new Date())`                                         |
-| uuid              | <https://www.npmjs.com/package/uuid>                                  | `uuid`                              | `uuid.parse()`                                              |
-| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`            |
+| uuid              | [https://www.npmjs.com/package/uuid](https://www.npmjs.com/package/uuid) | `uuid`                              | `uuid.parse()`                                              |
+| numbro            | https://numbrojs.com/                                                 | `numbro`                            | `numbro(1000).format({thousandSeparated: true})`           |
 | Papa              | https://www.papaparse.com/docs                                        | `Papa`                              | `Papa.parse(url, {download: true, // rest of config ... })` |
 
 ## Value of actions, components...
