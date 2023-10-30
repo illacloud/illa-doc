@@ -14,12 +14,12 @@ const sidebars = {
       items: [
         {
           type: 'category',
-          label: 'Components',
+          label: 'components',
           items: ["bar-progress", "button", "cascader", "chart", "circle-progress", "container", "date", "date-range", "date-time", "divider", "editable-text", "event_calendar", "form", "icon", "image", "input", "list", "menu", "modal", "multi-select", "number-input", "page", "pdf", "radio-button", "radio-group", "rate", "select", "statistics", "switch", "table", "tabs", "text", "text-area-input", "time-picker", "time-range", "timeline", "upload", "video"]
         },
         {
           type: 'category',
-          label: 'Resources',
+          label: 'resources',
           items: ["airtable", "amazons3", "appwrite", "clickhouse", "elastic-search", "firebase", "hugging-face-api", "hugging-face-endpoint", "hydra", "mariadb", "microsoft-sql", "mongodb", "mysql", "neon", "oracledb", "postgresql", "redis", "restapi", "snowflake", "supabase", "tidb", "transformer", "upstash"]
         },
         {
