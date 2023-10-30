@@ -20,12 +20,12 @@ const sidebars = {
         {
           type: 'category',
           label: 'Resources',
-          items: ["airtable", "amazons3", "appwrite", "clickhouse", "elastic-search", "event-handler", "firebase", "hugging-face-api", "hugging-face-endpoint", "hydra", "mariadb", "microsoft-sql", "mongodb", "mysql", "neon", "oracledb", "postgresql", "redis", "restapi", "snowflake", "supabase", "tidb", "transformer", "upstash"]
+          items: ["airtable", "amazons3", "appwrite", "clickhouse", "elastic-search", "firebase", "hugging-face-api", "hugging-face-endpoint", "hydra", "mariadb", "microsoft-sql", "mongodb", "mysql", "neon", "oracledb", "postgresql", "redis", "restapi", "snowflake", "supabase", "tidb", "transformer", "upstash"]
         },
         {
           type: 'category',
           label: 'JavaScript_and_Event_handler',
-          items: ["run-script","event-handler"]
+          items: ["run-script", "event-handler"]
         }
       ]
     },
