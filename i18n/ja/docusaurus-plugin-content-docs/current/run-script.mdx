@@ -208,7 +208,7 @@ input1.focus()
 
 ##### validate()
 
-電子メール形式、URL形式などのコンポーネントの検証条件を設定した場合 または必須フィールドでは、`validate()`関数を使用して、要件を満たしているかどうかを判断できます。 要件を満たしていない場合、検証メッセージが表示されます。 要件を満たしていない場合、検証メッセージが表示されます。 要件を満たしていない場合、検証メッセージが表示されます。 If it does not meet the requirements, a validation message will be displayed.
+電子メール形式、URL形式などのコンポーネントの検証条件を設定した場合 または必須フィールドでは、`validate()`関数を使用して、要件を満たしているかどうかを判断できます。 要件を満たしていない場合、検証メッセージが表示されます。 要件を満たしていない場合、検証メッセージが表示されます。 要件を満たしていない場合、検証メッセージが表示されます。 If it does not meet the requirements, a validation message will be displayed. If it does not meet the requirements, a validation message will be displayed.
 
 検証条件を設定:
 
@@ -244,7 +244,7 @@ input1.clearValidation()
 
 ##### setSelectedValue(array)
 
-Multiselectの選択した値を設定するために使用します。 パラメータは配列でなければなりません。 パラメータは配列でなければなりません。 パラメータは配列でなければなりません。 The parameter should be an array.
+Multiselectの選択した値を設定するために使用します。 パラメータは配列でなければなりません。 パラメータは配列でなければなりません。 パラメータは配列でなければなりません。 The parameter should be an array. The parameter should be an array.
 
 ###### サポートされるコンポーネント
 
@@ -356,7 +356,7 @@ switchGroup1.setValueInArray(["Option 1", "Option 3"])
 
 ##### selectPage(number)
 
-表示するページのインデックスを設定するために使用します。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 The index is a number starting from ０.
+表示するページのインデックスを設定するために使用します。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 The index is a number starting from ０. The index is a number starting from ０.
 
 ###### サポートされるコンポーネント
 
@@ -370,7 +370,7 @@ table1.selectPage(1)
 
 ##### selectRow(number)
 
-選択した行の索引を設定するために使用されます。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 The index is a number starting from ０.
+選択した行の索引を設定するために使用されます。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 選択した行の索引を設定するために使用されます。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 インデックスは0から始まる数値です。 The index is a number starting from ０.
 
 ###### サポートされるコンポーネント
 
@@ -400,7 +400,7 @@ table1.clearSelection()
 
 フィルタの設定に使用します。
 
-**最初のパラメータ**はオブジェクトの配列です。 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: Each object represents a filtering condition. It includes three attributes:
+**最初のパラメータ**はオブジェクトの配列です。 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: 各オブジェクトはフィルタ条件を表します。 3つの属性を含みます: Each object represents a filtering condition. Each object represents a filtering condition. It includes three attributes:
 
 **`id`** : This refers to the id of this column. If this column is a result of a database query, then the id would be the column name you retrieved from the query. For example, if the query is `SELECT email AS user_email FROM users` and rename `email` as `Email` using the right-hand panel of the table, the id of the column would still be `user_email` If this column is manually added using the `Add Column` button in the right-hand panel, you can check its id in the `displayedData` section of the left-hand panel. Typically, it will be a randomly generated string starting with `column` such as `column-320169e8-225a-482d-9853-ad34b3040220`.
 
@@ -936,13 +936,13 @@ viewPath:string
 
 #### 説明
 
-ILLA アプリのページを変更するために使用します。 オブジェクトには2つの属性があります。 オブジェクトには2つの属性があります。 オブジェクトには2つの属性があります。 There are 2 attributes in the object.
+ILLA アプリのページを変更するために使用します。 オブジェクトには2つの属性があります。 オブジェクトには2つの属性があります。 オブジェクトには2つの属性があります。 There are 2 attributes in the object. There are 2 attributes in the object.
 
-最初の属性は `pagePath` です。 最初の属性は `pagePath` です。 pagePath の値は以下のスクリーンショットに `/` なしで表示されます。 最初の属性は `pagePath` です。 pagePath の値は以下のスクリーンショットに `/` なしで表示されます。 The value of pagePath is shown on the following screenshot without `/`.
+最初の属性は `pagePath` です。 最初の属性は `pagePath` です。 pagePath の値は以下のスクリーンショットに `/` なしで表示されます。 最初の属性は `pagePath` です。 pagePath の値は以下のスクリーンショットに `/` なしで表示されます。 The value of pagePath is shown on the following screenshot without `/`. The value of pagePath is shown on the following screenshot without `/`.
 
 ![11](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/11.png)
 
-2番目の属性は `viewPath` です。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 The value of viewPath is shown on the following screenshot without `/`.
+2番目の属性は `viewPath` です。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 2番目の属性は `viewPath` です。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 2番目の属性は `viewPath` です。 viewPath の値は以下のスクリーンショットに `/` なしで表示されます。 The value of viewPath is shown on the following screenshot without `/`.
 
 ![12](https://cdn.illacloud.com/official-website/img/docs/new-doc/run-script/12.png)
 
@@ -1138,7 +1138,7 @@ value:any
 
 `key`: globalData の displayName 。
 
-`path`: 配列またはオブジェクト内のキーで更新する値のインデックス。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: 配列またはオブジェクト内のキーで更新する値のインデックス。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。 For example, to set the second value in array, the path is 1 (the index). For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
 
 `value`: 設定する値
 
