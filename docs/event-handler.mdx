@@ -9,19 +9,23 @@ description: Add an event handler to the component to trigger an event when the 
 Add an event handler to the component to trigger an event when the component's state changes.
 
 ## How-to
+
 <div style={{
 position: "relative",
+
 paddingBottom: "calc(56.81216931216932% + 41px)",
+
 height: 0
-}}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+}}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
 ## Configuration options
 
-1. ### Event
+### Event
 
 Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
 
-2. ### Action
+### Action
 
 #### Trigger action
 
@@ -807,6 +811,6 @@ No parameter
 
 `value`: the value of the key.
 
-3. ### Only run when
+### Only run when
 
 A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
