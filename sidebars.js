@@ -33,7 +33,7 @@ const sidebars = {
       type: 'category',
       label: 'ILLA_with_ai',
       items: ["ai-agent"]
-    },
+    },"self-hosted-deployment"
   ],
 };
 
