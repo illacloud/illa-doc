@@ -1,0 +1,213 @@
+---
+title: Selv-hosted implementering
+description: ILLA Builder giver en problemfri implementering oplevelse, der giver dig mulighed for at implementere ILLA Builder med en forbløffende hastighed inden for din egen Virtual Private Cloud (VPC).
+---
+
+# Selv-hosted implementering
+
+## Docker
+
+1.  Start Docker
+2.  Indtast følgende kommando i terminalen for at installere det officielle billede:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Download ILLA CLI og implementér
+
+Hvis du har Rust installeret, kan du nemt bygge + installere den nyeste ILLA CLI udgivelse med last:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+**laste**-værktøjet vil færdiggøre download af ILLA CLI med dets kildeafhængigheder, bygge og installere det ind i fragtskraldespanden, så vi kan køre det. Når det er installeret, kan du køre ILLA CLI med **illa**-kommandoen.
+
+Alternativt kan du bare downloade ILLA CLI til dit operativsystem her:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Hvis du downloader fra ovenstående links, er trinene lidt forskellige i forhold til at downloade ILLA CLI fra **lask** . Efter at have downloadet CLI, bliver du nødt til at gøre det eksekverbare. Lad os tage illa-linux for eksempel:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Kontrol af forudsætningerne for selv-hostede installationer
+
+Disse havne 5432, 9999 og 8000 bør forblive til ILLA Builder
+
+Følgende kommando vil kontrollere forudsætningerne for selvhostede installation på dit operativsystem:
+
+```Plaintext
+> illa doctor
+```
+
+### Implementering Af ILLA Builder
+
+Når ILLA CLI er blevet installeret, kan du køre en selv-hosted eller cloud installation.
+
+Du kan blot implementere en selv-hosted ILA Builder ved at køre følgende kommando:
+
+```Plaintext
+# den port, som ILLA Builder kan tilgås på, kan ændres
+# skal <SERVER_ADDRESS> være din cloud-server offentlig IP standard localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Nu kan du få adgang til ILLA Builder: <http://localhost:10000>
+
+### Opdaterer ILLA Builder
+
+For at opdatere ILLA Builder med de nyeste docker billeder, brug følgende kommando:
+
+```Plaintext
+> illa opdatering -- self
+```
+
+### Andre operationer
+
+```Plaintext
+# liste ILLA Builder
+> illa list --self
+
+# stop ILLA Builder
+> illa stop --self
+
+# fjern ILLA Builder
+> illa remove --self
+
+# tvungen fjernelse af den kørende ILLA Builder og vedvarende data
+> sudo illa remove --force --self --data
+
+# genstart ILLA Builder
+> illa restart --self
+
+# hjælp information
+> illa help
+```
+
+## Kubernetes
+
+### Varebeskrivelse
+
+Byg illa alt-i-ét billede og køre det af k8s på din maskine. Du kan tjekke script-filen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) for flere detaljer.
+
+Bemærk:
+
+Vi anbefaler stærkt at implementere med vores auto-implementeringsværktøjer [illa-cli](https://github.com/illacloud/illa).
+
+Og for øjeblikket understøtter vi ikke Apple Silicon M1 (darwin-arm64 bue).
+
+### Kør med et officielt slankt billede
+
+Installer GNU fabrikat og skriv:
+
+```JavaScript
+lav implementering
+```
+
+eller blot udføre:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+denne kommando vil trække illasoft officielt alt-i-ét billede og implementere det på din Kubernetes-klynge.
+
+### For Database Vedvarende Lagerplads
+
+Rediger [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), og tilføj din IAAS vedvarende lagerkonfiguration.
+
+### Til HTTPS-konfiguration
+
+Du kan rute NodePort til din Kubernetes klynge indtrængen gateway og omskrive til 443 port, og tilføje https cert i din indtrængen gateway.
+
+Eller du kan implementere en indtrængningsgateway manuelt i din Kubernetes-server, config sådan her:
+
+```JavaScript
+static_resources:
+  lyttere:
+  - navn: https_listener
+    adresse:
+      socket_address:
+        adresse: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtre:
+      - navn: udsending. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            navn: local_route
+            virtual_hosts:
+            - navn: illa_builder
+              domæner:
+              - "illa. ourdomian. om" # erstat med dit domæne
+              ruter:
+              - match:
+                  præfiks: "/"route:
+                  klynge: illa_builder
+          http_filters:
+          - navn: envoy. ilters.http. ydre
+            typed_config:
+              "@type": type. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        navn: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # udskift dette med din cert file
+            - certificate_chain:
+                filnavn: /your-cert-folder/fullchain. em
+              private_key:
+                filnavn: /your-cert-folder/privkey. em
+
+  clusters:
+  - navn: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            adresse:
+              socket_address:
+                adresse: illa-builder
+                port_value: 80
+```
+
+## Installér hurtigt
+
+Du kan implementere ILLA på en bemærkelsesværdig hurtig måde, skal du følge instruktionerne nedenfor:
+
+Først skal du downloade denne [docker fil](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) til din computer, og derefter køre følgende kode.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh
+```
+
+Og log ind med standard brugernavn og adgangskode:
+
+Brugernavn: **`root`**
+
+Adgangskode: **`password`** (kun selvværtstilstand).
