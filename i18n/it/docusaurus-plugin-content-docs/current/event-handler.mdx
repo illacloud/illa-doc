@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Gestore eventi
+description: Aggiungi un gestore di eventi al componente per attivare un evento quando lo stato del componente cambia.
 ---
 
-# Event handler
+# Gestore eventi
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Aggiungi un gestore di eventi al componente per attivare un evento quando lo stato del componente cambia.
 
-## How-to
+## Come
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Opzioni di configurazione
 
-1.  ### Event
+### Evento
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Usato per impostare come attivare l'azione. Ad esempio, se vogliamo attivare il restapi1 quando il componente della griglia dati (tabella) viene aggiornato, possiamo impostare l'evento su `refresh`. Se vogliamo attivare il restapi2 quando viene modificato il tipo di componente della griglia (tabella) dei dati, possiamo impostare l'evento in `sort change`. Se vogliamo attivare il restapi3 quando viene fatto clic sul pulsante, possiamo impostare l'evento su `click`.
 
-2.  ### Action
+### Azione
 
-#### Trigger action
+#### Azione attivazione
 
-Used to trigger an action created in this app
+Usato per attivare un'azione creata in questa app
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parametro**       | **richiesto o no**    | **descrizione**                          |
+| ------------------- | --------------------- | ---------------------------------------- |
+| Nome azione         | `required`            | Seleziona un'azione creata in questa app |
 
-#### Control component
+#### Componente di controllo
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parametro**        | **richiesto o no**    | **descrizione**                                                                                                                                                                 |
+| -------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componente           | `required`            | Seleziona un componente aggiunto alla pagina corrente                                                                                                                           |
+| Metodo               | `required`            | Usato per impostare ciò che il componente di controllo fa. Diversi metodi richiedono parametri diversi per essere configurati. Di seguito sono fornite spiegazioni dettagliate. |
 
 ##### setValue
 
-Used to set the value.
+Usato per impostare il valore.
 
-###### Parameter
+###### Parametro
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Valore`: il valore potrebbe essere un `string` o `number` o `object` o `boolean` o `array` che dipende dal tipo di componente.
 
-###### Supported components
+###### Componenti supportati
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Componente                                                                                                                                                                | Tipo di parametro                                                     | Esempio                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ingresso, Testo Modificabile, Area Testo, Dividere, Select, Gruppo Radio, Pulsante Radio, Pulsante Radio, Data, Datario, Passi, Testo, Progresso Barre, Progresso Cerchio | `string`                                                              |                                                                                                                                                                         |
+| `Ciao mondo`                                                                                                                                                              |                                                                       |                                                                                                                                                                         |
 
-| JSON Editor
-                                                                                                                                            | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+<unk> JSON Editor
+                                                                                                                                            <unk> `string`
+                                                      <unk> `{ "firstName": "Chuck", "cognome": "Norris", "età": 80, "bio": "Roundhouse calci asini dal 1940", "password": "noneed", "telefono": "1-800-KICKASS" }` <unk>
+<unk> Timeline <unk> `string`, Separare i valori dei diversi nodi tramite virgola (,) <unk> `La prima pietra miliare, he second milestone` <unk>
+<unk> Number Input, Cursore Valuta <unk> `number` <unk> `{{1000}}` <unk>
+<unk> Switch <unk> `boolean` <unk> `{{false}}` <unk>
+<unk> JSON Schema Form, Form <unk> `object` <unk> `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse calci asini dal 1940", "password": "noneed", "telefono": "1-800-KICKASS" } }}` <unk>
+<unk> Checkbox Group, Cascader <unk> `array` <unk> `{{["media_source_2","campaign_2-1"]}}` <unk>
 
 ##### clearValue
 
-Used to clear the value.
+Usato per cancellare il valore.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Ingresso, Ingresso Numero, Testo Modificabile, Area Testo, Caricamento, Editor JSON, Modulo Schema JSON, Commutatore, Seleziona, Multiselect, Gruppo Checkbox, Cascader, Gruppo Radio, Pulsante Radio, Data, Intervallo Di Data, Ora Di Data, Orario Di Data, Testo, Tariffa, Progresso Di Barre, Progresso Di Cerchio, Timeline, Divisore
 
 ##### focus
 
-Used to focus on the component
+Utilizzato per concentrarsi sul componente
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Ingresso, Ingresso numerico, Testo modificabile, Area di testo, Editor JSON, Editor Ricco, Gruppo Radio,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Quando hai impostato le condizioni di convalida per un componente, come il formato email, il formato URL, o campo obbligatorio, puoi usare la funzione `validate` per determinare se soddisfa i requisiti. Se non soddisfa i requisiti, verrà visualizzato un messaggio di convalida.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Ingresso, Ingresso Numero, Testo Modificabile, Area Di Testo, Caricare, Selezionare, Multiselect, Gruppo Casella Di Controllo, Gruppo Radio, Pulsante Radio, Data, Intervallo Di Data, Data Orario, Forma, Tasso
 
 ##### clearValidation
 
-Used to clear the validation message.
+Utilizzato per cancellare il messaggio di convalida.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Ingresso, Ingresso Numero, Testo Modificabile, Area Di Testo, Caricamento, Seleziona, Multiselect, Gruppo Casella Di Controllo, Pulsante Radio, Data, Intervallo Di Data, Data Orario, Tasso
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Usato per impostare il valore selezionato di Multiselect. Il parametro dovrebbe essere un array.
 
-###### Parameter
+###### Parametro
 
-`Value`: an array of strings used to set the selected options.
+`Valore`: un array di stringhe utilizzato per impostare le opzioni selezionate.
 
-###### Supported components
+###### Componenti supportati
 
-Multiselect
+Multiseleziona
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### Invia
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Invia i dati del modulo. Quando il metodo di invio viene attivato, prima convalideremo i dati del modulo. Se ci sono errori di convalida, la presentazione del modulo verrà impedita e verranno visualizzati i corrispondenti messaggi di errore. Solo dopo il successo della convalida la trasmissione continua.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-JSON Schema Form, Form
+Modulo Schema JSON, Modulo
 
-##### toggle
+##### attiva/disattiva
 
-Used to switch the value from true to false or from false to true.
+Utilizzato per cambiare il valore da vero a falso o da falso a vero.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Switch
+Cambia
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Usato per impostare il valore iniziale predefinito del cursore dell'intervallo
 
-###### Parameter
+###### Parametro
 
-`Start value`: a number used to set the start value.
+`Valore iniziale`: un numero utilizzato per impostare il valore iniziale.
 
-###### Supported components
+###### Componenti supportati
 
 Range Slider
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Usato per impostare il valore finale predefinito del cursore dell'intervallo
 
-###### Parameter
+###### Parametro
 
-`End value`: a number used to set the end value.
+`Valore finale`: un numero usato per impostare il valore finale.
 
-###### Supported components
+###### Componenti supportati
 
 Range Slider
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{10}}
@@ -190,17 +190,17 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Usato per impostare il valore iniziale predefinito
 
-###### Parameter
+###### Parametro
 
-`Start date/time`: a string used to set the start time/date.
+`Data di inizio/ora`: una stringa usata per impostare l'ora di inizio/data.
 
-###### Supported components
+###### Componenti supportati
 
-Date Range, Time Range
+Intervallo Di Data, Intervallo Di Tempo
 
-###### Example
+###### Esempio
 
 ```JavaScript
 2023-09-09
@@ -208,17 +208,17 @@ Date Range, Time Range
 
 ##### setEndValue
 
-Used to set the default end value
+Usato per impostare il valore finale predefinito
 
-###### Parameter
+###### Parametro
 
-`End date/time`: a string used to set the end time/date.
+`Data di fine/ora`: una stringa usata per impostare l'ora di fine/data.
 
-###### Supported components
+###### Componenti supportati
 
-Date Range, Time Range
+Intervallo Di Data, Intervallo Di Tempo
 
-###### Example
+###### Esempio
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Usato per impostare gli interruttori il cui valore è vero
 
-###### Parameter
+###### Parametro
 
-`Value`: an array of strings used to set the options whose value is true .
+`Valore`: un array di stringhe utilizzato per impostare le opzioni il cui valore è vero .
 
-###### Supported components
+###### Componenti supportati
 
-Switch Group
+Cambia Gruppo
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,35 +244,35 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Usa la chiave che è un valore di stringa della vista per impostare la vista mostrata.
 
-###### Parameter
+###### Parametro
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: una stringa usata per impostare quale visualizzazione visualizzare.  La chiave è configurata in un contenitore
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
-###### Example
+###### Esempio
 
 ```JavaScript
-View 1
+Vedi 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Usare l'indice che è un valore numerico a partire da 0 della vista per impostare la vista mostrata.
 
-###### Parameter
+###### Parametro
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: un valore numerico. Usare l'indice della vista per impostare quale vista visualizzare. L'indice parte da 0.
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{1}}
@@ -280,113 +280,113 @@ Container
 
 ##### showNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Usato per mostrare la vista successiva. Il parametro è un valore booleano che determina se ripassare dalla fine all'inizio.
 
-###### Parameter
+###### Parametro
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop back to start`: a boolean value ( use a switch to set ) used to set per impostare se loop back to start.
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Usato per mostrare la prossima vista visibile. A differenza del comportamento della funzione `showNextView(boolean)`, questa funzione offre una migliore funzionalità di commutazione della vista saltando qualsiasi vista nascosta durante la transizione. Il parametro è un valore booleano che determina se ripassare dalla fine all'inizio.
 
-###### Parameter
+###### Parametro
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop back to start`: a boolean value ( use a switch to set ) used to set per impostare se loop back to start.
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
 ##### showPreviousView
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Usato per mostrare la vista precedente. Il parametro è un valore booleano che determina se eseguire il ciclo dall'inizio alla fine.
 
-###### Parameter
+###### Parametro
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start to back`: un valore booleano ( usa un interruttore per impostare ) usato per impostare se avviare il loop to back.
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Usato per mostrare la vista visibile precedente. A differenza del comportamento della funzione `showPreviousView`, questa funzione offre una migliore funzionalità di commutazione della vista saltando qualsiasi vista nascosta durante la transizione. Il parametro è un valore booleano che determina se eseguire il ciclo dall'inizio alla fine.
 
-###### Parameter
+###### Parametro
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start to back`: un valore booleano ( usa un interruttore per impostare ) usato per impostare se avviare il loop to back.
 
-###### Supported components
+###### Componenti supportati
 
-Container
+Contenitore
 
 ##### reset
 
-Used to reset the value to default value.
+Usato per reimpostare il valore al valore predefinito.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Form
+Modulo
 
 ##### resetValue
 
-Used to reset the value to default value.
+Usato per reimpostare il valore al valore predefinito.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Steps
+Passi
 
 ##### openModal
 
-Used to open a modal
+Utilizzato per aprire un modal
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Modal
+Modale
 
 ##### closeModal
 
-Used to close a modal
+Usato per chiudere un modal
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Modal
+Modale
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Usato per impostare l'URL di origine dell'immagine. Può essere un Base64 o un URL che punta a un'immagine sul web.
 
-###### Parameter
+###### Parametro
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Valore`: un valore stringa usato per impostare la sorgente dell'immagine. Potrebbe essere URL o base64.
 
-###### Supported components
+###### Componenti supportati
 
-Image
+Immagine
 
-###### Example
+###### Esempio
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
@@ -398,29 +398,29 @@ data:image/png;base64,iVBORw0KGgoAA...II
 
 ##### clearReplyMessage
 
-Used to clear the quoted reply message above the input box.
+Usato per cancellare il messaggio di risposta citato sopra la casella di input.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
 Chat
 
 ##### setPrimaryValue
 
-Used to set the primary value of statistics.
+Usato per impostare il valore primario delle statistiche.
 
-###### Parameter
+###### Parametro
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Valore primario`: un valore numerico utilizzato per impostare il valore primario delle statistiche.
 
-###### Supported components
+###### Componenti supportati
 
-Statistics
+Statistiche
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{10000}}
@@ -428,113 +428,113 @@ Statistics
 
 ##### resetPrimaryValue
 
-Used to reset the primary value to the default primary value of statistics.
+Utilizzato per reimpostare il valore primario al valore primario predefinito delle statistiche.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Statistics
+Statistiche
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Usato per impostare l'URL del file. Può essere un Base64 o un URL che punta a un PDF sul web.
 
-###### Parameter
+###### Parametro
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`Origine PDF`: un valore di stringa usato per impostare il sorgente PDF. Potrebbe essere URL o base64.
 
-###### Supported components
+###### Componenti supportati
 
 PDF
 
-###### Example
+###### Esempio
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### gioca
 
-Used to play video or audio.
+Utilizzato per riprodurre video o audio.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
-##### pause
+##### pausa
 
-Used to pause video or audio.
+Utilizzato per mettere in pausa video o audio.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
 ##### showControls
 
-Used to set whether to show the controls.
+Usato per impostare se mostrare i controlli.
 
-###### Parameter
+###### Parametro
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Mostra controlli`: un valore booleano usato per impostare se mostrare i controlli.
 
-###### Supported components
+###### Componenti supportati
 
 Video
 
 ##### setVideoUrl
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Usato per impostare l'URL del video. Può essere un Base64 o un URL video sui siti web multimediali.
 
-###### Parameter
+###### Parametro
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Fonte video`: un valore di stringa utilizzato per impostare la sorgente video. Potrebbe essere URL o base64.
 
-###### Supported components
+###### Componenti supportati
 
 Video
 
-###### Example
+###### Esempio
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolume(numero)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Usato per impostare il volume. Il parametro è un valore numerico compreso tra 0 e 1.
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
-###### Example
+###### Esempio
 
 `video1.setVolume(0.5)`
 
 ##### setSpeed
 
-Used to set the speed.
+Usato per impostare la velocità.
 
-###### Parameter
+###### Parametro
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: un valore numerico compreso tra 0.25 e 2
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{0.5}}
@@ -542,17 +542,17 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Usato per impostare se eseguire il ciclo di riproduzione.
 
-###### Parameter
+###### Parametro
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: un valore booleano usato per impostare il loop o meno
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{true}}
@@ -560,47 +560,47 @@ Video, Audio
 
 ##### seekTo
 
-Used to seek to a specific time position.
+Usato per cercare una specifica posizione temporale.
 
-###### Parameter
+###### Parametro
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Tempo(i)`: un valore numerico, misurato in secondi (s). Ad esempio, per cercare la posizione temporale 5:35, si utilizzerebbe il valore 335.
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### muto
 
-Used to set mute or not.
+Usato per impostare l'audio o no.
 
-###### Parameter
+###### Parametro
 
-`Mute`: a boolean value
+`Mute`: un valore booleano
 
-###### Supported components
+###### Componenti supportati
 
 Video, Audio
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Usato per impostare l'URL dell'audio. Può essere un Base64 o un URL video sui siti web multimediali.
 
-###### Parameter
+###### Parametro
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Sorgente audio`: un valore di stringa usato per impostare la sorgente audio. Potrebbe essere URL o base64.
 
-###### Supported components
+###### Componenti supportati
 
 Audio
 
-###### Example
+###### Esempio
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
@@ -608,41 +608,41 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
 ##### slickNext
 
-Used to switch to the next image.
+Usato per passare all'immagine successiva.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
 Carousel
 
-##### slickPrevious
+##### slickPrecedente
 
-Used to switch to the previous image.
+Usato per passare all'immagine precedente.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Usato per impostare l'URL di origine di IFrame.
 
-###### Parameter
+###### Parametro
 
-`Value`: a string value used to set the URL.
+`Valore`: un valore stringa usato per impostare l'URL.
 
-###### Supported components
+###### Componenti supportati
 
 IFrame
 
-###### Example
+###### Esempio
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Usato per impostare i marcatori sulla mappa.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: una serie di oggetti. I campi di latitudine e longitudine in ogni oggetto devono essere gli stessi dei campi impostati nel pannello di destra.
 
-###### Supported components
+###### Componenti supportati
 
-Map
+Mappa
 
-###### Example
+###### Esempio
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Usato per reimpostare i marcatori ai marcatori predefiniti.
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
-###### Supported components
+###### Componenti supportati
 
-Map
+Mappa
 
-#### Run script
+#### Esegui script
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Scrivendo uno script, puoi attivare più eventi in sequenza. [Per saperne di più](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Vai all'URL
 
-##### Parameter
+##### Parametro
 
-`URL`: String value. The URL to be opened
+`URL`: Valore stringa. L'URL da aprire
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Nuova scheda`: valore booleano. Usato per impostare se aprire l'URL su una nuova scheda.
 
-#### Show notification
+#### Mostra notifica
 
-##### Parameter
+##### Parametro
 
-`Title`: String value. The title of the notification
+`Title`: String value. Il titolo della notifica
 
-`Description`:  String value. The description of the notification
+`Descrizione`: Valore stringa. La descrizione della notifica
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Tipo`: Valore stringa. Imposta il tipo tramite le opzioni a discesa: successo, Errore, Attenzione, Info
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Duration(ms)`: Valore del numero. La durata della visualizzazione di una notifica.
 
-#### Copy to clipboard
+#### Copia negli appunti
 
-##### Parameter
+##### Parametro
 
-`Value`: String value. The string to be copied.
+`Valore`: Valore stringa. La stringa da copiare.
 
-#### Set router
+#### Imposta router
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+Quando ci sono più pagine nell'applicazione, questa funzione può essere utilizzata per passare da una pagina all'altra.
 
-##### Parameter
+##### Parametro
 
-`Page`: Use to set redirect to which page.
+`Pagina`: Usa per impostare il reindirizzamento a quale pagina.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Sotto-pagina`: Utilizzare per impostare il reindirizzamento a quale sotto-pagina della pagina selezionata nel parametro della pagina.
 
-#### Save to ILLA Drive
+#### Salva su ILLA Drive
 
-##### Parameter
+##### Parametro
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Nome file con estensione`: Stringa. Nome con estensione del file dopo il caricamento su ILLA Drive.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`File data`: Stringa. Base64 o dati di file grezzi, come JSON, CSV, testo semplice, ecc.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tipo Di File`: Stringa. Uno dei seguenti valori: Auto, testo semplice, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Quando si utilizza "Auto", cercheremo di determinare il tipo di file in base all'estensione del file o ai dati del file.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Cartella`: Stringa. Cartella di destinazione per il caricamento dei file. Lasciare vuoto per caricare nella cartella radice.
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`Permetti anonimo`: Boleano. Usato per impostare se è consentito l'accesso anonimo all'utente. Se si prevede di impostare l'applicazione come pubblico, l'accesso anonimo deve essere abilitato. Per la sicurezza dei dati, dei file o delle cartelle accessibili in modo anonimo devono essere inseriti nella cartella anonima.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Sostituisci`: Booleano. Usato per impostare quando ci sono file con lo stesso nome nella stessa directory, sostituire il file esistente con un nuovo file o rinominare automaticamente il nuovo file.
 
-#### Download from ILLA Drive
+#### Scarica da ILLA Drive
 
-##### Parameter
+##### Parametro
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Scarica info`: un array di oggetti tra cui tinyURL e fileID. È possibile utilizzare il componente Drive selettore di file per scegliere i file da ILLA Drive e ottenere il `Download info` tramite drivePicker1.value
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Salva come Zip`: Boolean. Usato per impostare se scaricare i file come Zip.
 
-#### Download
+#### Scarica
 
-Used to export data to your device.
+Utilizzato per esportare i dati sul tuo dispositivo.
 
-##### Parameter
+##### Parametro
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tipo di file`: Uno dei seguenti valori: Auto, testo semplice, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Quando si utilizza "Auto", cercheremo di determinare il tipo di file in base all'estensione del file o ai dati del file.
 
-`File name`: a name with extension.
+`Nome file`: un nome con estensione.
 
-`Data`: data of the file.
+`Data`: dati del file.
 
-#### Set global data
+#### Imposta dati globali
 
-##### Set global data value
+##### Imposta valore dati globale
 
-Used to set the value of gobalData
+Usato per impostare il valore di gobalData
 
-###### Parameter
+###### Parametro
 
-`key`: the displayName of globalData.
+`key`: il displayName di globalData.
 
-`value`: the value to set
+`value`: il valore da impostare
 
-##### Set global data in
+##### Imposta dati globali in
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Quando i dati globali sono un array o un oggetto, usa setGlobalDataIn per modificare il valore corrispondente a un indice specifico in un array o per modificare il valore corrispondente a una chiave specifica in un oggetto.
 
-###### Parameter
+###### Parametro
 
-`key`: the displayName of globalData.
+`key`: il displayName di globalData.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: l'indice del valore che si intende aggiornare nell'array o la chiave nell'oggetto. Ad esempio, per impostare il secondo valore nell'array, il percorso è 1 (l'indice). Per impostare il valore dell'attributo key1, il percorso è key1.
 
-`value`: the value to set
+`value`: il valore da impostare
 
-#### Set local storage
+#### Imposta memoria locale
 
-##### clear
+##### cancella
 
-Used to clear the local storage
+Usato per cancellare la memoria locale
 
-###### Parameter
+###### Parametro
 
-No parameter
+Nessun parametro
 
 ##### setValue
 
-###### Parameter
+###### Parametro
 
-`key`: the displayName of local storage.
+`key`: il displayName della memoria locale.
 
-`value`: the value of the key.
+`value`: il valore della chiave.
 
-3.  ### Only run when
+### Esegui solo quando
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+Un valore booleano usato per impostare quando il gestore di eventi potrebbe essere attivato. Ad esempio, quando l'input 1 è nullo, il gestore dell'evento non può essere attivato: `{{input1.value!==""&&input1.value!==undefined}}`
