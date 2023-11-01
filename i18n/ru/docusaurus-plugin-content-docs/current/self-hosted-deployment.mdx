@@ -1,0 +1,214 @@
+---
+title: Размещение на самохостинге
+description: ILLA Builder предоставляет бесшовный опыт установки, который позволяет вам устанавливать ILLA Builder с удивительной скоростью в пределах вашего собственного Виртуального Приватного Облака (VPC).
+---
+
+# Размещение на самохостинге
+
+## Докер
+
+1.  Запустить Docker
+2.  Введите в терминале следующую команду для установки официального изображения:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Скачать ILLA CLI и развернуть
+
+Если у вас установлен Rust , вы можете легко собрать +установить последний релиз ILLA CLI с грузом:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+Инструмент **груза** завершит загрузку ILLA CLI с зависимостями исходного кода, постройте и установите его в путь грузового бина, чтобы мы могли его запустить. После установки вы можете запустить ILLA CLI с помощью команды **illa**.
+
+Кроме того, вы можете просто скачать ILLA CLI для вашей операционной системы здесь:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Если вы скачиваете по вышеприведенным ссылкам, то шаги немного отличаются по сравнению с загрузкой ILLA CLI из **груза** . После загрузки CLI, вы должны сделать его исполняемым. Давайте возьмем illa-linux например:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Проверка предпосылок установки на самохостинге
+
+Эти порты 5432, 9999 и 8000 должны оставаться для строителя ILLA
+
+Следующая команда проверит необходимые параметры установки на самохостинге в вашей операционной системе:
+
+```Plaintext
+> illa doctor
+```
+
+### Развертывание конструктора ILLA
+
+Как только ILLA CLI был установлен, вы можете запустить самостоятельную установку или облачное хранилище.
+
+Вы можете просто установить ILA Builder, выполнив следующую команду:
+
+```Plaintext
+# порт, на который можно получить доступ ILLA Builder может быть изменен
+# <SERVER_ADDRESS> должен быть публичным ip, используемым вашим облачным сервером, по умолчанию localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Теперь вы можете получить доступ к сборщику ILLA: <http://localhost:10000>
+
+### Обновление ILLA Builder
+
+Чтобы обновить ILLA Builder с последними картинками докера, используйте следующую команду:
+
+```Plaintext
+> illa update --self
+```
+
+### Прочие операции
+
+```Plaintext
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help help help help help 
+ > illa help help help help
+```
+
+## Kubernetes
+
+### Описание
+
+Создайте образ all-in-one и запустите его с помощью k8 на вашей машине. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+
+Примечание:
+
+Мы настоятельно рекомендуем установить с помощью наших инструментов автоустановки [illa-cli](https://github.com/illacloud/illa).
+
+А пока мы не поддерживаем Apple Silicon M1 (арка darwin-arm64).
+
+### Запуск с официальным Slim изображением
+
+Установите GNU make и тип:
+
+```JavaScript
+делать развёрнутый
+```
+
+или просто выполните:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+эта команда выберет официальный образ all-in-one и установит его на ваш кластер Kubernetes.
+
+### Для постоянного хранения базы данных
+
+Редактируйте [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), и добавьте на него конфигурацию хранилища IAAS.
+
+### Для конфигурации HTTPS
+
+Вы можете маршрутизировать NodePort до шлюза кластера ingress и переписать в порт 443, а также добавить сертификат https в шлюз ingress шлюза.
+
+Или вы можете вручную развернуть шлюз ingress на ваш сервер Kubernetes, например:
+
+```JavaScript
+static_resources:
+  слушателей:
+  - имя: https_listener
+    address:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: посланник. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            имя: local_route
+            virtual_hosts:
+            - имя: illa_builder
+              доменов:
+              - "illa. ourdomian. om" # заменить на ваш домен
+              маршрутов:
+              - совпадение:
+                  префикс: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - имя: отправить. ilters.http. outer
+            typed_config:
+              "@type": тип. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # замените это файлом cert
+            - certificate_chain:
+                файла: /your-cert-folder/fullchain. em
+              private_key:
+                имя: /your-cert-folder/privkey. em
+
+  кластеров:
+  - имя: illa_builder
+    тип: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            адреса:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## Быстрое развертывание
+
+Вы можете быстро развернуть ILLA следуйте инструкциям ниже:
+
+Сначала загрузите этот [docker файл](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) на ваш компьютер, затем выполните следующий код.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+Войти с помощью имени пользователя и пароля по умолчанию:
+
+Имя пользователя: **`root`**
+
+Пароль: **`password`** (только для самостоятельного хоста).
