@@ -1,0 +1,214 @@
+---
+title: Self-hosted deployment
+
+description: ILLA Builder provides a seamless deployment experience that allows you to deploy ILLA Builder at an astonishing speed within your own Virtual Private Cloud (VPC).
+---
+
+# Self-hosted deployment
+
+## Docker
+
+1. Start Docker
+2. Enter the following command in the terminal to install the official image:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Download ILLA CLI and deploy
+
+If you have Rust installed, you can easily build+install the latest ILLA CLI release with cargo:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+The **cargo** tool will complete downloading the ILLA CLI with its source dependencies, build and install it into the cargo bin path so that we can run it. Once installed, you can run the ILLA CLI with the **illa** command.
+
+Alternatively, you can just download the ILLA CLI for your operating system here:
+
+* **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+* **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+* **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+If you do download from the above links, the steps are slightly different compared to downloading the ILLA CLI from  **cargo** . After downloading the CLI, you will have to make it executable. Let’s take the illa-linux for example:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Checking the prerequisites of self-hosted installation
+
+These ports 5432, 9999 and 8000 should remain for the ILLA Builder
+
+The following command will check the prerequisites of self-hosted installation on your operating system:
+
+```Plaintext
+> illa doctor
+```
+
+### Deploying ILLA Builder
+
+Once the ILLA CLI has been installed, you can run a self-hosted or cloud installation.
+
+You can simply deploy a self-hosted ILA Builder by running the following command:
+
+```Plaintext
+# the port which ILLA Builder can be accessed on can be changed
+# the <SERVER_ADDRESS> should be your cloud server public ip, default localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Now, you can access the ILLA Builder: [http://localhost:10000](http://localhost:10000)
+
+### Updating ILLA Builder
+
+To update the ILLA Builder with the latest docker images, use the following command:
+
+```Plaintext
+> illa update --self
+```
+
+### Other operations
+
+```Plaintext
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help
+```
+
+## Kubernetes
+
+### Description
+
+Build illa all-in-one image and run it by k8s on your machine. You can check out the scripts file in the [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) folder for more details.
+
+Note:
+
+We highly recommended deploying with our auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+
+And for the moment we do not support Apple Silicon M1 (darwin-arm64 arch).
+
+### Run with an official slim image
+
+Install GNU make and type:
+
+```JavaScript
+make deploy
+```
+
+or just execute:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+this command will pull illasoft official all-in-one image and deploy it on your Kubernetes cluster.
+
+### For Database Persistent Storage
+
+Edit [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), and add your IAAS persistent storage config on it.
+
+### For HTTPS Config
+
+You can route the NodePort to your Kubernetes cluster ingress gateway and rewrite to 443 port, and add https cert in your ingress gateway.
+
+Or, you can deploy an ingress gateway manually into your Kubernetes server, config like this:
+
+```JavaScript
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## Quickly deploy
+
+You can deploy ILLA in a remarkably fast way, please follow the instructions below:
+
+First, please download this [docker file](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) to your computer, then run the following code.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+And log in with the default username and password:
+
+Username: **`root`**
+
+Password: **`password`** (self-host mode only).
