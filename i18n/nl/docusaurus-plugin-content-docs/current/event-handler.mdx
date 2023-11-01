@@ -1,32 +1,812 @@
 ---
 title: Event handler
-description: Event handlers are an integral part of refining your internal tool usage logic
+description: Add an event handler to the component to trigger an event when the component's state changes.
 ---
 
 # Event handler
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Add an event handler to the component to trigger an event when the component's state changes.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+## How-to
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Event handlers
+## Configuration options
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+1.  ### Event
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
 
-### Edit submit handler
+2.  ### Action
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+#### Trigger action
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+Used to trigger an action created in this app
 
-### Temporary states
+| **parameter**       | **required or not**   | **description**                      |
+| ------------------- | --------------------- | ------------------------------------ |
+| Action name         | `required`            | Select an action created in this app |
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+#### Control component
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+| **parameter**       | **required or not**   | **description**                                                                                                                                         |
+| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Component           | `required`            | Select a component added to the current page                                                                                                            |
+| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+##### setValue
+
+Used to set the value.
+
+###### Parameter
+
+`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+
+###### Supported components
+
+| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
+| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+
+| JSON Editor
+                                                                                                                                            | `string`
+                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
+| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
+| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
+| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
+| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
+| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+
+##### clearValue
+
+Used to clear the value.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+
+##### focus
+
+Used to focus on the component
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+
+##### validate
+
+When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+
+##### clearValidation
+
+Used to clear the validation message.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+
+##### setSelectedValue
+
+Used to set the selected value of Multiselect. The parameter should be an array.
+
+###### Parameter
+
+`Value`: an array of strings used to set the selected options.
+
+###### Supported components
+
+Multiselect
+
+###### Example
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### submit
+
+Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+JSON Schema Form, Form
+
+##### toggle
+
+Used to switch the value from true to false or from false to true.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Switch
+
+##### setStartOfRange
+
+Used to set the default start value of the range slider
+
+###### Parameter
+
+`Start value`: a number used to set the start value.
+
+###### Supported components
+
+Range Slider
+
+###### Example
+
+```JavaScript
+{{10}}
+```
+
+##### setEndOfRange
+
+Used to set the default end value of the range slider
+
+###### Parameter
+
+`End value`: a number used to set the end value.
+
+###### Supported components
+
+Range Slider
+
+###### Example
+
+```JavaScript
+{{10}}
+```
+
+##### setStartValue
+
+Used to set the default start value
+
+###### Parameter
+
+`Start date/time`: a string used to set the start time/date.
+
+###### Supported components
+
+Date Range, Time Range
+
+###### Example
+
+```JavaScript
+2023-09-09
+```
+
+##### setEndValue
+
+Used to set the default end value
+
+###### Parameter
+
+`End date/time`: a string used to set the end time/date.
+
+###### Supported components
+
+Date Range, Time Range
+
+###### Example
+
+```JavaScript
+2023-10-09
+```
+
+##### setValueInArray
+
+Used to set the switches whose value is true
+
+###### Parameter
+
+`Value`: an array of strings used to set the options whose value is true .
+
+###### Supported components
+
+Switch Group
+
+###### Example
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### setCurrentViewKey
+
+Use the key which is a string value of the view to set the shown view.
+
+###### Parameter
+
+`Key`: a string used to set which view to display.  The key is configured in a container
+
+###### Supported components
+
+Container
+
+###### Example
+
+```JavaScript
+View 1
+```
+
+##### setCurrentViewIndex
+
+Use the index which is a number value starting from 0 of the view to set the shown view.
+
+###### Parameter
+
+`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+
+###### Supported components
+
+Container
+
+###### Example
+
+```JavaScript
+{{1}}
+```
+
+##### showNextView
+
+Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+
+###### Parameter
+
+`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+
+###### Supported components
+
+Container
+
+##### showNextVisibleView
+
+Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+
+###### Parameter
+
+`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+
+###### Supported components
+
+Container
+
+##### showPreviousView
+
+Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+
+###### Parameter
+
+`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+
+###### Supported components
+
+Container
+
+###### showPreviousVisibleView
+
+Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+
+###### Parameter
+
+`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+
+###### Supported components
+
+Container
+
+##### reset
+
+Used to reset the value to default value.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Form
+
+##### resetValue
+
+Used to reset the value to default value.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Steps
+
+##### openModal
+
+Used to open a modal
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Modal
+
+##### closeModal
+
+Used to close a modal
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Modal
+
+##### setImageUrl
+
+Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+
+###### Parameter
+
+`Value`:  a string value used to set the image source. It could be URL or base64.
+
+###### Supported components
+
+Image
+
+###### Example
+
+```JavaScript
+https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
+```
+
+```JavaScript
+data:image/png;base64,iVBORw0KGgoAA...II
+```
+
+##### clearReplyMessage
+
+Used to clear the quoted reply message above the input box.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Chat
+
+##### setPrimaryValue
+
+Used to set the primary value of statistics.
+
+###### Parameter
+
+`Primary value`: a number value used to set the primary value of statistics.
+
+###### Supported components
+
+Statistics
+
+###### Example
+
+```JavaScript
+{{10000}}
+```
+
+##### resetPrimaryValue
+
+Used to reset the primary value to the default primary value of statistics.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Statistics
+
+##### setFileUrl
+
+Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+
+###### Parameter
+
+`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+
+###### Supported components
+
+PDF
+
+###### Example
+
+```JavaScript
+https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
+```
+
+##### play
+
+Used to play video or audio.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Video, Audio
+
+##### pause
+
+Used to pause video or audio.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Video, Audio
+
+##### showControls
+
+Used to set whether to show the controls.
+
+###### Parameter
+
+`Show controls`: a boolean value used to set whether to show the controls.
+
+###### Supported components
+
+Video
+
+##### setVideoUrl
+
+Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+
+###### Parameter
+
+`Video source`: a string value used to set the video source. It could be URL or base64.
+
+###### Supported components
+
+Video
+
+###### Example
+
+```JavaScript
+video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+```
+
+##### setVolume(number)
+
+Used to set the volume. The parameter is a number value between 0 to 1.
+
+###### Supported components
+
+Video, Audio
+
+###### Example
+
+`video1.setVolume(0.5)`
+
+##### setSpeed
+
+Used to set the speed.
+
+###### Parameter
+
+`Speed`: a number value between 0.25 to 2
+
+###### Supported components
+
+Video, Audio
+
+###### Example
+
+```JavaScript
+{{0.5}}
+```
+
+##### setLoop
+
+Used to set whether to loop the playback.
+
+###### Parameter
+
+`Loop`: a boolean value used to set loop or not
+
+###### Supported components
+
+Video, Audio
+
+###### Example
+
+```JavaScript
+{{true}}
+```
+
+##### seekTo
+
+Used to seek to a specific time position.
+
+###### Parameter
+
+`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+
+###### Supported components
+
+Video, Audio
+
+###### Example
+
+```JavaScript
+{{335}}
+```
+
+##### mute
+
+Used to set mute or not.
+
+###### Parameter
+
+`Mute`: a boolean value
+
+###### Supported components
+
+Video, Audio
+
+##### setAudioUrl
+
+Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+
+###### Parameter
+
+`Audio source`: a string value used to set the audio source. It could be URL or base64.
+
+###### Supported components
+
+Audio
+
+###### Example
+
+```JavaScript
+https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
+```
+
+##### slickNext
+
+Used to switch to the next image.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Carousel
+
+##### slickPrevious
+
+Used to switch to the previous image.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Carousel
+
+##### setSrc
+
+Used to set the source URL of IFrame.
+
+###### Parameter
+
+`Value`: a string value used to set the URL.
+
+###### Supported components
+
+IFrame
+
+###### Example
+
+```JavaScript
+https://www.nasa.gov/
+```
+
+##### setMarkers
+
+Used to set the markers on the map.
+
+###### Paramater
+
+`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+
+###### Supported components
+
+Map
+
+###### Example
+
+```JavaScript
+{{[
+{
+    "lat":57.14009563040699,
+    "lng":-114.6018657894011
+ },{
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },{
+     "lat":57.841288754888545,
+     "lng":-103.3518657894011
+ }
+ ]}}
+```
+
+##### resetMarkers
+
+Used to reset the markers to the default markers.
+
+###### Parameter
+
+No parameter
+
+###### Supported components
+
+Map
+
+#### Run script
+
+By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+
+#### Go to URL
+
+##### Parameter
+
+`URL`: String value. The URL to be opened
+
+`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+
+#### Show notification
+
+##### Parameter
+
+`Title`: String value. The title of the notification
+
+`Description`:  String value. The description of the notification
+
+`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+
+`Duration(ms)`: Number value. The duration for displaying a notification.
+
+#### Copy to clipboard
+
+##### Parameter
+
+`Value`: String value. The string to be copied.
+
+#### Set router
+
+When there are multiple pages in the application, this function can be used to switch between pages.
+
+##### Parameter
+
+`Page`: Use to set redirect to which page.
+
+`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+
+#### Save to ILLA Drive
+
+##### Parameter
+
+`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+
+`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+
+`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+
+`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+
+`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+
+`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+
+#### Download from ILLA Drive
+
+##### Parameter
+
+`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+
+`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+
+#### Download
+
+Used to export data to your device.
+
+##### Parameter
+
+`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+
+`File name`: a name with extension.
+
+`Data`: data of the file.
+
+#### Set global data
+
+##### Set global data value
+
+Used to set the value of gobalData
+
+###### Parameter
+
+`key`: the displayName of globalData.
+
+`value`: the value to set
+
+##### Set global data in
+
+When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+
+###### Parameter
+
+`key`: the displayName of globalData.
+
+`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+
+`value`: the value to set
+
+#### Set local storage
+
+##### clear
+
+Used to clear the local storage
+
+###### Parameter
+
+No parameter
+
+##### setValue
+
+###### Parameter
+
+`key`: the displayName of local storage.
+
+`value`: the value of the key.
+
+3.  ### Only run when
+
+A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
