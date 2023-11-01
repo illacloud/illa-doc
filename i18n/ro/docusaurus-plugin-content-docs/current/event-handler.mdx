@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Gestionar de evenimente
+description: Adăugați un gestionar de evenimente la componentă pentru a declanșa un eveniment atunci când starea componentei se schimbă.
 ---
 
-# Event handler
+# Gestionar de evenimente
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Adăugați un gestionar de evenimente la componentă pentru a declanșa un eveniment atunci când starea componentei se schimbă.
 
-## How-to
+## Cum
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Opțiuni de configurare
 
-1.  ### Event
+### Eveniment
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Folosit pentru a seta modul de declanşare a acţiunii. De exemplu, dacă dorim să declanșăm restapi1 când componenta grid(tabela) de date este reîmprospătată, putem seta evenimentul ca `reîmprospătare`. Dacă vrem să declanșăm restapi2 atunci când tipul de componentă grilă de date (tabel) este schimbat, putem seta evenimentul ca "sortează schimbarea". Dacă vrem să declanșăm restapi3 când se dă click pe buton, putem seta evenimentul la `click`.
 
-2.  ### Action
+### Acțiune
 
-#### Trigger action
+#### Acțiune de declanșare
 
-Used to trigger an action created in this app
+Folosit pentru a declanșa o acțiune creată în această aplicație
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parametru**        | **obligatoriu sau nu** | **descriere**                                   |
+| -------------------- | ---------------------- | ----------------------------------------------- |
+| Nume acţiune         | `required`             | Selectați o acțiune creată în această aplicație |
 
-#### Control component
+#### Componenta de control
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parametru**        | **obligatoriu sau nu** | **descriere**                                                                                                                                                             |
+| -------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Componentă           | `required`             | Selectați o componentă adăugată la pagina curentă                                                                                                                         |
+| Metodă               | `required`             | Folosit pentru a seta ce face componenta de control. Metodele diferite necesită parametri diferiți pentru a fi configurați. Mai jos sunt prezentate explicaţii detaliate. |
 
-##### setValue
+##### valoare setată
 
-Used to set the value.
+Folosit pentru a seta valoarea.
 
-###### Parameter
+###### Parametru
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Value`: Valoarea ar putea fi `string` sau `number` sau `object` sau `boolean` sau `array` care depinde de tipul componentei.
 
-###### Supported components
+###### Componente suportate
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Componentă                                                                                                                                                          | Tip de parametru                                                     | Exemplu                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Data Time, Trepte, Text, Progres Bar, Progres Cerc                | `string`                                                             |                                                                                                                                                                         |
+| `Hello world`                                                                                                                                                       |                                                                      |                                                                                                                                                                         |
 
-| JSON Editor
-                                                                                                                                            | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+<unk> Editorul JSON
+                                                                                                                                            <unk> `string`
+                                                      <unk> `{ "firstName": "Chuck", "lastName": "Norris", "vârstă": 80, "bio": "Roundhouse kickking asses din 1940", "password": "noneed", "telefon": "1-800-KICKASS" }` <unk>
+<unk> Cronologie <unk> `string`, Separați valorile diferitelor noduri prin virgulă (,) <unk> `Prima piatră, a doua piatră de hotar" <unk>
+Numărul Input, Slider, Votează "număr" <unk> `{{1000}}` \
+<unk> Switch Ε`boolean` <unk> `{{false}}` <unk>
+ΤJSON Schema Form, Formular <unk> `object` <unk> `{{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kickking asses din 1940", "password": "noneed", "telefonie": "1-800-KICKASS" } }} } } }
+<unk> Checkbox Group, Cascadă <unk> `array` <unk> `{{["media_source_2","campaign_2-1"]}}`
 
-##### clearValue
+##### curățare
 
-Used to clear the value.
+Folosit pentru a şterge valoarea.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Grupul Checkbox, Cascader, Grupul Radio Button, Data, Data Range, Data Time, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### focus
+##### focalizare
 
-Used to focus on the component
+Folosit pentru a se concentra asupra componentei
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
 Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Când ai stabilit condițiile de validare pentru o componentă, cum ar fi formatul de e-mail, formatul URL-ului, sau câmp obligatoriu, puteți utiliza funcția `validate` pentru a determina dacă îndeplinește cerințele. Dacă nu îndeplinește cerințele, va fi afișat un mesaj de validare.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Data Range, Data Time, Form, Rata
 
-##### clearValidation
+##### clearValidare
 
-Used to clear the validation message.
+Folosit pentru a șterge mesajul de validare.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Input, Numarul Input, Editable Text, Text Area, Upload, Select, Multiselect, Grupul Checkbox, Radio Button, Data, Data Range, Data ora, Rata
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Folosit pentru a seta valoarea selectată pentru Multiselect. Parametrul trebuie să fie un array.
 
-###### Parameter
+###### Parametru
 
-`Value`: an array of strings used to set the selected options.
+`Value`: o serie de șiruri folosite pentru a seta opțiunile selectate.
 
-###### Supported components
+###### Componente suportate
 
-Multiselect
+Multi-selectare
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### remite
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Trimite datele formularului. Când metoda de depunere este declanșată, mai întâi vom valida datele formularului. Dacă există erori de validare, trimiterea formularului va fi prevenită și vor fi afișate mesajele de eroare corespunzătoare. Numai după validarea reușită procedează la depunerea propunerii.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-JSON Schema Form, Form
+Formular JSON schemă, formular
 
-##### toggle
+##### comutare
 
-Used to switch the value from true to false or from false to true.
+Folosit pentru a schimba valoarea de la true la false sau fals la adevărat.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Switch
+Comutare
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Folosit pentru a seta valoarea de pornire implicită pentru glisorul de rază
 
-###### Parameter
+###### Parametru
 
-`Start value`: a number used to set the start value.
+`Valoare de început`: un număr folosit pentru a seta valoarea de început.
 
-###### Supported components
+###### Componente suportate
 
 Range Slider
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Folosit pentru a seta valoarea finală implicită pentru glisorul de rază
 
-###### Parameter
+###### Parametru
 
-`End value`: a number used to set the end value.
+`Valoare de sfârșit`: un număr folosit pentru a seta valoarea de sfârșit.
 
-###### Supported components
+###### Componente suportate
 
 Range Slider
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{10}}
@@ -190,35 +190,35 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Folosit pentru a seta valoarea de pornire implicită
 
-###### Parameter
+###### Parametru
 
-`Start date/time`: a string used to set the start time/date.
+`Data de începere/oră`: un șir folosit pentru a seta ora/data de începere.
 
-###### Supported components
+###### Componente suportate
 
-Date Range, Time Range
+Intervalul de date, intervalul de timp
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 2023-09-09
 ```
 
-##### setEndValue
+##### setează Valoare
 
-Used to set the default end value
+Folosit pentru a seta valoarea de sfârșit implicită
 
-###### Parameter
+###### Parametru
 
-`End date/time`: a string used to set the end time/date.
+`Sfârșit data/timpul`: un șir folosit pentru a seta ora/data de sfârșit.
 
-###### Supported components
+###### Componente suportate
 
-Date Range, Time Range
+Intervalul de date, intervalul de timp
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 2023-10-09
@@ -226,53 +226,53 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Folosit pentru a seta comutatoarele a căror valoare este adevărată
 
-###### Parameter
+###### Parametru
 
-`Value`: an array of strings used to set the options whose value is true .
+`Valoare`: o serie de șiruri utilizate pentru a stabili opțiunile a căror valoare este adevărată .
 
-###### Supported components
+###### Componente suportate
 
-Switch Group
+Comută grupul
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### setCurrentViewKey
+##### setCurrent ViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Utilizați cheia care este o valoare șir a vederii pentru a seta vizualizarea afișată.
 
-###### Parameter
+###### Parametru
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Cheie`: un şir folosit pentru a seta ce vizualizare să afişeze.  Cheia este configurată într-un container
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
-###### Example
+###### Exemplu
 
 ```JavaScript
-View 1
+Vezi 1
 ```
 
-##### setCurrentViewIndex
+##### setCurrent ViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Utilizați indicele care este o valoare numerică pornind de la 0 a vederii pentru a seta vizualizarea afișată.
 
-###### Parameter
+###### Parametru
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Indicele de identificare`: o valoare numerică. Utilizaţi indicele de vizualizare pentru a seta ce vizualizare să afişeze. Indexul începe de la 0.
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{1}}
@@ -280,369 +280,369 @@ Container
 
 ##### showNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Folosit pentru a afișa următoarea vizualizare. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-###### Parameter
+###### Parametru
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Buclă înapoi pentru a începe`: o valoare booleană (folosește un comutator pentru a seta) folosită pentru a seta dacă să repeți înapoi pentru a începe.
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Folosit pentru a afișa următoarea vizualizare vizibilă. Spre deosebire de comportamentul funcției `showNextView(boolean)`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la capăt până la început.
 
-###### Parameter
+###### Parametru
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Buclă înapoi pentru a începe`: o valoare booleană (folosește un comutator pentru a seta) folosită pentru a seta dacă să repeți înapoi pentru a începe.
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
-##### showPreviousView
+##### Arată Anterior
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Folosit pentru a afișa vizualizarea anterioară. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-###### Parameter
+###### Parametru
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Buclă începe să se întoarcă`: o valoare booleană (folosește un comutator pentru a seta) folosită pentru a seta dacă bucla începe înapoi.
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
-###### showPreviousVisibleView
+###### showAnteriorVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Folosit pentru a afișa vizualizarea vizibilă anterioară. Spre deosebire de comportamentul funcției `showPreviousView`, această funcție oferă o vizualizare îmbunătățită a funcționalității de comutare prin omiterea oricăror vizualizări ascunse în timpul tranziției. Parametrul este o valoare booleană care determină dacă să bucleze de la început până la sfârșit.
 
-###### Parameter
+###### Parametru
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Buclă începe să se întoarcă`: o valoare booleană (folosește un comutator pentru a seta) folosită pentru a seta dacă bucla începe înapoi.
 
-###### Supported components
+###### Componente suportate
 
-Container
+Recipient
 
 ##### reset
 
-Used to reset the value to default value.
+Folosit pentru a reseta valoarea la valoarea implicită.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Form
+Formular
 
-##### resetValue
+##### resetare
 
-Used to reset the value to default value.
+Folosit pentru a reseta valoarea la valoarea implicită.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Steps
+Pași
 
 ##### openModal
 
-Used to open a modal
+Folosit pentru a deschide un modal
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Modal
+Modale
 
 ##### closeModal
 
-Used to close a modal
+Folosit pentru a închide un modul
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Modal
+Modale
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Folosit pentru a seta URL-ul sursă al imaginii. Poate fi un Base64 sau un URL care arată către o imagine pe web.
 
-###### Parameter
+###### Parametru
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: o valoare a șirului folosită pentru a seta sursa imaginii. Ar putea fi URL sau bază64.
 
-###### Supported components
+###### Componente suportate
 
-Image
+Imagine
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
 ```
 
 ```JavaScript
-data:image/png;base64,iVBORw0KGgoAA...II
+date:image/png;bază64,iVBORw0KGgoAA...II
 ```
 
 ##### clearReplyMessage
 
-Used to clear the quoted reply message above the input box.
+Folosit pentru a şterge mesajul de răspuns citat deasupra casetei.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
 Chat
 
-##### setPrimaryValue
+##### setPrimaryValoare
 
-Used to set the primary value of statistics.
+Folosit pentru a seta valoarea primară a statisticilor.
 
-###### Parameter
+###### Parametru
 
-`Primary value`: a number value used to set the primary value of statistics.
+'Valoare primară': o valoare numerică folosită pentru a seta valoarea primară a statisticilor.
 
-###### Supported components
+###### Componente suportate
 
-Statistics
+Statistici
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### resetare ValoareValoare
 
-Used to reset the primary value to the default primary value of statistics.
+Folosit pentru a reseta valoarea primară la valoarea primară implicită a statisticilor.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Statistics
+Statistici
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Folosit pentru a seta URL-ul fișierului. Poate fi un Base64 sau un URL care arată către un PDF pe web.
 
-###### Parameter
+###### Parametru
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF source`: o valoare de şir folosită pentru a seta sursa PDF. Ar putea fi URL sau bază64.
 
-###### Supported components
+###### Componente suportate
 
 PDF
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### redă
 
-Used to play video or audio.
+Folosit pentru a reda video sau audio.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
-
-Video, Audio
-
-##### pause
-
-Used to pause video or audio.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-##### showControls
+##### pauză
 
-Used to set whether to show the controls.
+Folosit pentru a opri video sau audio.
 
-###### Parameter
+###### Parametru
 
-`Show controls`: a boolean value used to set whether to show the controls.
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
+
+Video, Audio
+
+##### Arată Controale
+
+Folosit pentru a seta dacă să afișeze controalele.
+
+###### Parametru
+
+`Show controls`: a boolean value used to set to show the controls. (Automatic Copy)
+
+###### Componente suportate
 
 Video
 
 ##### setVideoUrl
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Folosit pentru a seta URL-ul video. (Automatic Translation) Poate fi un Base64 sau un URL video pe site-urile media.
 
-###### Parameter
+###### Parametru
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Sursă video`: o valoare de șir folosită pentru a seta sursa video. Ar putea fi URL sau bază64.
 
-###### Supported components
+###### Componente suportate
 
 Video
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolum(număr)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Folosit pentru a stabili volumul. Parametrul este o valoare numerică între 0 și 1.
 
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-###### Example
+###### Exemplu
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### setare viteză
 
-Used to set the speed.
+Folosit pentru a seta viteza.
 
-###### Parameter
+###### Parametru
 
-`Speed`: a number value between 0.25 to 2
+`Viteză`: o valoare a numărului între 0.25 şi 2
 
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{0.5}}
 ```
 
-##### setLoop
+##### setBuclă
 
-Used to set whether to loop the playback.
+Folosit pentru a seta dacă să repete redarea.
 
-###### Parameter
+###### Parametru
 
-`Loop`: a boolean value used to set loop or not
+`Buclă`: o valoare booleană folosită pentru a seta bucla sau nu
 
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### Căutați
 
-Used to seek to a specific time position.
+Folosit pentru a căuta o anumită poziție de timp.
 
-###### Parameter
+###### Parametru
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Timp(uri)`: o valoare numerică, măsurată în secunde (e). De exemplu, pentru a căuta în poziția de timp 5:35, ați folosi valoarea 335.
 
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### amuțește
 
-Used to set mute or not.
+Folosit pentru a seta sunetul sau nu.
 
-###### Parameter
+###### Parametru
 
-`Mute`: a boolean value
+`mută`: o valoare booleană
 
-###### Supported components
+###### Componente suportate
 
 Video, Audio
 
-##### setAudioUrl
+##### seteazăUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Folosit pentru a seta URL-ul audio. Poate fi un Base64 sau un URL video pe site-urile media.
 
-###### Parameter
+###### Parametru
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Sursă audio`: o valoare a șirului folosită pentru a seta sursa audio. Ar putea fi URL sau bază64.
 
-###### Supported components
+###### Componente suportate
 
 Audio
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 ```
 
-##### slickNext
+##### linguriță
 
-Used to switch to the next image.
+Folosit pentru a comuta la imaginea următoare.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
 Carousel
 
-##### slickPrevious
+##### SlickAnterior
 
-Used to switch to the previous image.
+Folosit pentru a comuta la imaginea anterioară.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Folosit pentru a seta URL-ul sursă al IFrame.
 
-###### Parameter
+###### Parametru
 
-`Value`: a string value used to set the URL.
+`Value`: o valoare a șirului folosită pentru a seta URL-ul.
 
-###### Supported components
+###### Componente suportate
 
 IFrame
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Folosit pentru a seta marcajele pe hartă.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: o serie de obiecte. Câmpurile de latitudine și longitudine din fiecare obiect ar trebui să fie aceleași cu câmpurile din panoul din dreapta.
 
-###### Supported components
+###### Componente suportate
 
-Map
+Hartă
 
-###### Example
+###### Exemplu
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Folosit pentru a reseta marcajele la markerii impliciți.
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-###### Supported components
+###### Componente suportate
 
-Map
+Hartă
 
-#### Run script
+#### Rulează scriptul
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Prin scrierea unui script poți declanșa mai multe evenimente secvențiale. [Află mai multe](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Du-te la URL
 
-##### Parameter
+##### Parametru
 
-`URL`: String value. The URL to be opened
+`URL`: String value. Adresa URL ce va fi deschisă
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Tab nou`: Valoare Booleană. Folosit pentru a seta dacă se deschide URL-ul într-o filă nouă.
 
-#### Show notification
+#### Arată notificare
 
-##### Parameter
+##### Parametru
 
-`Title`: String value. The title of the notification
+`Title`: String value. Titlul notificării
 
-`Description`:  String value. The description of the notification
+`Descriere`: String value. Descrierea notificării
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Type`: Valoare String. Setați tipul prin opțiunile dropdown: Success, Eroare, Avertizare, Info
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Duration(ms)`: Valoare numerică. Durata afișării unei notificări.
 
-#### Copy to clipboard
+#### Copiază în clipboard
 
-##### Parameter
+##### Parametru
 
-`Value`: String value. The string to be copied.
+`Value`: Valoare String. Șirul de copiat.
 
-#### Set router
+#### Setare router
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+Când există mai multe pagini în aplicație, această funcție poate fi folosită pentru a comuta între pagini.
 
-##### Parameter
+##### Parametru
 
-`Page`: Use to set redirect to which page.
+`Pagină`: Foloseşte pentru a seta redirecţionarea pe care pagină.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Sub-pagină`: Foloseşte pentru a seta redirecţionarea către care sub-pagină a paginii selectate în parametrul paginii.
 
-#### Save to ILLA Drive
+#### Salvează în unitatea ILLA
 
-##### Parameter
+##### Parametru
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Nume fișier cu extensie`: String. Numele cu extensia fișierului după încărcarea pe ILLA Drive.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`Date fişier`: String. Base64 sau date brute, cum ar fi JSON, CSV, text simplu etc.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tip de fişier`: String. Una dintre următoarele valori: Auto, text simplu, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Folder`: String. Dosar destinație pentru încărcarea fișierului. Lăsați necompletat pentru a fi încărcat în dosarul rădăcină.
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`Permite anonim`: Bolean. Folosit pentru a seta dacă este permis accesul anonim al utilizatorului. Dacă intenționați să setați aplicația dvs. publică, accesul anonim trebuie să fie activat. Pentru securitatea datelor dvs., fișierele sau dosarele accesibile anonim trebuie plasate în folderul anonim.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Înlocuie`: Boolean. Folosit pentru a seta atunci când există fişiere cu acelaşi nume în acelaşi director, înlocuiţi fişierul existent cu un fişier nou sau redenumiţi automat fişierul nou.
 
-#### Download from ILLA Drive
+#### Descarcă de pe ILLA Drive
 
-##### Parameter
+##### Parametru
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Descărcare informaţie`: un array de obiecte ce include tinyURL şi fileID. Puteți utiliza selectorul de fișiere unitate component pentru a selecta fișiere de pe ILLA Drive și pentru a obține \`Descărcare informații ' prin intermediul drivePicker1.value
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Save as Zip`: Boolean. Folosit pentru a seta dacă se descarcă fișierele ca Zip.
 
-#### Download
+#### Descărcare
 
-Used to export data to your device.
+Folosit pentru a exporta date pe dispozitivul dvs.
 
-##### Parameter
+##### Parametru
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tip de fişier`: Una dintre următoarele valori: Auto, Plain, text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Când utilizăm "Auto", vom încerca să determinăm tipul de fișier bazat fie pe extensia fișierului, fie pe datele fișierului.
 
-`File name`: a name with extension.
+`Nume fișier`: un nume cu extensie.
 
-`Data`: data of the file.
+`Data`: datele fişierului.
 
-#### Set global data
+#### Setare date globale
 
-##### Set global data value
+##### Setați valoarea globală a datelor
 
-Used to set the value of gobalData
+Folosit pentru a seta valoarea gobalData
 
-###### Parameter
+###### Parametru
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`value`: the value to set
+`value`: valoarea de setat
 
-##### Set global data in
+##### Setare date globale în
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Când datele globale sunt o matrice sau un obiect, utilizaţi setGlobalDataIn pentru a modifica valoarea corespunzătoare unui index specific într-o array sau pentru a modifica valoarea corespunzătoare unei anumite chei dintr-un obiect.
 
-###### Parameter
+###### Parametru
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`cale`: indexul valorii pe care intenţionezi să o actualizezi în array sau cheia din obiect. De exemplu, pentru a seta a doua valoare in array, calea este 1 (indexul). Pentru a seta valoarea atributului numit key1, calea este cheia1.
 
-`value`: the value to set
+`value`: valoarea de setat
 
-#### Set local storage
+#### Setați stocarea locală
 
-##### clear
+##### curățare
 
-Used to clear the local storage
+Folosit pentru a goli stocarea locală
 
-###### Parameter
+###### Parametru
 
-No parameter
+Niciun parametru
 
-##### setValue
+##### valoare setată
 
-###### Parameter
+###### Parametru
 
-`key`: the displayName of local storage.
+`key`: afișarea numelui stocării locale.
 
-`value`: the value of the key.
+`value`: valoarea cheii.
 
-3.  ### Only run when
+### Rulează doar când
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+O valoare booleană folosită pentru a seta când managerul de evenimente ar putea fi declanșat. De exemplu, atunci când input1 este null, gestionarul de evenimente nu a putut fi declanșat: `{{input1.value!==""&input1.value!===undefined}}`
