@@ -67,9 +67,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       algolia: {
-        indexName: 'illa',
-        appId: 'POULYAT54V',
-        apiKey: '014113e7aad7db02a15e0aa4f9422338',
+        indexName: 'illacloud',
+        appId: 'WCMU2QUBCQ',
+        apiKey: '79360aecb1f60aae1df8c984107d92e5',
         contextualSearch: true,
       },
       navbar: {
