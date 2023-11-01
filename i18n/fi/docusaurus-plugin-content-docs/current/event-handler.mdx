@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Tapahtuman käsittelijä
+description: Lisää tapahtuman käsittelijä komponenttiin käynnistääksesi tapahtuman kun komponentin tila muuttuu.
 ---
 
-# Event handler
+# Tapahtuman käsittelijä
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Lisää tapahtuman käsittelijä komponenttiin käynnistääksesi tapahtuman kun komponentin tila muuttuu.
 
-## How-to
+## Miten
 
 <div style={{
 position: "relative",
@@ -15,43 +15,43 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Asetusten asetukset
 
-1.  ### Event
+### Tapahtuma
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Käytetään sen määrittämiseen, miten toiminto käynnistetään. Esimerkiksi, jos haluamme käynnistää restapi1 kun dataruudukko(taulukko) komponentti on päivitetty, voimme asettaa tapahtuman `virkistää`. Jos haluamme käynnistää restapi2 kun sellainen dataruudukko(taulukko) -komponentti on muutettu, voimme asettaa tapahtuman lajittelemaan muutoksen`. Jos haluamme käynnistää restapi3 kun painiketta napsautetaan, voimme asettaa tapahtuman `klikkaa\`.
 
-2.  ### Action
+### Toiminto
 
-#### Trigger action
+#### Käynnistimen toiminta
 
-Used to trigger an action created in this app
+Käytetään käynnistämään toiminto, joka on luotu tähän sovellukseen
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parametri**          | **vaaditaan tai ei**    | **kuvaus**                                        |
+| ---------------------- | ----------------------- | ------------------------------------------------- |
+| Toiminnon nimi         | `pakollinen`            | Valitse toiminto joka on luotu tähän sovellukseen |
 
-#### Control component
+#### Ohjaimen komponentti
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parametri**          | **vaaditaan tai ei**    | **kuvaus**                                                                                                                                                                 |
+| ---------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Komponentti            | `pakollinen`            | Valitse komponentti, joka on lisätty nykyiselle sivulle                                                                                                                    |
+| Menetelmä              | `pakollinen`            | Käytetään sen määrittämiseen, mitä ohjauskomponentti tekee. Eri menetelmät edellyttävät eri parametrien konfigurointia. Jäljempänä esitetään yksityiskohtaiset selitykset. |
 
 ##### setValue
 
-Used to set the value.
+Käytetään arvon määrittämiseen.
 
-###### Parameter
+###### Parametri
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Arvo`: Arvo voi olla `string` tai `number` tai `object` tai `boolean` tai `array`, joka riippuu komponentin tyypistä.
 
-###### Supported components
+###### Tuetut komponentit
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Komponentti                                                                                                                                                        | Parametrin tyyppi                                                     | Esimerkki                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, jakaja, Select, Radio Group, Radio Button, Radio Buttonm, Päivämäärä, Päivämäärä, Askeleet, Teksti, Bar Progress, Circle Progress | `string`                                                              |                                                                                                                                                                           |
+| `Hei world`                                                                                                                                                        |                                                                       |                                                                                                                                                                           |
 
 | JSON Editor
                                                                                                                                             | `string`
@@ -64,107 +64,107 @@ Used to set the value.
 
 ##### clearValue
 
-Used to clear the value.
+Käytetään tyhjentämään arvo.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Json Editor, Json Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Päivämäärä, Päivämäärä Range, Tietojen Aika, Päivämäärä Aika, Teksti, Rate, Bar Progress, Circle Progress, Aikajana, Jakaja
 
-##### focus
+##### kohdistus
 
-Used to focus on the component
+Käytetään keskittymään komponenttiin
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
 Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Kun olet asettanut komponentin validointiehdot, kuten sähköpostin muodossa, URL-muodossa tai vaadittu kenttä, voit käyttää `validate`-funktiota määrittääksesi, täyttääkö se vaatimukset. Jos se ei täytä vaatimuksia, näytetään vahvistusviesti. @ action: button
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Valinta, Multiselect, Checkbox Group, Radio Group, Radio Button, Päivämäärä, Päivämäärä Range, Päivämäärä, Lomake, Hinta
 
-##### clearValidation
+##### tyhjennys
 
-Used to clear the validation message.
+Käytetään validointiviestin tyhjennykseen.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Syöte, Numerosyöte, Editable Text, Text Area, Upload, Valinta, Multiselect, Checkbox Group, Radio Button, Päivämäärä, Päivämäärä Range, Päivämäärä Aika, Hinta
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Käytetään valitun Multiselectin arvon määrittämiseen. Muuttujan tulee olla taulukko.
 
-###### Parameter
+###### Parametri
 
-`Value`: an array of strings used to set the selected options.
+`Value`: joukko merkkijonoja, joita käytetään valittujen vaihtoehtojen asettamiseen.
 
-###### Supported components
+###### Tuetut komponentit
 
-Multiselect
+Monivalinta
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### lähetä
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Lähetä lomaketiedot. Kun lähetys menetelmä on käynnistetty, me ensin vahvistaa lomakkeen tiedot. Jos validointivirheitä esiintyy, lomakkeen lähetys estetään ja vastaavat virheilmoitukset näytetään. Vasta onnistuneen validoinnin jälkeen jäte jatkuu.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-JSON Schema Form, Form
+Json Schema Lomake, Lomake
 
-##### toggle
+##### ota käyttöön
 
-Used to switch the value from true to false or from false to true.
+Käytetään vaihtamaan arvo todesta toteen tai väärästä tosi.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Switch
+Vaihda
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Käytetään määrittämään alueen liukusäätimen oletusalkuarvo
 
-###### Parameter
+###### Parametri
 
-`Start value`: a number used to set the start value.
+`Aloitusarvo`: numero, jota käytetään määrittämään aloitusarvo.
 
-###### Supported components
+###### Tuetut komponentit
 
 Range Slider
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Käytetään määrittämään alueen liukusäätimen oletusloppuarvo
 
-###### Parameter
+###### Parametri
 
-`End value`: a number used to set the end value.
+`Loppuarvo`: numero, jota käytetään pääarvon määrittämiseen.
 
-###### Supported components
+###### Tuetut komponentit
 
 Range Slider
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{10}}
@@ -190,17 +190,17 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Käytetään oletusalkuarvon määrittämiseen
 
-###### Parameter
+###### Parametri
 
-`Start date/time`: a string used to set the start time/date.
+`Aloituspäivä/aika`: merkkijono, jota käytetään asettamaan aloitusaika/päivämäärä.
 
-###### Supported components
+###### Tuetut komponentit
 
-Date Range, Time Range
+Päivämäärä Range, Aikaväli
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 2023-09-09
@@ -208,17 +208,17 @@ Date Range, Time Range
 
 ##### setEndValue
 
-Used to set the default end value
+Käytetään oletusloppuarvon määrittämiseen
 
-###### Parameter
+###### Parametri
 
-`End date/time`: a string used to set the end time/date.
+`Päätä päiväys/aika`: merkkijono, jota käytetään päättymisajan/päivämäärän asettamiseen.
 
-###### Supported components
+###### Tuetut komponentit
 
-Date Range, Time Range
+Päivämäärä Range, Aikaväli
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Käytetään asettamaan kytkimet, joiden arvo on tosi
 
-###### Parameter
+###### Parametri
 
-`Value`: an array of strings used to set the options whose value is true .
+`Value`: joukko merkkijonoja käytetään asettamaan vaihtoehdot, joiden arvo on tosi .
 
-###### Supported components
+###### Tuetut komponentit
 
-Switch Group
+Vaihda Ryhmää
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,35 +244,35 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Käytä näppäintä, joka on näkymän merkkijonon arvo näytetyn näkymän asettamiseksi.
 
-###### Parameter
+###### Parametri
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: merkkijono, jota käytetään näyttämään mitä näkymää näytetään.  Avain on määritetty kontissa
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
-View 1
+Näytä 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Käytä indeksiä joka on lukuarvo, joka alkaa nollasta näkymän asettamiseksi näytettyyn näkymään.
 
-###### Parameter
+###### Parametri
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Indeksin`: numeron arvo. Käytä näkymän indeksiä määrittääksesi, minkä näkymän näytetään. @ info: whatsthis Indeksi alkaa nollasta.
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{1}}
@@ -280,113 +280,113 @@ Container
 
 ##### showNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Käytetään näyttämään seuraava näkymä. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
 
-###### Parameter
+###### Parametri
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start. (Automatic Copy)
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Käytetään näyttämään seuraava näkymä. Toisin kuin `showNextView(boolean)`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamistoiminnallisuuden ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka lopusta takaisin alkuun.
 
-###### Parameter
+###### Parametri
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start. (Automatic Copy)
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
 ##### showPreviousView
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Käytetään edellisen näkymän näyttämiseen. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
 
-###### Parameter
+###### Parametri
 
 `Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Käytetään edellisen näkymän näyttämiseen. Toisin kuin `showPreviousView`-funktion käytöksessä, tämä toiminto tarjoaa paremman näkymän vaihtamisen toiminnallisuuteen ohittamalla kaikki piilotetut näkymät siirtymän aikana. Parametri on totuusarvo, joka määrittää, onko silmukka alusta takaisin loppuun.
 
-###### Parameter
+###### Parametri
 
 `Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
 
-###### Supported components
+###### Tuetut komponentit
 
-Container
+Säiliö
 
 ##### reset
 
-Used to reset the value to default value.
+Käytetään palauttamaan arvo oletusarvoon.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Form
+Lomake
 
-##### resetValue
+##### nollausarvo
 
-Used to reset the value to default value.
+Käytetään palauttamaan arvo oletusarvoon.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Steps
+Vaiheet
 
 ##### openModal
 
-Used to open a modal
+Käytetään modaalin avaamiseen
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Modal
+Modaali
 
 ##### closeModal
 
-Used to close a modal
+Käytetään modaalin sulkemiseen
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Modal
+Modaali
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Käytetään kuvan lähteen URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa kuvan verkossa.
 
-###### Parameter
+###### Parametri
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: merkkijonoarvo, jota käytetään kuvan lähteen asettamiseen. Se voisi olla URL tai perusta64.
 
-###### Supported components
+###### Tuetut komponentit
 
-Image
+Kuva
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
@@ -398,143 +398,143 @@ data:image/png;base64,iVBORw0KGgoAA...II
 
 ##### clearReplyMessage
 
-Used to clear the quoted reply message above the input box.
+Käytetään syötelaatikon yläpuolella olevan lainattujen vastausviestin tyhjentämiseen.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Chat
+Keskustelu
 
 ##### setPrimaryValue
 
-Used to set the primary value of statistics.
+Käytetään tilastojen ensisijaisen arvon määrittämiseen.
 
-###### Parameter
+###### Parametri
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Primary value`: lukuarvo, jota käytetään tilastojen ensisijaisen arvon määrittämiseen.
 
-###### Supported components
+###### Tuetut komponentit
 
-Statistics
+Tilastot
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### nollausPrimaryValue
 
-Used to reset the primary value to the default primary value of statistics.
+Käytetään tilastojen ensisijaisen arvon palauttamiseen oletusarvoiseen ensisijaiseen arvoon.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Statistics
+Tilastot
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Käytetään tiedoston URL-osoitteen asettamiseen. Se voi olla Base64 tai URL-osoite, joka osoittaa PDF verkossa.
 
-###### Parameter
+###### Parametri
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF source`: merkkijonon arvo, jota käytetään asettamaan PDF lähde. Se voisi olla URL tai perusta64.
 
-###### Supported components
+###### Tuetut komponentit
 
 PDF
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### toista
 
-Used to play video or audio.
+Käytetään videon tai äänen toistamiseen.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-##### pause
+##### tauko
 
-Used to pause video or audio.
+Käytetään videon tai äänen pysäyttämiseen.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-##### showControls
+##### showOhjaukset
 
-Used to set whether to show the controls.
+Käytetään sen määrittämiseen, näyttääkö hallintalaite.
 
-###### Parameter
+###### Parametri
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Näytä asetukset`: totuusarvo, jota käytetään asettamaan, näytetäänkö hallintalaite.
 
-###### Supported components
-
-Video
-
-##### setVideoUrl
-
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
-
-###### Parameter
-
-`Video source`: a string value used to set the video source. It could be URL or base64.
-
-###### Supported components
+###### Tuetut komponentit
 
 Video
 
-###### Example
+##### setVideoURL-osoite
+
+Käytetään videon URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
+
+###### Parametri
+
+`Video source`: merkkijonon arvo, jota käytetään videon lähteen asettamiseen. Se voisi olla URL tai perusta64.
+
+###### Tuetut komponentit
+
+Video
+
+###### Esimerkki
 
 ```JavaScript
-video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolume(numero)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Käytetään äänenvoimakkuuden asettamiseen. Parametri on lukuarvo välillä 0 - 1.
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-###### Example
+###### Esimerkki
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### setNopeus
 
-Used to set the speed.
+Käytetään nopeuden määrittämiseen.
 
-###### Parameter
+###### Parametri
 
-`Speed`: a number value between 0.25 to 2
+`Nopeus`: lukuarvo välillä 0,25 - 2
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{0.5}}
@@ -542,17 +542,17 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Käytetään sen määrittämiseen, kiertääkö toistoa uudelleen.
 
-###### Parameter
+###### Parametri
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: totuusarvo, jota käytetään silmukan asettamiseen tai ei
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{true}}
@@ -560,47 +560,47 @@ Video, Audio
 
 ##### seekTo
 
-Used to seek to a specific time position.
+Käytetään tietyn ajankohdan etsimiseen.
 
-###### Parameter
+###### Parametri
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(s)`: lukuarvo, mitattuna sekunteina (s). Esimerkiksi etsimään aikaa asema 5:35, sinun pitäisi käyttää arvoa 335.
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### mykistys
 
-Used to set mute or not.
+Käytetään mykistyksen asettamiseen vai ei.
 
-###### Parameter
+###### Parametri
 
-`Mute`: a boolean value
+`Mykistä`: totuusarvo
 
-###### Supported components
+###### Tuetut komponentit
 
-Video, Audio
+Video, Ääni
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Käytetään äänen URL-osoitteen asettamiseen. Se voi olla Base64 tai videon URL median verkkosivuilla.
 
-###### Parameter
+###### Parametri
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Audio source`: merkkijonon arvo, jota käytetään äänen lähteen asettamiseen. Se voisi olla URL tai perusta64.
 
-###### Supported components
+###### Tuetut komponentit
 
-Audio
+Ääni
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
@@ -608,41 +608,41 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
 ##### slickNext
 
-Used to switch to the next image.
+Käytetään siirryttäessä seuraavaan kuvaan.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
 Carousel
 
-##### slickPrevious
+##### slickEdellinen
 
-Used to switch to the previous image.
+Käytetään vaihtamaan edelliseen kuvaan.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Käytetään IFramen lähteen URL-osoitteen asettamiseen.
 
-###### Parameter
+###### Parametri
 
-`Value`: a string value used to set the URL.
+`Arvo`: merkkijonoarvo, jota käytetään URL-osoitteen asettamiseen.
 
-###### Supported components
+###### Tuetut komponentit
 
 IFrame
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Käytetään asettamaan merkkimäärät kartalle.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: joukko esineitä. Kunkin objektin leveys- ja pituusastekenttien olisi oltava samat kuin oikeanpuoleisessa paneelissa olevien kenttien.
 
-###### Supported components
+###### Tuetut komponentit
 
-Map
+Kartta
 
-###### Example
+###### Esimerkki
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Käytetään kun merkit palautetaan oletusarvoisiin merkkeihin.
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
-###### Supported components
+###### Tuetut komponentit
 
-Map
+Kartta
 
-#### Run script
+#### Suorita skripti
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Kirjoittamalla skriptin, voit laukaista useita tapahtumia järjestyksessä. [Lue lisää](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Siirry URL-osoitteeseen
 
-##### Parameter
+##### Parametri
 
-`URL`: String value. The URL to be opened
+`URL`: merkkijonon arvo. Avattava URL-osoite
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Uusi välilehte`: Totuusarvo. Käytetään sen määrittämiseen, avataanko URL-osoite uudessa välilehdessä.
 
-#### Show notification
+#### Näytä ilmoitus
 
-##### Parameter
+##### Parametri
 
-`Title`: String value. The title of the notification
+`Title`: String value. Ilmoituksen otsikko
 
-`Description`:  String value. The description of the notification
+`Kuvaus`: merkkijonon arvo. Ilmoituksen kuvaus ja kuvaus
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+\`Tyyppi: Merkkijonon arvo. Aseta tyyppi pudotusvalintojen kautta: Onnistus, Virhe, Varoitus, Info
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Kesto(ms)`: Lukuarvo. Ilmoituksen esittämisen kesto (kesto).
 
-#### Copy to clipboard
+#### Kopioi leikepöydälle
 
-##### Parameter
+##### Parametri
 
-`Value`: String value. The string to be copied.
+`Arvo`: merkkijonon arvo. Kopioitava merkkijono. @ info: whatsthis
 
-#### Set router
+#### Aseta reititin
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+Kun sovelluksessa on useita sivuja, tätä toimintoa voidaan käyttää vaihtamaan sivujen välillä.
 
-##### Parameter
+##### Parametri
 
-`Page`: Use to set redirect to which page.
+`Page`: Käytä uudelleenohjausta tälle sivulle.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Alasivu`: Käytä uudelleenohjausta mihin sivun alasivulle on valittu sivun parametri.
 
-#### Save to ILLA Drive
+#### Tallenna ILLA Drivelle
 
-##### Parameter
+##### Parametri
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Tiedostonimen laajennus`: Merkkijono. Tiedoston nimi ja laajennus ILLA Drivelle latauksen jälkeen.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`Tiedoston tiedot`: merkkijono. Base64 tai raaka tiedostotiedot, kuten JSON, CSV, yksinkertainen teksti jne.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tiedostotyyppi`: Merkkijono. Yksi seuraavista arvoista: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Kansio`: Merkkijono. Kohdekansio tiedostojen lataamista varten. Jätä tyhjäksi ladataksesi pääkansioon. @ info: whatsthis
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`Salli anonyymi`: Bolean. Käytetään sen määrittämiseen, onko anonyymi käyttöoikeus sallittu. Jos aiot asettaa hakemuksesi julkiseksi, anonyymi pääsy on otettava käyttöön. Jotta tietosi, tiedostot tai kansiot olisivat saatavilla anonyymisti, ne on sijoitettava anonyymiin kansioon.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Korvaa`: Totuus. Käytetään kun on olemassa tiedostoja, joilla on sama nimi samassa hakemistossa, korvaa olemassa olevan tiedoston uudella tiedostolla tai nimeä uusi tiedosto automaattisesti uudelleen.
 
-#### Download from ILLA Drive
+#### Lataa ILLA Drivesta
 
-##### Parameter
+##### Parametri
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Lataa info`: joukko esineitä, mukaan lukien tinyURL ja fileID. Voit käyttää komponentin Drive-tiedostonvalitsinta valitaksesi tiedostoja ILLA Drivesta ja saada `Download info` drivePicker1.value kautta
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Tallenna Zip`: Boolean. Käytetään sen määrittämiseen, ladataako tiedostot Zip:nä.
 
-#### Download
+#### Lataa
 
-Used to export data to your device.
+Käytetään viemään tietoja laitteeseesi.
 
-##### Parameter
+##### Parametri
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Tiedostotyyppi`: Yksi seuraavista arvoista: Auto, Plain teksti, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Kun käytät "Auto", yritämme määrittää tiedostotyypin, joka perustuu joko tiedostopäätteeseen tai tiedostoon.
 
-`File name`: a name with extension.
+`Tiedoston nimi`: nimi, jolla on pääte.
 
-`Data`: data of the file.
+`Data`: tiedoston tiedot.
 
-#### Set global data
+#### Aseta yleiset tiedot
 
-##### Set global data value
+##### Aseta yleinen datan arvo
 
-Used to set the value of gobalData
+Käytetään gobalDatan arvon määrittämiseen
 
-###### Parameter
+###### Parametri
 
-`key`: the displayName of globalData.
+`key`: globalDatan näyttö.
 
-`value`: the value to set
+`value`: asetettu arvo
 
-##### Set global data in
+##### Aseta yleiset tiedot
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Kun globaali data on array tai objekti, käytä setGlobalDataIn -toimintoa muuttaaksesi tiettyä indeksiä vastaavaa arvoa taulukon muodossa tai muuttaaksesi tiettyä avainta vastaavaa arvoa.
 
-###### Parameter
+###### Parametri
 
-`key`: the displayName of globalData.
+`key`: globalDatan näyttö.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: sen arvon indeksi, jota aiot päivittää taulukkoon tai objektin avaimeen. Esimerkiksi, asettaa toinen arvo taulukossa, polku on 1 (indeksi). Määrittääksesi attribuutin nimisen avaimen arvon, polku on avain1.
 
-`value`: the value to set
+`value`: asetettu arvo
 
-#### Set local storage
+#### Aseta paikallinen tallennustila
 
-##### clear
+##### tyhjennä
 
-Used to clear the local storage
+Käytetään paikallisen tallennustilan tyhjentämiseen
 
-###### Parameter
+###### Parametri
 
-No parameter
+Ei parametria
 
 ##### setValue
 
-###### Parameter
+###### Parametri
 
-`key`: the displayName of local storage.
+`key`: paikallisen tallennustilan näyttönimi.
 
-`value`: the value of the key.
+`value`: avaimen arvo.
 
-3.  ### Only run when
+### Aja vain kun
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+Totuusarvo, jota käytetään määritettäessä, kun tapahtuman käsittelijä voi laukaista. Esimerkiksi, kun input1 on null, tapahtumankäsittelijää ei voitu käynnistää: `{input1.value!==""&input1.value!==undefined}`
