@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Обработчик события
+description: Добавить обработчик событий в компонент, чтобы инициировать событие, когда состояние компонента изменится.
 ---
 
-# Event handler
+# Обработчик события
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Добавить обработчик событий в компонент, чтобы инициировать событие, когда состояние компонента изменится.
 
-## How-to
+## Инструкции
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Параметры конфигурации
 
-1.  ### Event
+### Событие
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Используется для установки вызова действия. Например, если мы хотим вызвать restapi1, когда обновляется компонент сетки данных, мы можем установить событие на `refresh`. Если мы хотим вызвать restapi2, когда изменится вид компонента сетки данных, мы можем установить событие на «сортировать изменения». Если мы хотим вызвать restapi3 при нажатии кнопки, мы можем установить событие в `click`.
 
-2.  ### Action
+### Действие
 
-#### Trigger action
+#### Действие триггера
 
-Used to trigger an action created in this app
+Используется для запуска действия, созданного в этом приложении
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **параметр**              | **требуется или нет**  | **описание**                                   |
+| ------------------------- | ---------------------- | ---------------------------------------------- |
+| Название действия         | «требуется»            | Выберите действие, созданное в этом приложении |
 
-#### Control component
+#### Компонент управления
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **параметр**        | **требуется или нет**  | **описание**                                                                                                                                                       |
+| ------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Компонент           | «требуется»            | Выберите компонент, добавленный на текущую страницу                                                                                                                |
+| Метод               | «требуется»            | Используется для установки того, что делает управляющий компонент. Различные методы требуют настройки различных параметров. Подробные разъяснения приводятся ниже. |
 
 ##### setValue
 
-Used to set the value.
+Используется для установки значения.
 
-###### Parameter
+###### Параметр
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Value`: Значение может быть `string` или `number` или `object` или `boolean` или `array`, который зависит от типа компонента.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Компонент                                                                                                                                                          | Тип параметра                                                     | Пример                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Шаги, Text, Bar Progress, Круг прогресса              | `строка`                                                          |                                                                                                                                                                        |
+| `Привет мир`                                                                                                                                                       |                                                                   |                                                                                                                                                                        |
 
 | JSON Editor
                                                                                                                                             | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "none", "none", "Телефон": "1-800-KICKASS" }` |
+| Линия времени | `string`, Разделяйте значения различных узлов запятой (,) | `Первый этап, второй этап` |
+| Номер входа, Слайдер, Оцените | `number` | `{{1000}}` |
+| Сменить | `boolean` | `{{false}}` |
+| Форма схемы JSON, Форма | `object` | `{{ "firstName": "Chuck", "фамилия": "Норрис", "век": 80, "био": "Круглые кикеры с 1940", "пароль": "нет", "телефон": "1-800-KICKASS" } }` |
+| Чекбокс Группа, Каскадер | `array` | `{{["media_source_2","campaign_2-1"]}}` |
 
 ##### clearValue
 
-Used to clear the value.
+Используется для очистки значения.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Каскадер, Радио Группа, Радио Кнопка, Дата, Диапазон дат, Время даты, Время, Текст, Ставка, Прогресс, Круглый Прогресс, Линия времени, Разделитель времени
 
-##### focus
+##### фокус
 
-Used to focus on the component
+Используется для фокусировки на компоненте
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Когда вы устанавливаете условия проверки для компонента, такие как формат электронной почты, формат URL, или требуемое поле, вы можете использовать функцию «validate», чтобы определить, соответствует ли она требованиям. Если это не соответствует требованиям, будет показано сообщение о валидации.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Вход, числовый ввод, редактируемый текст, текстовая область, Отдата, Выбрать, Multiselect, Checkbox Group, Радио Группа, Радио кнопка, Дата, Дата, Диапазон дат, Форм, Процент
 
-##### clearValidation
+##### проверка
 
-Used to clear the validation message.
+Используется для очистки сообщения о подтверждении.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Вход, числовое значение, редактируемый текст, текстовая область, Отдата, Выбрать, Multiselect, Checkbox Group, Радио кнопка, Дата, Диапазон дат, Ставка
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Используется для установки выбранного значения Multiselect. Параметр должен быть массивом.
 
-###### Parameter
+###### Параметр
 
-`Value`: an array of strings used to set the selected options.
+`Value`: массив строк, используемых для установки выбранных параметров.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Multiselect
+Множественный выбор
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### отправить
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Отправить данные формы. При срабатывании метода отправки, мы сначала проверим данные формы. Если есть ошибки проверки, отправка формы будет предотвращена и будут показаны соответствующие сообщения об ошибках. Публикация продолжается только после успешной проверки.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-JSON Schema Form, Form
+Форма схемы JSON, Форма
 
-##### toggle
+##### переключить
 
-Used to switch the value from true to false or from false to true.
+Используется для переключения значения от true к false или с false на true.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Switch
+Переключатель
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Используется для установки начального значения по умолчанию для ползунка диапазона
 
-###### Parameter
+###### Параметр
 
-`Start value`: a number used to set the start value.
+`Начальное значение`: число, используемое для установки начального значения.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 Range Slider
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Используется для установки конечного значения по умолчанию для ползунка диапазона
 
-###### Parameter
+###### Параметр
 
-`End value`: a number used to set the end value.
+`Конечное значение`: число, используемое для установки конечного значения.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 Range Slider
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{10}}
@@ -190,17 +190,17 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Используется для установки начального значения по умолчанию
 
-###### Parameter
+###### Параметр
 
-`Start date/time`: a string used to set the start time/date.
+`Дата начала/время`: строка, используемая для установки времени начала/даты.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Date Range, Time Range
+Диапазон дат, диапазон времени
 
-###### Example
+###### Пример
 
 ```JavaScript
 2023-09-09
@@ -208,17 +208,17 @@ Date Range, Time Range
 
 ##### setEndValue
 
-Used to set the default end value
+Используется для установки конечного значения по умолчанию
 
-###### Parameter
+###### Параметр
 
-`End date/time`: a string used to set the end time/date.
+`Дата окончания/время окончания`: строка, используемая для задания времени окончания/даты.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Date Range, Time Range
+Диапазон дат, диапазон времени
 
-###### Example
+###### Пример
 
 ```JavaScript
 2023-10-09
@@ -226,315 +226,315 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Используется для установки переключателей, значение которых истинно
 
-###### Parameter
+###### Параметр
 
-`Value`: an array of strings used to set the options whose value is true .
+`Value`: массив строк, используемых для установки параметров, значение которых истинно .
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Switch Group
+Переключить группу
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### setCurrentViewKey
+##### Установить текущий ключ просмотра
 
-Use the key which is a string value of the view to set the shown view.
+Используйте ключ, который является строковым значением представления, чтобы установить показанный вид.
 
-###### Parameter
+###### Параметр
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Ключ`: строка, используемая для установки вида для отображения.  Ключ настроен в контейнере
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
-###### Example
+###### Пример
 
 ```JavaScript
-View 1
+Просмотр 1
 ```
 
-##### setCurrentViewIndex
+##### установить данный индекс
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Используйте индекс, который является числом, начинающимся с 0 просмотра, чтобы установить показанный вид.
 
-###### Parameter
+###### Параметр
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: числовое значение. Используйте индекс представления, чтобы установить, какой вид показывать. Индекс начинается с 0.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{1}}
 ```
 
-##### showNextView
+##### показать NextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Используется для показа следующего вида. Параметр является логическим значением, определяющим цикл от конца до начала.
 
-###### Parameter
+###### Параметр
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Вернуться к началу`: логическое значение ( используйте переключатель, чтобы установить ) для установки цикла для начала.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Используется для показа следующего видимого вида. В отличие от поведения функции `showNextView(boolean)`, эта функция позволяет улучшить переключение видов, пропустив любые скрытые виды во время перехода. Параметр является логическим значением, определяющим цикл от конца до начала.
 
-###### Parameter
+###### Параметр
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Вернуться к началу`: логическое значение ( используйте переключатель, чтобы установить ) для установки цикла для начала.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
-##### showPreviousView
+##### показать Предыдущий Вид
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Используется для отображения предыдущего вида. Параметр является логическим значением, определяющим цикл от начала назад до конца.
 
-###### Parameter
+###### Параметр
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Начать цикл с задним значением`: логическое значение ( используйте переключатель для установки ) для установки начала цикла обратно.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
-###### showPreviousVisibleView
+###### показать Предыдущий Видимый Вид
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Используется для отображения предыдущего видимого вида. В отличие от поведения функции `showPreviousView`, эта функция предоставляет улучшенную функциональность переключения вида, пропустив скрытые виды во время перехода. Параметр является логическим значением, определяющим цикл от начала назад до конца.
 
-###### Parameter
+###### Параметр
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Начать цикл с задним значением`: логическое значение ( используйте переключатель для установки ) для установки начала цикла обратно.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Container
+Контейнер
 
 ##### reset
 
-Used to reset the value to default value.
+Используется для сброса значения по умолчанию.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Form
+Форма
 
-##### resetValue
+##### сбросить Значение
 
-Used to reset the value to default value.
+Используется для сброса значения по умолчанию.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Steps
+Шаги
 
 ##### openModal
 
-Used to open a modal
+Используется для открытия модаля
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Modal
+Модаль
 
-##### closeModal
+##### закрыть модальное
 
-Used to close a modal
+Используется для закрытия модаля
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Modal
+Модаль
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Используется для установки URL источника изображения. Это может быть Base64 или URL, указывающий на изображение в Интернете.
 
-###### Parameter
+###### Параметр
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: строковое значение, используемое для установки источника изображения. Это может быть URL или base64.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Image
+Изображение
 
-###### Example
+###### Пример
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
 ```
 
 ```JavaScript
-data:image/png;base64,iVBORw0KGgoAA...II
+data:image/png;base64,iVBORw0KGgoA...II
 ```
 
-##### clearReplyMessage
+##### очистить сообщение
 
-Used to clear the quoted reply message above the input box.
+Используется для очистки цитируемого ответа над окном ввода.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Chat
+Чат
 
-##### setPrimaryValue
+##### установить Основное Значение
 
-Used to set the primary value of statistics.
+Используется для установки первичного значения статистики.
 
-###### Parameter
+###### Параметр
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Первичное значение`: число, используемое для задания первичного значения статистики.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Statistics
+Статистика
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### сбросить первичное значение
 
-Used to reset the primary value to the default primary value of statistics.
+Используется для сброса основного значения по умолчанию первичной статистики.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Statistics
+Статистика
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Используется для установки URL файла. Это может быть Base64 или URL, указывающий на PDF в Интернете.
 
-###### Parameter
+###### Параметр
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`Источник PDF`: строка, используемая для установки источника PDF. Это может быть URL или base64.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 PDF
 
-###### Example
+###### Пример
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### играть
 
-Used to play video or audio.
+Используется для воспроизведения видео или аудио.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-##### pause
+##### пауза
 
-Used to pause video or audio.
+Используется для приостановки видео или аудио.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-##### showControls
+##### показать управление
 
-Used to set whether to show the controls.
+Используется для установки отображения элементов.
 
-###### Parameter
+###### Параметр
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Показать управления`: логическое значение, используемое для отображения управления.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video
+Видео
 
-##### setVideoUrl
+##### задать адрес видео
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Используется для установки URL видео. Это может быть Base64 или видео URL на медиа-сайтах.
 
-###### Parameter
+###### Параметр
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Источник видео`: строковое значение, используемое для установки источника видео. Это может быть URL или base64.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video
+Видео
 
-###### Example
+###### Пример
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolum(число)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Используется для установки громкости. Параметр является числовым значением от 0 до 1.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-###### Example
+###### Пример
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### настройки скорости
 
-Used to set the speed.
+Используется для установки скорости.
 
-###### Parameter
+###### Параметр
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: число в диапазоне от 0,25 до 2
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{0.5}}
@@ -542,107 +542,107 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Используется для установки цикла воспроизведения.
 
-###### Parameter
+###### Параметр
 
-`Loop`: a boolean value used to set loop or not
+`Цикл`: логическое значение, используемое для задания цикла или нет
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### ищут
 
-Used to seek to a specific time position.
+Используется для поиска конкретной временной позиции.
 
-###### Parameter
+###### Параметр
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(s)`: число, измеряемое в секундах (секундах). Например, для поиска временной позиции 5:35, вы можете использовать значение 335.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### заглушить
 
-Used to set mute or not.
+Используется для отключения звука или нет.
 
-###### Parameter
+###### Параметр
 
-`Mute`: a boolean value
+`Выключить`: логическое значение
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Video, Audio
+Видео, аудио
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Используется для установки URL звука. Это может быть Base64 или видео URL на медиа-сайтах.
 
-###### Parameter
+###### Параметр
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Источник аудио`: строковое значение, используемое для установки источника звука. Это может быть URL или base64.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Audio
+Аудио
 
-###### Example
+###### Пример
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 ```
 
-##### slickNext
+##### след
 
-Used to switch to the next image.
+Используется для переключения на следующее изображение.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 Carousel
 
-##### slickPrevious
+##### штрих Предыдущий
 
-Used to switch to the previous image.
+Используется для переключения на предыдущее изображение.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Используется для установки исходного URL IFrame.
 
-###### Parameter
+###### Параметр
 
-`Value`: a string value used to set the URL.
+`Значение`: строковое значение, используемое для задания URL.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
 IFrame
 
-###### Example
+###### Пример
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Используется для установки маркеров на карте.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: массив объектов. Поля широты и долготы в каждом объекте должны совпадать с полями, установленными на правой панели.
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Map
+Карта
 
-###### Example
+###### Пример
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Используется для сброса маркеров к маркерам по умолчанию.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
-###### Supported components
+###### Поддерживаемые компоненты
 
-Map
+Карта
 
-#### Run script
+#### Выполнить скрипт
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Написав скрипт, вы можете инициировать несколько событий в последовательности. [Подробнее](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Перейти по URL
 
-##### Parameter
+##### Параметр
 
-`URL`: String value. The URL to be opened
+`URL`: Строковое значение. URL-адрес, который будет открыт
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Новая вкладка`: логическое значение. Используется для установки открытия URL на новой вкладке.
 
-#### Show notification
+#### Показать уведомление
 
-##### Parameter
+##### Параметр
 
-`Title`: String value. The title of the notification
+`Title`: String value. Заголовок уведомления
 
-`Description`:  String value. The description of the notification
+`Описание`: Строковое значение. Описание уведомления
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Тип`: Строковое значение. Установить тип через выпадающий список: Успех, Ошибка, Предупреждение, Информация
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Duration(ms)`: значение числа. Длительность отображения уведомления.
 
-#### Copy to clipboard
+#### Копировать в буфер обмена
 
-##### Parameter
+##### Параметр
 
-`Value`: String value. The string to be copied.
+`Value`: Строковое значение. Строка для копирования.
 
-#### Set router
+#### Установить маршрутизатор
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+При наличии нескольких страниц в приложении, эта функция может быть использована для переключения между страницами.
 
-##### Parameter
+##### Параметр
 
-`Page`: Use to set redirect to which page.
+`Page`: Используйте для перенаправления на какую страницу.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Подстраница`: Используйте для перенаправления на подстраницу выбранную в параметрах страницы.
 
-#### Save to ILLA Drive
+#### Сохранить в ILLA Drive
 
-##### Parameter
+##### Параметр
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Имя файла с расширением`: строка. Имя с расширением файла после загрузки на ILLA Drive.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`Данные файла`: строка. Base64 или необработанные файловые данные, такие как JSON, CSV, простой текст и т.д.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Тип файла`: строка. Одно из следующих значений: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При использовании "Auto" мы попытаемся определить тип файла на основе либо расширения файла, либо данных файла.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Папка`: строка. Целевая папка для загрузки файла. Оставьте пустым для загрузки в корневую папку.
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`Разрешить анонимность`: Bolean. Используется для установки разрешения анонимного доступа пользователя. Если вы планируете сделать ваше приложение общедоступным, необходимо включить анонимный доступ. Для безопасности ваших данных, файлов или папок, доступных анонимно, необходимо поместить в папку анонимно.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+Заменить\`: логическое значение. Используется для установки, когда в той же директории есть файлы с одинаковым именем, заменить существующий файл новым файлом или автоматически переименовать новый файл.
 
-#### Download from ILLA Drive
+#### Скачать из ILLA Drive
 
-##### Parameter
+##### Параметр
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Скачать информацию`: массив объектов, включая tinyURL и fileID. Вы можете использовать компонент Выбор файлов диска, чтобы выбрать файлы из ILLA Drive и получить `Скачать информацию` через DrivePicker1.value
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Сохранить как Zip`: Логический. Используется для установки загрузки файлов как Zip.
 
-#### Download
+#### Скачать
 
-Used to export data to your device.
+Используется для экспорта данных на ваше устройство.
 
-##### Parameter
+##### Параметр
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Тип файла`: Одно из следующих значений: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При использовании "Auto" мы попытаемся определить тип файла на основе либо расширения файла, либо данных файла.
 
-`File name`: a name with extension.
+`Имя файла`: имя с расширением.
 
-`Data`: data of the file.
+`Данные`: данные файла.
 
-#### Set global data
+#### Установить глобальные данные
 
-##### Set global data value
+##### Установка значения глобальных данных
 
-Used to set the value of gobalData
+Используется для установки значения gobalData
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of globalData.
+`key`: отображаемое Имя globalData.
 
-`value`: the value to set
+`value`: значение для задания
 
-##### Set global data in
+##### Установить глобальные данные в
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Когда глобальные данные являются массивом или объектом, использовать setGlobalDataIn для изменения значения, соответствующего конкретному индексу в массиве, или для изменения значения, соответствующего конкретному ключу в объекте.
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of globalData.
+`key`: отображаемое Имя globalData.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: индекс значения, которое вы собираетесь обновлять в массиве или ключе объекта. Например, для установки второго значения массива путь равен 1 (индекс). Для установки значения атрибута именованного ключ1, путь - ключ1.
 
-`value`: the value to set
+`value`: значение для задания
 
-#### Set local storage
+#### Установка локального хранилища
 
-##### clear
+##### очистить
 
-Used to clear the local storage
+Используется для очистки локального хранилища
 
-###### Parameter
+###### Параметр
 
-No parameter
+Нет параметра
 
 ##### setValue
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of local storage.
+`key`: отображаемое имя локального хранилища.
 
-`value`: the value of the key.
+`value`: значение ключа.
 
-3.  ### Only run when
+### Запускать только при
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+Логическое значение, используемое для задания обработчика событий. Например, когда input1 не может быть запущен обработчик событий: `{{input1.value!==""&&input1.value!==undefined}}`
