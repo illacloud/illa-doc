@@ -1,13 +1,13 @@
 ---
 title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+description: Voeg een event handler toe aan de component om een gebeurtenis te activeren wanneer de status van de component verandert.
 ---
 
 # Event handler
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Voeg een event handler toe aan de component om een gebeurtenis te activeren wanneer de status van de component verandert.
 
-## How-to
+## Hoe-to
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Configuratie opties
 
-1.  ### Event
+### Gebeurtenis
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Wordt gebruikt om in te stellen hoe de actie te triggeren. Bijvoorbeeld, als we restapi1 willen starten wanneer het data raster (tabel) component wordt vernieuwd, kunnen we de event instellen op `vernieuwen`. Als we restapi2 willen activeren wanneer het soort datalief (tabel) onderdeel is gewijzigd, kunnen we de gebeurtenis instellen op `sorteer wijziging`. Als we restapi3 willen activeren wanneer op de knop wordt geklikt, kunnen we het event instellen op `klik`.
 
-2.  ### Action
+### actie
 
-#### Trigger action
+#### Trigger actie
 
-Used to trigger an action created in this app
+Gebruikt om een actie te activeren gemaakt in deze app
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parameter**      | **vereist of niet**    | **beschrijving**                        |
+| ------------------ | ---------------------- | --------------------------------------- |
+| Actie naam         | 'verplicht'            | Selecteer een actie gemaakt in deze app |
 
-#### Control component
+#### Beheer component
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parameter**        | **vereist of niet**    | **beschrijving**                                                                                                                                                                  |
+| -------------------- | ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Onderdeel            | 'verplicht'            | Selecteer een component toegevoegd aan de huidige pagina                                                                                                                          |
+| Methode              | 'verplicht'            | Wordt gebruikt om in te stellen wat het beheercomponent doet. Verschillende methoden vereisen verschillende parameters om te configureren. Gedetailleerde uitleg staat hieronder. |
 
-##### setValue
+##### stelwaarde
 
-Used to set the value.
-
-###### Parameter
-
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
-
-###### Supported components
-
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
-
-| JSON Editor
-                                                                                                                                            | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
-
-##### clearValue
-
-Used to clear the value.
+Gebruikt om de waarde in te stellen.
 
 ###### Parameter
 
-No parameter
+`Value`: De waarde zou een `string` of `number` of `object` of `boolean` of `array` kunnen zijn, wat afhankelijk is van het componenttype.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+| Onderdeel                                                                                                                                                            | Parameter type                                                     | Voorbeeld                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, bewerkbare Tekst, Tekstgebied, Afdeling, Select, Radio Group, Radio Button, Radio Buttonm, Datum, Datum van tijd, Stap, Tekst, Voortgang, Cirkel Progress     | `string`                                                           |                                                                                                                                                                           |
+| `Hallo wereld`                                                                                                                                                       |                                                                    |                                                                                                                                                                           |
 
-##### focus
+・JSON Editor
+                                                                                                                                            ・`string`
+                                                      \## `{ "firstName": "Chuck", "Achternaam": "Noors", "leeftijd": 80, "bio": "Geluidscategorie sinds 1940", "wachtwoord": "geen", "half-honing": "1-800-KICKASS" }" }` (IN
+Timeline ☆ `string`, Scheid de waarden van verschillende nodes door een komma (,) ● `De eerste mijlpaal, hij tweede milestone` ×
+ľNummer Input, Schuifregelaar, Beoordeel ± `number`{{1000}}` ` {{1000}}` `
+★Switch ## `boolean`{{false}}` ` `
+}}JSON Schema Form, Form →`object`{{ "firstName": "Chuck", "lastName": "Noors, "leeftijd", "leeftijd": 80, "bio": "Geluidsafkicken sinds 1940", "wachtwoord: "geen", "concerthon": "1-800-KICKASS" } }}` }}
+veribox Group, Cascader /h `array`{{["media_source_2","campaign_2-1"]}}\`
 
-Used to focus on the component
+##### leeswaarde
+
+Gebruikt om de waarde te wissen.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Input, Nummer Input, bewerkbare Tekst, Tekstgebied, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Groep, Cascader, Radio Group, Radio Button, Datum, Datum, Datumbereik, Datumtijd, Datumtijd, DatumTijd, Tekst, Prijsgang, Cirkelvoortgang, Tijdlijn, Verscheider
+
+##### scherpstellen
+
+Wordt gebruikt om te focussen op het onderdeel
+
+###### Parameter
+
+Geen parameter
+
+###### Ondersteunde componenten
+
+Input, Nummerinvoer, bewerkbare tekst, tekstgebied, JSON-editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Wanneer u de validatievoorwaarden voor een component heeft ingesteld, zoals e-mailformaat, URL-formaat, of verplicht veld, u kunt de 'validate' functie gebruiken om te bepalen of het aan de vereisten voldoet. Als het niet aan de vereisten voldoet, wordt een validatiebericht weergegeven.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Input, Nummer Input, bewerkbare Tekst, Bewerkbare Tekst, Upload, Select, Multiselect, Checkbox Groep, Radio Button, Datum, Datum Tijd, Formaat
 
-##### clearValidation
+##### wissen
 
-Used to clear the validation message.
+Wordt gebruikt om het validatiebericht te wissen.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Input, Nummerinvoer, bewerkbare Tekst, Tekstgebied, Upload, Select, Multiselect, Checkbox Groep, Radio Button, Datum, Datum Tijd, Tarief
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Wordt gebruikt om de geselecteerde waarde van Multi-select in te stellen. De parameter moet een array zijn.
 
 ###### Parameter
 
-`Value`: an array of strings used to set the selected options.
+`Waarde`: een reeks tekenreeksen die gebruikt worden om de geselecteerde opties in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Multiselect
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### verzenden
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
-
-JSON Schema Form, Form
-
-##### toggle
-
-Used to switch the value from true to false or from false to true.
+Formuliergegevens verzenden. Wanneer de verzendmethode is geactiveerd, zullen we eerst de formuliergegevens valideren. Als er validatiefouten zijn, wordt het formulier indienen voorkomen en worden de bijbehorende foutmeldingen weergegeven. Alleen na succesvolle validatie gaat de uitwerking door.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Switch
+JSON Schema Formulier
+
+##### schakelen
+
+Wordt gebruikt om de waarde van true naar false of van false om te zetten naar waar.
+
+###### Parameter
+
+Geen parameter
+
+###### Ondersteunde componenten
+
+Schakelaar
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Gebruikt om de standaard startwaarde van de schuifregelaar van het bereik in te stellen
 
 ###### Parameter
 
-`Start value`: a number used to set the start value.
+`Start waarde`: een getal gebruikt om de beginwaarde in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Range Slider
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Gebruikt om de standaard eindwaarde van de schuifregelaar van het bereik in te stellen
 
 ###### Parameter
 
-`End value`: a number used to set the end value.
+`End value`: een getal gebruikt om de eindwaarde in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Range Slider
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{10}}
@@ -190,35 +190,35 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Gebruikt om de standaard startwaarde in te stellen
 
 ###### Parameter
 
-`Start date/time`: a string used to set the start time/date.
+`Startdatum/tijd`: een tekenreeks die gebruikt wordt om de starttijd/datum in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Date Range, Time Range
+Datumbereik, tijdsbereik
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 2023-09-09
 ```
 
-##### setEndValue
+##### stelWaarde
 
-Used to set the default end value
+Wordt gebruikt om de standaard eindwaarde in te stellen
 
 ###### Parameter
 
-`End date/time`: a string used to set the end time/date.
+`Eind datum/tijd`: een tekenreeks die gebruikt wordt om de eindtijd/datum in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Date Range, Time Range
+Datumbereik, tijdsbereik
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Gebruikt om de schakelaars in te stellen waarvan de waarde waar is
 
 ###### Parameter
 
-`Value`: an array of strings used to set the options whose value is true .
+`Waarde`: een reeks tekenreeksen die gebruikt worden om de opties waarvan de waarde waar is in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Switch Group
+Wissel van groep
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,297 +244,297 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Gebruik de sleutel die een tekenreeks is van de weergave om de weergegeven weergave in te stellen.
 
 ###### Parameter
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: een tekenreeks gebruikt om in te stellen welke weergave getoond moet worden.  De sleutel is geconfigureerd in een container
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
-View 1
+Bekijk 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Gebruik de index van een getalwaarde vanaf 0 van de weergave om de weergegeven weergave in te stellen.
 
 ###### Parameter
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: een getal waarde. Gebruik de index van de weergave om in te stellen welke weergave getoond moet worden. De index begint vanaf 0.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{1}}
 ```
 
-##### showNextView
+##### toonNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Gebruikt om de volgende weergave weer te geven. De parameter is een booleaanse waarde die bepaalt of de loop vanaf het einde tot het begin begint.
 
 ###### Parameter
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Herhaal terug naar start`: een booleaanse waarde (gebruik een schakelaar om in te stellen) om de loop terug te zetten naar start.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
-##### showNextVisibleView
+##### toonNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Wordt gebruikt om de volgende zichtbare weergave te tonen. In tegenstelling tot het gedrag van de `showNextView(boolean)` functie biedt deze functie een verbeterde weergave van het wisselen door het overslaan van verborgen weergaven tijdens de transitie. De parameter is een booleaanse waarde die bepaalt of de loop vanaf het einde tot het begin begint.
 
 ###### Parameter
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Herhaal terug naar start`: een booleaanse waarde (gebruik een schakelaar om in te stellen) om de loop terug te zetten naar start.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
 ##### showPreviousView
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Gebruikt om de vorige weergave weer te geven. De parameter is een booleaanse waarde die bepaalt of de loop van het begin tot het einde moet worden uitgevoerd.
 
 ###### Parameter
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start tot terug`: een booleaanse waarde (gebruik een schakelaar om in te stellen) om de loop terug te zetten.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Wordt gebruikt om de vorige zichtbare weergave te tonen. In tegenstelling tot het gedrag van de `showPreviousView` functie, biedt deze functie een verbeterde weergave om te wisselen door het overslaan van eventuele verborgen weergaven tijdens de transitie. De parameter is een booleaanse waarde die bepaalt of de loop van het begin tot het einde moet worden uitgevoerd.
 
 ###### Parameter
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start tot terug`: een booleaanse waarde (gebruik een schakelaar om in te stellen) om de loop terug te zetten.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Container
 
 ##### reset
 
-Used to reset the value to default value.
+Wordt gebruikt om de waarde terug te zetten naar de standaardwaarde.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Form
+Vorm
 
-##### resetValue
+##### resetwaarde
 
-Used to reset the value to default value.
+Wordt gebruikt om de waarde terug te zetten naar de standaardwaarde.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Steps
+Stappen
 
 ##### openModal
 
-Used to open a modal
+Gebruikt om een modal te openen
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
 Modal
 
 ##### closeModal
 
-Used to close a modal
+Gebruikt om een modal te sluiten
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
 Modal
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Wordt gebruikt om de afbeeldingsbron-URL in te stellen. Het kan een Base64 of een URL zijn die wijst naar een afbeelding op het web.
 
 ###### Parameter
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: een tekenreeks gebruikt om de afbeeldingsbron in te stellen. Het kan een URL of base64 zijn.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Image
+Afbeelding
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
 ```
 
 ```JavaScript
-data:image/png;base64,iVBORw0KGgoAA...II
+data:image/png;base64,iVBORw0KGgoA...II
 ```
 
-##### clearReplyMessage
+##### wis Bericht
 
-Used to clear the quoted reply message above the input box.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
-
-Chat
-
-##### setPrimaryValue
-
-Used to set the primary value of statistics.
+Wordt gebruikt om het geciteerde antwoord boven het invoervak te wissen.
 
 ###### Parameter
 
-`Primary value`: a number value used to set the primary value of statistics.
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Statistics
+Chatten
 
-###### Example
+##### stelPrimaryWaarde
+
+Gebruikt om de primaire waarde van statistieken in te stellen.
+
+###### Parameter
+
+`Primaire waarde`: een getal gebruikt om de primaire waarde van statistieken in te stellen.
+
+###### Ondersteunde componenten
+
+Statistieken
+
+###### Voorbeeld
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### reset PrimaryWaarde
 
-Used to reset the primary value to the default primary value of statistics.
+Wordt gebruikt om de primaire waarde te resetten naar de standaard primaire waarde van statistieken.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Statistics
+Statistieken
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Wordt gebruikt om de bestand-URL in te stellen. Het kan een Base64 of een URL zijn die wijst naar een PDF op het web.
 
 ###### Parameter
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF source`: een tekenreeks gebruikt om de PDF-bron in te stellen. Het kan een URL of base64 zijn.
 
-###### Supported components
+###### Ondersteunde componenten
 
-PDF
+PDF-bestand
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### afspelen
 
-Used to play video or audio.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
-
-Video, Audio
-
-##### pause
-
-Used to pause video or audio.
+Wordt gebruikt om video of audio af te spelen.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
-##### showControls
+##### pauzeren
 
-Used to set whether to show the controls.
+Wordt gebruikt om video of audio te pauzeren.
 
 ###### Parameter
 
-`Show controls`: a boolean value used to set whether to show the controls.
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
+
+Video, audio
+
+##### toon Besturingselementen
+
+Gebruikt om de besturingselementen weer te geven.
+
+###### Parameter
+
+`Toon besturing`: een booleaanse waarde die gebruikt wordt om de besturingselementen weer te geven.
+
+###### Ondersteunde componenten
 
 Video
 
-##### setVideoUrl
+##### stelVideoURL
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Wordt gebruikt om de video's URL in te stellen. Het kan een Base64 of een video URL zijn op de websites van de media.
 
 ###### Parameter
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Video source`: een tekenreeks gebruikt om de videobron in te stellen. Het kan een URL of base64 zijn.
 
-###### Supported components
+###### Ondersteunde componenten
 
 Video
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### stelVolume(getal)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Gebruikt om volume in te stellen. De parameter is een getalwaarde tussen 0 en 1.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
-###### Example
+###### Voorbeeld
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### stelsnelheid
 
-Used to set the speed.
+Wordt gebruikt om de snelheid in te stellen.
 
 ###### Parameter
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: een getal tussen 0,25 tot 2
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{0.5}}
@@ -542,107 +542,107 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Gebruikt om het afspelen af te spelen.
 
 ###### Parameter
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: een booleaanse waarde die gebruikt wordt om lus in te stellen of niet
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### zoeken Naar
 
-Used to seek to a specific time position.
+Wordt gebruikt om te zoeken naar een specifieke tijdpositie.
 
 ###### Parameter
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(s)`: een getal opgemeten in seconde(n). Om bijvoorbeeld de tijdpositie 5:35 te zoeken, zou je de waarde 335 gebruiken.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### Dempen
 
-Used to set mute or not.
+Wordt gebruikt om te dempen of niet.
 
 ###### Parameter
 
-`Mute`: a boolean value
+`Mute`: een booleaanse waarde
 
-###### Supported components
+###### Ondersteunde componenten
 
-Video, Audio
+Video, audio
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Wordt gebruikt om de audio-URL in te stellen. Het kan een Base64 of een video URL zijn op de websites van de media.
 
 ###### Parameter
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Audio-bron`: een tekenreeks gebruikt om de audiobron in te stellen. Het kan een URL of base64 zijn.
 
-###### Supported components
+###### Ondersteunde componenten
 
-Audio
+Geluid
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 ```
 
-##### slickNext
+##### klikVolgende
 
-Used to switch to the next image.
+Wordt gebruikt om over te schakelen naar de volgende afbeelding.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
 Carousel
 
-##### slickPrevious
+##### slickVorige
 
-Used to switch to the previous image.
+Wordt gebruikt om over te schakelen naar de vorige afbeelding.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Wordt gebruikt om de bron URL van IFrame in te stellen.
 
 ###### Parameter
 
-`Value`: a string value used to set the URL.
+`Value`: een tekstwaarde gebruikt om de URL in te stellen.
 
-###### Supported components
+###### Ondersteunde componenten
 
 IFrame
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Gebruikt om de markers op de kaart in te stellen.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: een array van objecten. De breedte- en lengtegraad velden in elk object moeten hetzelfde zijn als de velden die zijn ingesteld in het rechterpaneel
 
-###### Supported components
+###### Ondersteunde componenten
 
-Map
+Kaart
 
-###### Example
+###### Voorbeeld
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Gebruikt om de markeringen terug te zetten naar de standaard markers.
 
 ###### Parameter
 
-No parameter
+Geen parameter
 
-###### Supported components
+###### Ondersteunde componenten
 
-Map
+Kaart
 
-#### Run script
+#### Script uitvoeren
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Door het schrijven van een script, kan je meerdere gebeurtenissen in volgorde uitvoeren. [Meer informatie](https://docs.illacloud.com/run-script)
 
-#### Go to URL
-
-##### Parameter
-
-`URL`: String value. The URL to be opened
-
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
-
-#### Show notification
+#### Ga naar URL
 
 ##### Parameter
 
-`Title`: String value. The title of the notification
+`URL`: tekenreekswaarde. De URL die geopend moet worden
 
-`Description`:  String value. The description of the notification
+`Nieuw tabblad`: Booleaanse waarde. Gebruikt om de URL te openen op een nieuw tabblad.
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
-
-`Duration(ms)`: Number value. The duration for displaying a notification.
-
-#### Copy to clipboard
+#### Melding weergeven
 
 ##### Parameter
 
-`Value`: String value. The string to be copied.
+`Title`: String value. De titel van de melding
 
-#### Set router
+`Omschrijving`: Tekenreekswaarde. De beschrijving van de melding
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+`Type`: String waarde. Stel het type in via de dropdown opties: Succes, Fout, Waarschuwing, Info
 
-##### Parameter
+`Duur (ms)`: Getalde waarde. De duur voor het weergeven van een melding.
 
-`Page`: Use to set redirect to which page.
-
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
-
-#### Save to ILLA Drive
+#### Kopiëren naar klembord
 
 ##### Parameter
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Waarde`: tekenreekswaarde. De te kopiëren tekenreeks.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+#### Instellen router
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
-
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
-
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
-
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
-
-#### Download from ILLA Drive
+Wanneer er meerdere pagina's in de applicatie staan, kan deze functie worden gebruikt om tussen pagina's te wisselen.
 
 ##### Parameter
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Pagina`: Gebruik om door te verwijzen naar welke pagina.
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Sub-pagina`: Gebruik om doorverwijzing in te stellen naar welke subpagina van de geselecteerde pagina in de pagina-parameter.
 
-#### Download
-
-Used to export data to your device.
+#### Opslaan op ILLA Drive
 
 ##### Parameter
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Bestandsnaam met extensie`: String. Naam met de extensie van het bestand na uploaden naar de ILLA Drive.
 
-`File name`: a name with extension.
+`Bestandsgegevens`: String. Base64 of rauwe bestandsgegevens, zoals JSON, CSV, platte tekst, etc.
 
-`Data`: data of the file.
+`Bestand Type`: String. Een van de volgende waarden: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Bij gebruik van "Auto," zullen we proberen het bestandstype te bepalen op basis van ofwel de bestandsextensie of de bestandsgegevens.
 
-#### Set global data
+`Map`: Tekenreeks. Doelmap voor bestandsupload. Laat leeg om te uploaden naar de hoofdmap.
 
-##### Set global data value
+`Sta anonieme toe`: Bolean. Wordt gebruikt om in te stellen of anonieme gebruikerstoegang is toegestaan. Als u van plan bent uw applicatie als publiek in te stellen, moet anonieme toegang worden ingeschakeld. Voor de beveiliging van uw gegevens moeten bestanden of mappen anoniem toegankelijk worden gemaakt in de anonieme map.
 
-Used to set the value of gobalData
+`Vervangen`: Boolean. Wordt gebruikt om in te stellen wanneer er bestanden met dezelfde naam in dezelfde map staan, vervang het bestaande bestand door een nieuw bestand of hernoem het nieuwe bestand automatisch.
+
+#### Downloaden van ILLA Drive
+
+##### Parameter
+
+`Download info`: een reeks objecten inclusief tinyURL en fileID. U kunt de component Drive bestandskiezer gebruiken om bestanden te kiezen uit ILLA Drive en de `Download info` te krijgen via drivePicker1.value
+
+`Opslaan als Zip`: Boolean. Gebruikt om de bestanden te downloaden als zip.
+
+#### downloaden
+
+Gebruikt om data naar je apparaat te exporteren.
+
+##### Parameter
+
+`Bestand type`: Een van de volgende waarden: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Bij gebruik van "Auto," zullen we proberen het bestandstype te bepalen op basis van ofwel de bestandsextensie of de bestandsgegevens.
+
+`Bestandsnaam`: een naam met extensie.
+
+`Data`: data van het bestand.
+
+#### Algemene gegevens instellen
+
+##### Algemene gegevenswaarde instellen
+
+Gebruikt om de waarde van gobalData in te stellen
 
 ###### Parameter
 
-`key`: the displayName of globalData.
+`key`: de weergavenaam van globalData.
 
-`value`: the value to set
+`value`: de waarde om in te stellen
 
-##### Set global data in
+##### Algemene gegevens instellen in
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
-
-###### Parameter
-
-`key`: the displayName of globalData.
-
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
-
-`value`: the value to set
-
-#### Set local storage
-
-##### clear
-
-Used to clear the local storage
+Wanneer de globale data een array of object is, gebruik setGlobalDataIn om de waarde te wijzigen die overeenkomt met een specifieke index in een matrix of om de waarde te wijzigen naar een specifieke sleutel in een object.
 
 ###### Parameter
 
-No parameter
+`key`: de weergavenaam van globalData.
 
-##### setValue
+`path`: de index van de waarde die je wilt bijwerken in de array of de sleutel in het object. Bijvoorbeeld, voor het instellen van de tweede waarde in array, is het pad 1 (de index). Om de waarde in te stellen van het attribuut met de naam key1, is het pad sleutel1.
+
+`value`: de waarde om in te stellen
+
+#### Lokale opslag instellen
+
+##### Wis
+
+Wordt gebruikt om de lokale opslag te wissen
 
 ###### Parameter
 
-`key`: the displayName of local storage.
+Geen parameter
 
-`value`: the value of the key.
+##### stelwaarde
 
-3.  ### Only run when
+###### Parameter
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+`key`: de weergavenaam van de lokale opslag.
+
+`value`: de waarde van de sleutel.
+
+### Alleen uitvoeren wanneer
+
+Een booleaanse waarde die gebruikt wordt om in te stellen wanneer de event handler kan worden geactiveerd. Bijvoorbeeld, wanneer de input1 leeg is, kon de event-handler niet worden geactiveerd: `{{input1.value!==""input1.value!==undefined}}`
