@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Händelsehanterare
+description: Lägg till en händelsehanterare till komponenten för att utlösa en händelse när komponentens tillstånd ändras.
 ---
 
-# Event handler
+# Händelsehanterare
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Lägg till en händelsehanterare till komponenten för att utlösa en händelse när komponentens tillstånd ändras.
 
-## How-to
+## Instruktioner
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Inställningar för konfiguration
 
-1.  ### Event
+### Händelse
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Används för att ställa in hur åtgärden ska utlösas. Till exempel, om vi vill utlösa restapi1 när datagrid(tabell) komponenten är uppdaterad, kan vi ställa in händelsen till `refresh`. Om vi vill utlösa restapi2 när den typ av data grid(tabell) komponenten ändras, kan vi ställa in händelsen till "sortera förändring". Om vi vill utlösa restapi3 när knappen klickas kan vi ställa in händelsen till `click`.
 
-2.  ### Action
+### Åtgärd
 
-#### Trigger action
+#### Åtgärd för utlösare
 
-Used to trigger an action created in this app
+Används för att utlösa en åtgärd som skapats i denna app
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parameter**          | **krävs eller inte**       | **beskrivning**                        |
+| ---------------------- | -------------------------- | -------------------------------------- |
+| Åtgärdens namn         | `obligatoriskt`            | Välj en åtgärd som skapats i denna app |
 
-#### Control component
+#### Kontrollera komponent
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parameter**       | **krävs eller inte**       | **beskrivning**                                                                                                                                                   |
+| ------------------- | -------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Komponent           | `obligatoriskt`            | Välj en komponent som lagts till på den aktuella sidan                                                                                                            |
+| Metod               | `obligatoriskt`            | Används för att ställa in vad kontrollkomponenten gör. Olika metoder kräver att olika parametrar konfigureras. Detaljerade förklaringar finns nedan.              |
 
-##### setValue
+##### mängdvärde
 
-Used to set the value.
-
-###### Parameter
-
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
-
-###### Supported components
-
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
-
-| JSON Editor
-                                                                                                                                            | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
-
-##### clearValue
-
-Used to clear the value.
+Används för att ange värde.
 
 ###### Parameter
 
-No parameter
+`Value`: Värdet kan vara en `string` eller `number` eller `object` eller `boolean` eller `array` som beror på komponenttypen.
 
-###### Supported components
+###### Komponenter som stöds
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+| Komponent                                                                                                                                                           | Typ av parameter                                                     | Exempel                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Input, redigerbar text, textområde, avdelare, vald, Radio Group, Radio Knapp, Radio Knapp, Datum, Datumtid, Steg, Text, Bar Progress, Circle Progress               | `sträng`                                                             |                                                                                                                                                                         |
+| `Hej världen`                                                                                                                                                       |                                                                      |                                                                                                                                                                         |
 
-##### focus
+<unk> JSON Editor
+                                                                                                                                            <unk> `string`
+                                                      <unk> `{ "firstName": "Chuck", "lastName": "Norris", "ålder": 80, "bio": "Roundhouse sparkar rövar sedan 1940", "lösenord": "noneed", "telefon": "1-800-KICKASS" }` <unk>
+<unk> Tidslinje <unk> `string`, Separera värdena för olika noder via kommatecken (,) <unk> `Den första milstolpen, han andra milestone` <unk>
+<unk> Nummerinmatning, Slider, Betygsätt <unk> `number` <unk> `{{1000}}` <unk>
+<unk> Switch <unk> `boolean` <unk> `{{false}}` <unk>
+<unk> JSON Schema Form, Formulär <unk> `object` <unk> `{{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses sedan 1940", "lösenord": "noneed", "telefon": "1-800-KICKASS" } }}` <unk>
+<unk> Checkbox Group, Cascader <unk> `array` <unk> `{{["media_source_2","campaign_2-1"]}}` <unk>
 
-Used to focus on the component
+##### rensa
+
+Används för att rensa värdet.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Input, Nummer Input, Redigerbar Text, Text Area, Ladda upp, JSON Editor, JSON Schema Form, Switch, Välja, Multiselect, Kryssningsgrupp Cascader, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Datumtid, Text, Grad, Bar Progress, Cirkel Progress, Tidslinjen, Divider
+
+##### fokus
+
+Används för att fokusera på komponenten
+
+###### Parameter
+
+Ingen parameter
+
+###### Komponenter som stöds
+
+Inmatning, Nummerinmatning, Redigerbar text, textområde, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+När du har ställt in valideringsvillkor för en komponent, till exempel e-postformat, URL-format, eller obligatoriskt fält kan du använda funktionen `validate` för att avgöra om den uppfyller kraven. Om det inte uppfyller kraven kommer ett valideringsmeddelande att visas.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Group, Radio Knappon, Datum, Datumintervall, Datumtid, Form, Betygsätt
 
-##### clearValidation
+##### rensning
 
-Used to clear the validation message.
+Används för att rensa valideringsmeddelandet.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Input, Nummer input, Redigerbar text, Text Area, Uppladdning, Välja, Multiselect, Kryssruta Grupp, Radio Knappon, Datum, Datumintervall, Datumtid, Betygsätt
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Används för att ställa in valt värde för Multiselect. Parametern bör vara en samling.
 
 ###### Parameter
 
-`Value`: an array of strings used to set the selected options.
+`Value`: en rad strängar som används för att ställa in de valda alternativen.
 
-###### Supported components
+###### Komponenter som stöds
 
-Multiselect
+Multival
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### skicka
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
-
-JSON Schema Form, Form
-
-##### toggle
-
-Used to switch the value from true to false or from false to true.
+Skicka formulärdata. När inlämningsmetoden utlöses kommer vi först att validera formulärdata. Om det finns valideringsfel kommer formulärinlämningen att förhindras och motsvarande felmeddelanden kommer att visas. Först efter lyckad validering fortsätter inlämningen.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Switch
+JSON Schema formulär, formulär
+
+##### växla
+
+Används för att byta värde från sant till falskt eller från falskt till sant.
+
+###### Parameter
+
+Ingen parameter
+
+###### Komponenter som stöds
+
+Växla
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Används för att ställa in standardstartvärdet för intervallreglage
 
 ###### Parameter
 
-`Start value`: a number used to set the start value.
+`Startvärde`: ett tal som används för att ange startvärdet.
 
-###### Supported components
+###### Komponenter som stöds
 
 Range Slider
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Används för att ställa in standardvärdet för intervallreglage
 
 ###### Parameter
 
-`End value`: a number used to set the end value.
+`Avsluta värde`: ett tal som används för att ange slutvärdet.
 
-###### Supported components
+###### Komponenter som stöds
 
 Range Slider
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{10}}
@@ -190,35 +190,35 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Används för att ställa in standardstartvärdet
 
 ###### Parameter
 
-`Start date/time`: a string used to set the start time/date.
+`Start date/time`: en sträng som används för att ställa in starttid/datum.
 
-###### Supported components
+###### Komponenter som stöds
 
-Date Range, Time Range
+Datumintervall, tidsintervall
 
-###### Example
+###### Exempel
 
 ```JavaScript
 2023-09-09
 ```
 
-##### setEndValue
+##### Välj slutvärde
 
-Used to set the default end value
+Används för att ställa in standard slutvärde
 
 ###### Parameter
 
-`End date/time`: a string used to set the end time/date.
+`End date/time`: en sträng som används för att ställa in sluttid/datum.
 
-###### Supported components
+###### Komponenter som stöds
 
-Date Range, Time Range
+Datumintervall, tidsintervall
 
-###### Example
+###### Exempel
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Används för att ställa in växlar vars värde är sant
 
 ###### Parameter
 
-`Value`: an array of strings used to set the options whose value is true .
+`Value`: en rad strängar som används för att ställa in de alternativ vars värde är sant.
 
-###### Supported components
+###### Komponenter som stöds
 
-Switch Group
+Byt grupp
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,35 +244,35 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Använd nyckeln som är ett strängvärde för vyn för att ställa in den visade vyn.
 
 ###### Parameter
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: en sträng som används för att ställa in vilken vy som ska visas.  Nyckeln är konfigurerad i en behållare
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
-###### Example
+###### Exempel
 
 ```JavaScript
-View 1
+Visa 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Använd indexet som är ett talvärde med start från 0 av vyn för att ställa in den visade vyn.
 
 ###### Parameter
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: ett talvärde. Använd indexet för vyn för att ange vilken vy som ska visas. Indexet börjar från 0.
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{1}}
@@ -280,113 +280,113 @@ Container
 
 ##### showNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Används för att visa nästa vy. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
 
 ###### Parameter
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop tillbaka till start`: ett booleskt värde (använd en switch för att sätta) för att ställa in om att loopa tillbaka till starten.
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Används för att visa nästa synliga vy. Till skillnad från beteendet hos funktionen `showNextView(boolean)` erbjuder denna funktion förbättrad visningsväxlingsfunktionalitet genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från slutet tillbaka till början.
 
 ###### Parameter
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Loop tillbaka till start`: ett booleskt värde (använd en switch för att sätta) för att ställa in om att loopa tillbaka till starten.
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
 ##### showPreviousView
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Används för att visa föregående vy. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
 
 ###### Parameter
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop börjar till tillbaka`: ett booleskt värde (använd en switch för att sätta) för att ställa in om att loopa börjar till tillbaka.
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Används för att visa föregående synlig vy. Till skillnad från beteendet hos funktionen `showPreviousView` erbjuder denna funktion förbättrad funktion för vybyte genom att hoppa över alla dolda vyer under övergången. Parametern är ett booleskt värde som avgör om att loopa från början tillbaka till slutet.
 
 ###### Parameter
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop börjar till tillbaka`: ett booleskt värde (använd en switch för att sätta) för att ställa in om att loopa börjar till tillbaka.
 
-###### Supported components
+###### Komponenter som stöds
 
-Container
+Behållare
 
 ##### reset
 
-Used to reset the value to default value.
+Används för att återställa värdet till standardvärde.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Form
+Formulär
 
-##### resetValue
+##### återställnings värde
 
-Used to reset the value to default value.
+Används för att återställa värdet till standardvärde.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Steps
+Steg
 
 ##### openModal
 
-Used to open a modal
+Används för att öppna en modal
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
 Modal
 
-##### closeModal
+##### näraModal
 
-Used to close a modal
+Används för att stänga en modal
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
 Modal
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Används för att ange bildkäll-URL. Det kan vara en Base64 eller en URL som pekar på en bild på webben.
 
 ###### Parameter
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: ett strängvärde som används för att ange bildkällan. Det kan vara URL eller base64.
 
-###### Supported components
+###### Komponenter som stöds
 
-Image
+Bild
 
-###### Example
+###### Exempel
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
@@ -396,145 +396,145 @@ https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
 data:image/png;base64,iVBORw0KGgoAA...II
 ```
 
-##### clearReplyMessage
+##### rensa Svarsmeddelande
 
-Used to clear the quoted reply message above the input box.
+Används för att rensa det citerade svarsmeddelandet ovanför inmatningsrutan.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Chat
+Chatt
 
 ##### setPrimaryValue
 
-Used to set the primary value of statistics.
+Används för att ange det primära värdet på statistiken.
 
 ###### Parameter
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Primärt värde`: ett talvärde som används för att ange det primära värdet av statistik.
 
-###### Supported components
+###### Komponenter som stöds
 
-Statistics
+Statistik
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### återställPrimaryVärde
 
-Used to reset the primary value to the default primary value of statistics.
+Används för att återställa det primära värdet till standardvärdet för statistiken.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Statistics
+Statistik
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Används för att ange filens URL. Det kan vara en Base64 eller en URL som pekar på en PDF på webben.
 
 ###### Parameter
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF source`: ett strängvärde som används för att ställa in PDF-källan. Det kan vara URL eller base64.
 
-###### Supported components
+###### Komponenter som stöds
 
 PDF
 
-###### Example
+###### Exempel
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### spela
 
-Used to play video or audio.
-
-###### Parameter
-
-No parameter
-
-###### Supported components
-
-Video, Audio
-
-##### pause
-
-Used to pause video or audio.
+Används för att spela upp video eller ljud.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
+
+##### pausa
+
+Används för att pausa video eller ljud.
+
+###### Parameter
+
+Ingen parameter
+
+###### Komponenter som stöds
+
+Video, Ljud
 
 ##### showControls
 
-Used to set whether to show the controls.
+Används för att ställa in om du vill visa kontrollerna.
 
 ###### Parameter
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Visa kontroller`: ett booleskt värde som används för att ange om kontrollerna ska visas.
 
-###### Supported components
+###### Komponenter som stöds
 
 Video
 
 ##### setVideoUrl
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Används för att ställa in videons URL. Det kan vara en Base64 eller en video URL på media webbplatser.
 
 ###### Parameter
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Videokälla`: ett strängvärde som används för att ställa in videokällan. Det kan vara URL eller base64.
 
-###### Supported components
+###### Komponenter som stöds
 
 Video
 
-###### Example
+###### Exempel
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolume(nummer)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Används för att ställa in volymen. Parametern är ett talvärde mellan 0 och 1.
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
 
-###### Example
+###### Exempel
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### mängdhastighet
 
-Used to set the speed.
+Används för att ställa in hastigheten.
 
 ###### Parameter
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: ett talvärde mellan 0,25 till 2
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{0.5}}
@@ -542,17 +542,17 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Används för att ställa in om uppspelningen ska loopas.
 
 ###### Parameter
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: ett booleskt värde som används för att sätta loop eller inte
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{true}}
@@ -560,47 +560,47 @@ Video, Audio
 
 ##### seekTo
 
-Used to seek to a specific time position.
+Används för att söka till en specifik tidsposition.
 
 ###### Parameter
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(s)`: ett talvärde, mätt i sekunder (s). Till exempel, att söka till tidsposition 5:35, skulle du använda värdet 335.
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### tysta
 
-Used to set mute or not.
+Används för att ställa in tystning eller inte.
 
 ###### Parameter
 
-`Mute`: a boolean value
+`Mute`: ett booleskt värde
 
-###### Supported components
+###### Komponenter som stöds
 
-Video, Audio
+Video, Ljud
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Används för att ställa in audios URL. Det kan vara en Base64 eller en video URL på media webbplatser.
 
 ###### Parameter
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Ljudkälla`: ett strängvärde som används för att ställa in ljudkällan. Det kan vara URL eller base64.
 
-###### Supported components
+###### Komponenter som stöds
 
-Audio
+Ljud
 
-###### Example
+###### Exempel
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
@@ -608,41 +608,41 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
 ##### slickNext
 
-Used to switch to the next image.
+Används för att byta till nästa bild.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
 Carousel
 
-##### slickPrevious
+##### slickFöregående
 
-Used to switch to the previous image.
+Används för att byta till föregående bild.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Används för att ange käll-URL för IFrame.
 
 ###### Parameter
 
-`Value`: a string value used to set the URL.
+`Value`: ett strängvärde som används för att ange URL.
 
-###### Supported components
+###### Komponenter som stöds
 
 IFrame
 
-###### Example
+###### Exempel
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Används för att ställa in markörerna på kartan.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: en samling objekt. Fälten latitud och longitud i varje objekt ska vara samma som de fält som anges i högerpanelen.
 
-###### Supported components
+###### Komponenter som stöds
 
-Map
+Karta
 
-###### Example
+###### Exempel
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Används för att återställa markörerna till standardmarkörerna.
 
 ###### Parameter
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Komponenter som stöds
 
-Map
+Karta
 
-#### Run script
+#### Kör skript
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Genom att skriva ett skript, kan du utlösa flera händelser i sekvens. [Läs mer](https://docs.illacloud.com/run-script)
 
-#### Go to URL
-
-##### Parameter
-
-`URL`: String value. The URL to be opened
-
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
-
-#### Show notification
+#### Gå till URL
 
 ##### Parameter
 
-`Title`: String value. The title of the notification
+`URL`: Strängvärde. URL som ska öppnas
 
-`Description`:  String value. The description of the notification
+`Ny flik`: Booleskt värde. Används för att ange om URL ska öppnas på en ny flik.
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
-
-`Duration(ms)`: Number value. The duration for displaying a notification.
-
-#### Copy to clipboard
+#### Visa avisering
 
 ##### Parameter
 
-`Value`: String value. The string to be copied.
+`Title`: String value. Titeln på meddelandet
 
-#### Set router
+`Beskrivning`: Strängvärde. Beskrivningen av meddelandet
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+`Type`: Strängvärde. Ställ in typen via rullgardinsalternativ: Framgång, fel, Varning, Info
 
-##### Parameter
+`Varaktighet(ms)`: Nummervärde. Varaktigheten för att visa en anmälan.
 
-`Page`: Use to set redirect to which page.
-
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
-
-#### Save to ILLA Drive
+#### Kopiera till urklipp
 
 ##### Parameter
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Value`: Strängvärde. Strängen som ska kopieras.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+#### Ange router
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
-
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
-
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
-
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
-
-#### Download from ILLA Drive
+När det finns flera sidor i programmet kan denna funktion användas för att växla mellan sidor.
 
 ##### Parameter
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Page`: Använd för att omdirigera till vilken sida.
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Undersida`: Använd för att ange omdirigera till vilken undersida av sidan som valts i sidparametern.
 
-#### Download
-
-Used to export data to your device.
+#### Spara till ILLA Drive
 
 ##### Parameter
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Filnamn med extension`: String. Namn med tillägg av filen efter uppladdning till ILLA Drive.
 
-`File name`: a name with extension.
+`Fildata`: Sträng. Base64 eller rå fildata, som JSON, CSV, oformaterad text, etc.
 
-`Data`: data of the file.
+`Filtyp`: Sträng. Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
 
-#### Set global data
+`Mapp`: Sträng. Målmapp för filuppladdning. Lämna det tomt för att ladda upp till rotmappen.
 
-##### Set global data value
+`Tillåt anonyma`: Bolean. Används för att ange om anonym användaråtkomst är tillåten. Om du planerar att ställa in din ansökan som offentlig måste anonym åtkomst vara aktiverad. För att dina data ska vara säkra måste filer eller mappar som är tillgängliga anonymt placeras i den anonyma mappen.
 
-Used to set the value of gobalData
+`Ersätta`: Boolean. Används för att ange när det finns filer med samma namn i samma katalog, ersätt den befintliga filen med en ny fil eller byt automatiskt namn på den nya filen.
+
+#### Ladda ner från ILLA Drive
+
+##### Parameter
+
+`Download info`: en samling av objekt inklusive tinyURL och fileID. Du kan använda komponenten Drive-filväljaren för att plocka filer från ILLA Drive och få `Download info` via drivePicker1.value
+
+`Spara som Zip`: Boolean. Används för att ställa in om du vill ladda ner filerna som en zip.
+
+#### Hämta
+
+Används för att exportera data till din enhet.
+
+##### Parameter
+
+`Filtyp`: Ett av följande värden: Auto, Oformaterad text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). När vi använder "Auto" kommer vi att försöka bestämma filtypen baserat på antingen filtillägget eller fildata.
+
+`Filnamn`: ett namn med tillägg.
+
+`Data`: data för filen.
+
+#### Ange global data
+
+##### Ange globalt datavärde
+
+Används för att ställa in värdet på gobalData
 
 ###### Parameter
 
-`key`: the displayName of globalData.
+`key`: Visningsnamnet för globalData.
 
-`value`: the value to set
+`value`: värdet som ska anges
 
-##### Set global data in
+##### Ange global data i
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
-
-###### Parameter
-
-`key`: the displayName of globalData.
-
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
-
-`value`: the value to set
-
-#### Set local storage
-
-##### clear
-
-Used to clear the local storage
+När den globala datan är en array eller objekt, använd setGlobalDataIn för att ändra värdet som motsvarar ett specifikt index i en array eller för att ändra värdet som motsvarar en specifik nyckel i ett objekt.
 
 ###### Parameter
 
-No parameter
+`key`: Visningsnamnet för globalData.
 
-##### setValue
+`path`: indexet för det värde du avser att uppdatera i arrayen eller nyckeln i objektet. Till exempel, för att ställa in det andra värdet i array, sökvägen är 1 (index). För att ställa in värdet på attributet som heter key1, är sökvägen key1.
+
+`value`: värdet som ska anges
+
+#### Ställ in lokal lagring
+
+##### rensa
+
+Används för att rensa lokal lagring
 
 ###### Parameter
 
-`key`: the displayName of local storage.
+Ingen parameter
 
-`value`: the value of the key.
+##### mängdvärde
 
-3.  ### Only run when
+###### Parameter
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+`key`: Visningsnamnet för lokal lagring.
+
+`value`: värdet på nyckeln.
+
+### Kör endast när
+
+Ett booleskt värde som används för att ställa in när händelsehanteraren kunde utlösas. Till exempel, när input1 är noll, kunde händelsehanteraren inte utlösas: `{{input1.value!==""&input1.value!==odefinierat}}}`
