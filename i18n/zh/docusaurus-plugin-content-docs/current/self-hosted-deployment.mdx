@@ -1,0 +1,213 @@
+---
+title: 自我托管部署
+description: ILLA Builder 提供了无缝部署体验，使您可以在自己的虚拟私人云中以惊人的速度部署ILLA Builder。
+---
+
+# 自我托管部署
+
+## 停靠栏
+
+1.  启动 Docker
+2.  在终端中输入以下命令以安装官方图像：
+
+`docker pull illasoft/il-builder:latest`
+
+## CLI
+
+### 下载ILLA CLI 并部署
+
+如果你安装了Rust，你可以轻松地构建+安装最新的 ILLA CLI 版本带货运：
+
+`cargo install illa`
+
+`illa depution --self --port=10000`
+
+**货运** 工具将完成下载ILLA CLI 及其源依赖关系， 将其安装到货运箱路径中，以便我们能够运行它。 安装完毕后，您可以使用 **illa** 命令运行ILLA CLI。
+
+或者，您可以在这里下载您的操作系统的 ILLA CLI：
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-Linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+如果您确实从上述链接下载，步骤与从 **货运** 下载ILLA CLI 略有不同。 下载CLI后，您必须使其可以执行。 我们以il-linux为例：
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### 检查自托管安装的前提条件
+
+这些港口5432、99999和8000应留给国际拉美预防犯罪中心建筑师。
+
+以下命令将在您的操作系统中检查自托管安装的前提条件：
+
+```Plaintext
+> illa doctor
+```
+
+### 正在部署ILLA Builder
+
+一旦安装了ILLA CLI，您可以运行一个自托管或云端安装。
+
+您可以简单地通过运行以下命令来部署一个自置的 ILA Builder：
+
+```Plaintext
+# 可以更改可以访问的 ILLA 构建器上的端口。
+# <SERVER_ADDRESS> 应该是您的云端服务器的公共ip， 默认 localhost
+> la depution --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+现在，您可以访问 ILLA 生成器: <http://localhost:10000>
+
+### 正在更新 ILLA 构建器
+
+要更新最新的停靠图片的 ILLA 构建器，请使用以下命令：
+
+```Plaintext
+> illa 更新 --self
+```
+
+### 其他业务
+
+```Plaintext
+# 列出ILLA Builder
+> illa list --self
+
+# 停止ILLA Builder
+> illa stop --self
+
+# 移除ILLA Builder
+> illa remove --self
+
+# 强制移除运行中的 ILLA Builder 和持续数据
+> sudo illa remove --force --self --data
+
+# 重新启动ILLA Builder
+> illa reading --self
+
+# help information
+> illa help
+```
+
+## Kubernetes
+
+### 描述
+
+构建全部内置图像并在您的机器上用 k8 运行它。 您可以在 [scripts]中查看脚本文件(https://github.com/illacloud/deply-illa-manualy/blob/main/kubernetes/scripts) 以了解更多详情。
+
+注：
+
+我们强烈建议使用我们的自动部署工具 [illa-cli](https://github.com/illacloud/illa)。
+
+目前，我们不支持苹果硅M1(arwin-arm64型螺丝刀)。
+
+### 使用官方的 slim 图像运行
+
+安装 GNU 制造商和类型：
+
+```JavaScript
+进行部署
+```
+
+或仅执行：
+
+```JavaScript
+/bin/bash 脚本/部署.sh
+```
+
+这个命令将把illasoft 官方的全部图像拉入您的Kubernetes集群。
+
+### 数据库永久存储
+
+编辑 [illa-builder.yaml](https://github.com/illacloud/deply-illa-manualy/blob/main/kubernetes/illa-builder.yaml)，并在其中添加您IAAS的持续存储配置。
+
+### HTTPS 配置
+
+您可以将NodePort 导入到您的Kubernetes集群网关并重写到443个端口，并在您的导入网关中添加 https 证书。
+
+或者，您可以手动将一个接口部署到您的 Kubernetes 服务器上，配置类似于：
+
+```JavaScript
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## 快速部署
+
+您可以非常快速地部署ILLA，请遵循下面的指令：
+
+首先，请下载这个[docker file]\(https://github.com/illacloud/display-illa-manual y/tree/main/docker)到您的计算机，然后运行以下代码。
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+使用默认用户名和密码登录：
+
+用户名: **`root`**
+
+密码: **`password`** (仅自主模式)。
