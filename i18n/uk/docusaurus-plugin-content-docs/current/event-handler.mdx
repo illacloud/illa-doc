@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Обробник подій
+description: Додайте обробник подій до компонента, щоб викликати подію, коли змінюється стан компонента.
 ---
 
-# Event handler
+# Обробник подій
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Додайте обробник подій до компонента, щоб викликати подію, коли змінюється стан компонента.
 
-## How-to
+## Інструкції
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Налаштування конфігурації
 
-1.  ### Event
+### Подія
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Використовується для встановлення, як викликати дію. Наприклад, якщо ми хочемо запустити restapi1, коли компонент grid(table) даних оновлюється, ми можемо встановити подію до 'оновлення\`. Якщо ми хочемо запустити restapi2, коли компонент типу даних (табличний) змінюється, ми можемо встановити подію в 'сортування'. Якщо ми хочемо спровокувати рестапія після натискання кнопки, ми можемо встановити подію в 'клік'.
 
-2.  ### Action
+### Дія
 
-#### Trigger action
+#### Дія при переході
 
-Used to trigger an action created in this app
+Використовується для запуску дії, створеної в цьому додатку
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **параметр**      | **обов'язковий чи не**    | **опис**                               |
+| ----------------- | ------------------------- | -------------------------------------- |
+| Назва дії         | `обов'язковий`            | Виберіть дію, створену в цьому додатку |
 
-#### Control component
+#### Керування компонентами
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **параметр**        | **обов'язковий чи не**    | **опис**                                                                                                                                                   |
+| ------------------- | ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Компонент           | `обов'язковий`            | Виберіть компонент, доданий на поточну сторінку                                                                                                            |
+| Метод               | `обов'язковий`            | Використовується, щоб встановити, що робить компонент керування. Різні методи вимагають налаштування різних параметрів. Деталі пояснень наведено нижче.    |
 
-##### setValue
+##### значення набору
 
-Used to set the value.
+Використовується для встановлення значення.
 
-###### Parameter
+###### Параметр
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Значення`: значення може бути `string` або `number` або `object` або `boolean` або `array`, який залежить від типу компонента.
 
-###### Supported components
+###### Підтримувані компоненти
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Компонент                                                                                                                                                           | Тип параметра                                                     | Приклад                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Введення тексту, тексту, текстову зону, розділювач, селект, Радіогрупа, Радіо Buttonm, Радіо Buttonm, Дата, час, час, події, Text, Bar, Progress, Circle Progress   | `рядок`                                                           |                                                                                                                                                                         |
+| `Привіт світ`                                                                                                                                                       |                                                                   |                                                                                                                                                                         |
 
-| JSON Editor
+| JSON редактор
                                                                                                                                             | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+                                                      | `{ "firstName": "Чак", "lastName": "Норріс", "age": 80, "bio": "Кільцевий збір медіафайлів з 1940", "пароль": "ніякий", "telephone": "1-800-KICKASS" }` |
+| Хронологія | `string`, Розділіть значення різних вузлів через кому (,) | `Перші етапи, він другий етап` |
+| Номер номер, Слайдер, Оцінити | `number` | `{{1000}}` |
+| Перемикач | `boolean` | `{{false}}` |
+| Форму схеми JSON Форма | `об'єкт` | `{{ "firstName": "Чак", "lastName": "Норвезька", "age": 80, "bio": "Кільцевий таж asses з 1940 року, "пароль": "немає", "телефон": "1-800-KICKASS"} }}` |
+| Відмітка Групи, Каскадер | `array` | `{{["media_source_2","campaign_2-1"]}}` |
 
-##### clearValue
+##### чисте значення
 
-Used to clear the value.
+Використовується для очищення значення.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Введення номера, введення номера, запис тексту, текстове поле, завантаження, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, контрольна група, Каскадер, Радіо група, Радіо кнопка, Дати, Дата діапазону, час Часу, Час даних, Текст, Текст, Оцінка, Прогрес, Колонний Прогрес, Таймелін, Вододавець
 
-##### focus
+##### фокусувати
 
-Used to focus on the component
+Використовується для фокусування на компоненті
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Введення, номер коду, опис тексту, текстове поле, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Коли ви встановили умови перевірки для компонента, таких як формат електронної пошти, URL формат, або обов'язкове поле, ви можете використовувати функцію "валідувати", щоб визначити, чи вона відповідає вимогам. Якщо вона не відповідає вимогам, буде показано повідомлення перевірки.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Введення номера, введення номера, рядок редагування, текстового опису, завантаження, вибірка, Multiselect, Група прапорців, Радіо Кнопки, Дата, Дата і час, Форм, Оцінка
 
-##### clearValidation
+##### очистити перевірку
 
-Used to clear the validation message.
+Використовується для очищення повідомлення підтвердження.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Введення номера, введення номера, запис про редагування, текстове поле, Upload, Select, Multiselect, Група прапорців, Радіо Кнопки, Дата, Дата і час, Час, Оцінка
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Використовується для встановлення обраного значення Multiselect. Параметр має бути масивом.
 
-###### Parameter
+###### Параметр
 
-`Value`: an array of strings used to set the selected options.
+`Значення`: масив рядків, що використовуються для встановлення вибраних опцій.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Multiselect
+Множинний вибір
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### надіслати
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Надіслати дані форми. Коли запущено метод надсилання, ми спочатку підтвердимо дані форми. Якщо є помилки перевірки, буде запобіжено подання форми, і будуть відображатися відповідні повідомлення про помилку. Тільки після успішної перевірки продовжиться сабміт.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-JSON Schema Form, Form
+Форма схеми JSON
 
-##### toggle
+##### перемикач
 
-Used to switch the value from true to false or from false to true.
+Використовується для перемикання значення з true в false або з false на true.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Switch
+Перемкнути
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Використовується для встановлення початкового значення повзунка діапазону
 
-###### Parameter
+###### Параметр
 
-`Start value`: a number used to set the start value.
+`Початкове значення`: число, що використовується для встановлення початкового значення.
 
-###### Supported components
+###### Підтримувані компоненти
 
 Range Slider
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Використовується для встановлення кінцевого значення повзунка за замовчуванням
 
-###### Parameter
+###### Параметр
 
-`End value`: a number used to set the end value.
+`Кінцеве значення`: номер, що використовується для встановлення кінцевого значення.
 
-###### Supported components
+###### Підтримувані компоненти
 
 Range Slider
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{10}}
@@ -190,17 +190,17 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Використовується для встановлення початкового значення за замовчуванням
 
-###### Parameter
+###### Параметр
 
-`Start date/time`: a string used to set the start time/date.
+`Дата початку/час`: рядок, який використовується для встановлення часу початку/дата.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Date Range, Time Range
+Діапазон дат
 
-###### Example
+###### Приклад
 
 ```JavaScript
 2023-09-09
@@ -208,35 +208,35 @@ Date Range, Time Range
 
 ##### setEndValue
 
-Used to set the default end value
+Використовується для встановлення стандартного кінцевого значення
 
-###### Parameter
+###### Параметр
 
-`End date/time`: a string used to set the end time/date.
+`Кінцева дата/час`: рядок, який використовується для встановлення кінцевого часу/дати.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Date Range, Time Range
+Діапазон дат
 
-###### Example
+###### Приклад
 
 ```JavaScript
 2023-10-09
 ```
 
-##### setValueInArray
+##### setValueInray
 
-Used to set the switches whose value is true
+Використовується для встановлення вимикачів, значення якого є істинним
 
-###### Parameter
+###### Параметр
 
-`Value`: an array of strings used to set the options whose value is true .
+`Value`: масив рядків, що використовуються для встановлення варіантів, значення яких є істинним.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Switch Group
+Змінити групу
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,297 +244,297 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Використовуйте ключ, який є рядковим значенням вікна, щоб встановити показане відображення.
 
-###### Parameter
+###### Параметр
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: рядок, який використовується для встановлення, для відображення.  Ключ налаштований у контейнер
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-###### Example
+###### Приклад
 
 ```JavaScript
-View 1
+Перегляд 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Використовуйте індекс, який є числовим значенням, що починається від 0 представлення, щоб встановити представлення.
 
-###### Parameter
+###### Параметр
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: числове значення. Використайте індекс представлення, щоб встановити яке подання для відображення. Індекс починається з 0.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{1}}
 ```
 
-##### showNextView
+##### показати NextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Використовується для показу наступного вигляду. Параметр є логічним значенням, яке визначає, чи потрібно цикл з кінця назад до початку.
 
-###### Parameter
+###### Параметр
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Повторити назад до запуску`: логічне значення (використовуйте перемикач для встановлення) використовується, щоб встановити, чи варто повернутися назад для запуску.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### showNextVisibleView
+##### показати NextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Використовується для показу наступного видимого відображення. На відміну від поведінки функції `showNextView(boolean)`, ця функція пропонує покращити вигляд комутатора шляхом пропущення будь-яких прихованих переглядів під час переходу. Параметр є логічним значенням, яке визначає, чи потрібно цикл з кінця назад до початку.
 
-###### Parameter
+###### Параметр
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Повторити назад до запуску`: логічне значення (використовуйте перемикач для встановлення) використовується, щоб встановити, чи варто повернутися назад для запуску.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
-##### showPreviousView
+##### showviousView
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Використовується для відображення попереднього вигляду. Параметр є логічним значенням, яке визначає, чи потрібно цикл з початку до кінця.
 
-###### Parameter
+###### Параметр
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop починають повернутися`: логічне значення (використовуйте перемикач для встановлення) щоб встановити, чи починається цикл назад.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Використовується для відображення попереднього видимого відображення. На відміну від поведінки функції `showPreviousView`, ця функція пропонує покращений перегляд перемикача функціоналу, пропускаючи будь-які приховані види під час переходу. Параметр є логічним значенням, яке визначає, чи потрібно цикл з початку до кінця.
 
-###### Parameter
+###### Параметр
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop починають повернутися`: логічне значення (використовуйте перемикач для встановлення) щоб встановити, чи починається цикл назад.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Container
+Контейнер
 
 ##### reset
 
-Used to reset the value to default value.
+Використовується для скидання значення за замовчуванням.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Form
+Форма
 
-##### resetValue
+##### змінити значення
 
-Used to reset the value to default value.
+Використовується для скидання значення за замовчуванням.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Steps
+Кроки
 
 ##### openModal
 
-Used to open a modal
+Використана, щоб відкрити модальне
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Modal
+Модал
 
-##### closeModal
+##### поблизу Модала
 
-Used to close a modal
+Використовується для закриття модального засобу
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Modal
+Модал
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Використовується для встановлення посилання на джерело зображення. Це може бути Base64 або URL-адреса, що вказує на зображення в Інтернеті.
 
-###### Parameter
+###### Параметр
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Значення`: рядкове значення, що використовується для встановлення джерела зображення. Це може бути URL або base64.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Image
+Зображення
 
-###### Example
+###### Приклад
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
 ```
 
 ```JavaScript
-data:image/png;base64,iVBORw0KGgoAA...II
+дані: зображення/png;base64,iVORw0KGgoAA...II
 ```
 
-##### clearReplyMessage
+##### очистити ReplyMessage
 
-Used to clear the quoted reply message above the input box.
+Використовується для очищення повідомлення цитованої відповіді над вхідною коробкою.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Chat
+Чат
 
-##### setPrimaryValue
+##### значення setPrimaryValue
 
-Used to set the primary value of statistics.
+Використовується для встановлення первинного значення статистики.
 
-###### Parameter
+###### Параметр
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Первинне значення`: значення числа, що використовується для встановлення первинного значення статистики.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Statistics
+Статистика
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### змінити Первинне значення
 
-Used to reset the primary value to the default primary value of statistics.
+Використовується для скидання первинного значення до стандартного значення статистики.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Statistics
+Статистика
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Використовується для встановлення URL файлу. Це може бути Base64 або URL-адреса, що вказує на PDF у мережі.
 
-###### Parameter
+###### Параметр
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF вихідний код`: рядкове значення, що використовується для встановлення джерела PDF. Це може бути URL або base64.
 
-###### Supported components
+###### Підтримувані компоненти
 
-PDF
+Файл pdf
 
-###### Example
+###### Приклад
 
 ```JavaScript
-https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
+https://upload.wikimedia.org/wikipedia/спільнота/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### відтворити
 
-Used to play video or audio.
+Використовується для відтворення відео чи звуку.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### pause
+##### призупинити
 
-Used to pause video or audio.
+Використовується для паузи відео або аудіо.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-##### showControls
+##### Показати елементи керування
 
-Used to set whether to show the controls.
+Використовується для визначення, чи показувати елементи керування.
 
-###### Parameter
+###### Параметр
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Показати елементи керування`: булеве значення, призначене для відображення елементів керування.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video
+Відео
 
 ##### setVideoUrl
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+Використовується для встановлення URL відео. Це може бути посилання на Base64 або відео на медіа-веб-сайтах.
 
-###### Parameter
+###### Параметр
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Джерело відео`: значення рядка, що використовується для встановлення джерела відео. Це може бути URL або base64.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video
+Відео
 
-###### Example
+###### Приклад
 
 ```JavaScript
-video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+відео1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolume(число)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Використано для встановлення об'єму. Значення параметру - число від 0 до 1.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-###### Example
+###### Приклад
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### швидкість
 
-Used to set the speed.
+Використовується для встановлення швидкості.
 
-###### Parameter
+###### Параметр
 
-`Speed`: a number value between 0.25 to 2
+`Швидкість`: значення числа від 0,25 до 2
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{0.5}}
@@ -542,107 +542,107 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+Використовується для встановлення, чи цикл відтворення.
 
-###### Parameter
+###### Параметр
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: логічне значення, яке використовується для встановлення циклу чи ні
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### перемотка
 
-Used to seek to a specific time position.
+Використовується для пошуку до визначеного часового закаду.
 
-###### Parameter
+###### Параметр
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Час`: числове значення, яке вимірюється в секундах(и). Наприклад, щоб шукати позицію часу 5:35, ви б використали значення 335.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### заглушити
 
-Used to set mute or not.
+Використовуються для встановлення звуку чи ні.
 
-###### Parameter
+###### Параметр
 
-`Mute`: a boolean value
+`Mute`: логічне значення
 
-###### Supported components
+###### Підтримувані компоненти
 
-Video, Audio
+Відео
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Використовується для встановлення URL аудіозапису. Це може бути посилання на Base64 або відео на медіа-веб-сайтах.
 
-###### Parameter
+###### Параметр
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Аудіо джерело`: рядкове значення, що використовується для встановлення джерела аудіо. Це може бути URL або base64.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Audio
+Аудіо
 
-###### Example
+###### Приклад
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 ```
 
-##### slickNext
+##### слизове далі
 
-Used to switch to the next image.
+Використовується для перемикання на наступне зображення.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
 Carousel
 
-##### slickPrevious
+##### slickПопередня
 
-Used to switch to the previous image.
+Використовується для переходу на попереднє зображення.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Використовується для встановлення вихідного URL IFrame.
 
-###### Parameter
+###### Параметр
 
-`Value`: a string value used to set the URL.
+`Значення`: значення, що використовується для встановлення URL.
 
-###### Supported components
+###### Підтримувані компоненти
 
 IFrame
 
-###### Example
+###### Приклад
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Використовується для встановлення маркерів на карті.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: масив об'єктів. Поля широти та довготи для кожного об'єкта повинні бути такими ж, як і поля, встановлені на правій панелі.
 
-###### Supported components
+###### Підтримувані компоненти
 
-Map
+Карта
 
-###### Example
+###### Приклад
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Використовується для скидання маркерів до маркерів за замовчуванням.
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-###### Supported components
+###### Підтримувані компоненти
 
-Map
+Карта
 
-#### Run script
+#### Запустити скрипт
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Написавши скрипт, ви можете викликати декілька подій у послідовності. [Докладніше](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Перейти за URL-адресою
 
-##### Parameter
+##### Параметр
 
-`URL`: String value. The URL to be opened
+`URL`: значення рядка. URL який слід відкрити
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Нова вкладка`: логічне значення. Використовується для встановлення чи відкривати URL на новій вкладці.
 
-#### Show notification
+#### Показувати сповіщення
 
-##### Parameter
+##### Параметр
 
-`Title`: String value. The title of the notification
+`Title`: String value. Назва сповіщення
 
-`Description`:  String value. The description of the notification
+`Опис `: Рядкове значення. Опис сповіщення
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Тип`: значення рядка. Встановіть тип за допомогою випадаючих варіантів: Успішність, Помилка, Попередження, Інформація
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Тривалість(мс)`: Число значення. Тривалість відображення сповіщення.
 
-#### Copy to clipboard
+#### Скопіювати до буферу обміну
 
-##### Parameter
+##### Параметр
 
-`Value`: String value. The string to be copied.
+`Значення`: Значення рядка. Рядок, який слід скопіювати.
 
-#### Set router
+#### Встановити маршрутизатор
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+Якщо в додатку кілька сторінок, то ця функція може бути використана для перемикання між сторінками.
 
-##### Parameter
+##### Параметр
 
-`Page`: Use to set redirect to which page.
+\`Сторінка: використовуйте, щоб встановити переадресацію на цю сторінку.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Підсторінка`: Використовувати переспрямування до якої підсторінки сторінки, вибраної в параметрі сторінки.
 
-#### Save to ILLA Drive
+#### Зберегти на диск
 
-##### Parameter
+##### Параметр
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Ім'я файлу з розширення`: рядок. Назва з розширенням файлу після завантаження на ILLA Drive.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`Дані файлу`: рядок. Base64 або необроблені дані файлів, такі як JSON, CSV, звичайний текст тощо.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Тип файлу`: рядок. Одне з наступних значень: автоматично, звичайний текст, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При використанні функції "Авто" ми спробуємо визначити тип файлів на основі розширення файлу або даних про файл.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+\`Тека: рядок. Тека призначення для завантаження файлу. Залиште порожнім, щоб завантажити до кореневої теки.
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`Дозволити анонімний`: Bolean. Використовується для встановлення, чи дозволено анонімний доступ користувача. Якщо ви плануєте встановити свій застосунок як публічний, має бути увімкнений анонімний доступ. Для безпеки ваших даних, файлів або папок, доступних анонімно, повинні розміщуватися в анонімній теці.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Замінити`: Boolean. Використовується для установки, коли є файли з таким самим ім'ям в одному каталозі, замініть існуючий файл новим файлом або автоматично перейменуйте новий файл.
 
-#### Download from ILLA Drive
+#### Завантажити з ILLA-диска
 
-##### Parameter
+##### Параметр
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Завантаження інформації`: масив об'єктів, включаючи tinyURL та fileID. Ви можете використовувати палітру файлів компонентів диску для вибору файлів з ILLA Drive і отримати інформацію про `Завантажити інформацію` за допомогою drivePicker1.значення
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Зберегти як Zip`: Boolean. Використовується для завантаження файлів у форматі Zip.
 
-#### Download
+#### Звантажити
 
-Used to export data to your device.
+Використовується для експорту даних на ваш пристрій.
 
-##### Parameter
+##### Параметр
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+\`Тип файлу: один з наступних значень: Auto, текстовий текст, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). При використанні функції "Авто" ми спробуємо визначити тип файлів на основі розширення файлу або даних про файл.
 
-`File name`: a name with extension.
+`Ім'я файлу`: ім'я з розширенням.
 
-`Data`: data of the file.
+`Data`: дані файлу.
 
-#### Set global data
+#### Встановити глобальні дані
 
-##### Set global data value
+##### Встановити глобальне значення даних
 
-Used to set the value of gobalData
+Використовується для встановлення значення gobalData
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`value`: the value to set
+`значення`: значення встановлено
 
-##### Set global data in
+##### Встановити глобальні дані
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Коли глобальні дані є масивом або об'єктом, використовувати setGlobalDataIn для зміни значення, що відповідає певному індексу в масиві, або для зміни значення, відповідного до конкретного ключа об'єкта.
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`шлях`: індекс значення, яке ви маєте намір оновити в масиві або ключ в об’єкті. Наприклад, щоб задати друге значення у масиві, шлях 1 (індекс). Щоб встановити значення атрибуту з назвою key1, шлях є key1.
 
-`value`: the value to set
+`значення`: значення встановлено
 
-#### Set local storage
+#### Установити локальне сховище
 
-##### clear
+##### очистити
 
-Used to clear the local storage
+Використовується для очищення локальної пам'яті
 
-###### Parameter
+###### Параметр
 
-No parameter
+Немає параметра
 
-##### setValue
+##### значення набору
 
-###### Parameter
+###### Параметр
 
-`key`: the displayName of local storage.
+`key`: displayName локального сховища.
 
-`value`: the value of the key.
+`значення`: значення ключа.
 
-3.  ### Only run when
+### Лише в той час коли
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+Булеве значення встановлено, коли може бути викликано обробник події. Наприклад, коли вхід 1 порожній, не вдалося запустити обробник подій: `{{input1.value!==""&input1.value!==1.value!==undefined}}`
