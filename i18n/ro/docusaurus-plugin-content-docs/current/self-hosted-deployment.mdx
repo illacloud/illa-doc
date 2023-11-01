@@ -1,0 +1,213 @@
+---
+title: Instalare auto-găzduită
+description: Constructorul ILLA oferă o experiență continuă de implementare care îți permite să instalezi ILLA Builder la o viteză uimitoare în cadrul propriului tău Virtual Private Cloud (VPC).
+---
+
+# Instalare auto-găzduită
+
+## Doctor
+
+1.  Pornire Docker
+2.  Introduceți următoarea comandă în terminal pentru a instala imaginea oficială:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Descarcă ILLA CLI și implementează
+
+Dacă aveți Rust instalat, puteți construi cu ușurință+instala cea mai recentă versiune ILLA CLI cu încărcătură:
+
+`cargo install illa`
+
+`illa deploy --self--port=10000`
+
+Unealta **încărcătură** va finaliza descărcarea CLI ILLA cu dependențele sale sursă, construiește și instalează-l pe traseul binului de încărcare, astfel încât să-l putem rula. Odată instalat, puteți rula CLI ILLA cu comanda **illa**.
+
+Alternativ, poți descărca CLI pentru sistemul tău de operare aici:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Dacă descărcați de pe link-urile de mai sus, pașii sunt puțin diferiți față de descărcarea ILLA CLI din **încărcătură** . După descărcarea liniei de comandă va trebui să o faci executabilă. Hai să luăm illa-linux de exemplu:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Verificarea cerințelor preliminare ale instalării auto-găzduite
+
+Aceste porturi 5432, 9999 și 8000 ar trebui să rămână pentru constructorul ILLA.
+
+Următoarea comandă va verifica cerințele pentru instalarea auto-găzduită pe sistemul dvs. de operare:
+
+```Plaintext
+> illa doctor
+```
+
+### Desfășurarea constructorului ILLA
+
+Odată ce CLI a fost instalat, puteți rula o instalație auto-găzduită sau cloud.
+
+Poți implementa pur și simplu un constructor ILA găzduit prin rularea următoarei comenzi:
+
+```Plaintext
+# portul pe care poate fi accesat constructorul ILLA poate fi schimbat
+# <SERVER_ADDRESS> ar trebui să fie ip serverul dvs cloud public, localhost
+> illa deploy --self--port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Acum, puteți accesa Constructorul ILLA: <http://localhost:10000>
+
+### Actualizarea Constructorului ILLA
+
+Pentru a actualiza Constructorul ILLA cu cele mai recente imagini docker, utilizați următoarea comandă:
+
+```Plaintext
+> actualizare illa --self
+```
+
+### Alte operațiuni
+
+```Plaintext
+# listează Constructorul ILLA
+> listă illa --self
+
+# opresc Constructorul ILLA
+> illa stop --self
+
+# elimină Constructorul ILLA
+> illa remove --self
+
+# ștergerea forțată a rulatorului ILLA și date persistente
+> sudo illa remove --force --date
+
+# restartează Constructorul ILLA
+> illa restart --self
+
+# informații
+> ajutor la ajutor
+```
+
+## Kubernetes
+
+### Descriere
+
+Construiți o imagine illa all-in-one și rulați-o cu k8 pe mașina dvs. Puteți vizualiza fișierul scripts în folderul [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) pentru mai multe detalii.
+
+Notă:
+
+Am recomandat implementarea cu instrumentele noastre de auto-implementare [illa-cli](https://github.com/illacloud/illa).
+
+Și deocamdată nu sprijinim Apple Silicon M1 (darwin-arm64 arch).
+
+### Rulează cu o imagine subţire oficială
+
+Instalează GNU marca și tip:
+
+```JavaScript
+fă implementare
+```
+
+sau doar executa:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+această comandă va trage imaginea oficială all-in-one și o va implementa în clusterul dvs Kubernetes.
+
+### Pentru baza de date Stocare Persistentă
+
+Editează [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), și adaugă configurația persistentă a IAAS pe ea.
+
+### Pentru configurarea HTTPS
+
+Puteți direcționa NodePort către gateway-ul de cluster Kubernetes și puteți rescrie în portul 443 și adăuga https cert în gateway-ul de ingress.
+
+Sau, poți implementa manual un gateway de intrare în serverul dvs Kubernetes, configurare ca aceasta:
+
+```JavaScript
+static_resources:
+  ascultători:
+  - nume: Address _listener
+    :
+      socket_address:
+        adresa: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtre:
+      - nume: trimis. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. trolConnectionManager
+          stat_prefix: http_listener
+          route_config:
+            nume: local_route
+            virtual_hosts:
+            - nume: illa_builder
+              domenii:
+              - "illa. ordomian. om" # înlocuieşte cu rutele domeniului
+              :
+              - potrivire:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - nume: envoy. ilters.http. outer
+            typed_config:
+              "@type": tip. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        nume: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # înlocuiește acest lucru cu fișierul certificatului
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain. em
+              private_key:
+                nume fișier: /folder-tău/privkey. em
+
+  cluster:
+  - nume: illa_builder
+    tip: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      puncte finale:
+      - lb_endpoints:
+        - endpoint:
+            adresă:
+              socket_address:
+                adresa: illa-builder
+                portvalue: 80
+```
+
+## Lansare rapidă
+
+Puteți desfășura ILLA într-un mod remarcabil de rapid, vă rugăm să urmați instrucțiunile de mai jos:
+
+În primul rând, vă rugăm să descărcați acest [fișier docker](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) pe computer, apoi rulați următorul cod.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+Și autentifică-te cu numele de utilizator și parola implicite:
+
+Nume utilizator: **`root`**
+
+Parola: **`parolă`** (doar modul auto-gazdă).
