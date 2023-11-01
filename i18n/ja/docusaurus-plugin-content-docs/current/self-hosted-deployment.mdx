@@ -1,0 +1,213 @@
+---
+title: 自己ホスト型デプロイメント
+description: ILLA Builderは、独自のVirtual Private Cloud(VPC)内で驚くべき速度でILLAビルダーを展開できるシームレスな展開環境を提供します。
+---
+
+# 自己ホスト型デプロイメント
+
+## Docker
+
+1.  Dockerを起動
+2.  公式イメージをインストールするには、次のコマンドをターミナルに入力してください。
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### ILLA CLI をダウンロードしてデプロイします
+
+Rust がインストールされている場合は、最新の ILLA CLI リリースをカーゴで簡単にビルド/インストールできます。
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+**cargo** ツールは、ILLA CLI のソース依存のダウンロードを完了します。 カーゴビンのパスに設置することでそれを実行できるようになります インストールが完了したら、**illa**コマンドでILLA CLIを実行できます。
+
+または、お使いのオペレーティングシステム用の ILLA CLI をダウンロードすることもできます:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+上記のリンクからダウンロードする場合、手順は、ILLA CLI を **cargo** からダウンロードするのと若干異なります。 CLIをダウンロードしたら、実行可能にする必要があります。 例えば、illa-linuxを見てみましょう。
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### 自己ホストインストールの前提条件を確認する
+
+これらのポート5432、9999、8000はILLAビルダーのために残るべきです
+
+以下のコマンドを実行すると、オペレーティングシステムにおける自己ホスト型インストールの前提条件を確認します。
+
+```Plaintext
+> illa doctor
+```
+
+### ILLA ビルダーのデプロイ
+
+ILLA CLI がインストールされると、セルフホストまたはクラウドのインストールを実行できます。
+
+以下のコマンドを実行するだけで、自己ホストの ILA Builder をデプロイできます。
+
+```Plaintext
+# the port which ILLA Builder can be accessed on can be changed
+# the <SERVER_ADDRESS> should be your cloud server public ip, default localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+これで、ILLA Builderにアクセスできます: <http://localhost:10000>
+
+### ILLA ビルダーの更新
+
+ILLA ビルダーを最新の docker イメージで更新するには、次のコマンドを使用します。
+
+```Plaintext
+> illa update --self
+```
+
+### その他の操作
+
+```Plaintext
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# 強制的に実行されている ILLA ビルダーと永続的なデータ
+> sudo illa remove ---force -data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help info
+```
+
+## Kubernetes
+
+### 説明
+
+illaのオールインワンイメージを構築し、あなたのマシン上でk8sでそれを実行します。 詳細については、 [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts)フォルダにあるスクリプトファイルを確認してください。
+
+メモ:
+
+auto-deploy tools [illa-cli](https://github.com/illacloud/illa)でデプロイすることを強くお勧めします。
+
+そして、現時点では、Apple Silicon M1(darwin-arm64アーチ)はサポートしていません。
+
+### 公式のスリムな画像で実行
+
+GNU make をインストールし、次のように入力します:
+
+```JavaScript
+デプロイする
+```
+
+実行してみてください
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+このコマンドはillasoftの公式オールインワンイメージを引き出し、Kubernetesクラスタにデプロイします。
+
+### データベースの永続的なストレージ
+
+[illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) を編集し、IAAS の永続的なストレージ設定を追加します。
+
+### HTTPS 設定
+
+NodePortをKubernetesクラスタイングレスゲートウェイにルーティングし、443ポートに書き換え、イングレスゲートウェイにhttps証明書を追加することができます。
+
+または、イングレスゲートウェイをKubernetesサーバーに手動でデプロイすることもできます。
+
+```JavaScript
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy.filters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3.HttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa.yourdomian.com" # replace with your domain
+              routes:
+              - match:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy.filters.http.router
+            typed_config:
+              "@type": type.googleapis.com/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets.tls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3.DownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # replace this with your cert file
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain.pem
+              private_key:
+                filename: /your-cert-folder/privkey.pem
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## すばやくデプロイする
+
+驚くほど速い方法でILLAを展開することができます。以下の手順に従ってください。
+
+まず、この [docker file](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) をコンピュータにダウンロードし、次のコードを実行してください。
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+そして、デフォルトのユーザー名とパスワードでログインします。
+
+ユーザー名: **`root`**
+
+パスワード: **`password`** (自己ホストモードのみ).
