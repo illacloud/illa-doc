@@ -1,0 +1,213 @@
+---
+title: Själv-värd distribution
+description: ILLA Builder ger en sömlös driftsättningsupplevelse som låter dig distribuera ILLA Builder med en häpnadsväckande hastighet i ditt eget virtuella privata moln (VPC).
+---
+
+# Själv-värd distribution
+
+## Docker
+
+1.  Starta Docker
+2.  Ange följande kommando i terminalen för att installera den officiella bilden:
+
+`docker pull illasoft/illa-builder:latest`
+
+## KLI
+
+### Ladda ner ILLA CLI och distribuera
+
+Om du har Rust installerat, kan du enkelt bygga + installera den senaste ILLA CLI release med last:
+
+`cargo install illa`
+
+`illa distribuera --self --port=10000`
+
+Verktyget **last** kommer att slutföra nedladdning av ILLA CLI med dess källberoenden, bygga och installera den i lasten bin sökvägen så att vi kan köra den. En gång installerat kan du köra ILLA CLI med **illa**-kommandot.
+
+Alternativt kan du bara ladda ner ILLA CLI för ditt operativsystem här:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Om du laddar ner från ovanstående länkar, stegen är något annorlunda jämfört med att ladda ner ILLA CLI från **frakt** . Efter nedladdning av CLI, måste du göra det körbart. Låt oss ta illa-linux till exempel:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Kontroll av förutsättningarna för egen installation
+
+Dessa hamnar 5432, 9999 och 8000 bör förbli för ILLA Builder
+
+Följande kommando kommer att kontrollera förutsättningarna för egen installation på ditt operativsystem:
+
+```Plaintext
+> illa doctor
+```
+
+### Installera ILLA Builder
+
+När ILLA CLI har installerats kan du köra en egen installation eller molninstallation.
+
+Du kan helt enkelt distribuera en egen värd ILA Builder genom att köra följande kommando:
+
+```Plaintext
+# den port som ILLA Builder kan nås på kan ändras
+# den <SERVER_ADDRESS> bör vara din molnserver publik ip, standard localhost
+> illa distribuera --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Nu kan du komma åt ILLA Builder: <http://localhost:10000>
+
+### Uppdaterar ILLA Builder
+
+För att uppdatera ILLA Builder med de senaste dockerbilderna, använd följande kommando:
+
+```Plaintext
+> illa uppdatering --själv
+```
+
+### Övrig verksamhet
+
+```Plaintext
+# lista ILLA Builder
+> illa list --self
+
+# stoppa ILLA Builder
+> illa stop --self
+
+# ta bort ILLA Builder
+> illa ta bort --self
+
+# tvingad borttagning av den körande ILLA Builder och ihållande data
+> sudo illa ta bort --force --self --data
+
+# starta om ILLA Builder
+> illa starta om --self
+
+# hjälp information
+> illa help
+```
+
+## Kubernetes
+
+### Beskrivning
+
+Bygg illa allt-i-ett-bild och kör den av k8s på din maskin. Du kan kolla in skriptfilen i mappen [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) för mer information.
+
+Notera:
+
+Vi rekommenderar starkt att distribuera med våra automatiska distribuera verktyg [illa-cli](https://github.com/illacloud/illa).
+
+Och för tillfället stöder vi inte Apple Silicon M1 (darwin-arm64 arch).
+
+### Kör med en officiell smal bild
+
+Installera GNU make och typ:
+
+```JavaScript
+gör driftsättning
+```
+
+eller bara exekvera:
+
+```JavaScript
+/bin/bash skript/deploy.sh
+```
+
+detta kommando kommer att dra illasoft officiella allt-i-ett image och distribuera den på din Kubernetes kluster.
+
+### För databas ihållande lagring
+
+Redigera [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), och lägg till din ihållande lagringskonfiguration för IAAS på den.
+
+### För HTTPS-konfiguration
+
+Du kan dirigera NodePort till din Kubernetes kluster intress gateway och skriva om till 443 port, och lägga till https cert i din intress gateway.
+
+Eller så kan du distribuera en inress-gateway manuellt till din Kubernetes server, konfiguration så här:
+
+```JavaScript
+static_resources:
+  listeners:
+  - namn: https_listener
+    adress:
+      socket_adress:
+        adress: 0. .0.0
+        port_value: 443
+    filter_kedjor:
+    - filter:
+      - namn: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            namn: local_route
+            virtual_hosts:
+            - namn: illa_builder
+              domäner:
+              - "illa. vår domian. om" # ersätt med din domän
+              rutter:
+              - matcha:
+                  prefix: "/"rutt:
+                  kluster: illa_builder
+          http_filters:
+          - namn: envoy. ilters.http. yttre
+            typed_config:
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        namn: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # ersätt detta med din cert-fil
+            - certificate_chain:
+                filnamn: /your-cert-folder/fullchain. em
+              private_key:
+                filnamn: /your-cert-folder/privkey. em
+
+  kluster:
+  - namn: illa_builder
+    typ: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      slutpunkter:
+      - lb_endpoints:
+        - slutpunkt:
+            adress:
+              socket_adress:
+                adress: illa-builder
+                port_value: 80
+```
+
+## Distribuera snabbt
+
+Du kan distribuera ILLA på ett anmärkningsvärt snabbt sätt, följ instruktionerna nedan:
+
+Ladda först ner denna [dockerfil] \(https://github.com/illacloud/deploy-illa-manually/tree/main/docker) till din dator och kör sedan följande kod.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+Och logga in med standardanvändarnamn och lösenord:
+
+Användarnamn: **`root`**
+
+Lösenord: **`password`** (endast själv-värd).
