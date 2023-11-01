@@ -1,0 +1,213 @@
+---
+title: Wdrożenie na własny rachunek
+description: Kreator ILLA zapewnia płynne doświadczenie wdrożeniowe, które pozwala Ci rozmieścić budowniczego ILLA z zaskakującą prędkością w ramach własnej wirtualnej prywatnej chmury (VPC).
+---
+
+# Wdrożenie na własny rachunek
+
+## Dokujący
+
+1.  Uruchom Docker
+2.  Wprowadź następujące polecenie w terminalu, aby zainstalować oficjalny obrazek:
+
+`docker pull illasoft/illa-builder:latest`
+
+## KLIJ
+
+### Pobierz CLI ILLA i wdroż
+
+Jeśli masz zainstalowany Rust możesz łatwo zbudować+zainstalować najnowsze zwolnienie ILLA CLI z ładunkiem:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+Narzędzie **ładunek** zakończy pobieranie CLI ILLA z zależnościami źródłowymi, zbudować i zainstalować go na trasie ładunkowej, abyśmy mogli go prowadzić. Po zainstalowaniu możesz uruchomić CLI ILLA za pomocą polecenia **illa**.
+
+Alternatywnie, możesz po prostu pobrać CLI ILLA dla systemu operacyjnego tutaj:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Jeśli pobierasz z powyższych linków, kroki są nieco różne w porównaniu z pobieraniem CLI ILLA z **ładunku** . Po pobraniu CLI musisz sprawić, by był on wykonywalny. Weźmy na przykład illa-linuks:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Sprawdzanie warunków instalacji własnej
+
+Porty 5432, 9999 i 8000 powinny pozostać dla budowniczego ILLA
+
+Poniższe polecenie sprawdzi warunki instalacji własnej hostowanej w systemie operacyjnym:
+
+```Plaintext
+> illa doctor
+```
+
+### Wdrożenie konstruktora ILLA
+
+Po zainstalowaniu CLI ILLA możesz uruchomić własną instalację lub chmurę.
+
+Możesz po prostu wdrożyć samodzielnego opiekuna ILA Builder uruchamiając następujące polecenie:
+
+```Plaintext
+# port, na którym można uzyskać dostęp do konstruktora ILLA, może zostać zmieniony
+# , <SERVER_ADDRESS> powinien być publicznym adresem serwera w chmurze, domyślny localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Teraz możesz uzyskać dostęp do konstruktora ILLA: <http://localhost:10000>
+
+### Aktualizacja konstruktora ILLA
+
+Aby zaktualizować konstruktor ILLA z najnowszymi obrazkami dockera, użyj następującej komendy:
+
+```Plaintext
+> aktualizacja illa --self
+```
+
+### Inne operacje
+
+```Plaintext
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help
+```
+
+## Kubernetes
+
+### Opis
+
+Zbuduj zły obrazek w jednym, a następnie uruchom go po k8 na swoim komputerze. Możesz sprawdzić plik skryptów w folderze [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts), aby uzyskać więcej informacji.
+
+Uwaga:
+
+Zalecamy wdrożenie naszych narzędzi do automatycznego wdrażania [illa-cli](https://github.com/illacloud/illa).
+
+A na razie nie wspieramy Apple Silicon M1 (darwin-arm64 arch).
+
+### Uruchom z oficjalnym obrazem slajdu
+
+Zainstaluj markę i typ GNU:
+
+```JavaScript
+utwórz wdrożenie
+```
+
+lub po prostu wykonaj:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+ta komenda pociągnie za sobą nielazoft oficjalny obraz w jednym i rozmieści go na Twoim klastrze Kubernetes.
+
+### Dla pamięci trwałej bazy danych
+
+Edytuj [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) i dodaj do niego trwałą konfigurację pamięci IAAS.
+
+### Dla konfiguracji HTTPS
+
+Możesz przekierować NodePort do swojej bramy wejściowej klastra Kubernetes i przepisać do portu 443 i dodać cert https w swojej bramie wejściowej.
+
+Możesz też ręcznie wdrożyć bramę wejściową na swoim serwerze Kubernetes skonfigurować tak:
+
+```JavaScript
+static_resources:
+  słuchaczy:
+  - nazwa: https_listener
+    address:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtry:
+      - nazwa: wysłannik. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            nazwa: local_route
+            virtual_hosts:
+            - nazwa: illa_builder
+              domeny:
+              - "illa. ourdomian. om" # zastąp twoją domeną
+              trasy:
+              - pasuj: Prefiks
+                  : "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - nazwa: wysłannik. ilters.http. outer
+            typed_config:
+              "@type": type. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        nazwa: voy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # zastąp to plikiem certyfikatu
+            - certificate_chain:
+                nazwa: /your-cert-folder/fullchain. em
+              private_key:
+                nazwa pliku: /your-cert-folder/privkey. em
+
+  klastrów:
+  - nazwa: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      punkty końcowe:
+      - lb_endpoints:
+        - punkt końcowy:
+            adres:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## Szybkie wdrożenie
+
+Możesz wdrożyć ILLA w niezwykle szybki sposób, postępuj zgodnie z poniższymi instrukcjami:
+
+Najpierw pobierz ten [plik docker](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) na komputer, a następnie uruchom następujący kod.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+I zaloguj się domyślną nazwą użytkownika i hasłem:
+
+Nazwa użytkownika: **`root`**
+
+Hasło: **`password`** (tylko tryb samodzielnego).
