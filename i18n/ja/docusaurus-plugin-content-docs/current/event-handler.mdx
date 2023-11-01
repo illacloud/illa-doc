@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: イベントハンドラ：
+description: コンポーネントの state が変更されたときにイベントをトリガーするイベントハンドラをコンポーネントに追加します。
 ---
 
-# Event handler
+# イベントハンドラ：
 
-Add an event handler to the component to trigger an event when the component's state changes.
+コンポーネントの state が変更されたときにイベントをトリガーするイベントハンドラをコンポーネントに追加します。
 
-## How-to
+## 使い方
 
 <div style={{
 position: "relative",
@@ -15,43 +15,43 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## 設定オプション
 
-1.  ### Event
+### イベント
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+アクションのトリガー方法を設定します。 たとえば、データグリッド(テーブル)コンポーネントが更新されたときに restapi1 をトリガーしたい場合は、イベントを `refresh` に設定できます。 データグリッド(テーブル)コンポーネントが変更されたときにrestapi2をトリガーしたい場合は、イベントを `sort change` に設定します。 ボタンがクリックされたときに restapi3 をトリガーしたい場合は、イベントを `click` に設定します。
 
-2.  ### Action
+### アクション
 
-#### Trigger action
+#### トリガーアクション
 
-Used to trigger an action created in this app
+このアプリで作成されたアクションのトリガーに使用されます
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **パラメータ**      | **必須か否か**             | **description**                |
+| -------------- | --------------------- | ------------------------------ |
+| アクション名         | `required`            | このアプリで作成されたアクションを選択してください      |
 
-#### Control component
+#### コンポーネントの制御
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **パラメータ**         | **必須か否か**             | **description**                                                                                                                                   |
+| ----------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| コンポーネント           | `required`            | 現在のページに追加されたコンポーネントを選択します                                                                                                                         |
+| 方法                | `required`            | 制御コンポーネントの動作を設定するために使用します。 異なるメソッドは設定するために異なるパラメータを必要とします。 以下に詳細な説明を示す。                                                                           |
 
 ##### setValue
 
-Used to set the value.
+値の設定に使用します。
 
-###### Parameter
+###### パラメータ
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`Value`: 値はコンポーネントの種類に依存する `string` または `number` または `object` または `boolean` または `array` になります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| コンポーネント                                                                                                                                                             | パラメータの種類                                                     | 例                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 入力、編集可能なテキスト、テキストエリア、ディバイダー、選択、ラジオグループ、ラジオボタン、日付、日付、時間、ステップ、テキスト、バーの進行状況、円の進行状況                                                                                     | `string`                                                     |                                                                                                                                                                   |
+| `Hello world`                                                                                                                                                       |                                                              |                                                                                                                                                                   |
 
 | JSON Editor
                                                                                                                                             | `string`
@@ -64,107 +64,107 @@ Used to set the value.
 
 ##### clearValue
 
-Used to clear the value.
+値をクリアするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+入力, 数値入力, 編集可能なテキスト, テキスト領域, アップロード, JSON エディタ, JSON スキーマフォーム, スイッチ, 選択, マルチ選択, チェックボックスグループ Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Text Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### focus
+##### フォーカス
 
-Used to focus on the component
+コンポーネントにフォーカスするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+入力、番号入力、編集可能なテキスト、テキストエリア、JSONエディタ、リッチテキストエディタ、ラジオグループ。
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+電子メール形式、URL形式などのコンポーネントの検証条件を設定した場合 または必須フィールドを使用して、`validate` 関数が要件を満たしているかどうかを判断できます。 要件を満たしていない場合、検証メッセージが表示されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+入力, 番号入力, 編集可能なテキスト, テキスト領域, アップロード, 選択, マルチ選択, チェックボックスグループ, ラジオボタン, 日付, 日付範囲, 日付時刻, フォーム, レート
 
 ##### clearValidation
 
-Used to clear the validation message.
+検証メッセージをクリアするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+入力、番号入力、編集可能なテキスト、テキストエリア、アップロード、選択、マルチ選択、チェックボックスグループ、ラジオボタン、日付、日付範囲、日付時刻、レート
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Multiselectの選択した値を設定するために使用します。 パラメータは配列でなければなりません。
 
-###### Parameter
+###### パラメータ
 
-`Value`: an array of strings used to set the selected options.
+`Value`: 選択したオプションを設定するために使用される文字列の配列。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Multiselect
+複数選択
 
-###### Example
+###### 例
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### 送信
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+フォームデータを送信します。 submit メソッドがトリガーされると、まずフォームデータを検証します。 検証エラーがある場合、フォームの送信は防止され、対応するエラーメッセージが表示されます。 検証が成功した後にのみ提出が続行されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-JSON Schema Form, Form
+JSON スキーマフォーム、フォーム
 
-##### toggle
+##### 切り替え
 
-Used to switch the value from true to false or from false to true.
+値をtrueからfalseに、またはfalseからtrueに切り替えるために使用します。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Switch
+切り替え
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+範囲スライダーのデフォルトの開始値を設定するために使用します。
 
-###### Parameter
+###### パラメータ
 
-`Start value`: a number used to set the start value.
+`Start value`: 開始値を設定するための数値。
 
-###### Supported components
+###### サポートされるコンポーネント
 
 Range Slider
 
-###### Example
+###### 例
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+範囲スライダーのデフォルトの終了値を設定するために使用
 
-###### Parameter
+###### パラメータ
 
-`End value`: a number used to set the end value.
+`End value`: 終了値を設定するための数値。
 
-###### Supported components
+###### サポートされるコンポーネント
 
 Range Slider
 
-###### Example
+###### 例
 
 ```JavaScript
 {{10}}
@@ -190,17 +190,17 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+デフォルトの開始値を設定するために使用
 
-###### Parameter
+###### パラメータ
 
-`Start date/time`: a string used to set the start time/date.
+`開始日時`: 開始日時/開始日時を設定するための文字列。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Date Range, Time Range
+日付範囲、時間範囲
 
-###### Example
+###### 例
 
 ```JavaScript
 2023-09-09
@@ -208,17 +208,17 @@ Date Range, Time Range
 
 ##### setEndValue
 
-Used to set the default end value
+デフォルトの終了値を設定するために使用
 
-###### Parameter
+###### パラメータ
 
-`End date/time`: a string used to set the end time/date.
+`終了日時`: 終了時刻/終了時刻を設定するための文字列。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Date Range, Time Range
+日付範囲、時間範囲
 
-###### Example
+###### 例
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+値が true のスイッチを設定するために使用
 
-###### Parameter
+###### パラメータ
 
-`Value`: an array of strings used to set the options whose value is true .
+`Value`: 値が true のオプションを設定するために使用される文字列の配列。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Switch Group
+グループを切り替える
 
-###### Example
+###### 例
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,35 +244,35 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+表示するビューを設定するには、ビューの文字列値であるキーを使用します。
 
-###### Parameter
+###### パラメータ
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: 表示するビューを設定するために使用する文字列。  キーはコンテナ内で設定されています
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-###### Example
+###### 例
 
 ```JavaScript
-View 1
+1を表示
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+ビューの0から始まる数値のインデックスを使用して、表示ビューを設定します。
 
-###### Parameter
+###### パラメータ
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+`Index`: 数値。 表示するビューを設定するには、ビューのインデックスを使用します。 インデックスは0から始まります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-###### Example
+###### 例
 
 ```JavaScript
 {{1}}
@@ -280,113 +280,113 @@ Container
 
 ##### showNextView
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+次のビューを表示するために使用します。 このパラメータは、終わりから始まりまでループするかどうかを決定する真偽値です。
 
-###### Parameter
+###### パラメータ
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`開始時にループバック`: 開始時にループバックするかどうかを設定するために使用される boolean 値 (設定するにはスイッチを使用する) 。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
 ##### showNextVisibleView
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+次の表示ビューを表示するために使用されます。 `showNextView(boolean)`関数の動作とは異なり、この関数はトランジション中に非表示のビューをスキップすることでビューの切り替え機能を向上させます。 このパラメータは、終わりから始まりまでループするかどうかを決定する真偽値です。
 
-###### Parameter
+###### パラメータ
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`開始時にループバック`: 開始時にループバックするかどうかを設定するために使用される boolean 値 (設定するにはスイッチを使用する) 。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
-##### showPreviousView
+##### 前の表示を表示
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+前のビューを表示するために使用されます。 パラメータはブール値で、最初から最後までループするかどうかを決定します。
 
-###### Parameter
+###### パラメータ
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start to back`: ループ開始を戻すかどうかを設定するために使用される boolean 値 (設定するにはスイッチを使用する) 。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
 ###### showPreviousVisibleView
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+前の表示ビューを表示するために使用されます。 `showPreviousView` 関数の動作とは異なり、この機能はトランジション中に隠しビューをスキップすることでビューの切り替え機能を向上させます。 パラメータはブール値で、最初から最後までループするかどうかを決定します。
 
-###### Parameter
+###### パラメータ
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start to back`: ループ開始を戻すかどうかを設定するために使用される boolean 値 (設定するにはスイッチを使用する) 。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Container
+コンテナ
 
 ##### reset
 
-Used to reset the value to default value.
+値をデフォルト値にリセットするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Form
+フォーム
 
 ##### resetValue
 
-Used to reset the value to default value.
+値をデフォルト値にリセットするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Steps
+歩数
 
 ##### openModal
 
-Used to open a modal
+モーダルを開くために使用
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Modal
+モーダル語
 
 ##### closeModal
 
-Used to close a modal
+モーダルを閉じるために使用
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Modal
+モーダル語
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+画像のソースURLの設定に使用します。 これは、Base64 または Web 上の画像を参照する URL である可能性があります。
 
-###### Parameter
+###### パラメータ
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: 画像ソースの設定に使用される文字列値。 URL または base64 になります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Image
+画像
 
-###### Example
+###### 例
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
@@ -398,113 +398,113 @@ data:image/png;base64,iVBORw0KGgoAA...II
 
 ##### clearReplyMessage
 
-Used to clear the quoted reply message above the input box.
+入力ボックスの上にある引用符で囲まれた返信メッセージをクリアするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Chat
+チャット
 
 ##### setPrimaryValue
 
-Used to set the primary value of statistics.
+統計の主な値を設定するために使用します。
 
-###### Parameter
+###### パラメータ
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Primary value`: 統計の主値を設定するために使用される数値。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Statistics
+統計情報
 
-###### Example
+###### 例
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### ResetPrimaryValue
 
-Used to reset the primary value to the default primary value of statistics.
+統計のデフォルトのプライマリ値にリセットするために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Statistics
+統計情報
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+ファイルのURLを設定するために使用します。 これは、Base64 または Web 上の PDF を指すURL である可能性があります。
 
-###### Parameter
+###### パラメータ
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF source`: PDF ソースの設定に使用される文字列値。 URL または base64 になります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
 PDF
 
-###### Example
+###### 例
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### 再生
 
-Used to play video or audio.
+ビデオやオーディオの再生に使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-##### pause
+##### 一時停止
 
-Used to pause video or audio.
+ビデオやオーディオを一時停止するために使用されます。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
 ##### showControls
 
-Used to set whether to show the controls.
+コントロールを表示するかどうかを設定するために使用します。
 
-###### Parameter
+###### パラメータ
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Show controls`: コントロールを表示するかどうかを設定するために使用されるブール値。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video
+ビデオ
 
 ##### setVideoUrl
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+動画の URL を設定するために使用します。 メディアのウェブサイトでは、Base64 または動画の URL にすることができます。
 
-###### Parameter
+###### パラメータ
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Video source`: ビデオソースの設定に使用される文字列値。 URL または base64 になります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video
+ビデオ
 
-###### Example
+###### 例
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
@@ -512,29 +512,29 @@ video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 
 ##### setVolume(number)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+ボリュームの設定に使用します。 パラメータは 0 から 1 の間の数値です。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-###### Example
+###### 例
 
 `video1.setVolume(0.5)`
 
 ##### setSpeed
 
-Used to set the speed.
+スピードを設定するのに使用します。
 
-###### Parameter
+###### パラメータ
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: 0.25 から 2 までの数値
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-###### Example
+###### 例
 
 ```JavaScript
 {{0.5}}
@@ -542,17 +542,17 @@ Video, Audio
 
 ##### setLoop
 
-Used to set whether to loop the playback.
+再生をループするかどうかを設定するために使用します。
 
-###### Parameter
+###### パラメータ
 
-`Loop`: a boolean value used to set loop or not
+`Loop`: ループの設定に使用されるブール値
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-###### Example
+###### 例
 
 ```JavaScript
 {{true}}
@@ -560,47 +560,47 @@ Video, Audio
 
 ##### seekTo
 
-Used to seek to a specific time position.
+特定の時間位置を求めるために使用されます。
 
-###### Parameter
+###### パラメータ
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(s)`: 秒単位で測定された数値。 たとえば、時間の位置 5:35 を求める場合は、値 335 を使用します。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
-###### Example
+###### 例
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### ミュート
 
-Used to set mute or not.
+ミュートを設定するかどうかの設定に使用します。
 
-###### Parameter
+###### パラメータ
 
-`Mute`: a boolean value
+`Mute`: boolean 値
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Video, Audio
+ビデオ、オーディオ
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+オーディオの URL を設定するために使用します。 メディアのウェブサイトでは、Base64 または動画の URL にすることができます。
 
-###### Parameter
+###### パラメータ
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Audio source`: オーディオソースの設定に使用される文字列値。 URL または base64 になります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Audio
+オーディオ
 
-###### Example
+###### 例
 
 ```JavaScript
 https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
@@ -608,41 +608,41 @@ https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
 
 ##### slickNext
 
-Used to switch to the next image.
+次の画像に切り替えるために使用します。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
 Carousel
 
 ##### slickPrevious
 
-Used to switch to the previous image.
+前の画像に切り替えるために使用します。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+IFrame のソース URL を設定するために使用します。
 
-###### Parameter
+###### パラメータ
 
-`Value`: a string value used to set the URL.
+`Value`: URL の設定に使用される文字列値。
 
-###### Supported components
+###### サポートされるコンポーネント
 
 IFrame
 
-###### Example
+###### 例
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+マーカーを地図上に設定するために使用します。
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: オブジェクトの配列。 各オブジェクトの緯度と経度フィールドは、右側のパネルで設定されたフィールドと同じにする必要があります。
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Map
+地図
 
-###### Example
+###### 例
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+マーカーを既定のマーカーにリセットするために使用します。
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
-###### Supported components
+###### サポートされるコンポーネント
 
-Map
+地図
 
-#### Run script
+#### スクリプトを実行
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+スクリプトを書くことで、複数のイベントを順番にトリガーできます。 format@@0(https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### URL に移動
 
-##### Parameter
+##### パラメータ
 
-`URL`: String value. The URL to be opened
+`URL`: 文字列値。 開くURL
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`New tab`: Boolean value. 新しいタブで URL を開くかどうかを設定します。
 
-#### Show notification
+#### 通知を表示
 
-##### Parameter
+##### パラメータ
 
-`Title`: String value. The title of the notification
+`Title`: String value. 通知のタイトル
 
-`Description`:  String value. The description of the notification
+`Description`: 文字列の値。 通知の説明
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Type`: 文字列の値。 ドロップダウンオプションから種類を設定します: 成功、エラー、警告、情報
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Duration(ms)`: 数値。 通知を表示する期間。
 
-#### Copy to clipboard
+#### クリップボードにコピー
 
-##### Parameter
+##### パラメータ
 
-`Value`: String value. The string to be copied.
+`Value`: 文字列の値。 コピーされる文字列
 
-#### Set router
+#### ルーターを設定
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+アプリケーションに複数のページがある場合、この機能を使用してページ間を切り替えることができます。
 
-##### Parameter
+##### パラメータ
 
-`Page`: Use to set redirect to which page.
+`Page`: どのページにリダイレクトを設定するのに使用します。
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Sub-page`: page パラメータで選択したページのサブページへのリダイレクトを設定します。
 
-#### Save to ILLA Drive
+#### ILLA ドライブに保存
 
-##### Parameter
+##### パラメータ
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`extension`のファイル名: String. ILLA Driveにアップロードした後のファイル拡張子の名前。
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`File data`: String. Base64 または JSON、CSV、プレーンテキストなどの生のファイルデータ。
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`File Type`: String. 次のいずれかの値: 自動、プレーンテキスト、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 「自動」を使用する場合、ファイル拡張子またはファイルデータのいずれかに基づいてファイルの種類を決定しようとします。
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Folder`: String. ファイルのアップロード先フォルダ。 ルートフォルダにアップロードするには空白のままにしてください。
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+`anonymousを許可`: Bolean. 匿名のユーザーアクセスが許可されているかどうかを設定するために使用されます。 アプリケーションをパブリックに設定する場合は、匿名アクセスを有効にする必要があります。 データのセキュリティのために、匿名でアクセス可能なファイルまたはフォルダを匿名フォルダに配置する必要があります。
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Replace`: Boolean. 同じディレクトリに同じ名前のファイルがある場合に設定するために使用されます。 既存のファイルを新しいファイルに置き換えるか、自動的に新しいファイルの名前を変更します。
 
-#### Download from ILLA Drive
+#### ILLA Driveからダウンロード
 
-##### Parameter
+##### パラメータ
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Download info`: tinyURL と fileID を含むオブジェクトの配列。 ドライブファイルピッカーコンポーネントを使用して、ILLA ドライブからファイルを選択し、drivePicker1.valueを介して`ダウンロード情報` を取得できます。
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Save as Zip`: Boolean. ファイルをZip形式でダウンロードするかどうかの設定に使用します。
 
-#### Download
+#### ダウンロード
 
-Used to export data to your device.
+デバイスにデータをエクスポートするために使用されます。
 
-##### Parameter
+##### パラメータ
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`File type`: Auto, Plain text, JPEG, SVG, JSON, CSV, TSV, Excel(.xlsx). 「自動」を使用する場合、ファイル拡張子またはファイルデータのいずれかに基づいてファイルの種類を決定しようとします。
 
-`File name`: a name with extension.
+`File name`: extension を持つ名前。
 
-`Data`: data of the file.
+`Data`: ファイルのデータ。
 
-#### Set global data
+#### グローバルデータを設定
 
-##### Set global data value
+##### グローバルデータの値を設定
 
-Used to set the value of gobalData
+gobalData の値を設定するために使用
 
-###### Parameter
+###### パラメータ
 
-`key`: the displayName of globalData.
+`key`: globalData の displayName 。
 
-`value`: the value to set
+`value`: 設定する値
 
-##### Set global data in
+##### グローバルデータの設定
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+グローバルデータが配列またはオブジェクトの場合 setGlobalDataIn を使用して、配列内の特定のインデックスに対応する値を変更したり、オブジェクト内の特定のキーに対応する値を変更したりします。
 
-###### Parameter
+###### パラメータ
 
-`key`: the displayName of globalData.
+`key`: globalData の displayName 。
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: 配列またはオブジェクト内のキーで更新する値のインデックス。 例えば、配列に 2 番目の値を設定するには、パスは 1 (インデックス) です。 key1 という名前の属性の値を設定するには、path は key1 です。
 
-`value`: the value to set
+`value`: 設定する値
 
-#### Set local storage
+#### ローカルストレージを設定
 
-##### clear
+##### クリア
 
-Used to clear the local storage
+ローカルストレージを消去するために使用
 
-###### Parameter
+###### パラメータ
 
-No parameter
+パラメータがありません
 
 ##### setValue
 
-###### Parameter
+###### パラメータ
 
-`key`: the displayName of local storage.
+`key`: ローカルストレージの displayName 。
 
-`value`: the value of the key.
+`value`: キーの値。
 
-3.  ### Only run when
+### 実行時のみ
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+イベントハンドラがトリガーされたときに設定されるブール値。 例えば、input1 が null の場合、イベントハンドラをトリガーできませんでした: \`{{input1.value!==""&input1.value!==undefined}})
