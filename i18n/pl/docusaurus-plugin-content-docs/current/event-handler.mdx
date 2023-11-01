@@ -1,32 +1,812 @@
 ---
-title: Event handler
-description: Event handlers are an integral part of refining your internal tool usage logic
+title: Obsługa zdarzeń
+description: Dodaj obsługę zdarzeń do komponentu, aby wyzwalać zdarzenie, gdy zmienia się stan komponentu.
 ---
 
-# Event handler
+# Obsługa zdarzeń
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Dodaj obsługę zdarzeń do komponentu, aby wyzwalać zdarzenie, gdy zmienia się stan komponentu.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+## Jak to zrobić
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Event handlers
+## Opcje konfiguracji
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+1.  ### Wydarzenie
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+Używane do ustawiania jak uruchomić akcję. Na przykład, jeśli chcemy uruchomić restapi1 po odświeżeniu komponentu siatkowego (tabeli), możemy ustawić to zdarzenie na `odświeżenie`. Jeśli chcemy wyzwalać restapi2, gdy zmienia się typ komponentu siatki (tabeli), możemy ustawić to zdarzenie na `sort change`. Jeśli chcemy uruchomić restapi3 po kliknięciu przycisku, możemy ustawić to zdarzenie na `click`.
 
-### Edit submit handler
+2.  ### Akcja
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+#### Wyzwalacz
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+Używane do uruchomienia akcji utworzonej w tej aplikacji
 
-### Temporary states
+| **parametr**        | **wymagane lub nie**  | **opis**                                |
+| ------------------- | --------------------- | --------------------------------------- |
+| Nazwa akcji         | `wymagane`            | Wybierz akcję utworzoną w tej aplikacji |
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+#### Komponent kontrolny
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+| **parametr**        | **wymagane lub nie**  | **opis**                                                                                                                                                  |
+| ------------------- | --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Komponent           | `wymagane`            | Wybierz komponent dodany do bieżącej strony                                                                                                               |
+| Metoda              | `wymagane`            | Używane do ustawiania, co robi komponent kontrolny. Różne metody wymagają konfiguracji różnych parametrów. Szczegółowe wyjaśnienia przedstawiono poniżej. |
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+##### Wartość zadana
+
+Używane do ustawiania wartości.
+
+###### Parametr
+
+`Wartość`: wartością może być `string` lub `number` lub `object` lub `boolean` lub `array` w zależności od typu komponentu.
+
+###### Obsługiwane elementy
+
+| Komponent                                                                                                                                                                      | Typ parametru                                                     | Przykład                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Wpis, Edytowalny Tekst, Obszar Tekstu, Dzień, Wybierz, Zespół Radiokomunikacyjny, Przycisk Radiowy, Przycisk Radiowy, Data, Czas daty, kroki, tekst, Postęp Paska, Postęp Koła | `string`                                                          |                                                                                                                                                                          |
+| `Witaj świecie`                                                                                                                                                                |                                                                   |                                                                                                                                                                          |
+
+| Edytor JSON
+                                                                                                                                            | `string`
+                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "telefon": "1-800-KICKASS" }` |
+| Oś czasu | `string`, Oddziel wartości różnych węzłów przecinkami (,) | `Pierwszy etap etapu, drugi kamień milowy` |
+| Wejście liczbowe, suwak, Stawka | `number` | `{{1000}}` |
+| Przełącz | `boolean` | `{{false}}` |
+| Formularz JSON Formularz | `object` | `{{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses from 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
+| Checkbox Group, Cascader | `array` | `{{["media_source_2","campaign_2-1"]}}` |
+
+##### wyczyść wartość
+
+Używane do wyczyszczenia wartości.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesłany, Edytor JSON, Formularz Schematu JSON, Przełącz, Wybierz, Grupa Multiselect, Cascader, Radio Group, Radio Button, Data, Zakres daty, Czas Dania, Data Czas, Tekst, Progress, Postęp Paska, Okrąg, Okrąg, Oś Czasu, Dywizja
+
+##### ostrość
+
+Używane do skupienia się na komponencie
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Wejście numerów, Edytowalny Tekst, Obszar Tekstu, Edytor JSON, Edytor Rich text editor, Radio Group,
+
+##### validate
+
+Po ustawieniu warunków walidacji komponentu, takich jak format e-mail, format URL, lub wymagane pole, możesz użyć funkcji `validate` do określenia, czy spełnia wymagania. Jeśli nie spełnia wymogów, zostanie wyświetlony komunikat potwierdzający.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesyłanie, Wybierz, Grupa Multiselect, Grupa Skrzynki Znaków, Rok, Rok, Przycisk Radiowy, Data, Przedział daty, Form, Stawka
+
+##### wyczyść walidację
+
+Używane do wyczyszczenia komunikatu walidacyjnego.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Wpis, dane liczbowe, Edytowalny Tekst, Obszar Tekstu, Przesyłanie, Wybierz, Grupa Multiselect, Grupa, Przycisk Radiowy, Data, Zakres daty, Czas
+
+##### setSelectedValue
+
+Używane do ustawiania wybranej wartości Multiselect. Parametr powinien być tablicą.
+
+###### Parametr
+
+`Wartość`: tablica ciągów używana do ustawiania wybranych opcji.
+
+###### Obsługiwane elementy
+
+Wielokrotny wybór
+
+###### Przykład
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### wyślij
+
+Prześlij dane formularza. Gdy metoda przesyłania zostanie uruchomiona, najpierw zweryfikujemy dane formularza. Jeśli występują błędy walidacji, formularz zostanie zablokowany, a odpowiednie komunikaty o błędach będą wyświetlane. Dopiero po pomyślnej walidacji przesłanie kontynuowane.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Formularz schematu JSON, Formularz
+
+##### przełącz
+
+Używane do przełączania wartości z true na false lub z false na true.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Przełącz
+
+##### setStartOfRange
+
+Używane do ustawiania domyślnej wartości początkowej suwaka zakresu
+
+###### Parametr
+
+`Wartość początkowa`: liczba używana do ustawienia wartości początkowej.
+
+###### Obsługiwane elementy
+
+Range Slider
+
+###### Przykład
+
+```JavaScript
+{{10}}
+```
+
+##### setEndOfRange
+
+Używane do ustawiania domyślnej wartości końcowej suwaka zakresu
+
+###### Parametr
+
+`Wartość końcowa`: liczba używana do ustawienia wartości końcowej.
+
+###### Obsługiwane elementy
+
+Range Slider
+
+###### Przykład
+
+```JavaScript
+{{10}}
+```
+
+##### setStartValue
+
+Używane do ustawiania domyślnej wartości początkowej
+
+###### Parametr
+
+`Data rozpoczęcia/czas`: ciąg znaków używany do ustawiania czasu/daty rozpoczęcia.
+
+###### Obsługiwane elementy
+
+Zakres daty, zakres czasowy
+
+###### Przykład
+
+```JavaScript
+2023-09-09
+```
+
+##### Wartość setEndValue
+
+Używane do ustawiania domyślnej wartości końcowej
+
+###### Parametr
+
+`Data zakończenia/czas`: ciąg znaków używany do ustawiania czasu/daty końcowej.
+
+###### Obsługiwane elementy
+
+Zakres daty, zakres czasowy
+
+###### Przykład
+
+```JavaScript
+2023-10-09
+```
+
+##### setValueInArray
+
+Używane do ustawiania przełączników, których wartość jest prawdziwa
+
+###### Parametr
+
+`Wartość`: tablica ciągów używana do ustawiania opcji, których wartość jest prawdziwa .
+
+###### Obsługiwane elementy
+
+Przełącz grupę
+
+###### Przykład
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### setCurrentViewKey
+
+Użyj klucza, który jest wartością ciągu widoku, aby ustawić widok pokazany.
+
+###### Parametr
+
+`Key`: ciąg znaków używany do ustawiania widoku do wyświetlenia.  Klucz jest skonfigurowany w kontenerze
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+###### Przykład
+
+```JavaScript
+Zobacz 1
+```
+
+##### setCurrentViewIndex
+
+Użyj indeksu, który jest wartością liczbową zaczynającą się od 0 widoku, aby ustawić widok pokazany.
+
+###### Parametr
+
+`Index`: wartość liczbowa. Użyj indeksu widoku aby ustawić widok do wyświetlenia. Indeks zaczyna się od 0.
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+###### Przykład
+
+```JavaScript
+{{1}}
+```
+
+##### showNextView
+
+Używane do wyświetlania następnego widoku. Parametr jest wartością logiczną, która określa, czy pętli od końca wstecz do początku.
+
+###### Parametr
+
+`Loop back to start`: wartość logiczna (użyj przełącznika, aby ustawić) używana do ustawiania pętli wstecz na początek.
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+##### showNextVisibleView
+
+Używane do wyświetlania następnego widoku widocznego. W przeciwieństwie do zachowania funkcji `showNextView(boolean)` ta funkcja oferuje lepszą funkcjonalność przełączania widoku pomijając jakiekolwiek ukryte widoki podczas przejścia. Parametr jest wartością logiczną, która określa, czy pętli od końca wstecz do początku.
+
+###### Parametr
+
+`Loop back to start`: wartość logiczna (użyj przełącznika, aby ustawić) używana do ustawiania pętli wstecz na początek.
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+##### Pokaż Poprzedni Widok
+
+Używane do wyświetlania poprzedniego widoku. Parametr jest wartością logiczną, która określa, czy pętlować od początku do końca.
+
+###### Parametr
+
+`Loop start to back`: wartość logiczna (użyj przełącznika, aby ustawić) używana do ustawiania pętli startowej do powrotu.
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+###### Pokaż Poprzedni Widok
+
+Używane do wyświetlania poprzedniego widoku widocznego. W przeciwieństwie do zachowania funkcji `showPreviousView` ta funkcja oferuje lepszą funkcjonalność przełączania widoku pomijając jakiekolwiek ukryte widoki podczas przejścia. Parametr jest wartością logiczną, która określa, czy pętlować od początku do końca.
+
+###### Parametr
+
+`Loop start to back`: wartość logiczna (użyj przełącznika, aby ustawić) używana do ustawiania pętli startowej do powrotu.
+
+###### Obsługiwane elementy
+
+Pojemnik
+
+##### reset
+
+Używane do resetowania wartości do wartości domyślnej.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Formularz
+
+##### zresetuj wartość
+
+Używane do resetowania wartości do wartości domyślnej.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Etapy
+
+##### openModal
+
+Używane do otwarcia modalu
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Modalne
+
+##### closeModal
+
+Używane do zamknięcia modalu
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Modalne
+
+##### setImageUrl
+
+Używane do ustawiania adresu URL źródła obrazu. Może to być Base64 lub URL wskazujący na obraz w sieci.
+
+###### Parametr
+
+`Wartość`: wartość ciągu znaków używana do ustawienia źródła obrazu. Może to być adres URL lub baza64.
+
+###### Obsługiwane elementy
+
+Obraz
+
+###### Przykład
+
+```JavaScript
+https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
+```
+
+```JavaScript
+dane:image/png;base64,iVBORw0KGgoAA...II
+```
+
+##### wyczyść Wiadomość Odpowiedzi
+
+Używane do wyczyszczenia cytowanej wiadomości odpowiedzi powyżej pola wprowadzania.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Czat
+
+##### setPrimaryValue
+
+Używane do ustawiania wartości podstawowej statystyki.
+
+###### Parametr
+
+`Wartość podstawowa`: wartość liczbowa używana do ustawienia wartości podstawowej statystyki.
+
+###### Obsługiwane elementy
+
+Statystyki
+
+###### Przykład
+
+```JavaScript
+{{10000}}
+```
+
+##### resetPrimaryValue
+
+Używane do resetowania wartości pierwotnej do domyślnej wartości podstawowej statystyki.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Statystyki
+
+##### setFileUrl
+
+Używane do ustawiania adresu URL pliku. Może to być Base64 lub URL wskazujący na PDF w sieci.
+
+###### Parametr
+
+`Źródło PDF`: wartość ciągu znaków używana do ustawienia źródła PDF. Może to być adres URL lub baza64.
+
+###### Obsługiwane elementy
+
+PDF
+
+###### Przykład
+
+```JavaScript
+https://upload.wikimedia.org/wikipedia/commons/e/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
+```
+
+##### zagraj
+
+Używane do odtwarzania wideo lub dźwięku.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+##### wstrzymanie
+
+Używane do wstrzymania wideo lub audio.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+##### Pokaż Kontrolki
+
+Używane do ustawiania, czy pokazywać kontrole.
+
+###### Parametr
+
+`Pokaż sterowniki`: wartość logiczna używana do ustawienia, czy pokazywać kontrole.
+
+###### Obsługiwane elementy
+
+Wideo
+
+##### setVideoUrl
+
+Używane do ustawiania adresu URL filmu. Może to być Base64 lub URL wideo na stronach mediów.
+
+###### Parametr
+
+`Źródło wideo`: wartość ciągu znaków używana do ustawienia źródła wideo. Może to być adres URL lub baza64.
+
+###### Obsługiwane elementy
+
+Wideo
+
+###### Przykład
+
+```JavaScript
+video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
+```
+
+##### setObjętość(liczba)
+
+Używane do ustawiania głośności. Parametr jest wartością liczbową między 0 a 1.
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+###### Przykład
+
+`video1.setVolume (0.5)`
+
+##### ustawPrędkość
+
+Używane do ustawiania prędkości.
+
+###### Parametr
+
+`Prędkość`: liczba od 0.25 do 2
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+###### Przykład
+
+```JavaScript
+{{0.5}}
+```
+
+##### setLoop
+
+Używane do ustawiania pętli odtwarzania.
+
+###### Parametr
+
+`Pętla`: wartość logiczna używana do ustawiania pętli lub nie
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+###### Przykład
+
+```JavaScript
+{{true}}
+```
+
+##### szukaj
+
+Używane do poszukiwania określonej pozycji czasowej.
+
+###### Parametr
+
+`Czas(y)`: wartość liczbowa, mierzona w sekundach (s). Na przykład, aby uzyskać pozycję czasową 5:35, użyjesz wartości 335.
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+###### Przykład
+
+```JavaScript
+{{335}}
+```
+
+##### wycisz
+
+Używane do ustawiania wyciszenia lub nie.
+
+###### Parametr
+
+`Wyciszanie`: wartość logiczna
+
+###### Obsługiwane elementy
+
+Film, Audio
+
+##### URL setAudioUrl
+
+Używane do ustawiania adresu URL audio. Może to być Base64 lub URL wideo na stronach mediów.
+
+###### Parametr
+
+`Źródło audio`: wartość ciągu znaków używana do ustawienia źródła dźwięku. Może to być adres URL lub baza64.
+
+###### Obsługiwane elementy
+
+Dźwięk
+
+###### Przykład
+
+```JavaScript
+https://www.soundhelix.com/przykłads/mp3/SoundHelix-Song-1.mp3
+```
+
+##### slickNext
+
+Używane do przełączenia na następny obraz.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Carousel
+
+##### slickPoprzedni
+
+Używane do przełączenia na poprzedni obraz.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Carousel
+
+##### setSrc
+
+Używane do ustawiania źródłowego adresu URL IFrame.
+
+###### Parametr
+
+`Wartość`: wartość ciągu znaków używana do ustawienia adresu URL.
+
+###### Obsługiwane elementy
+
+IFrame
+
+###### Przykład
+
+```JavaScript
+https://www.nasa.gov/
+```
+
+##### setMarkers
+
+Używane do ustawiania znaczników na mapie.
+
+###### Paramater
+
+`Markers`: tablica obiektów. Pola szerokości i długości geograficznej w każdym obiekcie powinny być takie same jak pola ustawione w panelu prawostronnym.
+
+###### Obsługiwane elementy
+
+Mapa
+
+###### Przykład
+
+```JavaScript
+{{[
+{
+    "lat":57.14009563040699,
+    "lng":-114.6018657894011
+ },{
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },{
+     "lat":57.841288754888545,
+     "lng":-103.3518657894011
+ }
+ ]}}
+```
+
+##### resetMarkers
+
+Używane do resetowania znaczników do domyślnych znaczników.
+
+###### Parametr
+
+Brak parametru
+
+###### Obsługiwane elementy
+
+Mapa
+
+#### Uruchom skrypt
+
+Zapisując skrypt, możesz wyzwalać wiele zdarzeń w sekwencji. [Dowiedz się więcej](https://docs.illacloud.com/run-script)
+
+#### Przejdź do adresu URL
+
+##### Parametr
+
+`URL`: Wartość ciągu znaków. Adres URL do otwarcia
+
+`Nowa karta`: wartość logiczna. Używane do ustawiania, czy otworzyć adres URL na nowej karcie.
+
+#### Pokaż powiadomienie
+
+##### Parametr
+
+`Title`: String value. Tytuł powiadomienia
+
+`Opis`: Wartość ciągu znaków. Opis powiadomienia
+
+`Typ`: Wartość ciągu znaków. Ustaw typ za pomocą rozwijanych opcji: powodzenie, Error, Warning, Info
+
+`Czas trwania (ms)`: Wartość liczbowa. Czas wyświetlania powiadomienia.
+
+#### Kopiuj do schowka
+
+##### Parametr
+
+`Wartość`: Wartość ciągu znaków. Ciąg do skopiowania.
+
+#### Ustaw router
+
+Gdy w aplikacji jest wiele stron, ta funkcja może być używana do przełączania między stronami.
+
+##### Parametr
+
+`Strona`: Użyj aby ustawić przekierowanie do której strony.
+
+`Podstrona`: Użyj aby ustawić przekierowanie, do którego podstrona strony wybrana w parametrze strony.
+
+#### Zapisz na dysku ILLA
+
+##### Parametr
+
+`Nazwa pliku z rozszerzeniem`: String. Nazwa z rozszerzeniem pliku po przesłaniu na Dysk ILLA.
+
+`Dane pliku`: String. Base64 lub surowe dane z plików, takie jak JSON, CSV, zwykły tekst itp.
+
+`Typ pliku`: String. Jedna z następujących wartości: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Gdy używasz "Auto", spróbujemy określić typ pliku na podstawie rozszerzenia pliku lub danych pliku.
+
+`Folder`: String. Folder docelowy do przesyłania plików. Pozostaw puste, aby przesłać do katalogu głównego.
+
+`Zezwalaj na anonimowość`: Bolean. Używane do określenia, czy dostęp anonimowy użytkownika jest dozwolony. Jeśli planujesz ustawić swoją aplikację jako publiczną, należy włączyć dostęp anonimowy. Dla bezpieczeństwa Twoich danych, pliki lub foldery dostępne anonimowo muszą być umieszczone w folderze anonimowym.
+
+`Zamień`: Boolean. Używane do ustawiania, gdy w tym samym katalogu są pliki o tej samej nazwie, zastąp istniejący plik nowym plikiem lub automatycznie zmień nazwę nowego pliku.
+
+#### Pobierz z Dysku ILLA
+
+##### Parametr
+
+`Pobierz informacje`: tablica obiektów, w tym tinyURL i ID pliku. Możesz użyć selektora plików dysku komponentu do pobierania plików z dysku ILLA i pobierania `Download info` przez drivePicker1.value
+
+`Zapisz jako Zip`: Boolean. Używane do ustawiania, czy pobierać pliki jako Zip.
+
+#### Pobierz
+
+Używane do eksportowania danych na Twoje urządzenie.
+
+##### Parametr
+
+`Typ pliku`: Jedna z następujących wartości: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Gdy używasz "Auto", spróbujemy określić typ pliku na podstawie rozszerzenia pliku lub danych pliku.
+
+`Nazwa pliku`: nazwa z rozszerzeniem.
+
+`Data`: dane pliku.
+
+#### Ustaw dane globalne
+
+##### Ustaw globalną wartość danych
+
+Używane do ustawiania wartości gobalData
+
+###### Parametr
+
+`klucz`: wyświetlana nazwa globalData.
+
+`wartość`: wartość do ustawienia
+
+##### Ustaw globalne dane w
+
+Gdy globalne dane są tablicą lub obiektem, użyj setGlobalDataIn aby zmodyfikować wartość odpowiadającą określonemu indeksowi w tablicy lub zmodyfikować wartość odpowiadającą określonemu kluczowi w obiekcie.
+
+###### Parametr
+
+`klucz`: wyświetlana nazwa globalData.
+
+`ścieżka`: indeks wartości, którą chcesz zaktualizować w tablicy lub kluczu w obiekcie. Na przykład, aby ustawić drugą wartość w tablicy, ścieżka to 1 (indeksu). Aby ustawić wartość atrybutu o nazwie klucz1, ścieżka jest kluczem 1.
+
+`wartość`: wartość do ustawienia
+
+#### Ustaw pamięć lokalną
+
+##### wyczyść
+
+Używane do wyczyszczenia pamięci lokalnej
+
+###### Parametr
+
+Brak parametru
+
+##### Wartość zadana
+
+###### Parametr
+
+`klucz`: wyświetlanie nazwy pamięci lokalnej.
+
+`wartość`: wartość klucza.
+
+3.  ### Uruchom tylko gdy
+
+Wartość logiczna używana do ustawienia, kiedy można uruchomić obsługę zdarzeń. Na przykład, gdy wejście1 jest null, nie można uruchomić obsługi zdarzeń: `{{input1.value!==""&&input1.value!===niezdefiniowane}}`
