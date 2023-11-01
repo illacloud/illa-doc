@@ -1,0 +1,213 @@
+---
+title: Αυτο-φιλοξενημένη ανάπτυξη
+description: ILLA Builder παρέχει μια απρόσκοπτη εμπειρία ανάπτυξης που σας επιτρέπει να αναπτύξετε ILLA Builder με μια εκπληκτική ταχύτητα στο δικό σας Virtual Private Cloud (VPC).
+---
+
+# Αυτο-φιλοξενημένη ανάπτυξη
+
+## Προσάρτηση
+
+1.  Εκκίνηση Docker
+2.  Εισάγετε την ακόλουθη εντολή στο τερματικό για να εγκαταστήσετε την επίσημη εικόνα:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Λήψη του ILLA CLI και ανάπτυξη
+
+Εάν έχετε το Rust εγκατεστημένο, μπορείτε εύκολα να χτίσετε + να εγκαταστήσετε την τελευταία απελευθέρωση ILLA CLI με φορτίο:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+Το εργαλείο **φορτίου** θα ολοκληρώσει τη λήψη του ILLA CLI με τις εξαρτήσεις πηγής, χτίστε και εγκαταστήστε το στο μονοπάτι bin φορτίου έτσι ώστε να μπορούμε να το τρέξουμε. Μόλις εγκατασταθεί, μπορείτε να εκτελέσετε το ILLA CLI με την εντολή **illa** .
+
+Εναλλακτικά, μπορείτε απλά να κατεβάσετε το ILLA CLI για το λειτουργικό σας σύστημα εδώ:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Αν κάνετε λήψη από τους παραπάνω συνδέσμους, τα βήματα είναι ελαφρώς διαφορετικά σε σύγκριση με τη λήψη του ILLA CLI από **φορτίο** . Μετά τη λήψη του CLI, θα πρέπει να το κάνετε εκτελέσιμο. Ας πάρουμε το illa-linux για παράδειγμα:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Έλεγχος των προϋποθέσεων της αυτοφιλοξενούμενης εγκατάστασης
+
+Αυτές οι θύρες 5432, 9999 και 8000 πρέπει να παραμείνουν για τον κατασκευαστή ILLA
+
+Η ακόλουθη εντολή θα ελέγξει τις προϋποθέσεις της αυτοφιλοξενούμενης εγκατάστασης στο λειτουργικό σας σύστημα:
+
+```Plaintext
+> illa doctor
+```
+
+### Ανάπτυξη Κατασκευαστή ILLA
+
+Μόλις εγκατασταθεί το ILLA CLI, μπορείτε να εκτελέσετε μια αυτο-φιλοξενία ή εγκατάσταση στο σύννεφο.
+
+Μπορείτε απλά να αναπτύξετε έναν αυτοφιλοξενούμενο δημιουργό ILA εκτελώντας την ακόλουθη εντολή:
+
+```Plaintext
+# η θύρα στην οποία μπορεί να προσπελαστεί η ILLA Builder μπορεί να αλλάξει
+# το <SERVER_ADDRESS> θα πρέπει να είναι το cloud server σας δημόσιο ip, προεπιλεγμένο localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Τώρα, μπορείτε να αποκτήσετε πρόσβαση στο ILLA Builder: <http://localhost:10000>
+
+### Ενημέρωση Δημιουργού ILLA
+
+Για να ενημερώσετε τον δημιουργό ILLA με τις τελευταίες εικόνες docker, χρησιμοποιήστε την ακόλουθη εντολή:
+
+```Plaintext
+> illa ενημέρωση --self
+```
+
+### Άλλες πράξεις
+
+```Plaintext
+# λίστα του δημιουργού ILLA
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help
+```
+
+## Kubernetes
+
+### Περιγραφή
+
+Φτιάξτε illa all-in-one εικόνα και εκτελέστε την από k8s στο μηχάνημά σας. Μπορείτε να δείτε το αρχείο σεναρίων στο φάκελο [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) για περισσότερες λεπτομέρειες.
+
+Σημείωση:
+
+Συστήνουμε ιδιαίτερα την ανάπτυξη με τα εργαλεία αυτόματης ανάπτυξης [illa-cli](https://github.com/illacloud/illa).
+
+Και προς το παρόν δεν υποστηρίζουμε το Apple Silicon M1 (darwin-arm64 arch).
+
+### Εκτέλεση με μια επίσημη εικόνα slim
+
+Εγκατάσταση του GNU make και Τύπος:
+
+```JavaScript
+κάνε ανάπτυξη
+```
+
+ή απλά εκτελέστε:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+αυτή η εντολή θα τραβήξει illasoft επίσημη εικόνα all-in-one και να το αναπτύξει στο σύμπλεγμα Kubernetes σας.
+
+### Για Μόνιμη Αποθήκευση Βάσης Δεδομένων
+
+Επεξεργαστείτε το [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), και προσθέστε τη μόνιμη ρύθμιση αποθήκευσης του IAAS σε αυτό.
+
+### Για Ρυθμίσεις HTTPS
+
+Μπορείτε να δρομολογήσετε το NodePort στην πύλη εισόδου σύμπλεγμα Kubernetes σας και να ξαναγράψετε σε 443 θύρα, και να προσθέσετε https cert στην πύλη εισόδου σας.
+
+Ή, μπορείτε να αναπτύξετε μια πύλη εισόδου χειροκίνητα στο διακομιστή Kubernetes, όπως αυτό:
+
+```JavaScript
+static_resources:
+  listeners:
+  - name: Ř_listener
+    διεύθυνση:
+      socket_address:
+        διεύθυνση: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - φίλτρα:
+      - όνομα: απεσταλμένος. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: ġ_listener
+          route_config:
+            όνομα: local_route
+            virtual_hosts:
+            - όνομα: illa_builder
+              domains:
+              - "illa. ουδομιδική. om" # αντικαταστήστε με τον τομέα σας
+              διαδρομές:
+              - ταιριάζει:
+                  πρόθεμα: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - όνομα: απεσταλμένος. ilters.http. outer
+            typed_config:
+              "@type": type. ογλεάπης. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        όνομα: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # αντικαταστήστε το με το αρχείο cert
+            - certificate_chain:
+                όνομα: /your-cert-folder/fullchain. em
+              private_key:
+                όνομα: /your-cert-folder/privkey. em
+
+  clusters:
+  - όνομα: illa_builder
+    τύπος: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            διεύθυνση:
+              socket_address:
+                διεύθυνση: illa-builder
+                port_value: 80
+```
+
+## Γρήγορη ανάπτυξη
+
+Μπορείτε να αναπτύξετε το ILLA με εξαιρετικά γρήγορο τρόπο, ακολουθήστε τις παρακάτω οδηγίες:
+
+Κατ 'αρχάς, κατεβάστε αυτό το [αρχείο docker](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) στον υπολογιστή σας και έπειτα εκτελέστε τον ακόλουθο κώδικα.
+
+```JavaScript
+cd docker·
+/bin/bash ./scripts/run-official-image.sh·
+```
+
+Και συνδεθείτε με το προεπιλεγμένο όνομα χρήστη και κωδικό πρόσβασης:
+
+Όνομα χρήστη: **`root`**
+
+Κωδικός: **`password`** (μόνο λειτουργία αυτοεξυπηρετητή).
