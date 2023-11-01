@@ -1,13 +1,13 @@
 ---
-title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+title: Arrangement behandler
+description: Legg til en hendelsesbehandler på komponenten for å utløse en hendelse når komponentens status endres.
 ---
 
-# Event handler
+# Arrangement behandler
 
-Add an event handler to the component to trigger an event when the component's state changes.
+Legg til en hendelsesbehandler på komponenten for å utløse en hendelse når komponentens status endres.
 
-## How-to
+## ow-to
 
 <div style={{
 position: "relative",
@@ -15,156 +15,156 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## Konfigurasjon alternativer
 
-1.  ### Event
+### Hendelse
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+Brukes til å angi hvordan handlingen skal aktiveres. Hvis vi vil utløse rast1 når datastrutenettet (tabell) komponenten er oppdatert, kan vi sette hendelsen til `refresh`. Hvis vi vil utløse raste2 når datarutenett (tabell) er endret, kan vi sette hendelsen til `sorteringsendringen`. Hvis vi ønsker å utløse rast3 når knappen er klikket på, kan vi sette hendelsen til "klikk".
 
-2.  ### Action
+### Handling
 
-#### Trigger action
+#### Utløser handling
 
-Used to trigger an action created in this app
+Brukes til å utløse en handling opprettet i denne appen
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **parameter**              | **Nødvendig eller ikke** | **beskrivelse**                          |
+| -------------------------- | ------------------------ | ---------------------------------------- |
+| Navn på handlingen         | `Nødvendig `             | Velg en handling opprettet i denne appen |
 
-#### Control component
+#### Styre komponent
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **parameter**       | **Nødvendig eller ikke** | **beskrivelse**                                                                                                                                                  |
+| ------------------- | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Komponent           | `Nødvendig `             | Velg en komponent som er lagt til den gjeldende siden                                                                                                            |
+| Metode              | `Nødvendig `             | Brukes til å angi hva kontrollkomponenten gjør. Det er nødvendig å sette opp ulike metoder. Detaljerte forklaringer er gitt nedenfor.                            |
 
-##### setValue
+##### settverdi
 
-Used to set the value.
+Brukes til å angi verdien.
 
-###### Parameter
+###### Parametre
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+Verdien kan være en "streng" eller "nummer" eller "objekt" eller "boolean" eller "array" som avhenger av komponenttypen.
 
-###### Supported components
+###### Støttede komponenter
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| Komponent                                                                                                                                                                  | Type parameter                                                     | Eksempel                                                                                                                                                                 |
+| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Innskriving, Redigerbart tekst, tekstområde, Divider, Velge, Radiogruppe, Radioknapp for Radio Buttonm, Dato, Dato og tid, Skritt, Tekst, Linje Progress, Sirkel Framdrift | `string`                                                           |                                                                                                                                                                          |
+| \`Hei verden                                                                                                                                                               |                                                                    |                                                                                                                                                                          |
 
-| JSON Editor
-                                                                                                                                            | `string`
-                                                      | `{ "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" }`              |
-| Timeline                                                                                                                                                | `string`, Separate the values of different nodes via comma (,) | `The first milestone,The second milestone`                                                                                                                          |
-| Number Input, Slider, Rate                                                                                                                              | `number`                                                       | `{{1000}}`                                                                                                                                                          |
-| Switch                                                                                                                                                  | `boolean`                                                      | `{{false}}`                                                                                                                                                         |
-| JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
-| Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
+θ JSON Editor
+                                                                                                                                            ofim`string`
+                                                      { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "oundhouse kicking asses since 1940", "password": "noneed", "telefoni": "1-800-KICKASS" }` ″
+ConocoTimeline unnelb`string`, Separer verdiene for forskjellige noder via komma (,) ε`Den første milepælen, han andre milepæl` ∙
+⋅Nummer Input, Skyveknapp Rate minecraft`number` ∙`{{1000}}` ephal
+ŠSwitch ε`boolean` bA1`{{false}}` ε
+εJSON Schema Form δ`objekt` APEX`{{ "firstName": "Chuck", "venstrenavn": "Norris", "age": 80, "bio": "oundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }` Small
+Creative Checkbox Group, Skascader Α`array` ephal`{{["media_source_2","campaign_2-1"]}}` ε`
 
-##### clearValue
+##### klar verdi
 
-Used to clear the value.
+Brukes til å fjerne verdien.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+Innvift, Antall innput, Redigerbar tekst, tekstområde, Opplasting, JSON Editor, JSON Schema Form, Switch, Velg, Multiselect, Checkbox Group, Skalad, Radiogruppe, Radioknapp, Dato, Datonivå, Datotid, Datotid, Tekst, Rotasjon, Bar Progresjon, Sirkel Fremdrift, Timeline, Divider
 
-##### focus
+##### fokus
 
-Used to focus on the component
+Brukes til å fokusere på komponenten
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Innskriving, tallinnput, redigerbart tekstområde, JSON-redigeringsprogram med tekst, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+Når du har angitt valideringsbetingelser for en komponent, som e-postformat, URL-format, eller påkrevd felt. Du kan bruke funksjonen 'validere' for å avgjøre om den oppfyller kravene. Hvis den ikke oppfyller kravene, vil en valideringsmelding vises.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+Innhold, Nummerinngang, Redigerbar tekst, Tekstområde, Opplasting, Velg, Multiselect, Checkbox-gruppe, Radioknapp Dato, Dato Range, Dato og Dato, Dato & Tidspunkt, Rang
 
-##### clearValidation
+##### klarering
 
-Used to clear the validation message.
+Brukes til å fjerne valideringsmeldingen.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+Innhold, Nummerinngang, Redigerbart tekst, tekstområde, Opplasting, Velg, Flervalg, Avmerkingsavmerkingsgruppe, Radioknapp, Dato, Dato Område, Dato og Tidsavgang, Rangering
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+Brukes til å angi den valgte verdien for Multiselect. Parameteren må være en matrise.
 
-###### Parameter
+###### Parametre
 
-`Value`: an array of strings used to set the selected options.
+`Verdie`: en liste med strenger brukt til å angi de valgte alternativene.
 
-###### Supported components
+###### Støttede komponenter
 
-Multiselect
+Flervalg
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### Send
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+Send inn skjemadata. Når metoden er utløst vil vi først validere skjemadata. Hvis det finnes valideringsfeil, vil sendingen av skjema bli forhindret, og de tilsvarende feilmeldingene vil bli vist. Bare etter vellykket validering fortsetter innsendingen.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-JSON Schema Form, Form
+JSON skjema, skjema
 
-##### toggle
+##### veksle
 
-Used to switch the value from true to false or from false to true.
+Brukt til å skru verdien fra sann til usann eller fra falsk til sann.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Switch
+Bytt
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+Brukes til å angi standard startverdien for glidebryteren
 
-###### Parameter
+###### Parametre
 
-`Start value`: a number used to set the start value.
+`Start verdi`: et tall brukt til å angi startverdien.
 
-###### Supported components
+###### Støttede komponenter
 
 Range Slider
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+Brukes til å angi standard sluttverdi for glidebryteren
 
-###### Parameter
+###### Parametre
 
-`End value`: a number used to set the end value.
+"Sluttverdien": et tall brukt til å angi sluttverdien.
 
-###### Supported components
+###### Støttede komponenter
 
 Range Slider
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{10}}
@@ -190,35 +190,35 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+Brukt for å angi standard startverdi
 
-###### Parameter
+###### Parametre
 
-`Start date/time`: a string used to set the start time/date.
+`Startdato/tid`: en streng som brukes for å angi starttidspunkt/dato.
 
-###### Supported components
+###### Støttede komponenter
 
-Date Range, Time Range
+Dato rekkevidde, Tidsintervall
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 2023-09-09
 ```
 
-##### setEndValue
+##### setEndverdi
 
-Used to set the default end value
+Brukt til å angi standard sluttverdi
 
-###### Parameter
+###### Parametre
 
-`End date/time`: a string used to set the end time/date.
+`Sluttdato/klokkeslett`: en streng som brukes for å angi slutttidspunkt/dato.
 
-###### Supported components
+###### Støttede komponenter
 
-Date Range, Time Range
+Dato rekkevidde, Tidsintervall
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 2023-10-09
@@ -226,17 +226,17 @@ Date Range, Time Range
 
 ##### setValueInArray
 
-Used to set the switches whose value is true
+Brukes til å angi bryterne med sann verdi
 
-###### Parameter
+###### Parametre
 
-`Value`: an array of strings used to set the options whose value is true .
+`Verdi`: en liste med strenger brukt til å sette de alternativene som er sant .
 
-###### Supported components
+###### Støttede komponenter
 
-Switch Group
+Bytt gruppe
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
@@ -244,149 +244,149 @@ Switch Group
 
 ##### setCurrentViewKey
 
-Use the key which is a string value of the view to set the shown view.
+Bruk nøkkelen som er en strengverdi av visningen for å angi visningen.
 
-###### Parameter
+###### Parametre
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Tasten`: en streng som brukes for å angi hvilken visning du skal vise.  Nøkkelen er konfigurert i en beholder
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
-###### Example
+###### Eksempel
 
 ```JavaScript
-View 1
+Vis 1
 ```
 
 ##### setCurrentViewIndex
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+Bruk indeksen som er en tallverdi fra 0 av visningen for å angi visningen.
 
-###### Parameter
+###### Parametre
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+\`Indekser: tallverdi Bruk indeksen for visningen for å angi hvilken visning som skal vises. Indeksen starter fra 0.
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{1}}
 ```
 
-##### showNextView
+##### Vis
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Brukes til å vise neste visning. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra slutten tilbake til starten.
 
-###### Parameter
+###### Parametre
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Gjenta tilbake for å starte`: en boolsk verdi (bruk en bryter til å sette opp) som brukes for å sette om en løkke til å starte igjen.
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
-##### showNextVisibleView
+##### Vis visning
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+Brukes til å vise neste synlige visning. I motsetning til virkemåten til `showNextView(boolean)`-funksjonen, tilbyr denne funksjonen forbedret visning ved å hoppe over skjulte visninger under overgangen. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra slutten tilbake til starten.
 
-###### Parameter
+###### Parametre
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`Gjenta tilbake for å starte`: en boolsk verdi (bruk en bryter til å sette opp) som brukes for å sette om en løkke til å starte igjen.
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
-##### showPreviousView
+##### Forhåndsvisningsvisning
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Brukes til å vise forrige visning. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra start tilbake til slutt.
 
-###### Parameter
+###### Parametre
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start til tilbak`: en boolsk verdi (bruk en bryter til å sette ) som brukes til å sette om en løkke skal starte til å returnere.
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
-###### showPreviousVisibleView
+###### ForhåndsvisningsVisibleVis
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+Brukes til å vise forrige synlige visning. I motsetning til virkemåten til `showPreviousView`-funksjonen, tilbyr denne funksjonen forbedret visning av funksjonalitet ved å hoppe over eventuelle skjulte visninger under overgangen. Parameteren er en boolsk verdi som avgjør om den skal sløyfe fra start tilbake til slutt.
 
-###### Parameter
+###### Parametre
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`Loop start til tilbak`: en boolsk verdi (bruk en bryter til å sette ) som brukes til å sette om en løkke skal starte til å returnere.
 
-###### Supported components
+###### Støttede komponenter
 
-Container
+Beholder
 
 ##### reset
 
-Used to reset the value to default value.
+Brukes til å tilbakestille verdien til standardverdien.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Form
+Skjema
 
-##### resetValue
+##### Nullstillingsverdi
 
-Used to reset the value to default value.
+Brukes til å tilbakestille verdien til standardverdien.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Steps
+Skritt
 
 ##### openModal
 
-Used to open a modal
+Brukes til å åpne en modal
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Modal
+Modell
 
-##### closeModal
+##### næremodus
 
-Used to close a modal
+Brukes til å lukke en modal
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Modal
+Modell
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+Brukes til å angi bildekildens URL. Det kan være en Base64 eller en URL som peker til et bilde på webområdet.
 
-###### Parameter
+###### Parametre
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`Value`: en strengverdi som brukes for å angi bildekilden. Det kan være URL eller base64.
 
-###### Supported components
+###### Støttede komponenter
 
-Image
+Bilde
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
@@ -398,251 +398,251 @@ data:image/png;base64,iVBORw0KGgoAA...II
 
 ##### clearReplyMessage
 
-Used to clear the quoted reply message above the input box.
+Brukes til å fjerne den siterte svarmeldingen over inntastingsboksen.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Chat
+Samtale
 
-##### setPrimaryValue
+##### PrimaryVerdi
 
-Used to set the primary value of statistics.
+Brukes til å angi den primære verdien av statistikk.
 
-###### Parameter
+###### Parametre
 
-`Primary value`: a number value used to set the primary value of statistics.
+`Primærverdien`: en tallverdi brukt for å angi den primære verdien av statistikken.
 
-###### Supported components
+###### Støttede komponenter
 
-Statistics
+Statistikk
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### Nullstillings PrimaryVerdi
 
-Used to reset the primary value to the default primary value of statistics.
+Brukes til å nullstille primærverdien til standard primærverdi av statistikk.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Statistics
+Statistikk
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+Brukes til å angi fil-URL-en. Det kan være en Base64 eller en URL som peker til en PDF på nettet.
 
-###### Parameter
+###### Parametre
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF-kilde`: en strengverdi som brukes til å sette PDF-kilden. Det kan være URL eller base64.
 
-###### Supported components
+###### Støttede komponenter
 
-PDF
+Pdf
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### spill
 
-Used to play video or audio.
+Brukes til å spille av video eller lyd.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-##### pause
+##### stans
 
-Used to pause video or audio.
+Brukes til å pause video eller lyd.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-##### showControls
+##### viser kontroller
 
-Used to set whether to show the controls.
+Brukes til å angi om kontrollene skal vises.
 
-###### Parameter
+###### Parametre
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`Vis kontroller`: en boolsk verdi som brukes til å angi om du vil vise kontrollene.
 
-###### Supported components
-
-Video
-
-##### setVideoUrl
-
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
-
-###### Parameter
-
-`Video source`: a string value used to set the video source. It could be URL or base64.
-
-###### Supported components
+###### Støttede komponenter
 
 Video
 
-###### Example
+##### setoUrl
+
+Brukes til å sette videoens URL. Det kan være en Base64 eller en video-URL på medias nettsteder.
+
+###### Parametre
+
+`Video source`: en strengverdi som brukes for å angi videokilden. Det kan være URL eller base64.
+
+###### Støttede komponenter
+
+Video
+
+###### Eksempel
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolum(nummer)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+Brukes til å angi volumet. Parameteren er en tallverdi mellom 0 og 1.
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-###### Example
+###### Eksempel
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### sett
 
-Used to set the speed.
+Brukt til å sette hastighet.
 
-###### Parameter
+###### Parametre
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: en tallverdi mellom 0,25 til 2
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{0.5}}
 ```
 
-##### setLoop
+##### Sløyfe
 
-Used to set whether to loop the playback.
+Brukes til å angi om avspillingen skal gjentas.
 
-###### Parameter
+###### Parametre
 
-`Loop`: a boolean value used to set loop or not
+`Løkk`: en boolsk verdi som brukes til å angi loop eller ikke
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### Å søke
 
-Used to seek to a specific time position.
+Brukes til å søke til en bestemt tidsposisjon.
 
-###### Parameter
+###### Parametre
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+`Time(er)`: en tallverdi, målt i sekunder (er). For eksempel, for å søke i tidsstilling 5:35 vil du bruke verdien 335.
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### demp
 
-Used to set mute or not.
+Brukes til å sette demping eller ikke.
 
-###### Parameter
+###### Parametre
 
-`Mute`: a boolean value
+`Mute`: en boolsk verdi
 
-###### Supported components
+###### Støttede komponenter
 
-Video, Audio
+Video, lyd
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+Brukes til å angi lydens URL. Det kan være en Base64 eller en video-URL på medias nettsteder.
 
-###### Parameter
+###### Parametre
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`Lyd source`: en strengverdi som brukes for å sette lydkilden. Det kan være URL eller base64.
 
-###### Supported components
+###### Støttede komponenter
 
-Audio
+Lyd
 
-###### Example
+###### Eksempel
 
 ```JavaScript
-https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
+https://www.soundhelix.com/examples/mp3/Sound@nofima.no -Song-1.mp3
 ```
 
 ##### slickNext
 
-Used to switch to the next image.
+Brukes til å bytte til neste bilde.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
 Carousel
 
-##### slickPrevious
+##### slickForrige
 
-Used to switch to the previous image.
+Brukes til å bytte til forrige bilde.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+Brukes til å sette kildens URL til IFrame.
 
-###### Parameter
+###### Parametre
 
-`Value`: a string value used to set the URL.
+`Verdi`: en strengverdi som brukes til å angi URL-en.
 
-###### Supported components
+###### Støttede komponenter
 
 IFrame
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+Brukes til å sette markører på kartet.
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`: en liste med objekter. Bredde- og lengdegrad feltene i hvert objekt skal være de samme som feltene angitt i høyre panel.
 
-###### Supported components
+###### Støttede komponenter
 
-Map
+Kart
 
-###### Example
+###### Eksempel
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+Brukes til å nullstille markørene til standard markører.
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-###### Supported components
+###### Støttede komponenter
 
-Map
+Kart
 
-#### Run script
+#### Kjøre skript
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+Ved å skrive et skript kan du utløse flere hendelser i rekkefølge. [Lær mer](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### Gå til adressen
 
-##### Parameter
+##### Parametre
 
-`URL`: String value. The URL to be opened
+`Nettsted`: streng verdi. URL-en som skal åpnes
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+`Ny fane `: Boolsk verdi. Brukes til å sette om URL skal åpnes på en ny fane.
 
-#### Show notification
+#### Vis varsel
 
-##### Parameter
+##### Parametre
 
-`Title`: String value. The title of the notification
+`Title`: String value. Tittelen på meldingen
 
-`Description`:  String value. The description of the notification
+`Beskrivelse`: streng verdi. Beskrivelsen av meldingen
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Type`: Streng verdi. Angi typen via dropdown alternativer: Suksess, feil, advarsel, info
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Varighet(ms)`: tallverdi Varigheten for å vise en varsling.
 
-#### Copy to clipboard
+#### Kopier til utklippstavlen
 
-##### Parameter
+##### Parametre
 
-`Value`: String value. The string to be copied.
+`Verdi`: streng verdi. Strengen som skal kopieres.
 
-#### Set router
+#### Angi router
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+Når det finnes flere sider i programmet, kan denne funksjonen brukes til å bytte mellom sider.
 
-##### Parameter
+##### Parametre
 
-`Page`: Use to set redirect to which page.
+`Side`: Bruk til å sette omdirigering til hvilken side.
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`Sub-page`: Bruk til å sette omdirigere hvilken underside som er valgt i sideparameteren.
 
-#### Save to ILLA Drive
+#### Lagre til ILLA-stasjon
 
-##### Parameter
+##### Parametre
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`Filnavn med utvidelse`: streng. Navn med utvidelse av filen etter opplasting til ILLA-driveren.
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`File data`: String. Base64 eller råfildata, som JSON, CSV, klartekst, osv.
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`File Type`: streng En av følgende verdier: Auto, overlappende tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Når du bruker "Auto", prøver vi å finne filtypen basert enten på filtypen eller fildata.
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Mappe`: streng Målmappe for filopplasting. La den være blank for å laste opp til rotmappen.
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+"Tillat anonymt": Bolsk. Brukes for å angi om anonym brukertilgang er tillatt. Dersom du planlegger å sette din app som offentlig, må anonym tilgang være aktivert. For å sikre dine data, må filer eller mapper tilgjengelig anonymt plasseres i den anonyme mappen.
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+`Erstatt`: Boolsk. Brukes til å angi når det er filer med samme navn i samme mappe, erstatt den eksisterende filen med en ny fil, eller gi nytt navn automatisk nytt navn.
 
-#### Download from ILLA Drive
+#### Last ned fra ILLA-stasjon
 
-##### Parameter
+##### Parametre
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`Last ned informasjon`: en liste med objekter som inkluderer tinyURL og fileID. Du kan bruke 'component Drive filvelgeren for å velge filer fra ILLA Drive og få 'Download info' via drivePicker1.'
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`Lagre som Zip`: boolsk. Brukes til å sette om filene skal lastes ned som en Zip.
 
-#### Download
+#### Nedlasting
 
-Used to export data to your device.
+Brukes til å eksportere data til enheten din.
 
-##### Parameter
+##### Parametre
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`Filtype`: En av følgende verdier: Auto, ren tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). Når du bruker "Auto", prøver vi å finne filtypen basert enten på filtypen eller fildata.
 
-`File name`: a name with extension.
+`Filnavn`: et navn med filendelse.
 
-`Data`: data of the file.
+`Data`: data av filen.
 
-#### Set global data
+#### Angi globale data
 
-##### Set global data value
+##### Sett global data-verdi
 
-Used to set the value of gobalData
+Brukes til å angi verdien av gobalData
 
-###### Parameter
+###### Parametre
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`value`: the value to set
+"verdi" : verdien som skal settes
 
-##### Set global data in
+##### Angi globale data i
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+Når de globale dataene er en liste eller et objekt, bruk setGlobalDataIn for å endre verdien som tilsvarer en bestemt indeks i en liste eller for å endre verdien som tilsvarer en bestemt nøkkel i et objekt.
 
-###### Parameter
+###### Parametre
 
-`key`: the displayName of globalData.
+`key`: displayName of globalData.
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+`path`: the index of the value you intend to update in the array or the key in the object. For eksempel for å sette den andre verdien i listen. Banen er 1 (indeksen). For å angi verdien for attributtet kalt nøkkel1, er banen nøkkel1.
 
-`value`: the value to set
+"verdi" : verdien som skal settes
 
-#### Set local storage
+#### Angi lokal lagring
 
-##### clear
+##### tøm
 
-Used to clear the local storage
+Brukes til å rydde opp lokal lagring
 
-###### Parameter
+###### Parametre
 
-No parameter
+Ingen parameter
 
-##### setValue
+##### settverdi
 
-###### Parameter
+###### Parametre
 
-`key`: the displayName of local storage.
+`nøkkel`: displayName of local storage.
 
-`value`: the value of the key.
+"verdi": verdien av nøkkelen.
 
-3.  ### Only run when
+### Bare kjør når
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+En boolsk verdi brukt til å sette når hendelsesbehandleren kunne bli utløst. For eksempel, når inndata1 er null, kunne ikke hendelsesbehandleren utløses: `{{input1.value!==""&&input1.value!==udefinert}}`
