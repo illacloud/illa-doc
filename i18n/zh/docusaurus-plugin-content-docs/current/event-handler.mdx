@@ -1,13 +1,13 @@
 ---
 title: Event handler
-description: Add an event handler to the component to trigger an event when the component's state changes.
+description: 在组件中添加事件处理程序来触发当组件的状态改变时的事件。
 ---
 
 # Event handler
 
-Add an event handler to the component to trigger an event when the component's state changes.
+在组件中添加事件处理程序来触发当组件的状态改变时的事件。
 
-## How-to
+## 如何使用
 
 <div style={{
 position: "relative",
@@ -15,43 +15,43 @@ paddingBottom: "calc(56.81216931216932% + 41px)",
 height: 0
 }}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-## Configuration options
+## 配置选项
 
-1.  ### Event
+### 事件
 
-Used to set how to trigger the action. For example, if we want to trigger restapi1 when the data grid(table) component is refreshed, we can set the event to `refresh`. If we want to trigger restapi2 when the sort of data grid(table) component is changed, we can set the event to `sort change`. If we want to trigger restapi3 when the button is clicked, we can set the event to `click`.
+用于设置如何触发动作。 例如，如果我们想要在刷新数据网格(表格)组件时触发respi1，我们可以设置事件为“刷新”。 如果我们想要在数据网格(表)组件被更改时触发respi2，我们可以设置事件为“更改排序”。 如果我们想在点击按钮时触发respi3，我们可以将事件设置为“点击”。
 
-2.  ### Action
+### 行 动
 
-#### Trigger action
+#### 触发动作
 
-Used to trigger an action created in this app
+用于触发此应用创建的操作
 
-| **parameter**       | **required or not**   | **description**                      |
-| ------------------- | --------------------- | ------------------------------------ |
-| Action name         | `required`            | Select an action created in this app |
+| **参数**       | **需要或不需要**           | **描述**                |
+| ------------ | -------------------- | --------------------- |
+| 动作名称         | `requird`            | 选择在这个应用程序中创建的操作       |
 
-#### Control component
+#### 控制组件
 
-| **parameter**       | **required or not**   | **description**                                                                                                                                         |
-| ------------------- | --------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Component           | `required`            | Select a component added to the current page                                                                                                            |
-| Method              | `required`            | Used to set what the control component does. Different methods require different parameters to be configured. Detailed explanations are provided below. |
+| **参数**          | **需要或不需要**           | **描述**                                                                                                                                   |
+| --------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| 组件              | `requird`            | 选择添加到当前页面的组件                                                                                                                             |
+| 方法              | `requird`            | 用于设置控制组件做些什么。 不同的方法需要不同的参数。 详细解释见下文。                                                                                                     |
 
-##### setValue
+##### 设置值
 
-Used to set the value.
+用于设置值。
 
-###### Parameter
+###### 参数
 
-`Value`: The value could be a `string` or `number` or `object` or `boolean` or `array` which depends on the component type.
+`value`: 该值可以是依赖组件类型的 `string` 或 `number` 或 `object` 或 `boolean` 或 `array` 。
 
-###### Supported components
+###### 支持的组件
 
-| Component                                                                                                                                                           | Parameter type                                                     | Example                                                                                                                                                                 |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Input, Editable Text, Text Area, Divider, Select, Radio Group, Radio Button, Radio Buttonm, Date, Date Time, Steps, Text, Bar Progress, Circle Progress             | `string`                                                           |                                                                                                                                                                         |
-| `Hello world`                                                                                                                                                       |                                                                    |                                                                                                                                                                         |
+| 组件                                                                                                                                                                  | 参数类型                                                     | 示例                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 输入，可编辑文本，文本区域，除去，选项，无线电小组，无线电按钮，无线电按钮，日期日期，日期时间，步骤，文本，条形进展，圆圈进度                                                                                                     | `string`                                                 |                                                                                                                                                                    |
+| `Hello world`                                                                                                                                                       |                                                          |                                                                                                                                                                    |
 
 | JSON Editor
                                                                                                                                             | `string`
@@ -62,109 +62,109 @@ Used to set the value.
 | JSON Schema Form, Form                                                                                                                                  | `object`                                                       | `{{ { "firstName": "Chuck", "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed", "telephone": "1-800-KICKASS" } }}` |
 | Checkbox Group, Cascader                                                                                                                                | `array`                                                        | `{{["media_source_2","campaign_2-1"]}}`                                                                                                                             |
 
-##### clearValue
+##### 清除值
 
-Used to clear the value.
+用于清除该值。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, JSON Editor, JSON Schema Form, Switch, Select, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Date Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
+输入，号码输入，可编辑文本，文本区域，上传，JSON编辑器，JSON方案格式，开关，选择多选项，复选框组， Cascader, Radio Group, Radio Button, Date, Date Range, Data Time, Text, Rate, Bar Progress, Circle Progress, Timeline, Divider
 
-##### focus
+##### 聚焦
 
-Used to focus on the component
+用于关注组件
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, JSON Editor, Rich text editor, Radio Group,
+Input, number Input, Editable Text, Textarea, JSON Editor, Rich text editor, Radio Group,
 
 ##### validate
 
-When you have set validation conditions for a component, such as email format, URL format, or required field, you can use the `validate` function to determine if it meets the requirements. If it does not meet the requirements, a validation message will be displayed.
+当您设置了一个组件的验证条件，例如电子邮件格式，URL格式， 或必填字段，您可以使用 `validate` 函数来确定它是否符合要求。 如果它不符合要求，将显示验证消息。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Group, Radio Button, Date, Date Range, Date Time, Form, Rate
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期范围，日期时间，Form，速率
 
-##### clearValidation
+##### 清除验证
 
-Used to clear the validation message.
+用于清除验证消息。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Input, Number Input, Editable Text, Text Area, Upload, Select, Multiselect, Checkbox Group, Radio Button, Date, Date Range, Date Time, Rate
+输入，号码输入，可编辑文本，文本区域，上传，选项，多选项，复选框组，无线电按钮，日期范围，日期范围，日期时间，日期时间，时间速率
 
 ##### setSelectedValue
 
-Used to set the selected value of Multiselect. The parameter should be an array.
+用于设置多选中的值。 参数应该是数组。
 
-###### Parameter
+###### 参数
 
-`Value`: an array of strings used to set the selected options.
+`value`：用于设置选定选项的字符串数组。
 
-###### Supported components
+###### 支持的组件
 
-Multiselect
+多选
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### submit
+##### 提交
 
-Submit form data. When the submit method is triggered, we will first validate the form data. If there are validation errors, the form submission will be prevented, and the corresponding error messages will be displayed. Only after successful validation does the submission proceed.
+提交表单数据。 当提交方法被触发时，我们将首先验证表单数据。 如果存在验证错误，表格提交将被阻止，相应的错误信息将被显示。 只有在验证成功后，提交才会继续。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-JSON Schema Form, Form
+JSON 方案表，表单
 
-##### toggle
+##### 切换
 
-Used to switch the value from true to false or from false to true.
+用于切换值从true到false或false 到true。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Switch
+交换机
 
 ##### setStartOfRange
 
-Used to set the default start value of the range slider
+用于设置范围滑块的默认起始值
 
-###### Parameter
+###### 参数
 
-`Start value`: a number used to set the start value.
+“起始值”：用来设置起始值的数字。
 
-###### Supported components
+###### 支持的组件
 
 Range Slider
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{10}}
@@ -172,17 +172,17 @@ Range Slider
 
 ##### setEndOfRange
 
-Used to set the default end value of the range slider
+用于设置范围滑块的默认结束值
 
-###### Parameter
+###### 参数
 
-`End value`: a number used to set the end value.
+“最终值”：用来设定最终值的数字。
 
-###### Supported components
+###### 支持的组件
 
 Range Slider
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{10}}
@@ -190,459 +190,459 @@ Range Slider
 
 ##### setStartValue
 
-Used to set the default start value
+用于设置默认起始值
 
-###### Parameter
+###### 参数
 
-`Start date/time`: a string used to set the start time/date.
+`开始日期/时间`: 用来设置起始时间/日期的字符串。
 
-###### Supported components
+###### 支持的组件
 
-Date Range, Time Range
+日期范围、 时间范围
 
-###### Example
+###### 示例
 
 ```JavaScript
 2023-09-09
 ```
 
-##### setEndValue
+##### 设定终结值
 
-Used to set the default end value
+用于设置默认结束值
 
-###### Parameter
+###### 参数
 
-`End date/time`: a string used to set the end time/date.
+`结束日期/时间`: 用来设置结束时间/日期的字符串。
 
-###### Supported components
+###### 支持的组件
 
-Date Range, Time Range
+日期范围、 时间范围
 
-###### Example
+###### 示例
 
 ```JavaScript
 2023-10-09
 ```
 
-##### setValueInArray
+##### 设置值InArray
 
-Used to set the switches whose value is true
+用于设置值为 true 的开关
 
-###### Parameter
+###### 参数
 
-`Value`: an array of strings used to set the options whose value is true .
+`value`：用于设置其值为真的选项的字符串数组。
 
-###### Supported components
+###### 支持的组件
 
-Switch Group
+切换组
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{["Option 1", "Option 3"]}}
 ```
 
-##### setCurrentViewKey
+##### 设置CurrentView密钥
 
-Use the key which is a string value of the view to set the shown view.
+使用键值作为视图的字符串来设置显示的视图。
 
-###### Parameter
+###### 参数
 
-`Key`: a string used to set which view to display.  The key is configured in a container
+`Key`: 用于设置要显示的视图的字符串。  密钥在容器中配置
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
-###### Example
+###### 示例
 
 ```JavaScript
-View 1
+查看 1
 ```
 
-##### setCurrentViewIndex
+##### 设置当前视图索引
 
-Use the index which is a number value starting from 0 of the view to set the shown view.
+使用从视图的 0 开始的数字值来设置显示的视图。
 
-###### Parameter
+###### 参数
 
-`Index`: a number value. Use the index of the view to set which view to display. The index starts from 0.
+“索引”：一个数值。 使用视图索引来设置要显示的视图。 索引从0开始。
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{1}}
 ```
 
-##### showNextView
+##### 显示下次视图
 
-Used to show the next view. The parameter is a boolean value that determines whether to loop from the end back to the start.
+用于显示下一个视图。 参数是一个布尔值，用于决定是否从结束返回起始。
 
-###### Parameter
+###### 参数
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`循环回到start`: 一个布尔值 (使用切换到设置) 用于设置是否回循环到开始。
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### showNextVisibleView
+##### 显示下一个可视视图
 
-Used to show the next visible view. Unlike the behavior of the `showNextView(boolean)` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the end back to the start.
+用于显示下一个可见视图。 不同于“showNextView(boolean)”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从结束返回起始。
 
-###### Parameter
+###### 参数
 
-`Loop back to start`: a boolean value ( use a switch to set ) used to set whether to loop back to start.
+`循环回到start`: 一个布尔值 (使用切换到设置) 用于设置是否回循环到开始。
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
-##### showPreviousView
+##### 显示上一个视图
 
-Used to show the previous view. The parameter is a boolean value that determines whether to loop from the start back to the end.
+用于显示上一个视图。 参数是一个布尔值，用于决定是否从开始回到结束。
 
-###### Parameter
+###### 参数
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`循环开始后退`: 一个布尔值 (使用切换到设置) 用来设置是否循环开始返回.
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
-###### showPreviousVisibleView
+###### 显示上一个可视视图
 
-Used to show the previous visible view. Unlike the behavior of the `showPreviousView` function, this function offers improved view switching functionality by skipping any hidden views during the transition. The parameter is a boolean value that determines whether to loop from the start back to the end.
+用于显示上一个可见视图。 不同于“show以前视图”函数的行为，此函数通过在过渡期间跳过任何隐藏视图，提供更好的视图切换功能。 参数是一个布尔值，用于决定是否从开始回到结束。
 
-###### Parameter
+###### 参数
 
-`Loop start to back`: a boolean value ( use a switch to set ) used to set whether to loop start to back.
+`循环开始后退`: 一个布尔值 (使用切换到设置) 用来设置是否循环开始返回.
 
-###### Supported components
+###### 支持的组件
 
-Container
+容器
 
 ##### reset
 
-Used to reset the value to default value.
+用于重置值为默认值。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Form
+形式
 
-##### resetValue
+##### 重置值
 
-Used to reset the value to default value.
+用于重置值为默认值。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Steps
+步骤
 
 ##### openModal
 
-Used to open a modal
+用于打开模式
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Modal
+模式
 
-##### closeModal
+##### 关闭模式
 
-Used to close a modal
+用于关闭模式
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Modal
+模式
 
 ##### setImageUrl
 
-Used to set the Image source URL. It can be a Base64 or a URL pointing to an image on the web.
+用于设置图像源 URL。 它可以是 Base64 或 URL 指向网络上的图像。
 
-###### Parameter
+###### 参数
 
-`Value`:  a string value used to set the image source. It could be URL or base64.
+`value`: 用于设置图像源的字符串值。 它可以是 URL 或 base64 。
 
-###### Supported components
+###### 支持的组件
 
-Image
+图片
 
-###### Example
+###### 示例
 
 ```JavaScript
-https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
+https://cloud-api.illacloud.com/dive/f/83095b77-1180-487e-86db-ff117e6083e5
 ```
 
 ```JavaScript
-data:image/png;base64,iVBORw0KGgoAA...II
+data:image/png;base64,iVBORw0KGOAAA...II
 ```
 
-##### clearReplyMessage
+##### 清除回复消息
 
-Used to clear the quoted reply message above the input box.
+用于清除输入框上方引用的回复消息。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Chat
+聊天
 
-##### setPrimaryValue
+##### 设置初级值
 
-Used to set the primary value of statistics.
+用于设置统计的主要价值。
 
-###### Parameter
+###### 参数
 
-`Primary value`: a number value used to set the primary value of statistics.
+“主值”：用来设定统计主要值的数值。
 
-###### Supported components
+###### 支持的组件
 
-Statistics
+统计
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{10000}}
 ```
 
-##### resetPrimaryValue
+##### 重置原始值
 
-Used to reset the primary value to the default primary value of statistics.
+用于重置主值为默认主要统计值。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Statistics
+统计
 
 ##### setFileUrl
 
-Used to set the file URL. It can be a Base64 or a URL pointing to a PDF on the web.
+用于设置文件 URL。 它可以是 Base64 或 URL 指向网络上的 PDF。
 
-###### Parameter
+###### 参数
 
-`PDF source`: a string value used to set the PDF source. It could be URL or base64.
+`PDF 源`: 用于设置 PDF 源的字符串值。 它可以是 URL 或 base64 。
 
-###### Supported components
+###### 支持的组件
 
 PDF
 
-###### Example
+###### 示例
 
 ```JavaScript
-https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
+https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
 ```
 
-##### play
+##### 播放
 
-Used to play video or audio.
+用于播放视频或音频。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### pause
+##### 暂停
 
-Used to pause video or audio.
+用于暂停视频或音频。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-##### showControls
+##### 显示控制
 
-Used to set whether to show the controls.
+用于设置是否显示控件。
 
-###### Parameter
+###### 参数
 
-`Show controls`: a boolean value used to set whether to show the controls.
+`显示控件`: 用于设置是否显示控件的布尔值。
 
-###### Supported components
+###### 支持的组件
 
-Video
+视频
 
-##### setVideoUrl
+##### 设置视频 Url
 
-Used to set the video's URL. It can be a Base64 or a video URL on media websites.
+用于设置视频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
 
-###### Parameter
+###### 参数
 
-`Video source`: a string value used to set the video source. It could be URL or base64.
+`Video source`: 用于设置视频源的字符串值。 它可以是 URL 或 base64 。
 
-###### Supported components
+###### 支持的组件
 
-Video
+视频
 
-###### Example
+###### 示例
 
 ```JavaScript
 video1.setVideoUrl("https://youtu.be/8sUovZlBh_M")
 ```
 
-##### setVolume(number)
+##### setVolume(数字)
 
-Used to set the volume. The parameter is a number value between 0 to 1.
+用于设置音量。 参数是一个值介于 0 到 1 之间。
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-###### Example
+###### 示例
 
 `video1.setVolume(0.5)`
 
-##### setSpeed
+##### 设置速度
 
-Used to set the speed.
+用于设置速度。
 
-###### Parameter
+###### 参数
 
-`Speed`: a number value between 0.25 to 2
+`Speed`: 一个值介于 0.25 到 2 之间
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{0.5}}
 ```
 
-##### setLoop
+##### 设置循环
 
-Used to set whether to loop the playback.
+用于设置是否循环播放。
 
-###### Parameter
+###### 参数
 
-`Loop`: a boolean value used to set loop or not
+“循环”: 用于设置循环或非循环的布尔值
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{true}}
 ```
 
-##### seekTo
+##### 搜索
 
-Used to seek to a specific time position.
+用于寻求特定时间位置。
 
-###### Parameter
+###### 参数
 
-`Time(s)`: a number value, measured in seconds (s). For example, to seek to the time position 5:35, you would use the value 335.
+“时间(s)”: 以秒为单位测量的数字值。 例如，要寻求时间位置 5:35，您将使用价值335。
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{335}}
 ```
 
-##### mute
+##### 静音
 
-Used to set mute or not.
+用于设置静音与否。
 
-###### Parameter
+###### 参数
 
-`Mute`: a boolean value
+`Mute`: 一个布尔值
 
-###### Supported components
+###### 支持的组件
 
-Video, Audio
+视频，音频
 
 ##### setAudioUrl
 
-Used to set the audio's URL. It can be a Base64 or a video URL on media websites.
+用于设置音频的 URL。 它可以是 Base64 或媒体网站上的视频 URL。
 
-###### Parameter
+###### 参数
 
-`Audio source`: a string value used to set the audio source. It could be URL or base64.
+`音频源`: 用于设置音频源的字符串值。 它可以是 URL 或 base64 。
 
-###### Supported components
+###### 支持的组件
 
-Audio
+音频
 
-###### Example
+###### 示例
 
 ```JavaScript
-https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
+https://www.soundhelix.com/exampes/mp3/SoundHelix-Song-1.mp3
 ```
 
-##### slickNext
+##### 切换下一个
 
-Used to switch to the next image.
+用于切换到下一个图像。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
 Carousel
 
-##### slickPrevious
+##### 切开上一个
 
-Used to switch to the previous image.
+用于切换到上一张图像。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
 Carousel
 
 ##### setSrc
 
-Used to set the source URL of IFrame.
+用于设置 IFram 的源URL。
 
-###### Parameter
+###### 参数
 
-`Value`: a string value used to set the URL.
+`value`: 用于设置URL的字符串值。
 
-###### Supported components
+###### 支持的组件
 
 IFrame
 
-###### Example
+###### 示例
 
 ```JavaScript
 https://www.nasa.gov/
@@ -650,17 +650,17 @@ https://www.nasa.gov/
 
 ##### setMarkers
 
-Used to set the markers on the map.
+用于设置地图上的标记。
 
 ###### Paramater
 
-`Markers`: an array of objects. The latitude and longitude fields in each object should be same as the fields set in the right-hand panel.
+`Markers`：对象数组。 每个对象的纬度和经度字段应与右手面板中设置的字段相同。
 
-###### Supported components
+###### 支持的组件
 
-Map
+地图
 
-###### Example
+###### 示例
 
 ```JavaScript
 {{[
@@ -679,134 +679,134 @@ Map
 
 ##### resetMarkers
 
-Used to reset the markers to the default markers.
+用于重置标记为默认标记。
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-###### Supported components
+###### 支持的组件
 
-Map
+地图
 
-#### Run script
+#### 运行脚本
 
-By writing a script, you can trigger multiple events in sequence. [Learn more](https://docs.illacloud.com/run-script)
+通过写脚本，您可以按顺序触发多个事件。 [了解更多](https://docs.illacloud.com/run-script)
 
-#### Go to URL
+#### 转到网址
 
-##### Parameter
+##### 参数
 
-`URL`: String value. The URL to be opened
+`URL`：字符串值。 要打开的 URL
 
-`New tab`:  Boolean value. Used to set whether to open the URL on a new tab.
+“新标签：布尔值。 用于设置是否在新标签页上打开 URL。
 
-#### Show notification
+#### 显示通知
 
-##### Parameter
+##### 参数
 
-`Title`: String value. The title of the notification
+`Title`: String value. 通知的标题
 
-`Description`:  String value. The description of the notification
+`Description`: 字符串值。 通知的描述
 
-`Type`:  String value. Set the type via the dropdown options: Success, Error, Warning, Info
+`Type`: 字符串值。 通过下拉菜单设置类型：成功、 错误、 警告、 信息
 
-`Duration(ms)`: Number value. The duration for displaying a notification.
+`Duration(ms)`: 数字值。 显示通知的持续时间。
 
-#### Copy to clipboard
+#### 复制到剪贴板
 
-##### Parameter
+##### 参数
 
-`Value`: String value. The string to be copied.
+`value`: 字符串值。 要复制的字符串。
 
-#### Set router
+#### 设置路由器
 
-When there are multiple pages in the application, this function can be used to switch between pages.
+当应用程序中有多个页面时，此函数可以用于在不同页面间切换。
 
-##### Parameter
+##### 参数
 
-`Page`: Use to set redirect to which page.
+`页面`: 用来设置重定向到哪个页面。
 
-`Sub-page`: Use to set redirect to which sub-page of the page selected in page parameter.
+`子页面`: 用来设置在页面参数中选择的子页面重定向.
 
-#### Save to ILLA Drive
+#### 保存到 ILLA 驱动器
 
-##### Parameter
+##### 参数
 
-`File name with extension`: String. Name with extension of the file after uploading to ILLA Drive.
+`扩展名`: 字符串'. 上传到 ILLA 驱动器后具有文件扩展名的名称。
 
-`File data`: String. Base64 or raw file data, such as JSON, CSV, plain text, etc.
+`文件数据`: 字符串。 Base64 或原始文件数据，例如JSON、CSV、纯文本等。
 
-`File Type`: String. One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+\`文件类型：字符串。 以下值之一：自动、纯文本、JPEG、PNG、SVG、JSON、CSV、TSV、Excel(.xlsx)。 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
-`Folder`: String. Destination folder for file upload. Leave it blank to upload to the root folder.
+`Folder`：字符串。 文件上传的目标文件夹。 将上传到根文件夹留空。
 
-`Allow anonymous`: Bolean. Used to set whether anonymous user access is allowed. If you plan to set your application as public, anonymous access must be enabled. For the security of your data, files or folders accessible anonymously must be placed in the anonymous folder.
+“允许匿名”：粗体 用于设置是否允许匿名用户访问。 如果您计划将您的应用程序设置为公开，必须启用匿名访问。 为了您的数据的安全性，文件或文件夹必须放在匿名文件夹中。
 
-`Replace`: Boolean. Used to set when there are files with the same name in the same directory, replace the existing file with a new file or automatically rename the new file.
+“替换”：布尔值。 用于设置在同一目录中有具有相同名称的文件时, 用新文件替换现有文件或自动重命名新文件。
 
-#### Download from ILLA Drive
+#### 从 ILLA 驱动程序下载
 
-##### Parameter
+##### 参数
 
-`Download info`: an array of objects including tinyURL and fileID. You can use the component Drive file picker to pick files from ILLA Drive and get the `Download info` via drivePicker1.value
+`下载信息`: 包括小网址和文件ID在内的对象数组。 您可以使用组件驱动器从ILLA 驱动器中选择文件并通过 drivePicker1.value 获取“下载信息”。
 
-`Save as Zip`: Boolean. Used to set whether to download the files as a Zip.
+`另存为Zip`：布尔。 用于设置是否以Zip格式下载文件。
 
-#### Download
+#### 下载
 
-Used to export data to your device.
+用于导出数据到您的设备。
 
-##### Parameter
+##### 参数
 
-`File type`: One of the following values: Auto, Plain text, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). When using "Auto," we will attempt to determine the file type based on either the file extension or the file data.
+`文件类型`: 以下值之一: 自动, 纯文本, JPEG, PNG, SVG, JSON, CSV, TSV, Excel(.xlsx). 当使用"自动"时，我们将尝试根据文件扩展名或文件数据来确定文件类型。
 
-`File name`: a name with extension.
+`File name`: 具有扩展名的名称。
 
-`Data`: data of the file.
+“数据”：文件的数据。
 
-#### Set global data
+#### 设置全局数据
 
-##### Set global data value
+##### 设置全局数据值
 
-Used to set the value of gobalData
+用于设置 gobalData 的值
 
-###### Parameter
+###### 参数
 
-`key`: the displayName of globalData.
+`key`: 全局数据的显示名称。
 
-`value`: the value to set
+`value`: 要设置的值
 
-##### Set global data in
+##### 设置全局数据在
 
-When the global data is an array or object, use setGlobalDataIn to modify the value corresponding to a specific index in an array or to modify the value corresponding to a specific key in an object.
+当全局数据是数组或对象时， 使用 setGlobalDataIn来修改一个数组中特定索引的对应值或修改对象中特定键的对应值。
 
-###### Parameter
+###### 参数
 
-`key`: the displayName of globalData.
+`key`: 全局数据的显示名称。
 
-`path`: the index of the value you intend to update in the array or the key in the object. For example, to set the second value in array, the path is 1 (the index). To set the value of the attribute named key1, the path is key1.
+“路径”：你打算在数组或对象中更新的值的索引。 例如，要在数组中设置第二个值，路径是 1 (索引)。 要设置名为key1的属性值，路径是key1。
 
-`value`: the value to set
+`value`: 要设置的值
 
-#### Set local storage
+#### 设置本地存储
 
-##### clear
+##### 清除
 
-Used to clear the local storage
+用于清理本地存储
 
-###### Parameter
+###### 参数
 
-No parameter
+没有参数
 
-##### setValue
+##### 设置值
 
-###### Parameter
+###### 参数
 
-`key`: the displayName of local storage.
+`key`: 本地存储的显示名称。
 
-`value`: the value of the key.
+“值”：键值的值。
 
-3.  ### Only run when
+### 仅当运行时
 
-A boolean value used to set when the event handler could be triggered. For example, when the input1 is null, the event handler couldn't be triggered: `{{input1.value!==""&&input1.value!==undefined}}`
+用于设置事件处理程序触发时间的布尔值。 例如，当输入 1 为空时，事件处理程序无法被触发: "{{input1.value!==""&input1.value!==undefined}}"
