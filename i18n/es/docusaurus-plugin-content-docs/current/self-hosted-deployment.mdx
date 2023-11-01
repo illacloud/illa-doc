@@ -1,0 +1,213 @@
+---
+title: Despliegue autoalojado
+description: ILLA Builder proporciona una experiencia de implementación perfecta que le permite desplegar el Constructor de ILLA a una velocidad asombrosa dentro de su nube privada virtual (VPC).
+---
+
+# Despliegue autoalojado
+
+## Doctor
+
+1.  Iniciar Docker
+2.  Introduzca el siguiente comando en el terminal para instalar la imagen oficial:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Descargar CLI de ILLA y desplegar
+
+Si tiene Rust instalado, puede fácilmente construir+instalar la última versión de CLI de ILLA con carga:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+La herramienta **cargo** completará la descarga del CLI de ILLA con sus dependencias de origen, construirlo e instalarlo en la ruta de la papelera de carga para que podamos ejecutarlo. Una vez instalado, puedes ejecutar el CLI de ILLA con el comando **illa**.
+
+Alternativamente, puede descargar el CLI de ILLA para su sistema operativo aquí:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Si se descarga desde los enlaces anteriores, los pasos son ligeramente diferentes en comparación con la descarga del CLI de ILLA de **carga** . Después de descargar el CLI, tendrás que hacerlo ejecutable. Tomemos el illa-linux por ejemplo:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Comprobando los requisitos previos de la instalación autoalojada
+
+Estos puertos 5432, 9999 y 8000 deben permanecer para el constructor de ILLA
+
+El siguiente comando comprobará los requisitos previos de la instalación autoalojada en su sistema operativo:
+
+```Plaintext
+> illa doctor
+```
+
+### Desplegando el constructor de ILLA
+
+Una vez que el CLI de ILLA haya sido instalado, puede ejecutar una instalación autoalojada o en la nube.
+
+Puedes simplemente desplegar un Constructor de ILA autoalojado ejecutando el siguiente comando:
+
+```Plaintext
+# el puerto en el que se puede acceder al Constructor ILLA puede ser cambiado
+# la <SERVER_ADDRESS> debe ser el servidor público de la nube, ip, default localhost
+> implementación de illa --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Ahora, puedes acceder al Constructor de ILLA: <http://localhost:10000>
+
+### Actualizando ILLA Builder
+
+Para actualizar el ILLA Builder con las últimas imágenes de docker, utilice el siguiente comando:
+
+```Plaintext
+> actualización de illa --self
+```
+
+### Otras operaciones
+
+```Plaintext
+# listar el Constructor ILLA
+> lista de illa --self
+
+# detener el Constructor ILLA
+> parar el Constructor ILLA --self
+
+# eliminar el Constructor ILLA
+> remover --self
+
+# eliminar forzado el Constructor ILLA en ejecución y los datos persistentes
+> sudo illa remove --force --self --data
+
+# reiniciar el Constructor ILLA
+> illa restart --self
+
+# información de ayuda
+> Ayuda illa
+```
+
+## Kubernetes
+
+### Descripción
+
+Construye la imagen todo en uno y la ejecuta k8s en tu máquina. Puede revisar el archivo de scripts en la carpeta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) para más detalles.
+
+Nota:
+
+Recomendamos altamente desplegar con nuestras herramientas de despliegue automático [illa-cli](https://github.com/illacloud/illa).
+
+Y por el momento no soportamos Apple Silicon M1 (arco darwin-arm64).
+
+### Ejecutar con una imagen delgada oficial
+
+Instalar GNU make y tipo:
+
+```JavaScript
+desplegar
+```
+
+o simplemente ejecutar:
+
+```JavaScript
+/bin/bash scripts/deploy.sh
+```
+
+este comando extraerá la imagen oficial todo en uno y la desplegará en su clúster de Kubernetes.
+
+### Para almacenamiento persistente de base de datos
+
+Edita [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml), y añade tu configuración de almacenamiento persistente IAAS en ella.
+
+### Para configuración HTTPS
+
+Puede enrutar el NodePort a su pasarela de progreso del clúster de Kubernetes y reescribir en el puerto 443, y añadir certificado https en su pasarela de progreso.
+
+O, puede desplegar una pasarela de progreso manualmente en su servidor de Kubernetes, configuración así:
+
+```JavaScript
+static_resources:
+  listeners:
+  - name: https_listener
+    address:
+      socket_address:
+        address: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filters:
+      - name: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa. ourdomiano. om" # reemplazar con su dominio
+              rutas:
+              - coincide:
+                  prefijo: "/"ruta:
+                  clúster: illa_builder
+          http_filters:
+          - name: envio. ilters.http.
+            typed_config:
+              "@type": tipo. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        name: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # reemplace esto con su archivo cert
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain. em
+              private_key:
+                filename: /your-cert-folder/privkey. em
+
+  clusters:
+  - name: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      endpoints:
+      - lb_endpoints:
+        - endpoint:
+            address:
+              socket_address:
+                address: illa-builder
+                port_value: 80
+```
+
+## Despliegue rápido
+
+Puede desplegar ILLA de una manera notablemente rápida, por favor siga las siguientes instrucciones:
+
+Primero, por favor descarga este [archivo docker](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) en tu computadora, luego ejecuta el siguiente código.
+
+```JavaScript
+cd docker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+Y inicie sesión con el nombre de usuario y contraseña predeterminados:
+
+Nombre de usuario: **`root`**
+
+Password: **`password`** (modo auto-host solamente).
