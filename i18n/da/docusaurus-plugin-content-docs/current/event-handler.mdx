@@ -1,32 +1,811 @@
 ---
-title: Event handler
-description: Event handlers are an integral part of refining your internal tool usage logic
+title: Hændelse handler
+description: Tilføj en hændelseshandler til komponenten for at udløse en begivenhed, når komponentens tilstand ændres.
 ---
 
-# Event handler
+# Hændelse handler
 
-Event handlers are an integral part of refining your internal tool usage logic. Any insert or action that responds to a user action has its own events that may be triggered, such as a button insert with a 'click' event, a text input box with a 'submit' event, the success of an action, and so on. Event handlers help users to trigger pre-defined instructions when events occur: you can react to a single event occurrence, or you can set up multiple event handlers and set them up as workflows to do more complex work.
+Tilføj en hændelseshandler til komponenten for at udløse en begivenhed, når komponentens tilstand ændres.
 
-After the event you set has occurred, the event handler can help you perform a variety of actions: control action statements, control inserts, run scripts and more. You can also add more detailed JavaScript trigger conditions on top of the trigger conditions.
+## Hvordan
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-01.png' />
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/s1XL3fmsMvTjMcOXxpkC?embed" frameborder="0" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
 
-### Event handlers
+## Indstillings indstillinger
 
-In event handlers, you can set the outcome of the event based on whether the query results fail or not. You can complete the trigger logic by setting the query failure condition in the Response tab.
+1.  ### Begivenhed
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-02.png' />
+Bruges til at indstille hvordan handlingen udløses. For eksempel, hvis vi ønsker at udløse restapi1, når data-gitter(tabel) komponent er opdateret, kan vi indstille begivenheden til `refresh`. Hvis vi ønsker at udløse restapi2, når den slags data gitter(tabel) komponent ændres, kan vi indstille begivenheden til `sortere ændring`. Hvis vi ønsker at udløse restapi3, når der klikkes på knappen, kan vi indstille begivenheden til `klik`.
 
-### Edit submit handler
+2.  ### Handling
 
-We set a trigger condition for each interactive insert, and you can select an event in the handler's action list as the trigger condition. For example, you could set 'Submit' as the trigger condition in the event handler for the data entry box, which automatically inserts the input into the database when the user 'submits' the input, thus implementing a simple data insertion function.
+#### Udløser handling
 
-<img alt="event-handler" src='https://cdn.illacloud.com/official-website/img/official-site/event-handler-03.png' />
+Bruges til at udløse en handling oprettet i denne app
 
-### Temporary states
+| **parametre**            | **påkrævet eller ej**     | **beskrivelse**                       |
+| ------------------------ | ------------------------- | ------------------------------------- |
+| Navn på handling         | `obligatorisk`            | Vælg en handling oprettet i denne app |
 
-When processing data, you may encounter situations where the processed data is not called up immediately. For this reason, we have set up temporary states to store intermediate states for data processing. You can choose to set a temporary state in the response event options of event handlers and click on Create new state to store the current data in the temporary state, which can be placed for any property.
+#### Kontroller komponent
 
-Outside the project editor, you can also store data by {{tempState1.setValue(data)}} or call data by {{tempState1.value}}.
+| **parametre**       | **påkrævet eller ej**     | **beskrivelse**                                                                                                                                                          |
+| ------------------- | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Komponent           | `obligatorisk`            | Vælg en komponent tilføjet til den aktuelle side                                                                                                                         |
+| Metode              | `obligatorisk`            | Bruges til at indstille hvad kontrolkomponenten gør. Forskellige metoder kræver, at forskellige parametre er konfigureret. Detaljerede forklaringer er angivet nedenfor. |
 
-> The values in the temporary state will be cleared when the project is restarted, and you will need to store the values locally or in the cloud to ensure the integrity of the data.
+##### setValue
+
+Bruges til at indstille værdien.
+
+###### Parameter
+
+`Værdi`: Værdien kan være en `streng` eller `tal` eller `objekt` eller `boolean` eller `array` der afhænger af komponenttypen.
+
+###### Understøttede komponenter
+
+| Komponent                                                                                                                                                          | Parameter type                                                     | Eksempel                                                                                                                                                                 |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Input, Redigerbar Tekst, Tekstområde, Divider, Vælg, Radio Group, Radio Button, Radio Knap, Dato, Dato, Tid, Skridt, Tekst, Bar Progress, Cirkel Fremskridt        | `streng`                                                           |                                                                                                                                                                          |
+| `Hej verden`                                                                                                                                                       |                                                                    |                                                                                                                                                                          |
+
+ŽJSON Editor
+                                                                                                                                            \- `string`
+                                                      \- `{ "firstName": "Chuck" "lastName": "Norris", "age": 80, "bio": "Roundhouse kicking asses since 1940", "password": "noneed" "telefoni": "1-800-KICKASS" }` ¤-   Tidslinje' - 'streng', Adskil værdierne af forskellige knudepunkter via komma (,) ● `Den første milepæl, he second milestone` ●
+    ● Number Input, Skyderen Bedøm ● `nummer` ● `{{1000}}` ●
+    ● Switch ● `boolean` ● `{{false}}` ●
+    ● JSON Schema Form, Formularen`-objekt`{{ { "firstName": "Chuck" "lastName": "Norris", "age": 80, "bio": "Roundhouse spark æsler siden 1940", "password": "noneed", "telefon": "1-800-KICKASS" } }}` ¤
+    ¤ Checkbox Group, Cascader Ž`array` ~`{{["media_source_2","campaign_2-1"]}}\` ●
+
+##### clearValue
+
+Bruges til at rydde værdien.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, JSON Editor, JSON Schema Form, Switch, Vælg, Multiselect, Checkbox Group, Cascader, Radio Group, Radio Button, Dato, Datointerval, Data Time, Datotid, Tekst, Sats, Bar Progress, Circle Progress, Timeline, Divider
+
+##### fokus
+
+Bruges til at fokusere på komponenten
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Input, Number Input, Redigerbar Tekst, Tekstområde, JSON Editor, Rich text editor, Radio Group,
+
+##### validate
+
+Når du har angivet valideringsbetingelser for en komponent, såsom e-mail format, URL format, eller obligatorisk felt, kan du bruge funktionen 'validate' til at afgøre, om den opfylder kravene. Hvis den ikke opfylder kravene, vil der blive vist en valideringsmeddelelse.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, Vælg, Multiselect, Checkbox Group, Radio Group, Radio Button, Dato, Tidspunkt, Tidspunkt, Form, Bedøm
+
+##### clearValidering
+
+Bruges til at rydde valideringsbeskeden.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Input, Nummerinput, Redigerbar Tekst, Tekstområde, Upload, Vælg, Multiselect, Afkrydsningsfelt Gruppe, Radioknap, Dato, Tidspunkt, Bedøm
+
+##### setSelectedValue
+
+Bruges til at indstille den valgte værdi for Multiselect. Parameteren skal være et array.
+
+###### Parameter
+
+`Værdie`: et array af strenge, der bruges til at indstille de valgte indstillinger.
+
+###### Understøttede komponenter
+
+Multivalg
+
+###### Eksempel
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### indsend
+
+Indsend formulardata. Når metoden for indsendelse udløses, vil vi først validere formulardata. Hvis der er valideringsfejl, vil formularindsendelsen blive forhindret, og de tilsvarende fejlmeddelelser vil blive vist. Indsendelsen fortsættes først efter en vellykket validering.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+JSON Skema Form, Form
+
+##### til/fra
+
+Bruges til at skifte værdi fra sand til falsk eller fra falsk til sandt.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Skift
+
+##### setStartOfRange
+
+Bruges til at indstille standardstartværdien for intervalskyderen
+
+###### Parameter
+
+`Start værdi`: et tal, der bruges til at angive startværdien.
+
+###### Understøttede komponenter
+
+Range Slider
+
+###### Eksempel
+
+```JavaScript
+{{10}}
+```
+
+##### setEndOfRange
+
+Bruges til at indstille standard slutværdi for skyderen interval
+
+###### Parameter
+
+`Slutværdi`: et tal, der bruges til at angive slutværdien.
+
+###### Understøttede komponenter
+
+Range Slider
+
+###### Eksempel
+
+```JavaScript
+{{10}}
+```
+
+##### setStartValue
+
+Bruges til at indstille standardstartværdien
+
+###### Parameter
+
+`Start dato/tid`: en streng der bruges til at angive starttidspunktet/datoen.
+
+###### Understøttede komponenter
+
+Datoområde, Tidsinterval
+
+###### Eksempel
+
+```JavaScript
+2023-09-09
+```
+
+##### setEndValue
+
+Bruges til at indstille standard slutværdi
+
+###### Parameter
+
+`Slut dato/tid`: en streng der bruges til at angive sluttid/dato.
+
+###### Understøttede komponenter
+
+Datoområde, Tidsinterval
+
+###### Eksempel
+
+```JavaScript
+2023-10-09
+```
+
+##### setValueInArray
+
+Bruges til at indstille kontakterne hvis værdi er sand
+
+###### Parameter
+
+`Value`: et array af strenge, der bruges til at indstille de muligheder, hvis værdi er sand .
+
+###### Understøttede komponenter
+
+Skift Gruppe
+
+###### Eksempel
+
+```JavaScript
+{{["Option 1", "Option 3"]}}
+```
+
+##### setCurrentViewKey
+
+Brug tasten som er en strengværdi i visningen til at indstille den viste visning.
+
+###### Parameter
+
+`Key`: en streng der bruges til at indstille hvilken visning der skal vises.  Nøglen er konfigureret i en beholder
+
+###### Understøttede komponenter
+
+Container
+
+###### Eksempel
+
+```JavaScript
+Se 1
+```
+
+##### setCurrentViewIndex
+
+Brug indekset som er en talværdi startende fra 0 i visningen for at indstille den viste visning.
+
+###### Parameter
+
+`Indek`: en talværdi. Brug indekset for visningen til at indstille hvilken visning der skal vises. Indekset starter fra 0.
+
+###### Understøttede komponenter
+
+Container
+
+###### Eksempel
+
+```JavaScript
+{{1}}
+```
+
+##### showNextView
+
+Bruges til at vise den næste visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
+
+###### Parameter
+
+`Løkke tilbage til start`: en boolsk værdi ( brug en switch til at sætte ) bruges til at indstille om loop tilbage til at starte.
+
+###### Understøttede komponenter
+
+Container
+
+##### showNextVisibleView
+
+Bruges til at vise den næste synlige visning. I modsætning til opførslen af funktionen `showNextView(boolean)` tilbyder denne funktion forbedret visning skifter funktionalitet ved at springe over skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra slutningen tilbage til starten.
+
+###### Parameter
+
+`Løkke tilbage til start`: en boolsk værdi ( brug en switch til at sætte ) bruges til at indstille om loop tilbage til at starte.
+
+###### Understøttede komponenter
+
+Container
+
+##### showPreviousView
+
+Bruges til at vise den forrige visning. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
+
+###### Parameter
+
+`Loop start til back`: en boolesk værdi (brug en switch til at indstillede) bruges til at indstille om loop'et skal starte tilbage igen.
+
+###### Understøttede komponenter
+
+Container
+
+###### showPreviousVisibleView
+
+Bruges til at vise den forrige synlige visning. I modsætning til opførslen af funktionen `showPreviousView` tilbyder denne funktion forbedret visning skifte funktionalitet ved at springe over eventuelle skjulte visninger under overgangen. Parameteren er en boolsk værdi, der bestemmer, om der skal sløjfe fra start tilbage til slutningen.
+
+###### Parameter
+
+`Loop start til back`: en boolesk værdi (brug en switch til at indstillede) bruges til at indstille om loop'et skal starte tilbage igen.
+
+###### Understøttede komponenter
+
+Container
+
+##### reset
+
+Bruges til at nulstille værdien til standardværdien.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Formular
+
+##### resetValue
+
+Bruges til at nulstille værdien til standardværdien.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Trin
+
+##### openModal
+
+Bruges til at åbne en modal
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Modal
+
+##### closeModal
+
+Bruges til at lukke en modal
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Modal
+
+##### setImageUrl
+
+Bruges til at angive billedkildens URL. Det kan være en Base64 eller en URL peger på et billede på nettet.
+
+###### Parameter
+
+`Værdi`: en strengværdi, der bruges til at angive billedkilden. Det kunne være URL eller base64.
+
+###### Understøttede komponenter
+
+Billede
+
+###### Eksempel
+
+```JavaScript
+https://cloud-api.illacloud.com/drive/f/83095b77-1180-487e-86db-ff117e6083e5
+```
+
+```JavaScript
+data:image/png;base64,iVBORw0KGgoAA...II
+```
+
+##### clearReplyMessage
+
+Bruges til at rydde den citerede svarbesked over indtastningsfeltet.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Chat
+
+##### setPrimaryValue
+
+Bruges til at indstille den primære værdi af statistik.
+
+###### Parameter
+
+`Primær værdi`: en talværdi, der anvendes til at angive den primære værdi af statistikken.
+
+###### Understøttede komponenter
+
+Statistik
+
+###### Eksempel
+
+```JavaScript
+{{10000}}
+```
+
+##### resetPrimaryValue
+
+Bruges til at nulstille den primære værdi til den primære standardværdi af statistik.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Statistik
+
+##### setFileUrl
+
+Bruges til at angive filens URL. Det kan være en Base64 eller en URL, der peger på en PDF på nettet.
+
+###### Parameter
+
+`PDF kilde`: en streng værdi, der bruges til at indstille PDF-kilden. Det kunne være URL eller base64.
+
+###### Understøttede komponenter
+
+PDF
+
+###### Eksempel
+
+```JavaScript
+https://upload.wikimedia.org/wikipedia/commons/e/ee/Guideline_No._GD-Ed-2214_Marman_Clamp_Systems_Design_Guidelines.pdf
+```
+
+##### afspil
+
+Bruges til at afspille video eller lyd.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+##### pause
+
+Bruges til at pause video eller lyd.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+##### showControls
+
+Bruges til at indstille om kontrolelementerne skal vises.
+
+###### Parameter
+
+\`Vis kontrol': en boolsk værdi, der bruges til at angive, om kontrollerne skal vises.
+
+###### Understøttede komponenter
+
+Video
+
+##### setVideoURL
+
+Bruges til at angive videoens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
+
+###### Parameter
+
+`Videokilde`: en strengværdi, der bruges til at indstille videokilden. Det kunne være URL eller base64.
+
+###### Understøttede komponenter
+
+Video
+
+###### Eksempel
+
+```JavaScript
+video1.setVideoUrl ("https://youtu.be/8sUovZlBh_M")
+```
+
+##### setVolume(tal)
+
+Bruges til at indstille volumen. Parameteren er en talværdi mellem 0 og 1.
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+###### Eksempel
+
+`video1.setVolumen(0.5)`
+
+##### setHastighed
+
+Bruges til at indstille hastigheden.
+
+###### Parameter
+
+`Hastighed`: en talværdi mellem 0,25 og 2
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+###### Eksempel
+
+```JavaScript
+{{0.5}}
+```
+
+##### setLoop
+
+Bruges til at indstille om afspilningen skal sløjfes.
+
+###### Parameter
+
+`Loop`: en boolsk værdi, der bruges til at indstille løkke eller ikke
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+###### Eksempel
+
+```JavaScript
+{{true}}
+```
+
+##### seekTo
+
+Bruges til at søge til en bestemt tid position.
+
+###### Parameter
+
+`Tid(er)`: en talværdi, målt i sekunder (s). For eksempel, at søge til den tid position 5:35, ville du bruge værdien 335.
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+###### Eksempel
+
+```JavaScript
+{{335}}
+```
+
+##### lydløs
+
+Bruges til at indstille mute eller ej.
+
+###### Parameter
+
+`Mute`: en boolsk værdi
+
+###### Understøttede komponenter
+
+Video, Lyd
+
+##### setAudioURL
+
+Bruges til at angive lydens URL. Det kan være en Base64 eller en video URL på medier hjemmesider.
+
+###### Parameter
+
+`Lydkilde`: en strengværdi, der bruges til at indstille lydkilden. Det kunne være URL eller base64.
+
+###### Understøttede komponenter
+
+Lyd
+
+###### Eksempel
+
+```JavaScript
+https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3
+```
+
+##### slickNæste
+
+Bruges til at skifte til næste billede.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Carousel
+
+##### slickPrevious
+
+Bruges til at skifte til forrige billede.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Carousel
+
+##### setSrc
+
+Bruges til at angive kilde-URLen til IFrame.
+
+###### Parameter
+
+`Værdi`: en strengværdi, der bruges til at angive URL'en.
+
+###### Understøttede komponenter
+
+IFrame
+
+###### Eksempel
+
+```JavaScript
+https://www.nasa.gov/
+```
+
+##### setMarkers
+
+Bruges til at sætte markørerne på kortet.
+
+###### Paramater
+
+`Markers`: en række objekter. Felterne bredde- og længdegrad i hvert objekt skal være de samme som de felter, der er angivet i panelet til højre.
+
+###### Understøttede komponenter
+
+Kort
+
+###### Eksempel
+
+```JavaScript
+{{[
+{
+    "lat":57.14009563040699,
+    "lng":-114.6018657894011
+ },{
+     "lat":55.40432513713809,
+     "lng":-112.98252263795787
+ },{
+     "lat":57.841288754888545,
+     "lng":-103.3518657894011
+ }
+ ]}}
+```
+
+##### resetMarkers
+
+Bruges til at nulstille markørerne til standardmarkørerne.
+
+###### Parameter
+
+Ingen parameter
+
+###### Understøttede komponenter
+
+Kort
+
+#### Kør script
+
+Ved at skrive et script, kan du udløse flere begivenheder i rækkefølge. [Læs mere](https://docs.illacloud.com/run-script)
+
+#### Gå til URL
+
+##### Parameter
+
+`URL`: Streng værdi. URL'en der skal åbnes
+
+`Ny fane`: Boolesk værdi. Bruges til at angive, om URL-adressen skal åbnes på en ny fane.
+
+#### Vis notifikation
+
+##### Parameter
+
+`Title`: String value. Titlen på meddelelsen
+
+`Beskrivelse`: Streng værdi. Beskrivelse af meddelelsen
+
+`Type`: Streng værdi. Indstil typen via dropdown tilvalg: Succes, Fejl, Advarsel, Info
+
+`Varighed(ms)`: Talværdi. Varigheden for visning af en notifikation.
+
+#### Kopiér til udklipsholder
+
+##### Parameter
+
+`Værdi`: Streng værdi. Strengen der skal kopieres.
+
+#### Indstil router
+
+Når der er flere sider i programmet, kan denne funktion bruges til at skifte mellem sider.
+
+##### Parameter
+
+`Side`: Brug til at angive omdirigering til hvilken side.
+
+`Underside`: Brug til at indstille omdirigering til hvilken underside af siden valgt i sideparameter.
+
+#### Gem til ILLA drev
+
+##### Parameter
+
+`Filnavn med endelsen`: String. Navn med udvidelse af filen efter upload til ILLA Drive.
+
+`Fildata`: Streng. Base64 eller rå fil data, såsom JSON, CSV, almindelig tekst, osv.
+
+`Filtype`: Streng. En af følgende værdier: Auto, Plain tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
+
+`Mappe`: Streng. Destinationsmappe for fil upload. Lad det være tomt at uploade til rodmappen.
+
+`Tillad anonym`: Bolean. Bruges til at angive, om anonym brugeradgang er tilladt. Hvis du planlægger at indstille din ansøgning som offentlig, skal anonym adgang være aktiveret. For at sikre dine data, filer eller mapper, der er tilgængelige anonymt, skal de placeres i den anonyme mappe.
+
+`Erstatning`: Boolesk. Bruges til at indstille når der er filer med samme navn i samme mappe, erstatte den eksisterende fil med en ny fil eller automatisk omdøbe den nye fil.
+
+#### Download fra ILLA drev
+
+##### Parameter
+
+`Download info`: en række objekter, herunder tinyURL og fileID. Du kan bruge komponenten Drev filvælger til at vælge filer fra ILLA Drive og få `Download info` via drivePicker1.value
+
+`Gem som Zip`: Boolesk. Bruges til at angive, om filerne skal downloades som en zip.
+
+#### Hent
+
+Bruges til at eksportere data til din enhed.
+
+##### Parameter
+
+`Filtype`: En af følgende værdier: Auto, Almindelig tekst, JPEG, PNG, SVG, JSON, CSV, TSV, Excel (.xlsx). Når du bruger "Auto", vil vi forsøge at bestemme filtypen baseret på enten filendelsen eller fildataene.
+
+`Filnavn`: et navn med endelse.
+
+`Data`: data for filen.
+
+#### Sæt globale data
+
+##### Sæt global dataværdi
+
+Bruges til at indstille værdien af gobalData
+
+###### Parameter
+
+`key`: displayName of globalData.
+
+`værdi`: den værdi, der skal angives
+
+##### Sæt globale data i
+
+Når de globale data er et array eller objekt, brug setGlobalDataIn for at ændre værdien svarende til et bestemt indeks i et array eller for at ændre værdien svarende til en bestemt nøgle i et objekt.
+
+###### Parameter
+
+`key`: displayName of globalData.
+
+`sti`: indekset for den værdi, du har til hensigt at opdatere i arrayet eller nøglen i objektet. For eksempel, for at indstille den anden værdi i array, stien er 1 (indekset). For at indstille værdien af attributten ved navn key1, stien er key1.
+
+`værdi`: den værdi, der skal angives
+
+#### Indstil lokal lagerplads
+
+##### ryd
+
+Bruges til at rydde den lokale lagerplads
+
+###### Parameter
+
+Ingen parameter
+
+##### setValue
+
+###### Parameter
+
+`key`: displayNavnet på lokal lagerplads.
+
+`værdi`: værdien af nøglen.
+
+3.  ### Kør kun når
+
+En boolsk værdi, der bruges til at indstille hvornår hændelseshandleren kunne udløses. For eksempel, når input1 er null, kunne hændelseshandleren ikke udløses: `{{input1.value!==""&input1.value!==undefined}}`
