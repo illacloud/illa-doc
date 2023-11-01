@@ -1,0 +1,213 @@
+---
+title: Samostatně organizované nasazení
+description: ILLA Builder poskytuje bezproblémový zážitek, který vám umožní nasadit ILLA Builder ohromující rychlostí v rámci vašeho vlastního virtuálního soukromého cloudu (VPC).
+---
+
+# Samostatně organizované nasazení
+
+## Dokovací modul
+
+1.  Spustit Docker
+2.  Zadejte následující příkaz do terminálu pro instalaci oficiálního obrázku:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Stáhnout ILLA CLI a nasadit
+
+Pokud máte Rust nainstalován, můžete snadno sestavit + nainstalovat nejnovější verzi ILLA CLI s nákladem:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+Nástroj **náklad** dokončí stahování ILLA CLI se zdrojovými závislostmi, postavit a nainstalovat ji do cesty nákladního koše, abychom ji mohli spustit. Po instalaci můžete spustit ILLA CLI příkazem **illa**.
+
+Alternativně si můžete stáhnout ILLA CLI pro váš operační systém zde:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Pokud stahujete z výše uvedených odkazů, kroky se mírně liší oproti stažení ILLA CLI z **nákladu** . Po stažení CLI budete muset udělat spustitelný soubor. Vezměme si například illa-linux:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Kontrola předpokladů vlastní instalace
+
+Tyto přístavy 5432, 9999 a 8000 by měly zůstat pro stavitele ILLA
+
+Následující příkaz zkontroluje předpoklady vlastní instalace na vašem operačním systému:
+
+```Plaintext
+> illa doctor
+```
+
+### Nasazování Editoru ILLA
+
+Jakmile je ILLA CLI nainstalována, můžete spustit vlastní nebo cloudovou instalaci.
+
+Můžete jednoduše nasadit vlastní editor ILA spuštěním následujícího příkazu:
+
+```Plaintext
+# port, na kterém může být ILLA Builder přístupný, může být změněn
+# <SERVER_ADDRESS> by měl být váš cloudový server veřejný ip, výchozí localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Nyní můžete přistupovat k Editoru ILL: <http://localhost:10000>
+
+### Aktualizace Editoru ILLA
+
+Pro aktualizaci ILLA Builder s nejnovějšími obrázky v doku, použijte následující příkaz:
+
+```Plaintext
+> illa update --sama
+```
+
+### Ostatní operace
+
+```Plaintext
+# list the ILLA Builder
+> illa list --self
+
+# stop the ILLA Builder
+> illa stop --self
+
+# remove the ILLA Builder
+> illa remove --self
+
+# forced removal of the running ILLA Builder and persistent data
+> sudo illa remove --force --self --data
+
+# restart the ILLA Builder
+> illa restart --self
+
+# help information
+> illa help
+```
+
+## Kubernetes
+
+### L 343, 22.12.2009, s. 1).
+
+Postav iluci vně obrázku a spusť ho k8 na tvém počítači. Můžete se podívat na soubor skriptů ve složce [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/scripts) pro více informací.
+
+Pozn.:
+
+Důrazně jsme doporučili nasazení našich nástrojů automatického nasazení [illa-cli](https://github.com/illacloud/illa).
+
+A pro tuto chvíli nepodporujeme Apple Silicon M1 (archu Darwin-arm64).
+
+### Spustit s oficiálním obrázkem Slim
+
+Nainstalujte GNU značku a typ:
+
+```JavaScript
+nasadit
+```
+
+nebo jen provést:
+
+```JavaScript
+/bin/bash skripts/deploy.sh
+```
+
+tento příkaz vytáhne illasoft oficiální obrázek all-in-one a nasadí ho do svého Kubernetes clusteru.
+
+### Pro trvalé úložiště databáze
+
+Upravte [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) a přidejte do něj své IAAS trvalé úložiště.
+
+### Pro nastavení HTTPS
+
+Můžete směrovat NodePort do vaší ingresové brány Kubernetes a přepsat na 443 port a přidat https cert do vaší ingress brány.
+
+Nebo můžete manuálně nasadit ingress brána na váš server Kubernetes, konfiguraci takto:
+
+```JavaScript
+static_resources:
+  posluchače:
+  - jméno: https://_listener
+    adresa:
+      socket_adresa:
+        adresa: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - filtry:
+      - jméno: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: https://_listener
+          route_config:
+            jméno: local_route
+            virtual_hosts:
+            - jméno: illa_builder
+              domén:
+              - "illa. urdomian. om" # nahraďte trasami
+              :
+              - shoda:
+                  prefix: "/"route:
+                  cluster: illa_builder
+          http_filters:
+          - jméno: envoy. ilters.http. outer
+            typed_config:
+              "@type": typ. oogleapis. om/envoy.extensions.filters.http.router.v3.Router
+      transport_socket:
+        název: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # nahraďte toto vaším souborem cert
+            - certifikát_řetězec:
+                název: /your-cert-folder/fullchain.
+              private_key:
+                název souboru: /your-cert-folder/privkey. em
+
+  clusterů:
+  - jméno: illa_builder
+    type: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      koncové body:
+      - lb_endpoints:
+        - endpoint:
+            adresa:
+              socket_adresa:
+                adresa: illa-builder
+                port_value: 80
+```
+
+## Rychle nasadit
+
+ILLA můžete rozmístit pozoruhodně rychle, prosím postupujte podle níže uvedených pokynů:
+
+Nejprve si stáhněte tento [docker soubor](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) do svého počítače a poté spusťte následující kód.
+
+```JavaScript
+cd doker;
+/bin/bash ./scripts/run-official-image.sh;
+```
+
+A přihlaste se pomocí výchozího uživatelského jména a hesla:
+
+Uživatelské jméno: **`root`**
+
+Heslo: **`heslo`** (pouze režim hostitele).
