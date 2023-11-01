@@ -1,0 +1,214 @@
+---
+title: Itse isännöity käyttöönotto
+description: ILLA Builder tarjoaa saumattoman käyttökokemuksen, jonka avulla voit ottaa ILLA Builderin käyttöön hämmästyttävällä nopeudella omassa Virtual Private Cloud (VPC).
+---
+
+# Itse isännöity käyttöönotto
+
+## Telakoitsija
+
+1.  Aloita Telakoitsija
+2.  Syötä seuraava komento päätteessä ja asenna virallinen kuva:
+
+`docker pull illasoft/illa-builder:latest`
+
+## CLI
+
+### Lataa ILLA CLI ja ota käyttöön
+
+Jos Rust on asennettu, voit helposti rakentaa + asentaa uusimman ILLA CLI release lastilla:
+
+`cargo install illa`
+
+`illa deploy --self --port=10000`
+
+**lasti** -työkalu saattaa ILLA:n CLI:n lataamisen loppuun sen lähderiippuvuuksien kanssa, rakentaa ja asentaa se lastin bin polku jotta voimme ajaa sitä. Kun olet asentunut, voit ajaa ILLA CLI **illa** komennolla.
+
+Vaihtoehtoisesti voit vain ladata ILLA CLI käyttöjärjestelmäsi täältä:
+
+-   **[Windows](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-win.zip)**
+-   **[Linux](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz)**
+-   **[Mac](https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-macos.tar.gz)**
+
+Jos lataat yllä olevista linkeistä, vaiheet ovat hieman erilaisia kuin ILLA CLI -sovelluksen lataaminen **rahtista** . Kun olet ladannut CLI:n, sinun täytyy tehdä se suoritettavaksi. Otetaan illa-linux esimerkiksi:
+
+```Plaintext
+# download illa cli binary file
+> wget <https://github.com/illacloud/illa/releases/latest/download/illa-x86_64-linux.tar.gz>
+
+# unpack the file
+> tar -zxvf illa-x86_64-linux.tar.gz
+
+> cd illa-x86_64-linux
+
+> chmod +x illa
+
+# run the illa cli
+> ./illa
+```
+
+### Itseisännöidyn asennuksen edellytysten tarkistaminen
+
+Nämä satamat 5432, 9999 ja 8000 olisi säilytettävä ILLA Builderille
+
+Seuraava komento tarkistaa käyttöjärjestelmääsi asennettavan itse asennetun asennuksen edellytykset:
+
+```Plaintext
+> illa doctor
+```
+
+### Julkaistaan ILLA-rakentaja
+
+Kun ILLA CLI on asennettu, voit suorittaa itse isännöidyn tai pilviasennuksen.
+
+Voit yksinkertaisesti ottaa käyttöön itse isännöidyn ILA Builderin suorittamalla seuraavan komennon:
+
+```Plaintext
+# portti, johon ILLA Builder pääsee päällä, voidaan muuttaa
+# <SERVER_ADDRESS> pitäisi olla pilvipalvelin julkinen ip , oletus localhost
+> illa deploy --self --port=10000 --server-addr=<SERVER_ADDRESS>
+```
+
+Nyt voit käyttää ILLA Builderia: <http://localhost:10000>
+
+### Päivitetään ILLA-rakentajaa
+
+Jos haluat päivittää ILLA Builderin uusimmilla telakkakuvilla, käytä seuraavaa komentoa:
+
+```Plaintext
+> illa päivitys --self
+```
+
+### Muut operaatiot
+
+```Plaintext
+# listaa ILLA Builder
+> illa lista --self
+
+# pysäyttää ILLA Builder
+> illa stop --self
+
+# poistaa ILLA Builder
+> illa remove --self
+
+# pakotettu poistaminen käynnissä ILLA Builder ja pysyviä tietoja
+> sudo illa remove --force --self --data
+
+# käynnistä ILLA Builder
+> illa restart --self
+
+# help information
+> illa help 
+ > illa help
+```
+
+## Kubernetes
+
+### Kuvaus
+
+Rakenna all-in-one kuva ja suorita se k8s koneellasi. Voit tarkistaa skriptit tiedostosta [scripts](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/skriptit) saadaksesi lisätietoja.
+
+Huomautus:
+
+Olemme erittäin suositeltavia ottaa käyttöön Auto-deploy tools [illa-cli](https://github.com/illacloud/illa).
+
+Ja tällä hetkellä emme tue Apple Silicon M1 (darwin-arm64 arch).
+
+### Suorita virallinen ohut kuva
+
+Asenna GNU-merkki ja tyyppi:
+
+```JavaScript
+tee julkaisu
+```
+
+tai vain suorittaa:
+
+```JavaScript
+/bin/bash skriptit/deploy.sh
+```
+
+tämä komento vetää illasoft virallisen all-in-one -kuvan ja ottaa sen käyttöön Kubernetes-klusterissa.
+
+### Tietokannan Pysyvä Tallennustila
+
+Muokkaa [illa-builder.yaml](https://github.com/illacloud/deploy-illa-manually/blob/main/kubernetes/illa-builder.yaml) ja lisää IAAS:n pysyvä tallennustila asetuksesi.
+
+### HTTPS Configille
+
+Voit ohjata NodePortin Kubernetes-klusteriin ingress gateway -porttiin ja kirjoittaa 443 satamaan ja lisätä https sertin pukeutumisyhdyskäytävälle.
+
+Tai voit syöttää ingress Gateway manuaalisesti Kubernetes palvelimeen, config näin:
+
+```JavaScript
+static_resources:
+  kuuntelijat:
+  - nimi: 396_listener
+    osoite:
+      socket_address:
+        osoite: 0. .0.0
+        port_value: 443
+    filter_chains:
+    - suodattimet:
+      - nimi: envoy. ilters.network.http_connection_manager
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.filters.network.http_connection_manager.v3. ttpConnectionManager
+          stat_prefix: ℃_listener
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: illa_builder
+              domains:
+              - "illa. ourdomian. om" # korvaa verkkotunnuksesi
+              reitillä:
+              - täsmää:
+                  etuliite: "/"reitti
+                  cluster: illa_builder
+          http_filters:
+          - name: envoy. ilters.http. outer
+            typed_config:
+              "@type": type. oogleapis om/envoy.extensions.filters.http.router.v3.Reititin
+      transport_socket:
+        name: envoy.transport_sockets. ls
+        typed_config:
+          "@type": type.googleapis.com/envoy.extensions.transport_sockets.tls.v3. ownstreamTlsContext
+          common_tls_context:
+            tls_certificates:
+            # korvaa tämän sert-tiedostolla
+            - certificate_chain:
+                filename: /your-cert-folder/fullchain. em
+              private_key:
+                tiedostonimi: /cert-folder/privkey. em
+
+  klusterit:
+  - name: illa_builder
+    tyyppi: STRICT_DNS
+    lb_policy: ROUND_ROBIN
+    connect_timeout: 10s
+    load_assignment:
+      cluster_name: illa_builder
+      päätetapahtumat:
+      - lb_endpoints:
+        - päätetapahtuma:
+            osoite:
+              socket_address:
+                osoite: illa-builder
+                port_value: 80
+```
+
+## Nopeasti käyttöön
+
+ILLAn voi ottaa käyttöön huomattavan nopeasti ja noudata alla olevia ohjeita:
+
+Ole hyvä ja lataa ensin tämä [docker file](https://github.com/illacloud/deploy-illa-manually/tree/main/docker) tietokoneellesi, suorita seuraava koodi.
+
+```JavaScript
+cd telakka;
+/bin/bash ./skriptit/run-official-image.sh;
+```
+
+Ja kirjaudu sisään oletuskäyttäjätunnuksella ja salasanalla:
+
+Käyttäjätunnus: **`root`**
+
+Salasana: **`password`** (vain itse isäntä-tila).
