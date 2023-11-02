@@ -5,7 +5,7 @@ description: Datenschutzerklärung
 
 # Datenschutzerklärung
 
-_Zuletzt aktualisiert: 2023-04-14_ 
+_Zuletzt aktualisiert: 2023-11-02_ 
 
 \*_Deine Privatsphäre ist uns wichtig. _ Diese Datenschutzerklärung erklärt unsere Praktiken bezüglich der Erhebung, Nutzung und Offenlegung von Informationen, die wir über unsere Dienste erhalten. Diese Datenschutzerklärung gilt nicht für Websites von Dritten, Dienstleistungen oder Anwendungen, auch nicht wenn diese über unsere Dienste zugänglich sind.
 
@@ -53,11 +53,37 @@ Wir sammeln die folgenden Arten von persönlichen Daten von Ihnen:
 Personenbezogene Daten werden zu folgenden Zwecken und unter Nutzung der folgenden Dienste erhoben:
 
 1.  **Analyse** Die in diesem Abschnitt enthaltenen Dienste ermöglichen es dem Eigentümer, den Webverkehr zu überwachen und zu analysieren, und können verwendet werden, um das Nutzerverhalten zu verfolgen. **Google Analytics (Google LLC)** Google Analytics ist ein Webanalysedienst der Google LLC („Google“). Google nutzt die gesammelten Daten zur Verfolgung und Überprüfung der Nutzung von ILLA, , um Berichte über seine Aktivitäten vorzubereiten und sie mit anderen Google-Diensten zu teilen. Google kann die erhobenen Daten verwenden, um die Werbung seines eigenen Werbenetzwerks zu konkretisieren und zu personalisieren. Personenbezogene Daten verarbeitet: Mixpanel. Ort der Verarbeitung: Vereinigte Staaten. 
-2.  **Registrierung und Authentifizierung** Durch Registrierung oder Authentifizierung erlauben Benutzer ILLA diese zu identifizieren und ihnen Zugang zu dedizierten Diensten zu gewähren. Je nachdem, was unten beschrieben wird, können Dritte Registrierungs- und Authentifizierungsdienste anbieten. In diesem Fall kann ILLA auf einige von diesen Diensten gespeicherte Daten zugreifen, um sich zu registrieren oder zu identifizieren. Einige der unten aufgeführten Dienste können auch personenbezogene Daten zu Ziel- und Profilzwecken sammeln; Um mehr zu erfahren, lesen Sie bitte die Beschreibung der einzelnen Dienstleistungen. **Google OAuth (Google LLC)** Google OAuth ist ein Registrierungs- und Authentifizierungsdienst von Google LLC und ist mit dem Google-Netzwerk verbunden. Persönliche Daten verarbeitet: verschiedene Arten von Daten, wie in der Datenschutzrichtlinie des Dienstes. Ort der Verarbeitung: Vereinigte Staaten. **GitHub OAuth (GitHub Inc.)** GitHub OAuth ist ein Registrierungs- und Authentifizierungsdienst von GitHub Inc. und ist mit dem GitHub Netzwerk verbunden. 
+2.  **Registrierung und Authentifizierung** Durch Registrierung oder Authentifizierung erlauben Benutzer ILLA diese zu identifizieren und ihnen Zugang zu dedizierten Diensten zu gewähren. Je nachdem, was unten beschrieben wird, können Dritte Registrierungs- und Authentifizierungsdienste anbieten. In diesem Fall kann ILLA auf einige von diesen Diensten gespeicherte Daten zugreifen, um sich zu registrieren oder zu identifizieren. Einige der unten aufgeführten Dienste können auch personenbezogene Daten zu Ziel- und Profilzwecken sammeln; Um mehr zu erfahren, lesen Sie bitte die Beschreibung der einzelnen Dienstleistungen. **GitHub OAuth (GitHub Inc.)** GitHub OAuth ist ein Registrierungs- und Authentifizierungsdienst von GitHub Inc. und ist mit dem GitHub Netzwerk verbunden. 
 
 ## Begrenzte Gebrauchsanweisung im Zusammenhang mit Google
 
 Die Nutzung und Übertragung von Informationen durch die ILLA auf jede andere App der Google APIs wird sich an die [Google API Services User Data Policy]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), inklusive der eingeschränkten Nutzungsbedingungen.
+
+## Wofür verwenden wir Google-Daten?
+
+Wenn Sie ILLA Cloud mit Google Sheets verbinden möchten, wir werden Zugriff auf Google API fordern, um Daten von Ihrem Google Drive und Google Sheets abzurufen. Die spezifischen Anfragen und Verwendungszwecke sind folgende:
+
+1.  Um sich mit Google Sheets über OAuth im Lese- und Schreibmodus zu verbinden, werden wir Zugriff auf die folgenden drei APIs fordern:
+    -   `https://www.googleapis.com/auth/drive`
+    -   `https://www.googleapis.com/auth/tabreadsheets`
+    -   `https://www.googleapis.com/auth/drive.file`
+
+ILLA Cloud verwendet diese drei APIs für folgende Zwecke:
+
+-   Wir verwenden `https://www.googleapis.com/auth/drive` um die Zugriffsberechtigung deines Laufwerks auf schreibgeschützt zu setzen. Dies ermöglicht Ihnen und Ihren Benutzern das Lesen, Erstellen, Ändern und Löschen von Dateien beim Zugriff auf Google Sheets durch ILLA Cloud.
+-   Wir verwenden `https://www.googleapis.com/auth/spreadsheets` um auf deine Tabellenkalkulationen zuzugreifen. Dies ermöglicht Ihnen und Ihren Benutzern das Ausführen, Hinzufügen, Löschen und Ändern von Operationen auf Tabellenkalkulationsdaten über die ILLA Cloud.
+-   Wir verwenden `https://www.googleapis.com/auth/drive.file`, um die zugreifenden Dateinamen in deinem Laufwerk aufzulisten. Damit können Sie und Ihre Benutzer schnell die Dateien auswählen, mit denen Sie arbeiten möchten.
+
+2.  Um sich mit Google Sheets über OAuth im schreibgeschützten Modus zu verbinden, werden wir Zugriff auf die folgenden zwei APIs fordern:
+    -   `https://www.googleapis.com/auth/drive.readonly`
+    -   `https://www.googleapis.com/auth/tabreadsheets.readonly`
+
+ILLA Cloud verwendet diese drei APIs für folgende Zwecke:
+
+-   Wir verwenden `https://www.googleapis.com/auth/drive.readonly` um die Zugriffsberechtigung deines Laufwerks auf schreibgeschützt zu setzen. Dies erlaubt Ihnen und Ihren Benutzern Dateien zu lesen und keine Möglichkeit zum Erstellen, Ändern und Löschen von Dateien beim Zugriff auf Google Sheets durch ILLA Cloud.
+-   Wir verwenden `https://www.googleapis.com/auth/spreadsheets.readonly` um auf deine Tabellenkalkulationen zuzugreifen. Dadurch können Sie und Ihre Benutzer Daten lesen und Daten in der Tabellenkalkulation über die ILLA Cloud hinzufügen, löschen und ändern.
+
+Wir speichern Ihre Daten nicht und jedes Mal, wenn die Daten angezeigt werden, werden sie direkt über die API abgerufen und angezeigt. Darüber hinaus teilt ILLA Ihre Verbindung zu Google-Daten auf keinen Fall an Dritte weiter.
 
 ## Wofür verwenden wir Ihre persönlichen Informationen?
 
