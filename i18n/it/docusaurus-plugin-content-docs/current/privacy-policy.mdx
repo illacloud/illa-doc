@@ -5,7 +5,7 @@ description: Politica Sulla Privacy
 
 # Politica Sulla Privacy
 
-_Ultimo aggiornamento: 2023-04-14_ 
+_Last updated: 2023-11-02_ 
 
 \*_La tua privacy è importante per noi. _ La presente Informativa sulla privacy spiega le nostre pratiche in materia di raccolta, utilizzo e divulgazione delle informazioni che riceviamo attraverso i nostri Servizi. La presente Informativa sulla privacy non si applica a siti web, servizi o applicazioni di terze parti, anche se accessibili tramite i nostri Servizi.
 
@@ -53,134 +53,160 @@ Possiamo raccogliere i seguenti tipi di informazioni personali da voi:
 I Dati Personali sono raccolti per le seguenti finalità e utilizzando i seguenti servizi:
 
 1.  **Analytics** I servizi contenuti in questa sezione consentono al Titolare di monitorare e analizzare il traffico web e possono essere utilizzati per tenere traccia del comportamento dell'Utente. **Google Analytics (Google LLC)** Google Analytics è un servizio di analisi web fornito da Google LLC (“Google”). Google utilizza i Dati raccolti per monitorare ed esaminare l'uso di ILLA, per preparare rapporti sulle sue attività e condividerli con altri servizi Google. Google può utilizzare i Dati raccolti per contestualizzare e personalizzare gli annunci della propria rete pubblicitaria. Dati personali trattati: Mixpanel. Luogo di trattamento: Stati Uniti. 
-2.  **Registrazione e autenticazione** Registrandosi o autenticando, gli utenti consentono all'ILLA di identificarli e di dare loro accesso a servizi dedicati. A seconda di quanto descritto di seguito, terzi possono fornire servizi di registrazione e autenticazione. In questo caso, ILLA sarà in grado di accedere ad alcuni Dati, memorizzati da questi servizi di terze parti, a fini di registrazione o identificazione. Alcuni dei servizi elencati di seguito possono anche raccogliere Dati Personali per scopi di targeting e profilazione; per saperne di più, si prega di fare riferimento alla descrizione di ogni servizio. **Google OAuth (Google LLC)** Google OAuth è un servizio di registrazione e autenticazione fornito da Google LLC ed è collegato alla rete Google. Dati Personali trattati: vari tipi di Dati specificati nella privacy policy del servizio.Luogo del trattamento: Stati Uniti. **GitHub OAuth (GitHub Inc.)** GitHub OAuth è un servizio di registrazione e autenticazione fornito da GitHub Inc. ed è connesso alla rete GitHub. 
+2.  **Registrazione e autenticazione** Registrandosi o autenticando, gli utenti consentono all'ILLA di identificarli e di dare loro accesso a servizi dedicati. A seconda di quanto descritto di seguito, terzi possono fornire servizi di registrazione e autenticazione. In questo caso, ILLA sarà in grado di accedere ad alcuni Dati, memorizzati da questi servizi di terze parti, a fini di registrazione o identificazione. Alcuni dei servizi elencati di seguito possono anche raccogliere Dati Personali per scopi di targeting e profilazione; per saperne di più, si prega di fare riferimento alla descrizione di ogni servizio. **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
 
 ## Pubblicazione limitata relativa a Google
 
 L'uso e il trasferimento di ILLA a qualsiasi altra app di informazioni ricevute dalle API di Google aderirà alla [Politica sui dati utente di Google API Services]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), compresi i requisiti per l'uso limitato.
 
-## Per che cosa utilizziamo i tuoi dati personali?
+## What do we use Google data for?
 
-Utilizzeremo i tuoi Dati Personali, in conformità con la presente Informativa sulla privacy, per aiutarci a fornire i Servizi a te. Qualsiasi informazione che raccogliamo da te può essere utilizzata nei seguenti modi:
+When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
 
-1.  Per operare, mantenere, e fornirti le caratteristiche e le funzionalità dei Servizi.
+1.  To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+    -   `https://www.googleapis.com/auth/drive`
+    -   `https://www.googleapis.com/auth/spreadsheets`
+    -   `https://www.googleapis.com/auth/drive.file`
 
-2.  Compilare statistiche e analisi sull'utilizzo del nostro Sito e dei nostri Servizi.
+ILLA Cloud uses these three APIs for the following purposes:
 
-3.  Per personalizzare la tua esperienza.
+-   We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
 
-4.  Per migliorare il nostro sito e i nostri servizi, ci sforziamo continuamente di migliorare le nostre offerte di sito sulla base delle informazioni e dei feedback che riceviamo da voi.
+2.  To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+    -   `https://www.googleapis.com/auth/drive.readonly`
+    -   `https://www.googleapis.com/auth/spreadsheets.readonly`
 
-5.  Per migliorare il servizio clienti — le vostre Informazioni personali ci aiutano a rispondere in modo più efficace alle richieste del servizio clienti e alle esigenze di supporto.
+ILLA Cloud uses these three APIs for the following purposes:
 
-6.  Per inviare email periodiche — L'indirizzo email che fornisci può essere utilizzato per inviarti informazioni, le notifiche da te richieste in merito alle modifiche ai nostri Servizi, per avvisarti degli aggiornamenti e per inviare email periodiche contenenti informazioni rilevanti per il tuo account.
+-   We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
 
-7.  Se acquisti i nostri Servizi, allora per permetterti di acquistare, rinnovare e utilizzare in modo appropriato una licenza commerciale per i nostri Servizi.
+We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
 
-8.  Possiamo anche utilizzare le Informazioni personali fornite per inviarti email marketing sui prodotti e servizi ILLA, invitano a partecipare a eventi o sondaggi, o comunque a comunicare con voi per scopi di marketing. Ti permettiamo di non ricevere comunicazioni di marketing da noi come descritto nella sezione "Le Scelte" qui sotto.
+## What do we use your Personal Information for?
 
-9.  Potremmo aver bisogno del tuo Google OAuth per leggere i tuoi dati in Google Sheets quando utilizzi la risorsa Google Sheets.
+We will use your Personal Information, in compliance with this Privacy Policy, to help us deliver the Services to you. Any of the information we collect from you may be used in the following ways:
 
-Potremmo anche utilizzare i tuoi Dati Personali se necessario per ottemperare a un obbligo legale, di condividere le informazioni con le autorità governative e di regolamentazione se richiesto dalla legge o in risposta a procedimenti legali, obblighi o richieste.
+1.  To operate, maintain, and provide to you the features and functionality of the Services.
 
-Collaboriamo con funzionari governativi e di polizia o privati per far rispettare e rispettare la legge. Potremmo divulgare i tuoi Dati Personali a funzionari governativi o di forze dell'ordine o a soggetti privati in quanto riteniamo necessari o appropriati: (i) per rispondere a reclami, processo legale (comprese le promesse); (ii) proteggere la nostra proprietà, i nostri diritti e la nostra sicurezza e la proprietà, i diritti e la sicurezza di un terzo o del pubblico in generale; e (iii) di fermare qualsiasi attività che consideriamo attività illegale, non etica o legalmente praticabile.
+2.  To compile statistics and analysis about use of our Site and our Services.
 
-Chiederemo il tuo consenso prima di utilizzare o divulgare i tuoi Dati Personali per uno scopo materialmente diverso da quelli indicati nella presente Informativa.
+3.  To personalize your experience.
 
-## Le Scelte Sulle Informazioni Personali
+4.  To improve our Site and our Services — we continually strive to improve our site offerings based on the information and feedback we receive from you.
 
-Possiamo utilizzare le informazioni che raccogliamo o riceviamo per comunicare direttamente con voi. Possiamo inviare comunicazioni di email marketing su ILLA. Se non si desidera ricevere tali messaggi di posta elettronica, verrà data l'opzione di opt-out. Cercheremo di soddisfare le vostre richieste non appena ragionevolmente pratico. Inoltre, anche dopo aver scelto di non ricevere messaggi di marketing da noi, continuerete a ricevere messaggi amministrativi da noi per quanto riguarda i nostri Servizi (e. ., verifica del conto, conferme di acquisto e fatturazione e promemoria, modifiche/aggiornamenti delle caratteristiche del Servizio, avvisi tecnici e di sicurezza).
+5.  To improve customer service — your Personal Information helps us to more effectively respond to your customer service requests and support needs.
 
-## Protezione delle informazioni personali
+6.  To send periodic emails — The email address you provide may be used to send you information, notifications that you request about changes to our Services, to alert you of updates, and to send periodic emails containing information relevant to your account.
 
-ILLA si preoccupa della sicurezza delle tue Informazioni Personali, e facciamo sforzi ragionevoli per garantire un livello di sicurezza adeguato al rischio associato al trattamento dei tuoi Dati Personali. Manteniamo procedure organizzative, tecniche e amministrative progettate per proteggere le vostre Informazioni personali da accessi non autorizzati, cancellazione, perdita, alterazione e uso improprio. Purtroppo, nessun sistema di trasmissione o archiviazione dati può essere garantito per essere sicuro al 100%. Se credi che la tua interazione con noi non sia sicura, contattaci immediatamente.
+7.  If you purchase our Services, then to enable you to purchase, renew and appropriately use a commercial license to our Services.
 
-L'utente è responsabile del mantenimento della segretezza della password e delle informazioni dell'account univoche e del controllo dell'accesso alle comunicazioni via email da ILLA. Le tue impostazioni sulla privacy potrebbero essere influenzate anche dalle modifiche alle funzionalità di siti e servizi di terze parti che aggiungi al servizio ILLA, come il singolo segno acceso. ILLA non è responsabile per la funzionalità o le misure di sicurezza di terze parti. Dopo aver preso conoscenza di una violazione delle vostre informazioni personali, vi informeremo il più rapidamente possibile e forniremo informazioni tempestive relative alla violazione come viene conosciuta in conformità con le leggi e i regolamenti applicabili o come ragionevolmente richiesto dall'utente.
+8.  We may also use Personal Information you provide to send you email marketing about ILLA products and services, invite you to participate in events or surveys, or otherwise communicate with you for marketing purposes. We allow you to opt-out from receiving marketing communications from us as described in the "Your Choices" section below.
 
-## Cookie
+9.  We may need your Google OAuth to read your data in Google Sheets when you use the Google Sheets resource.
 
-Non abbiamo utilizzato i cookie per ricordare le informazioni. Al momento, non esiste uno standard di settore per il riconoscimento non tenere traccia dei segnali del browser, quindi al momento non rispondiamo a loro.
+We may also use your Personal Information where necessary for us to comply with a legal obligation, including to share information with government and regulatory authorities when required by law or in response to legal process, obligation, or request.
 
-## Chi di ILLA può accedere alle tue Informazioni Personali?
+We cooperate with government and law enforcement officials or private parties to enforce and comply with the law. We may disclose your Personal Information to government or law enforcement officials or private parties as we believe necessary or appropriate: (i) to respond to claims, legal process (including subpoenas); (ii) to protect our property, rights and safety and the property, rights and safety of a third party or the public in general; and (iii) to stop any activity that we consider illegal, unethical or legally actionable activity.
 
-I membri designati del nostro personale possono accedere alle informazioni personali per aiutare i nostri clienti con qualsiasi domanda, tra cui aiutare a utilizzare i nostri Servizi, indagare i problemi di sicurezza o seguire le correzioni di bug con un cliente. Questa attività è registrata nel nostro sistema per la conformità, e manteniamo diversi livelli di accesso per i suoi dipendenti a seconda del loro ruolo nella nostra azienda.
+We will request your consent before we use or disclose your Personal Information for a materially different purpose than those set forth in this Policy.
 
-## Riveliamo qualche informazione ad altri partiti?
+## Your Choices About Your Personal Information
 
-Tranne quanto indicato di seguito, non vendiamo, commercializziamo o altrimenti trasferiamo a terzi i tuoi Dati Personali.
+We may use the information we collect or receive to communicate directly with you. We may send email marketing communications about ILLA. If you do not want to receive such email messages, you will be given the option to opt out. We will try to comply with your request(s) as soon as reasonably practical. Additionally, even after you opt out from receiving marketing messages from us, you will continue to receive administrative messages from us regarding our Services (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices).
 
-1.  Possiamo condividere i tuoi Dati Personali con altre società di proprietà o di proprietà comune come ILLA, che include anche le nostre controllate (i. ., qualsiasi organizzazione che possediamo o controlliamo).
+## Protection of Personal Information
 
-2.  Queste aziende utilizzeranno i tuoi Dati Personali nello stesso modo in cui possiamo fare ai sensi della presente Informativa sulla privacy, salvo diversa indicazione.
+ILLA cares about the security of your Personal Information, and we make reasonable efforts to ensure a level of security appropriate to the risk associated with the processing of your Personal Information. We maintain organizational, technical, and administrative procedures designed to protect your Personal Information against unauthorized access, deletion, loss, alteration, and misuse. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you believe that your interaction with us is not secure, please contact us immediately.
 
-3.  Potremmo divulgare i tuoi Dati Personali a fornitori di servizi di terze parti (ad esempio, driveElaborazione e archiviazione dei dati e strutture di elaborazione) che utilizziamo per fornire i Servizi.
+You are responsible for maintaining the secrecy of your unique password and account information, and for controlling access to your email communications from ILLA. Your privacy settings may also be affected by changes to the functionality of third-party sites and services that you add to the ILLA Service, such as single sign on. ILLA is not responsible for the functionality or security measures of any third party. Upon becoming aware of a breach of your Personal Information, we will notify you as quickly as we can and will provide timely information relating to the breach as it becomes known in accordance with any applicable laws and regulations or as is reasonably requested by you.
 
-4.  Limitiamo le Informazioni personali fornite a questi fornitori di servizi a ciò che è ragionevolmente necessario per loro per svolgere le loro funzioni, e chiediamo loro di accettare di mantenere la riservatezza di tali Dati Personali.
+## Cookies
 
-5.  Possiamo stipulare contratti con fornitori di servizi di terze parti per aiutarci a comprendere meglio i nostri visitatori del sito.
+We didn't use cookies to remember information. At present, there is no industry standard for recognizing Do Not Track browser signals, so we do not currently respond to them.
 
-6.  Questi fornitori di servizi non sono autorizzati ad utilizzare le informazioni raccolte per nostro conto se non per aiutarci a condurre e migliorare la nostra attività.
+## Who at ILLA may access your Personal Information?
 
-7.  Potremmo anche rilasciare i tuoi Dati Personali quando riteniamo che il rilascio sia appropriato per rispettare la legge, applicare le nostre politiche del sito, o proteggere i nostri o altri’ diritti, proprietà o sicurezza.
+Designated members of our staff may access Personal Information to help our customers with any questions they have, including help using our Services, investigating security issues, or following up on bug fixes with a customer. This activity is logged in our system for compliance, and we maintain different levels of access for its employees depending on their role in our company.
 
-8.  In particolare, possiamo rilasciare i tuoi Dati Personali a terze parti come richiesto per (i) soddisfare qualsiasi legge applicabile, regolamento, subpoena/ordine giudiziario, processo legale o altra richiesta governativa, (ii) far rispettare i nostri Termini di Servizio, compresa l'indagine di potenziali violazioni di essi, (iii) indagare e difendersi da eventuali rivendicazioni o accuse di terzi, (iv) proteggere contro il danno ai diritti, alla proprietà o alla sicurezza dell'ILLA, i suoi utenti o il pubblico come richiesto o consentito dalla legge e v) rilevare, prevenire o affrontare in altro modo questioni penali (comprese le frodi o lo stallo), di sicurezza o tecniche.
+## Do we disclose any information to outside parties?
 
-9.  Se abiliti una condivisione pubblica delle tue applicazioni ILLA, tutte le informazioni o i contenuti che Lei divulga volontariamente nella Sua domanda diventano disponibili al pubblico. Se l'utente rimuove le informazioni che ha inviato ai Servizi, le copie possono rimanere visibili nelle pagine memorizzate nella cache e archiviate del Servizio, o se altri utenti dei Servizi hanno copiato o salvato tali informazioni.
+Except as set out below, we do not sell, trade, or otherwise transfer to outside parties your Personal Information.
 
-10. Nel caso in cui entriamo, o intendiamo entrare, una transazione che altera la struttura del nostro business, come una fusione, riorganizzazione, joint venture, assegnazione, vendita o cambiamento di proprietà, possiamo condividere Informazioni personali al fine di facilitare e completare la transazione.
+1.  We may share your Personal Information with other companies owned by or under common ownership as ILLA, which also includes our subsidiaries (i.e., any organization we own or control).
 
-## Come gestiamo i trasferimenti globali e l'elaborazione dei tuoi dati personali?
+2.  These companies will use your Personal Information in the same way as we can under this Privacy Policy, unless otherwise specified.
 
-I Dati Personali possono essere conservati ed elaborati in qualsiasi paese in cui abbiamo operazioni, o in cui ci impegniamo fornitori di servizi. Ciò significa che possiamo raccogliere i tuoi dati personali da, trasferirli a, e immagazzinare ed elaborarlo negli Stati Uniti e in altri paesi al di fuori del luogo in cui vivi. Ad esempio, alcuni dei nostri fornitori di terze parti possono essere situati in paesi diversi. In caso affermativo, adotteremo misure per garantire che siano adottate le misure di sicurezza giuste in modo che i tuoi diritti sulla privacy continuino ad essere protetti come indicato nella presente Informativa sulla privacy. Inviando i tuoi Dati Personali, accetti questo trasferimento, archiviazione o elaborazione.
+3.  We may disclose your Personal Information to third-party service providers (for example, drivePayment processing and data storage and processing facilities) that we use to provide the Services.
 
-Se si trova nell'Unione Europea o in altre regioni con leggi che disciplinano la raccolta e l'uso dei dati che possono differire dagli Stati Uniti legge, si prega di notare che possiamo trasferire informazioni, incluse le informazioni personali, in un paese e una giurisdizione che non ha le stesse leggi sulla protezione dei dati della vostra giurisdizione. Se trasferiamo le vostre informazioni personali dall'E.U. e lo trattiamo negli Stati Uniti, lo facciamo in conformità con la legge applicabile. In determinate situazioni, potremmo essere tenuti a divulgare i dati personali in risposta a richieste legittime da parte delle autorità pubbliche, anche per soddisfare i requisiti in materia di sicurezza nazionale o di applicazione della legge.
+4.  We limit the Personal Information provided to these service providers to that which is reasonably necessary for them to perform their functions, and we require them to agree to maintain the confidentiality of such Personal Information.
 
-## Conservazione delle informazioni personali
+5.  We may contract with third-party service providers to assist us in better understanding our Site visitors.
 
-Conserviamo i tuoi Dati Personali per tutto il tempo necessario per soddisfare i nostri Servizi. Inoltre, conserviamo i Dati Personali dopo che cessiamo di fornire Servizi all'utente nella misura necessaria per adempiere ai nostri obblighi di legge. Dove conserviamo i dati, lo facciamo in conformità con eventuali termini di prescrizione e registra gli obblighi di conservazione imposti dalla legge applicabile.
+6.  These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.
 
-## Link Di Terze Parti
+7.  We may also release your Personal Information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others’ rights, property, or safety.
 
-I Servizi possono fornire la possibilità di connettersi ad altri siti web. Questi siti web possono funzionare indipendentemente da noi e avere le loro politiche sulla privacy e avvisi, che ti suggeriamo di recensire. Se il sito web collegato non è posseduto o controllato da noi, non siamo responsabili per il suo contenuto o per le pratiche di privacy
+8.  In particular, we may release your Personal Information to third parties as required to (i) satisfy any applicable law, regulation, subpoena/court order, legal process or other government request, (ii) enforce our Terms of Service, including the investigation of potential violations thereof, (iii) investigate and defend ourselves against any third party claims or allegations, (iv) protect against harm to the rights, property or safety of ILLA, its users or the public as required or permitted by law and (v) detect, prevent or otherwise address criminal (including fraud or stalking), security or technical issues.
 
-## Il Tuo Consenso
+9.  If you enable a public sharing of your ILLA applications, any information or content that you voluntarily disclose in your application becomes available to the public. If you remove information that you posted to the Services, copies may remain viewable in cached and archived pages of the Service, or if other users of the Services have copied or saved that information.
 
-Utilizzando il nostro sito, acconsenti alla presente Informativa sulla privacy.
+10. In the event that we enter into, or intend to enter into, a transaction that alters the structure of our business, such as a merger, reorganization, joint venture, assignment, sale, or change of ownership, we may share Personal Information for the purpose of facilitating and completing the transaction.
 
-## Minori
+## How do we handle global transfers and processing of your Personal Information?
 
-Questi Servizi non sono rivolti a persone di età inferiore ai 13 anni e chiediamo gentilmente che non forniscano alcuna Informazione Personale attraverso i Servizi.
+Personal Information may be stored and processed in any country where we have operations, or where we engage service providers. This means that we may collect your Personal Information from, transfer it to, and store and process it in the United States and other countries outside of where you live. For example, some of our third-party providers may be located in different countries. Where this is the case, we will take steps to make sure the right security measures are taken so that your privacy rights continue to be protected as outlined in this Privacy Policy. By submitting your Personal Information, you’re agreeing to this transfer, storing or processing.
 
-## I Tuoi Diritti
+If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. If we transfer your Personal Information from the E.U. and process it in the United States, we do so in accordance with applicable law. In certain situations, we may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
 
-Altri diritti che avete includono i diritti di:
+## Retention of your Personal Information
 
-1.  Chiedi una copia delle tue Informazioni Personali.
+We retain your Personal Information for as long as we need to fulfill our Services. In addition, we retain Personal Information after we cease providing Services to you, to the extent necessary to comply with our legal obligations. Where we retain data, we do so in accordance with any limitation periods and records retention obligations that are imposed by applicable law.
 
-2.  Chiedete a noi di correggere i vostri Dati Personali che sono inaccurati, incompleti, o obsoleti.
+## Third-party Links
 
-3.  Chiedete a noi di trasferire le vostre informazioni personali ad altre organizzazioni.
+The Services may provide the ability to connect to other websites. These websites may operate independently from us and have their own privacy policies and notices, which we suggest you review. If the linked website is not owned or controlled by us, we are not responsible for its content, or the privacy practices
 
-4.  Chiedete di cancellare determinate categorie o tipi di informazioni.
+## Your Consent
 
-5.  Se si sceglie di rimuovere le informazioni personali, tu riconosci che possiamo conservare copie archiviate dei tuoi Dati Personali al fine di soddisfare i nostri obblighi legali, o dove ragionevolmente crediamo di avere una ragione legittima per farlo.
+By using our site, you consent to this Privacy Policy.
 
-6.  Chiedete a noi di limitare determinate elaborazioni.
+## Minors
 
-7.  L'utente ha il diritto di opporsi al trattamento dei Dati Personali. Se abbiamo chiesto il tuo consenso al trattamento delle informazioni, hai il diritto di revocare il consenso in qualsiasi momento.
+These Services are not directed to individuals under the age of thirteen, and we kindly request they not provide any Personal Information through the Services.
 
-## Modifiche alla nostra Informativa sulla privacy
+## Your Rights
 
-Se decidiamo di modificare la nostra politica sulla privacy, pubblicheremo queste modifiche su questa pagina. Se utilizzeremo i Dati Personali raccolti attraverso il Sito in modo materialmente diverso da quello dichiarato al momento della raccolta, poi informeremo gli utenti via e-mail e/o inviando un avviso sul nostro Sito per 30 giorni prima di tale utilizzo o con altri mezzi come richiesto dalla legge.
+Other rights you have include the rights to:
 
-## Disposizioni Specifiche Della Giuridizzazione
+1.  Ask for a copy of your Personal Information.
 
-Residenti dello Spazio Economico Europeo e Svizzera: Il Responsabile della Protezione dei Dati può essere contattato all'indirizzo business@illasoft.com
+2.  Ask us to correct your Personal Information that is inaccurate, incomplete, or outdated.
 
-## Contattarci
+3.  Ask us to transfer your Personal Information to other organizations.
 
-Se desideri inviare una richiesta di diritti sui dati (nota anche come richiesta di accesso per gli interessati), scrivi a business@illasoft.com<unk>
+4.  Ask us to erase certain categories or types of information.
 
-Se avete altre domande, commenti, o preoccupazioni su questa politica sulla privacy, vi preghiamo di contattarci via email: business@illasoft.com.
+5.  If you choose to remove your Personal Information, you acknowledge that we may retain archived copies of your Personal Information in order to satisfy our legal obligations, or where we reasonably believe that we have a legitimate reason to do so.
+
+6.  Ask us to restrict certain processing.
+
+7.  You have the right to object to processing of Personal Information. Where we have asked for your consent to process information, you have the right to withdraw this consent at any time.
+
+## Changes to our Privacy Policy
+
+If we decide to change our privacy policy, we will post those changes on this page. If we are going to use Personal Data collected through the Site in a manner materially different from that stated at the time of collection, then we will notify users via email and/or by posting a notice on our Site for 30 days prior to such use or by other means as required by law.
+
+## Juridisiction-Specific Provisions
+
+Residents of the European Economic Area and Switzerland: The Data Protection Officer can be contacted at business@illasoft.com
+
+## Contacting Us
+
+If you would like to submit a data rights request (also known as a data subject access request), please email business@illasoft.com。
+
+If you have any other questions, comments, or concerns about this privacy policy, please contact us via email: business@illasoft.com.
 
 Illa Soft, Inc
