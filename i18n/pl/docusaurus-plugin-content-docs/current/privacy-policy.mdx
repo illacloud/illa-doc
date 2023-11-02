@@ -5,7 +5,7 @@ description: Polityka prywatności
 
 # Polityka prywatności
 
-\*Ostatnia aktualizacja: 2023-04-14 
+_Ostatnia aktualizacja: 2023-11-02_ 
 
 \*_Twoja prywatność jest dla nas ważna. _ Niniejsza polityka prywatności wyjaśnia nasze praktyki w zakresie gromadzenia, wykorzystywania i ujawniania informacji, które otrzymujemy za pośrednictwem naszych usług. Niniejsza polityka prywatności nie ma zastosowania do żadnych stron internetowych, usług lub aplikacji osób trzecich, nawet jeśli są one dostępne za pośrednictwem naszych usług.
 
@@ -53,11 +53,37 @@ Możemy zebrać od Ciebie następujące dane osobowe:
 Dane osobowe są gromadzone w następujących celach i przy wykorzystaniu następujących usług:
 
 1.  **Analityka** Usługi zawarte w tej sekcji umożliwiają właścicielowi monitorowanie i analizowanie ruchu sieciowego i mogą być wykorzystywane do śledzenia zachowania użytkownika. **Google Analytics (Google LLC)** Google Analytics to usługa analizy internetowej świadczona przez Google LLC („Google”). Google wykorzystuje zgromadzone dane do śledzenia i badania wykorzystania ILLA, przygotowywanie sprawozdań z działalności i udostępnianie ich innym usługom Google. Google może korzystać z zebranych danych w celu kontekstowej obsługi i personalizacji reklam z własnej sieci reklamowej. Dane osobowe: Mixpanel. Miejsce przetwarzania: Stany Zjednoczone. 
-2.  **Rejestracja i uwierzytelnianie** Rejestracja lub uwierzytelnianie pozwala ILLA identyfikować je i zapewniać im dostęp do specjalnych usług. W zależności od tego, co opisano poniżej, osoby trzecie mogą świadczyć usługi rejestracji i uwierzytelniania. W takim przypadku ILLA będzie miała dostęp do niektórych danych przechowywanych przez te służby stron trzecich do celów rejestracji lub identyfikacji. Niektóre z wymienionych poniżej usług mogą również gromadzić dane osobowe do celów ukierunkowanych i profilowanych; aby dowiedzieć się więcej, proszę zapoznać się z opisem każdej usługi. **Google OAuth (Google LLC)** Google OAuth to usługa rejestracji i uwierzytelniania świadczona przez Google LLC i jest połączona z siecią Google. Przetwarzane dane osobowe: różne rodzaje danych określone w polityce prywatności usługi.Miejsce przetwarzania: Stany Zjednoczone. **GitHub OAuth (GitHub Inc.)** GitHub OAuth to usługa rejestracji i uwierzytelniania dostarczona przez GitHub Inc. i jest połączona z siecią GitHub. 
+2.  **Rejestracja i uwierzytelnianie** Rejestracja lub uwierzytelnianie pozwala ILLA identyfikować je i zapewniać im dostęp do specjalnych usług. W zależności od tego, co opisano poniżej, osoby trzecie mogą świadczyć usługi rejestracji i uwierzytelniania. W takim przypadku ILLA będzie miała dostęp do niektórych danych przechowywanych przez te służby stron trzecich do celów rejestracji lub identyfikacji. Niektóre z wymienionych poniżej usług mogą również gromadzić dane osobowe do celów ukierunkowanych i profilowanych; aby dowiedzieć się więcej, proszę zapoznać się z opisem każdej usługi. **GitHub OAuth (GitHub Inc.)** GitHub OAuth to usługa rejestracji i uwierzytelniania dostarczona przez GitHub Inc. i jest połączona z siecią GitHub. 
 
 ## Ograniczone użycie ujawnienia informacji związanych z Google
 
 ILLA używa i przenosi do innej aplikacji informacje otrzymane z Google API będą zgodne z [Polityką Google API Services User Data Policy]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), w tym wymagania dotyczące ograniczonego stosowania.
+
+## Do czego używamy danych Google?
+
+Kiedy chcesz połączyć chmury ILLA z Google Sheets, zażądamy dostępu do API Google, aby pobrać dane z Twojego Dysku Google i Arkusz Google. Konkretne wnioski i zastosowania są następujące:
+
+1.  Aby połączyć się z Arkuszami Google za pomocą OAuth w trybie odczytu i zapisu, zażądamy dostępu do następujących trzech API:
+    -   `https://www.googleapis.com/auth/drive`
+    -   `https://www.googleapis.com/auth/spreadsheets`
+    -   `https://www.googleapis.com/auth/drive.file`
+
+ILLA Cloud wykorzystuje te trzy API w następujących celach:
+
+-   Używamy `https://www.googleapis.com/auth/drive`, aby ustawić uprawnienia dostępu do dysku tylko do odczytu. Pozwala ci i Twoim użytkownikom na czytanie, tworzenie, modyfikowanie i usuwanie plików podczas uzyskiwania dostępu do Arkusz Google za pośrednictwem Cloud.
+-   Używamy `https://www.googleapis.com/auth/spreadsheets` do dostępu do arkuszy kalkulacyjnych. Umożliwia to Tobie i Twoim użytkownikom wykonywanie odczytu, dodawania, usuwania i modyfikowania operacji na arkuszu kalkulacyjnym za pomocą chmury ILLA.
+-   Używamy `https://www.googleapis.com/auth/drive.file` do wyświetlania dostępnych nazw plików na dysku. To pomaga Ci i Twoim użytkownikom szybko wybierać pliki, z którymi chcesz pracować.
+
+2.  Aby połączyć się z Arkuszami Google za pomocą OAuth w trybie tylko do odczytu, zażądamy dostępu do następujących dwóch API:
+    -   `https://www.googleapis.com/auth/drive.readonly`
+    -   `https://www.googleapis.com/auth/spreadsheets.readonly`
+
+ILLA Cloud wykorzystuje te trzy API w następujących celach:
+
+-   Używamy `https://www.googleapis.com/auth/drive.readonly` aby ustawić uprawnienia dostępu do dysku tylko do odczytu. Pozwala ci i Twoim użytkownikom na odczytywanie plików i bez możliwości tworzenia, modyfikowania i usuwania plików podczas uzyskiwania dostępu do Arkusz Google za pośrednictwem Cloud.
+-   Używamy `https://www.googleapis.com/auth/spreadsheets.readonly` aby uzyskać dostęp do arkuszy kalkulacyjnych. Umożliwia to Tobie i Twoim użytkownikom odczytywanie danych, bez możliwości dodawania, usuwania i modyfikowania danych w arkuszu kalkulacyjnym za pomocą chmury ILLA.
+
+Nie przechowujemy Twoich danych i za każdym razem, gdy dane są wyświetlane, są bezpośrednio pobierane i wyświetlane za pośrednictwem interfejsu API. Ponadto ILLA nie udostępnia Twojego połączenia z danymi Google osobom trzecim w żaden sposób.
 
 ## Do czego używamy Twoich danych osobowych?
 
