@@ -5,7 +5,7 @@ description: Privacy Policy
 
 # Privacy Policy
 
-*Last updated: 2023-04-14* 
+*Last updated: 2023-11-02* 
 
 **Your privacy is important to us.** This Privacy Policy explains our practices regarding the collection, use and disclosure of information that we receive through our Services. This Privacy Policy does not apply to any third-party websites, services or applications, even if they are accessible through our Services.
 
@@ -53,11 +53,35 @@ Information you publish to or collect from other users of the service, such as p
 Personal Data is collected for the following purposes and using the following services:
 
 1. **Analytics** The services contained in this section enable the Owner to monitor and analyze web traffic and can be used to keep track of User behavior. **Google Analytics (Google LLC)** Google Analytics is a web analysis service provided by Google LLC (“Google”). Google utilizes the Data collected to track and examine the use of ILLA, to prepare reports on its activities and share them with other Google services. Google may use the Data collected to contextualize and personalize the ads of its own advertising network. Personal Data processed: Mixpanel. Place of processing: United States. 
-2. **Registration and authentication** By registering or authenticating, users allow ILLA to identify them and give them access to dedicated services. Depending on what is described below, third parties may provide registration and authentication services. In this case, ILLA will be able to access some Data, stored by these third-party services, for registration or identification purposes. Some of the services listed below may also collect Personal Data for targeting and profiling purposes; to find out more, please refer to the description of each service. **Google OAuth (Google LLC)** Google OAuth is a registration and authentication service provided by Google LLC and is connected to the Google network. Personal Data processed: various types of Data as specified in the privacy policy of the service.Place of processing: United States. **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
+2. **Registration and authentication** By registering or authenticating, users allow ILLA to identify them and give them access to dedicated services. Depending on what is described below, third parties may provide registration and authentication services. In this case, ILLA will be able to access some Data, stored by these third-party services, for registration or identification purposes. Some of the services listed below may also collect Personal Data for targeting and profiling purposes; to find out more, please refer to the description of each service. **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
 
 ## Limited Use Disclosure Related to Google
 
 ILLA’s use and transfer to any other app of information received from Google APIs will adhere to the [Google API Services User Data Policy](https://www.google.com/url?q=https://developers.google.com/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), including the Limited Use requirements.
+
+## What do we use Google data for?
+
+When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
+
+1. To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+   - `https://www.googleapis.com/auth/drive`
+   - `https://www.googleapis.com/auth/spreadsheets`
+   - `https://www.googleapis.com/auth/drive.file`
+
+ILLA Cloud uses these three APIs for the following purposes:
+- We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+- We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
+- We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
+
+2. To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+   - `https://www.googleapis.com/auth/drive.readonly`
+   - `https://www.googleapis.com/auth/spreadsheets.readonly`
+
+ILLA Cloud uses these three APIs for the following purposes:
+- We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+- We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
+
+We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
 
 ## What do we use your Personal Information for?
 
