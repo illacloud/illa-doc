@@ -5,7 +5,7 @@ description: Privat Politik
 
 # Privat Politik
 
-_Sidst opdateret: 2023-04-14_ 
+_Sidst opdateret: 2023-11-02_ 
 
 \*_Dit privatliv er vigtigt for os. _ Denne privatlivspolitik forklarer vores praksis med hensyn til indsamling, brug og offentliggørelse af oplysninger, som vi modtager gennem vores tjenester. Denne privatlivspolitik gælder ikke for nogen tredjeparts websteder, tjenester eller applikationer, selv om de er tilgængelige via vores tjenester.
 
@@ -53,11 +53,37 @@ Vi kan indsamle følgende typer af personlige oplysninger fra dig:
 Personoplysninger indsamles til følgende formål og ved brug af følgende tjenester:
 
 1.  **Analyser** Tjenesterne i dette afsnit gør det muligt for ejeren at overvåge og analysere webtrafik og kan bruges til at holde styr på brugeradfærd. **Google Analytics (Google LLC)** Google Analytics er en webanalysetjeneste fra Google LLC (“Google”). Google bruger de indsamlede data til at spore og undersøge brugen af ILLA, at udarbejde rapporter om sine aktiviteter og dele dem med andre Google-tjenester. Google kan bruge de indsamlede data til at kontekstualisere og personliggøre annoncerne på sit eget reklamenetværk. Personoplysninger behandlet: Mixpanel. Sted for forarbejdning: USA. 
-2.  **Registrering og autentificering** Ved at registrere eller autentificere, tillader brugerne ILLA at identificere dem og give dem adgang til dedikerede tjenester. Afhængigt af hvad der er beskrevet nedenfor, kan tredjeparter levere registrering og autentificeringstjenester. I dette tilfælde vil ILLA være i stand til at få adgang til nogle data, der er gemt af disse tredjepartstjenester, med henblik på registrering eller identifikation. Nogle af de tjenester, der er anført nedenfor, kan også indsamle personlige data til målretning og profilering; for at finde ud af mere, henvises til beskrivelsen af hver tjeneste. **Google OAuth (Google LLC)** Google OAuth er en registrering og autentificeringstjeneste fra Google LLC og er tilsluttet Google-netværket. Personoplysninger behandlet: forskellige typer af data som angivet i fortrolighedspolitik af tjenesten.Sted for behandling: USA. **GitHub OAuth (GitHub Inc.)** GitHub OAuth er en registrering og autentificeringstjeneste leveret af GitHub Inc. og er forbundet til GitHub netværket. 
+2.  **Registrering og autentificering** Ved at registrere eller autentificere, tillader brugerne ILLA at identificere dem og give dem adgang til dedikerede tjenester. Afhængigt af hvad der er beskrevet nedenfor, kan tredjeparter levere registrering og autentificeringstjenester. I dette tilfælde vil ILLA være i stand til at få adgang til nogle data, der er gemt af disse tredjepartstjenester, med henblik på registrering eller identifikation. Nogle af de tjenester, der er anført nedenfor, kan også indsamle personlige data til målretning og profilering; for at finde ud af mere, henvises til beskrivelsen af hver tjeneste. **GitHub OAuth (GitHub Inc.)** GitHub OAuth er en registrering og autentificeringstjeneste leveret af GitHub Inc. og er forbundet til GitHub netværket. 
 
 ## Begrænset brug Disclosure Relateret til Google
 
 ILLA's brug og overførsel til enhver anden app af oplysninger modtaget fra Google API'er vil overholde [Google API Services User Data Policy]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), herunder begrænsede brugskrav.
+
+## Hvad bruger vi Google-data til?
+
+Når du vil forbinde ILLA Cloud til Google Sheets, Vi vil anmode om adgang til Google API for at hente data fra dit Google Drev og Google Sheets. De specifikke anmodninger og brug er som følger:
+
+1.  For at oprette forbindelse til Google Sheets ved hjælp af OAuth i læse- og skrivetilstand, vil vi anmode om adgang til følgende tre API'er:
+    -   `https://www.googleapis.com/auth/drive`
+    -   `https://www.googleapis.com/auth/regneark`
+    -   `https://www.googleapis.com/auth/drive.file`
+
+ILLA Cloud bruger disse tre API'er til følgende formål:
+
+-   Vi bruger `https://www.googleapis.com/auth/drive` for at indstille din drevadgangstilladelse til skrivebeskyttet. Dette giver dig og dine brugere mulighed for at læse, oprette, ændre og slette filer, når de får adgang til Google Sheets via ILLA Cloud.
+-   Vi bruger 'https://www.googleapis.com/auth/regneark' til at få adgang til dine regneark. Dette gør det muligt for dig og dine brugere at udføre læse, tilføje, slette og ændre handlinger på regnearksdata via ILLA Cloud.
+-   Vi bruger `https://www.googleapis.com/auth/drive.file` til at liste de tilgængelige filnavne i dit drev. Dette hjælper dig og dine brugere hurtigt vælge de filer, de ønsker at arbejde med.
+
+2.  For at oprette forbindelse til Google Sheets ved hjælp af OAuth i skrivebeskyttet tilstand, vil vi anmode om adgang til følgende to API'er:
+    -   `https://www.googleapis.com/auth/drive.readonly`
+    -   `https://www.googleapis.com/auth/regneark.readonly`
+
+ILLA Cloud bruger disse tre API'er til følgende formål:
+
+-   Vi bruger `https://www.googleapis.com/auth/drive.readonly` for at indstille din drevadgangstilladelse til skrivebeskyttet. Dette giver dig og dine brugere mulighed for at læse filer og ingen måde at oprette, ændre og slette filer, når du får adgang til Google Sheets via ILLA Cloud.
+-   Vi bruger `https://www.googleapis.com/auth/spreadsheets.readonly` for at få adgang til dine regneark. Dette gør det muligt for dig og dine brugere at læse data og ingen måde at tilføje, slette og ændre data i regneark via ILLA Cloud.
+
+Vi gemmer ikke dine data, og hver gang dataene vises, hentes den direkte og vises til dig gennem API'en. Desuden deler ILLA ikke din forbindelse til Google-data med nogen tredjepart på nogen måde.
 
 ## Hvad bruger vi dine personlige oplysninger til?
 
