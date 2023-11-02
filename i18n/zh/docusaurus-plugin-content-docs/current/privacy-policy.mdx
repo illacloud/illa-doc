@@ -5,7 +5,7 @@ description: 隐私政策
 
 # 隐私政策
 
-_最后更新: 2023-04-14_ 
+_Last updated: 2023-11-02_ 
 
 \*_您的隐私对我们来说是重要的。 _ 本隐私政策解释了我们在收集、使用和披露我们通过我们的服务收到的信息方面的做法。 此隐私政策不适用于任何第三方网站、服务或应用程序，即使它们可以通过我们的服务访问。
 
@@ -53,134 +53,160 @@ _最后更新: 2023-04-14_
 收集个人数据是为了以下目的，并使用下列服务：
 
 1.  **分析** 本部分包含的服务使所有者能够监测和分析网页流量，并且可以用来跟踪用户行为。 **Google Analytics (Google LLC)** Google Analytics 是 Google LLC(“Google”)提供的网站分析服务。 谷歌利用收集到的数据来跟踪和检查ILLA的使用情况。 编写关于其活动的报告并与其他谷歌服务共享。 谷歌可以使用收集到的数据对自己的广告进行自定义和个性化。 个人数据处理：混合面板。 加工地点：美国。 
-2.  **注册和身份验证** 通过注册或身份验证，用户允许ILLA 识别他们并允许他们访问专用服务。 视下文所述情况而定，第三方可提供登记和认证服务。 在这种情况下，国际法协会将能够为登记或身份查验目的而查阅这些第三方服务所储存的某些数据。 下面列出的一些服务也可以为确定目标和进行剖析的目的收集个人数据。 要了解更多信息，请参阅每个服务的描述。 **Google OAuth (Google LLC)** Google OAuth 是谷歌LLC提供的注册和认证服务，并已连接到谷歌网络。 个人数据处理：服务隐私政策中具体规定的各种类型的数据。 **GitHub OAuth (GitHub Inc.)** GitHub OAuth 是一个由GitHub Inc.提供的注册和认证服务，并连接到 GitHub 网络。 
+2.  **注册和身份验证** 通过注册或身份验证，用户允许ILLA 识别他们并允许他们访问专用服务。 视下文所述情况而定，第三方可提供登记和认证服务。 在这种情况下，国际法协会将能够为登记或身份查验目的而查阅这些第三方服务所储存的某些数据。 下面列出的一些服务也可以为确定目标和进行剖析的目的收集个人数据。 要了解更多信息，请参阅每个服务的描述。 **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
 
 ## 有限使用与谷歌相关的披露
 
 ILLA使用并传输到任何其他应用，谷歌API收到的信息将遵守[Google API 服务用户数据政策]\(https://www.google.com/url?q=https://developers.google。 om/terms/api-services-user-data-policy%23additional_requirements_for_specifi_scopies&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA，包括有限使用要求。
 
-## 我们如何使用您的个人信息？
+## What do we use Google data for?
 
-我们将按照本隐私政策使用您的个人信息，帮助我们向您提供服务。 我们从您收集的任何信息都可以通过以下方式使用：
+When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
 
-1.  要操作，维护并向您提供服务的功能和功能。
+1.  To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+    -   `https://www.googleapis.com/auth/drive`
+    -   `https://www.googleapis.com/auth/spreadsheets`
+    -   `https://www.googleapis.com/auth/drive.file`
 
-2.  汇编关于我们网站和我们服务使用情况的统计数据和分析。
+ILLA Cloud uses these three APIs for the following purposes:
 
-3.  个人化您的体验。
+-   We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
 
-4.  为了改进我们的网站和我们的服务——我们不断努力根据我们从您收到的信息和反馈改进我们的网站提供。
+2.  To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+    -   `https://www.googleapis.com/auth/drive.readonly`
+    -   `https://www.googleapis.com/auth/spreadsheets.readonly`
 
-5.  为了改善客户服务 — 您的个人信息帮助我们更有效地响应您的客户服务请求和支持需求。
+ILLA Cloud uses these three APIs for the following purposes:
 
-6.  为了定期发送电子邮件 — 您提供的电子邮件地址可以用来向您发送信息。 通知您要求变更我们的服务 提醒您更新，并定期发送包含与您账户相关信息的电子邮件。
+-   We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
+-   We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
 
-7.  如果您购买了我们的服务，那么您可以购买、更新并适当使用我们服务的商业许可证。
+We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
 
-8.  我们也可以使用您提供的个人信息向您发送关于ILLA 产品和服务的电子邮件营销信息。 邀请您参与事件或调查，或为营销目的与您进行其他交流。 我们允许您选择不接受我们的营销通讯，如下面的“您的选择”一节所述。
+## What do we use your Personal Information for?
 
-9.  当您使用 Google Sheets 资源时，我们可能需要您的 Google OAuth 阅读您在 Google Sheets 中的数据。
+We will use your Personal Information, in compliance with this Privacy Policy, to help us deliver the Services to you. Any of the information we collect from you may be used in the following ways:
 
-我们还可在必要时使用你的个人资料，以便我们履行法律义务。 包括根据法律要求或根据法律程序、义务或请求与政府和管理当局分享信息。
+1.  To operate, maintain, and provide to you the features and functionality of the Services.
 
-我们与政府和执法官员或私人方面合作，执行和遵守法律。 我们认为必要或适当时，可向政府或执法官员或私人当事方披露您的个人资料：(一) 对索赔作出答复。 法律程序(包括传票)； ㈡ 保护我们的财产、权利和安全以及第三方或一般公众的财产、权利和安全； ㈢ 制止我们认为非法的、不道德的或法律上可采取行动的任何活动。
+2.  To compile statistics and analysis about use of our Site and our Services.
 
-我们在使用或披露您的个人信息之前将征得您的同意，其目的与本政策规定的目的有重大差异。
+3.  To personalize your experience.
 
-## 您关于个人信息的选择
+4.  To improve our Site and our Services — we continually strive to improve our site offerings based on the information and feedback we receive from you.
 
-我们可以使用我们收集或收到的信息直接与您联系。 我们可以发送有关ILLA的电子邮件营销通信。 如果您不想接收这种电子邮件信息，您将被赋予选择退出的选项。 我们将在合理可行的情况下尽快满足你的要求。 此外，即使在您选择不接收我们的营销信息之后，您也会继续收到我们有关我们服务的行政信息(e)。 ，账户核查、购买和账单确认和提醒，对该处功能的更改/更新，技术和安全通知）。
+5.  To improve customer service — your Personal Information helps us to more effectively respond to your customer service requests and support needs.
 
-## 保护个人信息
+6.  To send periodic emails — The email address you provide may be used to send you information, notifications that you request about changes to our Services, to alert you of updates, and to send periodic emails containing information relevant to your account.
 
-国际法协会关心你的个人信息的安全， 我们作出合理努力，确保与处理你的个人资料有关的风险相适应的安全水平。 我们维持旨在保护您的个人信息不受未经授权访问、删除、丢失、更改和滥用的组织、技术和行政程序。 遗憾的是，没有任何数据传输或储存系统能够保证100%的安全。 如果您认为您与我们的互动不安全，请立即联系我们。
+7.  If you purchase our Services, then to enable you to purchase, renew and appropriately use a commercial license to our Services.
 
-您负责维护您独特的密码和账户信息的保密性，并控制您从ILLA访问您的电子邮件通信。 您的隐私设置也可能受到您添加到ILLA 服务的第三方站点和服务功能更改的影响。 例如单个登录。 国际法律协会不负责任何第三方的功能或安全措施。 了解到有人违反你的个人信息， 我们将根据任何适用的法律和条例或根据你的合理要求，尽快通知你，并将及时提供有关违约行为的信息。
+8.  We may also use Personal Information you provide to send you email marketing about ILLA products and services, invite you to participate in events or surveys, or otherwise communicate with you for marketing purposes. We allow you to opt-out from receiving marketing communications from us as described in the "Your Choices" section below.
 
-## Cookie
+9.  We may need your Google OAuth to read your data in Google Sheets when you use the Google Sheets resource.
 
-我们没有使用 cookie 来记住信息。 目前，没有识别“不跟踪”浏览器信号的行业标准，因此我们目前没有响应这些信号。
+We may also use your Personal Information where necessary for us to comply with a legal obligation, including to share information with government and regulatory authorities when required by law or in response to legal process, obligation, or request.
 
-## 谁可以访问您的个人信息？
+We cooperate with government and law enforcement officials or private parties to enforce and comply with the law. We may disclose your Personal Information to government or law enforcement officials or private parties as we believe necessary or appropriate: (i) to respond to claims, legal process (including subpoenas); (ii) to protect our property, rights and safety and the property, rights and safety of a third party or the public in general; and (iii) to stop any activity that we consider illegal, unethical or legally actionable activity.
 
-指定的工作人员可查阅个人信息，以帮助客户提出任何问题。 包括帮助使用我们的服务，调查安全问题，或跟客户跟踪错误修复。 此活动已登录到我们的系统以供遵守。 我们根据雇员在我们公司中的角色保持不同的接触水平。
+We will request your consent before we use or disclose your Personal Information for a materially different purpose than those set forth in this Policy.
 
-## 我们是否向外部各方披露任何信息？
+## Your Choices About Your Personal Information
 
-除下文所述情况外，我们不向外界出售、交易或以其他方式转让你的个人资料。
+We may use the information we collect or receive to communicate directly with you. We may send email marketing communications about ILLA. If you do not want to receive such email messages, you will be given the option to opt out. We will try to comply with your request(s) as soon as reasonably practical. Additionally, even after you opt out from receiving marketing messages from us, you will continue to receive administrative messages from us regarding our Services (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices).
 
-1.  我们可以与其他公司分享你的个人信息，这些公司由国际法协会拥有或共同拥有，这些公司还包括我们的子公司(一)。 ，我们拥有或控制的组织。
+## Protection of Personal Information
 
-2.  这些公司将以我们在本隐私政策下可以使用的同样方式使用您的个人信息，除非另有说明。
+ILLA cares about the security of your Personal Information, and we make reasonable efforts to ensure a level of security appropriate to the risk associated with the processing of your Personal Information. We maintain organizational, technical, and administrative procedures designed to protect your Personal Information against unauthorized access, deletion, loss, alteration, and misuse. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you believe that your interaction with us is not secure, please contact us immediately.
 
-3.  我们可以向第三方服务提供商透露您的个人信息 (例如) 我们用来提供服务的司机支付处理以及数据储存和处理设施。
+You are responsible for maintaining the secrecy of your unique password and account information, and for controlling access to your email communications from ILLA. Your privacy settings may also be affected by changes to the functionality of third-party sites and services that you add to the ILLA Service, such as single sign on. ILLA is not responsible for the functionality or security measures of any third party. Upon becoming aware of a breach of your Personal Information, we will notify you as quickly as we can and will provide timely information relating to the breach as it becomes known in accordance with any applicable laws and regulations or as is reasonably requested by you.
 
-4.  我们将向这些服务提供者提供的个人信息限制在履行其职能所需的合理范围内。 而且我们要求他们同意对这种个人资料保密。
+## Cookies
 
-5.  我们可以与第三方服务提供商签订合同，帮助我们更好地了解我们的网站访问者。
+We didn't use cookies to remember information. At present, there is no industry standard for recognizing Do Not Track browser signals, so we do not currently respond to them.
 
-6.  这些服务提供者不得使用为我们收集的信息，除非是为了帮助我们开展和改进我们的业务。
+## Who at ILLA may access your Personal Information?
 
-7.  如果我们认为释放对遵守法律是适当的，我们也可以发布您的个人信息。 执行我们的网站政策，或保护我们或其他人的权利、财产或安全。
+Designated members of our staff may access Personal Information to help our customers with any questions they have, including help using our Services, investigating security issues, or following up on bug fixes with a customer. This activity is logged in our system for compliance, and we maintain different levels of access for its employees depending on their role in our company.
 
-8.  特别是，我们可以根据下列要求向第三方提供您的个人资料：(一) 符合任何适用的法律、条例、传票/法院命令。 ㈡ 执行我们的服务条款，包括调查可能违反服务条款的行为， ㈢ 针对任何第三方的要求或指控，调查并为自己辩护，㈣ 防止国际法协会的权利、财产或安全受到损害； ㈤ 根据法律要求或允许，侦查， • 防止或以其他方式处理犯罪（包括欺诈或跟踪）、安全或技术问题。
+## Do we disclose any information to outside parties?
 
-9.  如果您启用了公开分享您的 ILLA 应用程序， 您在申请中自愿披露的任何信息或内容都会向公众提供。 如果您移除您发布到服务的信息，在服务的缓存和存档页面中仍然可以查看副本。 或者如果服务的其他用户已经复制或保存了该信息。
+Except as set out below, we do not sell, trade, or otherwise transfer to outside parties your Personal Information.
 
-10. 如果我们进入或打算进入， 改变我们企业结构的交易，例如合并、重组。 为了便利和完成交易，我们可以分享个人信息。
+1.  We may share your Personal Information with other companies owned by or under common ownership as ILLA, which also includes our subsidiaries (i.e., any organization we own or control).
 
-## 我们如何处理您的个人信息的全局传输和处理？
+2.  These companies will use your Personal Information in the same way as we can under this Privacy Policy, unless otherwise specified.
 
-个人资料可存放和处理在我们开展业务或雇用服务提供者的任何国家。 这意味着我们可以从您的个人信息中收集，将其传输到 并在美国和你居住的其他国家储存和处理它。 例如，我们的一些第三方供应商可能位于不同的国家。 情况就是这样。 我们将采取步骤确保采取正确的安全措施，使您的隐私权继续受到本隐私政策概述的保护。 通过提交您的个人信息，您同意此传输、储存或处理。
+3.  We may disclose your Personal Information to third-party service providers (for example, drivePayment processing and data storage and processing facilities) that we use to provide the Services.
 
-如果贵国位于欧洲联盟或其他区域，其数据收集和使用方面的法律可能与美国不同。 请注意我们可以传递信息，包括个人信息， 如果一个国家和法域的数据保护法与贵国的法域不相同，则向该国家和法域提供数据保护法。 如果我们从E.U传输您的个人信息。 我们根据适用的法律这样做。 在某些情况下，我们可能被要求应公共当局的合法要求披露个人信息。 包括满足国家安全或执法要求的措施。
+4.  We limit the Personal Information provided to these service providers to that which is reasonably necessary for them to perform their functions, and we require them to agree to maintain the confidentiality of such Personal Information.
 
-## 保留您的个人信息
+5.  We may contract with third-party service providers to assist us in better understanding our Site visitors.
 
-只要我们需要完成我们的服务，我们就保留您的个人信息。 此外，在我们停止向你提供服务之后，我们保留个人信息，以履行我们的法律义务。 如果我们保留数据，我们就按照适用法律规定的任何时限并记录保留义务。
+6.  These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.
 
-## 第三方链接
+7.  We may also release your Personal Information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others’ rights, property, or safety.
 
-该处可提供连接其他网站的能力。 这些网站可能独立于我们之外，有自己的隐私政策和消息，我们建议您进行审查。 如果链接的网站不是由我们拥有或控制的，我们不对其内容或隐私做法负责。
+8.  In particular, we may release your Personal Information to third parties as required to (i) satisfy any applicable law, regulation, subpoena/court order, legal process or other government request, (ii) enforce our Terms of Service, including the investigation of potential violations thereof, (iii) investigate and defend ourselves against any third party claims or allegations, (iv) protect against harm to the rights, property or safety of ILLA, its users or the public as required or permitted by law and (v) detect, prevent or otherwise address criminal (including fraud or stalking), security or technical issues.
 
-## 您的同意
+9.  If you enable a public sharing of your ILLA applications, any information or content that you voluntarily disclose in your application becomes available to the public. If you remove information that you posted to the Services, copies may remain viewable in cached and archived pages of the Service, or if other users of the Services have copied or saved that information.
 
-通过使用我们的网站，您同意此隐私政策。
+10. In the event that we enter into, or intend to enter into, a transaction that alters the structure of our business, such as a merger, reorganization, joint venture, assignment, sale, or change of ownership, we may share Personal Information for the purpose of facilitating and completing the transaction.
 
-## 未成年人
+## How do we handle global transfers and processing of your Personal Information?
 
-这些服务不是针对不满三岁的人，我们恳请他们不要通过服务部门提供任何个人信息。
+Personal Information may be stored and processed in any country where we have operations, or where we engage service providers. This means that we may collect your Personal Information from, transfer it to, and store and process it in the United States and other countries outside of where you live. For example, some of our third-party providers may be located in different countries. Where this is the case, we will take steps to make sure the right security measures are taken so that your privacy rights continue to be protected as outlined in this Privacy Policy. By submitting your Personal Information, you’re agreeing to this transfer, storing or processing.
 
-## 您的权利
+If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. If we transfer your Personal Information from the E.U. and process it in the United States, we do so in accordance with applicable law. In certain situations, we may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
 
-您拥有的其他权利包括以下权利：
+## Retention of your Personal Information
 
-1.  询问您的个人信息的副本。
+We retain your Personal Information for as long as we need to fulfill our Services. In addition, we retain Personal Information after we cease providing Services to you, to the extent necessary to comply with our legal obligations. Where we retain data, we do so in accordance with any limitation periods and records retention obligations that are imposed by applicable law.
 
-2.  请我们纠正您的个人信息不准确、不完整或过时。
+## Third-party Links
 
-3.  请我们将您的个人信息传递给其他组织。
+The Services may provide the ability to connect to other websites. These websites may operate independently from us and have their own privacy policies and notices, which we suggest you review. If the linked website is not owned or controlled by us, we are not responsible for its content, or the privacy practices
 
-4.  请我们删除某些类别或类型的信息。
+## Your Consent
 
-5.  如果您选择删除您的个人信息 你承认我们可以保存你的个人信息存档副本，以履行我们的法律义务。 或我们有理由相信我们有正当理由这样做。
+By using our site, you consent to this Privacy Policy.
 
-6.  请我们限制某些处理。
+## Minors
 
-7.  你有权反对处理个人信息。 如果我们要求你同意处理信息，你有权随时撤回这种同意。
+These Services are not directed to individuals under the age of thirteen, and we kindly request they not provide any Personal Information through the Services.
 
-## 更改我们的隐私政策
+## Your Rights
 
-如果我们决定改变我们的隐私政策，我们将在这个页面上发布这些更改。 如果我们使用通过网站收集的个人数据的方式与收集时所说的方式有实质上的区别， 然后我们将通过电子邮件和/或在我们的网站上发布通知，在使用之前30天内通知用户，或依法以其他方式通知用户。
+Other rights you have include the rights to:
 
-## 特定法律条款
+1.  Ask for a copy of your Personal Information.
 
-欧洲经济区和瑞士居民：可以通过商号@illasoft.com与数据保护官员取得联系
+2.  Ask us to correct your Personal Information that is inaccurate, incomplete, or outdated.
 
-## 联系我们
+3.  Ask us to transfer your Personal Information to other organizations.
 
-如果您想要提交数据权请求(也称为数据主体访问请求)，请发送电子邮件给business@illasoft.com。
+4.  Ask us to erase certain categories or types of information.
 
-如果您对此隐私政策有任何其他问题、评论或关切，请通过电子邮件联系我们：business@illasoft.com。
+5.  If you choose to remove your Personal Information, you acknowledge that we may retain archived copies of your Personal Information in order to satisfy our legal obligations, or where we reasonably believe that we have a legitimate reason to do so.
+
+6.  Ask us to restrict certain processing.
+
+7.  You have the right to object to processing of Personal Information. Where we have asked for your consent to process information, you have the right to withdraw this consent at any time.
+
+## Changes to our Privacy Policy
+
+If we decide to change our privacy policy, we will post those changes on this page. If we are going to use Personal Data collected through the Site in a manner materially different from that stated at the time of collection, then we will notify users via email and/or by posting a notice on our Site for 30 days prior to such use or by other means as required by law.
+
+## Juridisiction-Specific Provisions
+
+Residents of the European Economic Area and Switzerland: The Data Protection Officer can be contacted at business@illasoft.com
+
+## Contacting Us
+
+If you would like to submit a data rights request (also known as a data subject access request), please email business@illasoft.com。
+
+If you have any other questions, comments, or concerns about this privacy policy, please contact us via email: business@illasoft.com.
 
 Illa Soft, Inc
