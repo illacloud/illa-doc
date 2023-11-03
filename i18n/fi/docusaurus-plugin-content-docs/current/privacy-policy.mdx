@@ -5,7 +5,7 @@ description: Yksityisyyden Suoja
 
 # Yksityisyyden Suoja
 
-_Last updated: 2023-11-02_ 
+_Viimeksi päivitetty: 2023-11-02_ 
 
 \*_Yksityisyytesi on meille tärkeää. _ Tämä tietosuojaseloste selittää käytäntöjämme, jotka koskevat palveluidemme kautta saamiemme tietojen keräämistä, käyttöä ja luovuttamista. Tämä tietosuojakäytäntö ei koske mitään kolmannen osapuolen verkkosivustoja, palveluita tai sovelluksia, vaikka ne olisivat käytettävissä Palveluidemme kautta.
 
@@ -53,160 +53,160 @@ Saatamme kerätä sinulta seuraavan tyyppisiä henkilökohtaisia tietoja:
 Henkilötietoja kerätään seuraavia tarkoituksia varten ja käytetään seuraavia palveluja:
 
 1.  **Analytiikka** Tässä osiossa olevien palveluiden avulla Omistaja voi seurata ja analysoida verkkoliikennettä ja sitä voidaan käyttää seuraamaan käyttäjien käyttäytymistä. **Google Analytics (Google LLC)** Google Analytics on Google LLC:n (“Google”) tarjoama web-analyysipalvelu. Google käyttää kerättyjä tietoja ILLA:n käytön seurantaan ja tutkimiseen, laatia raportteja sen toiminnasta ja jakaa ne muiden Googlen palvelujen kanssa. Google voi käyttää kerättyjä tietoja omien mainosverkostojensa mainosten kontekstualisoimiseen ja personointiin. Henkilökohtaiset tiedot käsitelty: Mixpanel. Jalostuspaikka: Yhdysvallat. 
-2.  **Rekisteröityminen ja todentaminen** Rekisteröitymällä tai todentamalla käyttäjät sallivat ILLA:n tunnistaa heidät ja antaa heille pääsyn erityisiin palveluihin. Riippuen siitä, mitä alla on kuvattu, kolmannet osapuolet voivat tarjota rekisteröinti- ja todentamispalveluja. Tässä tapauksessa ILLA voi tutustua joihinkin tietoihin, joita nämä kolmannen osapuolen palvelut säilyttävät, rekisteröintiä tai tunnistamista varten. Osa alla luetelluista palveluista voi myös kerätä henkilötietoja kohdentamista ja profilointia varten; lisätietoja varten, katso kunkin palvelun kuvaus. **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
+2.  **Rekisteröityminen ja todentaminen** Rekisteröitymällä tai todentamalla käyttäjät sallivat ILLA:n tunnistaa heidät ja antaa heille pääsyn erityisiin palveluihin. Riippuen siitä, mitä alla on kuvattu, kolmannet osapuolet voivat tarjota rekisteröinti- ja todentamispalveluja. Tässä tapauksessa ILLA voi tutustua joihinkin tietoihin, joita nämä kolmannen osapuolen palvelut säilyttävät, rekisteröintiä tai tunnistamista varten. Osa alla luetelluista palveluista voi myös kerätä henkilötietoja kohdentamista ja profilointia varten; lisätietoja varten, katso kunkin palvelun kuvaus. **GitHub OAuth (GitHub Inc.)** GitHub OAuth on GitHub Inc:n tarjoama rekisteröinti- ja todentamispalvelu, joka on liitetty GitHub verkkoon. 
 
 ## Googleen liittyvä rajoitettu käyttö
 
 ILLAn käyttö ja siirtäminen mihin tahansa Googlen sovellusrajapintojen kautta saatuihin tietoihin noudattaa [Google API Services User Data Policy]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), mukaan lukien rajoitetun käytön vaatimukset.
 
-## What do we use Google data for?
+## Mitä me käytämme Googlen tietoja?
 
-When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
+Kun haluat yhdistää ILLA Cloudin Google Sheettiin, pyydämme Google API:n käyttöoikeutta, jotta voit hakea Google Driven ja Google Sheetsin tietoja. Erityiset pyynnöt ja käyttö ovat seuraavat:
 
-1.  To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+1.  Jos haluat muodostaa yhteyden Google Sheetsiin käyttäen OAuthia luku- ja kirjoitustilassa, pyydämme pääsyä seuraaviin kolmeen APIin:
     -   `https://www.googleapis.com/auth/drive`
     -   `https://www.googleapis.com/auth/spreadsheets`
     -   `https://www.googleapis.com/auth/drive.file`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud käyttää näitä kolmea API seuraaviin tarkoituksiin:
 
--   We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
+-   Käytämme `https://www.googleapis.com/auth/drive`-tiedostoa asettaaksemme Driv-käyttöoikeutesi vain lukuun. Tämän avulla voit ja käyttäjäsi lukea, luoda, muokata ja poistaa tiedostoja Google Sheetsin käyttäessä ILLA Cloudia.
+-   Käytämme `https://www.googleapis.com/auth/spreadsheets`-tiedostoja päästäksemme käsiksi taulukkoihisi. Tämä mahdollistaa sen, että käyttäjä ja käyttäjä voivat lukea, lisätä, poistaa ja muokata toimintoja laskentataulukon tietojen avulla ILLA Cloudin kautta.
+-   Käytämme `https://www.googleapis.com/auth/drive.file`-tiedostoja listataksemme tiedostojen nimet Drivessa. Tämä auttaa sinua ja käyttäjiäsi valitsemaan nopeasti tiedostot, joiden kanssa he haluavat työskennellä.
 
-2.  To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+2.  Jos haluat muodostaa yhteyden Google Sheetsiin OAuthiin vain luku -tilassa, pyydämme pääsyä seuraaviin kahteen APIin:
     -   `https://www.googleapis.com/auth/drive.readonly`
     -   `https://www.googleapis.com/auth/spreadsheets.readonly`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud käyttää näitä kolmea API seuraaviin tarkoituksiin:
 
--   We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
+-   Käytämme \`https://www.googleapis.com/auth/drive.readonly -toimintoa asettaaksemme Drive-käyttöoikeutesi vain lukuun. Tämä sallii sinun ja käyttäjiesi lukea tiedostoja eikä mitään keinoa luoda, muokata ja poistaa tiedostoja Google Sheetsin kautta käyttäessäsi.
+-   Käytämme \`https://www.googleapis.com/auth/spreadsheets.readonly -toimintoa päästäksemme käsiksi taulukkolaskentataulukkoihisi. Tämän avulla sinä ja käyttäjäsi voit lukea tietoja eikä millään tavalla lisätä, poistaa ja muokata tietoja laskentataulukkoon ILLA Cloudin kautta.
 
-We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
+Emme tallenna tietojasi, ja aina kun tiedot näytetään, ne haetaan suoraan ja näytetään sinulle API:n kautta. Lisäksi ILLA ei millään tavoin jaa Googlen tietoihin yhteyttäsi minkään kolmannen osapuolen kanssa.
 
-## What do we use your Personal Information for?
+## Mihin me käytämme henkilötietojasi?
 
-We will use your Personal Information, in compliance with this Privacy Policy, to help us deliver the Services to you. Any of the information we collect from you may be used in the following ways:
+Käytämme henkilökohtaisia tietojasi tämän tietosuojakäytännön mukaisesti, jotta voimme auttaa meitä toimittamaan Palveluja sinulle. Mitä tahansa sinulta keräämiämme tietoja voidaan käyttää seuraavilla tavoilla:
 
-1.  To operate, maintain, and provide to you the features and functionality of the Services.
+1.  Käyttää, ylläpitää ja tarjota sinulle ominaisuuksia ja toiminnallisuutta.
 
-2.  To compile statistics and analysis about use of our Site and our Services.
+2.  Kokoa tilastoja ja analyysejä sivustomme ja palveluidemme käytöstä.
 
-3.  To personalize your experience.
+3.  Voit muokata kokemustasi.
 
-4.  To improve our Site and our Services — we continually strive to improve our site offerings based on the information and feedback we receive from you.
+4.  Parantaaksemme sivustoamme ja palveluitamme – pyrimme jatkuvasti parantamaan sivustomme tarjontaa niiden tietojen ja palautteen perusteella, joita saamme sinulta.
 
-5.  To improve customer service — your Personal Information helps us to more effectively respond to your customer service requests and support needs.
+5.  Asiakaspalvelun parantaminen — Henkilökohtaiset tietosi auttavat meitä vastaamaan entistä tehokkaammin asiakaspalvelupyyntöihisi ja tukitarpeisiisi.
 
-6.  To send periodic emails — The email address you provide may be used to send you information, notifications that you request about changes to our Services, to alert you of updates, and to send periodic emails containing information relevant to your account.
+6.  Jaksoittaisten sähköpostien lähettäminen — Tarjoamaasi sähköpostiosoitetta voidaan käyttää tietojen lähettämiseen, ilmoituksia, joita pyydät palveluidemme muutoksista, ilmoittamaan sinulle päivityksistä ja lähettämään säännöllisesti sähköpostia, joka sisältää tilillesi merkityksellisiä tietoja.
 
-7.  If you purchase our Services, then to enable you to purchase, renew and appropriately use a commercial license to our Services.
+7.  Jos ostat palvelumme, voit silloin ostaa, uudistaa ja käyttää asianmukaisesti kaupallista lisenssiä palveluihimme.
 
-8.  We may also use Personal Information you provide to send you email marketing about ILLA products and services, invite you to participate in events or surveys, or otherwise communicate with you for marketing purposes. We allow you to opt-out from receiving marketing communications from us as described in the "Your Choices" section below.
+8.  Voimme myös käyttää antamiasi henkilökohtaisia tietoja lähettääksemme sinulle sähköpostimarkkinointia ILLA-tuotteista ja palveluista, kutsua sinut osallistumaan tapahtumiin tai kyselyihin tai muutoin kommunikoimaan kanssasi markkinointitarkoituksiin. Sallimme sinun kieltäytyä vastaanottamasta markkinointiviestintää meiltä alla olevassa kohdassa "Sinun valintasi" kuvatulla tavalla.
 
-9.  We may need your Google OAuth to read your data in Google Sheets when you use the Google Sheets resource.
+9.  Google OAuth saattaa tarvita sinua lukemaan tietojasi Google Sheetsistä, kun käytät Google Sheetsin resurssia.
 
-We may also use your Personal Information where necessary for us to comply with a legal obligation, including to share information with government and regulatory authorities when required by law or in response to legal process, obligation, or request.
+Voimme käyttää henkilötietojasi myös silloin, kun se on tarpeen, jotta voimme noudattaa lakisääteistä velvoitetta, tietojen jakaminen viranomaisten ja sääntelyviranomaisten kanssa, jos laki sitä edellyttää tai jos se on tarpeen oikeudellisen menettelyn tai velvollisuuden tai pyynnön vuoksi.
 
-We cooperate with government and law enforcement officials or private parties to enforce and comply with the law. We may disclose your Personal Information to government or law enforcement officials or private parties as we believe necessary or appropriate: (i) to respond to claims, legal process (including subpoenas); (ii) to protect our property, rights and safety and the property, rights and safety of a third party or the public in general; and (iii) to stop any activity that we consider illegal, unethical or legally actionable activity.
+Teemme yhteistyötä hallituksen ja lainvalvontaviranomaisten tai yksityisten osapuolten kanssa lain noudattamisen ja noudattamisen varmistamiseksi. Saatamme luovuttaa henkilötietojasi viranomaisille tai lainvalvontaviranomaisille tai yksityisille osapuolille, kuten uskomme tarpeelliseksi tai tarkoituksenmukaiseksi: (i) vastaamaan vaatimuksiin, oikeusprosessi (mukaan lukien subpoenas); (ii) suojellaksemme omaisuuttamme, oikeuksiamme ja turvallisuuttamme sekä kolmannen osapuolen tai yleisen yleisön omaisuutta, oikeuksia ja turvallisuutta; ja (iii) lopettaa kaikki toiminta, että pidämme laittoman, epäeettistä tai oikeudellisesti toimivaa toimintaa.
 
-We will request your consent before we use or disclose your Personal Information for a materially different purpose than those set forth in this Policy.
+Pyydämme suostumuksesi ennen kuin käytämme tai luovutamme henkilötietojasi olennaisesti erilaiseen tarkoitukseen kuin mitä tässä käytännössä määrätään.
 
-## Your Choices About Your Personal Information
+## Sinun Valintasi Henkilökohtaisista Tietoistasi
 
-We may use the information we collect or receive to communicate directly with you. We may send email marketing communications about ILLA. If you do not want to receive such email messages, you will be given the option to opt out. We will try to comply with your request(s) as soon as reasonably practical. Additionally, even after you opt out from receiving marketing messages from us, you will continue to receive administrative messages from us regarding our Services (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices).
+Saatamme käyttää keräämiämme tai vastaanottamiamme tietoja kommunikoidaksemme suoraan kanssasi. Voimme lähettää sähköpostin markkinointiviestintää ILLA. Jos et halua vastaanottaa tällaisia sähköpostiviestejä, sinulle annetaan mahdollisuus olla poissa. Yritämme noudattaa pyyntöjäsi niin pian kuin se on kohtuudella mahdollista. Lisäksi, vaikka olisit jättänyt pois vastaanottamasta markkinointiviestejä meiltä, tulet edelleen vastaanottamaan hallinnollisia viestejä meistä koskien palveluitamme (e. ., tilien varmennus, osto- ja laskutusvahvistukset ja muistutukset, muutokset / päivitykset ominaisuuksiin Palvelun, tekniset ja tietoturvailmoitukset).
 
-## Protection of Personal Information
+## Henkilötietojen suojaaminen
 
-ILLA cares about the security of your Personal Information, and we make reasonable efforts to ensure a level of security appropriate to the risk associated with the processing of your Personal Information. We maintain organizational, technical, and administrative procedures designed to protect your Personal Information against unauthorized access, deletion, loss, alteration, and misuse. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you believe that your interaction with us is not secure, please contact us immediately.
+ILLA välittää henkilökohtaisten tietojesi turvallisuudesta, ja teemme kohtuullisia ponnistuksia varmistaaksemme tietojesi käsittelyyn liittyvän riskin kannalta sopivan turvallisuustason. Pidämme yllä organisatorisia, teknisiä ja hallinnollisia menettelyjä, jotka on suunniteltu suojaamaan henkilötietojasi luvattomalta käytöltä, poistamiselta, häviämiseltä, muuttamiselta ja väärinkäytöltä. Valitettavasti mikään tiedonsiirto- tai tallennusjärjestelmä ei voi olla sataprosenttisesti turvallinen. Jos uskot, että kanssakäyminen kanssamme ei ole turvallista, ota meihin yhteyttä välittömästi.
 
-You are responsible for maintaining the secrecy of your unique password and account information, and for controlling access to your email communications from ILLA. Your privacy settings may also be affected by changes to the functionality of third-party sites and services that you add to the ILLA Service, such as single sign on. ILLA is not responsible for the functionality or security measures of any third party. Upon becoming aware of a breach of your Personal Information, we will notify you as quickly as we can and will provide timely information relating to the breach as it becomes known in accordance with any applicable laws and regulations or as is reasonably requested by you.
+Olet vastuussa ainutlaatuisen salasanasi ja tilitietojesi salassapidosta sekä ILLAn käyttämien sähköpostiviestien käytön valvonnasta. Muutokset kolmannen osapuolen sivustoihin ja palveluihin, jotka lisäät ILLA-palveluun, voivat vaikuttaa myös tietosuoja-asetuksiisi, kuten yksi merkki päällä. ILLA ei ole vastuussa minkään kolmannen osapuolen toiminnallisuudesta tai turvatoimista. Kun olet tietoinen henkilökohtaisten tietojesi rikkomisesta, ilmoitamme sinulle niin nopeasti kuin voimme ja annamme oikea-aikaista tietoa rikkomisesta kuin se tulee tunnetuksi kaikkien sovellettavien lakien ja asetusten mukaisesti tai kuten sinä kohtuudella pyydät.
 
-## Cookies
+## Evästeet
 
-We didn't use cookies to remember information. At present, there is no industry standard for recognizing Do Not Track browser signals, so we do not currently respond to them.
+Emme käyttäneet evästeitä tietojen muistamiseen. Tällä hetkellä ei ole olemassa alan standardia Do Not Track -selainsignaalien tunnistamiseksi, joten emme tällä hetkellä vastaa niihin.
 
-## Who at ILLA may access your Personal Information?
+## Kuka ILLA:ssa voi käyttää henkilökohtaisia tietojasi?
 
-Designated members of our staff may access Personal Information to help our customers with any questions they have, including help using our Services, investigating security issues, or following up on bug fixes with a customer. This activity is logged in our system for compliance, and we maintain different levels of access for its employees depending on their role in our company.
+Henkilökuntamme nimetyt jäsenet voivat käyttää henkilökohtaisia tietoja auttaakseen asiakkaitamme kaikissa kysymyksissä, joita heillä on, sisältäen apua Palveluiden käytössä, turvallisuusongelmien tutkimisessa tai vikakorjausten seurannassa asiakkaan kanssa. Tämä toiminta on kirjautunut järjestelmässämme vaatimustenmukaisuuteen, ja ylläpidämme eri tasoilla pääsy sen työntekijät riippuen niiden rooli yrityksessämme.
 
-## Do we disclose any information to outside parties?
+## Luovutammeko mitään tietoa ulkopuolisille tahoille?
 
-Except as set out below, we do not sell, trade, or otherwise transfer to outside parties your Personal Information.
+Ellei jäljempänä toisin määrätä, emme myy tai käy kauppaa tai muutoin siirrä ulkopuolisille henkilötietojasi.
 
-1.  We may share your Personal Information with other companies owned by or under common ownership as ILLA, which also includes our subsidiaries (i.e., any organization we own or control).
+1.  Saatamme jakaa henkilötietojasi muille ILLA:n omistamille tai yhteisomistuksessa oleville yhtiöille, jotka sisältävät myös tytäryhtiömme (i. ., mikä tahansa organisaatio omistamme tai hallitamme).
 
-2.  These companies will use your Personal Information in the same way as we can under this Privacy Policy, unless otherwise specified.
+2.  Nämä yritykset käyttävät henkilötietojasi samalla tavalla kuin voimme tämän tietosuojakäytännön mukaisesti, ellei toisin määrätä.
 
-3.  We may disclose your Personal Information to third-party service providers (for example, drivePayment processing and data storage and processing facilities) that we use to provide the Services.
+3.  Saatamme luovuttaa henkilökohtaisia tietojasi kolmannen osapuolen palveluntarjoajille (esimerkiksi driveMaksujen käsittely- ja tietojen tallennus- ja käsittelylaitokset), joita käytämme palveluiden tarjoamiseen.
 
-4.  We limit the Personal Information provided to these service providers to that which is reasonably necessary for them to perform their functions, and we require them to agree to maintain the confidentiality of such Personal Information.
+4.  Rajoitamme näille palveluntarjoajille annettavat henkilötiedot siihen, mikä on kohtuullisesti välttämätöntä, jotta ne voivat hoitaa tehtävänsä, ja vaadimme heitä suostumaan säilyttämään tällaisten henkilökohtaisten tietojen luottamuksellisuuden.
 
-5.  We may contract with third-party service providers to assist us in better understanding our Site visitors.
+5.  Saatamme tehdä sopimuksia kolmannen osapuolen palveluntarjoajien kanssa auttaaksemme meitä ymmärtämään sivustomme kävijöitä.
 
-6.  These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.
+6.  Nämä palveluntarjoajat eivät saa käyttää meidän puolestamme kerättyjä tietoja paitsi auttaa meitä harjoittamaan ja parantamaan liiketoimintaamme.
 
-7.  We may also release your Personal Information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others’ rights, property, or safety.
+7.  Saatamme myös luovuttaa henkilötietojasi, kun uskomme, että julkaiseminen on tarkoituksenmukaista lain noudattamiseksi, valvoa sivuston politiikkoja, tai suojella meidän tai muiden oikeuksien, omaisuuden tai turvallisuuden.
 
-8.  In particular, we may release your Personal Information to third parties as required to (i) satisfy any applicable law, regulation, subpoena/court order, legal process or other government request, (ii) enforce our Terms of Service, including the investigation of potential violations thereof, (iii) investigate and defend ourselves against any third party claims or allegations, (iv) protect against harm to the rights, property or safety of ILLA, its users or the public as required or permitted by law and (v) detect, prevent or otherwise address criminal (including fraud or stalking), security or technical issues.
+8.  Voimme erityisesti luovuttaa henkilötietojasi kolmansille osapuolille vaaditulla tavalla (i) täyttää sovellettavan lain, asetuksen, subpoenan/tuomioistuimen määräyksen, Oikeudellinen prosessi tai muu hallituksen pyyntö, (ii) valvoa käyttöehtoja, mukaan lukien tutkia mahdollisia rikkomuksia, (iii) tutkia ja puolustaa itseään kolmansien osapuolten väitteitä tai väitteitä vastaan, iv) suojautua vahingoilta ILLA:n oikeuksia, omaisuutta tai turvallisuutta vastaan, sen käyttäjät tai yleisö lain vaatimusten tai sallimalla tavalla havaitaan (v) rikosten (myös petosten tai panssarointien) estäminen tai muulla tavoin puuttuminen turvallisuuteen tai teknisiin kysymyksiin.
 
-9.  If you enable a public sharing of your ILLA applications, any information or content that you voluntarily disclose in your application becomes available to the public. If you remove information that you posted to the Services, copies may remain viewable in cached and archived pages of the Service, or if other users of the Services have copied or saved that information.
+9.  Jos otat käyttöön julkisen jakamisen ILLA-sovelluksistasi, kaikki tiedot tai sisällöt, jotka vapaaehtoisesti annat hakemuksessasi, tulevat yleisön saataville. Jos poistat Palveluihin lähettämäsi tiedot, kopiot saattavat säilyä näkyvissä Palvelun välimuistissa ja arkistoiduilla sivuilla, tai jos muut Palvelujen käyttäjät ovat kopioineet tai tallentaneet nämä tiedot.
 
-10. In the event that we enter into, or intend to enter into, a transaction that alters the structure of our business, such as a merger, reorganization, joint venture, assignment, sale, or change of ownership, we may share Personal Information for the purpose of facilitating and completing the transaction.
+10. Siinä tapauksessa, että astumme sisään tai aiomme astua, liiketoimi, joka muuttaa liiketoimintamme rakennetta, kuten sulautuminen, uudelleenjärjestely, yhteisyritys, luovutus, myynti tai omistajuuden muutos, voimme jakaa henkilötietoja liiketoimen helpottamiseksi ja loppuun saattamiseksi.
 
-## How do we handle global transfers and processing of your Personal Information?
+## Miten käsittelemme henkilökohtaisten tietojesi maailmanlaajuisia siirtoja ja käsittelyä?
 
-Personal Information may be stored and processed in any country where we have operations, or where we engage service providers. This means that we may collect your Personal Information from, transfer it to, and store and process it in the United States and other countries outside of where you live. For example, some of our third-party providers may be located in different countries. Where this is the case, we will take steps to make sure the right security measures are taken so that your privacy rights continue to be protected as outlined in this Privacy Policy. By submitting your Personal Information, you’re agreeing to this transfer, storing or processing.
+Henkilötietoja voidaan tallentaa ja käsitellä missä tahansa maassa, jossa olemme toiminnassa, tai jossa palvelemme palveluntarjoajia. Tämä tarkoittaa sitä, että voimme kerätä henkilökohtaisia tietojasi siirtämällä ne ja tallentaa ja käsitellä sitä Yhdysvalloissa ja muissa maissa, joissa asut. Esimerkiksi jotkut kolmannen osapuolen palveluntarjoajistamme voivat sijaita eri maissa. Jos näin on, Teemme toimenpiteitä varmistaaksemme, että oikeat turvatoimenpiteet toteutetaan, jotta yksityisyyden suojaa koskevat oikeudet säilyvät sellaisina kuin ne on määritelty tässä tietosuojakäytännössä. Toimittamalla henkilökohtaiset tietosi hyväksyt tämän siirtämisen, tallentamisen tai käsittelyn.
 
-If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. If we transfer your Personal Information from the E.U. and process it in the United States, we do so in accordance with applicable law. In certain situations, we may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
+Jos olet Euroopan unionissa tai muilla alueilla, joilla on tietojen keruuta ja käyttöä koskevaa lainsäädäntöä, joka voi poiketa USA:sta laki, huomioi, että voimme siirtää tietoja, mukaan lukien henkilökohtaiset tiedot, sellaiselle maalle ja lainkäyttöalueelle, jolla ei ole samoja tietosuojalakeja kuin lainkäyttöalueellasi. Jos siirrämme henkilökohtaiset tietosi E.U:lta. ja käsitellä sitä Yhdysvalloissa, me teemme niin sovellettavan lainsäädännön mukaisesti. Tietyissä tilanteissa meitä saatetaan vaatia luovuttamaan henkilötietoja vastauksena viranomaisten lainmukaisiin pyyntöihin, joita meillä on käytettävissämme. myös kansallisten turvallisuus- tai lainvalvontavaatimusten täyttämiseksi.
 
-## Retention of your Personal Information
+## Henkilökohtaisten tietojesi säilyttäminen
 
-We retain your Personal Information for as long as we need to fulfill our Services. In addition, we retain Personal Information after we cease providing Services to you, to the extent necessary to comply with our legal obligations. Where we retain data, we do so in accordance with any limitation periods and records retention obligations that are imposed by applicable law.
+Säilytämme henkilökohtaiset tietosi niin kauan kuin meidän on täytettävä Palvelumme. Lisäksi säilytämme henkilökohtaisia tietoja sen jälkeen, kun emme enää tarjoa sinulle palveluja, siinä määrin kuin on tarpeen lakisääteisten velvollisuuksiemme täyttämiseksi. Kun säilytämme tietoja, teemme sen noudattaen mahdollisia vanhentumisaikoja ja kirjaamme säilytysvelvoitteet, jotka on asetettu sovellettavassa lainsäädännössä.
 
-## Third-party Links
+## Kolmannen Osapuolen Linkit
 
-The Services may provide the ability to connect to other websites. These websites may operate independently from us and have their own privacy policies and notices, which we suggest you review. If the linked website is not owned or controlled by us, we are not responsible for its content, or the privacy practices
+Palvelut voivat tarjota mahdollisuuden muodostaa yhteyden muihin verkkosivustoihin. Nämä sivustot voivat toimia erillään meistä ja niillä on omat tietosuojakäytännöt ja -ilmoitukset, joita suosittelemme tarkistamaan. Jos linkitetty sivusto ei ole meidän omistuksessa tai hallinnassa, emme ole vastuussa sen sisällöstä tai yksityisyyskäytännöistä.
 
-## Your Consent
+## Sinun Suostumuksesi
 
-By using our site, you consent to this Privacy Policy.
+Käyttämällä sivustoamme, hyväksyt tämän tietosuojakäytännön.
 
-## Minors
+## Alaikäiset
 
-These Services are not directed to individuals under the age of thirteen, and we kindly request they not provide any Personal Information through the Services.
+Nämä palvelut eivät kohdistu alle kolmevuotiaisiin henkilöihin, ja pyydämme ystävällisesti, että he eivät anna mitään henkilökohtaista tietoa Palveluiden kautta.
 
-## Your Rights
+## Sinun Oikeuksesi
 
-Other rights you have include the rights to:
+Muita oikeuksia sinulla on muun muassa oikeudet:
 
-1.  Ask for a copy of your Personal Information.
+1.  Pyydä kopio henkilökohtaisista tiedoistasi.
 
-2.  Ask us to correct your Personal Information that is inaccurate, incomplete, or outdated.
+2.  Pyydä meitä korjaamaan henkilökohtaiset tietosi, jotka ovat virheellisiä, puutteellisia tai vanhentuneita.
 
-3.  Ask us to transfer your Personal Information to other organizations.
+3.  Pyydä meitä siirtämään henkilökohtaiset tietosi muille organisaatioille.
 
-4.  Ask us to erase certain categories or types of information.
+4.  Pyydä meitä poistamaan tietyt tietoluokat tai -tyypit.
 
-5.  If you choose to remove your Personal Information, you acknowledge that we may retain archived copies of your Personal Information in order to satisfy our legal obligations, or where we reasonably believe that we have a legitimate reason to do so.
+5.  Jos päätät poistaa henkilökohtaiset tietosi, hyväksyt, että voimme säilyttää arkistoituja kopioita henkilökohtaisista tiedoistasi, jotta voimme täyttää lakisääteiset velvoitteemme, tai jos me kohtuudella uskomme, että meillä on oikeutettu syy tehdä niin.
 
-6.  Ask us to restrict certain processing.
+6.  Pyydä meitä rajoittamaan tiettyä käsittelyä.
 
-7.  You have the right to object to processing of Personal Information. Where we have asked for your consent to process information, you have the right to withdraw this consent at any time.
+7.  Sinulla on oikeus vastustaa henkilökohtaisten tietojen käsittelyä. Jos olemme pyytäneet suostumusta tietojen käsittelyyn, sinulla on oikeus peruuttaa tämä suostumus milloin tahansa.
 
-## Changes to our Privacy Policy
+## Muutokset tietosuojakäytäntöömme
 
-If we decide to change our privacy policy, we will post those changes on this page. If we are going to use Personal Data collected through the Site in a manner materially different from that stated at the time of collection, then we will notify users via email and/or by posting a notice on our Site for 30 days prior to such use or by other means as required by law.
+Jos päätämme muuttaa tietosuojakäytäntöämme, me lähetämme nämä muutokset tällä sivulla. Jos aiomme käyttää Sivuston kautta kerättyjä henkilötietoja tavalla, joka poikkeaa olennaisesti keräämisen yhteydessä ilmoitetusta henkilötiedoista, sitten me ilmoitamme käyttäjille sähköpostitse ja/tai lähettämällä ilmoituksen sivustollemme 30 päivää ennen tällaista käyttöä tai muilla keinoin lain edellyttämällä tavalla.
 
-## Juridisiction-Specific Provisions
+## Juridisaatiokohtaiset Säännökset
 
-Residents of the European Economic Area and Switzerland: The Data Protection Officer can be contacted at business@illasoft.com
+Euroopan talousalueen ja Sveitsin asukkaat: Tietosuojavastaava voi ottaa yhteyttä osoitteeseen business@illasoft.com
 
-## Contacting Us
+## Ota Yhteyttä
 
-If you would like to submit a data rights request (also known as a data subject access request), please email business@illasoft.com。
+Jos haluat lähettää tietosuojapyynnön (tunnetaan myös nimellä rekisteröidyn pääsy pyyntö), ota yhteyttä osoitteeseen business@illasoft.com.
 
-If you have any other questions, comments, or concerns about this privacy policy, please contact us via email: business@illasoft.com.
+Jos sinulla on muita kysymyksiä, kommentteja tai huolenaiheita tästä tietosuojakäytännöstä, ota yhteyttä sähköpostitse: business@illasoft.com.
 
 Illa Soft, Inc
