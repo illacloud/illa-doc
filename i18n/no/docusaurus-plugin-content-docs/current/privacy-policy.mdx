@@ -5,7 +5,7 @@ description: Retningslinjer for personvern
 
 # Retningslinjer for personvern
 
-_Last updated: 2023-11-02_ 
+_Sist oppdatert: 2023-11-02_ 
 
 \*_Ditt personvern er viktig for oss. _ Personvernerklæringen forklarer vår praksis vedrørende innsamling, bruk og offentliggjøring av informasjon som vi mottar gjennom våre tjenester. Denne personvernerklæringen gjelder ikke noen tredjeparts nettsteder, tjenester eller applikasjoner, selv om de er tilgjengelige gjennom våre tjenester.
 
@@ -53,160 +53,160 @@ Vi kan samle inn følgende typer personopplysninger fra deg:
 Personlige data samles inn til følgende formål og bruk av følgende tjenester:
 
 1.  **Analytiker** Tjenestene i denne seksjonen gjør det mulig for Eier å overvåke og analysere webtrafikk og kan brukes til å holde styr på brukervirkemåten. **Google Analytics (Google LLC)** Google Analytics er en webanalysetjeneste levert av Google LLC (“Google”). Google bruker innsamlet data til å spore og undersøke bruken av ILLA, utarbeide rapporter om dens aktiviteter og dele dem med andre Google-tjenester. Google kan bruke dataene samlet for å kontekstisere og tilpasse annonsene i sitt eget reklamenettverk. Personlige data behandlet: Mixpanel. Place of processing: United States. 
-2.  **Registrering og autentisering** Ved å registrere eller godkjenne brukere tillater ILLA å identifisere dem og gi dem tilgang til dedikerte tjenester. Avhengig av hva som beskrives nedenfor, kan tredjeparter tilby registrering og autentiseringstjenester. I dette tilfellet vil ILLA være i stand til å aksessere noen datoer, lagret av disse tredjeparts tjenestene, for registrering eller identifikasjon. Noen av tjenestene som er listet opp nedenfor, kan også samle inn personopplysninger for målretting og profileringsformål; for å finne ut mer, se beskrivelse av hver tjeneste. **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
+2.  **Registrering og autentisering** Ved å registrere eller godkjenne brukere tillater ILLA å identifisere dem og gi dem tilgang til dedikerte tjenester. Avhengig av hva som beskrives nedenfor, kan tredjeparter tilby registrering og autentiseringstjenester. I dette tilfellet vil ILLA være i stand til å aksessere noen datoer, lagret av disse tredjeparts tjenestene, for registrering eller identifikasjon. Noen av tjenestene som er listet opp nedenfor, kan også samle inn personopplysninger for målretting og profileringsformål; for å finne ut mer, se beskrivelse av hver tjeneste. **GitHub OAuth (GitHub Inc.)** GitHub OAuth er en registrering og autentiseringstjeneste levert av GitHub Inc. og er koblet til GitHub nettverket. 
 
 ## Begrenset bruk Disclosure relatert til Google
 
 ILLAs bruk og overføring til enhver annen app med informasjon som mottas fra Google APIer, vil følge [Google API Services User Data Policy]\(https://www.google.com/url?q=https://developers.google. om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA), inkludert brukskravene.
 
-## What do we use Google data for?
+## Hva bruker vi Google data for?
 
-When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
+Når du vil koble ILLA Sky til Google Sheets, vi vil be om tilgang til Google API for å hente data fra Google Drive og Google Sheets. De spesifikke forespørslene og bruken er som følger:
 
-1.  To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+1.  For å koble til Google Sheets som bruker OAuth i lese- og skrivemodus, vil vi be om tilgang til følgende tre APIer:
     -   `https://www.googleapis.com/auth/drive`
     -   `https://www.googleapis.com/auth/spreadsheets`
     -   `https://www.googleapis.com/auth/drive.file`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud bruker disse tre APIene til følgende formål:
 
--   We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
+-   Vi bruker `https://www.googleapis.com/auth/drive` for å sette din Drive tilgang til skrivebeskyttet. Dette lar deg og brukerne dine lese, opprette, endre og slette filer når du bruker Google Sheets via ILLA Cloud.
+-   Vi bruker `https://www.googleapis.com/auth/spreadsheets` for å få tilgang til regnearkene dine. Dette gjør at du og brukerne dine kan utføre lesing, legge til, slette og endre operasjoner på regnearkdata gjennom ILLA Cloud.
+-   Vi bruker `https://www.googleapis.com/auth/drive.file` for å liste opp tilgjengelige filnavn i din stasjon din. Dette hjelper deg og brukerne dine raskt å velge filene de vil arbeide med.
 
-2.  To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+2.  For å koble til Google Sheets ved hjelp av OAuth i skrivebeskyttet modus vil vi be om tilgang til følgende to APIer:
     -   `https://www.googleapis.com/auth/drive.readonly`
     -   `https://www.googleapis.com/auth/spreadsheets.readonly`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud bruker disse tre APIene til følgende formål:
 
--   We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
+-   Vi bruker `https://www.googleapis.com/auth/drive.readonly` for å sette din Drive tilgang til skrivebeskyttet. Dette tillater deg og dine brukere å lese filer og ingen måte å opprette, endre og slette filer når du bruker Google Sheets via ILLA Cloud.
+-   Vi bruker `https://www.googleapis.com/auth/spreadsheets.readonly` for å få tilgang til regnearkene dine. Dette gjør at du og brukerne dine kan lese data og ikke noen måte å legge til, slette og endre data i regneark gjennom ILLA Cloud.
 
-We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
+Vi lagrer ikke dine data, og hver gang dataene vises. Det blir hentet og vist for deg gjennom API-et. I tillegg deler ILLA ikke din tilkobling til Google-data med noen tredjeparter på noen måte.
 
-## What do we use your Personal Information for?
+## Hva bruker vi din personinformasjon for?
 
-We will use your Personal Information, in compliance with this Privacy Policy, to help us deliver the Services to you. Any of the information we collect from you may be used in the following ways:
+Vi vil bruke din personlige informasjon, i samsvar med denne personvernerklæringen, for å hjelpe oss å levere tjenestene til deg. Eventuelle av opplysningene vi henter inn fra deg kan brukes på følgende måter:
 
-1.  To operate, maintain, and provide to you the features and functionality of the Services.
+1.  For å operere, vedlikeholde og tilby deg funksjonene og funksjonaliteten til Tjenestene.
 
-2.  To compile statistics and analysis about use of our Site and our Services.
+2.  For å utarbeide statistikk og analyser om bruk av våre tjenester på stedet og i nettsidene våre.
 
-3.  To personalize your experience.
+3.  For å tilpasse din opplevelse.
 
-4.  To improve our Site and our Services — we continually strive to improve our site offerings based on the information and feedback we receive from you.
+4.  For å forbedre våre tjenester på virksomhetsstedet og vår — forsøker vi kontinuerlig å forbedre tilbudene på nettstedet vårt basert på informasjon og tilbakemeldinger fra deg.
 
-5.  To improve customer service — your Personal Information helps us to more effectively respond to your customer service requests and support needs.
+5.  For å forbedre kundeservice — Brukerinformasjonen din hjelper oss med å bedre svare på kundeserviceforespørsler og behov for hjelp.
 
-6.  To send periodic emails — The email address you provide may be used to send you information, notifications that you request about changes to our Services, to alert you of updates, and to send periodic emails containing information relevant to your account.
+6.  For å sende periodiske e-poster – E-postadressen du oppgir kan du bruke til å sende deg informasjon, varsler om endringer i våre tjenester, for å varsle deg om oppdateringer og for å sende periodiske e-postmeldinger som inneholder relevant for kontoen din.
 
-7.  If you purchase our Services, then to enable you to purchase, renew and appropriately use a commercial license to our Services.
+7.  Hvis du kjøper våre tjenester, så gjør du i stand til å kjøpe, fornye og benytte deg av en kommersiell lisens til våre tjenester.
 
-8.  We may also use Personal Information you provide to send you email marketing about ILLA products and services, invite you to participate in events or surveys, or otherwise communicate with you for marketing purposes. We allow you to opt-out from receiving marketing communications from us as described in the "Your Choices" section below.
+8.  Vi kan også bruke personlig informasjon du gir deg markedsføringen via e-post om ILLA-produkter og tjenester, Invitere deg til å delta i arrangementer eller spørreundersøkelser eller andre kommuniserer med deg for markedsføring. Vi lar deg velge å motta markedsføringskommunikasjon fra oss, som beskrevet i avsnittet "Dine valg" under.
 
-9.  We may need your Google OAuth to read your data in Google Sheets when you use the Google Sheets resource.
+9.  Det er mulig at vi trenger Google OAuth for å lese dataene dine i Google Sheets når du bruker Google Sheets ressursen.
 
-We may also use your Personal Information where necessary for us to comply with a legal obligation, including to share information with government and regulatory authorities when required by law or in response to legal process, obligation, or request.
+Vi kan også bruke personlig informasjon der det er nødvendig for oss å overholde en lovfestet forpliktelse, herunder å dele informasjon med myndigheter og myndigheter når det kreves i henhold til loven, eller som svar på juridisk prosess, forpliktelse eller anmodning.
 
-We cooperate with government and law enforcement officials or private parties to enforce and comply with the law. We may disclose your Personal Information to government or law enforcement officials or private parties as we believe necessary or appropriate: (i) to respond to claims, legal process (including subpoenas); (ii) to protect our property, rights and safety and the property, rights and safety of a third party or the public in general; and (iii) to stop any activity that we consider illegal, unethical or legally actionable activity.
+Vi samarbeider med offentlige og rettshåndhevende tjenestemenn eller private for å håndheve og følge loven. Vi kan offentliggjøre din personlige informasjon til offentlige eller private myndigheter etter behov eller hensiktsmessig: (i) å svare på krav, eller juridisk prosess (inkludert subpoenas); (ii) beskytte eiendommen vår, rettigheter og sikkerhet og eiendom, rettighetene og sikkerheten til en tredjepart eller offentligheten generelt, og (iii) stanse enhver virksomhet vi anser for ulovlig, uetisk eller juridisk handlefrihet.
 
-We will request your consent before we use or disclose your Personal Information for a materially different purpose than those set forth in this Policy.
+Vi ber om samtykke før vi bruker eller offentliggjør din Personopplysning for et vesentlig annet formål enn de som er fastlagt i disse retningslinjene.
 
-## Your Choices About Your Personal Information
+## Dine valg om din personlige informasjon
 
-We may use the information we collect or receive to communicate directly with you. We may send email marketing communications about ILLA. If you do not want to receive such email messages, you will be given the option to opt out. We will try to comply with your request(s) as soon as reasonably practical. Additionally, even after you opt out from receiving marketing messages from us, you will continue to receive administrative messages from us regarding our Services (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices).
+Vi kan kanskje bruke informasjonen vi samler inn eller får til å kommunisere direkte med deg. Vi kan sende markedsføringskommunikasjon på e-post om ILLA. Hvis du ikke ønsker å motta slike e-postmeldinger, vil du få muligheten til å velge ut. Vi vil forsøke å overholde forespørselen(e) din så snart som praktisk mulig. I tillegg, selv etter at du har meldt deg ut fra å motta markedsføringsmeldinger, vil du fortsette å motta administrative meldinger fra oss angående våre tjenester (e. ., kontodetaljer, kjøp og fakturering bekreftelser og påminnelser, endringer/oppdateringer til funksjoner i tjenesten, tekniske og sikkerhetsmerknader).
 
-## Protection of Personal Information
+## Beskyttelse av personlig informasjon
 
-ILLA cares about the security of your Personal Information, and we make reasonable efforts to ensure a level of security appropriate to the risk associated with the processing of your Personal Information. We maintain organizational, technical, and administrative procedures designed to protect your Personal Information against unauthorized access, deletion, loss, alteration, and misuse. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you believe that your interaction with us is not secure, please contact us immediately.
+ILLA bryr seg om sikkerheten til din personopplysning, og vi arbeider rimelig med å sikre et nivå av sikkerhet i forhold til risikoen forbundet med behandlingen av din personopplysning. Vi opprettholder organisasjonsmessige, tekniske og administrative prosedyrer for å beskytte din personinformasjon mot uautorisert tilgang, sletting, tap, endring og misbruk. Dessverre kan ingen overføring av data eller lagringssystem være garantert å være 100 % sikker. Hvis du mener at interaksjonen din med oss ikke er sikker, vennligst kontakt oss umiddelbart.
 
-You are responsible for maintaining the secrecy of your unique password and account information, and for controlling access to your email communications from ILLA. Your privacy settings may also be affected by changes to the functionality of third-party sites and services that you add to the ILLA Service, such as single sign on. ILLA is not responsible for the functionality or security measures of any third party. Upon becoming aware of a breach of your Personal Information, we will notify you as quickly as we can and will provide timely information relating to the breach as it becomes known in accordance with any applicable laws and regulations or as is reasonably requested by you.
+Du er ansvarlig for å opprettholde hemmelighold av ditt unike passord og kontoinformasjon, og for å kontrollere tilgangen til e-postkommunikasjonen din fra ILLA. Dine personverninnstillinger kan også bli påvirket av endringer i funksjonaliteten til tredjeparts nettsteder og tjenester som du legger til ILLA-tjenesten, slik som enkel pålogging. ILLA er ikke ansvarlig for funksjonalitet og sikkerhetstiltak hos en tredjepart. Når du blir kjent med at du bryter med din personopplysning, vi vil varsle deg så fort vi kan og vil gi rettidig informasjon om bruddet fordi det blir kjent i samsvar med gjeldende lover og forskrifter eller som du med rimelighet ber om.
 
-## Cookies
+## Informasjonskapsler
 
-We didn't use cookies to remember information. At present, there is no industry standard for recognizing Do Not Track browser signals, so we do not currently respond to them.
+Vi brukte ikke informasjonskapsler for å huske informasjonen. Foreløpig er det ingen bransjestandard for å gjenkjenne Do Not Track nettlesersignaler, så vi svarer ikke på dem for øyeblikket.
 
-## Who at ILLA may access your Personal Information?
+## Hvem fra ILLA får tilgang til din personlige informasjon?
 
-Designated members of our staff may access Personal Information to help our customers with any questions they have, including help using our Services, investigating security issues, or following up on bug fixes with a customer. This activity is logged in our system for compliance, and we maintain different levels of access for its employees depending on their role in our company.
+Designerte medlemmer av våre ansatte kan få tilgang til personlig informasjon for å hjelpe våre kunder med alle spørsmål de har, inkludert hjelp ved hjelp av våre tjenester, undersøke sikkerhetsproblemer eller følge opp feilrettinger med en kunde. Denne aktiviteten er logget inn i systemet for å overholde kravene, og vi har ulik adgang for sine ansatte, avhengig av deres rolle i selskapet.
 
-## Do we disclose any information to outside parties?
+## Avgir vi informasjon til eksterne parter?
 
-Except as set out below, we do not sell, trade, or otherwise transfer to outside parties your Personal Information.
+Bortsett fra som angitt nedenfor, vil vi ikke selge, handel, eller på annen måte overføre til eksterne parter din personopplysning.
 
-1.  We may share your Personal Information with other companies owned by or under common ownership as ILLA, which also includes our subsidiaries (i.e., any organization we own or control).
+1.  Vi kan dele din personlige informasjon med andre selskaper som er eid av eller under felles eierskap som ILLA, som også inkluderer våre datterselskaper i. enhver organisasjon vi eier eller kontroll).
 
-2.  These companies will use your Personal Information in the same way as we can under this Privacy Policy, unless otherwise specified.
+2.  Disse selskapene vil bruke dine personopplysninger på samme måte som vi kan etter denne personvernerklæringen, hvis ikke annet er spesifisert.
 
-3.  We may disclose your Personal Information to third-party service providers (for example, drivePayment processing and data storage and processing facilities) that we use to provide the Services.
+3.  Vi kan avsløre din personlige informasjon til tredjeparts tjenesteleverandører (for eksempel drivendebetalingsbehandling og databehandling og prosesseringsanlegg) som vi benytter oss av for å levere tjenestene.
 
-4.  We limit the Personal Information provided to these service providers to that which is reasonably necessary for them to perform their functions, and we require them to agree to maintain the confidentiality of such Personal Information.
+4.  Vi begrenser det som gis personlig informasjon til disse tjenesteleverandørene til det som er rimelig nødvendig for dem å utføre sine funksjoner, og vi krever at de er enige om å ivareta konfidensialiteten til slik personopplysning.
 
-5.  We may contract with third-party service providers to assist us in better understanding our Site visitors.
+5.  Vi kan inngå avtale med tredjeparts tjenesteleverandører for å hjelpe oss med bedre forståelse av våre besøkende.
 
-6.  These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.
+6.  Disse tjenestetilbyderne kan ikke bruke informasjonen som er innsamlet på våre vegne, unntatt for å hjelpe oss med å gjennomføre og forbedre virksomheten vår.
 
-7.  We may also release your Personal Information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others’ rights, property, or safety.
+7.  Vi kan også frigi dine personlige opplysninger når vi mener at utgivelse er hensiktsmessig for å overholde loven. håndheve vår policy eller beskytte våre eller andres rettigheter, eiendom eller sikkerhet.
 
-8.  In particular, we may release your Personal Information to third parties as required to (i) satisfy any applicable law, regulation, subpoena/court order, legal process or other government request, (ii) enforce our Terms of Service, including the investigation of potential violations thereof, (iii) investigate and defend ourselves against any third party claims or allegations, (iv) protect against harm to the rights, property or safety of ILLA, its users or the public as required or permitted by law and (v) detect, prevent or otherwise address criminal (including fraud or stalking), security or technical issues.
+8.  Spesielt kan vi frigi din personinformasjon til tredjeparter slik det er nødvendig for (i) å oppfylle all gjeldende lovgivning, underlag/rettsorden, juridisk prosess eller annen offentlig anmodning (ii) håndheve våre tjenestevilkår, herunder undersøkelse av potensielle overtredelser, (iii) undersøke og forsvare oss mot eventuelle tredjeparts krav eller påstander (iv) beskytte mot skade på rettigheter, eiendom eller sikkerhet til ILLA, sine brukere eller offentligheten som kreves eller tillates i lov og (v) deteksjon, forhindre eller på annen måte behandle kriminelle (herunder bedrageri eller fengsel), sikkerhet eller tekniske problemer.
 
-9.  If you enable a public sharing of your ILLA applications, any information or content that you voluntarily disclose in your application becomes available to the public. If you remove information that you posted to the Services, copies may remain viewable in cached and archived pages of the Service, or if other users of the Services have copied or saved that information.
+9.  Hvis du aktiverer offentlig deling av dine ILLA-programmer, all informasjon eller innhold du frivillig offentliggjør i søknaden blir tilgjengelig for offentligheten. Hvis du fjerner informasjon som du postet i Tjenestene, kan kopier forbli synlige i bufrede og arkiverte sider av Tjenesten, eller hvis andre brukere av tjenestene har kopiert eller lagret denne informasjonen.
 
-10. In the event that we enter into, or intend to enter into, a transaction that alters the structure of our business, such as a merger, reorganization, joint venture, assignment, sale, or change of ownership, we may share Personal Information for the purpose of facilitating and completing the transaction.
+10. Hvis vi inngår i eller har til hensikt å inngå i en transaksjon som endrer strukturen til vår virksomhet, for eksempel en fusjon, reorganisering, joint venture, assignment, salg eller endring av eierskap, vi kan dele personlig informasjon med sikte på å tilrettelegge og fullføre transaksjonen.
 
-## How do we handle global transfers and processing of your Personal Information?
+## Hvordan håndterer vi globale overføringer og behandling av din personopplysning?
 
-Personal Information may be stored and processed in any country where we have operations, or where we engage service providers. This means that we may collect your Personal Information from, transfer it to, and store and process it in the United States and other countries outside of where you live. For example, some of our third-party providers may be located in different countries. Where this is the case, we will take steps to make sure the right security measures are taken so that your privacy rights continue to be protected as outlined in this Privacy Policy. By submitting your Personal Information, you’re agreeing to this transfer, storing or processing.
+Personlig informasjon kan lagres og behandles i alle land vi har virksomhet, eller der vi driver tjenesteleverandører. Dette betyr at vi kan samle inn din personinformasjon fra, overføre den til og lagre den og behandle den i USA og andre land utenfor hvor du bor. Noen av våre tredjeparts leverandører kan for eksempel befinne seg i forskjellige land. Der dette er tilfellet. Vi vil iverksette tiltak for å sikre at de riktige sikkerhetstiltakene blir iverksatt for å sikre at dine personvernrettigheter fortsetter å være beskyttet som beskrevet i denne retningslinjen. Ved å sende inn personlig informasjon samtykker du i denne overføringen, lagring eller behandling.
 
-If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. If we transfer your Personal Information from the E.U. and process it in the United States, we do so in accordance with applicable law. In certain situations, we may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
+Hvis du befinner deg i Den europeiske union eller andre regioner med lover om innsamling av opplysninger og bruk av andre lover som kan avvike fra USA Retten, vær oppmerksom på at vi kan overføre informasjon, inkludert personlig informasjon, til et land og en jurisdiksjon som ikke har samme personvernlovgivning som din jurisdiksjon. Hvis vi overfører din personlige informasjon fra E.U. og behandle den i USA, gjør vi det i samsvar med gjeldende lovgivning. I enkelte situasjoner kan det være nødvendig å gi informasjon om slike lovlige anmodninger fra offentlige myndigheter, blant annet for å oppfylle nasjonale krav til sikkerhet eller håndheving.
 
-## Retention of your Personal Information
+## Oppbevaring av din personlige informasjon
 
-We retain your Personal Information for as long as we need to fulfill our Services. In addition, we retain Personal Information after we cease providing Services to you, to the extent necessary to comply with our legal obligations. Where we retain data, we do so in accordance with any limitation periods and records retention obligations that are imposed by applicable law.
+Vi beholder din personlige informasjon så lenge vi trenger for å oppfylle våre tjenester. I tillegg holder vi på med personopplysninger etter at vi har opphørt å yte tjenester til deg, i den grad det er nødvendig for å overholde våre juridiske forpliktelser. Der vi lagrer data, gjør vi det i samsvar med eventuelle begrensningstider og registrerer tilbakeholdelsesforpliktelser som pålegges av gjeldende lov.
 
-## Third-party Links
+## Tredjeparts lenker
 
-The Services may provide the ability to connect to other websites. These websites may operate independently from us and have their own privacy policies and notices, which we suggest you review. If the linked website is not owned or controlled by us, we are not responsible for its content, or the privacy practices
+Tjenestene kan gi mulighet til å koble seg til andre nettsteder. Disse nettstedene kan virke uavhengig av oss og ha sine egne retningslinjer for personvern og meldinger, noe vi foreslår at du gjennomgår dem. Hvis det tilkoblede nettstedet ikke eies eller kontrolleres av oss, er vi ikke ansvarlige for innholdet, eller personvernpraksisen
 
-## Your Consent
+## Din samtykke
 
-By using our site, you consent to this Privacy Policy.
+Ved å bruke nettstedet vårt, samtykker du til denne personvernerklæringen.
 
-## Minors
+## Minorer
 
-These Services are not directed to individuals under the age of thirteen, and we kindly request they not provide any Personal Information through the Services.
+Disse tjenestene sendes ikke til personer under tretten alder, og vi ber om at de ikke gir noen personlig informasjon gjennom Tjenestene.
 
-## Your Rights
+## Dine rettigheter
 
-Other rights you have include the rights to:
+Andre rettigheter du har inkludert rettighetene til:
 
-1.  Ask for a copy of your Personal Information.
+1.  Be om en kopi av din personopplysning.
 
-2.  Ask us to correct your Personal Information that is inaccurate, incomplete, or outdated.
+2.  Be oss korrigere din personlige informasjon som er unøyaktig, ufullstendig eller utdatert.
 
-3.  Ask us to transfer your Personal Information to other organizations.
+3.  Be oss overføre din personlige informasjon til andre organisasjoner.
 
-4.  Ask us to erase certain categories or types of information.
+4.  Be oss om å slette visse kategorier eller typer informasjon.
 
-5.  If you choose to remove your Personal Information, you acknowledge that we may retain archived copies of your Personal Information in order to satisfy our legal obligations, or where we reasonably believe that we have a legitimate reason to do so.
+5.  Dersom du velger å fjerne din personinformasjon, du erkjenner at vi kan beholde arkiverte kopier av din personopplysning for å oppfylle våre juridiske forpliktelser, eller der vi med rimelighet mener vi har en legitim begrunnelse.
 
-6.  Ask us to restrict certain processing.
+6.  Be oss om å begrense bestemt behandling.
 
-7.  You have the right to object to processing of Personal Information. Where we have asked for your consent to process information, you have the right to withdraw this consent at any time.
+7.  Du har rett til å objektet for å behandle personlig informasjon. Hvor vi har bedt om tillatelse til å behandle informasjon, har du rett til å trekke tilbake dette samtykket når som helst.
 
-## Changes to our Privacy Policy
+## Endringer i våre retningslinjer for personvern
 
-If we decide to change our privacy policy, we will post those changes on this page. If we are going to use Personal Data collected through the Site in a manner materially different from that stated at the time of collection, then we will notify users via email and/or by posting a notice on our Site for 30 days prior to such use or by other means as required by law.
+Hvis vi bestemmer oss for å endre våre personvernerklæringer, publiserer vi endringene på denne siden. Hvis vi skal bruke personopplysninger samlet inn gjennom nettstedet på en måte som vesentlig skiller seg fra det som ble gitt på tidspunktet for samlingen, da varsler vi brukerne via e-post og/eller ved å legge ut et varsel på nettstedet vårt i 30 dager før slik bruk eller på annen måte som lovpåbudt.
 
-## Juridisiction-Specific Provisions
+## Juridisikk-spesifikke bestemmelser
 
-Residents of the European Economic Area and Switzerland: The Data Protection Officer can be contacted at business@illasoft.com
+Bestanden av det europeiske økonomiske samarbeidsområdet og Sveits: Datatilsynet kan kontaktes på business@illasoft.com
 
-## Contacting Us
+## Kontakt oss
 
-If you would like to submit a data rights request (also known as a data subject access request), please email business@illasoft.com。
+Hvis du ønsker å sende inn en dataforespørsel (også kjent som en anmodning om tilgang til data), vennligst send en e-post til firmaet@illasoft.com
 
-If you have any other questions, comments, or concerns about this privacy policy, please contact us via email: business@illasoft.com.
+Hvis du har andre spørsmål, kommentarer eller bekymringer om denne personvernerklæringen, ta kontakt med oss på e-post: business@illasoft.com.
 
 Illa Soft, Inc
