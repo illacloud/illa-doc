@@ -5,7 +5,7 @@ description: プライバシーポリシー
 
 # プライバシーポリシー
 
-_Last updated: 2023-11-02_ 
+_最終更新日: 2023-11-02_ 
 
 \*_あなたのプライバシーは私たちにとって重要です。 _ 本プライバシーポリシーは、当社のサービスを通じて当社が受け取る情報の収集、使用、および開示に関する当社の慣行を説明します。 本プライバシーポリシーは、たとえ当社のサービスを通じてアクセス可能であっても、第三者のウェブサイト、サービスまたはアプリケーションには適用されません。
 
@@ -53,160 +53,160 @@ _Last updated: 2023-11-02_
 個人データは、以下の目的で収集され、以下のサービスを利用します。
 
 1.  **分析** このセクションに含まれるサービスは、オーナーがWebトラフィックを監視し、分析することができ、ユーザーの動作を追跡するために使用できます。 **Google Analytics(Google LLC)** Google Analyticsは、Google LLC(以下「Google」)が提供するウェブ解析サービスです。 GoogleはILLAの使用状況を追跡し調査するために収集されたデータを利用します その活動に関するレポートを作成し、他のGoogleサービスと共有するために。 Googleは、収集されたデータを使用して、独自の広告ネットワークの広告をコンテキスト化し、パーソナライズすることができます。 処理された個人データ：Mixpanel。 処理場所:アメリカ合衆国。 
-2.  **登録と認証** 登録または認証により、ユーザーはILLAがそれらを識別し、専用サービスへのアクセスを許可することができます。 以下に記載されている内容によっては、第三者が登録および認証サービスを提供する場合があります。 この場合、ILLAは、登録または識別のために、これらの第三者サービスによって保存されたデータにアクセスすることができます。 以下に挙げるサービスの一部は、ターゲティングおよびプロファイリング目的で個人データを収集する場合もあります。 詳しくは各サービスの説明を参照してください。 **GitHub OAuth (GitHub Inc.)** GitHub OAuth is a registration and authentication service provided by GitHub Inc. and is connected to the GitHub network. 
+2.  **登録と認証** 登録または認証により、ユーザーはILLAがそれらを識別し、専用サービスへのアクセスを許可することができます。 以下に記載されている内容によっては、第三者が登録および認証サービスを提供する場合があります。 この場合、ILLAは、登録または識別のために、これらの第三者サービスによって保存されたデータにアクセスすることができます。 以下に挙げるサービスの一部は、ターゲティングおよびプロファイリング目的で個人データを収集する場合もあります。 詳しくは各サービスの説明を参照してください。 **GitHub OAuth(GitHub, Inc.)** GitHub OAuthはGitHub Inc.が提供する登録・認証サービスで、GitHubネットワークに接続されています。 
 
 ## Google 関連の限定的な利用情報
 
 ILLAの使用とGoogle APIから受け取った情報の他のアプリへの転送は、[Google APIサービスユーザーデータポリシー](https://www.google.com/url?q=https://developers.google)に準拠しています。 om/terms/api-services-user-data-policy%23additional_requirements_for_specific_api_scopes&sa=D&source=editors&ust=1620062741323000&usg=AOvVaw2D6dOGNA_OQYecNjilQ3dA) 限定的な使用要件を含む。
 
-## What do we use Google data for?
+## Googleのデータは何に使用されますか?
 
-When you want to connect ILLA Cloud to Google Sheets, we will request access to Google API to retrieve data from your Google Drive and Google Sheets. The specific requests and usage are as follows:
+ILLA クラウドを Google スプレッドシートに接続したい場合 GoogleドライブとGoogleシートからデータを取得するために、Google APIへのアクセスを要求します。 具体的な要求と使用方法は次のとおりです。
 
-1.  To connect to Google Sheets using OAuth in read and write mode, we will request access to the following three APIs:
+1.  OAuthを使用したGoogleスプレッドシートに読み書きモードで接続するには、次の3つのAPIへのアクセスをリクエストします。
     -   `https://www.googleapis.com/auth/drive`
     -   `https://www.googleapis.com/auth/spreadsheets`
     -   `https://www.googleapis.com/auth/drive.file`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud は、以下の 3 つの API を使用します。
 
--   We use `https://www.googleapis.com/auth/drive` to set your Drive access permission to read-only. This allows you and your users to read, create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets` to access your spreadsheets. This enables you and your users to perform read, add, delete, and modify operations on spreadsheet data through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/drive.file` to list the accessible file names in your Drive. This helps you and your users quickly select the files they want to work with.
+-   ドライブへのアクセス許可を読み取り専用に設定するには、`https://www.googleapis.com/auth/drive`を使用しています。 これにより、ユーザーは、ILLA Cloud を介して Google スプレッドシートにアクセスする際に、ファイルの読み取り、作成、変更、および削除を行うことができます。
+-   スプレッドシートにアクセスするには `https://www.googleapis.com/auth/spreadsheets` を使用しています。 これにより、ユーザーはILLA Cloudを介してスプレッドシートデータの読み取り、追加、削除、および変更を行うことができます。
+-   ドライブにアクセス可能なファイル名を一覧表示するには、`https://www.googleapis.com/auth/drive.file`を使用します。 これにより、ユーザーは作業したいファイルをすばやく選択できます。
 
-2.  To connect to Google Sheets using OAuth in read-only mode, we will request access to the following two APIs:
+2.  読み取り専用モードで OAuth を使用して Google スプレッドシートに接続するには、次の 2 つの API へのアクセスを要求します。
     -   `https://www.googleapis.com/auth/drive.readonly`
     -   `https://www.googleapis.com/auth/spreadsheets.readonly`
 
-ILLA Cloud uses these three APIs for the following purposes:
+ILLA Cloud は、以下の 3 つの API を使用します。
 
--   We use `https://www.googleapis.com/auth/drive.readonly` to set your Drive access permission to read-only. This allows you and your users to read files and no way to create, modify, and delete files when accessing Google Sheets through ILLA Cloud.
--   We use `https://www.googleapis.com/auth/spreadsheets.readonly` to access your spreadsheets. This enables you and your users to read data and no way to add, delete, and modify data in spreadsheet through ILLA Cloud.
+-   ドライブへのアクセス許可を読み取り専用に設定するには、`https://www.googleapis.com/auth/drive.readonly`を使用しています。 これにより、ユーザーはファイルを読み取ることができ、ILLA クラウドを介して Google スプレッドシートにアクセスする際にファイルを作成、変更、削除することはできません。
+-   スプレッドシートにアクセスするには `https://www.googleapis.com/auth/spreadsheets.readonly` を使用しています。 これにより、ユーザーはデータを読み取ることができ、ILLA Cloudを使用してスプレッドシートのデータを追加、削除、変更することはできません。
 
-We do not store your data, and each time the data is displayed, it is directly fetched and shown to you through the API. Additionally, ILLA does not share your connection to Google data with any third parties through any means.
+私たちはあなたのデータを保存しません。データが表示されるたびに、それは直接取得され、APIを通じてあなたに表示されます。 さらに、ILLAはいかなる手段によっても、Googleデータと第三者との接続を共有することはありません。
 
-## What do we use your Personal Information for?
+## お客様の個人情報は何に使用されますか?
 
-We will use your Personal Information, in compliance with this Privacy Policy, to help us deliver the Services to you. Any of the information we collect from you may be used in the following ways:
+当社は、本プライバシーポリシーに従い、お客様にサービスを提供するためにお客様の個人情報を使用します。 弊社がお客様から収集する情報は、以下の方法で使用できます。
 
-1.  To operate, maintain, and provide to you the features and functionality of the Services.
+1.  本サービスの機能および機能をお客様に運用、維持、提供するため。
 
-2.  To compile statistics and analysis about use of our Site and our Services.
+2.  当社サイトおよび当社サービスの利用に関する統計と分析を作成するため。
 
-3.  To personalize your experience.
+3.  あなたの体験をパーソナライズする。
 
-4.  To improve our Site and our Services — we continually strive to improve our site offerings based on the information and feedback we receive from you.
+4.  当社サイトおよび当社サービスを改善するために、当社は継続的に、お客様から受け取った情報およびフィードバックに基づいて、当社サイトの提供を改善するよう努めています。
 
-5.  To improve customer service — your Personal Information helps us to more effectively respond to your customer service requests and support needs.
+5.  カスタマーサービスを改善するために、お客様の個人情報は、カスタマーサービスの要求やサポートのニーズにより効果的に対応するのに役立ちます。
 
-6.  To send periodic emails — The email address you provide may be used to send you information, notifications that you request about changes to our Services, to alert you of updates, and to send periodic emails containing information relevant to your account.
+6.  定期的な電子メールを送信するには: あなたが入力した電子メールアドレスは、あなたに情報を送信するために使用されることがあります。 当社サービスの変更についてリクエストされた通知 アップデートのお知らせや、アカウントに関連する情報を含む定期的なメールを送信するために。
 
-7.  If you purchase our Services, then to enable you to purchase, renew and appropriately use a commercial license to our Services.
+7.  お客様が当社のサービスを購入した場合、当社のサービスへの商用ライセンスを更新し、適切に使用できるようにします。
 
-8.  We may also use Personal Information you provide to send you email marketing about ILLA products and services, invite you to participate in events or surveys, or otherwise communicate with you for marketing purposes. We allow you to opt-out from receiving marketing communications from us as described in the "Your Choices" section below.
+8.  また、お客様から提供された個人情報を使用して、ILLAの製品やサービスに関する電子メールマーケティングを送信する場合もあります。 イベントやアンケートに参加したり、マーケティングの目的であなたと連絡を取ったりすることができます。 以下の「お客様の選択」セクションに記載されているとおり、当社からのマーケティングコミュニケーションの受信を拒否することができます。
 
-9.  We may need your Google OAuth to read your data in Google Sheets when you use the Google Sheets resource.
+9.  Google Sheets リソースを使用する場合、Google スプレッドシートでお客様のデータを読み取るには、お客様の Google OAuth が必要になる場合があります。
 
-We may also use your Personal Information where necessary for us to comply with a legal obligation, including to share information with government and regulatory authorities when required by law or in response to legal process, obligation, or request.
+当社は、法的義務を遵守するために必要な場合には、お客様の個人情報を使用する場合があります。 法律で要求された場合、または法的手続き、義務、または要求に対応して、政府や規制当局と情報を共有することを含む。
 
-We cooperate with government and law enforcement officials or private parties to enforce and comply with the law. We may disclose your Personal Information to government or law enforcement officials or private parties as we believe necessary or appropriate: (i) to respond to claims, legal process (including subpoenas); (ii) to protect our property, rights and safety and the property, rights and safety of a third party or the public in general; and (iii) to stop any activity that we consider illegal, unethical or legally actionable activity.
+私たちは、法律を施行し遵守するために、政府や法執行機関の役人や民間当事者と協力します。 当社は、必要または適切と考えられる場合、お客様の個人情報を政府または法執行当局または私的当事者に開示することがあります: (i) 請求に対応するため。 法的手続き（召喚状を含む） (2)当社の財産、権利及び安全、第三者又は一般の人々の財産、権利及び安全を保護するため。 そして、(ii)違法、非倫理的、法的に実行可能な行為とみなされるあらゆる行為を停止すること。
 
-We will request your consent before we use or disclose your Personal Information for a materially different purpose than those set forth in this Policy.
+当社は、本ポリシーに規定されている目的とは大きく異なる目的で、お客様の個人情報を使用または開示する前に、お客様の同意を要求します。
 
-## Your Choices About Your Personal Information
+## 個人情報に関するお客様の選択
 
-We may use the information we collect or receive to communicate directly with you. We may send email marketing communications about ILLA. If you do not want to receive such email messages, you will be given the option to opt out. We will try to comply with your request(s) as soon as reasonably practical. Additionally, even after you opt out from receiving marketing messages from us, you will continue to receive administrative messages from us regarding our Services (e.g., account verification, purchase and billing confirmations and reminders, changes/updates to features of the Service, technical and security notices).
+当社は、お客様と直接通信するために収集または受信した情報を使用することがあります。 ILLAについてのメールマーケティングコミュニケーションを送信する場合があります。 そのような電子メールメッセージを受信したくない場合は、オプトアウトするオプションが与えられます。 私たちは合理的に実用的にできるだけ早くあなたの要求を遵守しようとします。 さらに、お客様が当社からのマーケティングメッセージの受信をオプトアウトした後でも、お客様は当社のサービスに関する管理メッセージを引き続き受信します(e. 、アカウントの検証、購入および請求の確認およびリマインダー、サービスの機能の変更/更新、技術的およびセキュリティに関する通知)。
 
-## Protection of Personal Information
+## 個人情報の保護
 
-ILLA cares about the security of your Personal Information, and we make reasonable efforts to ensure a level of security appropriate to the risk associated with the processing of your Personal Information. We maintain organizational, technical, and administrative procedures designed to protect your Personal Information against unauthorized access, deletion, loss, alteration, and misuse. Unfortunately, no data transmission or storage system can be guaranteed to be 100% secure. If you believe that your interaction with us is not secure, please contact us immediately.
+ILLAはお客様の個人情報のセキュリティを気にかけています 当社は、お客様の個人情報の処理に伴うリスクに対して適切なレベルのセキュリティを確保するために合理的な努力を行います。 当社は、不正なアクセス、削除、紛失、改ざん、および誤用からお客様の個人情報を保護するために設計された組織的、技術的、および管理的手順を維持します。 残念ながら、データ伝送やストレージシステムが100%安全であることを保証することはできません。 当社とのやり取りが安全ではないと思われる場合は、直ちにご連絡ください。
 
-You are responsible for maintaining the secrecy of your unique password and account information, and for controlling access to your email communications from ILLA. Your privacy settings may also be affected by changes to the functionality of third-party sites and services that you add to the ILLA Service, such as single sign on. ILLA is not responsible for the functionality or security measures of any third party. Upon becoming aware of a breach of your Personal Information, we will notify you as quickly as we can and will provide timely information relating to the breach as it becomes known in accordance with any applicable laws and regulations or as is reasonably requested by you.
+お客様は、独自のパスワードおよびアカウント情報の秘密と、ILLAからの電子メール通信へのアクセスを制御する責任があります。 また、お客様がILLAサービスに追加した第三者サイトおよびサービスの機能変更により、お客様のプライバシー設定が影響を受ける場合があります。 例えばシングルサインオンなどです ILLAは、いかなる第三者の機能またはセキュリティ対策についても責任を負いません。 お客様の個人情報の違反に気づいたとき 適用される法令に従って、またはお客様から合理的に要請された場合には、違反に関する情報をできるだけ速やかに提供し、適時に提供します。
 
-## Cookies
+## Cookie
 
-We didn't use cookies to remember information. At present, there is no industry standard for recognizing Do Not Track browser signals, so we do not currently respond to them.
+私たちは情報を記憶するためにクッキーを使用しませんでした。 現時点では、Do Not Trackブラウザ信号を認識する業界標準は存在しないため、現時点では対応していません。
 
-## Who at ILLA may access your Personal Information?
+## ILLAの誰があなたの個人情報にアクセスすることがありますか?
 
-Designated members of our staff may access Personal Information to help our customers with any questions they have, including help using our Services, investigating security issues, or following up on bug fixes with a customer. This activity is logged in our system for compliance, and we maintain different levels of access for its employees depending on their role in our company.
+当社のスタッフの指定されたメンバーは、お客様にご質問がある場合は、個人情報にアクセスすることがあります。 を含め、当社のサービスの使用、セキュリティの問題の調査、または顧客とのバグ修正のフォローアップを含みます。 このアクティビティはコンプライアンスのためにシステムにログインしています 社内での役割に応じて従業員のアクセスレベルが異なります
 
-## Do we disclose any information to outside parties?
+## 外部に情報を開示しますか?
 
-Except as set out below, we do not sell, trade, or otherwise transfer to outside parties your Personal Information.
+以下に記載されている場合を除き、当社はお客様の個人情報を外部の当事者に販売、取引、またはその他の方法で転送することはありません。
 
-1.  We may share your Personal Information with other companies owned by or under common ownership as ILLA, which also includes our subsidiaries (i.e., any organization we own or control).
+1.  当社は、当社の子会社を含むILLAとして、お客様の個人情報を他の所有者または一般所有者の会社と共有することがあります(i. 我々が所有または管理するすべての組織
 
-2.  These companies will use your Personal Information in the same way as we can under this Privacy Policy, unless otherwise specified.
+2.  これらの会社は、特に明記されていない限り、お客様の個人情報を本プライバシーポリシーに定めるのと同じ方法で使用します。
 
-3.  We may disclose your Personal Information to third-party service providers (for example, drivePayment processing and data storage and processing facilities) that we use to provide the Services.
+3.  当社は、お客様の個人情報を第三者のサービスプロバイダーに開示することがあります(例えば、 drive当社が本サービスを提供するために使用する支払処理およびデータ保存および処理施設)。
 
-4.  We limit the Personal Information provided to these service providers to that which is reasonably necessary for them to perform their functions, and we require them to agree to maintain the confidentiality of such Personal Information.
+4.  当社は、これらのサービスプロバイダーに提供される個人情報を、それらの機能を実行するために合理的に必要なものに制限します。 当社は、当該個人情報の機密性を維持することに同意することを求めています。
 
-5.  We may contract with third-party service providers to assist us in better understanding our Site visitors.
+5.  当社は、当社のサイト訪問者をより深く理解するために、サードパーティのサービスプロバイダと契約することがあります。
 
-6.  These service providers are not permitted to use the information collected on our behalf except to help us conduct and improve our business.
+6.  これらのサービスプロバイダーは、当社がビジネスを行い改善するために役立つ場合を除き、当社に代わって収集された情報を使用することはできません。
 
-7.  We may also release your Personal Information when we believe release is appropriate to comply with the law, enforce our site policies, or protect our or others’ rights, property, or safety.
+7.  当社は、法律を遵守するために開示が適切であると判断した場合、お客様の個人情報を開示する場合があります。 当社サイトポリシーを適用するか、または当社またはその他者の権利、財産または安全を保護します。
 
-8.  In particular, we may release your Personal Information to third parties as required to (i) satisfy any applicable law, regulation, subpoena/court order, legal process or other government request, (ii) enforce our Terms of Service, including the investigation of potential violations thereof, (iii) investigate and defend ourselves against any third party claims or allegations, (iv) protect against harm to the rights, property or safety of ILLA, its users or the public as required or permitted by law and (v) detect, prevent or otherwise address criminal (including fraud or stalking), security or technical issues.
+8.  特に、当社は、(i)適用される法律、規制、召喚状/裁判所命令を満たすために必要に応じて、お客様の個人情報を第三者に開示することがあります。 法的手続きまたはその他の政府の要請、(ii) 当社のサービス利用規約の実施、その潜在的な違反の調査を含む。 (ii)第三者のクレームや申し立てに対する調査と防御、(iv)ILLAの権利、財産または安全性への害から保護 法律によって要求または許可されている場合には、そのユーザーまたは公共の (v) 検出、および(v) 犯罪者(詐欺またはストーカーを含む)、セキュリティまたは技術的な問題を防止または対処します。
 
-9.  If you enable a public sharing of your ILLA applications, any information or content that you voluntarily disclose in your application becomes available to the public. If you remove information that you posted to the Services, copies may remain viewable in cached and archived pages of the Service, or if other users of the Services have copied or saved that information.
+9.  ILLAアプリケーションの公開共有を有効にした場合 自発的に開示した情報や内容は一般公開されるようになります 本サービスに投稿した情報を削除した場合、本サービスのキャッシュされたページおよびアーカイブされたページでコピーが閲覧可能である可能性があります。 または、本サービスの他のユーザーがその情報をコピーまたは保存した場合。
 
-10. In the event that we enter into, or intend to enter into, a transaction that alters the structure of our business, such as a merger, reorganization, joint venture, assignment, sale, or change of ownership, we may share Personal Information for the purpose of facilitating and completing the transaction.
+10. 私たちが入力する場合、または入力する予定の場合 合併や再編などの事業構造を変える取引 共同事業、譲渡、売却または所有権の変更、当社は、取引の円滑化および完了を目的として、個人情報を共有することがあります。
 
-## How do we handle global transfers and processing of your Personal Information?
+## お客様の個人情報のグローバルな転送および処理はどのように処理されますか?
 
-Personal Information may be stored and processed in any country where we have operations, or where we engage service providers. This means that we may collect your Personal Information from, transfer it to, and store and process it in the United States and other countries outside of where you live. For example, some of our third-party providers may be located in different countries. Where this is the case, we will take steps to make sure the right security measures are taken so that your privacy rights continue to be protected as outlined in this Privacy Policy. By submitting your Personal Information, you’re agreeing to this transfer, storing or processing.
+個人情報は、当社が業務を行っている国、または当社がサービス提供者を関与させる国に保管および処理されることがあります。 これは、当社がお客様の個人情報を収集する場合があることを意味します。 アメリカやその他の国々で保管・処理を行っています 例えば、当社の第三者プロバイダーの一部は、異なる国に所在している可能性があります。 これがケースであるところ。 当社は、本プライバシーポリシーに記載されているように、お客様のプライバシー権が引き続き保護されるように、適切なセキュリティ対策を講じるよう措置を講じます。 個人情報を送信することにより、お客様はこの転送、保管または処理に同意したものとみなされます。
 
-If you are located in the European Union or other regions with laws governing data collection and use that may differ from U.S. law, please note that we may transfer information, including Personal Information, to a country and jurisdiction that does not have the same data protection laws as your jurisdiction. If we transfer your Personal Information from the E.U. and process it in the United States, we do so in accordance with applicable law. In certain situations, we may be required to disclose personal information in response to lawful requests by public authorities, including to meet national security or law enforcement requirements.
+お客様が欧州連合(EU)またはその他の地域に居住している場合、それは米国とは異なる場合があります。 法律では、個人情報を含む情報を転送することがありますのでご注意ください。 あなたの管轄区域と同じデータ保護法を持たない国と管轄区域に お客様の個人情報をEUから譲渡する場合。 米国では適用法に従って処理しています 特定の状況では、公的機関の合法的な要請に応じて個人情報を開示することが求められる場合があります。 国家安全保障や法執行機関の要件を満たすことも含まれます
 
-## Retention of your Personal Information
+## 個人情報の保持
 
-We retain your Personal Information for as long as we need to fulfill our Services. In addition, we retain Personal Information after we cease providing Services to you, to the extent necessary to comply with our legal obligations. Where we retain data, we do so in accordance with any limitation periods and records retention obligations that are imposed by applicable law.
+当社は、当社のサービスを満たすために必要な期間、お客様の個人情報を保持します。 さらに、当社は、法的義務を遵守するために必要な範囲で、お客様へのサービスの提供を中止した後、個人情報を保持します。 当社がデータを保持する場合、当社は適用法によって課される制限期間および記録保持義務に従って行います。
 
-## Third-party Links
+## サードパーティのリンク
 
-The Services may provide the ability to connect to other websites. These websites may operate independently from us and have their own privacy policies and notices, which we suggest you review. If the linked website is not owned or controlled by us, we are not responsible for its content, or the privacy practices
+本サービスは、他のウェブサイトに接続する機能を提供することがあります。 これらのウェブサイトは、当社とは独立して運営され、独自のプライバシーポリシーと通知を持っている場合があり、お客様がレビューすることをお勧めします。 リンクされたウェブサイトが当社によって所有または管理されていない場合、当社はそのコンテンツまたはプライバシー慣行について責任を負いません。
 
-## Your Consent
+## 同意
 
-By using our site, you consent to this Privacy Policy.
+当社のサイトを使用することにより、あなたはこのプライバシーポリシーに同意したものとみなされます。
 
-## Minors
+## 未成年
 
-These Services are not directed to individuals under the age of thirteen, and we kindly request they not provide any Personal Information through the Services.
+本サービスは、13歳未満の個人に向けられるものではなく、本サービスを通じて個人情報を提供しないようお願いいたします。
 
-## Your Rights
+## あなたの権利
 
-Other rights you have include the rights to:
+その他の権利には以下の権利が含まれます：
 
-1.  Ask for a copy of your Personal Information.
+1.  個人情報のコピーを要求してください。
 
-2.  Ask us to correct your Personal Information that is inaccurate, incomplete, or outdated.
+2.  不正確、不完全または時代遅れの個人情報を修正するよう当社に依頼してください。
 
-3.  Ask us to transfer your Personal Information to other organizations.
+3.  お客様の個人情報を他の組織に転送するようお願いします。
 
-4.  Ask us to erase certain categories or types of information.
+4.  特定のカテゴリや種類の情報を消去するように私たちに依頼してください。
 
-5.  If you choose to remove your Personal Information, you acknowledge that we may retain archived copies of your Personal Information in order to satisfy our legal obligations, or where we reasonably believe that we have a legitimate reason to do so.
+5.  個人情報の削除を選択した場合 お客様は、当社の法的義務を満たすために、お客様の個人情報の保管されたコピーを当社が保持することを承認するものとします。 正当な理由があると合理的に信じられる場合です
 
-6.  Ask us to restrict certain processing.
+6.  特定の処理を制限するように依頼してください。
 
-7.  You have the right to object to processing of Personal Information. Where we have asked for your consent to process information, you have the right to withdraw this consent at any time.
+7.  お客様は、個人情報の処理に異議を唱える権利を有します。 当社がお客様の情報処理に関する同意を求めた場合、お客様はいつでもこの同意を撤回する権利を有します。
 
-## Changes to our Privacy Policy
+## プライバシーポリシーの変更
 
-If we decide to change our privacy policy, we will post those changes on this page. If we are going to use Personal Data collected through the Site in a manner materially different from that stated at the time of collection, then we will notify users via email and/or by posting a notice on our Site for 30 days prior to such use or by other means as required by law.
+プライバシーポリシーの変更を決定した場合は、このページに掲載させていただきます。 収集時に記載されている方法とは大きく異なる方法でサイトを通じて収集された個人データを使用する場合。 その後、当社は、電子メールおよび/または当社サイトに通知を掲載することにより、当該使用の30日前または法律で要求されるその他の手段によりユーザーに通知します。
 
-## Juridisiction-Specific Provisions
+## 管轄区分特有の規定
 
-Residents of the European Economic Area and Switzerland: The Data Protection Officer can be contacted at business@illasoft.com
+欧州経済地域とスイスの住民:データ保護責任者は、business@illasoft.comに連絡することができます
 
-## Contacting Us
+## お問い合わせ中
 
-If you would like to submit a data rights request (also known as a data subject access request), please email business@illasoft.com。
+データ権利リクエスト(データ主体アクセスリクエストとも呼ばれます)を送信したい場合は、business@illasoft.comまでメールでお問い合わせください。
 
-If you have any other questions, comments, or concerns about this privacy policy, please contact us via email: business@illasoft.com.
+このプライバシーポリシーに関するその他の質問、コメント、懸念がある場合は、business@illasoft.comまでメールでお問い合わせください。
 
-Illa Soft, Inc
+Illa Soft, Inc.
