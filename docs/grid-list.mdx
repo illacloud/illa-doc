@@ -1,0 +1,98 @@
+---
+title: Grid list
+
+description: Display your items as a grid rather than a normal list of items that come one after the next
+---
+
+# Data Grid
+
+## What is Data Grid
+
+In some cases, you might want to display your items as a grid rather than a normal list of items that come one after the next. For this task, use the Grid List component.
+
+The editing method of the Grid List component is the same as that of the container. You can drag and drop components into the Grid List to customize the display format of the items.
+
+## How-to
+
+### Configure the appearance of the Grid list
+
+<div style={{
+position: "relative",
+
+paddingBottom: "calc(56.81216931216932% + 41px)", 
+
+height: 0
+
+}}><iframe src="https://demo.arcade.software/tC0CRZJ1jDRhjrwybsn9?embed" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+### Connect to data source
+
+<div style={{
+position: "relative",
+
+paddingBottom: "calc(56.81216931216932% + 41px)", 
+
+height: 0
+
+}}><iframe src="https://demo.arcade.software/7uJzTvMIuRxuFazesbmt?embed" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+## Data
+
+| **Property name** | **Type** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        | Use example                            |
+| ------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
+| selectedItem            | Object         | You can select an item in the Grid List and retrieve its data using the`selectedItem`property. When you select the nth item, the value of the`selectedItem`property will be the nth item in the data source array that you have set for the Grid List. For example, if your data source (referred to as dataSource) is as follows:`[{"name":"Andrew"},{"name":"Mike"},{"name":"Emma"}]`, and you select the third item, the`selectedItem`property will actually be`dataSource[2]`, which is`{"name":"Emma"}`. Therefore, you can further access the value corresponding to a specific key by using`gridList1.selectedItem.name`. | `{{gridList1.selectedItem.name}}`
+ |
+| currentItem             | Object         | This property can**only be used in the component of Grid List in the configuration**and **does not need to be called via displayName** . When you add a Text component to the Grid List component, it is expected that this Text component will display the name of this segment in the Data source. To achieve this, you can set it as`{{currentItem.name}}`.                                                                                                                                                                                                                                                                               | `{{currentItem.name}}`             |
+
+## Configurable properties
+
+### Data
+
+| **Property name** | **Type**   | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                       | **Example** |
+| ------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------- |
+| Data source             | Array of objects | This is used to set the data source for the Grid List component. The expected data format is` [{ "key": "value", "key": "value" }, { "key": "value", "key": "value" },... { "key": "value", "key": "value" }]`. You can query your data source using the Action, and the return value of the action will be used as the data source. Alternatively, you can directly input into the data source. When inputting, please make sure to use`{{}}`to enclose the array. | `{{mysql1.data}}`
+  |
+
+### Interaction
+
+| **Property name** | **Type** | **Description**                                                                                                                                                                                                                                                                                    | Example                                                                    |
+| ------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| Loading                 | Boolean        | You can configure the Grid list component to display a Loading state under certain circumstances. For example, during the execution of an Action, you can show a loading state by using the`{{mysql1.isRunning}}`setting.                                                                            | `{{mysql1.isRunning}}`                                                 |
+| Disabled                | Boolean        | You can configure the Grid list component to be disabled under certain conditions. For example, if there is no input value in the`input1`component, it should be disabled. You can achieve this by using the`{{input1.value===null \|\| input1.value==="" \|\| input1.value===undefined}}`condition. | `{{input1.value===null\|\|input1.value===""\|\|input1.value===undefined}}` |
+
+### Pagination
+
+| **Property name**       | **Type** | **Description**                                                                                                                                               | Example      |
+| ------------------------------- | ---------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------- |
+| Pagination                    | Boolean        | You can configure whether to display data in a paginated manner. If pagination is not enabled, all the data will be displayed on a single page.                     | --           |
+| Page size                     | Number         | To display multiple data items per page, you need to enable pagination. When you enable pagination, you can configure the number of items to be displayed per page. | `{{30}}` |
+| Enable server side pagination | Boolean        | Please refer to this documentation for reference:[Server-side pagination](https://docs.illacloud.com/server-side-pagination)                                           | --           |
+
+### Layout
+
+| **Property name** | **Type** | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                      | Example          |
+| ------------------------- | ---------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------ |
+| Column adaption         | Selection
+     | We offer two modes: Fixed and Dynamic. In`Fixed`mode, the list is fixed. Resizing the browser window will only change the width of each column. In`Dynamic`mode, the list is not fixed, resizing the browser window will change both the width and the number of columns. Below this table, there are also illustrations of the two modes, which can provide a more visual understanding of the differences between the two modes. | --               |
+| Number of columns       | Number         | In Fixed mode, the configuration displays a fixed number of columns.                                                                                                                                                                                                                                                                                                                                                                       | `{{3}}`            |
+| Min width of columns    | Number         | In the Dynamic mode, the configuration sets the minimum column width. We will use the component width/minimum column width to calculate the maximum number of columns that can be displayed currently. If it can not be evenly divided, the excess value will be distributed evenly to supplement each column width.                                                                                                                       | `{{300}}`          |
+| Item spacing            | Number         | Spacing between each column and row.                                                                                                                                                                                                                                                                                                                                                                                                       | --               |
+| Height                  | Selection      | To configure the height of a component, we provide two types of formatting options: Fixed and Auto. In the Fixed mode, you need to manually adjust the height of the component and item. In the Auto mode, the height of the component and the length of the list will be dynamically adjusted based on the height of the items.                                                                                                           | --               |
+| Hidden                  | Boolean        | Used to hide a component under certain conditions. For example, the component is not displayed when there are no results from`mysql1`: `{{!mysql1.data}}`.                                                                                                                                                                                                                                                                               | `{{!mysql1.data}}` |
+
+##### Dynamic number of columns
+
+![dynamic](https://cdn.illacloud.com/official-website/img/docs/new-doc/grid-list/dynamic.gif)
+
+##### Fixed number of columns
+
+![fixed](https://cdn.illacloud.com/official-website/img/docs/new-doc/grid-list/fixed.gif)
+
+## Event handler
+
+Event handler：https://docs.illacloud.com/event-handler
+
+| **Event name** | **Description**                                                                                                                                                                                                                                                                                                            |
+| ---------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Click item           | When clicking on an item, trigger the corresponding event. For example, if one of the data in your data source is a URL, you can expect that clicking on the item will navigate to the URL associated with that item. In the event handler, you can select "go to URL" and set the value of the URL to`{{currentItem.url}}`. |
+| Page change          | During page switching, events are triggered. This is commonly used in the server-side pagination scenario. When the page changes, the action is executed again, immediately fetching the next or previous page of data.                                                                                                          |
