@@ -96,8 +96,8 @@
     "description": "The label for category teams_and_users in sidebar tutorialSidebar"
   },
   "sidebar.tutorialSidebar.category.changelog": {
-    "message": "Changelog",
-    "description": "The label for category changelog in sidebar tutorialSidebar"
+    "message": "Changelogs",
+    "description": "ILLA Cloud Changelogs"
   },
   "sidebar.tutorialSidebar.category.illa_policy": {
     "message": "ILLA policy",
