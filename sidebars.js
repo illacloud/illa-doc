@@ -36,6 +36,11 @@ const sidebars = {
     },"self-hosted-deployment",
     {
       type: 'category',
+      label: 'changelog',
+      items: ["3-7", "3-6", "3-5", "3-4", "3-3"]
+    },
+    {
+      type: 'category',
       label: 'illa_policy',
       items: ["privacy-policy", "terms-of-service"]
     }
