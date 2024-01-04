@@ -37,7 +37,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'changelog',
-      items: ["3-7", "3-6", "3-5", "3-4", "3-3"]
+      items: ["4-2","4-1","4-0","3-7", "3-6", "3-5", "3-4", "3-3"]
     },
     {
       type: 'category',
