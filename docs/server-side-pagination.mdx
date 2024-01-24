@@ -1,0 +1,181 @@
+---
+
+title: Server-side pagination
+
+description: When dealing with large amounts of data, using server-side pagination in your queries can greatly improve efficiency. In this article, you will learn how to utilize server-side pagination in ILLA Cloud.
+
+---
+
+# Server-side pagination
+
+When building an application using a large dataset, it is crucial to limit the amount of data returned in each query. Returning a large amount of data at once can impact the performance of the application, especially when dealing with complex queries involving multiple table joins.
+
+The best practice to optimize queries is to implement server-side pagination. By only returning the results necessary to populate the given view, the amount of data transferred can be reduced. When additional data is needed to populate the view, another action can be triggered, and the server will retrieve the next set of results.
+
+## How to enable server-side pagination
+
+Components
+
+- Data Grid
+- Grid List
+
+<div style={{
+
+position: "relative",
+
+paddingBottom: "calc(56.81216931216932% + 41px)",
+
+height: 0
+
+}}><iframe src="https://demo.arcade.software/xEIOIF2YZmt54zz9g7g5?embed" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+## Limit offset based pagination
+
+Supported on Data Grid and Grid List
+
+### Properties to configure
+
+| Property name | Type | Description | Use example |
+| --- | --- | --- | --- |
+| Total row count | number | Use `{{n}}` to set the value. The total number of rows is used to calculate the total number of pages. You can use an Action to query the database for the total number of records and fill in the query result here. | Create an action named mysql1 with the query statement "select count(*) from users". This query is used to determine the total number of records in the users table. Simply fill in `{{mysql1.data[0].count}}` in the Total row count field. |
+| Page size | number | Use `{{n}}` to set the number of records displayed per page. This will also be used to limit the number of records returned by the database or API in each pagination query. | `{{20}}` |
+
+### State of components
+
+| State name | Description |
+| --- | --- |
+| page | Current page index of data grid or grid list. |
+| pageSize | Page size refers to the number of records displayed per page in a data grid or grid list. |
+
+### Configure Actions
+
+Take SQL-like database and API as examples.
+
+### SQL-like database
+
+Step 1: Write SQL in Action
+
+```
+SELECT *
+FROM users
+LIMIT {{dataGrid1.pageSize}}
+OFFSET {{dataGrid1.page*dataGrid1.pageSize}}
+
+```
+
+In this example, we use `{{dataGrid1.pageSize}}` to determine how many records need to be returned for this query, and we use `{{dataGrid1.page*dataGrid1.pageSize}}` to calculate the offset for this request, indicating from which record to start returning.
+
+Step 2: Changing "Run action only when manually triggered" to "Run action automatically when inputs change"
+
+After that, every time you change the page number of dataGrid1, the action will be triggered automatically and  query data with the new page number.
+
+### API
+
+Step 1: Setting up paginated queries using a query
+
+```
+https://example.com?limit={{dataGrid1.pageSize}}&skip={{dataGrid1.page*dataGrid1.pageSize}}
+
+```
+
+Many common APIs use the parameters "limit" and "skip" for pagination. In this example, we use `{{dataGrid1.pageSize}}` to determine how many records need to be returned for this query, and we use `{{dataGrid1.page*dataGrid1.pageSize}}` to calculate the offset for this request, indicating from which record to start returning.
+
+Step 2: Changing "Run action only when manually triggered" to "Run action automatically when inputs change"
+
+After that, every time you change the page number of dataGrid1, the action will be triggered automatically and  query data with the new page number.
+
+## Cursor based pagination
+
+Only supported on Grid List
+
+### Properties to configure
+
+| Property name | Type | Description | Use example |
+| --- | --- | --- | --- |
+| Previous cursor | string | When you paginate forward, we will update the 'afterCursor' value to indicate to the API from which record to start querying data. | We can directly retrieve this value from the data returned by the API. For example, `{{cursorBased.data.data.repository.issues.pageInfo.startCursor}}` |
+| Next cursor | string | While you are paging backward, we will update the "beforeCursor" with this value, which will inform the API about the starting point for querying data in the backward direction. | We can directly retrieve this value from the data returned by the API. For example, `{{cursorBased.data.data.repository.issues.pageInfo.endCursor}}` |
+| Has next page | boolean | Used to determine if there is still a next page. | We can directly retrieve this value from the data returned by the API. For example, `{{cursorBased.data.data.repository.issues.pageInfo.hasNextPage}}` |
+| Page | number | Use `{{n}}` to set the number of records displayed per page. This is only used to inform the gridlist component about how many items should be displayed per page. | `{{20}}` |
+
+### State of components
+
+| State name | Description |
+| --- | --- |
+| beforeCursor | When paging, inform the API to start querying from a specific record number. When beforeCursor is empty, it indicates the need to page backward. Therefore, based on this value, the configuration for the subsequent action will specify whether to perform a backward or forward query. This will be further explained in the upcoming action configuration. |
+| afterCursor | When paging, inform the API about the starting point for querying data. When afterCursor is empty, it indicates the need to page forward. |
+
+### Configure Actions
+
+Take GitHub's GraphQL interface as example.
+
+### Query
+
+```
+query ($repoOwner: String!, $repoName: String!, $first: Int, $last: Int, $beforeCursor: String, $afterCursor: String) {
+   repository(owner: $repoOwner, name: $repoName) {
+      issues(first: $first, last: $last, before: $beforeCursor, after: $afterCursor, orderBy: {field: CREATED_AT, direction: DESC}) {
+         pageInfo {
+            hasNextPage
+            hasPreviousPage
+            endCursor
+            startCursor
+         }
+         totalCount
+         edges {
+            cursor
+            node {
+               title
+               number
+               url
+            }
+         }
+      }
+   }
+}
+
+```
+
+In this example, we first ensure that the API response includes the following four values: `hasNextPage`, `hasPreviousPage`, `endCursor`, and `startCursor`. These values are used to configure the properties of the component.
+
+And furthermore, we define some variables such as `beforeCursor`, `afterCursor`, etc., which need to be further set in the variables section under GraphQL.
+
+### Variables
+
+| key | value | description |
+| --- | --- | --- |
+| repoOwner | illacloud | To query the issues in illa-builder repository on illacloud. |
+| repoName | illa-builder | To query the issues in illa-builder repository on illacloud. |
+| beforeCursor | `{{gridList1.beforeCursor}}` | This is used to set the cursor from which to start the query when paging forward. If you are paging backward, the value of this field will be null and no further processing is required. |
+| last | `{{gridList1.beforeCursor ? gridList1.pageSize : null}}` | The last parameter is used to set the number of records to query when paging forward. If the value of `{{gridList1.beforeCursor}}` is not null, indicating that you want to page forward, then this conditional statement will also use `{{gridList1.pageSize}}` as the number of records to query when paging forward. Similarly, if you are paging backward, this value will be empty. |
+| afterCursor | `{{gridList1.afterCursor}}` | This is used to set the cursor from which to start the query when paging backward. If you are paging forward, the value of this field will be null. |
+| first | `{{!gridList1.beforeCursor ? gridList1.pageSize:null}}` | The first parameter is used to set the number of records to query when paging forward. If the value of `{{gridList1.afterCursor}}` is not null, it confirms that you are paging backward. However, when you initially trigger the pagination, both beforeCursor and afterCursor are empty, resulting in an error in the query. Therefore, when both are empty, we assume that the user's first pagination is always paging backward, so we only need to check if gridList1.beforeCursor is not empty. Once it is confirmed to be paging backward, this conditional statement will also use `{{gridList1.pageSize}}` as the number of records to query when paging backward. |
+
+## Demo
+
+https://illa.ai/app/ILAcx4p1C7gj/detail
+
+You can fork this demo to your team to check the configuration. And you can change the resources to the following resources:
+
+**GraphQL**
+
+| Field | Data |
+| --- | --- |
+| Base URL | https://api.github.com/graphql |
+| Authentication | bearer |
+| Bearer Token | Generate your personal token on GitHub |
+
+**Rest API**
+
+| Field | Data |
+| --- | --- |
+| Base URL | https://dummyjson.com/ |
+
+**PostgreSQL**
+
+| Field | Data |
+| --- | --- |
+| Hostname | 146.190.2.7 |
+| Port | 30739 |
+| Database | illa_demo |
+| Username | illa |
+| Password | illa2022 |
