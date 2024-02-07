@@ -28,12 +28,16 @@ const sidebars = {
           items: ["run-script", "event-handler"]
         }
       ]
-    },
+    },"server-side-pagination","self-hosted-deployment",
     {
+      type: 'category',
+      label: 'branding',
+      items: ["custom-domain"]
+    },{
       type: 'category',
       label: 'ILLA_with_ai',
       items: ["ai-agent"]
-    },"server-side-pagination","self-hosted-deployment",
+    },
     {
       type: 'category',
       label: 'changelog',
