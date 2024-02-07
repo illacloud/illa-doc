@@ -102,5 +102,9 @@
   "sidebar.tutorialSidebar.category.illa_policy": {
     "message": "ILLA policy",
     "description": "The privacy policy, terms of service and other policy of ILLA's products and service"
+  },
+  "sidebar.tutorialSidebar.category.branding": {
+    "message": "Branding",
+    "description": "Configure SSO, domain, branding appearance, etc."
   }
 }
