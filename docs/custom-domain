@@ -1,0 +1,33 @@
+---
+
+title: Custom domain
+description: You can access your ILLA Cloud team through your own domain name by customizing it.
+
+---
+
+*Please access this feature through ILLA Cloud > Settings > Branding*
+
+## Configure Cloudflare proxy
+
+![cloudflare](https://cdn.illacloud.com/official-website/img/docs/new-doc/branding/cloudflare.jpeg)
+
+The image above is a page from Cloudflare. The configuration instructions are as follows.
+
+| Field        | Description  
+| :--------  | :-----  |
+| Type | Choose CNAME. |
+| Name | The prefix of your domain name. For example, if the domain you configured in ILLA Cloud is illa.example.com, the name field is illa |
+| Target | The CNAME displayed on the domain configuration page of ILLA Cloud may be "cname-https.illa.sh" |
+| Proxy status | Turn it on |
+
+*Please note that if your domain name was not purchased through Cloudflare, you can migrate the NS (Name Server) records to Cloudflare and then proceed with the above configuration.*
+
+## Customize domain in ILLA Cloud
+
+In addition to setting up the domain name, you can also customize the Favicon and Title. However, please note that if you haven't set up a domain name or are not accessing the website through your own domain, the Favicon and Title customization may not take effect.
+
+| Field        | Description  
+| :--------  | :-----  |
+| Favicon | Appears next to the title in your browser tab. Recommended size is 32*32, 57*57, 72*72, 114*114, 144*144 |
+| Title | Limited to 60 characters or less. |
+| Custom domain | A fully qualified domain name, such as illacloud.example.com |
