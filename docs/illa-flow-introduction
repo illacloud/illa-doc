@@ -1,0 +1,33 @@
+---
+title: About ILLA Flow
+
+Description: Surpassing developers' expectations, effortlessly automating workflows.
+---
+
+## What is ILLA Flow
+
+ILLA Flow is an automation tool designed to help users connect and automate various databases, APIs, and services without writing code or with minimal code. ILLA Flow supports WebHook and scheduled task triggers to connect different APIs, databases, code, and triggers. When the trigger conditions are met, ILLA Flow automatically executes the corresponding actions, enabling automated data transfer and task execution between APIs and databases. The goal of ILLA Flow is to simplify the process of writing automation logic code, allowing users to easily achieve automation for different tasks.
+
+### Trigger type
+
+* Schedule
+* Webhook
+
+### Event type
+
+* PostgreSQL, MySQL, MariaDB, TiDB, Neon, MongoDB, Snowflake, Supabase, Clickhouse, Hydra
+* Rest API
+* GraphQL
+* AI Agent: You can customize the behavior of the AI and generate specific content.
+* Transformer: You can handle tasks by writing JavaScript.
+* Condition: Used for handling processing under different conditions.
+* Response: Response data in a WebHook request.
+* Error handler: Used for setting error handling.
+
+## How to use ILLA Flow
+
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/saLHLeNxO4hxljaCWZhj?embed&show_copy_link=true" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
