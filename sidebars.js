@@ -37,6 +37,10 @@ const sidebars = {
       type: 'category',
       label: 'ILLA_with_ai',
       items: ["ai-agent"]
+    },{
+      type: 'category',
+      label: 'illa_flow',
+      items: ["illa-flow-introduction"]
     },
     {
       type: 'category',
