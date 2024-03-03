@@ -91,6 +91,10 @@
     "message": "ILLA with AI",
     "description": "The label for category ILLA_with_ai in sidebar tutorialSidebar"
   },
+  "sidebar.tutorialSidebar.category.illa_flow": {
+    "message": "ILLA Flow",
+    "description": "Surpassing developers' expectations, effortlessly automating workflows"
+  }
   "sidebar.tutorialSidebar.category.teams_and_users": {
     "message": "Teams and users",
     "description": "The label for category teams_and_users in sidebar tutorialSidebar"
