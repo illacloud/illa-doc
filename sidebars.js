@@ -40,7 +40,7 @@ const sidebars = {
     },{
       type: 'category',
       label: 'illa_flow',
-      items: ["illa-flow-introduction"]
+      items: ["illa-flow-introduction", "illa-flow-webhook", "illa-flow-response"]
     },
     {
       type: 'category',
