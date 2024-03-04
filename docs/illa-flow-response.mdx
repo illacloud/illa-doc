@@ -1,0 +1,29 @@
+---
+title: Response
+
+Description: Use the Response node to send data back to a WebHook request
+---
+
+## Introduction
+
+When you expect to return data after a certain node has finished executing, you can use the Response node.
+
+You can add different responses for different scenarios, which will be returned based on the actual execution result.
+
+In the case of the same execution conditions (such as several parallel running links that all succeed), when adding Response nodes separately, we will only return the data from the first Response node that has finished running.
+
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/jLmr2LN2T0cYwvYaeB3C?embed&show_copy_link=true" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+
+### Parameters
+
+| **Property name** | **Description**                                                                                                                                                                                                                                                                                               |
+| ------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Status code             | It will be returned as the status of the request.                                                                                                                                                                                                                                                                   |
+| Location                | In the case of a 307 or 308 status code, you can set the redirect URL in the Location header. When the browser receives this status code, it will automatically redirect to the specified URL.                                                                                                                      |
+| Response body           | You can configure it to return JSON, Text, or not return any data. JSON, such as`{"a":1, "b":2}`; Text, can be used to return String or numeric values. For string values, it can be a simple text like`Hello world`. For numeric values, they need to be enclosed in double curly braces, like`{{5}}`. |
+| Response headers        | Used to set parameters in response headers.                                                                                                                                                                                                                                                                         |

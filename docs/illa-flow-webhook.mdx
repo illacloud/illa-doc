@@ -1,0 +1,62 @@
+---
+title: WebHook
+
+Description: You can trigger workflows in ILLA Flow by making an HTTP request to its WebHook and retrieve the returned data.
+---
+
+## What is WebHook
+
+WebHook is an event notification mechanism implemented through HTTP requests. ILLA Flow allows users to trigger workflows in ILLA Flow by making an HTTP request to its WebHook and retrieve the returned data.
+
+## How to use it
+
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/faXVMk2ISSEK5mtG4o5K?embed&show_copy_link=true" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+
+### Body params
+
+Used to set the parameters required in the request body when making a request to this WebHook.
+
+| **Property name** | **Description**                                                                                                                                                                                                                                                                                                            |
+| ------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Key                     | The parameter names.                                                                                                                                                                                                                                                                                                             |
+| Type                    | Used to set the data type.                                                                                                                                                                                                                                                                                                       |
+| Required                | Used to set whether this parameter is required.                                                                                                                                                                                                                                                                                  |
+| Test value              | Used to enter test values. If your parameter type is String, you can directly enter the String. If your parameter type is another type, you need to enclose the test value in`{{}}`. For example, for a numerical parameter, you need to enter`{{5}}`, and for an array parameter, you need to enter`{{[1,2,3,4]}}`. |
+
+### How to request
+
+Copy cURL to get the content required when making a request to this WebHook.
+
+Here is an example,
+
+```JSON
+curl -X POST 
+https://cloud-api.illacloud.com/flow/api/v1/webhook/workflows/ILAex4p1C7Wm/run?webhookToken=xxxxxx
+-H "Content-Type: application/json" 
+-d '{"param":{"a":1,"b":2},"param1":[1,2,3]}'
+```
+
+cURL includes the following content:
+
+| **Field**  | **Description**                                                                                                                                    | **How to use in the REST API Action of ILLA**            |
+| ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| Request method   | POST                                                                                                                                                     | Action type                                                    |
+| URL              | The part before the question mark is the requested URL. For example,`https://cloud-api.illacloud.com/flow/api/v1/webhook/workflows/ILAex4p1C7Wm/run` | Base URL                                                       |
+| Query parameters | The part after the question mark is the requested URL. For example,`webhookToken=xxxxxx`                                                             | URL Parameters                                                 |
+| Header           | Content-Type: application/json                                                                                                                           | Headers                                                        |
+| Request body     | If you have set a request body in the WebHook, the cURL command will include an example of the request body.                                             | Body, it could be`x-www-form-urlencoded`or`Raw - JSON` |
+
+## How to get the response
+
+<div style={{
+position: "relative",
+paddingBottom: "calc(56.81216931216932% + 41px)",
+height: 0
+}}><iframe src="https://demo.arcade.software/jLmr2LN2T0cYwvYaeB3C?embed&show_copy_link=true" frameborder="1" loading="lazy"  allowfullscreen="true" style={{position: "absolute", top: 0, left: 0, width: "100%", height: "100%", colorScheme: "light"}}></iframe></div>
+
+Learn more about response: https://docs.illacloud.com/illa-flow-response
