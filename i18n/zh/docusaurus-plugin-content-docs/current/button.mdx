@@ -1,85 +1,87 @@
 ---
 title: Button
-description: Learn how to use the button component in ILLA Cloud.
+description: 了解如何在ILLA Cloud中使用Button组件。
+
+
 ---
 
-# Button
+# Button 按钮
 
-## What is Button?
+## 什么是 Button?
 
-The Button component allows users to trigger an action or perform a function by clicking on the button. 
+Button组件允许用户通过单击按钮来触发动作或执行一个函数。
 
 ### Properties
 
-| Properties | Description |
-| --- | --- |
-| Text | The text displayed for the button |
-| Event Handler | Trigger queries, control components, or call other APIs in response to component events. |
-| Loading | Whether the component should show a loading indicator. |
-| Disabled | Control the status of whether the component is disabled. The component cannot be modified or focused when it is disabled. |
-| Tooltip | User can enter component tooltip here. The tooltip will be shown when it is focused. Markdown format is supported. |
-| Hidden | Dynamically control whether the component is hidden. You can change the hidden status through dynamical boolean value. |
-| Variant | Allow users to choose between two different styles for the button: fill or outline. |
-| Theme Color | Allows users to specify the button's background color and opacity |
+| 属性          | 说明                                                         |
+| ------------- | ------------------------------------------------------------ |
+| Text          | 按钮显示的文本。                                               |
+| Event Handler | 触发查询、控制组件或调用其他API以响应组件事件。              |
+| Loading       | 组件是否应显示loading。                                      |
+| Disabled      | 控制组件是否处于被禁用的状态。组件处于禁用状态时，无法对其进行修改或聚焦。 |
+| Tooltip       | 用户可以在此处输入tooltip组件。tooltip将在聚焦时显示。支持Markdown格式。 |
+| Hidden        | 动态控制组件是否隐藏。您可以通过动态布尔值更改隐藏状态。     |
+| Variant       | 允许用户在按钮的两种不同样式之间进行选择：fill or outline。  |
+| Theme Color   | 允许用户指定按钮的背景颜色和不透明度。                       |
 
 ### Event handler
 
-| Event | Description |
-| --- | --- |
-| Click | When a user click this button, perform specific action customized by users. |
+| 事件  | 说明                                           |
+| ----- | ---------------------------------------------- |
+| Click | 当用户单击此按钮时，执行用户自定义的特定操作。 |
 
 ### Data
 
-The component has some commonly used data, which can be called via **`{{componentName.propertyName}}`** in the app.
+该组件有一些常用的数据，可以通过应用程序中的**`{{componentName.propertyName}}`** 调用这些数据。
 
-| Property name | Description |
-| --- | --- |
-| colorScheme | background color of the button |
-| disabled | a Boolean value indicate the disabled status |
-| displayName | the name of this component (ie button1) |
-| hidden | a Boolean value indicate the hidden status of button |
-| hiddenDynamic | a Boolean value indicate the hidden dynamic status of button |
-| loading | loading value |
-| text | text value displayed on the button |
-| tooltipText | value of tooltip text |
-| variant | variant style of the button (fill or outlined) |
+| 属性名        | 说明                                      |
+| ------------- | ----------------------------------------- |
+| colorScheme   | 按钮的背景颜色                            |
+| disabled      | 一个Boolean类型的值表示按钮是否为禁用状态 |
+| displayName   | 组件的名称（即按钮1）                 |
+| hidden        | 一个Boolean类型的值表示按钮是否为隐藏状态 |
+| hiddenDynamic | 一个Boolean类型的值动态表示按钮是否为隐藏 |
+| loading       | 是否显示loading                           |
+| text          | 按钮上显示的文本                        |
+| tooltipText   | tooltip的文本                             |
+| variant       | 按钮的变体样式 (fill or outlined)         |
 
-### Use case
 
-Next, we will demonstrate how to use button to control the **`form`** component dynamically. 
 
-#### Step 1 Add an action
+### 用例
 
-We have created a table named **`countries`**, including 5 columns:  **`num_code`**,  **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**. The countries’ names are what we want to use as options value, which are stored the **`en_short_name`** column.
+接下来，我们将演示如何使用按钮来动态控制 **`form`** 表单组件。
 
-Then we can create a new action for Supabase from the action list, listing all data in **`countries`** and named supabasedb1 
+#### 第一步 添加操作
+
+我们创建了一个名为**`countries`**的表，包括5列：**`num_code`**,  **`alpha_2_code`**, **`alpha_3_code`**, **`en_short_name`**, **`nationality`**。我们用 **`en_short_name`**列中国家的名称作为选项的值。
+
+然后，我们可以从操作列表中为Subabase创建一个新的操作，列出**`countries`**中的所有数据，并命名为supabasedb1
 
 ```sql
 select distinct en_short_name as value from "Countries" order by value;
 ```
 
-This is what we have as output:
+这是输出:
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/countries.png' alt='' />
 
-Click **`Save`** and **`Run`** to activate this action.
+单击**`Save`** 和**`Run`** 激活这个操作。
 
-#### Step 2 Add a Component
+#### 第二步 添加组件
 
-First we add the **`Form`** component and label it as 'Survey'. Then we drag a Input component, a select component and a number input component into the form, labeling them as **`Name`, `Nationality`,** and **`Age`.**
+首先我们添加**`Form`**组件，标签为'Survey'。然后我们拖入一个input组件，一个select组件和一个number input组件到表单中，标签分别为**`Name`, `Nationality`,** 和**`Age`。**
 
- 
+然后，我们映射要选择组件的**`countries`** 值
 
-We then map the **`countries`** values to select component by 
-
-1. in mapped mode, set data sources to be `{{supabasedb1.data}}` 
-2. in mapped option, set value to be `{{item.value}}`
+1. 在映射模式下，将数据源设置为 `{{supabasedb1.data}}` 
+2. 在映射选项中，将值设置为 `{{item.value}}`
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/button1.png' alt='' />
 
-Then we can configure the **`Submit`** button to control the **`Send`** method of **`Form`** component. 
+然后我们可以配置 **`Submit`** 按钮来控制**`Form`** 组件的 **`Send`** 方法。
 
-1. In the Edit event handler, select **`Control component`** in action, select the **`form`** component that you want to update as the target of the event.
-2. Choose the **`Submit`** action. 
+1. 在 Edit event handler中, 从action中选择**`Control component`**操作 , 选择要更新为事件目标的**`form`**组件。
+2. 选择**`Submit`** 操作。
 
 <img src='https://cdn.illacloud.com/official-website/img/docs/countries2.png' alt='' />
