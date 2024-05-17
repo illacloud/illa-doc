@@ -20,7 +20,7 @@ const sidebars = {
         {
           type: 'category',
           label: 'resources',
-          items: ["airtable", "amazons3", "appwrite", "clickhouse", "elastic-search", "firebase", "hugging-face-api", "hugging-face-endpoint", "hydra", "mariadb", "microsoft-sql", "mongodb", "mysql", "neon", "oracledb", "postgresql", "redis", "restapi", "snowflake", "supabase", "tidb", "transformer", "upstash"]
+          items: ["add-illa-ip-to-your-allow-list", "airtable", "amazons3", "appwrite", "clickhouse", "elastic-search", "firebase", "hugging-face-api", "hugging-face-endpoint", "hydra", "mariadb", "microsoft-sql", "mongodb", "mysql", "neon", "oracledb", "postgresql", "redis", "restapi", "snowflake", "supabase", "tidb", "transformer", "upstash"]
         },
         {
           type: 'category',
@@ -45,7 +45,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'changelog',
-      items: ["4-9", "4-8", "4-5", "4-4", "4-3-6", "4-3","4-2","4-1","4-0", "3-5", "3-4", "3-3"]
+      items: ["4-8-1", "4-8", "4-5", "4-4", "4-3-6", "4-3","4-2","4-1","4-0", "3-5", "3-4", "3-3"]
     },
     {
       type: 'category',
