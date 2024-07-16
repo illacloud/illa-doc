@@ -1,0 +1,11 @@
+---
+title: V 4.8.3
+description: ILLA Cloud V 4.8.3 Changelog
+---
+
+# V 4.8.3
+
+2024.07.16
+
+## 💅 Polish
+Optimized performance and configuration for connecting to MSSQL.
